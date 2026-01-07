@@ -1,6 +1,6 @@
 {
   "name": "protocol-launcher",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "One-click launch URL generator for protocol-based apps.",
   "type": "module",
   "author": "zhensherlock",
