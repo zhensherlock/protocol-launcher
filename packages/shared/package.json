@@ -1,0 +1,54 @@
+{
+  "name": "@protocol-launcher/shared",
+  "version": "0.0.0",
+  "description": "One-click launch URL generator for protocol-based apps.",
+  "type": "module",
+  "author": "zhensherlock",
+  "homepage": "https://zhensherlock.github.io/protocol-launcher",
+  "keywords": [
+    "protocol-launcher",
+    "quick-launch",
+    "quick-launch-url",
+    "deep-link",
+    "deeplink",
+    "url-scheme",
+    "protocol",
+    "mcp",
+    "modelcontextprotocol",
+    "cursor",
+    "cherry-studio",
+    "provider",
+    "api-key",
+    "install",
+    "one-click",
+    "tree-shaking",
+    "esm",
+    "typescript"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "license": "MIT",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
+  },
+  "scripts": {
+    "clean:dist": "rimraf dist",
+    "dev": "rolldown -c rolldown.config.ts --watch --no-clear-screen",
+    "build:types": "tsc",
+    "build": "npm run clean:dist && npm run build:types && rolldown -c rolldown.config.ts"
+  },
+  "bugs": {
+    "url": "https://github.com/zhensherlock/protocol-launcher/issues"
+  },
+  "dependencies": {}
+}
