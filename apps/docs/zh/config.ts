@@ -1,5 +1,5 @@
 import { type DefaultTheme, defineAdditionalConfig } from 'vitepress'
-import pkg from '../../../packages/core/package.json' with { type: 'json' }
+import pkg from '../../../packages/protocol-launcher/package.json' with { type: 'json' }
 
 // https://vitepress.dev/reference/site-config
 export default defineAdditionalConfig({
