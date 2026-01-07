@@ -1,0 +1,34 @@
+# Protocol Launcher
+
+> TypeScript library for generating Quick Launch (deep link) URLs to trigger app actions with one click, e.g., installing plugins, configuring servers, or setting API keys.
+
+- 🛡️ Type-Safe
+- 🧩 Multi-App Ready
+- 🔬 On-Demand / Tree-shakable
+- 🔐 Secure Encoding (safe configs, Unicode)
+- ⚙️ Zero Runtime Dependencies
+- 📦 ESM First
+- 🚀 One-click deep links to trigger app actions
+
+
+## Table of Contents
+
+
+
+### 简介
+
+- [什么是 Protocol Launcher？](/protocol-launcher/zh/guide/what-is-it.md)
+- [入门指南](/protocol-launcher/zh/guide/getting-started.md)
+
+### 应用程序
+
+- [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
+- [Cursor](/protocol-launcher/zh/apps/cursor.md)
+
+### Other
+
+- [Cherry Studio](/protocol-launcher/appscherry-studio.md)
+- [Cursor](/protocol-launcher/appscursor.md)
+- [Getting Started](/protocol-launcher/guidegetting-started.md)
+- [Untitled](/protocol-launcher/guideplayground.md)
+- [What is Protocol Launcher?](/protocol-launcher/guidewhat-is-it.md)

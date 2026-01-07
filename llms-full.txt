@@ -1,0 +1,676 @@
+---
+url: /protocol-launcher/appscherry-studio.md
+---
+
+# Cherry Studio
+
+[Cherry Studio](https://cherry-ai.com) is a powerful AI client that supports multiple models and providers. **Protocol Launcher** allows you to generate deep links to automatically configure MCP Servers and AI Providers in Cherry Studio.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Install Multiple MCP Servers
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  mcpServers: {
+    'server-everything': {
+      name: 'server-everything',
+      description:
+        'This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.',
+      type: 'stdio',
+      command: 'npx',
+      args: ['-y', '@modelcontextprotocol/server-everything'],
+      registryUrl: 'https://registry.npmmirror.com',
+      provider: 'Anthropic',
+      providerUrl: 'https://modelcontextprotocol.io/',
+      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
+    },
+    'qcc-company-basic-stream': {
+      name: '企查查企业信息 MCP',
+      description:
+        '企业信息 MCP 提供全面的企业画像分析与企业信息洞察服务，助您快速验证企业  真实性、评估其稳定性和发展轨迹，为您的商业行动提供坚实的数据支撑。',
+      type: 'streamableHttp',
+      baseUrl: 'https://mcp.qcc.com/basic/stream',
+      headers: {
+        Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+      },
+      provider: 'QCC',
+      providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
+      logoUrl: 'https://openapi.qcc.com/favicon.ico',
+      tags: ['company-basic', '企业信息'],
+      timeout: 30,
+    },
+    'qcc-company-risk-sse': {
+      name: '企查查风险信息 MCP',
+      description:
+        '风险信息 MCP 提供全面的企业风险透视扫描能力，可识别企业在司法、行政、经营等方面的信用与合规隐患，助您精准评估合作对象的可靠性，有效规避商业陷阱与连带风险。',
+      type: 'sse',
+      baseUrl: 'https://mcp.qcc.com/basic/sse',
+      headers: {
+        Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+      },
+      provider: 'QCC',
+      providerUrl: 'https://openapi.qcc.com/mcpTools?service=risk',
+      logoUrl: 'https://openapi.qcc.com/favicon.ico',
+      tags: ['company-risk', '风险信息'],
+      timeout: 30,
+    },
+  },
+})
+```
+
+### Install STDIO MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  name: 'server-everything',
+  description: 'This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+  registryUrl: 'https://registry.npmmirror.com',
+  provider: 'Anthropic',
+  providerUrl: 'https://modelcontextprotocol.io/',
+  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
+})
+```
+
+### Install Streamable HTTP MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  description:
+    '企业信息 MCP 提供全面的企业画像分析与企业信息洞察服务，助您快速验证企业真实性、评估其稳定性和发展轨迹，为您的商业行动提供坚实的数据支撑。',
+  type: 'streamableHttp',
+  baseUrl: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+  },
+  provider: 'QCC',
+  providerUrl: 'https://openapi.qcc.com/',
+  reference: 'https://openapi.qcc.com/mcpTools?service=basic',
+  logoUrl: 'https://openapi.qcc.com/favicon.ico',
+  tags: ['company-basic', '企业信息'],
+  timeout: 30,
+})
+```
+
+### Install SSE MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  description:
+    '风险信息 MCP 提供全面的企业风险透视扫描能力，可识别企业在司法、行政、经营等方面的信用与合规隐患，助您精准评估合作对象的可靠性，有效规避商业陷阱与连带风险。',
+  type: 'sse',
+  baseUrl: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+  },
+  provider: 'QCC',
+  providerUrl: 'https://openapi.qcc.com/',
+  reference: 'https://openapi.qcc.com/mcpTools?service=risk',
+  logoUrl: 'https://openapi.qcc.com/favicon.ico',
+  tags: ['company-risk', '风险信息'],
+  timeout: 30,
+})
+```
+
+### Install Provider
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installProvider' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvider({
+  id: 'new-api',
+  baseUrl: 'https://open.cherryin.ai',
+  apiKey: 'sk-xxxx',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/cherry-studio.md
+---
+
+# Cherry Studio
+
+[Cherry Studio](https://cherry-ai.com) 是一个支持多种模型和提供商的强大 AI 客户端。**Protocol Launcher** 允许您生成深度链接，以便在 Cherry Studio 中自动配置 MCP 服务器和 AI 提供商。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 安装多个 MCP 服务器
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  mcpServers: {
+    'server-everything': {
+      name: 'server-everything',
+      description:
+        'This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.',
+      type: 'stdio',
+      command: 'npx',
+      args: ['-y', '@modelcontextprotocol/server-everything'],
+      registryUrl: 'https://registry.npmmirror.com',
+      provider: 'Anthropic',
+      providerUrl: 'https://modelcontextprotocol.io/',
+      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
+    },
+    'qcc-company-basic-stream': {
+      name: '企查查企业信息 MCP',
+      description:
+        '企业信息 MCP 提供全面的企业画像分析与企业信息洞察服务，助您快速验证企业  真实性、评估其稳定性和发展轨迹，为您的商业行动提供坚实的数据支撑。',
+      type: 'streamableHttp',
+      baseUrl: 'https://mcp.qcc.com/basic/stream',
+      headers: {
+        Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+      },
+      provider: 'QCC',
+      providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
+      logoUrl: 'https://openapi.qcc.com/favicon.ico',
+      tags: ['company-basic', '企业信息'],
+      timeout: 30,
+    },
+    'qcc-company-risk-sse': {
+      name: '企查查风险信息 MCP',
+      description:
+        '风险信息 MCP 提供全面的企业风险透视扫描能力，可识别企业在司法、行政、经营等方面的信用与合规隐患，助您精准评估合作对象的可靠性，有效规避商业陷阱与连带风险。',
+      type: 'sse',
+      baseUrl: 'https://mcp.qcc.com/basic/sse',
+      headers: {
+        Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+      },
+      provider: 'QCC',
+      providerUrl: 'https://openapi.qcc.com/mcpTools?service=risk',
+      logoUrl: 'https://openapi.qcc.com/favicon.ico',
+      tags: ['company-risk', '风险信息'],
+      timeout: 30,
+    },
+  },
+})
+```
+
+### 安装 STDIO MCP 服务
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  name: 'server-everything',
+  description: 'This MCP server attempts to exercise all the features of the MCP protocol. It is not intended to be a useful server, but rather a test server for builders of MCP clients. It implements prompts, tools, resources, sampling, and more to showcase MCP capabilities.',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+  registryUrl: 'https://registry.npmmirror.com',
+  provider: 'Anthropic',
+  providerUrl: 'https://modelcontextprotocol.io/',
+  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
+})
+```
+
+### 安装 Streamable HTTP MCP 服务
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  description:
+    '企业信息 MCP 提供全面的企业画像分析与企业信息洞察服务，助您快速验证企业真实性、评估其稳定性和发展轨迹，为您的商业行动提供坚实的数据支撑。',
+  type: 'streamableHttp',
+  baseUrl: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+  },
+  provider: 'QCC',
+  providerUrl: 'https://openapi.qcc.com/',
+  reference: 'https://openapi.qcc.com/mcpTools?service=basic',
+  logoUrl: 'https://openapi.qcc.com/favicon.ico',
+  tags: ['company-basic', '企业信息'],
+  timeout: 30,
+})
+```
+
+### 安装 SSE MCP 服务
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  description:
+    '风险信息 MCP 提供全面的企业风险透视扫描能力，可识别企业在司法、行政、经营等方面的信用与合规隐患，助您精准评估合作对象的可靠性，有效规避商业陷阱与连带风险。',
+  type: 'sse',
+  baseUrl: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+  },
+  provider: 'QCC',
+  providerUrl: 'https://openapi.qcc.com/',
+  reference: 'https://openapi.qcc.com/mcpTools?service=risk',
+  logoUrl: 'https://openapi.qcc.com/favicon.ico',
+  tags: ['company-risk', '风险信息'],
+  timeout: 30,
+})
+```
+
+### 安装大模型提供商
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installProvider' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvider({
+  id: 'new-api',
+  baseUrl: 'https://open.cherryin.ai',
+  apiKey: 'sk-xxxx',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/appscursor.md
+---
+
+# Cursor
+
+[Cursor](https://cursor.sh) is an AI-powered code editor. **Protocol Launcher** allows you to generate deep links to automatically configure MCP Servers in Cursor.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Install STDIO MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### Install Streamable HTTP MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'MjMmbGnP0gwLcbYe7MCr4FCuIA9dHQ9277zoO409EGZOdL3K',
+  },
+})
+```
+
+### Install SSE MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'MjMmbGnP0gwLcbYe7MCr4FCuIA9dHQ9277zoO409EGZOdL3K',
+  },
+})
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/cursor.md
+---
+
+# Cursor
+
+[Cursor](https://cursor.sh) 是一个 AI 驱动的代码编辑器。**Protocol Launcher** 允许您生成深度链接，以便在 Cursor 中自动配置 MCP 服务器。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 安装 STDIO MCP 服务
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### 安装 Streamable HTTP MCP 服务
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'MjMmbGnP0gwLcbYe7MCr4FCuIA9dHQ9277zoO409EGZOdL3K',
+  },
+})
+```
+
+### 安装 SSE MCP 服务
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'MjMmbGnP0gwLcbYe7MCr4FCuIA9dHQ9277zoO409EGZOdL3K',
+  },
+})
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
+```
+
+---
+
+---
+url: /protocol-launcher/guidegetting-started.md
+---
+
+# Getting Started
+
+## Installation
+
+Install `protocol-launcher` using your preferred package manager:
+
+::: code-group
+
+```sh [npm]
+$ npm install protocol-launcher
+```
+
+```sh [pnpm]
+$ pnpm add protocol-launcher
+```
+
+```sh [yarn]
+$ yarn add protocol-launcher
+```
+
+```bash [bun]
+$ bun add protocol-launcher
+```
+
+:::
+
+## Usage
+
+### Tree Shaking (Recommended)
+
+To minimize bundle size, import specific modules directly:
+
+::: code-group
+
+```typescript [cherry studio]
+// Only imports Cherry Studio related code
+import { installMCP, installProvider } from 'protocol-launcher/cherry-studio'
+```
+
+```typescript [cursor]
+// Only imports Cursor related code
+import { installMCP } from 'protocol-launcher/cursor'
+```
+
+:::
+
+### Full Import
+
+You can also import everything from the root package, but this will include all application modules and does not support tree-shaking:
+
+```typescript
+import { cherryStudio, cursor } from 'protocol-launcher'
+```
+
+For detailed usage instructions for each application, please refer to their respective guides:
+
+* [Cherry Studio](/en/apps/cherry-studio)
+* [Cursor](/en/apps/cursor)
+
+---
+
+---
+url: /protocol-launcher/guideplayground.md
+---
+
+
+---
+
+---
+url: /protocol-launcher/guidewhat-is-it.md
+---
+
+# What is Protocol Launcher?
+
+**Protocol Launcher** is a TypeScript library designed to generate "Quick Launch" URLs (Deep Links) for various applications.
+
+These URLs allow users to trigger specific actions in applications with a single click, such as installing plugins, configuring servers, or setting up API keys.
+
+## Key Features
+
+* **Type-Safe**: Strict TypeScript types validate payloads and prevent malformed links.
+* **Multi-App Ready**: Extensible design to support many apps via URL schemes.
+* **On-Demand / Tree-shakable**: Import only what you need; small bundle footprint.
+* **Secure Encoding**: Encodes configs safely to avoid injection. Supports Unicode characters including Chinese.
+* **Zero Runtime Dependencies**: Lightweight library with no external runtime dependencies.
+* **ESM First**: Modern ES Modules, works in Node and bundlers.
+
+## Supported Applications
+
+Currently, we support the following applications:
+
+* [Cherry Studio](../apps/cherry-studio.md)
+* [Cursor](../apps/cursor.md)
+
+More applications will be added in the future.
+
+---
+
+---
+url: /protocol-launcher/zh/guide/what-is-it.md
+---
+
+# 什么是 Protocol Launcher？
+
+**Protocol Launcher** 是一个 TypeScript 库，旨在为各种应用程序生成“快速启动” URL（深度链接）。
+
+这些 URL 允许用户通过单击触发应用程序中的特定操作，例如安装插件、配置服务器或设置 API 密钥。
+
+## 主要特性
+
+* **类型安全**: 严格的 TypeScript 类型校验，避免生成不合法链接。
+* **多应用支持**: 可扩展设计，基于 URL Scheme 支持更多应用。
+* **按需加载/可树摇**: 仅按需导入所需功能，减小打包体积。
+* **安全编码**: 对配置进行安全编码，避免注入。完美支持中文等 Unicode 字符。
+* **零运行时依赖**: 轻量、无外部运行时依赖。
+* **ESM 优先**: 现代 ES Modules，适配 Node 与各类打包器。
+
+## 支持的应用程序
+
+目前，我们支持以下应用程序：
+
+* [Cherry Studio](../apps/cherry-studio.md)
+* [Cursor](../apps/cursor.md)
+
+未来将添加更多应用程序。
+
+---
+
+---
+url: /protocol-launcher/zh/guide/getting-started.md
+---
+
+# 入门指南
+
+## 安装
+
+使用您喜欢的包管理器安装 `protocol-launcher`：
+
+::: code-group
+
+```sh [npm]
+$ npm install protocol-launcher
+```
+
+```sh [pnpm]
+$ pnpm add protocol-launcher
+```
+
+```sh [yarn]
+$ yarn add protocol-launcher
+```
+
+```bash [bun]
+$ bun add protocol-launcher
+```
+
+:::
+
+## 使用
+
+### 按需加载（推荐）
+
+为了减小打包体积，建议直接导入特定模块：
+
+::: code-group
+
+```typescript [cherry studio]
+// 仅导入 Cherry Studio 相关代码
+import { installMCP, installProvider } from 'protocol-launcher/cherry-studio'
+```
+
+```typescript [cursor]
+// 仅导入 Cursor 相关代码
+import { installMCP } from 'protocol-launcher/cursor'
+```
+
+:::
+
+### 全量导入
+
+您也可以从根包导入所有内容，但这将包含所有应用程序模块，并且不支持 Tree Shaking：
+
+```typescript
+import { cherryStudio, cursor } from 'protocol-launcher'
+```
+
+有关每个应用程序的详细使用说明，请参阅各自的指南：
+
+* [Cherry Studio](/zh/apps/cherry-studio)
+* [Cursor](/zh/apps/cursor)
