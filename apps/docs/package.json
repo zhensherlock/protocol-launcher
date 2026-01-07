@@ -1,0 +1,26 @@
+{
+  "name": "@protocol-launcher/docs",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "One-click launch URL generator for protocol-based apps.",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "tailwindcss": "^4.1.18",
+    "vitepress": "^2.0.0-alpha.15",
+    "vitepress-plugin-group-icons": "^1.6.5",
+    "vitepress-plugin-llms": "^1.10.0"
+  },
+  "dependencies": {
+    "protocol-launcher": "workspace:*",
+    "bowser": "^2.13.1",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.26"
+  }
+}
