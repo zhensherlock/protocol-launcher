@@ -1,0 +1,45 @@
+name: npm-publish
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    if: github.repository == 'zhensherlock/protocol-launcher'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get package name
+        id: package
+        run: |
+          echo "PACKAGE_NAME=$(echo $RELEASE_NAME | sed -E 's/^@[^/]+\/(.+)@.+$/\1/')" >> $GITHUB_ENV
+        env:
+          RELEASE_NAME: ${{ github.event.release.name }}
+
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Setup PNPM
+        uses: ./.github/actions/setup-pnpm
+        with:
+          node-version: 22
+          npm-token: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build Package
+        run: pnpm run build
+
+      - name: Test Package
+        run: pnpm run test
+
+      - name: Publish NPM Package
+        run: |
+          cd packages/$PACKAGE_NAME
+          pnpm publish --no-git-checks --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
