@@ -27,6 +27,7 @@
 
 ### Other
 
+- [@protocol-launcher/docs](/protocol-launcher/CHANGELOG.md)
 - [Cherry Studio](/protocol-launcher/appscherry-studio.md)
 - [Cursor](/protocol-launcher/appscursor.md)
 - [Getting Started](/protocol-launcher/guidegetting-started.md)
