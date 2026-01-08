@@ -12,15 +12,17 @@
   "license": "MIT",
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "@types/lodash-es": "^4.17.12",
     "tailwindcss": "^4.1.18",
     "vitepress": "^2.0.0-alpha.15",
     "vitepress-plugin-group-icons": "^1.6.5",
     "vitepress-plugin-llms": "^1.10.0"
   },
   "dependencies": {
-    "protocol-launcher": "workspace:*",
     "bowser": "^2.13.1",
+    "lodash-es": "^4.17.22",
     "pinia": "^3.0.4",
+    "protocol-launcher": "workspace:*",
     "vue": "^3.5.26"
   }
 }

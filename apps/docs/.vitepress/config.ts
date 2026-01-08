@@ -1,8 +1,11 @@
 import tailwindcss from '@tailwindcss/vite'
+import { isUndefined } from 'lodash-es'
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin, localIconLoader } from 'vitepress-plugin-group-icons'
 import llmstxt from 'vitepress-plugin-llms'
 import pkg from '../../../packages/protocol-launcher/package.json' with { type: 'json' }
+
+const isGithubPages = isUndefined(process.env.VERCEL)
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -12,7 +15,7 @@ export default defineConfig({
     'en/:rest*': ':rest*',
     'en/index.md': 'index.md',
   },
-  base: process.env.VERCEL ? '/' : '/protocol-launcher/',
+  base: isGithubPages ? '/protocol-launcher/' : '/',
   head: [
     ['link', { rel: 'shortcut icon', href: '/protocol-launcher/logo.svg' }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/protocol-launcher/logo.svg' }],
@@ -65,6 +68,9 @@ export default defineConfig({
         appId: 'V6CF28P0PS',
         apiKey: '692752b7b3c6f794997d8ae22aed79fa',
         indexName: 'protocol-launcher',
+        searchParameters: {
+          facetFilters: [`tags:${isGithubPages ? 'gh' : 'vercel'}`],
+        },
       },
     },
   },
@@ -81,7 +87,8 @@ export default defineConfig({
       tailwindcss(),
       llmstxt({
         ignoreFiles: ['en/index.md', 'zh/index.md'],
-        description: 'TypeScript library for generating Quick Launch (deep link) URLs to trigger app actions with one click, e.g., installing plugins, configuring servers, or setting API keys.',
+        description:
+          'TypeScript library for generating Quick Launch (deep link) URLs to trigger app actions with one click, e.g., installing plugins, configuring servers, or setting API keys.',
         sidebar: [
           {
             text: 'Introduction',

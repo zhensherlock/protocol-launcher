@@ -1,6 +1,15 @@
 {
   "index_name": "protocol-launcher",
-  "start_urls": ["https://zhensherlock.github.io/protocol-launcher/"],
+  "start_urls": [
+    {
+      "url": "https://zhensherlock.github.io/protocol-launcher/",
+      "tags": ["gh"]
+    },
+    {
+      "url": "protocol-launcher.vercel.app/",
+      "tags": ["vercel"]
+    }
+  ],
   "rateLimit": 8,
   "maxDepth": 10,
   "selectors": {
