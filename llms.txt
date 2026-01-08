@@ -13,7 +13,15 @@
 
 ## Table of Contents
 
+### Introduction
 
+- [What is Protocol Launcher?](/protocol-launcher/guide/what-is-it.md)
+- [Getting Started](/protocol-launcher/guide/getting-started.md)
+
+### Applications
+
+- [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
+- [Cursor](/protocol-launcher/apps/cursor.md)
 
 ### 简介
 
@@ -25,11 +33,3 @@
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
 
-### Other
-
-- [@protocol-launcher/docs](/protocol-launcher/CHANGELOG.md)
-- [Cherry Studio](/protocol-launcher/appscherry-studio.md)
-- [Cursor](/protocol-launcher/appscursor.md)
-- [Getting Started](/protocol-launcher/guidegetting-started.md)
-- [Untitled](/protocol-launcher/guideplayground.md)
-- [What is Protocol Launcher?](/protocol-launcher/guidewhat-is-it.md)

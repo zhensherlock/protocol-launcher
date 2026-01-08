@@ -1,1 +1,0 @@
-import{t}from"./index.DyEh83IJ.js";function i(r,e){return`cherrystudio://mcp/install?servers=${t(r,e)}`}function o(r,e){return`cherrystudio://providers/api-keys?v=1&data=${t(r,e)}`}export{o as a,i as e};
