@@ -6,6 +6,7 @@ import llmstxt from 'vitepress-plugin-llms'
 import pkg from '../../../packages/protocol-launcher/package.json' with { type: 'json' }
 
 const isGithubPages = isUndefined(process.env.VERCEL)
+const base = isGithubPages ? '/protocol-launcher/' : '/'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -19,10 +20,10 @@ export default defineConfig({
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/cursor.md': 'apps/cursor.md',
   },
-  base: isGithubPages ? '/protocol-launcher/' : '/',
+  base,
   head: [
-    ['link', { rel: 'shortcut icon', href: '/protocol-launcher/logo.svg' }],
-    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: '/protocol-launcher/logo.svg' }],
+    ['link', { rel: 'shortcut icon', href: `${base}logo.svg` }],
+    ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: `${base}/logo.svg` }],
   ],
   locales: {
     root: { label: 'English', lang: 'en-US', dir: 'ltr' },
