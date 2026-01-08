@@ -14,6 +14,10 @@ export default defineConfig({
   rewrites: {
     'en/:rest*': ':rest*',
     'en/index.md': 'index.md',
+    'en/guide/what-is-it.md': 'guide/what-is-it.md',
+    'en/guide/getting-started.md': 'guide/getting-started.md',
+    'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
+    'en/apps/cursor.md': 'apps/cursor.md',
   },
   base: isGithubPages ? '/protocol-launcher/' : '/',
   head: [
@@ -86,7 +90,7 @@ export default defineConfig({
     plugins: [
       tailwindcss(),
       llmstxt({
-        ignoreFiles: ['en/index.md', 'zh/index.md'],
+        ignoreFiles: ['en/index.md', 'zh/index.md', 'CHANGELOG.md'],
         description:
           'TypeScript library for generating Quick Launch (deep link) URLs to trigger app actions with one click, e.g., installing plugins, configuring servers, or setting API keys.',
         sidebar: [
