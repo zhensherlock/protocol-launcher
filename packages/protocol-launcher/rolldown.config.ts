@@ -7,8 +7,9 @@ export default defineConfig([
   {
     input: 'src/index.ts',
     output: {
-      format: 'esm',
-      file: 'dist/index.esm.js',
+      format: 'umd',
+      name: 'ProtocolLauncher',
+      file: 'dist/index.js',
     },
     plugins: [isProd && terser()],
   },
