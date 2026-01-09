@@ -1,5 +1,16 @@
 # protocol-launcher
 
+## 1.1.0
+
+### Minor Changes
+
+- [`51306ea`](https://github.com/zhensherlock/protocol-launcher/commit/51306ea17ecb70fca49b78ace8549d3d3dcb8218) Thanks [@zhensherlock](https://github.com/zhensherlock)! - build(protocol-launcher): change output format from esm to umd and update main file
+
+### Patch Changes
+
+- Updated dependencies [[`b1d7183`](https://github.com/zhensherlock/protocol-launcher/commit/b1d718341fa9d19a94bfcf5e8ebce7d8ec4bd707)]:
+  - @protocol-launcher/shared@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
