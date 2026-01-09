@@ -58,7 +58,7 @@
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/index.esm.js"
+      "import": "./dist/index.js"
     },
     "./cherry-studio": {
       "types": "./dist/types/cherry-studio/index.d.ts",
