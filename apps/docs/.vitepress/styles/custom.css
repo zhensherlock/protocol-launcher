@@ -21,7 +21,25 @@
 
 .VPHero .VPImage {
   filter: drop-shadow(-2px 4px 6px #0003);
+  animation: blur-in 1s cubic-bezier(0, .55, .45, 1);
   padding: 18px;
+}
+
+@keyframes blur-in {
+  0% {
+    filter: brightness(1) blur(10px);
+    transform: translate(-50%, -50%) scale(.94);
+  }
+
+  10% {
+    filter: brightness(1.15) blur(5px);
+    transform: translate(-50%, -50%) scale(.98);
+  }
+
+  to {
+    filter: brightness(1) blur(0);
+    transform: translate(-50%, -50%) scale(1);
+  }
 }
 
 .DocSearch-Button {
