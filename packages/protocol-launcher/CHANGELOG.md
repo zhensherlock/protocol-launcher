@@ -1,5 +1,11 @@
 # protocol-launcher
 
+## 1.1.2
+
+### Patch Changes
+
+- [`d1a0bbc`](https://github.com/zhensherlock/protocol-launcher/commit/d1a0bbc361146fd34e640751bd3c17472a550070) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(protocol-launcher): change output format from umd to esm
+
 ## 1.1.1
 
 ### Patch Changes

@@ -1,7 +1,7 @@
 {
   "name": "@protocol-launcher/docs",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "description": "One-click launch URL generator for protocol-based apps.",
   "scripts": {
