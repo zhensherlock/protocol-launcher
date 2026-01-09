@@ -1,5 +1,11 @@
 # protocol-launcher
 
+## 1.1.1
+
+### Patch Changes
+
+- [`ef2ca8c`](https://github.com/zhensherlock/protocol-launcher/commit/ef2ca8c43953fb755f5bf06ee203ac749a666746) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(protocol-launcher): update import path in package.json
+
 ## 1.1.0
 
 ### Minor Changes
