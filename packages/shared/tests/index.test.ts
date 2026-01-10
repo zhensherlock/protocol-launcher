@@ -14,6 +14,12 @@ describe('index.ts', () => {
     expect(encoded).toBe('eyJrZXkiOiJ2YWx1ZSIsIumUriI6IuWAvCJ9')
   })
 
+  test('encodeUrlPayload should NOT encodeURIComponent when encodeForUrl is false', () => {
+    const payload = 'hello=world&name=test'
+    const encoded = encodeUrlPayload(payload, { encodeForUrl: false })
+    expect(encoded).toBe('aGVsbG89d29ybGQmbmFtZT10ZXN0')
+  })
+
   test('isUndefined should return true for undefined', async () => {
     expect(isUndefined(undefined)).toBe(true)
   })
