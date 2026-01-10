@@ -19,6 +19,7 @@ export default defineConfig({
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/cursor.md': 'apps/cursor.md',
+    'en/apps/thunder.md': 'apps/thunder.md',
   },
   base,
   head: [
@@ -111,6 +112,7 @@ export default defineConfig({
             items: [
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
               { text: 'Cursor', link: '/apps/cursor' },
+              { text: 'Thunder', link: '/apps/thunder' },
             ],
           },
           {
@@ -127,6 +129,7 @@ export default defineConfig({
             items: [
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
               { text: 'Cursor', link: '/zh/apps/cursor' },
+              { text: 'Thunder', link: '/zh/apps/thunder' },
             ],
           },
         ],
