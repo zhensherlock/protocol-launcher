@@ -50,6 +50,9 @@ importers:
       eslint-plugin-vue:
         specifier: ^10.6.2
         version: 10.6.2(@typescript-eslint/parser@8.52.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@9.39.2(jiti@2.6.1)))
+      glob:
+        specifier: ^13.0.0
+        version: 13.0.0
       globals:
         specifier: ^17.0.0
         version: 17.0.0

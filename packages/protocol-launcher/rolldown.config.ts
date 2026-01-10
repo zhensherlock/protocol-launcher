@@ -1,7 +1,9 @@
 import terser from '@rollup/plugin-terser'
+import { glob } from 'glob'
 import { defineConfig } from 'rolldown'
 
 const isProd = process.env.NODE_ENV === 'production'
+const pluginEntries = glob.sync('src/*/index.ts')
 
 export default defineConfig([
   {
@@ -13,7 +15,7 @@ export default defineConfig([
     plugins: [isProd && terser()],
   },
   {
-    input: ['src/cursor/index.ts', 'src/cherry-studio/index.ts', 'src/thunder/index.ts'],
+    input: pluginEntries,
     output: {
       format: 'esm',
       dir: 'dist',
