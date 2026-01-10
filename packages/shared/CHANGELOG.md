@@ -1,5 +1,11 @@
 # @protocol-launcher/shared
 
+## 1.1.0
+
+### Minor Changes
+
+- [`6006c3e`](https://github.com/zhensherlock/protocol-launcher/commit/6006c3e01af974a88ea7f4892ea88ab0ef1061fd) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(encodeUrlPayload): add option to skip URI encoding
+
 ## 1.0.1
 
 ### Patch Changes
