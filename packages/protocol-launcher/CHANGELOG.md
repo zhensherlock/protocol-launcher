@@ -1,5 +1,18 @@
 # protocol-launcher
 
+## 1.2.0
+
+### Minor Changes
+
+- [`0daa463`](https://github.com/zhensherlock/protocol-launcher/commit/0daa463de587146896c15eb32dc8c9c3e272f7d2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(thunder): add thunder support to protocol launcher
+
+- [`95f704d`](https://github.com/zhensherlock/protocol-launcher/commit/95f704de3a0d3209f58eaddcb401f3133c29f424) Thanks [@zhensherlock](https://github.com/zhensherlock)! - build: add glob dependency and use it for dynamic plugin entries
+
+### Patch Changes
+
+- Updated dependencies [[`6006c3e`](https://github.com/zhensherlock/protocol-launcher/commit/6006c3e01af974a88ea7f4892ea88ab0ef1061fd)]:
+  - @protocol-launcher/shared@1.1.0
+
 ## 1.1.2
 
 ### Patch Changes
