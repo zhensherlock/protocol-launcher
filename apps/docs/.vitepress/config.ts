@@ -24,6 +24,7 @@ export default defineConfig({
   head: [
     ['link', { rel: 'shortcut icon', href: `${base}logo.svg` }],
     ['link', { rel: 'apple-touch-icon', sizes: '180x180', href: `${base}/logo.svg` }],
+    ['meta', { name: 'baidu-site-verification', content: 'codeva-hoImtNdY4x' }],
   ],
   locales: {
     root: { label: 'English', lang: 'en-US', dir: 'ltr' },
