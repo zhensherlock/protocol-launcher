@@ -67,6 +67,10 @@
     "./cursor": {
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
+    },
+    "./thunder": {
+      "types": "./dist/types/thunder/index.d.ts",
+      "import": "./dist/thunder/index.js"
     }
   }
 }

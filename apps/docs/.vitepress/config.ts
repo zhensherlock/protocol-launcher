@@ -63,6 +63,7 @@ export default defineConfig({
         items: [
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'Cursor', link: '/apps/cursor' },
+          { text: 'Thunder', link: '/apps/thunder' },
         ],
       },
     ],

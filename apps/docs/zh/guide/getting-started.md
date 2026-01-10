@@ -54,5 +54,6 @@ import { cherryStudio, cursor } from 'protocol-launcher'
 
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
-- [Cherry Studio](/zh/apps/cherry-studio)
-- [Cursor](/zh/apps/cursor)
+- [Cherry Studio](../apps/cherry-studio.md)
+- [Cursor](../apps/cursor.md)
+- [Thunder](../apps/thunder.md)

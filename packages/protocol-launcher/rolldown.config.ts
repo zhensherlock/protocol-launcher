@@ -13,7 +13,7 @@ export default defineConfig([
     plugins: [isProd && terser()],
   },
   {
-    input: ['src/cursor/index.ts', 'src/cherry-studio/index.ts'],
+    input: ['src/cursor/index.ts', 'src/cherry-studio/index.ts', 'src/thunder/index.ts'],
     output: {
       format: 'esm',
       dir: 'dist',
