@@ -23,5 +23,6 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [Thunder](../apps/thunder.md)
 
 未来将添加更多应用程序。

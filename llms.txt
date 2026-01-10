@@ -33,3 +33,7 @@
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
 
+### Other
+
+- [Thunder](/protocol-launcher/appsthunder.md)
+- [Thunder](/protocol-launcher/zh/apps/thunder.md)

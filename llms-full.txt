@@ -536,8 +536,67 @@ import { cherryStudio, cursor } from 'protocol-launcher'
 
 For detailed usage instructions for each application, please refer to their respective guides:
 
-* [Cherry Studio](/en/apps/cherry-studio)
-* [Cursor](/en/apps/cursor)
+* [Cherry Studio](../apps/cherry-studio.md)
+* [Cursor](../apps/cursor.md)
+* [Thunder](../apps/thunder.md)
+
+---
+
+---
+url: /protocol-launcher/appsthunder.md
+---
+
+# Thunder
+
+[Thunder](https://www.xunlei.com/) is a popular download manager. **Protocol Launcher** allows you to generate deep links to automatically open download resources in Thunder.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Download URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'thunder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
+  url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/thunder.md
+---
+
+# Thunder
+
+[Thunder](https://www.xunlei.com/) 是一款流行的下载管理器。**Protocol Launcher** 允许你生成深度链接，以自动在 Thunder 中打开下载资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 下载文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'thunder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
+  url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
+})
+```
 
 ---
 
@@ -566,6 +625,7 @@ Currently, we support the following applications:
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [Thunder](../apps/thunder.md)
 
 More applications will be added in the future.
 
@@ -596,6 +656,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [Thunder](../apps/thunder.md)
 
 未来将添加更多应用程序。
 
@@ -661,5 +722,6 @@ import { cherryStudio, cursor } from 'protocol-launcher'
 
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
-* [Cherry Studio](/zh/apps/cherry-studio)
-* [Cursor](/zh/apps/cursor)
+* [Cherry Studio](../apps/cherry-studio.md)
+* [Cursor](../apps/cursor.md)
+* [Thunder](../apps/thunder.md)

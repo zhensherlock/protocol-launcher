@@ -1,0 +1,1 @@
+import{r as e}from"./SelectInstallationMethod.vue_vue_type_script_setup_true_lang.VQ-4_12u.js";function t(r){const{url:o}=r;return`thunder://${e(`AA${o}ZZ`,{encodeForUrl:!1})}`}const l={url:"https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg"};export{l as d,t as e};
