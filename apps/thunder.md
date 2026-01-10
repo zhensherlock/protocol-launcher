@@ -1,5 +1,5 @@
 ---
-url: /protocol-launcher/appsthunder.md
+url: /protocol-launcher/apps/thunder.md
 ---
 
 # Thunder

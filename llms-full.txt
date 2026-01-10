@@ -543,7 +543,7 @@ For detailed usage instructions for each application, please refer to their resp
 ---
 
 ---
-url: /protocol-launcher/appsthunder.md
+url: /protocol-launcher/apps/thunder.md
 ---
 
 # Thunder

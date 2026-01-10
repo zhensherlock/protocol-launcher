@@ -22,6 +22,7 @@
 
 - [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/apps/cursor.md)
+- [Thunder](/protocol-launcher/apps/thunder.md)
 
 ### 简介
 
@@ -32,8 +33,5 @@
 
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
-
-### Other
-
-- [Thunder](/protocol-launcher/appsthunder.md)
 - [Thunder](/protocol-launcher/zh/apps/thunder.md)
+
