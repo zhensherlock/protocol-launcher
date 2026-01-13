@@ -143,7 +143,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ promp
 ```
 <div class="flex justify-center">
   <VPLink :href="createChat({ prompt: 'Hello, Cursor!' })" target="_self">
-    Create Chat
+    Create chat in Cursor
   </VPLink>
 </div>
 
