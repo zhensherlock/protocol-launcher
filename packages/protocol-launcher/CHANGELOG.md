@@ -1,5 +1,18 @@
 # protocol-launcher
 
+## 1.3.0
+
+### Minor Changes
+
+- [`d4bd909`](https://github.com/zhensherlock/protocol-launcher/commit/d4bd909c71f4a0b34dee0ac42e71be25a16e7324) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cursor): add createChat function for prompt-based deeplinks
+
+### Patch Changes
+
+- [`7ac2616`](https://github.com/zhensherlock/protocol-launcher/commit/7ac26164e877ae96a8df6e876dd424bcd1fa67bb) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`7ac2616`](https://github.com/zhensherlock/protocol-launcher/commit/7ac26164e877ae96a8df6e876dd424bcd1fa67bb)]:
+  - @protocol-launcher/shared@1.1.1
+
 ## 1.2.0
 
 ### Minor Changes
