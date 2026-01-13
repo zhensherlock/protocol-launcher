@@ -4,7 +4,7 @@
   </a>
 </p>
 
-# Quick Launch URL
+# Protocol Launcher
 
 One-click launch URL generator for protocol-based apps.
 
