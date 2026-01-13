@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { installMCP, openFile, openFolder, openSettings } from 'protocol-launcher/cursor';
+import { installMCP, openFile, openFolder, openSettings, createChat } from 'protocol-launcher/cursor';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -134,3 +134,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
     Open in Cursor
   </VPLink>
 </div>
+
+### Create Chat
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: 'Hello, Cursor!' })
+```
+<div class="flex justify-center">
+  <VPLink :href="createChat({ prompt: 'Hello, Cursor!' })" target="_self">
+    Create Chat
+  </VPLink>
+</div>
+

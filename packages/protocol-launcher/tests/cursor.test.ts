@@ -50,4 +50,11 @@ describe('cursor.ts', () => {
     const url = cursor.openSettings()
     expect(url).toBe('cursor://settings')
   })
+
+  test('createChat should return a URL with prompt', async () => {
+    const url = cursor.createChat({
+      prompt: 'Hello, Cursor!',
+    })
+    expect(url).toBe('cursor://anysphere.cursor-deeplink/prompt?text=Hello%2C%20Cursor!')
+  })
 })
