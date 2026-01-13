@@ -89,3 +89,11 @@ import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
 ```
+
+### Create Chat
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: 'Hello, Cursor!' })
+```
