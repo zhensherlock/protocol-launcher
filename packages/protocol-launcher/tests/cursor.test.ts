@@ -51,6 +51,13 @@ describe('cursor.ts', () => {
     expect(url).toBe('cursor://settings')
   })
 
+  test('openSettings should return a URL with openInNewWindow', async () => {
+    const url = cursor.openSettings({
+      openInNewWindow: true,
+    })
+    expect(url).toBe('cursor://settings?windowId=_blank')
+  })
+
   test('createChat should return a URL with prompt', async () => {
     const url = cursor.createChat({
       prompt: 'Hello, Cursor!',
