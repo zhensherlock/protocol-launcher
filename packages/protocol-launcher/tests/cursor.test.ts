@@ -57,4 +57,12 @@ describe('cursor.ts', () => {
     })
     expect(url).toBe('cursor://anysphere.cursor-deeplink/prompt?text=Hello%2C%20Cursor!')
   })
+
+  test('createChat should return a URL with prompt and openInNewWindow', async () => {
+    const url = cursor.createChat({
+      prompt: 'Hello, Cursor!',
+      openInNewWindow: true,
+    })
+    expect(url).toBe('cursor://anysphere.cursor-deeplink/prompt?text=Hello%2C%20Cursor!&windowId=_blank')
+  })
 })
