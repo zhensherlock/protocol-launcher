@@ -8,6 +8,6 @@ type OpenFile = {
 }
 
 export function openFile(payload: OpenFile) {
-  const { path, line, column, openInNewWindow } = payload
+  const { path, line, column, openInNewWindow = false } = payload
   return `cursor://file${path}${isUndefined(line) ? '' : `:${line}`}${isUndefined(column) ? '' : `:${column}`}${openInNewWindow ? '?windowId=_blank' : ''}`
 }
