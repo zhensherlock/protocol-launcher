@@ -60,6 +60,13 @@ export type MCPServer = {
    * when making requests to the server.
    */
   headers?: Record<string, string>
+
+  /**
+   * Whether to open the server in a new window.
+   *
+   * Defaults to `false`.
+   */
+  openInNewWindow?: boolean
 }
 
 /**
@@ -73,10 +80,11 @@ export type MCPServer = {
  *   type: 'stdio',
  *   command: 'npx',
  *   args: ['-y', '@modelcontextprotocol/server-everything'],
+ *   openInNewWindow: true,
  * })
  */
 export function installMCP(payload: MCPServer, options?: EncodeOptions) {
-  const { name, ...config } = payload
+  const { name, openInNewWindow, ...config } = payload
   const encodedPayload = encodeUrlPayload(config, options)
-  return `cursor://anysphere.cursor-deeplink/mcp/install?name=${encodeURIComponent(name)}&config=${encodedPayload}`
+  return `cursor://anysphere.cursor-deeplink/mcp/install?name=${encodeURIComponent(name)}&config=${encodedPayload}${openInNewWindow ? '&windowId=_blank' : ''}`
 }
