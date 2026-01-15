@@ -204,8 +204,8 @@ export type MCPServerWithName = Omit<MCPServer, 'name'> & {
 
 /**
  * Install MCP Server
- * @param payload MCP Server
- * @param options Encode Options
+ * @param payload MCP Server definition
+ * @param options Encode options
  * @returns Install MCP Server URL
  * @example
  * installMCP([
@@ -244,6 +244,7 @@ export type MCPServerWithName = Omit<MCPServer, 'name'> & {
  *     timeout: 30,
  *   },
  * })
+ * // => 'cherrystudio://mcp/install?servers=xxx'
  * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/main/services/urlschema/mcp-install.ts#L39
  */
 export function installMCP(
