@@ -17,6 +17,7 @@ export default defineConfig({
     'en/index.md': 'index.md',
     'en/guide/what-is-it.md': 'guide/what-is-it.md',
     'en/guide/getting-started.md': 'guide/getting-started.md',
+    'en/extra/examples.md': 'extra/examples.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/cursor.md': 'apps/cursor.md',
     'en/apps/thunder.md': 'apps/thunder.md',
@@ -68,6 +69,10 @@ export default defineConfig({
           { text: 'Thunder', link: '/apps/thunder' },
         ],
       },
+      {
+        text: 'Extra',
+        items: [{ text: 'Examples', link: '/extra/examples' }],
+      },
     ],
 
     search: {
@@ -116,6 +121,11 @@ export default defineConfig({
             ],
           },
           {
+            text: 'Extra',
+            base: '',
+            items: [{ text: 'Examples', link: '/extra/examples' }],
+          },
+          {
             text: '简介',
             base: '',
             items: [
@@ -131,6 +141,11 @@ export default defineConfig({
               { text: 'Cursor', link: '/zh/apps/cursor' },
               { text: 'Thunder', link: '/zh/apps/thunder' },
             ],
+          },
+          {
+            text: '扩展',
+            base: '',
+            items: [{ text: '示例', link: '/zh/extra/examples' }],
           },
         ],
         details: `\

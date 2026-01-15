@@ -35,6 +35,10 @@ export default defineAdditionalConfig({
           { text: 'Thunder', link: '/zh/apps/thunder' },
         ],
       },
+      {
+        text: '扩展',
+        items: [{ text: '示例', link: '/zh/extra/examples' }],
+      },
     ],
 
     search: { options: searchOptions() },
