@@ -71,8 +71,8 @@ export type MCPServer = {
 
 /**
  * Install MCP Server
- * @param payload MCP Server
- * @param options Encode Options
+ * @param payload MCP Server definition
+ * @param options Encode options
  * @returns Install MCP Server URL
  * @example
  * installMCP({
@@ -82,9 +82,10 @@ export type MCPServer = {
  *   args: ['-y', '@modelcontextprotocol/server-everything'],
  *   openInNewWindow: true,
  * })
+ * // => 'cursor://anysphere.cursor-deeplink/mcp/install?name=xxx&config=xxx'
  */
 export function installMCP(payload: MCPServer, options?: EncodeOptions) {
-  const { name, openInNewWindow, ...config } = payload
+  const { name, openInNewWindow = false, ...config } = payload
   const encodedPayload = encodeUrlPayload(config, options)
   return `cursor://anysphere.cursor-deeplink/mcp/install?name=${encodeURIComponent(name)}&config=${encodedPayload}${openInNewWindow ? '&windowId=_blank' : ''}`
 }
