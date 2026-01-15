@@ -21,6 +21,7 @@ export default defineConfig({
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/cursor.md': 'apps/cursor.md',
     'en/apps/thunder.md': 'apps/thunder.md',
+    'en/apps/vscode.md': 'apps/vscode.md',
   },
   base,
   head: [
@@ -67,6 +68,7 @@ export default defineConfig({
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'Cursor', link: '/apps/cursor' },
           { text: 'Thunder', link: '/apps/thunder' },
+          { text: 'VS Code', link: '/apps/vscode' },
         ],
       },
       {
@@ -118,6 +120,7 @@ export default defineConfig({
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
               { text: 'Cursor', link: '/apps/cursor' },
               { text: 'Thunder', link: '/apps/thunder' },
+              { text: 'VS Code', link: '/apps/vscode' },
             ],
           },
           {
@@ -140,6 +143,7 @@ export default defineConfig({
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
               { text: 'Cursor', link: '/zh/apps/cursor' },
               { text: 'Thunder', link: '/zh/apps/thunder' },
+              { text: 'VS Code', link: '/zh/apps/vscode' },
             ],
           },
           {

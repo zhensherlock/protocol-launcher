@@ -33,6 +33,7 @@ export default defineAdditionalConfig({
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
+          { text: 'VS Code', link: '/zh/apps/vscode' },
         ],
       },
       {
