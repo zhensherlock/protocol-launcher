@@ -135,6 +135,7 @@ export type Provider = {
  *   baseUrl: 'https://open.cherryin.ai',
  *   apiKey: 'sk-xxxx',
  * })
+ * // => 'cherrystudio://providers/api-keys?v=1&data=xxx'
  * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/main/services/urlschema/handle-providers.ts
  */
 export function installProvider(payload: Provider, options?: EncodeOptions) {
