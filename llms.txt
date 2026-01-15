@@ -24,6 +24,10 @@
 - [Cursor](/protocol-launcher/apps/cursor.md)
 - [Thunder](/protocol-launcher/apps/thunder.md)
 
+### Extra
+
+- [Examples](/protocol-launcher/extra/examples.md)
+
 ### 简介
 
 - [什么是 Protocol Launcher？](/protocol-launcher/zh/guide/what-is-it.md)
@@ -34,4 +38,8 @@
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
 - [Thunder](/protocol-launcher/zh/apps/thunder.md)
+
+### 扩展
+
+- [示例](/protocol-launcher/zh/extra/examples.md)
 
