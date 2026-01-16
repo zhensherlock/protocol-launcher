@@ -38,7 +38,7 @@ To minimize bundle size, import specific modules directly:
 
 ```typescript [cherry studio]
 // Only imports Cherry Studio related code
-import { installMCP, installProvider } from 'protocol-launcher/cherry-studio'
+import { installMCP } from 'protocol-launcher/cherry-studio'
 ```
 
 ```typescript [cursor]
@@ -61,3 +61,4 @@ For detailed usage instructions for each application, please refer to their resp
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
 * [Thunder](../apps/thunder.md)
+* [VS Code](../apps/vscode.md)

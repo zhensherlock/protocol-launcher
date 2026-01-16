@@ -38,7 +38,7 @@ $ bun add protocol-launcher
 
 ```typescript [cherry studio]
 // 仅导入 Cherry Studio 相关代码
-import { installMCP, installProvider } from 'protocol-launcher/cherry-studio'
+import { installMCP } from 'protocol-launcher/cherry-studio'
 ```
 
 ```typescript [cursor]
@@ -61,3 +61,4 @@ import { cherryStudio, cursor } from 'protocol-launcher'
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
 * [Thunder](../apps/thunder.md)
+* [VS Code](../apps/vscode.md)
