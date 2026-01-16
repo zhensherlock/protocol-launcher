@@ -71,4 +71,4 @@ jobs:
           path: .
 
       - run: |
-          pnpm publish --no-git-checks --provenance --access public
+          npm publish --no-git-checks --provenance --access public
