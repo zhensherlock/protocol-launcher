@@ -37,6 +37,12 @@ jobs:
       - name: Test Package
         run: pnpm run test
 
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v6
+        with:
+          name: package
+          path: packages/${{ env.PACKAGE_NAME }}
+
       - name: Setup Node.js for npm publish (OIDC)
         uses: actions/setup-node@v6
         with:
@@ -50,3 +56,20 @@ jobs:
           pnpm publish --no-git-checks --provenance --access public
 #        env:
 #          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish:
+    if: github.repository == 'zhensherlock/protocol-launcher'
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/download-artifact@v7
+        with:
+          name: package
+          path: packages
+
+      - run: |
+          cd packages/$PACKAGE_NAME
+          pnpm publish --no-git-checks --provenance --access public
