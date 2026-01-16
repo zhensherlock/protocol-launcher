@@ -40,7 +40,6 @@ jobs:
       - name: Publish NPM Package
         run: |
           cd packages/$PACKAGE_NAME
-          pnpm publish --no-git-checks
-#          pnpm publish --no-git-checks --provenance --access public
+          pnpm publish --no-git-checks --provenance --access public
 #        env:
 #          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
