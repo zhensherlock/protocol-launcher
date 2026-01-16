@@ -23,7 +23,7 @@ runs:
         node-version: ${{ inputs.node-version }}
         cache: 'pnpm'
         cache-dependency-path: '**/pnpm-lock.yaml'
-        registry-url: 'https://registry.npmjs.org'
+#        registry-url: 'https://registry.npmjs.org'
 #        always-auth: true
 
     - name: Configure npm authentication
