@@ -15,6 +15,15 @@ export default defineConfig([
     plugins: [isProd && terser()],
   },
   {
+    input: 'src/index.ts',
+    output: {
+      format: 'iife',
+      name: 'ProtocolLauncher',
+      file: 'dist/index.browser.js',
+    },
+    plugins: [isProd && terser()],
+  },
+  {
     input: pluginEntries,
     output: {
       format: 'esm',

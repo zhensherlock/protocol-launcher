@@ -29,6 +29,8 @@
   ],
   "main": "dist/index.js",
   "types": "dist/types/index.d.ts",
+  "unpkg": "dist/index.browser.js",
+  "jsdelivr": "dist/index.browser.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
     "access": "public"
