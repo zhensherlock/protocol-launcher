@@ -68,8 +68,7 @@ jobs:
       - uses: actions/download-artifact@v7
         with:
           name: package
-          path: packages
+          path: .
 
       - run: |
-          cd packages/$PACKAGE_NAME
           pnpm publish --no-git-checks --provenance --access public
