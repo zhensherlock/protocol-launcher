@@ -26,14 +26,15 @@ layout: doc
 
 ## 其他框架
 
-| 框架        | 在线演示                                                                                                                                           |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Angular   | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-angular)    |
-| Svelte    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte)     |
-| SvelteKit | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte-kit) |
-| Astro     | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-astro)      |
-| Webpack   | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-webpack)    |
-| Vanilla   | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-vanilla)    |
+| 框架         | 在线演示                                                                                                                                           |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Angular    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-angular)    |
+| Svelte     | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte)     |
+| SvelteKit  | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte-kit) |
+| Astro      | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-astro)      |
+| Webpack    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-webpack)    |
+| Vanilla    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-vanilla)    |
+| IIFE (CDN) | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-iife)       |
 
 ## 使用提示
 1. 点击任意 "Open in StackBlitz" 按钮即可查看实时示例

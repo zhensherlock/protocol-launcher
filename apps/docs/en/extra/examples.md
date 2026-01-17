@@ -26,16 +26,15 @@ Collection of live examples demonstrating how to integrate protocol-launcher wit
 
 ## Other Frameworks
 
-| Framework | Live Demo                                                                                                                                      |
-|-----------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| Angular   | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-angular)    |
-| Svelte    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte)     |
-| SvelteKit | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte-kit) |
-| Astro     | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-astro)      |
-| Webpack   | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-webpack)    |
-| Vanilla   | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-vanilla)    |
-
-[//]: # (| IIFE &#40;CDN&#41;  | [![Open in StackBlitz]&#40;https://developer.stackblitz.com/img/open_in_stackblitz.svg&#41;]&#40;https://stackblitz.com/edit/js-y7xfw5&#41; |)
+| Framework  | Live Demo                                                                                                                                      |
+|------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| Angular    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-angular)    |
+| Svelte     | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte)     |
+| SvelteKit  | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-svelte-kit) |
+| Astro      | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-astro)      |
+| Webpack    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-webpack)    |
+| Vanilla    | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-vanilla)    |
+| IIFE (CDN) | [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/protocol-launcher-iife)       |
 
 ## Usage Tips
 1. Click any "Open in StackBlitz" button to explore the live example
