@@ -70,6 +70,10 @@
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
     },
+    "./github-desktop": {
+      "types": "./dist/types/github-desktop/index.d.ts",
+      "import": "./dist/github-desktop/index.js"
+    },
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
