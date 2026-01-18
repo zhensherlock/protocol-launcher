@@ -37,11 +37,14 @@ jobs:
       - name: Test Package
         run: pnpm run test
 
+      - name: Pack package
+        run: pnpm -C packages/${{ env.PACKAGE_NAME }} pack
+
       - name: Upload dist artifact
         uses: actions/upload-artifact@v6
         with:
-          name: package
-          path: packages/${{ env.PACKAGE_NAME }}
+          name: npm-package
+          path: packages/${{ env.PACKAGE_NAME }}/*.tgz
 
 #      - name: Publish NPM Package
 #        run: |
@@ -60,11 +63,11 @@ jobs:
 
       - uses: actions/download-artifact@v7
         with:
-          name: package
+          name: npm-package
           path: .
 
       - uses: actions/setup-node@v6
         with:
           node-version: '24'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm publish --no-git-checks --provenance --access public
+      - run: npm publish *.tgz --no-git-checks --provenance --access public
