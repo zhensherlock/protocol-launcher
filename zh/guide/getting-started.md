@@ -46,6 +46,21 @@ import { installMCP } from 'protocol-launcher/cherry-studio'
 import { installMCP } from 'protocol-launcher/cursor'
 ```
 
+```typescript [github desktop]
+// 仅导入 GitHub Desktop 相关代码
+import { openRepo } from 'protocol-launcher/github-desktop'
+```
+
+```typescript [thunder]
+// 仅导入 Thunder 相关代码
+import { downloadUrl } from 'protocol-launcher/thunder'
+```
+
+```typescript [vscode]
+// 仅导入 VS Code 相关代码
+import { openFile } from 'protocol-launcher/vscode'
+```
+
 :::
 
 ### 全量导入
@@ -53,12 +68,13 @@ import { installMCP } from 'protocol-launcher/cursor'
 您也可以从根包导入所有内容，但这将包含所有应用程序模块，并且不支持 Tree Shaking：
 
 ```typescript
-import { cherryStudio, cursor } from 'protocol-launcher'
+import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 ```
 
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)

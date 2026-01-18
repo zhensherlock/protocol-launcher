@@ -585,6 +585,21 @@ import { installMCP } from 'protocol-launcher/cherry-studio'
 import { installMCP } from 'protocol-launcher/cursor'
 ```
 
+```typescript [github desktop]
+// Only imports GitHub Desktop related code
+import { openRepo } from 'protocol-launcher/github-desktop'
+```
+
+```typescript [thunder]
+// Only imports Thunder related code
+import { downloadUrl } from 'protocol-launcher/thunder'
+```
+
+```typescript [vscode]
+// Only imports VS Code related code
+import { openFile } from 'protocol-launcher/vscode'
+```
+
 :::
 
 ### Full Import
@@ -592,15 +607,104 @@ import { installMCP } from 'protocol-launcher/cursor'
 You can also import everything from the root package, but this will include all application modules and does not support tree-shaking:
 
 ```typescript
-import { cherryStudio, cursor } from 'protocol-launcher'
+import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 ```
 
 For detailed usage instructions for each application, please refer to their respective guides:
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+
+---
+
+---
+url: /protocol-launcher/apps/github-desktop.md
+---
+
+# GitHub Desktop
+
+[GitHub Desktop](https://github.com/apps/desktop) is a desktop application for version control and collaboration with GitHub. **Protocol Launcher** allows you to generate deep links to open and configure resources in GitHub Desktop.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'github' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openFile({
+  owner: 'zhensherlock',
+  repo: 'protocol-launcher',
+  branch: 'main',
+  path: 'packages/shared/src/index.ts',
+})
+```
+
+### Open Repository
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRepo' : 'github' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openRepo({
+  owner: 'zhensherlock',
+  repo: 'protocol-launcher',
+  branch: 'main',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/github-desktop.md
+---
+
+# GitHub Desktop
+
+[GitHub Desktop](https://github.com/apps/desktop) 是一款用于 GitHub 版本控制与协作的桌面应用程序。**Protocol Launcher** 允许你生成深度链接，用于在 GitHub Desktop 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'github' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openFile({
+  owner: 'zhensherlock',
+  repo: 'protocol-launcher',
+  branch: 'main',
+  path: 'packages/shared/src/index.ts',
+})
+```
+
+### 打开仓库
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRepo' : 'github' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openRepo({
+  owner: 'zhensherlock',
+  repo: 'protocol-launcher',
+  branch: 'main',
+})
+```
 
 ---
 
@@ -789,6 +893,7 @@ Currently, we support the following applications:
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
 
@@ -821,6 +926,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
 
@@ -876,6 +982,21 @@ import { installMCP } from 'protocol-launcher/cherry-studio'
 import { installMCP } from 'protocol-launcher/cursor'
 ```
 
+```typescript [github desktop]
+// 仅导入 GitHub Desktop 相关代码
+import { openRepo } from 'protocol-launcher/github-desktop'
+```
+
+```typescript [thunder]
+// 仅导入 Thunder 相关代码
+import { downloadUrl } from 'protocol-launcher/thunder'
+```
+
+```typescript [vscode]
+// 仅导入 VS Code 相关代码
+import { openFile } from 'protocol-launcher/vscode'
+```
+
 :::
 
 ### 全量导入
@@ -883,13 +1004,14 @@ import { installMCP } from 'protocol-launcher/cursor'
 您也可以从根包导入所有内容，但这将包含所有应用程序模块，并且不支持 Tree Shaking：
 
 ```typescript
-import { cherryStudio, cursor } from 'protocol-launcher'
+import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 ```
 
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Cursor](../apps/cursor.md)
+* [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
 
