@@ -20,6 +20,7 @@ export default defineConfig({
     'en/extra/examples.md': 'extra/examples.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/cursor.md': 'apps/cursor.md',
+    'en/apps/github-desktop.md': 'apps/github-desktop.md',
     'en/apps/thunder.md': 'apps/thunder.md',
     'en/apps/vscode.md': 'apps/vscode.md',
   },
@@ -67,6 +68,7 @@ export default defineConfig({
         items: [
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'Cursor', link: '/apps/cursor' },
+          { text: 'GitHub Desktop', link: '/apps/github-desktop' },
           { text: 'Thunder', link: '/apps/thunder' },
           { text: 'VS Code', link: '/apps/vscode' },
         ],
@@ -119,6 +121,7 @@ export default defineConfig({
             items: [
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
               { text: 'Cursor', link: '/apps/cursor' },
+              { text: 'GitHub Desktop', link: '/apps/github-desktop' },
               { text: 'Thunder', link: '/apps/thunder' },
               { text: 'VS Code', link: '/apps/vscode' },
             ],
@@ -142,6 +145,7 @@ export default defineConfig({
             items: [
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
               { text: 'Cursor', link: '/zh/apps/cursor' },
+              { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
               { text: 'Thunder', link: '/zh/apps/thunder' },
               { text: 'VS Code', link: '/zh/apps/vscode' },
             ],
@@ -162,10 +166,16 @@ export default defineConfig({
 - 🚀 One-click deep links to trigger app actions
 `,
       }),
+      // https://icon-sets.iconify.design/logos/?keyword=logos
+      // https://icon-sets.iconify.design/vscode-icons/?keyword=vscode-icons
       groupIconVitePlugin({
         customIcon: {
-          cursor: localIconLoader(import.meta.url, '../assets/cursor.svg'),
           'cherry studio': localIconLoader(import.meta.url, '../assets/cherry-studio.svg'),
+          cursor: localIconLoader(import.meta.url, '../assets/cursor.svg'),
+          'github desktop': 'logos:github-octocat',
+          thunder: localIconLoader(import.meta.url, '../assets/thunder.svg'),
+          vscode: 'vscode-icons:file-type-vscode',
+          xcode: 'logos:xcode',
         },
       }),
     ],

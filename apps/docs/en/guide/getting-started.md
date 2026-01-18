@@ -42,6 +42,21 @@ import { installMCP } from 'protocol-launcher/cherry-studio'
 // Only imports Cursor related code
 import { installMCP } from 'protocol-launcher/cursor'
 ```
+
+```typescript [github desktop]
+// Only imports GitHub Desktop related code
+import { openRepo } from 'protocol-launcher/github-desktop'
+```
+
+```typescript [thunder]
+// Only imports Thunder related code
+import { downloadUrl } from 'protocol-launcher/thunder'
+```
+
+```typescript [vscode]
+// Only imports VS Code related code
+import { openFile } from 'protocol-launcher/vscode'
+```
 :::
 
 ### Full Import
@@ -49,12 +64,14 @@ import { installMCP } from 'protocol-launcher/cursor'
 You can also import everything from the root package, but this will include all application modules and does not support tree-shaking:
 
 ```typescript
-import { cherryStudio, cursor } from 'protocol-launcher'
+import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 ```
 
 For detailed usage instructions for each application, please refer to their respective guides:
 
 - [Cherry Studio](../apps/cherry-studio.md)
 - [Cursor](../apps/cursor.md)
+- [GitHub Desktop](../apps/github-desktop.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [Xcode](../apps/xcode.md)

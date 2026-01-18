@@ -23,6 +23,7 @@ Currently, we support the following applications:
 
 - [Cherry Studio](../apps/cherry-studio.md)
 - [Cursor](../apps/cursor.md)
+- [GitHub Desktop](../apps/github-desktop.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 
