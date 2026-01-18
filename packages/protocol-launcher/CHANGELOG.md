@@ -1,5 +1,11 @@
 # protocol-launcher
 
+## 1.5.1
+
+### Patch Changes
+
+- [`d5e21dc`](https://github.com/zhensherlock/protocol-launcher/commit/d5e21dc19d7c777fdbe7853c8c19711f18488ac2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix: publish npm packages via pnpm pack to correctly resolve workspace dependencies
+
 ## 1.5.0
 
 ### Minor Changes
