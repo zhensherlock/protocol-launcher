@@ -1,6 +1,6 @@
 {
   "name": "protocol-launcher",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "One-click launch URL generator for protocol-based apps.",
   "type": "module",
   "author": "zhensherlock",
@@ -81,6 +81,10 @@
     "./vscode": {
       "types": "./dist/types/vscode/index.d.ts",
       "import": "./dist/vscode/index.js"
+    },
+    "./xcode": {
+      "types": "./dist/types/xcode/index.d.ts",
+      "import": "./dist/xcode/index.js"
     }
   }
 }

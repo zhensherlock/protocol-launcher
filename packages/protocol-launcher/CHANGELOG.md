@@ -1,5 +1,22 @@
 # protocol-launcher
 
+## 1.5.0
+
+### Minor Changes
+
+- [`c34c41d`](https://github.com/zhensherlock/protocol-launcher/commit/c34c41d73bb9d87fb865e03a67dbc157f3ea90e6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(github-desktop): add github desktop protocol launcher support
+
+- [`0e4f047`](https://github.com/zhensherlock/protocol-launcher/commit/0e4f047e324498042bf51afaa7a4c37235cedd10) Thanks [@zhensherlock](https://github.com/zhensherlock)! - test(github-desktop): add tests for github desktop url generation
+
+- [`9294597`](https://github.com/zhensherlock/protocol-launcher/commit/929459765a75493688f588077ca608f1bd91fa74) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(github-desktop): add openRepo function to generate GitHub Desktop URLs
+
+- [`ab7dc85`](https://github.com/zhensherlock/protocol-launcher/commit/ab7dc8540dbf076a05d74d03c192e32105635232) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(protocol-launcher): add github-desktop exports to package.json
+
+### Patch Changes
+
+- Updated dependencies [[`d7870ea`](https://github.com/zhensherlock/protocol-launcher/commit/d7870ea9ac77af45409c613ec59c05279245fe25)]:
+  - @protocol-launcher/shared@1.1.3
+
 ## 1.4.0
 
 ### Minor Changes
