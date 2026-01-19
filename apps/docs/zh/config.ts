@@ -35,6 +35,7 @@ export default defineAdditionalConfig({
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
+          { text: 'Xcode', link: '/zh/apps/xcode' },
         ],
       },
       {

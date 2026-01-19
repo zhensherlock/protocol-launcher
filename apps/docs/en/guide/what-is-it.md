@@ -26,5 +26,6 @@ Currently, we support the following applications:
 - [GitHub Desktop](../apps/github-desktop.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [Xcode](../apps/xcode.md)
 
 More applications will be added in the future.

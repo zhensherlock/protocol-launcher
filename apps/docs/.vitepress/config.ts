@@ -23,6 +23,7 @@ export default defineConfig({
     'en/apps/github-desktop.md': 'apps/github-desktop.md',
     'en/apps/thunder.md': 'apps/thunder.md',
     'en/apps/vscode.md': 'apps/vscode.md',
+    'en/apps/xcode.md': 'apps/xcode.md',
   },
   base,
   head: [
@@ -71,6 +72,7 @@ export default defineConfig({
           { text: 'GitHub Desktop', link: '/apps/github-desktop' },
           { text: 'Thunder', link: '/apps/thunder' },
           { text: 'VS Code', link: '/apps/vscode' },
+          { text: 'Xcode', link: '/apps/xcode' },
         ],
       },
       {
@@ -124,6 +126,7 @@ export default defineConfig({
               { text: 'GitHub Desktop', link: '/apps/github-desktop' },
               { text: 'Thunder', link: '/apps/thunder' },
               { text: 'VS Code', link: '/apps/vscode' },
+              { text: 'Xcode', link: '/apps/xcode' },
             ],
           },
           {
@@ -148,6 +151,7 @@ export default defineConfig({
               { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
               { text: 'Thunder', link: '/zh/apps/thunder' },
               { text: 'VS Code', link: '/zh/apps/vscode' },
+              { text: 'Xcode', link: '/zh/apps/xcode' },
             ],
           },
           {

@@ -26,5 +26,6 @@ layout: doc
 - [GitHub Desktop](../apps/github-desktop.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [Xcode](../apps/xcode.md)
 
 未来将添加更多应用程序。
