@@ -74,6 +74,10 @@
       "types": "./dist/types/github-desktop/index.d.ts",
       "import": "./dist/github-desktop/index.js"
     },
+    "./idea": {
+      "types": "./dist/types/idea/index.d.ts",
+      "import": "./dist/idea/index.js"
+    },
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
