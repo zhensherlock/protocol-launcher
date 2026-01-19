@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { cherryStudio } from '../src'
 
-describe('cherry-studio.ts', () => {
+describe('cherry-studio', () => {
   test('installMCP should return a URL with base64-encoded payload', async () => {
     const url = cherryStudio.installMCP({
       mcpServers: {

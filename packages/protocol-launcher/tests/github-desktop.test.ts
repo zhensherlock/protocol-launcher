@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { githubDesktop } from '../src'
 
-describe('github-desktop.ts', () => {
+describe('github-desktop', () => {
   test('openFile should return a URL with owner, repo and path', async () => {
     const url = githubDesktop.openFile({
       owner: 'zhensherlock',

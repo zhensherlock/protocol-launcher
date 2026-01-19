@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { cursor } from '../src'
 
-describe('cursor.ts', () => {
+describe('cursor', () => {
   test('installMCP should return a URL with base64-encoded payload', async () => {
     const url = cursor.installMCP({
       name: 'server-everything',

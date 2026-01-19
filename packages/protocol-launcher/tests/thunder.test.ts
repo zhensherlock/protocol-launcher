@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { thunder } from '../src'
 
-describe('thunder.ts', () => {
+describe('thunder', () => {
   test('download should return a URL with base64-encoded payload', async () => {
     const url = thunder.downloadUrl({
       url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',

@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest'
 import { vscode } from '../src'
 
-describe('vscode.ts', () => {
+describe('vscode', () => {
   test('openFile should return a URL with path', async () => {
     const url = vscode.openFile({
       path: '/etc/hosts',
