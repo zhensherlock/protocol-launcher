@@ -1,5 +1,7 @@
 /**
  * Open file definition.
+ *
+ * @link https://github.com/desktop/desktop/blob/development/app/src/lib/parse-app-url.ts
  */
 type OpenFile = {
   /**
@@ -13,9 +15,12 @@ type OpenFile = {
   repo: string
 
   /**
+   * Pull request number.
+   */
+  pr?: string
+
+  /**
    * Branch of the repo.
-   *
-   * Defaults to `main`.
    */
   branch?: string
 
@@ -38,8 +43,18 @@ type OpenFile = {
  *   path: 'packages/shared/src/index.ts',
  * })
  * // => 'x-github-client://openRepo/https://github.com/zhensherlock/protocol-launcher?branch=main&filepath=packages/shared/src/index.ts'
+ * @link https://github.com/desktop/desktop/blob/development/app/src/lib/parse-app-url.ts
+ * @link https://github.com/desktop/desktop/issues/19965
  */
 export function openFile(payload: OpenFile) {
-  const { owner, repo, branch = 'main', path } = payload
-  return `x-github-client://openRepo/https://github.com/${owner}/${repo}?branch=${branch}&filepath=${path}`
+  const { owner, repo, pr, branch, path } = payload
+  const query = []
+  if (pr) {
+    query.push(`pr=${pr}`)
+  }
+  if (branch) {
+    query.push(`branch=${branch}`)
+  }
+  query.push(`filepath=${path}`)
+  return `x-github-client://openRepo/https://github.com/${owner}/${repo}?${query.join('&')}`
 }
