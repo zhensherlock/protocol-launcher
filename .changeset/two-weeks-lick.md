@@ -2,4 +2,4 @@
 'protocol-launcher': minor
 ---
 
-feat(github-action): add support for pull request parameter in openRepo
+feat(github-desktop): add support for pull request parameter in openRepo
