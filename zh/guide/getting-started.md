@@ -61,6 +61,11 @@ import { downloadUrl } from 'protocol-launcher/thunder'
 import { openFile } from 'protocol-launcher/vscode'
 ```
 
+```typescript [xcode]
+// 仅导入 Xcode 相关代码
+import { cloneProject } from 'protocol-launcher/xcode'
+```
+
 :::
 
 ### 全量导入
@@ -78,3 +83,4 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [Xcode](../apps/xcode.md)

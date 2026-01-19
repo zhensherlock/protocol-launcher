@@ -61,6 +61,11 @@ import { downloadUrl } from 'protocol-launcher/thunder'
 import { openFile } from 'protocol-launcher/vscode'
 ```
 
+```typescript [xcode]
+// Only imports Xcode related code
+import { cloneProject } from 'protocol-launcher/xcode'
+```
+
 :::
 
 ### Full Import
@@ -78,3 +83,4 @@ For detailed usage instructions for each application, please refer to their resp
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [Xcode](../apps/xcode.md)

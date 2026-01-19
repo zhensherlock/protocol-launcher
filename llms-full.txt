@@ -600,6 +600,11 @@ import { downloadUrl } from 'protocol-launcher/thunder'
 import { openFile } from 'protocol-launcher/vscode'
 ```
 
+```typescript [xcode]
+// Only imports Xcode related code
+import { cloneProject } from 'protocol-launcher/xcode'
+```
+
 :::
 
 ### Full Import
@@ -617,6 +622,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [Xcode](../apps/xcode.md)
 
 ---
 
@@ -703,6 +709,170 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openRepo({
   owner: 'zhensherlock',
   repo: 'protocol-launcher',
   branch: 'main',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/goland.md
+---
+
+# GoLand
+
+[GoLand](https://www.jetbrains.com/go/) is an integrated development environment for Go development. **Protocol Launcher** allows you to generate deep links to open and configure resources in GoLand.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'goland' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goland.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'goland' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goland.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/goland.md
+---
+
+# GoLand
+
+[GoLand](https://www.jetbrains.com/go/) 是一款用于 Go 开发的集成开发环境。**Protocol Launcher** 允许你生成深度链接，用于在 GoLand 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'goland' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goland.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'goland' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goland.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/idea.md
+---
+
+# IntelliJ IDEA
+
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) is an integrated development environment for JVM and multi-language development. **Protocol Launcher** allows you to generate deep links to open and configure resources in IntelliJ IDEA.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'idea' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/idea.md
+---
+
+# IntelliJ IDEA
+
+[IntelliJ IDEA](https://www.jetbrains.com/idea/) 是一款用于 JVM 及多语言开发的集成开发环境。**Protocol Launcher** 允许你生成深度链接，用于在 IntelliJ IDEA 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'idea' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
 ```
 
@@ -896,8 +1066,67 @@ Currently, we support the following applications:
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [Xcode](../apps/xcode.md)
 
 More applications will be added in the future.
+
+---
+
+---
+url: /protocol-launcher/apps/xcode.md
+---
+
+# Xcode
+
+[Xcode](https://developer.apple.com/xcode/) is an integrated development environment for Apple platforms. **Protocol Launcher** allows you to generate deep links to open and configure resources in Xcode.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'xcode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'xcode.'}}cloneProject({
+  url: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/xcode.md
+---
+
+# Xcode
+
+[Xcode](https://developer.apple.com/xcode/) 是一款用于 Apple 平台的集成开发环境。**Protocol Launcher** 允许你生成深度链接，用于在 Xcode 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 下载文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'xcode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'xcode.'}}cloneProject({
+  url: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
 
 ---
 
@@ -929,6 +1158,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [Xcode](../apps/xcode.md)
 
 未来将添加更多应用程序。
 
@@ -997,6 +1227,11 @@ import { downloadUrl } from 'protocol-launcher/thunder'
 import { openFile } from 'protocol-launcher/vscode'
 ```
 
+```typescript [xcode]
+// 仅导入 Xcode 相关代码
+import { cloneProject } from 'protocol-launcher/xcode'
+```
+
 :::
 
 ### 全量导入
@@ -1014,6 +1249,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [Xcode](../apps/xcode.md)
 
 ---
 

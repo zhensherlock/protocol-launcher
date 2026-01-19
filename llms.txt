@@ -23,8 +23,11 @@
 - [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/apps/cursor.md)
 - [GitHub Desktop](/protocol-launcher/apps/github-desktop.md)
+- [GoLand](/protocol-launcher/apps/goland.md)
+- [IntelliJ IDEA](/protocol-launcher/apps/idea.md)
 - [Thunder](/protocol-launcher/apps/thunder.md)
 - [VS Code](/protocol-launcher/apps/vscode.md)
+- [Xcode](/protocol-launcher/apps/xcode.md)
 
 ### Extra
 
@@ -40,8 +43,11 @@
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
 - [GitHub Desktop](/protocol-launcher/zh/apps/github-desktop.md)
+- [GoLand](/protocol-launcher/zh/apps/goland.md)
+- [IntelliJ IDEA](/protocol-launcher/zh/apps/idea.md)
 - [Thunder](/protocol-launcher/zh/apps/thunder.md)
 - [VS Code](/protocol-launcher/zh/apps/vscode.md)
+- [Xcode](/protocol-launcher/zh/apps/xcode.md)
 
 ### 扩展
 
