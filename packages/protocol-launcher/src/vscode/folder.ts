@@ -22,9 +22,9 @@ type OpenFolder = {
  * @returns VS Code open folder URL.
  * @example
  * openFolder({
- *   path: '/etc/hosts',
+ *   path: '/etc',
  * })
- * // => 'vscode://file/etc/hosts'
+ * // => 'vscode://file/etc'
  */
 export function openFolder(payload: OpenFolder) {
   const { path, openInNewWindow = false } = payload

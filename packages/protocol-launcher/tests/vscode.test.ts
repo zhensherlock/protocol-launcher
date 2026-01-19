@@ -21,17 +21,17 @@ describe('vscode', () => {
 
   test('openFolder should return a URL with path and openInNewWindow', async () => {
     const url = vscode.openFolder({
-      path: '/System',
+      path: '/etc',
       openInNewWindow: true,
     })
-    expect(url).toBe('vscode://file/System?windowId=_blank')
+    expect(url).toBe('vscode://file/etc?windowId=_blank')
   })
 
   test('openFolder should return a URL with path', async () => {
     const url = vscode.openFolder({
-      path: '/System',
+      path: '/etc',
     })
-    expect(url).toBe('vscode://file/System')
+    expect(url).toBe('vscode://file/etc')
   })
 
   test('openSettings should return a URL', async () => {
