@@ -48,6 +48,16 @@ import { installMCP } from 'protocol-launcher/cursor'
 import { openRepo } from 'protocol-launcher/github-desktop'
 ```
 
+```typescript [goland]
+// Only imports GoLand related code
+import { openRepo } from 'protocol-launcher/goland'
+```
+
+```typescript [idea]
+// Only imports IntelliJ IDEA related code
+import { openRepo } from 'protocol-launcher/idea'
+```
+
 ```typescript [thunder]
 // Only imports Thunder related code
 import { downloadUrl } from 'protocol-launcher/thunder'
@@ -77,6 +87,8 @@ For detailed usage instructions for each application, please refer to their resp
 - [Cherry Studio](../apps/cherry-studio.md)
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)
+- [GoLand](../apps/goland.md)
+- [IntelliJ IDEA](../apps/idea.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 - [Xcode](../apps/xcode.md)
