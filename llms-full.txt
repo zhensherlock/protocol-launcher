@@ -997,6 +997,18 @@ import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from 
 const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
 ```
 
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
 ---
 
 ---
