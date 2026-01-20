@@ -45,4 +45,13 @@ describe('vscode', () => {
     })
     expect(url).toBe('vscode://settings?windowId=_blank')
   })
+
+  test('openRemote should return a URL', async () => {
+    const url = vscode.openRemote({
+      type: 'ssh-remote',
+      host: 'root@172.18.105.209:22',
+      path: '/code/my-project',
+    })
+    expect(url).toBe('vscode://vscode-remote/ssh-remote+root@172.18.105.209:22/code/my-project')
+  })
 })
