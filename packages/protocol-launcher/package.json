@@ -1,6 +1,6 @@
 {
   "name": "protocol-launcher",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "description": "One-click launch URL generator for protocol-based apps.",
   "type": "module",
   "author": "zhensherlock",
@@ -82,6 +82,18 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./phpstorm": {
+      "types": "./dist/types/phpstorm/index.d.ts",
+      "import": "./dist/phpstorm/index.js"
+    },
+    "./pycharm": {
+      "types": "./dist/types/pycharm/index.d.ts",
+      "import": "./dist/pycharm/index.js"
+    },
+    "./rustrover": {
+      "types": "./dist/types/rustrover/index.d.ts",
+      "import": "./dist/rustrover/index.js"
+    },
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
@@ -93,6 +105,10 @@
     "./xcode": {
       "types": "./dist/types/xcode/index.d.ts",
       "import": "./dist/xcode/index.js"
+    },
+    "./webstorm": {
+      "types": "./dist/types/webstorm/index.d.ts",
+      "import": "./dist/webstorm/index.js"
     }
   }
 }
