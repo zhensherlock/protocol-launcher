@@ -53,3 +53,9 @@
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
+### Other
+
+- [PhpStorm](/protocol-launcher/apps/phpstorm.md)
+- [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
+- [PyCharm](/protocol-launcher/apps/pycharm.md)
+- [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
