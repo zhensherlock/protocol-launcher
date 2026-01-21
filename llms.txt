@@ -59,3 +59,5 @@
 - [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
 - [PyCharm](/protocol-launcher/apps/pycharm.md)
 - [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
+- [RustRover](/protocol-launcher/apps/rustrover.md)
+- [RustRover](/protocol-launcher/zh/apps/rustrover.md)
