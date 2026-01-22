@@ -25,8 +25,12 @@
 - [GitHub Desktop](/protocol-launcher/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/apps/goland.md)
 - [IntelliJ IDEA](/protocol-launcher/apps/idea.md)
+- [PhpStorm](/protocol-launcher/apps/phpstorm.md)
+- [PyCharm](/protocol-launcher/apps/pycharm.md)
+- [RustRover](/protocol-launcher/apps/rustrover.md)
 - [Thunder](/protocol-launcher/apps/thunder.md)
 - [VS Code](/protocol-launcher/apps/vscode.md)
+- [WebStorm](/protocol-launcher/apps/webstorm.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
 
 ### Extra
@@ -45,21 +49,15 @@
 - [GitHub Desktop](/protocol-launcher/zh/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/zh/apps/goland.md)
 - [IntelliJ IDEA](/protocol-launcher/zh/apps/idea.md)
+- [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
+- [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
+- [RustRover](/protocol-launcher/zh/apps/rustrover.md)
 - [Thunder](/protocol-launcher/zh/apps/thunder.md)
 - [VS Code](/protocol-launcher/zh/apps/vscode.md)
+- [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 
 ### 扩展
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
-### Other
-
-- [PhpStorm](/protocol-launcher/apps/phpstorm.md)
-- [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
-- [PyCharm](/protocol-launcher/apps/pycharm.md)
-- [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
-- [RustRover](/protocol-launcher/apps/rustrover.md)
-- [RustRover](/protocol-launcher/zh/apps/rustrover.md)
-- [WebStorm](/protocol-launcher/apps/webstorm.md)
-- [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
