@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "bowser": "^2.13.1",
-    "lodash-es": "^4.17.22",
+    "lodash-es": "^4.17.23",
     "pinia": "^3.0.4",
     "protocol-launcher": "workspace:*",
     "vue": "^3.5.27"
