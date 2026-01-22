@@ -26,8 +26,12 @@ layout: doc
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [PhpStorm](../apps/phpstorm.md)
+- [PyCharm](../apps/pycharm.md)
+- [RustRover](../apps/rustrover.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [WebStorm](../apps/webstorm.md)
 - [Xcode](../apps/xcode.md)
 
 未来将添加更多应用程序。

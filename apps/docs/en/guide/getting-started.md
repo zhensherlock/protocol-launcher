@@ -58,6 +58,21 @@ import { openRepo } from 'protocol-launcher/goland'
 import { openRepo } from 'protocol-launcher/idea'
 ```
 
+```typescript [phpstorm]
+// Only imports PhpStorm related code
+import { openRepo } from 'protocol-launcher/phpstorm'
+```
+
+```typescript [pycharm]
+// Only imports PyCharm related code
+import { openRepo } from 'protocol-launcher/pycharm'
+```
+
+```typescript [rustrover]
+// Only imports RustRover related code
+import { openRepo } from 'protocol-launcher/rustrover'
+```
+
 ```typescript [thunder]
 // Only imports Thunder related code
 import { downloadUrl } from 'protocol-launcher/thunder'
@@ -66,6 +81,11 @@ import { downloadUrl } from 'protocol-launcher/thunder'
 ```typescript [vscode]
 // Only imports VS Code related code
 import { openFile } from 'protocol-launcher/vscode'
+```
+
+```typescript [webstorm]
+// Only imports WebStorm related code
+import { openRepo } from 'protocol-launcher/webstorm'
 ```
 
 ```typescript [xcode]
@@ -89,6 +109,10 @@ For detailed usage instructions for each application, please refer to their resp
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [PhpStorm](../apps/phpstorm.md)
+- [PyCharm](../apps/pycharm.md)
+- [RustRover](../apps/rustrover.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [WebStorm](../apps/webstorm.md)
 - [Xcode](../apps/xcode.md)

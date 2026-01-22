@@ -58,6 +58,21 @@ import { openRepo } from 'protocol-launcher/goland'
 import { openRepo } from 'protocol-launcher/idea'
 ```
 
+```typescript [phpstorm]
+// 仅导入 PhpStorm 相关代码
+import { openRepo } from 'protocol-launcher/phpstorm'
+```
+
+```typescript [pycharm]
+// 仅导入 PyCharm 相关代码
+import { openRepo } from 'protocol-launcher/pycharm'
+```
+
+```typescript [rustrover]
+// 仅导入 RustRover 相关代码
+import { openRepo } from 'protocol-launcher/rustrover'
+```
+
 ```typescript [thunder]
 // 仅导入 Thunder 相关代码
 import { downloadUrl } from 'protocol-launcher/thunder'
@@ -66,6 +81,11 @@ import { downloadUrl } from 'protocol-launcher/thunder'
 ```typescript [vscode]
 // 仅导入 VS Code 相关代码
 import { openFile } from 'protocol-launcher/vscode'
+```
+
+```typescript [webstorm]
+// 仅导入 WebStorm 相关代码
+import { openFile } from 'protocol-launcher/webstorm'
 ```
 
 ```typescript [xcode]
@@ -89,6 +109,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [PhpStorm](../apps/phpstorm.md)
+- [PyCharm](../apps/pycharm.md)
+- [RustRover](../apps/rustrover.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [WebStorm](../apps/webstorm.md)
 - [Xcode](../apps/xcode.md)
