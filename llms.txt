@@ -61,3 +61,5 @@
 - [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
 - [RustRover](/protocol-launcher/apps/rustrover.md)
 - [RustRover](/protocol-launcher/zh/apps/rustrover.md)
+- [WebStorm](/protocol-launcher/apps/webstorm.md)
+- [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
