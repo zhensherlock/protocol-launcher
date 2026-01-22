@@ -1,5 +1,38 @@
 # protocol-launcher
 
+## 1.7.0
+
+### Minor Changes
+
+- [`0e1c28b`](https://github.com/zhensherlock/protocol-launcher/commit/0e1c28b8ba40c8b6465c389081a0a79dd68d6164) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(rustrover): add openFile function
+
+- [`70b8b17`](https://github.com/zhensherlock/protocol-launcher/commit/70b8b17d8b8bb0852c1419c659e88e3dc26d5557) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(webstorm): add webstorm protocol launcher support
+
+- [`0ee253f`](https://github.com/zhensherlock/protocol-launcher/commit/0ee253f244a45e33d539cc58628aa24c278aba63) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(rustrover): add openFolder function
+
+- [`e3eb1ba`](https://github.com/zhensherlock/protocol-launcher/commit/e3eb1ba66c1ce48ccdfdc25b0bf55519b530875b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pycharm): add pycharm protocol launcher support
+
+- [`0ab62f3`](https://github.com/zhensherlock/protocol-launcher/commit/0ab62f3af27ea9a55967fcc084e3ea2c8eb61c31) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pycharm): add openFile function
+
+- [`feb958f`](https://github.com/zhensherlock/protocol-launcher/commit/feb958f8b10c673ca61773f6064b4d073f8af2ef) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(phpstorm): add openFolder function
+
+- [`0133079`](https://github.com/zhensherlock/protocol-launcher/commit/0133079e489abed197590fdebce8367009b6b58a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(phpstorm): add openFile function
+
+- [`14cc950`](https://github.com/zhensherlock/protocol-launcher/commit/14cc95044adbeaf343dc2ffc00e999416dd965e4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pycharm): add openFolder function
+
+- [`873ff11`](https://github.com/zhensherlock/protocol-launcher/commit/873ff11d008966ddaa9fd6679f42dd33e6ca895e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(webstorm): add openFolder function
+
+- [`5a45388`](https://github.com/zhensherlock/protocol-launcher/commit/5a453881175a745b049c44726d0ca5ee35c4798e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(phpstorm): add phpstorm protocol launcher support
+
+- [`2101a28`](https://github.com/zhensherlock/protocol-launcher/commit/2101a28744de1637b39dba552b633e884c1509f1) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(webstorm): add openFile function
+
+- [`0844a50`](https://github.com/zhensherlock/protocol-launcher/commit/0844a50ae8cc68558dab8b1199146dab64ba546d) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(rustrover): add rustrover protocol launcher support
+
+### Patch Changes
+
+- Updated dependencies [[`354123d`](https://github.com/zhensherlock/protocol-launcher/commit/354123d7468acb5e84066d41b5ab97335e4d9510)]:
+  - @protocol-launcher/shared@1.1.5
+
 ## 1.6.0
 
 ### Minor Changes
