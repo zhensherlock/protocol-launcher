@@ -26,6 +26,7 @@ export default defineConfig({
     'en/apps/phpstorm.md': 'apps/phpstorm.md',
     'en/apps/pycharm.md': 'apps/pycharm.md',
     'en/apps/rustrover.md': 'apps/rustrover.md',
+    'en/apps/telegram.md': 'apps/telegram.md',
     'en/apps/thunder.md': 'apps/thunder.md',
     'en/apps/vscode.md': 'apps/vscode.md',
     'en/apps/webstorm.md': 'apps/webstorm.md',

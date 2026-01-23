@@ -94,6 +94,10 @@
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"
     },
+    "./telegram": {
+      "types": "./dist/types/telegram/index.d.ts",
+      "import": "./dist/telegram/index.js"
+    },
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
