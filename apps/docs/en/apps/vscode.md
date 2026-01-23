@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, openSettings, openRemote } from 'protocol-launcher/vscode';
+import { openFile, openFolder, openRemote, openSettings } from 'protocol-launcher/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -65,18 +65,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openFolder({
   </VPLink>
 </div>
 
-### Open Settings
-```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
-
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
-```
-<div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
-    Open in VSCode
-  </VPLink>
-</div>
-
 ### Open Remote
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscode' }} } from '{{ importPath }}'
@@ -89,6 +77,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
 ```
 <div class="flex justify-center">
   <VPLink :href="openRemote(openRemoteParams)" target="_self">
+    Open in VSCode
+  </VPLink>
+</div>
+
+### Open Settings
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
+```
+<div class="flex justify-center">
+  <VPLink :href="openSettings()" target="_self">
     Open in VSCode
   </VPLink>
 </div>

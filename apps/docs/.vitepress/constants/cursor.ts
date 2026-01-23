@@ -38,3 +38,9 @@ export const openFolderParams = (isWindows: boolean) => {
     openInNewWindow: true,
   }
 }
+
+export const openRemoteParams = {
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+}

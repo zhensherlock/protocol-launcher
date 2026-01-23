@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { installMCP, openFile, openFolder, openSettings, createChat } from 'protocol-launcher/cursor';
+import { installMCP, openFile, openFolder, openRemote, openSettings, createChat } from 'protocol-launcher/cursor';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -14,6 +14,7 @@ import {
   installSSEMCPServerParams,
   openFileParams,
   openFolderParams,
+  openRemoteParams,
 } from '../../.vitepress/constants/cursor';
 
 const appStore = useAppStore();
@@ -119,6 +120,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFolder({
 ```
 <div class="flex justify-center">
   <VPLink :href="openFolder(openFolderParams(appStore.isWindows))" target="_self">
+    Open in Cursor
+  </VPLink>
+</div>
+
+### Open Remote
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openRemote(openRemoteParams)" target="_self">
     Open in Cursor
   </VPLink>
 </div>
