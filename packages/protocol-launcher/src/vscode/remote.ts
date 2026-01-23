@@ -59,6 +59,13 @@ type OpenRemote = {
    * @example '/code/my-project'
    */
   path: string
+
+  /**
+   * Whether to open the folder in a new window.
+   *
+   * Defaults to `false`.
+   */
+  openInNewWindow?: boolean
 }
 
 /**
@@ -75,6 +82,6 @@ type OpenRemote = {
  * // => 'vscode://vscode-remote/ssh-remote+root@172.18.105.209:22/code/my-project'
  */
 export function openRemote(payload: OpenRemote) {
-  const { type, host, path } = payload
-  return `vscode://vscode-remote/${type}+${host}${path}`
+  const { type, host, path, openInNewWindow = false } = payload
+  return `vscode://vscode-remote/${type}+${host}${path}${openInNewWindow ? '?windowId=_blank' : ''}`
 }
