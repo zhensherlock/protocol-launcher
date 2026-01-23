@@ -82,6 +82,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFolder({
 })
 ```
 
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]

@@ -39,14 +39,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openFolder({
 })
 ```
 
-### Open Settings
-
-```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
-
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
-```
-
 ### Open Remote
 
 ```ts-vue [{{currentMethod}}]
@@ -57,4 +49,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
 })
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
 ```
