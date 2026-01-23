@@ -61,3 +61,7 @@
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
+### Other
+
+- [Telegram](/protocol-launcher/apps/telegram.md)
+- [Telegram](/protocol-launcher/zh/apps/telegram.md)
