@@ -85,4 +85,23 @@ describe('cursor', () => {
     })
     expect(url).toBe('cursor://anysphere.cursor-deeplink/prompt?text=Hello%2C%20Cursor!&windowId=_blank')
   })
+
+  test('openRemote should return a URL with type, host, and path', async () => {
+    const url = cursor.openRemote({
+      type: 'ssh-remote',
+      host: 'root@172.18.105.209:22',
+      path: '/code/my-project',
+    })
+    expect(url).toBe('cursor://vscode-remote/ssh-remote+root@172.18.105.209:22/code/my-project')
+  })
+
+  test('openRemote should return a URL with type, host, path and openInNewWindow', async () => {
+    const url = cursor.openRemote({
+      type: 'ssh-remote',
+      host: 'root@172.18.105.209:22',
+      path: '/code/my-project',
+      openInNewWindow: true,
+    })
+    expect(url).toBe('cursor://vscode-remote/ssh-remote+root@172.18.105.209:22/code/my-project?windowId=_blank')
+  })
 })
