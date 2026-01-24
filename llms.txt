@@ -28,6 +28,7 @@
 - [PhpStorm](/protocol-launcher/apps/phpstorm.md)
 - [PyCharm](/protocol-launcher/apps/pycharm.md)
 - [RustRover](/protocol-launcher/apps/rustrover.md)
+- [Telegram](/protocol-launcher/apps/telegram.md)
 - [Thunder](/protocol-launcher/apps/thunder.md)
 - [VS Code](/protocol-launcher/apps/vscode.md)
 - [WebStorm](/protocol-launcher/apps/webstorm.md)
@@ -52,6 +53,7 @@
 - [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
 - [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
 - [RustRover](/protocol-launcher/zh/apps/rustrover.md)
+- [Telegram](/protocol-launcher/zh/apps/telegram.md)
 - [Thunder](/protocol-launcher/zh/apps/thunder.md)
 - [VS Code](/protocol-launcher/zh/apps/vscode.md)
 - [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
@@ -61,7 +63,3 @@
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
-### Other
-
-- [Telegram](/protocol-launcher/apps/telegram.md)
-- [Telegram](/protocol-launcher/zh/apps/telegram.md)

@@ -76,6 +76,11 @@ import { openRepo } from 'protocol-launcher/pycharm'
 import { openRepo } from 'protocol-launcher/rustrover'
 ```
 
+```typescript [telegram]
+// 仅导入 Telegram 相关代码
+import { open } from 'protocol-launcher/telegram'
+```
+
 ```typescript [thunder]
 // 仅导入 Thunder 相关代码
 import { downloadUrl } from 'protocol-launcher/thunder'
@@ -116,6 +121,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [RustRover](../apps/rustrover.md)
+* [Telegram](../apps/telegram.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
