@@ -38,6 +38,7 @@ export default defineAdditionalConfig({
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
+          { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },

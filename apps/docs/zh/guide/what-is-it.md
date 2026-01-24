@@ -29,6 +29,7 @@ layout: doc
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [RustRover](../apps/rustrover.md)
+- [Telegram](../apps/telegram.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 - [WebStorm](../apps/webstorm.md)

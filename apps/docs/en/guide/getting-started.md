@@ -73,6 +73,11 @@ import { openRepo } from 'protocol-launcher/pycharm'
 import { openRepo } from 'protocol-launcher/rustrover'
 ```
 
+```typescript [telegram]
+// Only imports Telegram related code
+import { open } from 'protocol-launcher/telegram'
+```
+
 ```typescript [thunder]
 // Only imports Thunder related code
 import { downloadUrl } from 'protocol-launcher/thunder'
@@ -112,6 +117,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [RustRover](../apps/rustrover.md)
+- [Telegram](../apps/telegram.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 - [WebStorm](../apps/webstorm.md)
