@@ -29,7 +29,7 @@ jobs:
         uses: ./.github/actions/setup-pnpm
         with:
           node-version: 22
-#          npm-token: ${{ secrets.NPM_TOKEN }}
+          npm-token: ${{ secrets.NPM_TOKEN }}
 
       - name: Build Package
         run: pnpm run build
