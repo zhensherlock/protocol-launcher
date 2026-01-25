@@ -1,4 +1,5 @@
 import terser from '@rollup/plugin-terser'
+import typescript from '@rollup/plugin-typescript'
 import { glob } from 'glob'
 import { defineConfig } from 'rolldown'
 
@@ -32,6 +33,6 @@ export default defineConfig([
       preserveModules: true,
       preserveModulesRoot: 'src',
     },
-    plugins: [isProd && terser()],
+    plugins: [isProd && terser(), typescript()],
   },
 ])
