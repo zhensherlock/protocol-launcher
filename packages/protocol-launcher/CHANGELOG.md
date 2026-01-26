@@ -1,5 +1,16 @@
 # protocol-launcher
 
+## 1.8.1
+
+### Patch Changes
+
+- [`a1cdb30`](https://github.com/zhensherlock/protocol-launcher/commit/a1cdb30a4d68d224be2e2cfad0610074311da1ba) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`f14b16b`](https://github.com/zhensherlock/protocol-launcher/commit/f14b16b1f94b4b0618e14d19425f5d493b742abc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - build(protocol-launcher): add TypeScript plugin to rollup config
+
+- Updated dependencies [[`a1cdb30`](https://github.com/zhensherlock/protocol-launcher/commit/a1cdb30a4d68d224be2e2cfad0610074311da1ba), [`6be943e`](https://github.com/zhensherlock/protocol-launcher/commit/6be943e56464e83258be56fffca7897d42167c7e)]:
+  - @protocol-launcher/shared@1.1.7
+
 ## 1.8.0
 
 ### Minor Changes
