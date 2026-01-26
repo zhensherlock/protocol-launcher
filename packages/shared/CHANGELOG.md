@@ -1,5 +1,13 @@
 # @protocol-launcher/shared
 
+## 1.1.7
+
+### Patch Changes
+
+- [`a1cdb30`](https://github.com/zhensherlock/protocol-launcher/commit/a1cdb30a4d68d224be2e2cfad0610074311da1ba) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`6be943e`](https://github.com/zhensherlock/protocol-launcher/commit/6be943e56464e83258be56fffca7897d42167c7e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - build(shared): add TypeScript plugin to rollup configuration
+
 ## 1.1.6
 
 ### Patch Changes
