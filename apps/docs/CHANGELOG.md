@@ -1,5 +1,12 @@
 # @protocol-launcher/docs
 
+## 0.0.15
+
+### Patch Changes
+
+- Updated dependencies [[`cacb2d7`](https://github.com/zhensherlock/protocol-launcher/commit/cacb2d738b922ad4aeb9c14f229294ee106804fd)]:
+  - protocol-launcher@1.8.3
+
 ## 0.0.14
 
 ### Patch Changes
