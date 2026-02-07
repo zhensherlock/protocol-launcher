@@ -52,7 +52,7 @@
     "@types/node": "^22.19.8",
     "@vitest/coverage-v8": "^4.0.18",
     "cross-env": "^10.1.0",
-    "eslint": "^9.39.2",
+    "eslint": "^10.0.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-vue": "^10.7.0",
