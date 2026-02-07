@@ -1,5 +1,11 @@
 # protocol-launcher
 
+## 1.8.5
+
+### Patch Changes
+
+- [`6c88ec2`](https://github.com/zhensherlock/protocol-launcher/commit/6c88ec228a7df745054099414926cd64d799d4fb) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
 ## 1.8.4
 
 ### Patch Changes
