@@ -5,12 +5,13 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, openSettings } from 'protocol-launcher/vscode';
+import { openFile, openFolder, openRemote, openSettings } from 'protocol-launcher/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   openFileParams,
   openFolderParams,
+  openRemoteParams,
 } from '../../.vitepress/constants/vscode';
 
 const appStore = useAppStore();
@@ -60,6 +61,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openFolder({
 ```
 <div class="flex justify-center">
   <VPLink :href="openFolder(openFolderParams(appStore.isWindows))" target="_self">
+    在 VSCode 中打开
+  </VPLink>
+</div>
+
+### 远程开发
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openRemote(openRemoteParams)" target="_self">
     在 VSCode 中打开
   </VPLink>
 </div>
