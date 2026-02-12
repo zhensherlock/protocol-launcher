@@ -19,6 +19,7 @@ export default defineConfig({
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
+    'en/apps/code-buddy.md': 'apps/code-buddy.md',
     'en/apps/cursor.md': 'apps/cursor.md',
     'en/apps/github-desktop.md': 'apps/github-desktop.md',
     'en/apps/goland.md': 'apps/goland.md',
@@ -75,6 +76,7 @@ export default defineConfig({
         text: 'Applications',
         items: [
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
+          { text: 'CodeBuddy', link: '/apps/code-buddy' },
           { text: 'Cursor', link: '/apps/cursor' },
           { text: 'GitHub Desktop', link: '/apps/github-desktop' },
           { text: 'GoLand', link: '/apps/goland' },
@@ -203,6 +205,7 @@ export default defineConfig({
       groupIconVitePlugin({
         customIcon: {
           'cherry studio': localIconLoader(import.meta.url, '../assets/cherry-studio.svg'),
+          codebuddy: localIconLoader(import.meta.url, '../assets/codebuddy.svg'),
           cursor: localIconLoader(import.meta.url, '../assets/cursor.svg'),
           'github desktop': 'logos:github-octocat',
           goland: 'logos:goland',

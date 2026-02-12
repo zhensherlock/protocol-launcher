@@ -38,6 +38,11 @@ $ bun add protocol-launcher
 import { installMCP } from 'protocol-launcher/cherry-studio'
 ```
 
+```typescript [codebuddy]
+// 仅导入 CodeBuddy 相关代码
+import { openFile } from 'protocol-launcher/code-buddy'
+```
+
 ```typescript [cursor]
 // 仅导入 Cursor 相关代码
 import { installMCP } from 'protocol-launcher/cursor'
@@ -110,6 +115,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
 - [Cherry Studio](../apps/cherry-studio.md)
+- [CodeBuddy](../apps/code-buddy.md)
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)

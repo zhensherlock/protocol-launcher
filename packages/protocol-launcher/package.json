@@ -66,6 +66,10 @@
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"
     },
+    "./code-buddy": {
+      "types": "./dist/types/code-buddy/index.d.ts",
+      "import": "./dist/code-buddy/index.js"
+    },
     "./cursor": {
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"

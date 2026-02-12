@@ -31,6 +31,7 @@ export default defineAdditionalConfig({
         text: '应用程序',
         items: [
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
+          { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'GoLand', link: '/zh/apps/goland' },
@@ -112,7 +113,7 @@ function searchOptions(): Partial<DefaultTheme.AlgoliaSearchOptions> {
           preToolCallText: '搜索中...',
           duringToolCallText: '搜索 ',
           afterToolCallText: '已搜索',
-          aggregatedToolCallText: '已搜索',
+          // aggregatedToolCallText: '已搜索',
         },
         footer: {
           selectText: '选择',
