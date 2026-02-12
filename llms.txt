@@ -63,3 +63,7 @@
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
+### Other
+
+- [CodeBuddy](/protocol-launcher/apps/code-buddy.md)
+- [CodeBuddy](/protocol-launcher/zh/apps/code-buddy.md)

@@ -41,6 +41,11 @@ To minimize bundle size, import specific modules directly:
 import { installMCP } from 'protocol-launcher/cherry-studio'
 ```
 
+```typescript [codebuddy]
+// Only imports CodeBuddy related code
+import { openFile } from 'protocol-launcher/code-buddy'
+```
+
 ```typescript [cursor]
 // Only imports Cursor related code
 import { installMCP } from 'protocol-launcher/cursor'
@@ -114,6 +119,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 For detailed usage instructions for each application, please refer to their respective guides:
 
 * [Cherry Studio](../apps/cherry-studio.md)
+* [CodeBuddy](../apps/code-buddy.md)
 * [Cursor](../apps/cursor.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
