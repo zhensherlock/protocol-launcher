@@ -1,5 +1,11 @@
 # @protocol-launcher/shared
 
+## 1.2.0
+
+### Minor Changes
+
+- [`c44136b`](https://github.com/zhensherlock/protocol-launcher/commit/c44136bcae9b2317f6fd478cb1debf99bfd95c73) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore(deps): update dependencies
+
 ## 1.1.10
 
 ### Patch Changes
