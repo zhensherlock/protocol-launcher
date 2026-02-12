@@ -1,5 +1,18 @@
 # protocol-launcher
 
+## 1.9.0
+
+### Minor Changes
+
+- [`797bc72`](https://github.com/zhensherlock/protocol-launcher/commit/797bc727be4169880d62f242deba56451bed6fc0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(telegram): add openDomain function for deep linking
+
+- [`d106dc0`](https://github.com/zhensherlock/protocol-launcher/commit/d106dc04c0d0865f9ff724dd8300c8e7ad559754) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(codebuddy): add support for CodeBuddy deep linking
+
+### Patch Changes
+
+- Updated dependencies [[`c44136b`](https://github.com/zhensherlock/protocol-launcher/commit/c44136bcae9b2317f6fd478cb1debf99bfd95c73)]:
+  - @protocol-launcher/shared@1.2.0
+
 ## 1.8.5
 
 ### Patch Changes
