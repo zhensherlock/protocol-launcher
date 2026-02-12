@@ -22,3 +22,13 @@ import { {{ currentMethod === 'On-Demand' ? 'open' : 'telegram' }} } from '{{ im
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}open()
 ```
+
+### Open Domain
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDomain' : 'telegram' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}openDomain({
+  domain: 'zhensherlock',
+})
+```
