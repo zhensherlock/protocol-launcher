@@ -6,4 +6,9 @@ describe('telegram', () => {
     const url = telegram.open()
     expect(url).toBe('tg://')
   })
+
+  test('openDomain should return a URL', async () => {
+    const url = telegram.openDomain({ domain: 'zhensherlock' })
+    expect(url).toBe('tg://resolve?domain=zhensherlock')
+  })
 })

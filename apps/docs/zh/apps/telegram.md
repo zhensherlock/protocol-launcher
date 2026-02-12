@@ -5,9 +5,10 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open } from 'protocol-launcher/telegram';
+import { open, openDomain } from 'protocol-launcher/telegram';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
+import { openDomainParams } from '../../.vitepress/constants/telegram';
 
 const appStore = useAppStore();
 const currentMethod = ref('On-Demand');
@@ -38,5 +39,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}open()
 <div class="flex justify-center">
   <VPLink :href="open()" target="_self">
     打开 Telegram
+  </VPLink>
+</div>
+
+### Open Domain
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDomain' : 'telegram' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}openDomain({
+  domain: 'zhensherlock',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openDomain(openDomainParams)" target="_self">
+    在 Telegram 中打开
   </VPLink>
 </div>
