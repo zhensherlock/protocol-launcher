@@ -49,7 +49,7 @@ importers:
         version: 5.5.5(eslint@10.0.0(jiti@2.6.1))(prettier@3.8.1)
       eslint-plugin-vue:
         specifier: ^10.7.0
-        version: 10.7.0(@typescript-eslint/parser@8.55.0(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3))(eslint@10.0.0(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@10.0.0(jiti@2.6.1)))
+        version: 10.8.0(@typescript-eslint/parser@8.55.0(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3))(eslint@10.0.0(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@10.0.0(jiti@2.6.1)))
       glob:
         specifier: ^13.0.2
         version: 13.0.2
@@ -1796,13 +1796,13 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-vue@10.7.0:
-    resolution: {integrity: sha512-r2XFCK4qlo1sxEoAMIoTTX0PZAdla0JJDt1fmYiworZUX67WeEGqm+JbyAg3M+pGiJ5U6Mp5WQbontXWtIW7TA==}
+  eslint-plugin-vue@10.8.0:
+    resolution: {integrity: sha512-f1J/tcbnrpgC8suPN5AtdJ5MQjuXbSU9pGRSSYAuF3SHoiYCOdEX6O22pLaRyLHXvDcOe+O5ENgc1owQ587agA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       '@stylistic/eslint-plugin': ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
       '@typescript-eslint/parser': ^7.0.0 || ^8.0.0
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
       vue-eslint-parser: ^10.0.0
     peerDependenciesMeta:
       '@stylistic/eslint-plugin':
@@ -2988,6 +2988,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.7.4:
+    resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   serialize-javascript@6.0.2:
     resolution: {integrity: sha512-Saa1xPByTTq2gdeFZYLLo+RFE35NHZkAbqZeWNd3BpzppeVisAqpDjcp8dyf6uIvEqJRd46jemmyA4iFIeVk8g==}
 
@@ -3828,7 +3833,7 @@ snapshots:
   '@commitlint/is-ignored@20.4.1':
     dependencies:
       '@commitlint/types': 20.4.0
-      semver: 7.7.3
+      semver: 7.7.4
 
   '@commitlint/lint@20.4.1':
     dependencies:
@@ -4523,7 +4528,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.55.0
       debug: 4.4.3
       minimatch: 9.0.5
-      semver: 7.7.3
+      semver: 7.7.4
       tinyglobby: 0.2.15
       ts-api-utils: 2.4.0(typescript@5.9.3)
       typescript: 5.9.3
@@ -5254,14 +5259,14 @@ snapshots:
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.12
 
-  eslint-plugin-vue@10.7.0(@typescript-eslint/parser@8.55.0(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3))(eslint@10.0.0(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@10.0.0(jiti@2.6.1))):
+  eslint-plugin-vue@10.8.0(@typescript-eslint/parser@8.55.0(eslint@10.0.0(jiti@2.6.1))(typescript@5.9.3))(eslint@10.0.0(jiti@2.6.1))(vue-eslint-parser@10.2.0(eslint@10.0.0(jiti@2.6.1))):
     dependencies:
       '@eslint-community/eslint-utils': 4.9.1(eslint@10.0.0(jiti@2.6.1))
       eslint: 10.0.0(jiti@2.6.1)
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 7.1.1
-      semver: 7.7.3
+      semver: 7.7.4
       vue-eslint-parser: 10.2.0(eslint@10.0.0(jiti@2.6.1))
       xml-name-validator: 4.0.0
     optionalDependencies:
@@ -5926,7 +5931,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.3
+      semver: 7.7.4
 
   mark.js@8.11.1: {}
 
@@ -6585,6 +6590,8 @@ snapshots:
   semver@6.3.1: {}
 
   semver@7.7.3: {}
+
+  semver@7.7.4: {}
 
   serialize-javascript@6.0.2:
     dependencies:
