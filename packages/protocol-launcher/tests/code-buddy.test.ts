@@ -2,6 +2,11 @@ import { describe, expect, test } from 'vitest'
 import { codeBuddy } from '../src'
 
 describe('code-buddy', () => {
+  test('open should return a URL', async () => {
+    const url = codeBuddy.open()
+    expect(url).toBe('codebuddy://getStarted')
+  })
+
   test('openFile should return a URL with path', async () => {
     const url = codeBuddy.openFile({
       path: '/etc/hosts',
