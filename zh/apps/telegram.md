@@ -23,7 +23,7 @@ import { {{ currentMethod === 'On-Demand' ? 'open' : 'telegram' }} } from '{{ im
 const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}open()
 ```
 
-### Open Domain
+### 打开 Domain
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openDomain' : 'telegram' }} } from '{{ importPath }}'
