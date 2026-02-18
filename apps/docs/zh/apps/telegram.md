@@ -42,7 +42,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}open()
   </VPLink>
 </div>
 
-### Open Domain
+### 打开 Domain
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openDomain' : 'telegram' }} } from '{{ importPath }}'
