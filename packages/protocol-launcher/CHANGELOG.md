@@ -1,5 +1,11 @@
 # protocol-launcher
 
+## 1.9.1
+
+### Patch Changes
+
+- [`2e1270c`](https://github.com/zhensherlock/protocol-launcher/commit/2e1270cd2ff20596c9f9f85e9143e7c8927caac5) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
 ## 1.9.0
 
 ### Minor Changes
