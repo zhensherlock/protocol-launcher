@@ -1,5 +1,14 @@
 # protocol-launcher
 
+## 1.9.2
+
+### Patch Changes
+
+- [`d4fc6a2`](https://github.com/zhensherlock/protocol-launcher/commit/d4fc6a29e349552a55723ef61c1a7af0ce3715e8) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`d4fc6a2`](https://github.com/zhensherlock/protocol-launcher/commit/d4fc6a29e349552a55723ef61c1a7af0ce3715e8)]:
+  - @protocol-launcher/shared@1.2.1
+
 ## 1.9.1
 
 ### Patch Changes
