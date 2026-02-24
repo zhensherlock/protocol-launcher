@@ -13,7 +13,7 @@ export default defineAdditionalConfig({
         items: [
           {
             text: 'Changelog',
-            link: 'https://github.com/zhensherlock/protocol-launcher/blob/main/packages/core/CHANGELOG.md',
+            link: 'https://github.com/zhensherlock/protocol-launcher/blob/main/packages/protocol-launcher/CHANGELOG.md',
           },
         ],
       },
