@@ -31,7 +31,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 <SelectInstallationMethod v-model="currentMethod" />
 
-### 下载文件
+### 克隆项目
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'xcode' }} } from '{{ importPath }}'
