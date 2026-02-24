@@ -38,7 +38,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
   type: 'streamable_http',
   url: 'https://mcp.qcc.com/basic/stream',
   headers: {
-    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
 })
 ```
@@ -53,7 +53,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}installMCP({
   type: 'sse',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
 })
 ```

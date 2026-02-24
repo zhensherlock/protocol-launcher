@@ -15,6 +15,49 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+### Install STDIO MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### Install Streamable HTTP MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### Install SSE MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
 ### Open File
 
 ```ts-vue [{{currentMethod}}]

@@ -15,6 +15,49 @@ url: /protocol-launcher/zh/apps/vscode.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+### 安装 STDIO MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### 安装 Streamable HTTP MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### 安装 SSE MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
 ### 打开文件
 
 ```ts-vue [{{currentMethod}}]
