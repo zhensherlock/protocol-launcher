@@ -10,7 +10,7 @@ export const installStreamableHTTPMCPServerParams = {
   type: 'sse',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
 }
 
@@ -19,7 +19,7 @@ export const installSSEMCPServerParams = {
   type: 'sse',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
 }
 

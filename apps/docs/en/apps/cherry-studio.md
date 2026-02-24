@@ -58,7 +58,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       type: 'streamableHttp',
       baseUrl: 'https://mcp.qcc.com/basic/stream',
       headers: {
-        Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+        Authorization: 'REPLACE_WITH_YOUR_TOKEN',
       },
       provider: 'QCC',
       providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
@@ -73,7 +73,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       type: 'sse',
       baseUrl: 'https://mcp.qcc.com/basic/sse',
       headers: {
-        Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+        Authorization: 'REPLACE_WITH_YOUR_TOKEN',
       },
       provider: 'QCC',
       providerUrl: 'https://openapi.qcc.com/mcpTools?service=risk',
@@ -124,7 +124,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'streamableHttp',
   baseUrl: 'https://mcp.qcc.com/basic/stream',
   headers: {
-    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
   provider: 'QCC',
   providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
@@ -150,7 +150,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'sse',
   baseUrl: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
   provider: 'QCC',
   providerUrl: 'https://openapi.qcc.com/mcpTools?service=risk',
