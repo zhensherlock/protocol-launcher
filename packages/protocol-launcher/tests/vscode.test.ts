@@ -2,6 +2,31 @@ import { describe, expect, test } from 'vitest'
 import { vscode } from '../src'
 
 describe('vscode', () => {
+  test('installMCP should return a URL with payload', async () => {
+    const url = vscode.installMCP({
+      name: 'server-everything',
+      type: 'stdio',
+      command: 'npx',
+      args: ['-y', '@modelcontextprotocol/server-everything'],
+    })
+    expect(url).toBe(
+      'vscode:mcp/install?%7B%22name%22%3A%22server-everything%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D',
+    )
+  })
+
+  test('installMCP should return a URL with payload and openInNewWindow', async () => {
+    const url = vscode.installMCP({
+      name: 'server-everything',
+      type: 'stdio',
+      command: 'npx',
+      args: ['-y', '@modelcontextprotocol/server-everything'],
+      openInNewWindow: true,
+    })
+    expect(url).toBe(
+      'vscode:mcp/install?%7B%22name%22%3A%22server-everything%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D&windowId=_blank',
+    )
+  })
+
   test('openFile should return a URL with path', async () => {
     const url = vscode.openFile({
       path: '/etc/hosts',

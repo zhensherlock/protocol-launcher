@@ -5,13 +5,16 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, openRemote, openSettings } from 'protocol-launcher/vscode';
+import { openFile, openFolder, installMCP, openRemote, openSettings } from 'protocol-launcher/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   openFileParams,
   openFolderParams,
   openRemoteParams,
+  installSTDIOMCPServerParams,
+  installStreamableHTTPMCPServerParams,
+  installSSEMCPServerParams,
 } from '../../.vitepress/constants/vscode';
 
 const appStore = useAppStore();
@@ -32,6 +35,62 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+### 安装 STDIO MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="installMCP(installSTDIOMCPServerParams)" target="_self">
+    添加到 VSCode
+  </VPLink>
+</div>
+
+### 安装 Streamable HTTP MCP 服务
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+  },
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="installMCP(installStreamableHTTPMCPServerParams)" target="_self">
+    添加到 VSCode
+  </VPLink>
+</div>
+
+### 安装 SSE MCP 服务
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'M0jtlHI3ASqdMXkC3pBcibrFwmVxsD1QMreZxcSM1LbDNGPE',
+  },
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="installMCP(installSSEMCPServerParams)" target="_self">
+    添加到 VSCode
+  </VPLink>
+</div>
 
 ### 打开文件
 ```ts-vue [{{currentMethod}}]
