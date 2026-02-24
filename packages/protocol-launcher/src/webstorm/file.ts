@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in WebStorm
  *
  * @param payload Open file definition.
- * @returns WebStorm Open File URL.
+ * @returns WebStorm open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

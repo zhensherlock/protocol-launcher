@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in MacVim
  *
  * @param payload Open file definition.
- * @returns MacVim Open File URL.
+ * @returns MacVim open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

@@ -12,7 +12,7 @@ export type OpenDomain = {
  * Open domain in Telegram.
  *
  * @param payload Open domain definition.
- * @returns Telegram Open Domain URL.
+ * @returns Telegram open domain URL.
  * @example
  * openDomain({
  *   domain: 'zhensherlock',

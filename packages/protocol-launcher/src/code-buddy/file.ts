@@ -31,7 +31,7 @@ type OpenFile = {
  * Open file in CodeBuddy.
  *
  * @param payload Open file definition.
- * @returns CodeBuddy Open File URL.
+ * @returns CodeBuddy open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

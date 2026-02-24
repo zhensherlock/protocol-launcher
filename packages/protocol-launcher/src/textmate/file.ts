@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in TextMate
  *
  * @param payload Open file definition.
- * @returns TextMate Open File URL.
+ * @returns TextMate open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

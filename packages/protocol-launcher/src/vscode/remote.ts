@@ -72,7 +72,7 @@ type OpenRemote = {
  * Open remote in VS Code
  *
  * @param payload Open remote definition.
- * @returns VS Code Open Remote URL.
+ * @returns VS Code open remote URL.
  * @example
  * openRemote({
  *   type: 'ssh-remote',

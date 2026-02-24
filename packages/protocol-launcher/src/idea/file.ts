@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in IntelliJ IDEA
  *
  * @param payload Open file definition.
- * @returns IntelliJ IDEA Open File URL.
+ * @returns IntelliJ IDEA open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

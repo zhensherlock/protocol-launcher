@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in RustRover
  *
  * @param payload Open file definition.
- * @returns RustRover Open File URL.
+ * @returns RustRover open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in PhpStorm
  *
  * @param payload Open file definition.
- * @returns PhpStorm Open File URL.
+ * @returns PhpStorm open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

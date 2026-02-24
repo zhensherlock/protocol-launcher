@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in PyCharm
  *
  * @param payload Open file definition.
- * @returns PyCharm Open File URL.
+ * @returns PyCharm open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

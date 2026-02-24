@@ -1,7 +1,7 @@
 /**
  * Open CodeBuddy.
  *
- * @returns CodeBuddy Open URL.
+ * @returns CodeBuddy open URL.
  * @example
  * open()
  * // => 'codebuddy://getStarted'

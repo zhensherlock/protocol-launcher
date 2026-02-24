@@ -31,7 +31,7 @@ type OpenFile = {
  * Open file in VS Code
  *
  * @param payload Open file definition.
- * @returns VS Code Open File URL.
+ * @returns VS Code open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',

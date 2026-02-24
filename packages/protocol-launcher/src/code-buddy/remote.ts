@@ -72,7 +72,7 @@ type OpenRemote = {
  * Open remote in CodeBuddy.
  *
  * @param payload Open remote definition.
- * @returns CodeBuddy Open Remote URL.
+ * @returns CodeBuddy open remote URL.
  * @example
  * openRemote({
  *   type: 'ssh-remote',

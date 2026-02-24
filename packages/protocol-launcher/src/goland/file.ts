@@ -24,7 +24,7 @@ type OpenFile = {
  * Open file in GoLand
  *
  * @param payload Open file definition.
- * @returns GoLand Open File URL.
+ * @returns GoLand open file URL.
  * @example
  * openFile({
  *   path: '/etc/hosts',
