@@ -40,6 +40,7 @@ export default defineAdditionalConfig({
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
+          { text: 'TextMate', link: '/zh/apps/textmate' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },

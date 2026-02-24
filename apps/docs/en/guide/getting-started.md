@@ -124,6 +124,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [PyCharm](../apps/pycharm.md)
 - [RustRover](../apps/rustrover.md)
 - [Telegram](../apps/telegram.md)
+- [TextMate](../apps/textmate.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 - [WebStorm](../apps/webstorm.md)
