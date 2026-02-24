@@ -408,7 +408,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openFolder({
 })
 ```
 
-### 打开远程连接
+### 远程开发
 
 ```ts-vue [{{currentMethodDesc}}]
 import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'codeBuddy' }} } from '{{ importPath }}'
@@ -625,6 +625,18 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'cursor' }} } from '{
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
   openInNewWindow: true,
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
 })
 ```
 
@@ -2007,7 +2019,7 @@ url: /protocol-launcher/zh/apps/xcode.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
-### 下载文件
+### 克隆项目
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'xcode' }} } from '{{ importPath }}'

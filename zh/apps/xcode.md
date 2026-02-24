@@ -15,7 +15,7 @@ url: /protocol-launcher/zh/apps/xcode.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
-### 下载文件
+### 克隆项目
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'xcode' }} } from '{{ importPath }}'

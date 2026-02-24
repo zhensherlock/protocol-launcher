@@ -47,7 +47,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openFolder({
 })
 ```
 
-### 打开远程连接
+### 远程开发
 
 ```ts-vue [{{currentMethodDesc}}]
 import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'codeBuddy' }} } from '{{ importPath }}'
