@@ -5,22 +5,22 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder } from 'protocol-launcher/textmate';
+import { openFile, openFolder } from 'protocol-launcher/macvim';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   openFileParams,
   openFolderParams,
-} from '../../.vitepress/constants/textmate';
+} from '../../.vitepress/constants/macvim';
 
 const appStore = useAppStore();
 const currentMethod = ref('On-Demand');
-const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protocol-launcher/textmate' : 'protocol-launcher');
+const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protocol-launcher/macvim' : 'protocol-launcher');
 </script>
 
-# TextMate
+# MacVim
 
-[TextMate](https://macromates.com/) 是一款用于 macOS 的通用图形用户界面文本编辑器，支持多种编程语言。**Protocol Launcher** 允许你生成深度链接，用于在 TextMate 中打开资源。
+[MacVim](https://macvim.org/) 是一款 Vim 文本编辑器的 macOS 版本。**Protocol Launcher** 允许你生成深度链接，用于在 MacVim 中打开资源。
 
 ## 使用
 
@@ -34,9 +34,9 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 ### 打开文件
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'textmate' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'macvim' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'textmate.'}}openFile({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macvim.'}}openFile({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
   line: 1,
   column: 2,
@@ -44,20 +44,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'textmate.'}}openFile({
 ```
 <div class="flex justify-center">
   <VPLink :href="openFile(openFileParams(appStore.isWindows))" target="_self">
-    在 TextMate 中打开
+    在 MacVim 中打开
   </VPLink>
 </div>
 
 ### 打开文件夹
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'textmate' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'macvim' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'textmate.'}}openFolder({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macvim.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
 ```
 <div class="flex justify-center">
   <VPLink :href="openFolder(openFolderParams(appStore.isWindows))" target="_self">
-    在 TextMate 中打开
+    在 MacVim 中打开
   </VPLink>
 </div>

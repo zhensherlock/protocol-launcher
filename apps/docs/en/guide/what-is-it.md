@@ -26,6 +26,7 @@ Currently, we support the following applications:
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [MacVim](../apps/macvim.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [RustRover](../apps/rustrover.md)

@@ -86,6 +86,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./macvim": {
+      "types": "./dist/types/macvim/index.d.ts",
+      "import": "./dist/macvim/index.js"
+    },
     "./phpstorm": {
       "types": "./dist/types/phpstorm/index.d.ts",
       "import": "./dist/phpstorm/index.js"
