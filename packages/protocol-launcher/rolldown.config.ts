@@ -13,6 +13,9 @@ export default defineConfig([
       format: 'esm',
       file: 'dist/index.js',
     },
+    watch: {
+      clearScreen: false,
+    },
     plugins: [isProd && terser()],
   },
   {
@@ -21,6 +24,9 @@ export default defineConfig([
       format: 'iife',
       name: 'ProtocolLauncher',
       file: 'dist/index.browser.js',
+    },
+    watch: {
+      clearScreen: false,
     },
     plugins: [isProd && terser()],
   },
@@ -32,6 +38,9 @@ export default defineConfig([
       sourcemap: !isProd,
       preserveModules: true,
       preserveModulesRoot: 'src',
+    },
+    watch: {
+      clearScreen: false,
     },
     plugins: [isProd && terser(), typescript()],
   },

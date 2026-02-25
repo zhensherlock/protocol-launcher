@@ -13,5 +13,8 @@ export default defineConfig({
     preserveModules: true,
     preserveModulesRoot: 'src',
   },
+  watch: {
+    clearScreen: false,
+  },
   plugins: [isProd && terser(), typescript()],
 })
