@@ -1,6 +1,6 @@
 {
   "name": "protocol-launcher",
-  "version": "1.9.2",
+  "version": "1.10.0",
   "description": "One-click launch URL generator for protocol-based apps.",
   "type": "module",
   "author": "zhensherlock",
@@ -125,6 +125,10 @@
     "./webstorm": {
       "types": "./dist/types/webstorm/index.d.ts",
       "import": "./dist/webstorm/index.js"
+    },
+    "./zed": {
+      "types": "./dist/types/zed/index.d.ts",
+      "import": "./dist/zed/index.js"
     }
   }
 }
