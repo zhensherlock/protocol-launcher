@@ -1,5 +1,13 @@
 # @protocol-launcher/shared
 
+## 1.2.3
+
+### Patch Changes
+
+- [`baff144`](https://github.com/zhensherlock/protocol-launcher/commit/baff144d49e0f9c72caa9af00312bdb2145daf07) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`b02b878`](https://github.com/zhensherlock/protocol-launcher/commit/b02b878f933d2269ee9ba7f77e3a2f7c6329f4e3) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore(rolldown): disable watch mode screen clearing in config
+
 ## 1.2.2
 
 ### Patch Changes
