@@ -1,5 +1,18 @@
 # protocol-launcher
 
+## 1.10.1
+
+### Patch Changes
+
+- [`adb2a29`](https://github.com/zhensherlock/protocol-launcher/commit/adb2a297b47970babd5b0c90e5d3c6fe0aba6a04) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(protocol-launcher): remove zed editor from package exports
+
+- [`baff144`](https://github.com/zhensherlock/protocol-launcher/commit/baff144d49e0f9c72caa9af00312bdb2145daf07) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`b02b878`](https://github.com/zhensherlock/protocol-launcher/commit/b02b878f933d2269ee9ba7f77e3a2f7c6329f4e3) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore(rolldown): disable watch mode screen clearing in config
+
+- Updated dependencies [[`baff144`](https://github.com/zhensherlock/protocol-launcher/commit/baff144d49e0f9c72caa9af00312bdb2145daf07), [`b02b878`](https://github.com/zhensherlock/protocol-launcher/commit/b02b878f933d2269ee9ba7f77e3a2f7c6329f4e3)]:
+  - @protocol-launcher/shared@1.2.3
+
 ## 1.10.0
 
 ### Minor Changes
