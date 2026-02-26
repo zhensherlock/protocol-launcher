@@ -29,8 +29,14 @@ jobs:
       - name: Test Package
         run: pnpm run coverage
 
-      - name: Coveralls
-        uses: coverallsapp/github-action@v2
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: zhensherlock/protocol-launcher
+
+#      - name: Coveralls
+#        uses: coverallsapp/github-action@v2
 
   doc:
     if: github.repository == 'zhensherlock/protocol-launcher'
