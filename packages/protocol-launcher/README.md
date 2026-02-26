@@ -83,8 +83,8 @@ This project exists thanks to all the people who contribute.
 
 [npm-release-link]: https://www.npmjs.com/package/protocol-launcher
 [npm-release-shield]: https://img.shields.io/npm/v/protocol-launcher?color=1677FF&labelColor=black&logo=npm&logoColor=white&style=flat-square
-[codecov-link]: https://coveralls.io/github/zhensherlock/protocol-launcher?branch=main
-[codecov-shield]: https://img.shields.io/coverallsCoverage/github/zhensherlock/protocol-launcher?color=1677FF&labelColor=black&style=flat-square&logo=codecov&logoColor=white
+[codecov-link]: http://app.codecov.io/gh/zhensherlock/protocol-launcher
+[codecov-shield]: https://img.shields.io/codecov/c/github/zhensherlock/protocol-launcher?color=1677FF&labelColor=black&style=flat-square&logo=codecov&logoColor=white
 [github-release-date-link]: https://github.com/zhensherlock/protocol-launcher/releases
 [github-release-date-shield]: https://img.shields.io/github/release-date/zhensherlock/protocol-launcher?color=1677FF&labelColor=black&style=flat-square
 [github-action-build-link]: https://github.com/zhensherlock/protocol-launcher/actions/workflows/build.yml
