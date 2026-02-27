@@ -29,6 +29,7 @@ Currently, we support the following applications:
 - [IntelliJ IDEA](../apps/idea.md)
 - [Lingma](../apps/lingma.md)
 - [MacVim](../apps/macvim.md)
+- [PearAI](../apps/pearai.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [RustRover](../apps/rustrover.md)

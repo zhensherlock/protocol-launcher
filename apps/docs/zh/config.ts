@@ -39,6 +39,7 @@ export default defineAdditionalConfig({
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
+          { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },

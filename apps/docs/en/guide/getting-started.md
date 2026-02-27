@@ -123,6 +123,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [IntelliJ IDEA](../apps/idea.md)
 - [Lingma](../apps/lingma.md)
 - [MacVim](../apps/macvim.md)
+- [PearAI](../apps/pearai.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [RustRover](../apps/rustrover.md)
