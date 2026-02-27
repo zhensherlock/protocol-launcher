@@ -25,6 +25,7 @@ export default defineConfig({
     'en/apps/github-desktop.md': 'apps/github-desktop.md',
     'en/apps/goland.md': 'apps/goland.md',
     'en/apps/idea.md': 'apps/idea.md',
+    'en/apps/lingma.md': 'apps/lingma.md',
     'en/apps/macvim.md': 'apps/macvim.md',
     'en/apps/phpstorm.md': 'apps/phpstorm.md',
     'en/apps/pycharm.md': 'apps/pycharm.md',

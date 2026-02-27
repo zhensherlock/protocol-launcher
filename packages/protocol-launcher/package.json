@@ -90,6 +90,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./lingma": {
+      "types": "./dist/types/lingma/index.d.ts",
+      "import": "./dist/lingma/index.js"
+    },
     "./macvim": {
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"
