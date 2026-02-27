@@ -94,6 +94,6 @@ describe('vscode', () => {
     const url = vscode.cloneProject({
       repo: 'https://github.com/zhensherlock/protocol-launcher',
     })
-    expect(url).toBe('vscode://vscode.git/clone?url=https://github.com/zhensherlock/protocol-launcher')
+    expect(url).toBe('vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fzhensherlock%2Fprotocol-launcher')
   })
 })
