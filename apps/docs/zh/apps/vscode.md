@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, installMCP, openRemote, openSettings } from 'protocol-launcher/vscode';
+import { openFile, openFolder, installMCP, openRemote, openSettings, cloneProject } from 'protocol-launcher/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -15,6 +15,7 @@ import {
   installSTDIOMCPServerParams,
   installStreamableHTTPMCPServerParams,
   installSSEMCPServerParams,
+  cloneProjectParams,
 } from '../../.vitepress/constants/vscode';
 
 const appStore = useAppStore();
@@ -136,6 +137,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
 ```
 <div class="flex justify-center">
   <VPLink :href="openRemote(openRemoteParams)" target="_self">
+    在 VSCode 中打开
+  </VPLink>
+</div>
+
+### 克隆项目
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
     在 VSCode 中打开
   </VPLink>
 </div>

@@ -1,5 +1,6 @@
 export { openFile } from './file'
 export { openFolder } from './folder'
+export { cloneProject } from './git'
 export { installMCP } from './mcp'
 export { openRemote } from './remote'
 export { openSettings } from './settings'
