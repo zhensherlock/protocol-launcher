@@ -94,6 +94,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
 })
 ```
 
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]

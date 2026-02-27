@@ -59,6 +59,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openRemote({
 })
 ```
 
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]

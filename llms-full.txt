@@ -349,6 +349,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openRemote({
 })
 ```
 
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
@@ -526,6 +536,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openRemote({
 })
 ```
 
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
@@ -637,6 +657,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openRemote({
   type: 'ssh-remote',
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
 })
 ```
 
@@ -1732,6 +1762,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
 })
 ```
 
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
@@ -1835,6 +1875,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openRemote({
   type: 'ssh-remote',
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
 })
 ```
 
