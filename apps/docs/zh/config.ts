@@ -46,6 +46,7 @@ export default defineAdditionalConfig({
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
+          { text: 'Zed', link: '/zh/apps/zed' },
         ],
       },
       {

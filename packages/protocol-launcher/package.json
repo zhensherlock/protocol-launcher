@@ -125,6 +125,10 @@
     "./webstorm": {
       "types": "./dist/types/webstorm/index.d.ts",
       "import": "./dist/webstorm/index.js"
+    },
+    "./zed": {
+      "types": "./dist/types/zed/index.d.ts",
+      "import": "./dist/zed/index.js"
     }
   }
 }

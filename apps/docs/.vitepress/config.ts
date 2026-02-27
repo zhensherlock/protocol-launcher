@@ -34,6 +34,7 @@ export default defineConfig({
     'en/apps/vscode.md': 'apps/vscode.md',
     'en/apps/webstorm.md': 'apps/webstorm.md',
     'en/apps/xcode.md': 'apps/xcode.md',
+    'en/apps/zed.md': 'apps/zed.md',
   },
   base,
   head: [
@@ -93,6 +94,7 @@ export default defineConfig({
           { text: 'VS Code', link: '/apps/vscode' },
           { text: 'WebStorm', link: '/apps/webstorm' },
           { text: 'Xcode', link: '/apps/xcode' },
+          { text: 'Zed', link: '/apps/zed' },
         ],
       },
       {
@@ -156,6 +158,7 @@ export default defineConfig({
               { text: 'VS Code', link: '/apps/vscode' },
               { text: 'WebStorm', link: '/apps/webstorm' },
               { text: 'Xcode', link: '/apps/xcode' },
+              { text: 'Zed', link: '/apps/zed' },
             ],
           },
           {
@@ -190,6 +193,7 @@ export default defineConfig({
               { text: 'VS Code', link: '/zh/apps/vscode' },
               { text: 'WebStorm', link: '/zh/apps/webstorm' },
               { text: 'Xcode', link: '/zh/apps/xcode' },
+              { text: 'Zed', link: '/zh/apps/zed' },
             ],
           },
           {
