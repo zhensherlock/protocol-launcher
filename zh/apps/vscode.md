@@ -15,6 +15,14 @@ url: /protocol-launcher/zh/apps/vscode.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}open()
+```
+
 ### 安装 STDIO MCP 服务
 
 ```ts-vue [{{currentMethod}}]
