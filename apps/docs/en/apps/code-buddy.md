@@ -5,13 +5,14 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, open, openRemote, openSettings } from 'protocol-launcher/code-buddy';
+import { openFile, openFolder, open, openRemote, openSettings, cloneProject } from 'protocol-launcher/code-buddy';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   openFileParams,
   openFolderParams,
   openRemoteParams,
+  cloneProjectParams,
 } from '../../.vitepress/constants/code-buddy';
 
 const appStore = useAppStore();
@@ -89,6 +90,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openRemote({
 ```
 <div class="flex justify-center">
   <VPLink :href="openRemote(openRemoteParams)" target="_self">
+    Open in CodeBuddy
+  </VPLink>
+</div>
+
+### Clone Project
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
     Open in CodeBuddy
   </VPLink>
 </div>

@@ -69,4 +69,11 @@ describe('code-buddy', () => {
     })
     expect(url).toBe('codebuddy://vscode-remote/ssh-remote+root@172.18.105.209:22/code/my-project?windowId=_blank')
   })
+
+  test('cloneProject should return a URL with repo', async () => {
+    const url = codeBuddy.cloneProject({
+      repo: 'https://github.com/zhensherlock/protocol-launcher',
+    })
+    expect(url).toBe('codebuddy://vscode.git/clone?url=https://github.com/zhensherlock/protocol-launcher')
+  })
 })
