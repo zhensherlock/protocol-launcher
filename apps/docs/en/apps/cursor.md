@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { installMCP, openFile, openFolder, openRemote, openSettings, createChat } from 'protocol-launcher/cursor';
+import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject } from 'protocol-launcher/cursor';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -15,6 +15,7 @@ import {
   openFileParams,
   openFolderParams,
   openRemoteParams,
+  cloneProjectParams,
 } from '../../.vitepress/constants/cursor';
 
 const appStore = useAppStore();
@@ -136,6 +137,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openRemote({
 ```
 <div class="flex justify-center">
   <VPLink :href="openRemote(openRemoteParams)" target="_self">
+    Open in Cursor
+  </VPLink>
+</div>
+
+### Clone Project
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
     Open in Cursor
   </VPLink>
 </div>

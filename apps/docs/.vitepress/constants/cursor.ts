@@ -44,3 +44,7 @@ export const openRemoteParams = {
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
 }
+
+export const cloneProjectParams = {
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+}
