@@ -118,6 +118,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 For detailed usage instructions for each application, please refer to their respective guides:
 
+* [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [Cursor](../apps/cursor.md)
