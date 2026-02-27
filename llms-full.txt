@@ -430,6 +430,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openRemote({
 })
 ```
 
+### 克隆项目
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethodDesc}}]
@@ -869,6 +879,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
 
 ---
 
@@ -2018,6 +2029,7 @@ Currently, we support the following applications:
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
 
 More applications will be added in the future.
 
@@ -2082,6 +2094,232 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'xcode.'}}cloneProject({
 ---
 
 ---
+url: /protocol-launcher/apps/zed.md
+---
+
+# Zed
+
+[Zed](https://zed.dev/) is a minimal code editor crafted for speed and collaboration with humans and AI. **Protocol Launcher** allows you to generate deep links to open and configure resources in Zed.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openRemote({
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### Open Git Commit
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openGitCommit' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openGitCommit({
+  sha: '739420c',
+  path: '/Users/dev/Documents/protocol-launcher',
+})
+```
+
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openExtension({
+  id: 'html',
+})
+```
+
+### Open Agent
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openAgent' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openAgent({
+  prompt: 'Hello World',
+})
+```
+
+### Join Agent
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'joinAgent' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}joinAgent({
+  id: '12345',
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
+  path: 'autosave',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/zed.md
+---
+
+# Zed
+
+[Zed](https://zed.dev) 是一款极简代码编辑器，专为速度和人机协作而设计。**Protocol Launcher** 允许你生成深度链接，用于在 Zed 中打开并配置资源。。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openRemote({
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### 打开 Git 提交
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openGitCommit' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openGitCommit({
+  sha: '739420c',
+  path: '/Users/dev/Documents/protocol-launcher',
+})
+```
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openExtension({
+  id: 'html',
+})
+```
+
+### 打开智能体
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openAgent' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openAgent({
+  prompt: 'Hello World',
+})
+```
+
+### 加入智能体
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'joinAgent' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}joinAgent({
+  id: '12345',
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
+  path: 'autosave',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/zh/guide/what-is-it.md
 ---
 
@@ -2119,6 +2357,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
 
 未来将添加更多应用程序。
 
@@ -2260,6 +2499,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
 
 ---
 

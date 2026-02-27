@@ -36,5 +36,6 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
 
 未来将添加更多应用程序。

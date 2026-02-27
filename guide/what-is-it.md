@@ -36,5 +36,6 @@ Currently, we support the following applications:
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
 
 More applications will be added in the future.

@@ -35,6 +35,7 @@
 - [VS Code](/protocol-launcher/apps/vscode.md)
 - [WebStorm](/protocol-launcher/apps/webstorm.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
+- [Zed](/protocol-launcher/apps/zed.md)
 
 ### Extra
 
@@ -62,6 +63,7 @@
 - [VS Code](/protocol-launcher/zh/apps/vscode.md)
 - [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
+- [Zed](/protocol-launcher/zh/apps/zed.md)
 
 ### 扩展
 

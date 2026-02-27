@@ -134,3 +134,4 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)

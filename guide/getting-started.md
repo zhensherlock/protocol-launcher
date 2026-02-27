@@ -134,3 +134,4 @@ For detailed usage instructions for each application, please refer to their resp
 * [VS Code](../apps/vscode.md)
 * [WebStorm](../apps/webstorm.md)
 * [Xcode](../apps/xcode.md)
+* [Zed](../apps/zed.md)
