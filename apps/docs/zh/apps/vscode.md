@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, installMCP, openRemote, openSettings, cloneProject } from 'protocol-launcher/vscode';
+import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject } from 'protocol-launcher/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -36,6 +36,18 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+### 打开编辑器
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}open()
+```
+<div class="flex justify-center">
+  <VPLink :href="open()" target="_self">
+    打开 VSCode
+  </VPLink>
+</div>
 
 ### 安装 STDIO MCP 服务
 

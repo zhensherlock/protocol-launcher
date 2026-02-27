@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, installMCP, cloneProject, openRemote, openSettings } from 'protocol-launcher/vscode';
+import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings } from 'protocol-launcher/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -36,6 +36,18 @@ There are two ways to use this library:
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+### Open IDE
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}open()
+```
+<div class="flex justify-center">
+  <VPLink :href="open()" target="_self">
+    Open VSCode
+  </VPLink>
+</div>
 
 ### Install STDIO MCP Server
 

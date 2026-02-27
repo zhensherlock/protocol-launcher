@@ -2,6 +2,11 @@ import { describe, expect, test } from 'vitest'
 import { vscode } from '../src'
 
 describe('vscode', () => {
+  test('open should return a URL', async () => {
+    const url = vscode.open()
+    expect(url).toBe('vscode://')
+  })
+
   test('installMCP should return a URL with payload', async () => {
     const url = vscode.installMCP({
       name: 'server-everything',
