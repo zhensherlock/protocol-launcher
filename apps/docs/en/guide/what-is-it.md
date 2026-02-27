@@ -21,6 +21,7 @@ These URLs allow users to trigger specific actions in applications with a single
 
 Currently, we support the following applications:
 
+- [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)

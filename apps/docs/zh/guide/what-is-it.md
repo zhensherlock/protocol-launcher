@@ -21,6 +21,7 @@ layout: doc
 
 目前，我们支持以下应用程序：
 
+- [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)

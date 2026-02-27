@@ -30,6 +30,7 @@ export default defineAdditionalConfig({
       {
         text: '应用程序',
         items: [
+          { text: 'BBEdit', link: '/zh/apps/bbedit' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'Cursor', link: '/zh/apps/cursor' },

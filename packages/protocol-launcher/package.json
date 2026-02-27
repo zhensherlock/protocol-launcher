@@ -62,6 +62,10 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./bbedit": {
+      "types": "./dist/types/bbedit/index.d.ts",
+      "import": "./dist/bbedit/index.js"
+    },
     "./cherry-studio": {
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"

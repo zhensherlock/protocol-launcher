@@ -18,6 +18,7 @@ export default defineConfig({
     'en/guide/what-is-it.md': 'guide/what-is-it.md',
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
+    'en/extra/bbedit.md': 'extra/bbedit.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/code-buddy.md': 'apps/code-buddy.md',
     'en/apps/cursor.md': 'apps/cursor.md',
@@ -78,6 +79,7 @@ export default defineConfig({
       {
         text: 'Applications',
         items: [
+          { text: 'BBEdit', link: '/apps/bbedit' },
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/apps/code-buddy' },
           { text: 'Cursor', link: '/apps/cursor' },
@@ -143,6 +145,7 @@ export default defineConfig({
             text: 'Applications',
             base: '',
             items: [
+              { text: 'BBEdit', link: '/apps/bbedit' },
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
               { text: 'Cursor', link: '/apps/cursor' },
               { text: 'GitHub Desktop', link: '/apps/github-desktop' },
@@ -178,6 +181,7 @@ export default defineConfig({
             text: '应用程序',
             base: '',
             items: [
+              { text: 'BBEdit', link: '/zh/apps/bbedit' },
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
               { text: 'Cursor', link: '/zh/apps/cursor' },
               { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
