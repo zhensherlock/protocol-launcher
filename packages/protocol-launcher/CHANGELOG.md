@@ -1,5 +1,32 @@
 # protocol-launcher
 
+## 1.11.0
+
+### Minor Changes
+
+- [`ac05ef0`](https://github.com/zhensherlock/protocol-launcher/commit/ac05ef0045ee3096a57276496a9c2ec7d5c08131) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(lingma): add Lingma protocol launcher support
+
+- [`d630abe`](https://github.com/zhensherlock/protocol-launcher/commit/d630abe4f5a44196f22b67e583ca95cba45182c6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(code-buddy): add clone project functionality
+
+- [`7237e55`](https://github.com/zhensherlock/protocol-launcher/commit/7237e55439b0faa214b4229fbb3d2b0eff6a1068) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cursor): add clone project functionality
+
+- [`0d95a5a`](https://github.com/zhensherlock/protocol-launcher/commit/0d95a5a8db11f3b188edfce00235354800b6a06a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pearai): add support for PearAI protocol launcher
+
+- [`8095985`](https://github.com/zhensherlock/protocol-launcher/commit/8095985a96a1aec7c8ea6408a6c882211a2fbdd4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(bbedit): add support for BBEdit deep linking
+
+- [`7fa8774`](https://github.com/zhensherlock/protocol-launcher/commit/7fa8774a4c8976719d5494fc9f22d5520dbd00cc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(vscode): add clone project functionality
+
+- [`afd1179`](https://github.com/zhensherlock/protocol-launcher/commit/afd1179ea5e99227cce64bdadef93fbf3f25d920) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(zed): add support for Zed editor
+
+- [`596dfc6`](https://github.com/zhensherlock/protocol-launcher/commit/596dfc6402789b47243e92e68ded0c7819154e68) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(vscode): add open function for launching vscode
+
+### Patch Changes
+
+- [`b1c3b34`](https://github.com/zhensherlock/protocol-launcher/commit/b1c3b34e1cc3f63ca5af97acd11bde910e3ee231) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`b1c3b34`](https://github.com/zhensherlock/protocol-launcher/commit/b1c3b34e1cc3f63ca5af97acd11bde910e3ee231)]:
+  - @protocol-launcher/shared@1.2.4
+
 ## 1.10.1
 
 ### Patch Changes
