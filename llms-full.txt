@@ -952,8 +952,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -1216,6 +1218,254 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ 
 const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
+```
+
+---
+
+---
+url: /protocol-launcher/apps/kiro.md
+---
+
+# Kiro
+
+[Kiro](https://kiro.dev/) is an agentic IDE that helps you do your best work with features such as specs, steering, and hooks. **Protocol Launcher** allows you to generate deep links to open and configure resources in Kiro.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}open()
+```
+
+### Install STDIO MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### Install Streamable HTTP MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### Install SSE MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/kiro.md
+---
+
+# Kiro
+
+[Kiro](https://kiro.dev/) 是一款智能体 IDE，它通过规范、控制和钩子等功能帮助您做到最好。**Protocol Launcher** 允许你生成深度链接，用于在 Kiro 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}open()
+```
+
+### 安装 STDIO MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### 安装 Streamable HTTP MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### 安装 SSE MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings()
 ```
 
 ---
@@ -1549,6 +1799,80 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'macvim' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macvim.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/opencode.md
+---
+
+# OpenCode
+
+[OpenCode](https://opencode.ai/) is an open-source agent that helps you write code in your terminal, IDE, or desktop. **Protocol Launcher** allows you to generate deep links to open resources in OpenCode.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'opencode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opencode.'}}open()
+```
+
+### Open Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProject' : 'opencode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opencode.'}}openProject({
+  path: '/Users/dev/project',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/opencode.md
+---
+
+# OpenCode
+
+[OpenCode](https://opencode.ai/) 是一个开源智能体，帮助您在终端、IDE 或桌面端编写代码。**Protocol Launcher** 允许你生成深度链接，用于在 OpenCode 中打开资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'opencode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opencode.'}}open()
+```
+
+### 打开项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProject' : 'opencode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opencode.'}}openProject({
+  path: '/Users/dev/project',
 })
 ```
 
@@ -2535,8 +2859,10 @@ Currently, we support the following applications:
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -2866,8 +3192,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -3011,8 +3339,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
