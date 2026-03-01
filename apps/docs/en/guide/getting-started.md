@@ -117,6 +117,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
+- [CodeLite](../apps/codelite.md)
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)

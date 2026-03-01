@@ -74,6 +74,10 @@
       "types": "./dist/types/code-buddy/index.d.ts",
       "import": "./dist/code-buddy/index.js"
     },
+    "./codelite": {
+      "types": "./dist/types/codelite/index.d.ts",
+      "import": "./dist/codelite/index.js"
+    },
     "./cursor": {
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"

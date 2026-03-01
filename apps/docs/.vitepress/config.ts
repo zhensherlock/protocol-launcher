@@ -21,6 +21,7 @@ export default defineConfig({
     'en/extra/bbedit.md': 'extra/bbedit.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/code-buddy.md': 'apps/code-buddy.md',
+    'en/apps/codelite.md': 'apps/codelite.md',
     'en/apps/cursor.md': 'apps/cursor.md',
     'en/apps/github-desktop.md': 'apps/github-desktop.md',
     'en/apps/goland.md': 'apps/goland.md',
@@ -86,6 +87,7 @@ export default defineConfig({
           { text: 'BBEdit', link: '/apps/bbedit' },
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/apps/code-buddy' },
+          { text: 'CodeLite', link: '/apps/codelite' },
           { text: 'Cursor', link: '/apps/cursor' },
           { text: 'GitHub Desktop', link: '/apps/github-desktop' },
           { text: 'GoLand', link: '/apps/goland' },
@@ -155,6 +157,8 @@ export default defineConfig({
             items: [
               { text: 'BBEdit', link: '/apps/bbedit' },
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
+              { text: 'CodeBuddy', link: '/apps/code-buddy' },
+              { text: 'CodeLite', link: '/apps/codelite' },
               { text: 'Cursor', link: '/apps/cursor' },
               { text: 'GitHub Desktop', link: '/apps/github-desktop' },
               { text: 'GoLand', link: '/apps/goland' },
@@ -195,6 +199,8 @@ export default defineConfig({
             items: [
               { text: 'BBEdit', link: '/zh/apps/bbedit' },
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
+              { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
+              { text: 'CodeLite', link: '/zh/apps/codelite' },
               { text: 'Cursor', link: '/zh/apps/cursor' },
               { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
               { text: 'GoLand', link: '/zh/apps/goland' },
