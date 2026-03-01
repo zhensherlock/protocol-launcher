@@ -27,6 +27,7 @@ Currently, we support the following applications:
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [Kiro](../apps/kiro.md)
 - [Lingma](../apps/lingma.md)
 - [MacVim](../apps/macvim.md)
 - [PearAI](../apps/pearai.md)

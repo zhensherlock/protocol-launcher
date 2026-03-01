@@ -90,6 +90,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./kiro": {
+      "types": "./dist/types/kiro/index.d.ts",
+      "import": "./dist/kiro/index.js"
+    },
     "./lingma": {
       "types": "./dist/types/lingma/index.d.ts",
       "import": "./dist/lingma/index.js"

@@ -37,6 +37,7 @@ export default defineAdditionalConfig({
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
+          { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
