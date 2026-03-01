@@ -45,6 +45,7 @@ export default defineAdditionalConfig({
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
+          { text: 'Qoder', link: '/zh/apps/qoder' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'TextMate', link: '/zh/apps/textmate' },

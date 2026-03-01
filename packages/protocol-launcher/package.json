@@ -122,6 +122,10 @@
       "types": "./dist/types/pycharm/index.d.ts",
       "import": "./dist/pycharm/index.js"
     },
+    "./qoder": {
+      "types": "./dist/types/qoder/index.d.ts",
+      "import": "./dist/qoder/index.js"
+    },
     "./rustrover": {
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"

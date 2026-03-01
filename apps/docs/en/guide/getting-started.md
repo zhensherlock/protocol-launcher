@@ -129,6 +129,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [PearAI](../apps/pearai.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
+- [Qoder](../apps/qoder.md)
 - [RustRover](../apps/rustrover.md)
 - [Telegram](../apps/telegram.md)
 - [TextMate](../apps/textmate.md)
