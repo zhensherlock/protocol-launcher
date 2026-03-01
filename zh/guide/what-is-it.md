@@ -23,6 +23,8 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [CodeBuddy](../apps/code-buddy.md)
+* [CodeLite](../apps/codelite.md)
 * [Cursor](../apps/cursor.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
@@ -34,6 +36,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
+* [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)

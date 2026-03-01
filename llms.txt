@@ -21,6 +21,8 @@
 ### Applications
 
 - [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
+- [CodeBuddy](/protocol-launcher/apps/code-buddy.md)
+- [CodeLite](/protocol-launcher/apps/codelite.md)
 - [Cursor](/protocol-launcher/apps/cursor.md)
 - [GitHub Desktop](/protocol-launcher/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/apps/goland.md)
@@ -32,6 +34,7 @@
 - [PearAI](/protocol-launcher/apps/pearai.md)
 - [PhpStorm](/protocol-launcher/apps/phpstorm.md)
 - [PyCharm](/protocol-launcher/apps/pycharm.md)
+- [Qoder](/protocol-launcher/apps/qoder.md)
 - [RustRover](/protocol-launcher/apps/rustrover.md)
 - [Telegram](/protocol-launcher/apps/telegram.md)
 - [TextMate](/protocol-launcher/apps/textmate.md)
@@ -54,6 +57,8 @@
 
 - [BBEdit](/protocol-launcher/zh/apps/bbedit.md)
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
+- [CodeBuddy](/protocol-launcher/zh/apps/code-buddy.md)
+- [CodeLite](/protocol-launcher/zh/apps/codelite.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
 - [GitHub Desktop](/protocol-launcher/zh/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/zh/apps/goland.md)
@@ -65,6 +70,7 @@
 - [PearAI](/protocol-launcher/zh/apps/pearai.md)
 - [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
 - [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
+- [Qoder](/protocol-launcher/zh/apps/qoder.md)
 - [RustRover](/protocol-launcher/zh/apps/rustrover.md)
 - [Telegram](/protocol-launcher/zh/apps/telegram.md)
 - [TextMate](/protocol-launcher/zh/apps/textmate.md)
@@ -81,5 +87,3 @@
 ### Other
 
 - [BBEdit](/protocol-launcher/appsbbedit.md)
-- [CodeBuddy](/protocol-launcher/apps/code-buddy.md)
-- [CodeBuddy](/protocol-launcher/zh/apps/code-buddy.md)
