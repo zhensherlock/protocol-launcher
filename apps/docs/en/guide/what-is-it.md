@@ -30,6 +30,7 @@ Currently, we support the following applications:
 - [Kiro](../apps/kiro.md)
 - [Lingma](../apps/lingma.md)
 - [MacVim](../apps/macvim.md)
+- [OpenCode](../apps/opencode.md)
 - [PearAI](../apps/pearai.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)

@@ -102,6 +102,10 @@
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"
     },
+    "./opencode": {
+      "types": "./dist/types/opencode/index.d.ts",
+      "import": "./dist/opencode/index.js"
+    },
     "./pearai": {
       "types": "./dist/types/pearai/index.d.ts",
       "import": "./dist/pearai/index.js"
