@@ -25,8 +25,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Kiro
 
-[Kiro](https://kiro.dev/) is an agentic IDE that helps you do your best work with features such as specs, steering, and hooks.
-. **Protocol Launcher** allows you to generate deep links to open and configure resources in Kiro.
+[Kiro](https://kiro.dev/) is an agentic IDE that helps you do your best work with features such as specs, steering, and hooks. **Protocol Launcher** allows you to generate deep links to open and configure resources in Kiro.
 
 ## Usage
 
