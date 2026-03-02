@@ -18,7 +18,7 @@ export default defineConfig({
     'en/guide/what-is-it.md': 'guide/what-is-it.md',
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
-    'en/extra/bbedit.md': 'extra/bbedit.md',
+    'en/apps/bbedit.md': 'apps/bbedit.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/code-buddy.md': 'apps/code-buddy.md',
     'en/apps/codelite.md': 'apps/codelite.md',
