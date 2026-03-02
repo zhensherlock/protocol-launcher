@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject } from 'protocol-launcher/cursor';
+import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject, openExtension } from 'protocol-launcher/cursor';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -17,6 +17,7 @@ import {
   openRemoteParams,
   cloneProjectParams,
   openSettingsParams,
+  openExtensionParams,
 } from '../../.vitepress/constants/cursor';
 
 const appStore = useAppStore();
@@ -152,6 +153,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
 ```
 <div class="flex justify-center">
   <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
+    Open in Cursor
+  </VPLink>
+</div>
+
+### Open Extension
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
     Open in Cursor
   </VPLink>
 </div>

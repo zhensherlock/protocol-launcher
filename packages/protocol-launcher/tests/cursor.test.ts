@@ -14,6 +14,13 @@ describe('cursor', () => {
     )
   })
 
+  test('openExtension should return a URL with extension ID', async () => {
+    const url = cursor.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('cursor:extension/esbenp.prettier-vscode')
+  })
+
   test('installMCP should return a URL with base64-encoded payload and openInNewWindow', async () => {
     const url = cursor.installMCP({
       name: 'server-everything',
