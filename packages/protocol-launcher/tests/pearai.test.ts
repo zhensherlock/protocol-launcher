@@ -51,6 +51,13 @@ describe('pearai', () => {
     expect(url).toBe('pearai://settings?windowId=_blank')
   })
 
+  test('openSettings should return a URL with path', async () => {
+    const url = pearai.openSettings({
+      path: 'terminal.integrated.suggest.enabled',
+    })
+    expect(url).toBe('pearai://settings/terminal.integrated.suggest.enabled')
+  })
+
   test('openRemote should return a URL with type, host, and path', async () => {
     const url = pearai.openRemote({
       type: 'ssh-remote',

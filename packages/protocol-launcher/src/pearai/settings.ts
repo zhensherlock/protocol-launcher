@@ -3,6 +3,12 @@
  */
 type OpenSettings = {
   /**
+   * Optional settings path.
+   * Can be 'terminal.integrated.suggest.enabled', etc.
+   */
+  path?: string
+
+  /**
    * Whether to open the settings in a new window.
    *
    * Defaults to `false`.
@@ -16,10 +22,10 @@ type OpenSettings = {
  * @param payload Open settings definition.
  * @returns PearAI open settings URL.
  * @example
- * openSettings()
- * // => 'pearai://settings'
+ * openSettings({ path: 'terminal.integrated.suggest.enabled' })
+ * // => 'pearai://settings/terminal.integrated.suggest.enabled'
  */
 export function openSettings(payload: OpenSettings = {}) {
-  const { openInNewWindow = false } = payload
-  return `pearai://settings${openInNewWindow ? '?windowId=_blank' : ''}`
+  const { path = '', openInNewWindow = false } = payload
+  return `pearai://settings${path ? `/${path}` : ''}${openInNewWindow ? '?windowId=_blank' : ''}`
 }

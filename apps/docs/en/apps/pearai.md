@@ -13,6 +13,7 @@ import {
   openFolderParams,
   openRemoteParams,
   cloneProjectParams,
+  openSettingsParams,
 } from '../../.vitepress/constants/pearai';
 
 const appStore = useAppStore();
@@ -112,10 +113,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'pearai' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 <div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
     Open in PearAI
   </VPLink>
 </div>
