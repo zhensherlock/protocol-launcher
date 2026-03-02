@@ -71,6 +71,13 @@ describe('cursor', () => {
     expect(url).toBe('cursor://settings?windowId=_blank')
   })
 
+  test('openSettings should return a URL with path', async () => {
+    const url = cursor.openSettings({
+      path: 'terminal.integrated.suggest.enabled',
+    })
+    expect(url).toBe('cursor://settings/terminal.integrated.suggest.enabled')
+  })
+
   test('createChat should return a URL with prompt', async () => {
     const url = cursor.createChat({
       prompt: 'Hello, Cursor!',
