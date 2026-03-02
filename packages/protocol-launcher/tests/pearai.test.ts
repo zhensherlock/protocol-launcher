@@ -7,6 +7,13 @@ describe('pearai', () => {
     expect(url).toBe('pearai://')
   })
 
+  test('openExtension should return a URL with id', async () => {
+    const url = pearai.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('pearai://extension/esbenp.prettier-vscode')
+  })
+
   test('openFile should return a URL with path', async () => {
     const url = pearai.openFile({
       path: '/etc/hosts',

@@ -27,3 +27,7 @@ export const cloneProjectParams = {
 export const openSettingsParams = {
   path: 'terminal.integrated.suggest.enabled',
 }
+
+export const openExtensionParams = {
+  id: 'esbenp.prettier-vscode',
+}
