@@ -7,6 +7,13 @@ describe('kiro', () => {
     expect(url).toBe('kiro://')
   })
 
+  test('openExtension should return a URL with payload', async () => {
+    const url = kiro.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('kiro://extension/esbenp.prettier-vscode')
+  })
+
   test('installMCP should return a URL with payload', async () => {
     const url = kiro.installMCP({
       name: 'server-everything',

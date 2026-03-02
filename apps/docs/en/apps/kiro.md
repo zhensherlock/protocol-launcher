@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings } from 'protocol-launcher/kiro';
+import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, openExtension } from 'protocol-launcher/kiro';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -17,6 +17,7 @@ import {
   installSSEMCPServerParams,
   cloneProjectParams,
   openSettingsParams,
+  openExtensionParams,
 } from '../../.vitepress/constants/kiro';
 
 const appStore = useAppStore();
@@ -164,6 +165,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
 ```
 <div class="flex justify-center">
   <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
+    Open in Kiro
+  </VPLink>
+</div>
+
+### Open Extension
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
     Open in Kiro
   </VPLink>
 </div>
