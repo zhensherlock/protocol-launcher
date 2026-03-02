@@ -7,6 +7,13 @@ describe('vscode', () => {
     expect(url).toBe('vscode://')
   })
 
+  test('openExtension should return a URL with payload', async () => {
+    const url = vscode.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('vscode:extension/esbenp.prettier-vscode')
+  })
+
   test('installMCP should return a URL with payload', async () => {
     const url = vscode.installMCP({
       name: 'server-everything',
