@@ -1,7 +1,7 @@
 name: opencode-review
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened, ready_for_review]
 
 concurrency:
@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 10
     permissions:
       id-token: write
-      contents: read
+      contents: write
       actions: read
       pull-requests: write
       issues: write
