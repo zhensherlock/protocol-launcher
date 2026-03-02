@@ -13,6 +13,7 @@ import {
   openFolderParams,
   openRemoteParams,
   cloneProjectParams,
+  openSettingsParams,
 } from '../../.vitepress/constants/code-buddy';
 
 const appStore = useAppStore();
@@ -112,10 +113,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddy' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 <div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
     Open in CodeBuddy
   </VPLink>
 </div>
