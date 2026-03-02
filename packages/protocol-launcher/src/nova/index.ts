@@ -1,0 +1,6 @@
+export { cloneProject } from './clone'
+export { openExtension } from './extension'
+export { openFile } from './file'
+export { openFolder } from './folder'
+export { open } from './open'
+export { register } from './register'

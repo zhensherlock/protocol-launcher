@@ -106,6 +106,10 @@
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"
     },
+    "./nova": {
+      "types": "./dist/types/nova/index.d.ts",
+      "import": "./dist/nova/index.js"
+    },
     "./opencode": {
       "types": "./dist/types/opencode/index.d.ts",
       "import": "./dist/opencode/index.js"

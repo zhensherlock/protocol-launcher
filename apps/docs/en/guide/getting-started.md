@@ -125,6 +125,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Kiro](../apps/kiro.md)
 - [Lingma](../apps/lingma.md)
 - [MacVim](../apps/macvim.md)
+- [Nova](../apps/nova.md)
 - [OpenCode](../apps/opencode.md)
 - [PearAI](../apps/pearai.md)
 - [PhpStorm](../apps/phpstorm.md)

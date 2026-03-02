@@ -41,6 +41,7 @@ export default defineAdditionalConfig({
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
+          { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
