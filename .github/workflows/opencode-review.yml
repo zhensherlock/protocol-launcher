@@ -25,6 +25,7 @@ jobs:
       - uses: anomalyco/opencode/github@github-v1.2.17
         env:
           OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: opencode/minimax-m2.5-free
