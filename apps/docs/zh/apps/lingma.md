@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject } from 'protocol-launcher/lingma';
+import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject, openExtension } from 'protocol-launcher/lingma';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -17,6 +17,7 @@ import {
   installSSEMCPServerParams,
   cloneProjectParams,
   openSettingsParams,
+  openExtensionParams,
 } from '../../.vitepress/constants/lingma';
 
 const appStore = useAppStore();
@@ -166,6 +167,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}cloneProject({
 ```
 <div class="flex justify-center">
   <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
+    在 Lingma 中打开
+  </VPLink>
+</div>
+
+### 打开扩展
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'lingma' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
     在 Lingma 中打开
   </VPLink>
 </div>

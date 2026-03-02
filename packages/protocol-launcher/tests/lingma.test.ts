@@ -7,6 +7,13 @@ describe('lingma', () => {
     expect(url).toBe('lingma://')
   })
 
+  test('openExtension should return a URL with payload', async () => {
+    const url = lingma.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('lingma:extension/esbenp.prettier-vscode')
+  })
+
   test('installMCP should return a URL with payload', async () => {
     const url = lingma.installMCP({
       name: 'server-everything',
