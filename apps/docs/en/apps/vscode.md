@@ -16,6 +16,7 @@ import {
   installStreamableHTTPMCPServerParams,
   installSSEMCPServerParams,
   cloneProjectParams,
+  openSettingsParams,
 } from '../../.vitepress/constants/vscode';
 
 const appStore = useAppStore();
@@ -171,10 +172,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 <div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
     Open in VSCode
   </VPLink>
 </div>

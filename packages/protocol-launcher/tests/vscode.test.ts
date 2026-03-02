@@ -76,6 +76,13 @@ describe('vscode', () => {
     expect(url).toBe('vscode://settings?windowId=_blank')
   })
 
+  test('openSettings should return a URL with path', async () => {
+    const url = vscode.openSettings({
+      path: 'terminal.integrated.suggest.enabled',
+    })
+    expect(url).toBe('vscode://settings/terminal.integrated.suggest.enabled')
+  })
+
   test('openRemote should return a URL with type, host, and path', async () => {
     const url = vscode.openRemote({
       type: 'ssh-remote',
