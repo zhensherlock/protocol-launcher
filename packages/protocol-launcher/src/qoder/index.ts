@@ -1,4 +1,5 @@
 export { createChat } from './chat'
+export { openExtension } from './extension'
 export { openFile } from './file'
 export { openFolder } from './folder'
 export { cloneProject } from './git'

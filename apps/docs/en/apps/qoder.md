@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, createChat, createQuest, createRule } from 'protocol-launcher/qoder';
+import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, createChat, createQuest, createRule, openExtension } from 'protocol-launcher/qoder';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -20,6 +20,7 @@ import {
   createQuestParams,
   createRuleParams,
   openSettingsParams,
+  openExtensionParams,
 } from '../../.vitepress/constants/qoder';
 
 const appStore = useAppStore();
@@ -152,6 +153,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}installMCP({
 <div class="flex justify-center">
   <VPLink :href="installMCP(installSSEMCPServerParams)" target="_self">
     Add to Qoder
+  </VPLink>
+</div>
+
+### Open Extension
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
+    Open in Qoder
   </VPLink>
 </div>
 

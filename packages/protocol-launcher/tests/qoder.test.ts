@@ -127,6 +127,13 @@ describe('qoder', () => {
     expect(url).toBe('qoder://vscode-remote/ssh-remote+root@172.18.105.209:22/code/my-project?windowId=_blank')
   })
 
+  test('openExtension should return a URL with payload', async () => {
+    const url = qoder.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('qoder:extension/esbenp.prettier-vscode')
+  })
+
   test('cloneProject should return a URL with repo', async () => {
     const url = qoder.cloneProject({
       repo: 'https://github.com/zhensherlock/protocol-launcher',
