@@ -1,3 +1,4 @@
+export { openExtension } from './extension'
 export { openFile } from './file'
 export { openFolder } from './folder'
 export { cloneProject } from './git'

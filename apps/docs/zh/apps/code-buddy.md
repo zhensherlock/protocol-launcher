@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, open, openRemote, openSettings, cloneProject } from 'protocol-launcher/code-buddy';
+import { openFile, openFolder, open, openRemote, openSettings, cloneProject, openExtension } from 'protocol-launcher/code-buddy';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -14,6 +14,7 @@ import {
   openRemoteParams,
   cloneProjectParams,
   openSettingsParams,
+  openExtensionParams,
 } from '../../.vitepress/constants/code-buddy';
 
 const appStore = useAppStore();
@@ -106,6 +107,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
 ```
 <div class="flex justify-center">
   <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
+    在 CodeBuddy 中打开
+  </VPLink>
+</div>
+
+### 打开扩展
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
     在 CodeBuddy 中打开
   </VPLink>
 </div>

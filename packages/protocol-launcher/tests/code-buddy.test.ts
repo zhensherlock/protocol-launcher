@@ -7,6 +7,13 @@ describe('code-buddy', () => {
     expect(url).toBe('codebuddy://getStarted')
   })
 
+  test('openExtension should return a URL with id', async () => {
+    const url = codeBuddy.openExtension({
+      id: 'esbenp.prettier-vscode',
+    })
+    expect(url).toBe('codebuddy:extension/esbenp.prettier-vscode')
+  })
+
   test('openFile should return a URL with path', async () => {
     const url = codeBuddy.openFile({
       path: '/etc/hosts',
