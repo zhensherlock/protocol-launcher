@@ -112,10 +112,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```

@@ -100,6 +100,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}installMCP({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开文件
 
 ```ts-vue [{{currentMethod}}]
@@ -151,5 +161,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'qoder' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```

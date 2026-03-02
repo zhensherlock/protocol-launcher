@@ -20,6 +20,7 @@
 
 ### Applications
 
+- [BBEdit](/protocol-launcher/apps/bbedit.md)
 - [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
 - [CodeBuddy](/protocol-launcher/apps/code-buddy.md)
 - [CodeLite](/protocol-launcher/apps/codelite.md)
@@ -30,6 +31,7 @@
 - [Kiro](/protocol-launcher/apps/kiro.md)
 - [Lingma](/protocol-launcher/apps/lingma.md)
 - [MacVim](/protocol-launcher/apps/macvim.md)
+- [Nova](/protocol-launcher/apps/nova.md)
 - [OpenCode](/protocol-launcher/apps/opencode.md)
 - [PearAI](/protocol-launcher/apps/pearai.md)
 - [PhpStorm](/protocol-launcher/apps/phpstorm.md)
@@ -66,6 +68,7 @@
 - [Kiro](/protocol-launcher/zh/apps/kiro.md)
 - [Lingma](/protocol-launcher/zh/apps/lingma.md)
 - [MacVim](/protocol-launcher/zh/apps/macvim.md)
+- [Nova](/protocol-launcher/zh/apps/nova.md)
 - [OpenCode](/protocol-launcher/zh/apps/opencode.md)
 - [PearAI](/protocol-launcher/zh/apps/pearai.md)
 - [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
@@ -84,6 +87,3 @@
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
-### Other
-
-- [BBEdit](/protocol-launcher/appsbbedit.md)

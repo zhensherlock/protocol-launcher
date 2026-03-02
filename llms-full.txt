@@ -1,5 +1,5 @@
 ---
-url: /protocol-launcher/appsbbedit.md
+url: /protocol-launcher/apps/bbedit.md
 ---
 
 # BBEdit
@@ -441,12 +441,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddy' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -522,12 +534,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethodDesc}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddy' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -720,12 +744,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ### Create Chat
@@ -844,12 +880,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ### 创建聊天
@@ -1038,6 +1086,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -1420,12 +1469,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'kiro' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -1544,12 +1605,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'kiro' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -1670,12 +1743,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'lingma' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'lingma' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -1796,12 +1881,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'lingma' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'lingma' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -1883,6 +1980,164 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'macvim' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macvim.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/nova.md
+---
+
+# Nova
+
+[Nova](https://nova.app/) is a fast, flexible, and powerful native text editor for macOS. **Protocol Launcher** allows you to generate deep links to open files, folders, clone repositories, and more in Nova.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}open()
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}openFile({
+  path: '/etc/hosts',
+  line: 1,
+  column: 2,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}openFolder({
+  path: '/etc',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}cloneProject({
+  url: 'https://github.com/zhensherlock/protocol-launcher.git',
+})
+```
+
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}openExtension({
+  id: 'com.panic.Playdate',
+})
+```
+
+### Register Nova
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'register' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}register({
+  serial: 'NOVA-XXXX-XXXX-XXXX-XXXX-XXXX-X',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/nova.md
+---
+
+# Nova
+
+[Nova](https://nova.app/) 是一款专为 macOS 设计的快速、灵活且功能强大的原生文本编辑器。**Protocol Launcher** 允许你生成深度链接，用于在 Nova 中打开文件、文件夹、克隆仓库等。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}open()
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}openFile({
+  path: '/etc/hosts',
+  line: 1,
+  column: 2,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}openFolder({
+  path: '/etc',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}cloneProject({
+  url: 'https://github.com/zhensherlock/protocol-launcher.git',
+})
+```
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}openExtension({
+  id: 'com.panic.Playdate',
+})
+```
+
+### 注册 Nova
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'register' : 'nova' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}register({
+  serial: 'NOVA-XXXX-XXXX-XXXX-XXXX-XXXX-X',
 })
 ```
 
@@ -2033,12 +2288,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'pearai' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'pearai' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -2114,12 +2381,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'pearai' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'pearai' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -2390,6 +2669,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}installMCP({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open File
 
 ```ts-vue [{{currentMethod}}]
@@ -2441,7 +2730,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'qoder' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -2548,6 +2839,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}installMCP({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开文件
 
 ```ts-vue [{{currentMethod}}]
@@ -2599,7 +2900,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'qoder' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -3014,12 +3317,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -3138,12 +3453,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ---
@@ -3264,6 +3591,7 @@ Currently, we support the following applications:
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -3600,6 +3928,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -3749,6 +4078,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
+* [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)

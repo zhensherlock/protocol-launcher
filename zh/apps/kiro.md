@@ -112,10 +112,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'kiro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'kiro' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```

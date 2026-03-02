@@ -69,10 +69,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddy' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```

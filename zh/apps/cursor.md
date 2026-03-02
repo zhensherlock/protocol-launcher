@@ -104,12 +104,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ### 创建聊天

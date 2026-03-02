@@ -104,12 +104,24 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 
 ### Create Chat

@@ -114,10 +114,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}cloneProject({
 })
 ```
 
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'lingma' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'lingma' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```

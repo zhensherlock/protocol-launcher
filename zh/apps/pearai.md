@@ -69,10 +69,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}cloneProject({
 })
 ```
 
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'pearai' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'pearai' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
