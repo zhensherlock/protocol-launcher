@@ -76,6 +76,13 @@ describe('lingma', () => {
     expect(url).toBe('lingma://settings?windowId=_blank')
   })
 
+  test('openSettings should return a URL with path', async () => {
+    const url = lingma.openSettings({
+      path: 'terminal.integrated.suggest.enabled',
+    })
+    expect(url).toBe('lingma://settings/terminal.integrated.suggest.enabled')
+  })
+
   test('openRemote should return a URL with type, host, and path', async () => {
     const url = lingma.openRemote({
       type: 'ssh-remote',

@@ -16,6 +16,7 @@ import {
   installStreamableHTTPMCPServerParams,
   installSSEMCPServerParams,
   cloneProjectParams,
+  openSettingsParams,
 } from '../../.vitepress/constants/lingma';
 
 const appStore = useAppStore();
@@ -173,10 +174,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'lingma' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 <div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
     Open in Lingma
   </VPLink>
 </div>
