@@ -107,20 +107,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
   </VPLink>
 </div>
 
-### 打开扩展
-```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode' }} } from '{{ importPath }}'
-
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
-  id: 'esbenp.prettier-vscode',
-})
-```
-<div class="flex justify-center">
-  <VPLink :href="openExtension(openExtensionParams)" target="_self">
-    在 VSCode 中打开
-  </VPLink>
-</div>
-
 ### 打开文件
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscode' }} } from '{{ importPath }}'
@@ -179,6 +165,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}cloneProject({
 ```
 <div class="flex justify-center">
   <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
+    在 VSCode 中打开
+  </VPLink>
+</div>
+
+### 打开扩展
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
     在 VSCode 中打开
   </VPLink>
 </div>
