@@ -64,3 +64,7 @@ export const openRemoteParams = {
 export const cloneProjectParams = {
   repo: 'https://github.com/zhensherlock/protocol-launcher',
 }
+
+export const openSettingsParams = {
+  path: 'terminal.integrated.suggest.enabled',
+}

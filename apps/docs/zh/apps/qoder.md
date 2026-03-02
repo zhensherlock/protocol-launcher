@@ -19,6 +19,7 @@ import {
   createChatParams,
   createQuestParams,
   createRuleParams,
+  openSettingsParams,
 } from '../../.vitepress/constants/qoder';
 
 const appStore = useAppStore();
@@ -220,10 +221,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'qoder' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 <div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
     在 Qoder 中打开
   </VPLink>
 </div>

@@ -101,6 +101,13 @@ describe('qoder', () => {
     expect(url).toBe('qoder://settings?windowId=_blank')
   })
 
+  test('openSettings should return a URL with path', async () => {
+    const url = qoder.openSettings({
+      path: 'terminal.integrated.suggest.enabled',
+    })
+    expect(url).toBe('qoder://settings/terminal.integrated.suggest.enabled')
+  })
+
   test('openRemote should return a URL with type, host, and path', async () => {
     const url = qoder.openRemote({
       type: 'ssh-remote',
