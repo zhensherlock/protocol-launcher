@@ -11,7 +11,7 @@ describe('pearai', () => {
     const url = pearai.openExtension({
       id: 'esbenp.prettier-vscode',
     })
-    expect(url).toBe('pearai://extension/esbenp.prettier-vscode')
+    expect(url).toBe('pearai:extension/esbenp.prettier-vscode')
   })
 
   test('openFile should return a URL with path', async () => {
