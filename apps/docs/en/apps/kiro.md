@@ -16,6 +16,7 @@ import {
   installStreamableHTTPMCPServerParams,
   installSSEMCPServerParams,
   cloneProjectParams,
+  openSettingsParams,
 } from '../../.vitepress/constants/kiro';
 
 const appStore = useAppStore();
@@ -171,10 +172,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}cloneProject({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'kiro' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings()
+const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
 ```
 <div class="flex justify-center">
-  <VPLink :href="openSettings()" target="_self">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
     Open in Kiro
   </VPLink>
 </div>
