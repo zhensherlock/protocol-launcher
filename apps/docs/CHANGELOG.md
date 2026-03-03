@@ -1,5 +1,12 @@
 # @protocol-launcher/docs
 
+## 0.0.24
+
+### Patch Changes
+
+- Updated dependencies [[`4c2dd03`](https://github.com/zhensherlock/protocol-launcher/commit/4c2dd03a21aee6d0340c390f55655fe7ca000d90), [`f4e4677`](https://github.com/zhensherlock/protocol-launcher/commit/f4e46771f4d3996a88ed747cd34938961cd543e0), [`226e34a`](https://github.com/zhensherlock/protocol-launcher/commit/226e34af4afff74eecb163e46cee8c033aa7a12c), [`65d73ac`](https://github.com/zhensherlock/protocol-launcher/commit/65d73ac52d1dd971f7f58bb6a18134386697ec1b), [`222c2c3`](https://github.com/zhensherlock/protocol-launcher/commit/222c2c342f40ab4c4fec0a6bf3a8d6b334d57b9a), [`6ac3eee`](https://github.com/zhensherlock/protocol-launcher/commit/6ac3eeef5e9108f1b00cc08f0f15801c38f47d35), [`9bb8746`](https://github.com/zhensherlock/protocol-launcher/commit/9bb8746d0c3bab7db1f5e52fa266681a1c6c8e35), [`68f341c`](https://github.com/zhensherlock/protocol-launcher/commit/68f341cb32b254b5fdd6fcaa633d0cb6bc4c7ab4), [`0fcfa6d`](https://github.com/zhensherlock/protocol-launcher/commit/0fcfa6d5e7bae70d0815341bb7fb3f0c0130c339), [`1034c70`](https://github.com/zhensherlock/protocol-launcher/commit/1034c70fc123b057e397e80fa6167283b04e087c), [`8e68a78`](https://github.com/zhensherlock/protocol-launcher/commit/8e68a78bd0416f0e546bb3c5f0fd3a35d2baafdc), [`19e56ca`](https://github.com/zhensherlock/protocol-launcher/commit/19e56caa3add6da04c1583835834153b0f7122c0), [`bc82274`](https://github.com/zhensherlock/protocol-launcher/commit/bc82274dbb84162fe5866761dd362e0328ae8299), [`8610f17`](https://github.com/zhensherlock/protocol-launcher/commit/8610f17c3e584d8e8f518113bc7f4d5cb91dca25), [`3797b59`](https://github.com/zhensherlock/protocol-launcher/commit/3797b590458a6caae5f0cb96c4148e2e563819e4), [`ad27164`](https://github.com/zhensherlock/protocol-launcher/commit/ad27164e6c9cce8695b3ca8074c047f253007777), [`978fd5c`](https://github.com/zhensherlock/protocol-launcher/commit/978fd5c375808ecb1d13e6688f351e72d9d744f0), [`8d06324`](https://github.com/zhensherlock/protocol-launcher/commit/8d06324492888ab1aa344225a42dab4d8ec6b14a), [`ab1fd9a`](https://github.com/zhensherlock/protocol-launcher/commit/ab1fd9a95ad0a050dd31903f2aea76ada91a9bc1), [`a28cbf1`](https://github.com/zhensherlock/protocol-launcher/commit/a28cbf10457745751a112a036bf50cbc88db11cc)]:
+  - protocol-launcher@1.12.0
+
 ## 0.0.23
 
 ### Patch Changes

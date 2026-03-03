@@ -1,5 +1,54 @@
 # protocol-launcher
 
+## 1.12.0
+
+### Minor Changes
+
+- [`4c2dd03`](https://github.com/zhensherlock/protocol-launcher/commit/4c2dd03a21aee6d0340c390f55655fe7ca000d90) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pearai): support opening specific settings via path parameter
+
+- [`f4e4677`](https://github.com/zhensherlock/protocol-launcher/commit/f4e46771f4d3996a88ed747cd34938961cd543e0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(codelite): add support for CodeLite IDE integration
+
+- [`226e34a`](https://github.com/zhensherlock/protocol-launcher/commit/226e34af4afff74eecb163e46cee8c033aa7a12c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(opencode): add support for OpenCode IDE integration
+
+- [`65d73ac`](https://github.com/zhensherlock/protocol-launcher/commit/65d73ac52d1dd971f7f58bb6a18134386697ec1b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(kiro): add open extension support
+
+- [`6ac3eee`](https://github.com/zhensherlock/protocol-launcher/commit/6ac3eeef5e9108f1b00cc08f0f15801c38f47d35) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cursor): add open extension support
+
+- [`9bb8746`](https://github.com/zhensherlock/protocol-launcher/commit/9bb8746d0c3bab7db1f5e52fa266681a1c6c8e35) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cursor): support opening specific settings via path parameter
+
+- [`68f341c`](https://github.com/zhensherlock/protocol-launcher/commit/68f341cb32b254b5fdd6fcaa633d0cb6bc4c7ab4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(vscode): support opening specific settings via path parameter
+
+- [`0fcfa6d`](https://github.com/zhensherlock/protocol-launcher/commit/0fcfa6d5e7bae70d0815341bb7fb3f0c0130c339) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(qoder): support opening specific settings via path parameter
+
+- [`1034c70`](https://github.com/zhensherlock/protocol-launcher/commit/1034c70fc123b057e397e80fa6167283b04e087c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(lingma): support opening specific settings via path parameter
+
+- [`8e68a78`](https://github.com/zhensherlock/protocol-launcher/commit/8e68a78bd0416f0e546bb3c5f0fd3a35d2baafdc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(qoder): add open extension support
+
+- [`19e56ca`](https://github.com/zhensherlock/protocol-launcher/commit/19e56caa3add6da04c1583835834153b0f7122c0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(nova): add support for Nova IDE integration
+
+- [`bc82274`](https://github.com/zhensherlock/protocol-launcher/commit/bc82274dbb84162fe5866761dd362e0328ae8299) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(qoder): add support for Qoder IDE integration
+
+- [`8610f17`](https://github.com/zhensherlock/protocol-launcher/commit/8610f17c3e584d8e8f518113bc7f4d5cb91dca25) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(codebuddy): support opening specific settings via path parameter
+
+- [`3797b59`](https://github.com/zhensherlock/protocol-launcher/commit/3797b590458a6caae5f0cb96c4148e2e563819e4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(kiro): support opening specific settings via path parameter
+
+- [`ad27164`](https://github.com/zhensherlock/protocol-launcher/commit/ad27164e6c9cce8695b3ca8074c047f253007777) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(vscode): add open extension support
+
+- [`978fd5c`](https://github.com/zhensherlock/protocol-launcher/commit/978fd5c375808ecb1d13e6688f351e72d9d744f0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(lingma): add open extension support
+
+- [`8d06324`](https://github.com/zhensherlock/protocol-launcher/commit/8d06324492888ab1aa344225a42dab4d8ec6b14a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(codebuddy): add open extension support
+
+- [`ab1fd9a`](https://github.com/zhensherlock/protocol-launcher/commit/ab1fd9a95ad0a050dd31903f2aea76ada91a9bc1) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pearai): add open extension support
+
+- [`a28cbf1`](https://github.com/zhensherlock/protocol-launcher/commit/a28cbf10457745751a112a036bf50cbc88db11cc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(kiro): add support for Kiro IDE integration
+
+### Patch Changes
+
+- [`222c2c3`](https://github.com/zhensherlock/protocol-launcher/commit/222c2c342f40ab4c4fec0a6bf3a8d6b334d57b9a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`222c2c3`](https://github.com/zhensherlock/protocol-launcher/commit/222c2c342f40ab4c4fec0a6bf3a8d6b334d57b9a)]:
+  - @protocol-launcher/shared@1.2.5
+
 ## 1.11.0
 
 ### Minor Changes
