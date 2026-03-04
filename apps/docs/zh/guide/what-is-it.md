@@ -23,6 +23,7 @@ layout: doc
 
 - [AFFiNE](../apps/affine.md)
 - [Antigravity](../apps/antigravity.md)
+- [AppFlowy](../apps/appflowy.md)
 - [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)

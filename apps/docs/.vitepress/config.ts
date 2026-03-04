@@ -20,6 +20,7 @@ export default defineConfig({
     'en/extra/examples.md': 'extra/examples.md',
     'en/apps/affine.md': 'apps/affine.md',
     'en/apps/antigravity.md': 'apps/antigravity.md',
+    'en/apps/appflowy.md': 'apps/appflowy.md',
     'en/apps/bbedit.md': 'apps/bbedit.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/code-buddy.md': 'apps/code-buddy.md',
@@ -93,6 +94,7 @@ export default defineConfig({
         items: [
           { text: 'AFFiNE', link: '/apps/affine' },
           { text: 'Antigravity', link: '/apps/antigravity' },
+          { text: 'AppFlowy', link: '/apps/appflowy' },
           { text: 'BBEdit', link: '/apps/bbedit' },
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/apps/code-buddy' },
@@ -171,6 +173,7 @@ export default defineConfig({
             items: [
               { text: 'AFFiNE', link: '/apps/affine' },
               { text: 'Antigravity', link: '/apps/antigravity' },
+              { text: 'AppFlowy', link: '/apps/appflowy' },
               { text: 'BBEdit', link: '/apps/bbedit' },
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
               { text: 'CodeBuddy', link: '/apps/code-buddy' },
@@ -220,6 +223,7 @@ export default defineConfig({
             items: [
               { text: 'AFFiNE', link: '/zh/apps/affine' },
               { text: 'Antigravity', link: '/zh/apps/antigravity' },
+              { text: 'AppFlowy', link: '/zh/apps/appflowy' },
               { text: 'BBEdit', link: '/zh/apps/bbedit' },
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
               { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
