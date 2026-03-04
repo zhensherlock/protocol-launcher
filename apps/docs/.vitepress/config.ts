@@ -18,6 +18,7 @@ export default defineConfig({
     'en/guide/what-is-it.md': 'guide/what-is-it.md',
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
+    'en/apps/antigravity.md': 'apps/antigravity.md',
     'en/apps/bbedit.md': 'apps/bbedit.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
     'en/apps/code-buddy.md': 'apps/code-buddy.md',
@@ -86,6 +87,7 @@ export default defineConfig({
       {
         text: 'Applications',
         items: [
+          { text: 'Antigravity', link: '/apps/antigravity' },
           { text: 'BBEdit', link: '/apps/bbedit' },
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/apps/code-buddy' },
@@ -159,6 +161,7 @@ export default defineConfig({
             text: 'Applications',
             base: '',
             items: [
+              { text: 'Antigravity', link: '/apps/antigravity' },
               { text: 'BBEdit', link: '/apps/bbedit' },
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
               { text: 'CodeBuddy', link: '/apps/code-buddy' },
@@ -203,6 +206,7 @@ export default defineConfig({
             text: '应用程序',
             base: '',
             items: [
+              { text: 'Antigravity', link: '/zh/apps/antigravity' },
               { text: 'BBEdit', link: '/zh/apps/bbedit' },
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
               { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },

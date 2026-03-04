@@ -62,6 +62,10 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./antigravity": {
+      "types": "./dist/types/antigravity/index.d.ts",
+      "import": "./dist/antigravity/index.js"
+    },
     "./bbedit": {
       "types": "./dist/types/bbedit/index.d.ts",
       "import": "./dist/bbedit/index.js"

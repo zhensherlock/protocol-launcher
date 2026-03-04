@@ -21,6 +21,7 @@ layout: doc
 
 目前，我们支持以下应用程序：
 
+- [Antigravity](../apps/antigravity.md)
 - [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
