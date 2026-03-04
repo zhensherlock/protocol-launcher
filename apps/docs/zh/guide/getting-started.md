@@ -138,6 +138,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [TextMate](../apps/textmate.md)
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
+- [VSCodium](../apps/vscodium.md)
 - [WebStorm](../apps/webstorm.md)
 - [Windsurf](../apps/windsurf.md)
 - [Xcode](../apps/xcode.md)
