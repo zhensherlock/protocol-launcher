@@ -74,6 +74,10 @@
       "types": "./dist/types/appflowy/index.d.ts",
       "import": "./dist/appflowy/index.js"
     },
+    "./atom": {
+      "types": "./dist/types/atom/index.d.ts",
+      "import": "./dist/atom/index.js"
+    },
     "./bbedit": {
       "types": "./dist/types/bbedit/index.d.ts",
       "import": "./dist/bbedit/index.js"
