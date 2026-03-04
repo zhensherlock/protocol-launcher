@@ -55,6 +55,7 @@ export default defineAdditionalConfig({
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'TextMate', link: '/zh/apps/textmate' },
+          { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },

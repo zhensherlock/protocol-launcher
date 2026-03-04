@@ -158,6 +158,10 @@
       "types": "./dist/types/textmate/index.d.ts",
       "import": "./dist/textmate/index.js"
     },
+    "./theia": {
+      "types": "./dist/types/theia/index.d.ts",
+      "import": "./dist/theia/index.js"
+    },
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"

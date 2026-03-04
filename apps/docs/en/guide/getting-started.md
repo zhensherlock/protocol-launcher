@@ -139,6 +139,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [RustRover](../apps/rustrover.md)
 - [Telegram](../apps/telegram.md)
 - [TextMate](../apps/textmate.md)
+- [Theia](../apps/theia.md)
 - [Thunder](../apps/thunder.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
