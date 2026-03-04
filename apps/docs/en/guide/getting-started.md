@@ -121,6 +121,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeLite](../apps/codelite.md)
 - [Cursor](../apps/cursor.md)
+- [Codex](../apps/codex.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)

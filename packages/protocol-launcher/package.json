@@ -90,6 +90,10 @@
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
     },
+    "./codex": {
+      "types": "./dist/types/codex/index.d.ts",
+      "import": "./dist/codex/index.js"
+    },
     "./github-desktop": {
       "types": "./dist/types/github-desktop/index.d.ts",
       "import": "./dist/github-desktop/index.js"

@@ -121,6 +121,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeLite](../apps/codelite.md)
 - [Cursor](../apps/cursor.md)
+- [Codex](../apps/codex.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [IntelliJ IDEA](../apps/idea.md)
