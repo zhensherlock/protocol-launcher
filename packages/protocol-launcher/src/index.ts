@@ -1,3 +1,4 @@
+export * as affine from './affine'
 export * as antigravity from './antigravity'
 export * as bbedit from './bbedit'
 export * as cherryStudio from './cherry-studio'

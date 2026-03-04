@@ -18,6 +18,7 @@ export default defineConfig({
     'en/guide/what-is-it.md': 'guide/what-is-it.md',
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
+    'en/apps/affine.md': 'apps/affine.md',
     'en/apps/antigravity.md': 'apps/antigravity.md',
     'en/apps/bbedit.md': 'apps/bbedit.md',
     'en/apps/cherry-studio.md': 'apps/cherry-studio.md',
@@ -87,6 +88,7 @@ export default defineConfig({
       {
         text: 'Applications',
         items: [
+          { text: 'AFFiNE', link: '/apps/affine' },
           { text: 'Antigravity', link: '/apps/antigravity' },
           { text: 'BBEdit', link: '/apps/bbedit' },
           { text: 'Cherry Studio', link: '/apps/cherry-studio' },
@@ -161,6 +163,7 @@ export default defineConfig({
             text: 'Applications',
             base: '',
             items: [
+              { text: 'AFFiNE', link: '/apps/affine' },
               { text: 'Antigravity', link: '/apps/antigravity' },
               { text: 'BBEdit', link: '/apps/bbedit' },
               { text: 'Cherry Studio', link: '/apps/cherry-studio' },
@@ -206,6 +209,7 @@ export default defineConfig({
             text: '应用程序',
             base: '',
             items: [
+              { text: 'AFFiNE', link: '/zh/apps/affine' },
               { text: 'Antigravity', link: '/zh/apps/antigravity' },
               { text: 'BBEdit', link: '/zh/apps/bbedit' },
               { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },

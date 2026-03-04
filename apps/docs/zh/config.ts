@@ -30,6 +30,7 @@ export default defineAdditionalConfig({
       {
         text: '应用程序',
         items: [
+          { text: 'AFFiNE', link: '/zh/apps/affine' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },

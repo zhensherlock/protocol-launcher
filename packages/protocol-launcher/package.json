@@ -62,6 +62,10 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./affine": {
+      "types": "./dist/types/affine/index.d.ts",
+      "import": "./dist/affine/index.js"
+    },
     "./antigravity": {
       "types": "./dist/types/antigravity/index.d.ts",
       "import": "./dist/antigravity/index.js"

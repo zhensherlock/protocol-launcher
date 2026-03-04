@@ -21,6 +21,7 @@ These URLs allow users to trigger specific actions in applications with a single
 
 Currently, we support the following applications:
 
+- [AFFiNE](../apps/affine.md)
 - [Antigravity](../apps/antigravity.md)
 - [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)
