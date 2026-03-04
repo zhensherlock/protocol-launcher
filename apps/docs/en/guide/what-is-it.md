@@ -38,6 +38,7 @@ Currently, we support the following applications:
 - [MacVim](../apps/macvim.md)
 - [Nova](../apps/nova.md)
 - [OpenCode](../apps/opencode.md)
+- [Orchids](../apps/orchids.md)
 - [PearAI](../apps/pearai.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)

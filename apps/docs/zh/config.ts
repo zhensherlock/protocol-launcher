@@ -32,6 +32,7 @@ export default defineAdditionalConfig({
         items: [
           { text: 'AFFiNE', link: '/zh/apps/affine' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
+          { text: 'AppFlowy', link: '/zh/apps/appflowy' },
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
@@ -46,6 +47,7 @@ export default defineAdditionalConfig({
           { text: 'MacVim', link: '/zh/apps/macvim' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
+          { text: 'Orchids', link: '/zh/apps/orchids' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
