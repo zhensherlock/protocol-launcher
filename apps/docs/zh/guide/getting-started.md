@@ -139,5 +139,6 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 - [WebStorm](../apps/webstorm.md)
+- [Windsurf](../apps/windsurf.md)
 - [Xcode](../apps/xcode.md)
 - [Zed](../apps/zed.md)

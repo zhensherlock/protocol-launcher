@@ -139,5 +139,6 @@ For detailed usage instructions for each application, please refer to their resp
 - [Thunder](../apps/thunder.md)
 - [VS Code](../apps/vscode.md)
 - [WebStorm](../apps/webstorm.md)
+- [Windsurf](../apps/windsurf.md)
 - [Xcode](../apps/xcode.md)
 - [Zed](../apps/zed.md)

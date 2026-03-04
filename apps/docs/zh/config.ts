@@ -55,6 +55,7 @@ export default defineAdditionalConfig({
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
+          { text: 'Windsurf', link: '/zh/apps/windsurf' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Zed', link: '/zh/apps/zed' },
         ],
