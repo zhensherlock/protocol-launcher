@@ -347,6 +347,60 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openSettings(
 ---
 
 ---
+url: /protocol-launcher/apps/appflowy.md
+---
+
+# AppFlowy
+
+[AppFlowy](https://appflowy.io/) is an AI-powered collaborative workspace where you achieve more without losing control of your data. It's an open-source alternative to Notion, designed for individuals and teams who value privacy and a native cross-platform experience. Built with Flutter and Rust, it provides a powerful toolbox for projects, wikis, and databases. **Protocol Launcher** allows you to generate deep links to open resources in AppFlowy.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open AppFlowy
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appflowy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appflowy.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/appflowy.md
+---
+
+# AppFlowy
+
+[AppFlowy](https://appflowy.io/) 是一款由 AI 驱动的协作工作空间，旨在让您在不失去数据控制权的情况下实现更多目标。它是 Notion 的开源替代方案，专为重视隐私和原生跨平台体验的个人及团队设计。它基于 Flutter 和 Rust 构建，为项目、维基和数据库提供了强大的工具箱。**Protocol Launcher** 允许你生成深度链接，用于在 AppFlowy 中打开资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 AppFlowy
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appflowy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appflowy.'}}open()
+```
+
+---
+
+---
 url: /protocol-launcher/apps/bbedit.md
 ---
 
@@ -1511,6 +1565,7 @@ For detailed usage instructions for each application, please refer to their resp
 
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
+* [AppFlowy](../apps/appflowy.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -1525,6 +1580,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [MacVim](../apps/macvim.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Orchids](../apps/orchids.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -1532,7 +1588,9 @@ For detailed usage instructions for each application, please refer to their resp
 * [RustRover](../apps/rustrover.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
+* [Theia](../apps/theia.md)
 * [Thunder](../apps/thunder.md)
+* [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
@@ -2657,6 +2715,60 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'opencode.'}}openProject({
 ---
 
 ---
+url: /protocol-launcher/apps/orchids.md
+---
+
+# Orchids
+
+[Orchids](https://www.orchids.app/) is an AI-powered app builder that enables you to build web apps, mobile apps, games, CLI tools, and AI agents. It supports every language and framework and integrates with your existing AI subscriptions. **Protocol Launcher** allows you to generate deep links to open Orchids.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Orchids
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'orchids' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'orchids.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/orchids.md
+---
+
+# Orchids
+
+[Orchids](https://www.orchids.app/) 是一款 AI 驱动的应用构建工具，支持构建 Web 应用、移动应用、游戏、CLI 工具和 AI Agent。它支持各种语言和框架，并能与您现有的 AI 订阅无缝集成。**Protocol Launcher** 允许您生成用于打开 Orchids 的深度链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 Orchids
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'orchids' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'orchids.'}}open()
+```
+
+---
+
+---
 url: /protocol-launcher/apps/pearai.md
 ---
 
@@ -3585,6 +3697,60 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'textmate.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/theia.md
+---
+
+# Theia
+
+[Theia](https://theia-ide.org/) is an open-source, extensible platform for building cloud and desktop IDEs. It's designed with a modular architecture, embraces VS Code extensions, and allows for deep customization to create tailored development experiences. **Protocol Launcher** allows you to generate deep links to open Theia.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Theia
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'theia' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'theia.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/theia.md
+---
+
+# Theia
+
+[Theia](https://theia-ide.org/) 是一个用于构建云端和桌面 IDE 的开源、可扩展平台。它采用模块化架构设计，兼容 VS Code 扩展，并支持深度定制，以打造量身定制的开发体验。**Protocol Launcher** 允许您生成用于打开 Theia 的深度链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 Theia
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'theia' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'theia.'}}open()
+```
+
+---
+
+---
 url: /protocol-launcher/apps/thunder.md
 ---
 
@@ -3638,6 +3804,60 @@ import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'thunder' }} } from 
 const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
+```
+
+---
+
+---
+url: /protocol-launcher/apps/verdent.md
+---
+
+# Verdent
+
+[Verdent](https://verdent.ai/) is an AI-powered coding partner designed to bring the joy back to coding by focusing on creation. It pairs a world-class coding agent with multiple frontier models to help you build from scratch, ship features in existing repos, and handle complex debugging. With features like Agent Mode for execution and Plan Mode for collaborative planning, Verdent handles the complexity so you can stay in flow. **Protocol Launcher** allows you to generate deep links to open Verdent.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Verdent
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'verdent' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'verdent.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/verdent.md
+---
+
+# Verdent
+
+[Verdent](https://verdent.ai/) 是一款 AI 驱动的编程伙伴，旨在通过专注于创造来带回编程的乐趣。它将世界级的编程智能体与多种前沿模型结合，帮助您从零开始构建项目、在现有代码库中交付功能以及处理复杂的调试。通过用于执行的“智能体模式”和用于协作规划的“计划模式”，Verdent 处理复杂性，让您保持流畅的开发体验。**Protocol Launcher** 允许您生成深度链接以打开 Verdent。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 Verdent
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'verdent' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'verdent.'}}open()
 ```
 
 ---
@@ -4207,6 +4427,7 @@ Currently, we support the following applications:
 
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
+* [AppFlowy](../apps/appflowy.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -4221,6 +4442,7 @@ Currently, we support the following applications:
 * [MacVim](../apps/macvim.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Orchids](../apps/orchids.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -4228,7 +4450,9 @@ Currently, we support the following applications:
 * [RustRover](../apps/rustrover.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
+* [Theia](../apps/theia.md)
 * [Thunder](../apps/thunder.md)
+* [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
@@ -4735,6 +4959,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
+* [AppFlowy](../apps/appflowy.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -4749,6 +4974,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [MacVim](../apps/macvim.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Orchids](../apps/orchids.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -4756,7 +4982,9 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [RustRover](../apps/rustrover.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
+* [Theia](../apps/theia.md)
 * [Thunder](../apps/thunder.md)
+* [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
@@ -4890,6 +5118,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
+* [AppFlowy](../apps/appflowy.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -4904,6 +5133,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [MacVim](../apps/macvim.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Orchids](../apps/orchids.md)
 * [PearAI](../apps/pearai.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
@@ -4911,7 +5141,9 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [RustRover](../apps/rustrover.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
+* [Theia](../apps/theia.md)
 * [Thunder](../apps/thunder.md)
+* [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
