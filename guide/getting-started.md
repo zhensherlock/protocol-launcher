@@ -121,6 +121,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
