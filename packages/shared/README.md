@@ -32,7 +32,7 @@ npm install protocol-launcher
 or
 
 ```bash
-yarn install protocol-launcher
+yarn add protocol-launcher
 ```
 
 or
