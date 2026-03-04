@@ -20,10 +20,13 @@
 
 ### Applications
 
+- [AFFiNE](/protocol-launcher/apps/affine.md)
+- [Antigravity](/protocol-launcher/apps/antigravity.md)
 - [BBEdit](/protocol-launcher/apps/bbedit.md)
 - [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
 - [CodeBuddy](/protocol-launcher/apps/code-buddy.md)
 - [CodeLite](/protocol-launcher/apps/codelite.md)
+- [Codex](/protocol-launcher/apps/codex.md)
 - [Cursor](/protocol-launcher/apps/cursor.md)
 - [GitHub Desktop](/protocol-launcher/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/apps/goland.md)
@@ -42,7 +45,9 @@
 - [TextMate](/protocol-launcher/apps/textmate.md)
 - [Thunder](/protocol-launcher/apps/thunder.md)
 - [VS Code](/protocol-launcher/apps/vscode.md)
+- [VSCodium](/protocol-launcher/apps/vscodium.md)
 - [WebStorm](/protocol-launcher/apps/webstorm.md)
+- [Windsurf](/protocol-launcher/apps/windsurf.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
 - [Zed](/protocol-launcher/apps/zed.md)
 
@@ -57,10 +62,13 @@
 
 ### 应用程序
 
+- [AFFiNE](/protocol-launcher/zh/apps/affine.md)
+- [Antigravity](/protocol-launcher/zh/apps/antigravity.md)
 - [BBEdit](/protocol-launcher/zh/apps/bbedit.md)
 - [Cherry Studio](/protocol-launcher/zh/apps/cherry-studio.md)
 - [CodeBuddy](/protocol-launcher/zh/apps/code-buddy.md)
 - [CodeLite](/protocol-launcher/zh/apps/codelite.md)
+- [Codex](/protocol-launcher/zh/apps/codex.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
 - [GitHub Desktop](/protocol-launcher/zh/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/zh/apps/goland.md)
@@ -79,7 +87,9 @@
 - [TextMate](/protocol-launcher/zh/apps/textmate.md)
 - [Thunder](/protocol-launcher/zh/apps/thunder.md)
 - [VS Code](/protocol-launcher/zh/apps/vscode.md)
+- [VSCodium](/protocol-launcher/zh/apps/vscodium.md)
 - [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
+- [Windsurf](/protocol-launcher/zh/apps/windsurf.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
 

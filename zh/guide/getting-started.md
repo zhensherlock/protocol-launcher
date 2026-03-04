@@ -118,11 +118,14 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
+* [AFFiNE](../apps/affine.md)
+* [Antigravity](../apps/antigravity.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeLite](../apps/codelite.md)
 * [Cursor](../apps/cursor.md)
+* [Codex](../apps/codex.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -140,6 +143,8 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [TextMate](../apps/textmate.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)

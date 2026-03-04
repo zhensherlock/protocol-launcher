@@ -1,4 +1,352 @@
 ---
+url: /protocol-launcher/apps/affine.md
+---
+
+# AFFiNE
+
+[AFFiNE](https://affine.pro/) is a next-generation all-in-one workspace where you can write, draw, and plan all at once. It is a privacy-focused, local-first, and open-source alternative to Notion and Miro, featuring a hyper-fused platform with fully merged docs, whiteboards, and databases. **Protocol Launcher** allows you to generate deep links to open and configure resources in AFFiNE.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open AFFiNE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'affine' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}open()
+```
+
+### Open Document
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'affine' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}openFile({
+  workspaceId: '4f5a46cf-5eeb-4130-beda-25b438cd8c60',
+  docId: 'ykchLzhvFXEUMwJu_spHY',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/affine.md
+---
+
+# AFFiNE
+
+[AFFiNE](https://affine.pro/) 是下一代全方位工作空间，集写作、绘图和规划于一体。它是一个以隐私为中心、本地优先且开源的 Notion 和 Miro 替代方案，提供了一个将文档、白板和数据库完美融合的超融合平台。**Protocol Launcher** 允许你生成深度链接，用于在 AFFiNE 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 AFFiNE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'affine' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}open()
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDoc' : 'affine' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}openDoc({
+  workspaceId: '4f5a46cf-5eeb-4130-beda-25b438cd8c60',
+  docId: 'ykchLzhvFXEUMwJu_spHY',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/antigravity.md
+---
+
+# Antigravity
+
+[Antigravity](https://antigravity.google/) is an AI-driven, "agent-first" IDE developed by Google. Built on VS Code and powered by Gemini 3, it enables developers to delegate complex coding tasks to autonomous AI agents that generate verifiable artifacts like task lists and implementation plans. **Protocol Launcher** allows you to generate deep links to open and configure resources in Antigravity.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}open()
+```
+
+### Install STDIO MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### Install Streamable HTTP MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### Install SSE MCP Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/antigravity.md
+---
+
+# Antigravity
+
+[Antigravity](https://antigravity.google/) 是由 Google 开发的 AI 驱动、以“智能体优先”（agent-first）为核心的集成开发环境（IDE）。它基于 VS Code 构建，由 Gemini 3 提供支持，允许开发者将复杂任务委托给自主 AI 智能体，并生成可验证的工件（如任务列表和实施计划）。**Protocol Launcher** 允许你生成深度链接，用于在 Antigravity 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}open()
+```
+
+### 安装 STDIO MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+})
+```
+
+### 安装 Streamable HTTP MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}installMCP({
+  name: '企查查企业信息 MCP',
+  type: 'streamable_http',
+  url: 'https://mcp.qcc.com/basic/stream',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### 安装 SSE MCP 服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}installMCP({
+  name: '企查查风险信息 MCP',
+  type: 'sse',
+  url: 'https://mcp.qcc.com/basic/sse',
+  headers: {
+    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+  },
+})
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'antigravity' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/bbedit.md
 ---
 
@@ -639,6 +987,92 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codelite.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/codex.md
+---
+
+# Codex
+
+Codex is an AI coding tool designed for engineering and development work, capable of handling tasks like feature development, code refactoring, and system migration. **Protocol Launcher** allows you to generate deep links to interact with Codex.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}open()
+```
+
+### Open Thread
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openThread' : 'codex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}openThread()
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}openSettings()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/codex.md
+---
+
+# Codex
+
+Codex 是一款为工程研发工作打造的 AI 编码工具，可以稳定完成功能开发、代码重构、系统迁移等各类任务。**Protocol Launcher** 允许你生成深度链接来与 Codex 进行交互。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 Codex
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}open()
+```
+
+### 打开线程
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openThread' : 'codex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}openThread()
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}openSettings()
+```
+
+---
+
+---
 url: /protocol-launcher/apps/cursor.md
 ---
 
@@ -1075,11 +1509,14 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 For detailed usage instructions for each application, please refer to their respective guides:
 
+* [AFFiNE](../apps/affine.md)
+* [Antigravity](../apps/antigravity.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeLite](../apps/codelite.md)
 * [Cursor](../apps/cursor.md)
+* [Codex](../apps/codex.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -1097,7 +1534,9 @@ For detailed usage instructions for each application, please refer to their resp
 * [TextMate](../apps/textmate.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 
@@ -3476,6 +3915,192 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/vscodium.md
+---
+
+# VSCodium
+
+[VSCodium](https://vscodium.com/) is a community-driven, freely licensed binary distribution of Microsoft VS Code. It ships MIT-licensed builds with telemetry disabled and without Microsoft-specific customizations. **Protocol Launcher** allows you to generate deep links to open and configure resources in VSCodium.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}open()
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openSettings({ 
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/vscodium.md
+---
+
+# VSCodium
+
+[VSCodium](https://vscodium.com/) 是一个由社区驱动、可自由使用的 Microsoft VS Code 二进制发行版。它基于 MIT 许可构建，默认关闭遥测，并移除了 Microsoft 专有定制。**Protocol Launcher** 允许你生成深度链接，用于在 VSCodium 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}open()
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscodium' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openSettings({ 
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/webstorm.md
 ---
 
@@ -3580,11 +4205,14 @@ These URLs allow users to trigger specific actions in applications with a single
 
 Currently, we support the following applications:
 
+* [AFFiNE](../apps/affine.md)
+* [Antigravity](../apps/antigravity.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeLite](../apps/codelite.md)
 * [Cursor](../apps/cursor.md)
+* [Codex](../apps/codex.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -3602,11 +4230,199 @@ Currently, we support the following applications:
 * [TextMate](../apps/textmate.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 
 More applications will be added in the future.
+
+---
+
+---
+url: /protocol-launcher/apps/windsurf.md
+---
+
+# Windsurf
+
+[Windsurf](https://windsurf.com/) is the first agentic IDE, developed by [Codeium](https://codeium.com/). It features **Cascade**, an AI agent that combines deep codebase understanding, advanced tools, and real-time awareness of your actions to handle complex coding tasks while keeping you in flow. **Protocol Launcher** allows you to generate deep links to open and configure resources in Windsurf.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}open()
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/windsurf.md
+---
+
+# Windsurf
+
+[Windsurf](https://windsurf.com/) 是由 [Codeium](https://codeium.com/) 开发的首款智能体（agentic）IDE。它搭载了 **Cascade** 智能体，能够深度理解代码库并实时感知你的操作，在处理复杂开发任务的同时让你保持流畅。**Protocol Launcher** 允许你生成深度链接，用于在 Windsurf 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}open()
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'windsurf' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'windsurf.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
 
 ---
 
@@ -3917,11 +4733,14 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 目前，我们支持以下应用程序：
 
+* [AFFiNE](../apps/affine.md)
+* [Antigravity](../apps/antigravity.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeLite](../apps/codelite.md)
 * [Cursor](../apps/cursor.md)
+* [Codex](../apps/codex.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -3939,7 +4758,9 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [TextMate](../apps/textmate.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 
@@ -4067,11 +4888,14 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
+* [AFFiNE](../apps/affine.md)
+* [Antigravity](../apps/antigravity.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeLite](../apps/codelite.md)
 * [Cursor](../apps/cursor.md)
+* [Codex](../apps/codex.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -4089,7 +4913,9 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [TextMate](../apps/textmate.md)
 * [Thunder](../apps/thunder.md)
 * [VS Code](../apps/vscode.md)
+* [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 
