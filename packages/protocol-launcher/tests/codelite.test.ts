@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { codelite, textmate } from '../src'
+import { codelite } from '../src'
 
 describe('codelite', () => {
   test('openFile should return a URL with path', async () => {
