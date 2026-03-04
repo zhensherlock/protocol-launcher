@@ -47,6 +47,7 @@ layout: doc
 - [Telegram](../apps/telegram.md)
 - [TextMate](../apps/textmate.md)
 - [Thunder](../apps/thunder.md)
+- [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
 - [VSCodium](../apps/vscodium.md)
 - [WebStorm](../apps/webstorm.md)

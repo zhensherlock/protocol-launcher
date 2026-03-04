@@ -56,6 +56,7 @@ export default defineAdditionalConfig({
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'TextMate', link: '/zh/apps/textmate' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
+          { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },

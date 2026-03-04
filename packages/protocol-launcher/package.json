@@ -126,6 +126,10 @@
       "types": "./dist/types/opencode/index.d.ts",
       "import": "./dist/opencode/index.js"
     },
+    "./orchids": {
+      "types": "./dist/types/orchids/index.d.ts",
+      "import": "./dist/orchids/index.js"
+    },
     "./pearai": {
       "types": "./dist/types/pearai/index.d.ts",
       "import": "./dist/pearai/index.js"
@@ -157,6 +161,10 @@
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
+    },
+    "./verdent": {
+      "types": "./dist/types/verdent/index.d.ts",
+      "import": "./dist/verdent/index.js"
     },
     "./vscode": {
       "types": "./dist/types/vscode/index.d.ts",
