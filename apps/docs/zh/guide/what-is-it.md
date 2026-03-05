@@ -51,6 +51,7 @@ layout: doc
 - [Thunder](../apps/thunder.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
+- [VS Code Insiders](../apps/vscode-insiders.md)
 - [VSCodium](../apps/vscodium.md)
 - [WebStorm](../apps/webstorm.md)
 - [Windsurf](../apps/windsurf.md)

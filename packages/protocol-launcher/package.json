@@ -182,6 +182,10 @@
       "types": "./dist/types/vscode/index.d.ts",
       "import": "./dist/vscode/index.js"
     },
+    "./vscode-insiders": {
+      "types": "./dist/types/vscode-insiders/index.d.ts",
+      "import": "./dist/vscode-insiders/index.js"
+    },
     "./vscodium": {
       "types": "./dist/types/vscodium/index.d.ts",
       "import": "./dist/vscodium/index.js"

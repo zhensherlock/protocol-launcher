@@ -60,6 +60,7 @@ export default defineAdditionalConfig({
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
+          { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
