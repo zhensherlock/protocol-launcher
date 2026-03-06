@@ -4,7 +4,7 @@ url: /protocol-launcher/apps/code-runner.md
 
 # CodeRunner
 
-[CodeRunner](https://code-runner.app) is a lightweight, multi-language programming editor and IDE for macOS. It supports 25 languages out-of-the-box and features advanced code completion, built-in debugging, and live error checking. **Protocol Launcher** allows you to generate deep links to open and configure resources in CodeRunner.
+[CodeRunner](https://coderunnerapp.com/) is a lightweight, multi-language programming editor and IDE for macOS. It supports 25 languages out-of-the-box and features advanced code completion, built-in debugging, and live error checking. **Protocol Launcher** allows you to generate deep links to open and configure resources in CodeRunner.
 
 ## Usage
 
