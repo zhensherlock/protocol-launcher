@@ -1,5 +1,38 @@
 # protocol-launcher
 
+## 1.13.0
+
+### Minor Changes
+
+- [`24bc072`](https://github.com/zhensherlock/protocol-launcher/commit/24bc072c57cda5948993295d76e208cb44df1369) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(antigravity): add support for Antigravity IDE
+
+- [`0bdeb85`](https://github.com/zhensherlock/protocol-launcher/commit/0bdeb853b2a079f5cad8cfad24d9b791ea458ec6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(appflowy): add AppFlowy protocol launcher support
+
+- [`325732c`](https://github.com/zhensherlock/protocol-launcher/commit/325732c547e0471c590cc278c90b8a6173406858) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(vscodium): add VSCodium protocol launcher support
+
+- [`3d39fe9`](https://github.com/zhensherlock/protocol-launcher/commit/3d39fe9f713bfa04f0c01771bba9814eb9cee51e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(theia): add Theia protocol launcher support
+
+- [`205c96e`](https://github.com/zhensherlock/protocol-launcher/commit/205c96e875b89a7f10d6d99d209582141636b9db) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(codex): add Codex protocol launcher support
+
+- [`37551ce`](https://github.com/zhensherlock/protocol-launcher/commit/37551ce36073d68ff3746d46c7fc469949be6fff) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(orchids): add Orchids protocol launcher support
+
+- [`8b6df46`](https://github.com/zhensherlock/protocol-launcher/commit/8b6df46420c00d8acea1d864866d38cb934320c2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(vscode-insiders): add VS Code Insiders protocol launcher support
+
+- [`148c5c4`](https://github.com/zhensherlock/protocol-launcher/commit/148c5c4a1c588b824a88efb3ab11c4f1ee7223ce) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(verdent): add Verdent protocol launcher support
+
+- [`c89971e`](https://github.com/zhensherlock/protocol-launcher/commit/c89971ee5e3cb0a0f840f34a88768efb7762db8f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(windsurf): add Windsurf protocol launcher support
+
+- [`54e9e37`](https://github.com/zhensherlock/protocol-launcher/commit/54e9e372bffdcc731bc39a23eaf088fa48307683) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat: add AFFiNE protocol launcher support
+
+- [`0d95a46`](https://github.com/zhensherlock/protocol-launcher/commit/0d95a46980ce17643fe449d1ff98a736728bcffc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(code-runner): add CodeRunner protocol launcher support
+
+### Patch Changes
+
+- [`f8c5c02`](https://github.com/zhensherlock/protocol-launcher/commit/f8c5c02e9de12baf0c26e16763a03cfd762f7644) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`f8c5c02`](https://github.com/zhensherlock/protocol-launcher/commit/f8c5c02e9de12baf0c26e16763a03cfd762f7644)]:
+  - @protocol-launcher/shared@1.2.6
+
 ## 1.12.0
 
 ### Minor Changes
