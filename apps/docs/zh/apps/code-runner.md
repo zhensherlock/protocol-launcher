@@ -21,7 +21,7 @@ const currentMethodDesc = computed(() => currentMethod.value === 'On-Demand' ? '
 
 # CodeRunner
 
-[CodeRunner](https://code-runner.app) 是一款适用于 macOS 的轻量级多语言编程编辑器和 IDE。它开箱即用支持 25 种语言，并具有高级代码补全、内置调试和实时错误检查等功能。**Protocol Launcher** 允许您生成深度链接，以便在 CodeRunner 中打开和配置资源。
+[CodeRunner](https://coderunnerapp.com/) 是一款适用于 macOS 的轻量级多语言编程编辑器和 IDE。它开箱即用支持 25 种语言，并具有高级代码补全、内置调试和实时错误检查等功能。**Protocol Launcher** 允许您生成深度链接，以便在 CodeRunner 中打开和配置资源。
 
 ## 使用
 
