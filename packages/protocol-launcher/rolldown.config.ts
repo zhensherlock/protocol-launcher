@@ -1,4 +1,3 @@
-import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 import { glob } from 'glob'
 import { defineConfig } from 'rolldown'
@@ -12,11 +11,11 @@ export default defineConfig([
     output: {
       format: 'esm',
       file: 'dist/index.js',
+      minify: isProd,
     },
     watch: {
       clearScreen: false,
     },
-    plugins: [isProd && terser()],
   },
   {
     input: 'src/index.ts',
@@ -24,11 +23,11 @@ export default defineConfig([
       format: 'iife',
       name: 'ProtocolLauncher',
       file: 'dist/index.browser.js',
+      minify: isProd,
     },
     watch: {
       clearScreen: false,
     },
-    plugins: [isProd && terser()],
   },
   {
     input: pluginEntries,
@@ -36,12 +35,13 @@ export default defineConfig([
       format: 'esm',
       dir: 'dist',
       sourcemap: !isProd,
+      minify: isProd,
       preserveModules: true,
       preserveModulesRoot: 'src',
     },
     watch: {
       clearScreen: false,
     },
-    plugins: [isProd && terser(), typescript()],
+    plugins: [typescript()],
   },
 ])

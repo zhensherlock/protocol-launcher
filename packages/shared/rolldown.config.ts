@@ -1,4 +1,3 @@
-import terser from '@rollup/plugin-terser'
 import typescript from '@rollup/plugin-typescript'
 import { defineConfig } from 'rolldown'
 
@@ -10,11 +9,12 @@ export default defineConfig({
     format: 'esm',
     dir: 'dist',
     sourcemap: !isProd,
+    minify: isProd,
     preserveModules: true,
     preserveModulesRoot: 'src',
   },
   watch: {
     clearScreen: false,
   },
-  plugins: [isProd && terser(), typescript()],
+  plugins: [typescript()],
 })
