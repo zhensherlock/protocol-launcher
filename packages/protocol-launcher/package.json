@@ -162,6 +162,10 @@
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"
     },
+    "./sourcetree": {
+      "types": "./dist/types/sourcetree/index.d.ts",
+      "import": "./dist/sourcetree/index.js"
+    },
     "./telegram": {
       "types": "./dist/types/telegram/index.d.ts",
       "import": "./dist/telegram/index.js"
