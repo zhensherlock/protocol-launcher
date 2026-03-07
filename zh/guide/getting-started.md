@@ -143,6 +143,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)

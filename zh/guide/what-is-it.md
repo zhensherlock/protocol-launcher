@@ -46,6 +46,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)

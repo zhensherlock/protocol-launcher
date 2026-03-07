@@ -1768,6 +1768,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
@@ -3724,6 +3725,80 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'rustrover.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/sourcetree.md
+---
+
+# SourceTree
+
+[SourceTree](https://www.sourcetreeapp.com/) is a free Git client for Windows and macOS that simplifies how you interact with your Git repositories. **Protocol Launcher** allows you to generate deep links to open and configure resources in SourceTree.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open SourceTree
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'sourcetree' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}open()
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'sourcetree' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/sourcetree.md
+---
+
+# SourceTree
+
+[SourceTree](https://www.sourcetreeapp.com/) 是一款适用于 Windows 和 macOS 的免费 Git 客户端，它可以简化你与 Git 仓库的交互方式。**Protocol Launcher** 允许你生成深度链接，用于在 SourceTree 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 SourceTree
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'sourcetree' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}open()
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'sourcetree' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/telegram.md
 ---
 
@@ -4905,6 +4980,7 @@ Currently, we support the following applications:
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
@@ -5440,6 +5516,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
@@ -5602,6 +5679,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)

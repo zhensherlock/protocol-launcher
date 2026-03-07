@@ -1,1 +1,0 @@
-function t(n){const{path:r}=n;return`coderunner://${r}`}function e(n){const{path:r}=n;return`coderunner://${r}`}function s(){return"coderunner://"}const o=n=>({path:n?"C:\\Windows\\System32\\drivers\\etc\\hosts":"/etc/hosts"}),c=n=>({path:n?"C:\\Windows\\System32\\drivers\\etc":"/etc"});export{t as a,e as b,c,s as n,o};
