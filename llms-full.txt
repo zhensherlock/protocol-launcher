@@ -1624,6 +1624,126 @@ Collection of live examples demonstrating how to integrate protocol-launcher wit
 ---
 
 ---
+url: /protocol-launcher/apps/fsnotes.md
+---
+
+# FSNotes
+
+[FSNotes](https://fsnot.es) is a modern notes manager for macOS and iOS. It's simple, blazing fast, and respects open formats like GitHub Flavored Markdown. **Protocol Launcher** allows you to generate deep links to search, open, or create notes in FSNotes.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open FSNotes
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}open()
+```
+
+### Find Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findNotes' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}findNotes({
+  keyword: 'hello',
+})
+```
+
+### Open Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}openNote({
+  title: 'hello',
+  tag: '2026',
+})
+```
+
+### Create Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}createNote({
+  title: 'hello',
+  content: 'hello world',
+  tags: '2026',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/fsnotes.md
+---
+
+# FSNotes
+
+[FSNotes](https://fsnot.es) 是一款适用于 macOS 和 iOS 的现代笔记管理器。它简洁、高效，并支持 GitHub Flavored Markdown 等开放格式。**Protocol Launcher** 允许您生成深度链接，以便在 FSNotes 中搜索、打开或创建笔记。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 FSNotes
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}open()
+```
+
+### 搜索笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findNotes' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}findNotes({
+  keyword: 'hello',
+})
+```
+
+### 打开笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}openNote({
+  title: 'hello',
+  tag: '2026',
+})
+```
+
+### 创建笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}createNote({
+  title: 'hello',
+  content: 'hello world',
+  tags: '2026',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/guide/getting-started.md
 ---
 
@@ -1754,8 +1874,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [CodeRunner](../apps/code-runner.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
+* [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
@@ -1950,6 +2072,60 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'goland' }} } from '{
 const url = {{currentMethod === 'On-Demand' ? '' : 'goland.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
+```
+
+---
+
+---
+url: /protocol-launcher/apps/hbuilderx.md
+---
+
+# HBuilderX
+
+[HBuilderX](https://www.dcloud.io/hbuilderx.html) is a lightweight, ultra-fast modern editor built on a C++ architecture. It features powerful AST-based syntax analysis and is purpose-built for Vue, significantly boosting development efficiency. Beyond a superior coding experience, it offers Markdown-first support, a clean eye-friendly interface, and efficient geek-style operations. **Protocol Launcher** allows you to generate deep links to quickly open resources in HBuilderX.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open HBuilderX
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'hbuilderx' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hbuilderx.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/hbuilderx.md
+---
+
+# HBuilderX
+
+[HBuilderX](https://www.dcloud.io/hbuilderx.html) 是一款轻巧、极速、基于 C++ 架构的现代化编辑器。它拥有强大的 AST 语法分析能力，专为 Vue 打造，提供卓越的开发效率。除了极致的编码体验，它还支持 Markdown 优先、清爽护眼的界面以及高效的极客操作。**Protocol Launcher** 允许你生成深度链接，用于在 HBuilderX 中快速打开资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 HBuilderX
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'hbuilderx' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hbuilderx.'}}open()
 ```
 
 ---
@@ -4966,8 +5142,10 @@ Currently, we support the following applications:
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
+* [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
@@ -5502,8 +5680,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
+* [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
@@ -5665,8 +5845,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
+* [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
