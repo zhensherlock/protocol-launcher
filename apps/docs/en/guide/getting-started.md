@@ -127,6 +127,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
+- [HBuilderX](../apps/hbuilderx.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Kiro](../apps/kiro.md)
 - [Lingma](../apps/lingma.md)

@@ -127,6 +127,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Cursor](../apps/cursor.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
+- [HBuilderX](../apps/hbuilderx.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Kiro](../apps/kiro.md)
 - [Lingma](../apps/lingma.md)

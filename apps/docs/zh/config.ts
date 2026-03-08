@@ -43,6 +43,7 @@ export default defineAdditionalConfig({
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'GoLand', link: '/zh/apps/goland' },
+          { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
