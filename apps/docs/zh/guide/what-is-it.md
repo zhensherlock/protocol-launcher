@@ -32,6 +32,7 @@ layout: doc
 - [CodeLite](../apps/codelite.md)
 - [Codex](../apps/codex.md)
 - [Cursor](../apps/cursor.md)
+- [FSNotes](../apps/fsnotes.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
