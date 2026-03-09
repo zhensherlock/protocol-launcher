@@ -1879,6 +1879,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
@@ -2207,6 +2208,124 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/kaleidoscope.md
+---
+
+# Kaleidoscope
+
+[Kaleidoscope](https://kaleidoscope.app/) is the world's most powerful file comparison and merge app. It allows you to spot differences in text and image files, or even folders full of files. **Protocol Launcher** allows you to generate deep links to open and compare resources in Kaleidoscope.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Kaleidoscope
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}open()
+```
+
+### Compare Files
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compare' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}compare({
+  previousPath: '/Users/dev/Desktop/previous.md',
+  latestPath: '/Users/dev/Desktop/latest.md',
+})
+```
+
+### Compare Clipboard
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clipboard' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}clipboard({
+  label: 'Clipboard',
+})
+```
+
+### Open History
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'history' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}history({
+  label: 'History',
+  filePath: '/Users/dev/protocol-launcher/packages/protocol-launcher/src/kaleidoscope/history.ts',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/kaleidoscope.md
+---
+
+# Kaleidoscope
+
+[Kaleidoscope](https://kaleidoscope.app/) 是全球领先的文件对比与合并工具。它能够快速识别文本、图片甚至整个文件夹之间的差异。**Protocol Launcher** 允许你生成深度链接，以便在 Kaleidoscope 中打开并对比资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 Kaleidoscope
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}open()
+```
+
+### 对比文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compare' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}compare({
+  previousPath: '/Users/dev/Desktop/previous.md',
+  latestPath: '/Users/dev/Desktop/latest.md',
+})
+```
+
+### 对比剪贴板
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clipboard' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}clipboard({
+  label: 'Clipboard',
+})
+```
+
+### 打开历史记录
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'history' : 'kaleidoscope' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}history({
+  label: 'History',
+  filePath: '/Users/dev/protocol-launcher/packages/protocol-launcher/src/kaleidoscope/history.ts',
 })
 ```
 
@@ -5147,6 +5266,7 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
@@ -5685,6 +5805,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
@@ -5850,6 +5971,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)

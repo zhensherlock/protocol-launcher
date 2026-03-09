@@ -37,6 +37,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)

@@ -37,6 +37,7 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
 * [MacVim](../apps/macvim.md)
