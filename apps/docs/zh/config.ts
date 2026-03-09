@@ -46,6 +46,7 @@ export default defineAdditionalConfig({
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
+          { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'MacVim', link: '/zh/apps/macvim' },

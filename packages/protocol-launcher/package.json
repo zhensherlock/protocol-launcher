@@ -126,6 +126,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./kaleidoscope": {
+      "types": "./dist/types/kaleidoscope/index.d.ts",
+      "import": "./dist/kaleidoscope/index.js"
+    },
     "./kiro": {
       "types": "./dist/types/kiro/index.d.ts",
       "import": "./dist/kiro/index.js"
