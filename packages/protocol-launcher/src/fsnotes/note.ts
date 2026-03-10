@@ -25,7 +25,7 @@ type OpenNote = {
  * // => 'fsnotes://open?title=hello'
  * @link https://github.com/glushchenko/fsnotes/blob/master/FSNotes/AppDelegate%2BURLRoutes.swift
  */
-export function openNote(payload: OpenNote) {
+export function openNote(payload: OpenNote = {}) {
   const { title, tag } = payload
   const query = []
   if (title) {

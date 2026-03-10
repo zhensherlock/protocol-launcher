@@ -16,6 +16,11 @@ describe('fsnotes', () => {
     expect(url).toBe('nv://make/?title=hello&html=hello%20world&tags=2026')
   })
 
+  test('createNote should return a URL', async () => {
+    const url = fsnotes.createNote()
+    expect(url).toBe('nv://make/')
+  })
+
   test('findNotes should return a URL with payload', async () => {
     const url = fsnotes.findNotes({
       keyword: 'hello',
@@ -29,5 +34,10 @@ describe('fsnotes', () => {
       tag: '2026',
     })
     expect(url).toBe('fsnotes://open/?title=hello&tag=2026')
+  })
+
+  test('openNote should return a URL', async () => {
+    const url = fsnotes.openNote()
+    expect(url).toBe('fsnotes://open/')
   })
 })

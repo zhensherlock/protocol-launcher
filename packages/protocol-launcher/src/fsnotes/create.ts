@@ -31,7 +31,7 @@ type CreateNote = {
  * // => 'nv://make/?title=hello&content=hello%20world'
  * @link https://github.com/glushchenko/fsnotes/blob/master/FSNotes/AppDelegate%2BURLRoutes.swift
  */
-export function createNote(payload: CreateNote) {
+export function createNote(payload: CreateNote = {}) {
   const { title, content, tags } = payload
   const query = []
   if (title) {
