@@ -401,6 +401,80 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'appflowy.'}}open()
 ---
 
 ---
+url: /protocol-launcher/apps/apple-script.md
+---
+
+# Apple Script Editor
+
+AppleScript is a scripting language created by Apple that allows you to control scriptable macOS applications and parts of the operating system itself. You can write scripts to automate repetitive tasks, combine features from different applications, and build complex workflows. **Protocol Launcher** provides utilities to generate and execute AppleScripts.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Apple Script Editor
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleScript' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}open()
+```
+
+### Add Script
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addScript' : 'appleScript' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({
+  script: 'display dialog "Hello, World!"'
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/apple-script.md
+---
+
+# Apple Script Editor
+
+AppleScript 是由 Apple 创建的一种脚本语言，它允许您控制可编写脚本的 macOS 应用程序以及操作系统本身的部分功能。您可以编写脚本来自动执行重复性任务、组合来自不同应用程序的功能以及构建复杂的工作流程。**Protocol Launcher** 提供了生成和执行 AppleScript 的实用工具。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 Apple Script Editor
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleScript' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}open()
+```
+
+### 添加脚本
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addScript' : 'appleScript' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({
+  script: 'display dialog "Hello, World!"'
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/atom.md
 ---
 
@@ -1866,6 +1940,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -5253,6 +5328,7 @@ Currently, we support the following applications:
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -5792,6 +5868,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -5958,6 +6035,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [AFFiNE](../apps/affine.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
 * [Cherry Studio](../apps/cherry-studio.md)
