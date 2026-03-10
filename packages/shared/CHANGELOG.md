@@ -1,5 +1,13 @@
 # @protocol-launcher/shared
 
+## 1.3.0
+
+### Minor Changes
+
+- [`75d37ab`](https://github.com/zhensherlock/protocol-launcher/commit/75d37ab0cbe56072e4b04a524f5f17c045ad7fa0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`5e1ceab`](https://github.com/zhensherlock/protocol-launcher/commit/5e1ceab312acbcdd601445199f71b9a7419bdc16) Thanks [@zhensherlock](https://github.com/zhensherlock)! - build: replace @rollup/plugin-terser with built-in minify
+
 ## 1.2.6
 
 ### Patch Changes
