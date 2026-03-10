@@ -24,6 +24,7 @@ layout: doc
 - [AFFiNE](../apps/affine.md)
 - [Antigravity](../apps/antigravity.md)
 - [AppFlowy](../apps/appflowy.md)
+- [Apple Script Editor](../apps/apple-script.md)
 - [Atom](../apps/atom.md)
 - [BBEdit](../apps/bbedit.md)
 - [Cherry Studio](../apps/cherry-studio.md)

@@ -1,6 +1,7 @@
 export * as affine from './affine'
 export * as antigravity from './antigravity'
 export * as appflowy from './appflowy'
+export * as appleScript from './apple-script'
 export * as atom from './atom'
 export * as bbedit from './bbedit'
 export * as cherryStudio from './cherry-studio'
