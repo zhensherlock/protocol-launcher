@@ -10,7 +10,7 @@ type History = {
   /**
    * File path.
    */
-  filePath?: string
+  filePath: string
 }
 
 /**

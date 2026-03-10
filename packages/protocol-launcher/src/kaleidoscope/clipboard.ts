@@ -19,7 +19,7 @@ type Clipboard = {
  * })
  * // => 'kaleidoscope://clipboard?label=Clipboard'
  */
-export function clipboard(payload: Clipboard) {
+export function clipboard(payload: Clipboard = {}) {
   const { label } = payload
   const query = []
   if (label) {

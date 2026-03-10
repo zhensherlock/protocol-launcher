@@ -14,6 +14,11 @@ describe('kaleidoscope', () => {
     expect(url).toBe('kaleidoscope://clipboard?label=Clipboard')
   })
 
+  test('clipboard should return a URL', async () => {
+    const url = kaleidoscope.clipboard()
+    expect(url).toBe('kaleidoscope://clipboard')
+  })
+
   test('compare should return a URL with label, previousPath, and latestPath', async () => {
     const url = kaleidoscope.compare({
       label: 'Compare',
@@ -42,5 +47,12 @@ describe('kaleidoscope', () => {
       filePath: '/Users/dev/Desktop/previous.md',
     })
     expect(url).toBe('kaleidoscope://history?/Users/dev/Desktop/previous.md&label=Compare')
+  })
+
+  test('history should return a URL with filePath', async () => {
+    const url = kaleidoscope.history({
+      filePath: '/Users/dev/Desktop/previous.md',
+    })
+    expect(url).toBe('kaleidoscope://history?/Users/dev/Desktop/previous.md')
   })
 })
