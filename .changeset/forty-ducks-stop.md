@@ -1,6 +1,6 @@
 ---
-'protocol-launcher': patch
-'@protocol-launcher/shared': patch
+'protocol-launcher': minor
+'@protocol-launcher/shared': minor
 ---
 
 chore: update dependencies
