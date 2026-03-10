@@ -1,5 +1,30 @@
 # protocol-launcher
 
+## 1.14.0
+
+### Minor Changes
+
+- [`6fcd2dc`](https://github.com/zhensherlock/protocol-launcher/commit/6fcd2dce5de9355f32ce4cb5d799c5ce27638d64) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(fsnotes): add FSNotes protocol launcher support
+
+- [`3e17e54`](https://github.com/zhensherlock/protocol-launcher/commit/3e17e540589f2dc9bc0631cb406f41a6de0711e9) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(sourcetree): add SourceTree protocol launcher support
+
+- [`75d37ab`](https://github.com/zhensherlock/protocol-launcher/commit/75d37ab0cbe56072e4b04a524f5f17c045ad7fa0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`3882931`](https://github.com/zhensherlock/protocol-launcher/commit/388293148027d3ab1237c062c285d2591051a095) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(hbuilderx): add HBuilderX protocol launcher support
+
+- [`e10afcd`](https://github.com/zhensherlock/protocol-launcher/commit/e10afcd34c46e74c0fa286d7ee9b4ce43a70d49f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(kaleidoscope): add Kaleidoscope protocol launcher support
+
+- [`5e1ceab`](https://github.com/zhensherlock/protocol-launcher/commit/5e1ceab312acbcdd601445199f71b9a7419bdc16) Thanks [@zhensherlock](https://github.com/zhensherlock)! - build: replace @rollup/plugin-terser with built-in minify
+
+### Patch Changes
+
+- [`bfd0163`](https://github.com/zhensherlock/protocol-launcher/commit/bfd0163fddfd9b7bdcf4facf3d37e86ca23f326c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(kaleidoscope): make filePath required and clipboard parameter optional
+
+- [`3df6ba6`](https://github.com/zhensherlock/protocol-launcher/commit/3df6ba6514d4b45230104083a59f889d578bb399) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(fsnotes): make payload optional for openNote and createNote functions
+
+- Updated dependencies [[`75d37ab`](https://github.com/zhensherlock/protocol-launcher/commit/75d37ab0cbe56072e4b04a524f5f17c045ad7fa0), [`5e1ceab`](https://github.com/zhensherlock/protocol-launcher/commit/5e1ceab312acbcdd601445199f71b9a7419bdc16)]:
+  - @protocol-launcher/shared@1.3.0
+
 ## 1.13.0
 
 ### Minor Changes
