@@ -54,6 +54,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
+* [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
