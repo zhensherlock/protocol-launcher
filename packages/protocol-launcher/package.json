@@ -62,6 +62,10 @@
       "types": "./dist/types/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./alfred": {
+      "types": "./dist/types/alfred/index.d.ts",
+      "import": "./dist/alfred/index.js"
+    },
     "./affine": {
       "types": "./dist/types/affine/index.d.ts",
       "import": "./dist/affine/index.js"

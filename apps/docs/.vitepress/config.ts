@@ -19,6 +19,7 @@ export default defineConfig({
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
     'en/apps/affine.md': 'apps/affine.md',
+    'en/apps/alfred.md': 'apps/alfred.md',
     'en/apps/antigravity.md': 'apps/antigravity.md',
     'en/apps/appflowy.md': 'apps/appflowy.md',
     'en/apps/apple-script.md': 'apps/apple-script.md',
@@ -106,6 +107,7 @@ export default defineConfig({
         text: 'Applications',
         items: [
           { text: 'AFFiNE', link: '/apps/affine' },
+          { text: 'Alfred', link: '/apps/alfred' },
           { text: 'Antigravity', link: '/apps/antigravity' },
           { text: 'AppFlowy', link: '/apps/appflowy' },
           { text: 'Apple Script Editor', link: '/apps/apple-script' },
@@ -198,6 +200,7 @@ export default defineConfig({
             base: '',
             items: [
               { text: 'AFFiNE', link: '/apps/affine' },
+              { text: 'Alfred', link: '/apps/alfred' },
               { text: 'Antigravity', link: '/apps/antigravity' },
               { text: 'AppFlowy', link: '/apps/appflowy' },
               { text: 'Apple Script Editor', link: '/apps/apple-script' },
@@ -261,6 +264,7 @@ export default defineConfig({
             base: '',
             items: [
               { text: 'AFFiNE', link: '/zh/apps/affine' },
+              { text: 'Alfred', link: '/zh/apps/alfred' },
               { text: 'Antigravity', link: '/zh/apps/antigravity' },
               { text: 'AppFlowy', link: '/zh/apps/appflowy' },
               { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },

@@ -22,6 +22,7 @@ These URLs allow users to trigger specific actions in applications with a single
 Currently, we support the following applications:
 
 - [AFFiNE](../apps/affine.md)
+- [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Script Editor](../apps/apple-script.md)

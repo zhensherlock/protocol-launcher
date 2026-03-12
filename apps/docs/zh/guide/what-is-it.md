@@ -22,6 +22,7 @@ layout: doc
 目前，我们支持以下应用程序：
 
 - [AFFiNE](../apps/affine.md)
+- [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Script Editor](../apps/apple-script.md)
