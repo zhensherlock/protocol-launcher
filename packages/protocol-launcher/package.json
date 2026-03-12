@@ -194,6 +194,10 @@
       "types": "./dist/types/theia/index.d.ts",
       "import": "./dist/theia/index.js"
     },
+    "./things": {
+      "types": "./dist/types/things/index.d.ts",
+      "import": "./dist/things/index.js"
+    },
     "./thunder": {
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
