@@ -34,3 +34,15 @@ export function encodeUrlPayload(payload: unknown, options: EncodeOptions = {}) 
 
   return encodeIfNeeded(base64, encodeForUrl)
 }
+
+export function qs(params: Record<string, unknown>) {
+  return Object.entries(params)
+    .flatMap(([k, v]) => {
+      if (v === undefined || v === null) return []
+      if (Array.isArray(v)) {
+        return v.map(i => `${k}=${encodeURIComponent(String(i))}`)
+      }
+      return `${k}=${encodeURIComponent(String(v))}`
+    })
+    .join('&')
+}
