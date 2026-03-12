@@ -1,5 +1,20 @@
 # protocol-launcher
 
+## 1.15.0
+
+### Minor Changes
+
+- [`c349f58`](https://github.com/zhensherlock/protocol-launcher/commit/c349f5827774bf2689a92d5b0ac123e3705f6b42) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(apple-script): add Apple Script Editor protocol launcher support
+
+- [`294f58b`](https://github.com/zhensherlock/protocol-launcher/commit/294f58bf41f56b6b0411fe53f0e121e05c474393) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(things): add Things protocol launcher support
+
+### Patch Changes
+
+- [`4b15b85`](https://github.com/zhensherlock/protocol-launcher/commit/4b15b850bfac85c01eff855e839028c9eeb18d35) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`4b15b85`](https://github.com/zhensherlock/protocol-launcher/commit/4b15b850bfac85c01eff855e839028c9eeb18d35)]:
+  - @protocol-launcher/shared@1.3.1
+
 ## 1.14.0
 
 ### Minor Changes
