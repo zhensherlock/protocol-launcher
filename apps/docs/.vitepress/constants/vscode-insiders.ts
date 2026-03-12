@@ -7,8 +7,8 @@ export const installSTDIOMCPServerParams = {
 
 export const installStreamableHTTPMCPServerParams = {
   name: '企查查企业信息 MCP',
-  type: 'sse',
-  url: 'https://mcp.qcc.com/basic/sse',
+  type: 'http',
+  url: 'https://mcp.qcc.com/basic/stream',
   headers: {
     Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
