@@ -116,9 +116,8 @@ pnpm version            # Version bump packages
 
 ### Git Commits
 
-- Follow conventional commits: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `build:`, `ci:`, `chore:`, `revert:`, `release:`
-- Subject line lowercase
-- Run `pnpm prepare` to install husky hooks
+- Conventional commits: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `build:`, `ci:`, `chore:`, `revert:`, `release:`
+- Subject line lowercase; pre-commit runs `biome check --write` via lint-staged
 
 ## Project Structure
 
