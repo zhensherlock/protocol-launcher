@@ -61,7 +61,7 @@ describe('things', () => {
       title: 'Build treehouse',
       when: 'today',
     })
-    expect(url).toBe('things:///add-project?title=Build+treehouse&when=today')
+    expect(url).toBe('things:///add-project?title=Build%20treehouse&when=today')
   })
 
   test('addProject should return a URL with title and area', async () => {
@@ -69,7 +69,7 @@ describe('things', () => {
       title: 'Plan Birthday Party',
       area: 'Family',
     })
-    expect(url).toBe('things:///add-project?title=Plan+Birthday+Party&area=Family')
+    expect(url).toBe('things:///add-project?title=Plan%20Birthday%20Party&area=Family')
   })
 
   test('addProject should return a URL with title, deadline and area-id', async () => {
@@ -78,7 +78,7 @@ describe('things', () => {
       deadline: 'December 31',
       areaId: 'Lg8UqVPXo2SbJNiBpDBBQ',
     })
-    expect(url).toBe('things:///add-project?title=Submit+Tax&deadline=December+31&area-id=Lg8UqVPXo2SbJNiBpDBBQ')
+    expect(url).toBe('things:///add-project?title=Submit%20Tax&deadline=December%2031&area-id=Lg8UqVPXo2SbJNiBpDBBQ')
   })
 
   test('addProject should return a URL with title and tags', async () => {
@@ -94,7 +94,7 @@ describe('things', () => {
       title: 'Vacation',
       toDos: 'Book flight\nPack bags',
     })
-    expect(url).toBe('things:///add-project?title=Vacation&to-dos=Book+flight%0APack+bags')
+    expect(url).toBe('things:///add-project?title=Vacation&to-dos=Book%20flight%0APack%20bags')
   })
 
   test('addProject should return a URL with completed', async () => {
@@ -102,7 +102,7 @@ describe('things', () => {
       title: 'Old project',
       completed: true,
     })
-    expect(url).toBe('things:///add-project?title=Old+project&completed=true')
+    expect(url).toBe('things:///add-project?title=Old%20project&completed=true')
   })
 
   test('addProject should return a URL with canceled', async () => {
@@ -110,7 +110,7 @@ describe('things', () => {
       title: 'Canceled project',
       canceled: true,
     })
-    expect(url).toBe('things:///add-project?title=Canceled+project&canceled=true')
+    expect(url).toBe('things:///add-project?title=Canceled%20project&canceled=true')
   })
 
   test('addProject should return a URL with reveal', async () => {
@@ -118,7 +118,7 @@ describe('things', () => {
       title: 'New project',
       reveal: true,
     })
-    expect(url).toBe('things:///add-project?title=New+project&reveal=true')
+    expect(url).toBe('things:///add-project?title=New%20project&reveal=true')
   })
 
   test('addProject should return a URL with creation-date', async () => {
@@ -126,7 +126,7 @@ describe('things', () => {
       title: 'Historical project',
       creationDate: '2024-01-15T10:00:00Z',
     })
-    expect(url).toBe('things:///add-project?title=Historical+project&creation-date=2024-01-15T10%3A00%3A00Z')
+    expect(url).toBe('things:///add-project?title=Historical%20project&creation-date=2024-01-15T10%3A00%3A00Z')
   })
 
   test('addProject should return a URL with completion-date', async () => {
@@ -136,7 +136,7 @@ describe('things', () => {
       completionDate: '2024-06-30T18:00:00Z',
     })
     expect(url).toBe(
-      'things:///add-project?title=Finished+project&completed=true&completion-date=2024-06-30T18%3A00%3A00Z',
+      'things:///add-project?title=Finished%20project&completed=true&completion-date=2024-06-30T18%3A00%3A00Z',
     )
   })
 
@@ -156,7 +156,7 @@ describe('things', () => {
       completionDate: '2024-12-31T23:59:59Z',
     })
     expect(url).toBe(
-      'things:///add-project?title=Complete+project&notes=Project+notes&when=today&deadline=2024-12-31&tags=important%2Cwork&area-id=area123&to-dos=Task+1%0ATask+2&reveal=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
+      'things:///add-project?title=Complete%20project&notes=Project%20notes&when=today&deadline=2024-12-31&tags=important%2Cwork&area-id=area123&to-dos=Task%201%0ATask%202&reveal=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
     )
   })
 
@@ -184,7 +184,7 @@ describe('things', () => {
       authToken: 'xxx',
       prependNotes: 'SFO to JFK.',
     })
-    expect(url).toBe('things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&prepend-notes=SFO+to+JFK.')
+    expect(url).toBe('things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&prepend-notes=SFO%20to%20JFK.')
   })
 
   test('updateProject should return a URL with append-notes', async () => {
@@ -193,7 +193,9 @@ describe('things', () => {
       authToken: 'xxx',
       appendNotes: 'Additional notes',
     })
-    expect(url).toBe('things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&append-notes=Additional+notes')
+    expect(url).toBe(
+      'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&append-notes=Additional%20notes',
+    )
   })
 
   test('updateProject should return a URL with empty deadline to clear', async () => {
@@ -312,7 +314,7 @@ describe('things', () => {
       completionDate: '2024-12-31T23:59:59Z',
     })
     expect(url).toBe(
-      'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&title=Updated+project&notes=New+notes&prepend-notes=Prepend+this&append-notes=Append+this&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&area-id=area123&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
+      'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&title=Updated%20project&notes=New%20notes&prepend-notes=Prepend%20this&append-notes=Append%20this&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&area-id=area123&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
     )
   })
 
@@ -320,7 +322,7 @@ describe('things', () => {
     const url = things.add({
       title: 'Book flights',
     })
-    expect(url).toBe('things:///add?title=Book+flights')
+    expect(url).toBe('things:///add?title=Book%20flights')
   })
 
   test('add should return a URL with title, notes, when and tags', async () => {
@@ -330,7 +332,7 @@ describe('things', () => {
       when: 'evening',
       tags: 'Errand',
     })
-    expect(url).toBe('things:///add?title=Buy+milk&notes=Low+fat.&when=evening&tags=Errand')
+    expect(url).toBe('things:///add?title=Buy%20milk&notes=Low%20fat.&when=evening&tags=Errand')
   })
 
   test('add should return a URL with titles and list', async () => {
@@ -347,7 +349,7 @@ describe('things', () => {
       when: 'next monday',
       listId: 'TryhwrjdiHEXfjgNtw81yt',
     })
-    expect(url).toBe('things:///add?title=Call+doctor&when=next+monday&list-id=TryhwrjdiHEXfjgNtw81yt')
+    expect(url).toBe('things:///add?title=Call%20doctor&when=next%20monday&list-id=TryhwrjdiHEXfjgNtw81yt')
   })
 
   test('add should return a URL with title, when and time reminder', async () => {
@@ -355,7 +357,7 @@ describe('things', () => {
       title: 'Collect dry cleaning',
       when: 'evening@6pm',
     })
-    expect(url).toBe('things:///add?title=Collect+dry+cleaning&when=evening%406pm')
+    expect(url).toBe('things:///add?title=Collect%20dry%20cleaning&when=evening%406pm')
   })
 
   test('add should return a URL with deadline', async () => {
@@ -363,7 +365,7 @@ describe('things', () => {
       title: 'Submit report',
       deadline: '2024-12-31',
     })
-    expect(url).toBe('things:///add?title=Submit+report&deadline=2024-12-31')
+    expect(url).toBe('things:///add?title=Submit%20report&deadline=2024-12-31')
   })
 
   test('add should return a URL with checklist-items', async () => {
@@ -387,7 +389,7 @@ describe('things', () => {
       list: 'Project',
       heading: 'Phase 1',
     })
-    expect(url).toBe('things:///add?title=Task&list=Project&heading=Phase+1')
+    expect(url).toBe('things:///add?title=Task&list=Project&heading=Phase%201')
   })
 
   test('add should return a URL with heading-id', async () => {
@@ -404,7 +406,7 @@ describe('things', () => {
       title: 'Done task',
       completed: true,
     })
-    expect(url).toBe('things:///add?title=Done+task&completed=true')
+    expect(url).toBe('things:///add?title=Done%20task&completed=true')
   })
 
   test('add should return a URL with canceled', async () => {
@@ -412,7 +414,7 @@ describe('things', () => {
       title: 'Canceled task',
       canceled: true,
     })
-    expect(url).toBe('things:///add?title=Canceled+task&canceled=true')
+    expect(url).toBe('things:///add?title=Canceled%20task&canceled=true')
   })
 
   test('add should return a URL with show-quick-entry', async () => {
@@ -420,7 +422,7 @@ describe('things', () => {
       title: 'Quick task',
       showQuickEntry: true,
     })
-    expect(url).toBe('things:///add?title=Quick+task&show-quick-entry=true')
+    expect(url).toBe('things:///add?title=Quick%20task&show-quick-entry=true')
   })
 
   test('add should return a URL with reveal', async () => {
@@ -428,7 +430,7 @@ describe('things', () => {
       title: 'Reveal task',
       reveal: true,
     })
-    expect(url).toBe('things:///add?title=Reveal+task&reveal=true')
+    expect(url).toBe('things:///add?title=Reveal%20task&reveal=true')
   })
 
   test('add should return a URL with creation-date', async () => {
@@ -436,7 +438,7 @@ describe('things', () => {
       title: 'Historical task',
       creationDate: '2024-01-15T10:00:00Z',
     })
-    expect(url).toBe('things:///add?title=Historical+task&creation-date=2024-01-15T10%3A00%3A00Z')
+    expect(url).toBe('things:///add?title=Historical%20task&creation-date=2024-01-15T10%3A00%3A00Z')
   })
 
   test('add should return a URL with completion-date', async () => {
@@ -445,7 +447,7 @@ describe('things', () => {
       completed: true,
       completionDate: '2024-06-30T18:00:00Z',
     })
-    expect(url).toBe('things:///add?title=Finished+task&completed=true&completion-date=2024-06-30T18%3A00%3A00Z')
+    expect(url).toBe('things:///add?title=Finished%20task&completed=true&completion-date=2024-06-30T18%3A00%3A00Z')
   })
 
   test('add should return a URL with all parameters', async () => {
@@ -467,7 +469,7 @@ describe('things', () => {
       completionDate: '2024-12-31T23:59:59Z',
     })
     expect(url).toBe(
-      'things:///add?title=Complete+task&notes=Task+notes&when=today&deadline=2024-12-31&tags=work%2Curgent&checklist-items=Step+1%0AStep+2&use-clipboard=replace-notes&list-id=project123&heading-id=heading456&reveal=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
+      'things:///add?title=Complete%20task&notes=Task%20notes&when=today&deadline=2024-12-31&tags=work%2Curgent&checklist-items=Step%201%0AStep%202&use-clipboard=replace-notes&list-id=project123&heading-id=heading456&reveal=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
     )
   })
 
@@ -491,7 +493,7 @@ describe('things', () => {
       authToken: 'xxx',
       title: 'Buy bread',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&title=Buy+bread')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&title=Buy%20bread')
   })
 
   test('update should return a URL with append-notes', async () => {
@@ -500,7 +502,7 @@ describe('things', () => {
       authToken: 'xxx',
       appendNotes: 'Wholemeal bread',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&append-notes=Wholemeal+bread')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&append-notes=Wholemeal%20bread')
   })
 
   test('update should return a URL with prepend-notes', async () => {
@@ -509,7 +511,7 @@ describe('things', () => {
       authToken: 'xxx',
       prependNotes: 'Note prefix',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&prepend-notes=Note+prefix')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&prepend-notes=Note%20prefix')
   })
 
   test('update should return a URL with append-checklist-items', async () => {
@@ -529,7 +531,7 @@ describe('things', () => {
       authToken: 'xxx',
       prependChecklistItems: 'First item',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&prepend-checklist-items=First+item')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&prepend-checklist-items=First%20item')
   })
 
   test('update should return a URL with empty deadline to clear', async () => {
@@ -565,7 +567,7 @@ describe('things', () => {
       authToken: 'xxx',
       checklistItems: 'Item 1\nItem 2',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&checklist-items=Item+1%0AItem+2')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&checklist-items=Item%201%0AItem%202')
   })
 
   test('update should return a URL with list-id', async () => {
@@ -601,7 +603,7 @@ describe('things', () => {
       authToken: 'xxx',
       heading: 'Phase 1',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&heading=Phase+1')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&heading=Phase%201')
   })
 
   test('update should return a URL with completed', async () => {
@@ -686,7 +688,7 @@ describe('things', () => {
       completionDate: '2024-12-31T23:59:59Z',
     })
     expect(url).toBe(
-      'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&title=Updated+task&notes=New+notes&prepend-notes=Prefix&append-notes=Suffix&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&checklist-items=Item+1%0AItem+2&prepend-checklist-items=First&append-checklist-items=Last&list-id=project123&heading-id=heading456&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
+      'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&title=Updated%20task&notes=New%20notes&prepend-notes=Prefix&append-notes=Suffix&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&checklist-items=Item%201%0AItem%202&prepend-checklist-items=First&append-checklist-items=Last&list-id=project123&heading-id=heading456&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
     )
   })
 
@@ -716,7 +718,7 @@ describe('things', () => {
       ],
     })
     expect(url).toBe(
-      'things:///json?data=%5B%7B%22type%22%3A%22project%22%2C%22attributes%22%3A%7B%22title%22%3A%22Go+Shopping%22%2C%22items%22%3A%5B%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Bread%22%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Milk%22%7D%7D%5D%7D%7D%5D',
+      'things:///json?data=%5B%7B%22type%22%3A%22project%22%2C%22attributes%22%3A%7B%22title%22%3A%22Go%20Shopping%22%2C%22items%22%3A%5B%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Bread%22%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Milk%22%7D%7D%5D%7D%7D%5D',
     )
   })
 
@@ -812,7 +814,7 @@ describe('things', () => {
       ],
     })
     expect(url).toBe(
-      'things:///json?data=%5B%7B%22type%22%3A%22project%22%2C%22attributes%22%3A%7B%22title%22%3A%22Project%22%2C%22notes%22%3A%22Project+notes%22%2C%22when%22%3A%22today%22%2C%22tags%22%3A%5B%22work%22%2C%22urgent%22%5D%2C%22items%22%3A%5B%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Task+1%22%2C%22notes%22%3A%22Task+notes%22%2C%22when%22%3A%22today%22%2C%22deadline%22%3A%222024-12-31%22%2C%22tags%22%3A%5B%22work%22%5D%2C%22completed%22%3Afalse%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Task+2%22%7D%7D%5D%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Standalone+task%22%7D%7D%5D',
+      'things:///json?data=%5B%7B%22type%22%3A%22project%22%2C%22attributes%22%3A%7B%22title%22%3A%22Project%22%2C%22notes%22%3A%22Project%20notes%22%2C%22when%22%3A%22today%22%2C%22tags%22%3A%5B%22work%22%2C%22urgent%22%5D%2C%22items%22%3A%5B%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Task%201%22%2C%22notes%22%3A%22Task%20notes%22%2C%22when%22%3A%22today%22%2C%22deadline%22%3A%222024-12-31%22%2C%22tags%22%3A%5B%22work%22%5D%2C%22completed%22%3Afalse%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Task%202%22%7D%7D%5D%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Standalone%20task%22%7D%7D%5D',
     )
   })
 })

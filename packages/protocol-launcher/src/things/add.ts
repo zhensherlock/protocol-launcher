@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Add to-do command payload definition.
  */
@@ -134,7 +136,7 @@ export function add(payload: Add = {}) {
     completionDate,
   } = payload
 
-  const params = new URLSearchParams({
+  const params = qs({
     ...(title && !titles ? { title } : {}),
     ...(titles ? { titles } : {}),
     ...(notes ? { notes } : {}),
@@ -155,5 +157,5 @@ export function add(payload: Add = {}) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///add${params.size ? `?${params.toString()}` : ''}`
+  return `things:///add${params ? `?${params}` : ''}`
 }

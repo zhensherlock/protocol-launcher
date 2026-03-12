@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * JSON item type definition.
  */
@@ -61,11 +63,11 @@ type Json = {
 export function json(payload: Json) {
   const { authToken, data, reveal = false } = payload
 
-  const params = new URLSearchParams({
+  const params = qs({
     ...(authToken ? { 'auth-token': authToken } : {}),
     data: JSON.stringify(data),
     ...(reveal ? { reveal: 'true' } : {}),
   })
 
-  return `things:///json?${params.toString()}`
+  return `things:///json${params ? `?${params}` : ''}`
 }

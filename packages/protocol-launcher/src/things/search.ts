@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Search command payload definition.
  */
@@ -23,9 +25,9 @@ type Search = {
  */
 export function search(payload: Search = {}) {
   const { query } = payload
-  const params = new URLSearchParams({
+  const params = qs({
     ...(query ? { query } : {}),
   })
 
-  return `things:///search${params.size ? `?${params}` : ''}`
+  return `things:///search${params ? `?${params}` : ''}`
 }

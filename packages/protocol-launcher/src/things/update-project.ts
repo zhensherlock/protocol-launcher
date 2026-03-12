@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Update project command payload definition.
  */
@@ -131,7 +133,7 @@ export function updateProject(payload: UpdateProject) {
     completionDate,
   } = payload
 
-  const params = new URLSearchParams({
+  const params = qs({
     id,
     'auth-token': authToken,
     ...(title ? { title } : {}),
@@ -139,7 +141,7 @@ export function updateProject(payload: UpdateProject) {
     ...(prependNotes ? { 'prepend-notes': prependNotes } : {}),
     ...(appendNotes ? { 'append-notes': appendNotes } : {}),
     ...(when ? { when } : {}),
-    ...(deadline ? { deadline } : {}),
+    ...(deadline !== undefined && deadline !== '' ? { deadline } : {}),
     ...(tags ? { tags } : {}),
     ...(addTags ? { 'add-tags': addTags } : {}),
     ...(areaId ? { 'area-id': areaId } : {}),
@@ -152,5 +154,5 @@ export function updateProject(payload: UpdateProject) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///update-project?${params.toString()}`
+  return `things:///update-project${params ? `?${params}` : ''}`
 }

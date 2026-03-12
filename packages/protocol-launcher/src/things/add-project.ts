@@ -1,4 +1,4 @@
-import { isUndefined } from '@protocol-launcher/shared'
+import { qs } from '@protocol-launcher/shared'
 
 /**
  * Add project command payload definition.
@@ -103,7 +103,7 @@ export function addProject(payload: AddProject) {
     completionDate,
   } = payload
 
-  const params = new URLSearchParams({
+  const params = qs({
     title,
     ...(notes ? { notes } : {}),
     ...(when ? { when } : {}),
@@ -119,5 +119,5 @@ export function addProject(payload: AddProject) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///add-project?${params.toString()}`
+  return `things:///add-project${params ? `?${params}` : ''}`
 }

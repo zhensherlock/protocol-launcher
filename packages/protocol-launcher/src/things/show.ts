@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Show command payload definition.
  */
@@ -49,11 +51,11 @@ type ShowPayload =
  */
 export function show(payload: ShowPayload) {
   const { id, query, filter } = payload
-  const params = new URLSearchParams({
+  const params = qs({
     ...(id ? { id } : {}),
     ...(!id && query ? { query } : {}),
     ...(filter ? { filter } : {}),
   })
 
-  return `things:///show?${params}`
+  return `things:///show${params ? `?${params}` : ''}`
 }

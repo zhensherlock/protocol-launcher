@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Update to-do command payload definition.
  */
@@ -164,7 +166,7 @@ export function update(payload: Update) {
     completionDate,
   } = payload
 
-  const params = new URLSearchParams({
+  const params = qs({
     id,
     'auth-token': authToken,
     ...(title ? { title } : {}),
@@ -172,7 +174,7 @@ export function update(payload: Update) {
     ...(prependNotes ? { 'prepend-notes': prependNotes } : {}),
     ...(appendNotes ? { 'append-notes': appendNotes } : {}),
     ...(when ? { when } : {}),
-    ...(deadline ? { deadline } : {}),
+    ...(deadline !== undefined && deadline !== '' ? { deadline } : {}),
     ...(tags ? { tags } : {}),
     ...(addTags ? { 'add-tags': addTags } : {}),
     ...(checklistItems ? { 'checklist-items': checklistItems } : {}),
@@ -190,5 +192,5 @@ export function update(payload: Update) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///update?${params.toString()}`
+  return `things:///update${params ? `?${params}` : ''}`
 }
