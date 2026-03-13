@@ -49,7 +49,7 @@ type ShowPayload =
  * // => 'things:///show?query=vacation&filter=errand'
  * @link https://culturedcode.com/things/support/articles/2803573/#show
  */
-export function show(payload: ShowPayload) {
+export function show(payload: ShowPayload = { id: 'today' }) {
   const { id, query, filter } = payload
   const params = qs({
     ...(id ? { id } : {}),
@@ -57,5 +57,5 @@ export function show(payload: ShowPayload) {
     ...(filter ? { filter } : {}),
   })
 
-  return `things:///show${params ? `?${params}` : ''}`
+  return `things:///show?${params}`
 }
