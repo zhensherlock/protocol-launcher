@@ -1,0 +1,155 @@
+---
+layout: doc
+---
+
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { openFile, openFolder, open, openRemote, openSettings, cloneProject, openExtension } from 'protocol-launcher/code-buddy-cn';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import { useAppStore } from '../../.vitepress/stores/app';
+import {
+  openFileParams,
+  openFolderParams,
+  openRemoteParams,
+  cloneProjectParams,
+  openSettingsParams,
+  openExtensionParams,
+} from '../../.vitepress/constants/code-buddy-cn';
+
+const appStore = useAppStore();
+const currentMethod = ref('On-Demand');
+const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protocol-launcher/code-buddy-cn' : 'protocol-launcher');
+const currentMethodDesc = computed(() => currentMethod.value === 'On-Demand' ? '按需加载' : '全量导入');
+</script>
+
+# CodeBuddy 中国版
+
+[CodeBuddy](https://codebuddy.ai) 中国版本。**Protocol Launcher** 允许您生成深度链接，以便在 CodeBuddy 中国版中打开和配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+- 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+- 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+<SelectInstallationMethod v-model="currentMethod" />
+
+### 打开编辑器
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}open()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="open()" target="_self">
+    打开 CodeBuddy 中国版
+  </VPLink>
+</div>
+
+### 打开文件
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openFile(openFileParams(appStore.isWindows))" target="_self">
+    在 CodeBuddy 中国版中打开
+  </VPLink>
+</div>
+
+### 打开目录
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\\Windows\\System32\\drivers\\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openFolder(openFolderParams(appStore.isWindows))" target="_self">
+    在 CodeBuddy 中国版中打开
+  </VPLink>
+</div>
+
+### 远程开发
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openRemote(openRemoteParams)" target="_self">
+    在 CodeBuddy 中国版中打开
+  </VPLink>
+</div>
+
+### 克隆项目
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="cloneProject(cloneProjectParams)" target="_self">
+    在 CodeBuddy 中国版中打开
+  </VPLink>
+</div>
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openExtension(openExtensionParams)" target="_self">
+    在 CodeBuddy 中国版中打开
+  </VPLink>
+</div>
+
+### 打开设置
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
+    在 CodeBuddy 中国版中打开
+  </VPLink>
+</div>

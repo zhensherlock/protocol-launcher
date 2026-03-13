@@ -31,6 +31,7 @@ Currently, we support the following applications:
 - [Bear](../apps/bear.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
+- [CodeBuddy China](../apps/code-buddy-cn.md)
 - [CodeRunner](../apps/code-runner.md)
 - [CodeLite](../apps/codelite.md)
 - [Codex](../apps/codex.md)

@@ -102,6 +102,10 @@
       "types": "./dist/types/code-buddy/index.d.ts",
       "import": "./dist/code-buddy/index.js"
     },
+    "./code-buddy-cn": {
+      "types": "./dist/types/code-buddy-cn/index.d.ts",
+      "import": "./dist/code-buddy-cn/index.js"
+    },
     "./code-runner": {
       "types": "./dist/types/code-runner/index.d.ts",
       "import": "./dist/code-runner/index.js"

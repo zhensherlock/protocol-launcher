@@ -40,6 +40,7 @@ export default defineAdditionalConfig({
           { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
+          { text: 'CodeBuddy China', link: '/zh/apps/code-buddy-cn' },
           { text: 'CodeRunner', link: '/zh/apps/code-runner' },
           { text: 'CodeLite', link: '/zh/apps/codelite' },
           { text: 'Codex', link: '/zh/apps/codex' },

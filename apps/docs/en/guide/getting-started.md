@@ -124,6 +124,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Bear](../apps/bear.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
+- [CodeBuddy China](../apps/code-buddy-cn.md)
 - [CodeLite](../apps/codelite.md)
 - [CodeRunner](../apps/code-runner.md)
 - [Codex](../apps/codex.md)
