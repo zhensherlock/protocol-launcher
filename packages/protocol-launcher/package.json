@@ -186,6 +186,10 @@
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"
     },
+    "./shortcuts": {
+      "types": "./dist/types/shortcuts/index.d.ts",
+      "import": "./dist/shortcuts/index.js"
+    },
     "./sourcetree": {
       "types": "./dist/types/sourcetree/index.d.ts",
       "import": "./dist/sourcetree/index.js"

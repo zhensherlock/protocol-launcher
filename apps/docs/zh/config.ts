@@ -61,6 +61,7 @@ export default defineAdditionalConfig({
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'Qoder', link: '/zh/apps/qoder' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
+          { text: 'Shortcuts', link: '/zh/apps/shortcuts' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'TextMate', link: '/zh/apps/textmate' },
