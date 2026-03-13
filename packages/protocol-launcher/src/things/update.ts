@@ -192,5 +192,5 @@ export function update(payload: Update) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///update${params ? `?${params}` : ''}`
+  return `things:///update?${params}`
 }
