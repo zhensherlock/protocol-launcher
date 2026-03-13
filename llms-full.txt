@@ -861,6 +861,353 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bbedit.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/bear.md
+---
+
+# Bear
+
+[Bear](https://bear.app/) is a beautiful, flexible writing app for crafting notes and prose. Bear works on iPhone, iPad, and Mac, offering everything you need to write, edit, and organize your ideas. With its powerful tag management system, markdown support, and seamless synchronization across devices, Bear is perfect for everything from quick notes to in-depth articles. **Protocol Launcher** allows you to generate deep links to open notes, create content, search, and manage tags in Bear.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Bear
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}open()
+```
+
+### Open Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  title: 'Shopping',
+})
+```
+
+### Create Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}create({
+  title: 'Shopping',
+  text: 'Milk',
+  tags: 'home,groceries',
+})
+```
+
+### Add Text to Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addText' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addText({
+  text: 'new line',
+  id: '4EDAF0D1',
+  mode: 'append',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}search({
+  term: 'nemo',
+  tag: 'movies',
+})
+```
+
+### Open Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openTag({
+  tag: 'work',
+})
+```
+
+### Rename Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'renameTag' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}renameTag({
+  tag: 'old-tag',
+  newTag: 'new-tag',
+})
+```
+
+### Delete Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteTag' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}deleteTag({
+  tag: 'obsolete-tag',
+})
+```
+
+### Show Todos
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'todo' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}todo({
+  search: 'home',
+})
+```
+
+### Show Today's Notes
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'today' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}today()
+```
+
+### Show Locked Notes
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'locked' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}locked()
+```
+
+### Show Untagged Notes
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'untagged' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}untagged()
+```
+
+### Show Trash
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'trash' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}trash()
+```
+
+### Show Archive
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'archive' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}archive()
+```
+
+### Grab URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'grabUrl' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}grabUrl({
+  url: 'https://bear.app',
+})
+```
+
+### Get All Tags
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'tags' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
+  token: '123456-123456-123456',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/bear.md
+---
+
+# Bear
+
+[Bear](https://bear.app/) 是一款精美、灵活的写作应用，用于撰写笔记和散文。Bear 可在 iPhone、iPad 和 Mac 上运行，提供编写、编辑和组织想法所需的一切功能。凭借强大的标签管理系统、Markdown 支持以及跨设备无缝同步，Bear 非常适合从快速笔记到深度文章的各种场景。**Protocol Launcher** 允许你生成深度链接，在 Bear 中打开笔记、创建内容、搜索和管理标签。
+
+## 使用方法
+
+使用这个库有两种方式：
+
+* 按需从子路径导入支持 tree-shaking，保持打包体积小。
+* 从根目录完整导入很方便，但会包含所有应用模块。
+
+生产构建选择按需导入；完整导入适合快速脚本或演示。
+
+### 打开 Bear
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}open()
+```
+
+### 打开笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  title: 'Shopping',
+})
+```
+
+### 创建笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}create({
+  title: 'Shopping',
+  text: 'Milk',
+  tags: 'home,groceries',
+})
+
+```
+
+### 添加文本到笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addText' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addText({
+  text: 'new line',
+  id: '4EDAF0D1',
+  mode: 'append',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}search({
+  term: 'nemo',
+  tag: 'movies',
+})
+```
+
+### 打开标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openTag({
+  tag: 'work',
+})
+```
+
+### 重命名标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'renameTag' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}renameTag({
+  tag: 'old-tag',
+  newTag: 'new-tag',
+})
+```
+
+### 删除标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteTag' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}deleteTag({
+  tag: 'obsolete-tag',
+})
+```
+
+### 显示待办事项
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'todo' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}todo({
+  search: 'home',
+})
+```
+
+### 显示今日笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'today' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}today()
+```
+
+### 显示已锁定笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'locked' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}locked()
+```
+
+### 显示未标记笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'untagged' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}untagged()
+```
+
+### 显示废纸篓
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'trash' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}trash()
+```
+
+### 显示归档
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'archive' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}archive()
+```
+
+### 抓取网址
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'grabUrl' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}grabUrl({
+  url: 'https://bear.app',
+})
+```
+
+### 获取所有标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'tags' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
+  token: '123456-123456-123456',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/cherry-studio.md
 ---
 
@@ -1330,6 +1677,192 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openExtension({
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddy' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddy.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/code-buddy-cn.md
+---
+
+# CodeBuddy China
+
+[CodeBuddy](https://codebuddy.ai) China version. **Protocol Launcher** allows you to generate deep links to open and configure resources in CodeBuddy China.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open IDE
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}open()
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### Open Remote
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### Clone Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### Open Extension
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/code-buddy-cn.md
+---
+
+# CodeBuddy 中国版
+
+[CodeBuddy](https://codebuddy.ai) 中国版本。**Protocol Launcher** 允许您生成深度链接，以便在 CodeBuddy 中国版中打开和配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开编辑器
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}open()
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+  openInNewWindow: true,
+})
+```
+
+### 打开目录
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\\Windows\\System32\\drivers\\etc' : '/etc' }}',
+  openInNewWindow: true,
+})
+```
+
+### 远程开发
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openRemote({
+  type: 'ssh-remote',
+  host: 'root@172.18.105.209:22',
+  path: '/code/my-project',
+})
+```
+
+### 克隆项目
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}cloneProject({
+  repo: 'https://github.com/zhensherlock/protocol-launcher',
+})
+```
+
+### 打开扩展
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openExtension({
+  id: 'esbenp.prettier-vscode',
+})
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethodDesc}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddyChina' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
@@ -2240,8 +2773,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
+* [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
+* [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeLite](../apps/codelite.md)
 * [CodeRunner](../apps/code-runner.md)
 * [Codex](../apps/codex.md)
@@ -6326,8 +6861,10 @@ Currently, we support the following applications:
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
+* [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
+* [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeRunner](../apps/code-runner.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
@@ -6870,8 +7407,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
+* [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
+* [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeRunner](../apps/code-runner.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
@@ -7041,8 +7580,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
+* [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
+* [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeRunner](../apps/code-runner.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
