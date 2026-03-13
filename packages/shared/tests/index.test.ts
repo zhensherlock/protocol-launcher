@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { encodeUrlPayload, isUndefined } from '../src'
+import { encodeUrlPayload, isUndefined, qs } from '../src'
 
 describe('index.ts', () => {
   test('encodeUrlPayload should return a base64-encoded string', async () => {
@@ -29,5 +29,31 @@ describe('index.ts', () => {
     expect(isUndefined('')).toBe(false)
     expect(isUndefined(0)).toBe(false)
     expect(isUndefined(false)).toBe(false)
+  })
+
+  test('qs should return empty string for empty object', () => {
+    expect(qs({})).toBe('')
+  })
+
+  test('qs should encode simple key-value pairs', () => {
+    expect(qs({ key: 'value', name: 'test' })).toBe('key=value&name=test')
+  })
+
+  test('qs should skip null and undefined values', () => {
+    expect(qs({ key: 'value', nullVal: null, undefVal: undefined })).toBe('key=value')
+  })
+
+  test('qs should encode array values as multiple params', () => {
+    expect(qs({ tags: ['a', 'b', 'c'] })).toBe('tags=a&tags=b&tags=c')
+  })
+
+  test('qs should encode special characters', () => {
+    expect(qs({ query: 'hello world', url: 'https://example.com' })).toBe(
+      'query=hello%20world&url=https%3A%2F%2Fexample.com',
+    )
+  })
+
+  test('qs should handle mixed types', () => {
+    expect(qs({ str: 'hello', num: 42, arr: [1, 2], skip: null })).toBe('str=hello&num=42&arr=1&arr=2')
   })
 })
