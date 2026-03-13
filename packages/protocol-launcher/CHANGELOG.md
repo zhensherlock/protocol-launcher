@@ -1,5 +1,24 @@
 # protocol-launcher
 
+## 1.16.0
+
+### Minor Changes
+
+- [`3baaeb3`](https://github.com/zhensherlock/protocol-launcher/commit/3baaeb3f14e76965fe6ccb4d711691d522218778) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(shortcuts): add Shortcuts protocol launcher support
+
+- [`0671eb1`](https://github.com/zhensherlock/protocol-launcher/commit/0671eb16f9d5c355a324494b6849442614dba3c3) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(evernote): add Evernote protocol launcher support
+
+- [`074c4a6`](https://github.com/zhensherlock/protocol-launcher/commit/074c4a606948e8ed2cb1e600c773f2d142ae8466) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(alfred): add Alfred protocol launcher support
+
+### Patch Changes
+
+- [`bb0bd1a`](https://github.com/zhensherlock/protocol-launcher/commit/bb0bd1a42ef6de2844f739e9e02ea789fb84e862) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(things): replace URLSearchParams with shared qs utility
+
+- [`4b066a1`](https://github.com/zhensherlock/protocol-launcher/commit/4b066a11afec4b6af1b7970c91b989e2f96eb54f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`f96722f`](https://github.com/zhensherlock/protocol-launcher/commit/f96722fc9e2cf07b027ce161c80485fa2aca209b), [`4b066a1`](https://github.com/zhensherlock/protocol-launcher/commit/4b066a11afec4b6af1b7970c91b989e2f96eb54f)]:
+  - @protocol-launcher/shared@1.4.0
+
 ## 1.15.0
 
 ### Minor Changes
