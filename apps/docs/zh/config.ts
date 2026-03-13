@@ -37,6 +37,7 @@ export default defineAdditionalConfig({
           { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },
           { text: 'Atom', link: '/zh/apps/atom' },
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
+          { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'CodeRunner', link: '/zh/apps/code-runner' },

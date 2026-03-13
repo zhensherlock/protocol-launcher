@@ -28,6 +28,7 @@ layout: doc
 - [Apple Script Editor](../apps/apple-script.md)
 - [Atom](../apps/atom.md)
 - [BBEdit](../apps/bbedit.md)
+- [Bear](../apps/bear.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeRunner](../apps/code-runner.md)

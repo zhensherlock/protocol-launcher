@@ -90,6 +90,10 @@
       "types": "./dist/types/bbedit/index.d.ts",
       "import": "./dist/bbedit/index.js"
     },
+    "./bear": {
+      "types": "./dist/types/bear/index.d.ts",
+      "import": "./dist/bear/index.js"
+    },
     "./cherry-studio": {
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"
