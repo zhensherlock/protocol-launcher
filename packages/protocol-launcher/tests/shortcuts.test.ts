@@ -1,5 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import { shortcuts } from '../src'
+import { importWorkflow } from '../src/shortcuts/importWorkflow'
 
 describe('shortcuts', () => {
   describe('open', () => {
@@ -45,26 +46,26 @@ describe('shortcuts', () => {
     })
   })
 
-  // describe('importWorkflow', () => {
-  //   test('should return import workflow URL with url only', () => {
-  //     const url = shortcuts.importWorkflow({
-  //       url: 'https://sharecuts.app/download/AFD6417C-FE65-4A21-B363-ADCCE53617F3.shortcut',
-  //     })
-  //     expect(url).toBe(
-  //       'shortcuts://import-workflow?url=https%3A%2F%2Fsharecuts.app%2Fdownload%2FAFD6417C-FE65-4A21-B363-ADCCE53617F3.shortcut',
-  //     )
-  //   })
-  //
-  //   test('should return import workflow URL with name', () => {
-  //     const url = shortcuts.importWorkflow({
-  //       url: 'https://sharecuts.app/download/AFD6417C.shortcut',
-  //       name: 'Respring',
-  //     })
-  //     expect(url).toBe(
-  //       'shortcuts://import-workflow?url=https%3A%2F%2Fsharecuts.app%2Fdownload%2FAFD6417C.shortcut&name=Respring',
-  //     )
-  //   })
-  // })
+  describe('importWorkflow', () => {
+    test('should return import workflow URL with url only', () => {
+      const url = importWorkflow({
+        url: 'https://sharecuts.app/download/AFD6417C-FE65-4A21-B363-ADCCE53617F3.shortcut',
+      })
+      expect(url).toBe(
+        'shortcuts://import-workflow?url=https%3A%2F%2Fsharecuts.app%2Fdownload%2FAFD6417C-FE65-4A21-B363-ADCCE53617F3.shortcut',
+      )
+    })
+
+    test('should return import workflow URL with name', () => {
+      const url = importWorkflow({
+        url: 'https://sharecuts.app/download/AFD6417C.shortcut',
+        name: 'Respring',
+      })
+      expect(url).toBe(
+        'shortcuts://import-workflow?url=https%3A%2F%2Fsharecuts.app%2Fdownload%2FAFD6417C.shortcut&name=Respring',
+      )
+    })
+  })
 
   describe('runShortcut', () => {
     test('should return run shortcut URL with name only', () => {
