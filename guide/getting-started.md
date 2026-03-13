@@ -119,6 +119,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 For detailed usage instructions for each application, please refer to their respective guides:
 
 * [AFFiNE](../apps/affine.md)
+* [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
@@ -130,6 +131,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [CodeRunner](../apps/code-runner.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
@@ -147,6 +149,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)

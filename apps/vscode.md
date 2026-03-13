@@ -43,7 +43,7 @@ import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
   name: '企查查企业信息 MCP',
-  type: 'streamable_http',
+  type: 'http',
   url: 'https://mcp.qcc.com/basic/stream',
   headers: {
     Authorization: 'REPLACE_WITH_YOUR_TOKEN',
@@ -127,7 +127,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```

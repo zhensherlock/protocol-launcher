@@ -1,1 +1,0 @@
-function u(n){return n===void 0}function f(n,t){return t?encodeURIComponent(n):n}function c(n,t){return btoa(f(n,t).replace(/%([0-9A-F]{2})/g,(i,e)=>String.fromCharCode(parseInt(e,16))))}function a(n,t={}){let{useSafeEncoding:i=!1,encodeForUrl:e=!0}=t,o=typeof n=="string"?n:JSON.stringify(n),r;if(i)r=c(o,e);else try{r=btoa(o)}catch{r=c(o,e)}return f(r,e)}export{u as e,a as r};

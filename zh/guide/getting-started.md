@@ -119,6 +119,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
 * [AFFiNE](../apps/affine.md)
+* [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
@@ -130,6 +131,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
@@ -147,6 +149,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)

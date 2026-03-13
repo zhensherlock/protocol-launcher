@@ -22,6 +22,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 目前，我们支持以下应用程序：
 
 * [AFFiNE](../apps/affine.md)
+* [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
@@ -33,6 +34,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
@@ -50,6 +52,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
 * [RustRover](../apps/rustrover.md)
+* [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
 * [TextMate](../apps/textmate.md)

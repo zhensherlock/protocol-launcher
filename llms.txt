@@ -21,6 +21,7 @@
 ### Applications
 
 - [AFFiNE](/protocol-launcher/apps/affine.md)
+- [Alfred](/protocol-launcher/apps/alfred.md)
 - [Antigravity](/protocol-launcher/apps/antigravity.md)
 - [AppFlowy](/protocol-launcher/apps/appflowy.md)
 - [Apple Script Editor](/protocol-launcher/apps/apple-script.md)
@@ -32,6 +33,7 @@
 - [CodeRunner](/protocol-launcher/apps/code-runner.md)
 - [Codex](/protocol-launcher/apps/codex.md)
 - [Cursor](/protocol-launcher/apps/cursor.md)
+- [Evernote](/protocol-launcher/apps/evernote.md)
 - [FSNotes](/protocol-launcher/apps/fsnotes.md)
 - [GitHub Desktop](/protocol-launcher/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/apps/goland.md)
@@ -49,6 +51,7 @@
 - [PyCharm](/protocol-launcher/apps/pycharm.md)
 - [Qoder](/protocol-launcher/apps/qoder.md)
 - [RustRover](/protocol-launcher/apps/rustrover.md)
+- [Shortcuts](/protocol-launcher/apps/shortcuts.md)
 - [SourceTree](/protocol-launcher/apps/sourcetree.md)
 - [Telegram](/protocol-launcher/apps/telegram.md)
 - [TextMate](/protocol-launcher/apps/textmate.md)
@@ -76,6 +79,7 @@
 ### 应用程序
 
 - [AFFiNE](/protocol-launcher/zh/apps/affine.md)
+- [Alfred](/protocol-launcher/zh/apps/alfred.md)
 - [Antigravity](/protocol-launcher/zh/apps/antigravity.md)
 - [AppFlowy](/protocol-launcher/zh/apps/appflowy.md)
 - [Apple Script Editor](/protocol-launcher/zh/apps/apple-script.md)
@@ -87,6 +91,7 @@
 - [CodeRunner](/protocol-launcher/zh/apps/code-runner.md)
 - [Codex](/protocol-launcher/zh/apps/codex.md)
 - [Cursor](/protocol-launcher/zh/apps/cursor.md)
+- [Evernote](/protocol-launcher/zh/apps/evernote.md)
 - [FSNotes](/protocol-launcher/zh/apps/fsnotes.md)
 - [GitHub Desktop](/protocol-launcher/zh/apps/github-desktop.md)
 - [GoLand](/protocol-launcher/zh/apps/goland.md)
@@ -104,6 +109,7 @@
 - [PyCharm](/protocol-launcher/zh/apps/pycharm.md)
 - [Qoder](/protocol-launcher/zh/apps/qoder.md)
 - [RustRover](/protocol-launcher/zh/apps/rustrover.md)
+- [Shortcuts](/protocol-launcher/zh/apps/shortcuts.md)
 - [SourceTree](/protocol-launcher/zh/apps/sourcetree.md)
 - [Telegram](/protocol-launcher/zh/apps/telegram.md)
 - [TextMate](/protocol-launcher/zh/apps/textmate.md)
