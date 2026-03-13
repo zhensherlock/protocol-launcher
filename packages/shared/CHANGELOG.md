@@ -1,5 +1,15 @@
 # @protocol-launcher/shared
 
+## 1.4.0
+
+### Minor Changes
+
+- [`f96722f`](https://github.com/zhensherlock/protocol-launcher/commit/f96722fc9e2cf07b027ce161c80485fa2aca209b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(shared): add qs helper for building query strings
+
+### Patch Changes
+
+- [`4b066a1`](https://github.com/zhensherlock/protocol-launcher/commit/4b066a11afec4b6af1b7970c91b989e2f96eb54f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
 ## 1.3.1
 
 ### Patch Changes
