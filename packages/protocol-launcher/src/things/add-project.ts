@@ -119,5 +119,5 @@ export function addProject(payload: AddProject) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///add-project${params ? `?${params}` : ''}`
+  return `things:///add-project?${params}`
 }

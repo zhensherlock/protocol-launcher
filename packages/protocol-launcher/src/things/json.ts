@@ -69,5 +69,5 @@ export function json(payload: Json) {
     ...(reveal ? { reveal: 'true' } : {}),
   })
 
-  return `things:///json${params ? `?${params}` : ''}`
+  return `things:///json?${params}`
 }
