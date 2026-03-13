@@ -21,11 +21,10 @@ describe('kaleidoscope', () => {
 
   test('compare should return a URL with label, previousPath, and latestPath', async () => {
     const url = kaleidoscope.compare({
-      label: 'Compare',
       previousPath: '/Users/dev/Desktop/previous.md',
       latestPath: '/Users/dev/Desktop/latest.md',
     })
-    expect(url).toBe('kaleidoscope://compare?label=Compare&/Users/dev/Desktop/previous.md&/Users/dev/Desktop/latest.md')
+    expect(url).toBe('kaleidoscope://compare?/Users/dev/Desktop/previous.md&/Users/dev/Desktop/latest.md')
   })
 
   test('compare should return a URL with label, previousLabel, previousPath, latestLabel, and latestPath', async () => {
