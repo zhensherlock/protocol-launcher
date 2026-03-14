@@ -156,6 +156,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
 - [Trae](../apps/trae.md)
+- [Trae China](../apps/trae-cn.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
 - [VS Code Insiders](../apps/vscode-insiders.md)

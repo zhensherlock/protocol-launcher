@@ -230,6 +230,10 @@
       "types": "./dist/types/trae/index.d.ts",
       "import": "./dist/trae/index.js"
     },
+    "./trae-cn": {
+      "types": "./dist/types/trae-cn/index.d.ts",
+      "import": "./dist/trae-cn/index.js"
+    },
     "./verdent": {
       "types": "./dist/types/verdent/index.d.ts",
       "import": "./dist/verdent/index.js"
