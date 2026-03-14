@@ -58,7 +58,7 @@ import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}installMCP({
   name: '企查查风险信息 MCP',
-  type: 'sse',
+  type: 'http',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
     Authorization: 'REPLACE_WITH_YOUR_TOKEN',
