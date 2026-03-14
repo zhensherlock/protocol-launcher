@@ -29,6 +29,10 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 [Trae](https://trae.ai) 是字节跳动推出的一款 AI 原生代码编辑器，提供 SOLO Coder、SOLO Builder 等智能编程模式，支持 MCP Server 扩展、自定义 Agent、多任务处理等功能。**Protocol Launcher** 允许你生成深度链接，用于在 Trae 中打开并配置资源。
 
+::: tip
+本文档面向国际版 Trae (trae.ai)，内置国际大模型。中国用户请参阅 [Trae 中国版](/zh/apps/trae-cn)，内置中国大模型。
+:::
+
 ## 使用
 
 提供两种使用方式：
