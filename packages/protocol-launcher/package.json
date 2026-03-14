@@ -146,6 +146,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./jump-desktop": {
+      "types": "./dist/types/jump-desktop/index.d.ts",
+      "import": "./dist/jump-desktop/index.js"
+    },
     "./kaleidoscope": {
       "types": "./dist/types/kaleidoscope/index.d.ts",
       "import": "./dist/kaleidoscope/index.js"
