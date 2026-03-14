@@ -16,7 +16,7 @@ export const installStreamableHTTPMCPServerParams = {
 
 export const installSSEMCPServerParams = {
   name: '企查查风险信息 MCP',
-  type: 'sse',
+  type: 'http',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
     Authorization: 'REPLACE_WITH_YOUR_TOKEN',
