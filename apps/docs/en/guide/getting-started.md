@@ -154,6 +154,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
+- [Trae](../apps/trae.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
 - [VS Code Insiders](../apps/vscode-insiders.md)

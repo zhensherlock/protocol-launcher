@@ -70,6 +70,7 @@ export default defineAdditionalConfig({
           { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Things', link: '/zh/apps/things' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
+          { text: 'Trae', link: '/zh/apps/trae' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },

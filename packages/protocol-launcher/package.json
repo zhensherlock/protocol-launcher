@@ -222,6 +222,10 @@
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
     },
+    "./trae": {
+      "types": "./dist/types/trae/index.d.ts",
+      "import": "./dist/trae/index.js"
+    },
     "./verdent": {
       "types": "./dist/types/verdent/index.d.ts",
       "import": "./dist/verdent/index.js"

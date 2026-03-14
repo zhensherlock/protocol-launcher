@@ -61,6 +61,7 @@ Currently, we support the following applications:
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
+- [Trae](../apps/trae.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
 - [VS Code Insiders](../apps/vscode-insiders.md)
