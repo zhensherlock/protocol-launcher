@@ -36,5 +36,5 @@ export function openTag(payload: OpenTag) {
     ...(token ? { token } : {}),
   })
 
-  return `bear://x-callback-url/open-tag?${params}`
+  return `bear://x-callback-url/open-tag${params}`
 }

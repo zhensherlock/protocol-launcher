@@ -109,5 +109,5 @@ export function openNote(payload: OpenNote = { showWindow: true, openNote: true 
     ...(search ? { search } : {}),
   })
 
-  return `bear://x-callback-url/open-note?${params}`
+  return `bear://x-callback-url/open-note${params}`
 }

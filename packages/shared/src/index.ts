@@ -36,7 +36,7 @@ export function encodeUrlPayload(payload: unknown, options: EncodeOptions = {}) 
 }
 
 export function qs(params: Record<string, unknown>) {
-  return Object.entries(params)
+  const query = Object.entries(params)
     .flatMap(([k, v]) => {
       if (v === undefined || v === null) return []
       if (Array.isArray(v)) {
@@ -45,4 +45,5 @@ export function qs(params: Record<string, unknown>) {
       return `${k}=${encodeURIComponent(String(v))}`
     })
     .join('&')
+  return query ? `?${query}` : ''
 }

@@ -39,5 +39,5 @@ export function todo(payload: Todo = {}) {
     ...(token ? { token } : {}),
   })
 
-  return `bear://x-callback-url/todo${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/todo${params}`
 }

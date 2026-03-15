@@ -29,5 +29,5 @@ export function search(payload: Search = {}) {
     ...(query ? { query } : {}),
   })
 
-  return `things:///search${params ? `?${params}` : ''}`
+  return `things:///search${params}`
 }

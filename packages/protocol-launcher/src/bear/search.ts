@@ -45,5 +45,5 @@ export function search(payload: Search = {}) {
     ...(token ? { token } : {}),
   })
 
-  return `bear://x-callback-url/search${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/search${params}`
 }

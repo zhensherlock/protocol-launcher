@@ -39,5 +39,5 @@ export function today(payload: Today = {}) {
     ...(token ? { token } : {}),
   })
 
-  return `bear://x-callback-url/today${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/today${params}`
 }

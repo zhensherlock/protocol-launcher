@@ -114,5 +114,5 @@ export function connect(options: ConnectOptions) {
     ...rest,
   })
 
-  return `jump://?${params}`
+  return `jump://${params}`
 }

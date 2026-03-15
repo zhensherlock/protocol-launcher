@@ -42,5 +42,5 @@ export function archive(payload: Archive = {}) {
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 
-  return `bear://x-callback-url/archive${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/archive${params}`
 }

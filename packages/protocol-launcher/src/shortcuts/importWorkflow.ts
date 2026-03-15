@@ -33,9 +33,9 @@ type ImportWorkflow = {
  */
 export function importWorkflow(payload: ImportWorkflow) {
   const { url, name } = payload
-  const params = {
+  const params = qs({
     url,
     ...(name ? { name } : {}),
-  }
-  return `shortcuts://import-workflow?${qs(params)}`
+  })
+  return `shortcuts://import-workflow${params}`
 }

@@ -56,13 +56,13 @@ type XCallbackRunShortcut = {
  */
 export function xCallbackRunShortcut(payload: XCallbackRunShortcut) {
   const { name, input, text, xSuccess, xCancel, xError } = payload
-  const params = {
+  const params = qs({
     name,
     ...(input ? { input } : {}),
     ...(text ? { text } : {}),
     ...(xSuccess ? { 'x-success': xSuccess } : {}),
     ...(xCancel ? { 'x-cancel': xCancel } : {}),
     ...(xError ? { 'x-error': xError } : {}),
-  }
-  return `shortcuts://x-callback-url/run-shortcut?${qs(params)}`
+  })
+  return `shortcuts://x-callback-url/run-shortcut${params}`
 }

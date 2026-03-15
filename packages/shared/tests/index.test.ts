@@ -36,24 +36,24 @@ describe('index.ts', () => {
   })
 
   test('qs should encode simple key-value pairs', () => {
-    expect(qs({ key: 'value', name: 'test' })).toBe('key=value&name=test')
+    expect(qs({ key: 'value', name: 'test' })).toBe('?key=value&name=test')
   })
 
   test('qs should skip null and undefined values', () => {
-    expect(qs({ key: 'value', nullVal: null, undefVal: undefined })).toBe('key=value')
+    expect(qs({ key: 'value', nullVal: null, undefVal: undefined })).toBe('?key=value')
   })
 
   test('qs should encode array values as multiple params', () => {
-    expect(qs({ tags: ['a', 'b', 'c'] })).toBe('tags=a&tags=b&tags=c')
+    expect(qs({ tags: ['a', 'b', 'c'] })).toBe('?tags=a&tags=b&tags=c')
   })
 
   test('qs should encode special characters', () => {
     expect(qs({ query: 'hello world', url: 'https://example.com' })).toBe(
-      'query=hello%20world&url=https%3A%2F%2Fexample.com',
+      '?query=hello%20world&url=https%3A%2F%2Fexample.com',
     )
   })
 
   test('qs should handle mixed types', () => {
-    expect(qs({ str: 'hello', num: 42, arr: [1, 2], skip: null })).toBe('str=hello&num=42&arr=1&arr=2')
+    expect(qs({ str: 'hello', num: 42, arr: [1, 2], skip: null })).toBe('?str=hello&num=42&arr=1&arr=2')
   })
 })

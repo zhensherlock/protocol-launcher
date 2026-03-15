@@ -33,5 +33,5 @@ export function deleteTag(payload: DeleteTag) {
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 
-  return `bear://x-callback-url/delete-tag${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/delete-tag${params}`
 }

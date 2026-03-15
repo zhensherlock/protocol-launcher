@@ -42,10 +42,10 @@ type RunShortcut = {
  */
 export function runShortcut(payload: RunShortcut) {
   const { name, input, text } = payload
-  const params = {
+  const params = qs({
     name,
     ...(input ? { input } : {}),
     ...(text ? { text } : {}),
-  }
-  return `shortcuts://run-shortcut?${qs(params)}`
+  })
+  return `shortcuts://run-shortcut${params}`
 }

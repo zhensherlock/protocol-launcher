@@ -42,5 +42,5 @@ export function trash(payload: Trash = {}) {
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 
-  return `bear://x-callback-url/trash${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/trash${params}`
 }

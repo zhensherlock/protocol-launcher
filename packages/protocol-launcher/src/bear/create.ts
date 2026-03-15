@@ -130,5 +130,5 @@ export function create(payload: Create = {}) {
     ...(url ? { url } : {}),
   })
 
-  return `bear://x-callback-url/create${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/create${params}`
 }

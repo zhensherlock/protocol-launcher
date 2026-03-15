@@ -127,5 +127,5 @@ export function addText(payload: AddText = {}) {
     ...(timestamp ? { timestamp: 'yes' } : {}),
   })
 
-  return `bear://x-callback-url/add-text${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/add-text${params}`
 }

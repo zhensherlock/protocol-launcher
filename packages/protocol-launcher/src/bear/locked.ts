@@ -33,5 +33,5 @@ export function locked(payload: Locked = {}) {
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 
-  return `bear://x-callback-url/locked${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/locked${params}`
 }

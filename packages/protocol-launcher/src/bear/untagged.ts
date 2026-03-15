@@ -39,5 +39,5 @@ export function untagged(payload: Untagged = {}) {
     ...(token ? { token } : {}),
   })
 
-  return `bear://x-callback-url/untagged${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/untagged${params}`
 }

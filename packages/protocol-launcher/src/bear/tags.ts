@@ -27,5 +27,5 @@ export function tags(payload: Tags) {
     ...(token ? { token } : {}),
   })
 
-  return `bear://x-callback-url/tags${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/tags${params}`
 }

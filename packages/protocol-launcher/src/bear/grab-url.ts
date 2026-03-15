@@ -45,5 +45,5 @@ export function grabUrl(payload: GrabUrl) {
     ...(wait === false ? { wait: 'no' } : {}),
   })
 
-  return `bear://x-callback-url/grab-url${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/grab-url${params}`
 }

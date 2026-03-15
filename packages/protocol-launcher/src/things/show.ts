@@ -57,5 +57,5 @@ export function show(payload: ShowPayload = { id: 'today' }) {
     ...(filter ? { filter } : {}),
   })
 
-  return `things:///show?${params}`
+  return `things:///show${params}`
 }

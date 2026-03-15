@@ -39,5 +39,5 @@ export function renameTag(payload: RenameTag) {
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 
-  return `bear://x-callback-url/rename-tag${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/rename-tag${params}`
 }

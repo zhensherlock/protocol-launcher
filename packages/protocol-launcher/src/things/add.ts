@@ -157,5 +157,5 @@ export function add(payload: Add = {}) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///add${params ? `?${params}` : ''}`
+  return `things:///add${params}`
 }

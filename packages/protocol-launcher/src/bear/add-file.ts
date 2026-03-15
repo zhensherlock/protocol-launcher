@@ -87,5 +87,5 @@ export function addFile(payload: AddFile) {
     ...(edit ? { edit: 'yes' } : {}),
   })
 
-  return `bear://x-callback-url/add-file${params ? `?${params}` : ''}`
+  return `bear://x-callback-url/add-file${params}`
 }

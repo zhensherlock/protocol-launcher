@@ -154,5 +154,5 @@ export function updateProject(payload: UpdateProject) {
     ...(completionDate ? { 'completion-date': completionDate } : {}),
   })
 
-  return `things:///update-project?${params}`
+  return `things:///update-project${params}`
 }
