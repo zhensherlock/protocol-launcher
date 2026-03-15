@@ -1,0 +1,6 @@
+export { calendar } from './calendar'
+export { facetime } from './facetime'
+export { findMy } from './findMy'
+export { mail } from './mail'
+export { sms } from './sms'
+export { wallet } from './wallet'

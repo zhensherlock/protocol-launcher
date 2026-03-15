@@ -55,6 +55,7 @@ export default defineAdditionalConfig({
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
+          { text: 'macOS', link: '/zh/apps/macos' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
