@@ -143,6 +143,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
+* [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)

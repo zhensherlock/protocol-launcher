@@ -143,6 +143,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
+* [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)

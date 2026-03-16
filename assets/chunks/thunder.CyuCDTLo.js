@@ -1,1 +1,0 @@
-import{r as o}from"./index.Bo1z4TVB.js";function t(r){let{url:e}=r;return`thunder://${o(`AA${e}ZZ`,{encodeForUrl:!1})}`}const l={url:"https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg"};export{l as d,t};

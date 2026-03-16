@@ -1,0 +1,1 @@
+import{e as o}from"./index.CWwLnpeZ.js";function s(e){let{path:r,line:n,column:t}=e;return`atom://core/open/file?filename=${r}${o(n)?"":`&line=${n}`}${o(t)?"":`&column=${t}`}`}function l(){return"atom://"}const m=e=>({path:e?"C:\\Windows\\System32\\drivers\\etc\\hosts":"/etc/hosts",line:1,column:2});export{l as e,m as o,s as t};
