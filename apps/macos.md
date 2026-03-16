@@ -104,3 +104,85 @@ import { {{ currentMethod === 'On-Demand' ? 'wallet' : 'macos' }} } from '{{ imp
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
 ```
+
+### Open Address Book
+
+Open the Address Book app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
+```
+
+### Open Feedback
+
+Open the Feedback Assistant app, optionally to submit new feedback.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macos' }} } from '{{ importPath }}'
+
+// Open Feedback Assistant
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback()
+
+// Open Feedback Assistant to submit new feedback
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
+  type: 'new',
+})
+```
+
+### Open Notes
+
+Open the Notes app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
+```
+
+### Open Reminders
+
+Open the Reminders app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
+```
+
+### Open Stocks
+
+Open the Stocks app, optionally with a stock symbol.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macos' }} } from '{{ importPath }}'
+
+// Open Stocks app
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks()
+
+// Open Stocks with symbol
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
+  symbol: 'GE',
+})
+```
+
+### Open Videos
+
+Open the Videos app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
+```
+
+### Open Weather
+
+Open the Weather app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
+```

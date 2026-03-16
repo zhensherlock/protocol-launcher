@@ -104,3 +104,85 @@ import { {{ currentMethod === 'On-Demand' ? 'wallet' : 'macos' }} } from '{{ imp
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
 ```
+
+### 打开通讯录
+
+打开通讯录应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
+```
+
+### 打开反馈
+
+打开反馈助手应用程序，可选择提交新反馈。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macos' }} } from '{{ importPath }}'
+
+// 打开反馈助手
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback()
+
+// 打开反馈助手提交新反馈
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
+  type: 'new',
+})
+```
+
+### 打开备忘录
+
+打开备忘录应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
+```
+
+### 打开提醒事项
+
+打开提醒事项应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
+```
+
+### 打开股票
+
+打开股票应用程序，可选择带股票代码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macos' }} } from '{{ importPath }}'
+
+// 打开股票应用
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks()
+
+// 打开带股票代码的股票
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
+  symbol: 'GE',
+})
+```
+
+### 打开视频
+
+打开视频应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
+```
+
+### 打开天气
+
+打开天气应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
+```
