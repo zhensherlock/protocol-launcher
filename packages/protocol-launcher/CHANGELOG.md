@@ -1,5 +1,34 @@
 # protocol-launcher
 
+## 1.17.0
+
+### Minor Changes
+
+- [`5884123`](https://github.com/zhensherlock/protocol-launcher/commit/58841231a998e15217295bfc6212459c918b49a5) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(trae-cn): add Trae China protocol launcher support
+
+- [`643daa7`](https://github.com/zhensherlock/protocol-launcher/commit/643daa7689dfe2c001e30615ff8419f67f60cb68) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(bear): add Bear protocol launcher support
+
+- [`a9db556`](https://github.com/zhensherlock/protocol-launcher/commit/a9db55657d1c20ec3d641b449b4cb89ebc5bff1c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - refactor(shared): update qs function to prepend '?' to query string
+
+- [`b0292ac`](https://github.com/zhensherlock/protocol-launcher/commit/b0292acd3c7a6e124c6d894351163070de4faaa7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(trae): add Trae protocol launcher support
+
+- [`b05f026`](https://github.com/zhensherlock/protocol-launcher/commit/b05f02648fdd07d1372af4b6f680dc2436dd8f84) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(jump-desktop): add JumpDesktop protocol launcher support
+
+- [`be2c4f1`](https://github.com/zhensherlock/protocol-launcher/commit/be2c4f1186827f0936f18a622e774e4492e6527c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(macos): add macOS protocol launcher support
+
+- [`e527405`](https://github.com/zhensherlock/protocol-launcher/commit/e527405dc0db05a879a51e84e0ccfe6578283eef) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(code-buddy-cn): add CodeBuddyCN protocol launcher support
+
+### Patch Changes
+
+- [`35318a0`](https://github.com/zhensherlock/protocol-launcher/commit/35318a0e0bc4c3a2525d014846efd528f2923e97) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(things): ensure query parameters are always included in URLs
+
+- [`d8bde30`](https://github.com/zhensherlock/protocol-launcher/commit/d8bde3068e44942aed1cbd966f3070139fbc3ef5) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(things): provide default payload for show function
+
+- [`15ded66`](https://github.com/zhensherlock/protocol-launcher/commit/15ded6658972d6195b447a38e1cfdad31741232a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - fix(things): ensure update URL always includes query params
+
+- Updated dependencies [[`3ea999a`](https://github.com/zhensherlock/protocol-launcher/commit/3ea999a797dc4b2a55e88b82f07c6b8ccb492f67)]:
+  - @protocol-launcher/shared@1.4.1
+
 ## 1.16.0
 
 ### Minor Changes
