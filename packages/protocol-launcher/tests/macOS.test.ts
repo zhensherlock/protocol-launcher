@@ -61,4 +61,49 @@ describe('macOS', () => {
     const url = macOS.findMy({ tab: 'friends' })
     expect(url).toBe('findmy://friends')
   })
+
+  test('stocks should return a URL without symbol', async () => {
+    const url = macOS.stocks()
+    expect(url).toBe('stocks://')
+  })
+
+  test('stocks should return a URL with symbol', async () => {
+    const url = macOS.stocks({ symbol: 'GE' })
+    expect(url).toBe('stocks://?symbol=GE')
+  })
+
+  test('videos should return a URL', async () => {
+    const url = macOS.videos()
+    expect(url).toBe('videos://')
+  })
+
+  test('weather should return a URL', async () => {
+    const url = macOS.weather()
+    expect(url).toBe('weather://')
+  })
+
+  test('addressbook should return a URL', async () => {
+    const url = macOS.addressbook()
+    expect(url).toBe('addressbook://')
+  })
+
+  test('notes should return a URL', async () => {
+    const url = macOS.notes()
+    expect(url).toBe('notes://')
+  })
+
+  test('reminders should return a URL', async () => {
+    const url = macOS.reminders()
+    expect(url).toBe('x-apple-reminderkit://')
+  })
+
+  test('feedback should return a URL without type', async () => {
+    const url = macOS.feedback()
+    expect(url).toBe('applefeedback://')
+  })
+
+  test('feedback should return a URL with new type', async () => {
+    const url = macOS.feedback({ type: 'new' })
+    expect(url).toBe('applefeedback://new')
+  })
 })

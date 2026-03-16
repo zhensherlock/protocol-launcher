@@ -31,3 +31,25 @@ export const smsWithPhoneParams = {
 }
 
 export const walletParams = {}
+
+export const addressBookParams = {}
+
+export const feedbackParams = {}
+
+export const feedbackWithNewParams = {
+  type: 'new',
+}
+
+export const notesParams = {}
+
+export const remindersParams = {}
+
+export const stocksParams = {}
+
+export const stocksWithSymbolParams = {
+  symbol: 'GE',
+}
+
+export const videosParams = {}
+
+export const weatherParams = {}

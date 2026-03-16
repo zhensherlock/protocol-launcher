@@ -5,21 +5,30 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { calendar, facetime, findMy, mail, sms, wallet } from 'protocol-launcher/macos';
+import { addressbook, calendar, facetime, feedback, findMy, mail, notes, reminders, sms, stocks, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
+  addressBookParams,
   calendarParams,
   calendarWithLinkParams,
   facetimeParams,
+  feedbackParams,
+  feedbackWithNewParams,
   findMyParams,
   findMyDevicesParams,
   findMyItemsParams,
   findMyFriendsParams,
   mailParams,
+  notesParams,
+  remindersParams,
   smsParams,
   smsWithPhoneParams,
+  stocksParams,
+  stocksWithSymbolParams,
+  videosParams,
   walletParams,
+  weatherParams,
 } from '../../.vitepress/constants/macos';
 
 const appStore = useAppStore();
@@ -180,5 +189,135 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
 <div class="flex justify-center">
   <VPLink :href="wallet(walletParams)" target="_self">
     打开钱包
+  </VPLink>
+</div>
+
+### 打开通讯录
+
+打开通讯录应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="addressbook(addressBookParams)" target="_self">
+    打开通讯录
+  </VPLink>
+</div>
+
+### 打开反馈
+
+打开反馈助手应用程序，可选择提交新反馈。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macos' }} } from '{{ importPath }}'
+
+// 打开反馈助手
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback()
+
+// 打开反馈助手提交新反馈
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
+  type: 'new',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="feedback(feedbackParams)" target="_self">
+    打开反馈助手
+  </VPLink>
+  <VPLink :href="feedback(feedbackWithNewParams)" target="_self">
+    提交新反馈
+  </VPLink>
+</div>
+
+### 打开备忘录
+
+打开备忘录应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="notes(notesParams)" target="_self">
+    打开备忘录
+  </VPLink>
+</div>
+
+### 打开提醒事项
+
+打开提醒事项应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="reminders(remindersParams)" target="_self">
+    打开提醒事项
+  </VPLink>
+</div>
+
+### 打开股票
+
+打开股票应用程序，可选择带股票代码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macos' }} } from '{{ importPath }}'
+
+// 打开股票应用
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks()
+
+// 打开带股票代码的股票
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
+  symbol: 'GE',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="stocks(stocksParams)" target="_self">
+    打开股票
+  </VPLink>
+  <VPLink :href="stocks(stocksWithSymbolParams)" target="_self">
+    打开带股票代码的股票
+  </VPLink>
+</div>
+
+### 打开视频
+
+打开视频应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="videos(videosParams)" target="_self">
+    打开视频
+  </VPLink>
+</div>
+
+### 打开天气
+
+打开天气应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="weather(weatherParams)" target="_self">
+    打开天气
   </VPLink>
 </div>
