@@ -53,3 +53,21 @@ export const stocksWithSymbolParams = {
 export const videosParams = {}
 
 export const weatherParams = {}
+
+export const booksParams = {}
+
+export const musicParams = {}
+
+export const photosParams = {}
+
+export const podcastsParams = {}
+
+export const systemPreferencesParams = {}
+
+export const systemPreferencesWithSecurityPaneParams = {
+  pane: 'com.apple.preference.security',
+}
+
+export const systemPreferencesWithSoftwareUpdatePaneParams = {
+  pane: 'com.apple.preferences.softwareupdate',
+}

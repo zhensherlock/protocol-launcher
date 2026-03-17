@@ -5,11 +5,12 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addressbook, calendar, facetime, feedback, findMy, mail, notes, reminders, sms, stocks, videos, wallet, weather } from 'protocol-launcher/macos';
+import { addressbook, books, calendar, facetime, feedback, findMy, mail, music, notes, photos, podcasts, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   addressBookParams,
+  booksParams,
   calendarParams,
   calendarWithLinkParams,
   facetimeParams,
@@ -20,12 +21,18 @@ import {
   findMyItemsParams,
   findMyFriendsParams,
   mailParams,
+  musicParams,
   notesParams,
+  photosParams,
+  podcastsParams,
   remindersParams,
   smsParams,
   smsWithPhoneParams,
   stocksParams,
   stocksWithSymbolParams,
+  systemPreferencesParams,
+  systemPreferencesWithSecurityPaneParams,
+  systemPreferencesWithSoftwareUpdatePaneParams,
   videosParams,
   walletParams,
   weatherParams,
@@ -319,5 +326,102 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
 <div class="flex justify-center">
   <VPLink :href="weather(weatherParams)" target="_self">
     打开天气
+  </VPLink>
+</div>
+
+### 打开图书
+
+打开图书应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'books' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="books(booksParams)" target="_self">
+    打开图书
+  </VPLink>
+</div>
+
+### 打开音乐
+
+打开音乐应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'music' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="music(musicParams)" target="_self">
+    打开音乐
+  </VPLink>
+</div>
+
+### 打开照片
+
+打开照片应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="photos(photosParams)" target="_self">
+    打开照片
+  </VPLink>
+</div>
+
+### 打开播客
+
+打开播客应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="podcasts(podcastsParams)" target="_self">
+    打开播客
+  </VPLink>
+</div>
+
+### 打开系统设置
+
+打开系统设置应用程序，可选择指定偏好设置面板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macos' }} } from '{{ importPath }}'
+
+// 打开系统设置
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences()
+
+// 打开安全性与隐私面板
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preference.security',
+})
+
+// 打开软件更新面板
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preferences.softwareupdate',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="systemPreferences(systemPreferencesParams)" target="_self">
+    打开系统设置
+  </VPLink>
+  <VPLink :href="systemPreferences(systemPreferencesWithSecurityPaneParams)" target="_self">
+    打开安全性与隐私
+  </VPLink>
+  <VPLink :href="systemPreferences(systemPreferencesWithSoftwareUpdatePaneParams)" target="_self">
+    打开软件更新
   </VPLink>
 </div>

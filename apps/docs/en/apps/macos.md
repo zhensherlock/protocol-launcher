@@ -5,11 +5,12 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addressbook, calendar, facetime, feedback, findMy, mail, notes, reminders, sms, stocks, videos, wallet, weather } from 'protocol-launcher/macos';
+import { addressbook, books, calendar, facetime, feedback, findMy, mail, music, notes, photos, podcasts, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   addressBookParams,
+  booksParams,
   calendarParams,
   calendarWithLinkParams,
   facetimeParams,
@@ -20,12 +21,18 @@ import {
   findMyItemsParams,
   findMyFriendsParams,
   mailParams,
+  musicParams,
   notesParams,
+  photosParams,
+  podcastsParams,
   remindersParams,
   smsParams,
   smsWithPhoneParams,
   stocksParams,
   stocksWithSymbolParams,
+  systemPreferencesParams,
+  systemPreferencesWithSecurityPaneParams,
+  systemPreferencesWithSoftwareUpdatePaneParams,
   videosParams,
   walletParams,
   weatherParams,
@@ -319,5 +326,102 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
 <div class="flex justify-center">
   <VPLink :href="weather(weatherParams)" target="_self">
     Open Weather
+  </VPLink>
+</div>
+
+### Open Books
+
+Open the Books app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'books' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="books(booksParams)" target="_self">
+    Open Books
+  </VPLink>
+</div>
+
+### Open Music
+
+Open the Music app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'music' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="music(musicParams)" target="_self">
+    Open Music
+  </VPLink>
+</div>
+
+### Open Photos
+
+Open the Photos app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="photos(photosParams)" target="_self">
+    Open Photos
+  </VPLink>
+</div>
+
+### Open Podcasts
+
+Open the Podcasts app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="podcasts(podcastsParams)" target="_self">
+    Open Podcasts
+  </VPLink>
+</div>
+
+### Open System Preferences
+
+Open the System Preferences (Settings) app, optionally with a specific preference pane.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macos' }} } from '{{ importPath }}'
+
+// Open System Preferences
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences()
+
+// Open Security & Privacy pane
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preference.security',
+})
+
+// Open Software Update pane
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preferences.softwareupdate',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="systemPreferences(systemPreferencesParams)" target="_self">
+    Open System Preferences
+  </VPLink>
+  <VPLink :href="systemPreferences(systemPreferencesWithSecurityPaneParams)" target="_self">
+    Open Security & Privacy
+  </VPLink>
+  <VPLink :href="systemPreferences(systemPreferencesWithSoftwareUpdatePaneParams)" target="_self">
+    Open Software Update
   </VPLink>
 </div>

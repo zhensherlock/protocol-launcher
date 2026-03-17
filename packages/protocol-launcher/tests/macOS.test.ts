@@ -106,4 +106,39 @@ describe('macOS', () => {
     const url = macOS.feedback({ type: 'new' })
     expect(url).toBe('applefeedback://new')
   })
+
+  test('photos should return a URL', async () => {
+    const url = macOS.photos()
+    expect(url).toBe('photos://')
+  })
+
+  test('music should return a URL', async () => {
+    const url = macOS.music()
+    expect(url).toBe('music://')
+  })
+
+  test('podcasts should return a URL', async () => {
+    const url = macOS.podcasts()
+    expect(url).toBe('pcast://')
+  })
+
+  test('books should return a URL', async () => {
+    const url = macOS.books()
+    expect(url).toBe('ibooks://')
+  })
+
+  test('systemPreferences should return a URL without pane', async () => {
+    const url = macOS.systemPreferences()
+    expect(url).toBe('x-apple.systempreferences:')
+  })
+
+  test('systemPreferences should return a URL with security pane', async () => {
+    const url = macOS.systemPreferences({ pane: 'com.apple.preference.security' })
+    expect(url).toBe('x-apple.systempreferences:com.apple.preference.security')
+  })
+
+  test('systemPreferences should return a URL with softwareupdate pane', async () => {
+    const url = macOS.systemPreferences({ pane: 'com.apple.preferences.softwareupdate' })
+    expect(url).toBe('x-apple.systempreferences:com.apple.preferences.softwareupdate')
+  })
 })
