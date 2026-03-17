@@ -186,3 +186,64 @@ import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ im
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
 ```
+
+### 打开图书
+
+打开图书应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'books' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
+```
+
+### 打开音乐
+
+打开音乐应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'music' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
+```
+
+### 打开照片
+
+打开照片应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
+```
+
+### 打开播客
+
+打开播客应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
+```
+
+### 打开系统设置
+
+打开系统设置应用程序，可选择指定偏好设置面板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macos' }} } from '{{ importPath }}'
+
+// 打开系统设置
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences()
+
+// 打开安全性与隐私面板
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preference.security',
+})
+
+// 打开软件更新面板
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preferences.softwareupdate',
+})
+```

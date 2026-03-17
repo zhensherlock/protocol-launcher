@@ -186,3 +186,64 @@ import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ im
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
 ```
+
+### Open Books
+
+Open the Books app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'books' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
+```
+
+### Open Music
+
+Open the Music app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'music' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
+```
+
+### Open Photos
+
+Open the Photos app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
+```
+
+### Open Podcasts
+
+Open the Podcasts app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
+```
+
+### Open System Preferences
+
+Open the System Preferences (Settings) app, optionally with a specific preference pane.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macos' }} } from '{{ importPath }}'
+
+// Open System Preferences
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences()
+
+// Open Security & Privacy pane
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preference.security',
+})
+
+// Open Software Update pane
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+  pane: 'com.apple.preferences.softwareupdate',
+})
+```
