@@ -141,4 +141,44 @@ describe('macOS', () => {
     const url = macOS.systemPreferences({ pane: 'com.apple.preferences.softwareupdate' })
     expect(url).toBe('x-apple.systempreferences:com.apple.preferences.softwareupdate')
   })
+
+  test('helpViewer should return a URL without collection', async () => {
+    const url = macOS.helpViewer()
+    expect(url).toBe('x-apple-tips://')
+  })
+
+  test('helpViewer should return a URL with collection', async () => {
+    const url = macOS.helpViewer({ collection: 'WelcomeToMac' })
+    expect(url).toBe('x-apple-tips://open?collection=WelcomeToMac')
+  })
+
+  test('printer should return a URL without host', async () => {
+    const url = macOS.printer()
+    expect(url).toBe('ipp://')
+  })
+
+  test('printer should return a URL with host', async () => {
+    const url = macOS.printer({ host: '192.168.1.100' })
+    expect(url).toBe('ipp://192.168.1.100')
+  })
+
+  test('freeform should return a URL', async () => {
+    const url = macOS.freeform()
+    expect(url).toBe('freeform://')
+  })
+
+  test('airport should return a URL', async () => {
+    const url = macOS.airport()
+    expect(url).toBe('apconfig://')
+  })
+
+  test('dictionary should return a URL without term', async () => {
+    const url = macOS.dictionary()
+    expect(url).toBe('dict://')
+  })
+
+  test('dictionary should return a URL with term', async () => {
+    const url = macOS.dictionary({ term: 'hello' })
+    expect(url).toBe('dict://hello')
+  })
 })

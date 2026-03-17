@@ -71,3 +71,25 @@ export const systemPreferencesWithSecurityPaneParams = {
 export const systemPreferencesWithSoftwareUpdatePaneParams = {
   pane: 'com.apple.preferences.softwareupdate',
 }
+
+export const airportParams = {}
+
+export const dictionaryParams = {}
+
+export const dictionaryWithTermParams = {
+  term: 'hello',
+}
+
+export const freeformParams = {}
+
+export const helpViewerParams = {}
+
+export const helpViewerWithCollectionParams = {
+  collection: 'WelcomeToMac',
+}
+
+export const printerParams = {}
+
+export const printerWithHostParams = {
+  host: '192.168.1.100',
+}

@@ -5,14 +5,17 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addressbook, books, calendar, facetime, feedback, findMy, mail, music, notes, photos, podcasts, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
+import { addressbook, airport, books, calendar, dictionary, facetime, feedback, findMy, freeform, helpViewer, mail, music, notes, photos, podcasts, printer, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   addressBookParams,
+  airportParams,
   booksParams,
   calendarParams,
   calendarWithLinkParams,
+  dictionaryParams,
+  dictionaryWithTermParams,
   facetimeParams,
   feedbackParams,
   feedbackWithNewParams,
@@ -20,11 +23,16 @@ import {
   findMyDevicesParams,
   findMyItemsParams,
   findMyFriendsParams,
+  freeformParams,
+  helpViewerParams,
+  helpViewerWithCollectionParams,
   mailParams,
   musicParams,
   notesParams,
   photosParams,
   podcastsParams,
+  printerParams,
+  printerWithHostParams,
   remindersParams,
   smsParams,
   smsWithPhoneParams,
@@ -423,5 +431,112 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
   </VPLink>
   <VPLink :href="systemPreferences(systemPreferencesWithSoftwareUpdatePaneParams)" target="_self">
     打开软件更新
+  </VPLink>
+</div>
+
+### 打开 Airport 实用工具
+
+打开 Airport 实用工具应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="airport(airportParams)" target="_self">
+    打开 Airport 实用工具
+  </VPLink>
+</div>
+
+### 打开词典
+
+搜索词典查找术语。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+
+// 搜索词典
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+
+// 搜索带术语的词典
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+  term: 'hello',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="dictionary(dictionaryParams)" target="_self">
+    搜索词典
+  </VPLink>
+  <VPLink :href="dictionary(dictionaryWithTermParams)" target="_self">
+    搜索术语
+  </VPLink>
+</div>
+
+### 打开无边记
+
+打开无边记应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="freeform(freeformParams)" target="_self">
+    打开无边记
+  </VPLink>
+</div>
+
+### 打开帮助查看器
+
+打开帮助查看器应用程序，可选择指定合集。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+
+// 打开帮助查看器
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+
+// 打开带合集的帮助查看器
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+  collection: 'WelcomeToMac',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="helpViewer(helpViewerParams)" target="_self">
+    打开帮助查看器
+  </VPLink>
+  <VPLink :href="helpViewer(helpViewerWithCollectionParams)" target="_self">
+    打开特定合集
+  </VPLink>
+</div>
+
+### 添加打印机
+
+添加打印机，可选择带主机名或 IP 地址。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+
+// 添加打印机
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+
+// 添加带主机的打印机
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+  host: '192.168.1.100',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="printer(printerParams)" target="_self">
+    添加打印机
+  </VPLink>
+  <VPLink :href="printer(printerWithHostParams)" target="_self">
+    添加带主机的打印机
   </VPLink>
 </div>

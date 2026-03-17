@@ -5,14 +5,17 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addressbook, books, calendar, facetime, feedback, findMy, mail, music, notes, photos, podcasts, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
+import { addressbook, airport, books, calendar, dictionary, facetime, feedback, findMy, freeform, helpViewer, mail, music, notes, photos, podcasts, printer, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   addressBookParams,
+  airportParams,
   booksParams,
   calendarParams,
   calendarWithLinkParams,
+  dictionaryParams,
+  dictionaryWithTermParams,
   facetimeParams,
   feedbackParams,
   feedbackWithNewParams,
@@ -20,11 +23,16 @@ import {
   findMyDevicesParams,
   findMyItemsParams,
   findMyFriendsParams,
+  freeformParams,
+  helpViewerParams,
+  helpViewerWithCollectionParams,
   mailParams,
   musicParams,
   notesParams,
   photosParams,
   podcastsParams,
+  printerParams,
+  printerWithHostParams,
   remindersParams,
   smsParams,
   smsWithPhoneParams,
@@ -423,5 +431,112 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
   </VPLink>
   <VPLink :href="systemPreferences(systemPreferencesWithSoftwareUpdatePaneParams)" target="_self">
     Open Software Update
+  </VPLink>
+</div>
+
+### Open Airport Utility
+
+Open the Airport Utility app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="airport(airportParams)" target="_self">
+    Open Airport Utility
+  </VPLink>
+</div>
+
+### Open Dictionary
+
+Search dictionaries for a term.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+
+// Search dictionary
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+
+// Search dictionary with term
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+  term: 'hello',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="dictionary(dictionaryParams)" target="_self">
+    Search Dictionary
+  </VPLink>
+  <VPLink :href="dictionary(dictionaryWithTermParams)" target="_self">
+    Search for Term
+  </VPLink>
+</div>
+
+### Open Freeform
+
+Open the Freeform app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="freeform(freeformParams)" target="_self">
+    Open Freeform
+  </VPLink>
+</div>
+
+### Open Help Viewer
+
+Open the Help Viewer app, optionally with a specific collection.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+
+// Open Help Viewer
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+
+// Open Help Viewer with collection
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+  collection: 'WelcomeToMac',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="helpViewer(helpViewerParams)" target="_self">
+    Open Help Viewer
+  </VPLink>
+  <VPLink :href="helpViewer(helpViewerWithCollectionParams)" target="_self">
+    Open Specific Collection
+  </VPLink>
+</div>
+
+### Open Printer Settings
+
+Add a printer, optionally with a hostname or IP address.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+
+// Add printer
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+
+// Add printer with host
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+  host: '192.168.1.100',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="printer(printerParams)" target="_self">
+    Add Printer
+  </VPLink>
+  <VPLink :href="printer(printerWithHostParams)" target="_self">
+    Add Printer with Host
   </VPLink>
 </div>
