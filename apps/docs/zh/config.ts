@@ -33,6 +33,7 @@ export default defineAdditionalConfig({
           { text: 'AFFiNE', link: '/zh/apps/affine' },
           { text: 'Alfred', link: '/zh/apps/alfred' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
+          { text: 'App Store', link: '/zh/apps/app-store' },
           { text: 'AppFlowy', link: '/zh/apps/appflowy' },
           { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },
           { text: 'Atom', link: '/zh/apps/atom' },

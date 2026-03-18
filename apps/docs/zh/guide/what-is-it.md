@@ -24,6 +24,7 @@ layout: doc
 - [AFFiNE](../apps/affine.md)
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
+- [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Script Editor](../apps/apple-script.md)
 - [Atom](../apps/atom.md)

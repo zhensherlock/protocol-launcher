@@ -74,6 +74,10 @@
       "types": "./dist/types/antigravity/index.d.ts",
       "import": "./dist/antigravity/index.js"
     },
+    "./app-store": {
+      "types": "./dist/types/app-store/index.d.ts",
+      "import": "./dist/app-store/index.js"
+    },
     "./appflowy": {
       "types": "./dist/types/appflowy/index.d.ts",
       "import": "./dist/appflowy/index.js"

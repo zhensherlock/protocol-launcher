@@ -1,6 +1,7 @@
 export * as affine from './affine'
 export * as alfred from './alfred'
 export * as antigravity from './antigravity'
+export * as appStore from './app-store'
 export * as appflowy from './appflowy'
 export * as appleScript from './apple-script'
 export * as atom from './atom'
