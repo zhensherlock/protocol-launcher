@@ -247,3 +247,71 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
   pane: 'com.apple.preferences.softwareupdate',
 })
 ```
+
+### Open Airport Utility
+
+Open the Airport Utility app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+```
+
+### Open Dictionary
+
+Search dictionaries for a term.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+
+// Search dictionary
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+
+// Search dictionary with term
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+  term: 'hello',
+})
+```
+
+### Open Freeform
+
+Open the Freeform app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+```
+
+### Open Help Viewer
+
+Open the Help Viewer app, optionally with a specific collection.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+
+// Open Help Viewer
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+
+// Open Help Viewer with collection
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+  collection: 'WelcomeToMac',
+})
+```
+
+### Open Printer Settings
+
+Add a printer, optionally with a hostname or IP address.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+
+// Add printer
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+
+// Add printer with host
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+  host: '192.168.1.100',
+})
+```

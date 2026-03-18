@@ -247,3 +247,71 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
   pane: 'com.apple.preferences.softwareupdate',
 })
 ```
+
+### 打开 Airport 实用工具
+
+打开 Airport 实用工具应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+```
+
+### 打开词典
+
+搜索词典查找术语。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+
+// 搜索词典
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+
+// 搜索带术语的词典
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+  term: 'hello',
+})
+```
+
+### 打开无边记
+
+打开无边记应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+```
+
+### 打开帮助查看器
+
+打开帮助查看器应用程序，可选择指定合集。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+
+// 打开帮助查看器
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+
+// 打开带合集的帮助查看器
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+  collection: 'WelcomeToMac',
+})
+```
+
+### 添加打印机
+
+添加打印机，可选择带主机名或 IP 地址。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+
+// 添加打印机
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+
+// 添加带主机的打印机
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+  host: '192.168.1.100',
+})
+```

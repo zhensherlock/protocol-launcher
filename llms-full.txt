@@ -565,6 +565,142 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'antigravity.'}}openSettings(
 ---
 
 ---
+url: /protocol-launcher/apps/app-store.md
+---
+
+# App Store
+
+[App Store](https://www.apple.com/app-store/) is a digital distribution platform developed and maintained by Apple Inc. for mobile apps on its iOS, iPadOS, and watchOS operating systems. **Protocol Launcher** allows you to generate deep links to open and configure resources in App Store.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App Store
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}open()
+```
+
+### Open Specific Page
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}open({
+  path: 'account/subscriptions',
+})
+```
+
+### Search Apps
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}search({
+  query: 'things',
+})
+```
+
+### Open App Page
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'app' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}app({
+  id: '836500024',
+})
+```
+
+### Open App Page with Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'app' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}app({
+  id: '836500024',
+  action: 'write-review',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/app-store.md
+---
+
+# App Store
+
+[App Store](https://www.apple.com/app-store/) 是由苹果公司为其 iOS、iPadOS 和 watchOS 操作系统开发和维护的数字分发平台。**Protocol Launcher** 允许你生成深度链接，用于在 App Store 中打开并配置资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开 App Store
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}open()
+```
+
+### 打开特定页面
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}open({
+  path: 'account/subscriptions',
+})
+```
+
+### 搜索应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}search({
+  query: 'things',
+})
+```
+
+### 打开应用页面
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'app' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}app({
+  id: '836500024',
+})
+```
+
+### 打开应用页面并执行操作
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'app' : 'appStore' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appStore.'}}app({
+  id: '836500024',
+  action: 'write-review',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/appflowy.md
 ---
 
@@ -2769,6 +2905,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [AFFiNE](../apps/affine.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
+* [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
@@ -4173,6 +4310,74 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
 })
 ```
 
+### Open Airport Utility
+
+Open the Airport Utility app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+```
+
+### Open Dictionary
+
+Search dictionaries for a term.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+
+// Search dictionary
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+
+// Search dictionary with term
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+  term: 'hello',
+})
+```
+
+### Open Freeform
+
+Open the Freeform app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+```
+
+### Open Help Viewer
+
+Open the Help Viewer app, optionally with a specific collection.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+
+// Open Help Viewer
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+
+// Open Help Viewer with collection
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+  collection: 'WelcomeToMac',
+})
+```
+
+### Open Printer Settings
+
+Add a printer, optionally with a hostname or IP address.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+
+// Add printer
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+
+// Add printer with host
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+  host: '192.168.1.100',
+})
+```
+
 ---
 
 ---
@@ -4422,6 +4627,74 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
 // 打开软件更新面板
 const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
   pane: 'com.apple.preferences.softwareupdate',
+})
+```
+
+### 打开 Airport 实用工具
+
+打开 Airport 实用工具应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+```
+
+### 打开词典
+
+搜索词典查找术语。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+
+// 搜索词典
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+
+// 搜索带术语的词典
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+  term: 'hello',
+})
+```
+
+### 打开无边记
+
+打开无边记应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+```
+
+### 打开帮助查看器
+
+打开帮助查看器应用程序，可选择指定合集。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+
+// 打开帮助查看器
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+
+// 打开带合集的帮助查看器
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+  collection: 'WelcomeToMac',
+})
+```
+
+### 添加打印机
+
+添加打印机，可选择带主机名或 IP 地址。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+
+// 添加打印机
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+
+// 添加带主机的打印机
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+  host: '192.168.1.100',
 })
 ```
 
@@ -8055,6 +8328,7 @@ Currently, we support the following applications:
 * [AFFiNE](../apps/affine.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
+* [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
@@ -8605,6 +8879,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [AFFiNE](../apps/affine.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
+* [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
@@ -8782,6 +9057,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [AFFiNE](../apps/affine.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
+* [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
