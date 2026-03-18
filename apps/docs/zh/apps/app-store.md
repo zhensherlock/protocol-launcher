@@ -22,7 +22,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # App Store
 
-[App Store](https://www.apple.com/app-store/) 是由苹果公司为其 iOS、iPadOS 和 watchOS 操作系统开发和维护的数字分发平台。**Protocol Launcher** 允许你生成深度链接，用于在 App Store 中打开并配置资源。
+[App Store](https://www.apple.com/app-store/) 由苹果公司开发，是 iPhone、iPod Touch、iPad 以及 Mac 的服务软件，允许用户从 iTunes Store 或 Mac App Store 浏览和下载一些为 iPhone SDK 或 Mac 开发的应用程序。**Protocol Launcher** 允许你生成深度链接，用于在 App Store 中打开并配置资源。
 
 ## 使用
 
