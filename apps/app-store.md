@@ -4,7 +4,7 @@ url: /protocol-launcher/apps/app-store.md
 
 # App Store
 
-[App Store](https://www.apple.com/app-store/) is a digital distribution platform developed and maintained by Apple Inc. for mobile apps on its iOS, iPadOS, and watchOS operating systems. **Protocol Launcher** allows you to generate deep links to open and configure resources in App Store.
+[App Store](https://www.apple.com/app-store/) is a digital distribution platform developed and maintained by Apple Inc. for iPhone, iPod Touch, iPad, and Mac devices, allowing users to browse and download applications from iTunes Store or Mac App Store. **Protocol Launcher** allows you to generate deep links to open and configure resources in App Store.
 
 ## Usage
 
