@@ -755,6 +755,163 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'appflowy.'}}open()
 ---
 
 ---
+url: /protocol-launcher/apps/apple-map.md
+---
+
+# Apple Maps
+
+[Apple Maps](https://www.apple.com/maps/) is a web mapping service developed by Apple Inc. It provides directions, estimated times of arrival, and daily commutes. **Protocol Launcher** allows you to generate deep links to open Apple Maps, search for locations, get directions, and explore places.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Maps
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open()
+```
+
+### Search for Places
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: 'Food',
+})
+```
+
+### Search with Location
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: 'Food',
+  sll: '37.7749,-122.4194',
+})
+```
+
+### Search Near Location
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: 'Food',
+  near: '37.7749,-122.4194',
+})
+```
+
+### Center Map
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  ll: '37.7749,-122.4194',
+})
+```
+
+### Center Map with Zoom
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  ll: '37.7749,-122.4194',
+  z: 15,
+})
+```
+
+### Create Pin
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: 'Golden Gate Bridge',
+  ll: '37.8199,-122.4783',
+})
+```
+
+### Satellite View
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  t: 'k',
+  ll: '37.7749,-122.4194',
+})
+```
+
+### Display Address
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  address: '1 Infinite Loop Cupertino CA',
+})
+```
+
+### Get Driving Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  daddr: 'San Francisco',
+  dirflg: 'd',
+})
+```
+
+### Get Walking Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  daddr: 'Union Square',
+  dirflg: 'w',
+})
+```
+
+### Get Transit Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  daddr: 'Fisherman\'s Wharf',
+  dirflg: 'r',
+})
+```
+
+### Get Full Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  saddr: 'San Jose',
+  daddr: 'San Francisco',
+  dirflg: 'd',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/apple-script.md
 ---
 
@@ -823,6 +980,163 @@ import { {{ currentMethod === 'On-Demand' ? 'addScript' : 'appleScript' }} } fro
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({
   script: 'display dialog "Hello, World!"'
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/apple-map.md
+---
+
+# Apple 地图
+
+[Apple 地图](https://www.apple.com.cn/maps/) 是苹果公司开发的网络地图服务。它提供路线指引、预计到达时间和日常通勤服务。**Protocol Launcher** 允许你生成深度链接来打开 Apple 地图、搜索位置、获取路线和探索地点。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需从子路径导入支持 tree-shaking，保持打包体积小巧。
+* 从根包完整导入比较方便，但会包含所有应用模块。
+
+生产构建请选择按需导入；完整导入适合快速脚本或演示。
+
+### 打开地图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open()
+```
+
+### 搜索地点
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: '美食',
+})
+```
+
+### 指定位置搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: '美食',
+  sll: '31.2989,120.5853',
+})
+```
+
+### 附近搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: '美食',
+  near: '31.2989,120.5853',
+})
+```
+
+### 居中地图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  ll: '31.2989,120.5853',
+})
+```
+
+### 居中地图并缩放
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  ll: '31.2989,120.5853',
+  z: 15,
+})
+```
+
+### 创建标记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  q: '苏州园林',
+  ll: '31.3201,120.6195',
+})
+```
+
+### 卫星视图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  t: 'k',
+  ll: '31.2989,120.5853',
+})
+```
+
+### 显示地址
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  address: '江苏省苏州市工业园区月亮湾路 10 号',
+})
+```
+
+### 驾车路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  daddr: '金鸡湖',
+  dirflg: 'd',
+})
+```
+
+### 步行路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  daddr: '平江路',
+  dirflg: 'w',
+})
+```
+
+### 公共交通路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  daddr: '拙政园',
+  dirflg: 'r',
+})
+```
+
+### 完整路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'appleMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appleMap.'}}open({
+  saddr: '苏州火车站',
+  daddr: '金鸡湖',
+  dirflg: 'd',
 })
 ```
 
@@ -2907,6 +3221,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
@@ -8330,6 +8645,7 @@ Currently, we support the following applications:
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
@@ -8881,6 +9197,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
@@ -9059,6 +9376,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [BBEdit](../apps/bbedit.md)
