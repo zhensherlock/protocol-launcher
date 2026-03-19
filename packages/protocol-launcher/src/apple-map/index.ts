@@ -97,6 +97,8 @@ export interface AppleMap {
  * // Get driving directions
  * open({ saddr: 'San Jose', daddr: 'San Francisco', dirflg: 'd' })
  * // => 'maps://?saddr=San%20Jose&daddr=San%20Francisco&dirflg=d'
+ *
+ * @link https://developer.apple.com/library/archive/featuredarticles/iPhoneURLScheme_Reference/MapLinks/MapLinks.html
  */
 export function open(payload: AppleMap = {}) {
   const { t, q, address, near, ll, z, spn, saddr, daddr, dirflg, sll, sspn } = payload
