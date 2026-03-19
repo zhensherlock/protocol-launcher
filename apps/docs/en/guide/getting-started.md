@@ -119,6 +119,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Antigravity](../apps/antigravity.md)
 - [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
+- [Apple Map](../apps/apple-map.md)
 - [Apple Script Editor](../apps/apple-script.md)
 - [Atom](../apps/atom.md)
 - [BBEdit](../apps/bbedit.md)

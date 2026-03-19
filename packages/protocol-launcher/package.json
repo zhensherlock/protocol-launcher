@@ -82,6 +82,10 @@
       "types": "./dist/types/appflowy/index.d.ts",
       "import": "./dist/appflowy/index.js"
     },
+    "./apple-map": {
+      "types": "./dist/types/apple-map/index.d.ts",
+      "import": "./dist/apple-map/index.js"
+    },
     "./apple-script": {
       "types": "./dist/types/apple-script/index.d.ts",
       "import": "./dist/apple-script/index.js"
