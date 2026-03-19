@@ -178,6 +178,10 @@
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"
     },
+    "./microsoft-edge": {
+      "types": "./dist/types/microsoft-edge/index.d.ts",
+      "import": "./dist/microsoft-edge/index.js"
+    },
     "./nova": {
       "types": "./dist/types/nova/index.d.ts",
       "import": "./dist/nova/index.js"

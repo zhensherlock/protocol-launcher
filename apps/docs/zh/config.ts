@@ -59,6 +59,7 @@ export default defineAdditionalConfig({
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'macOS', link: '/zh/apps/macos' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
+          { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Orchids', link: '/zh/apps/orchids' },

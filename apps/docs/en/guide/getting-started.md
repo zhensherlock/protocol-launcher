@@ -143,6 +143,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Lingma](../apps/lingma.md)
 - [macOS](../apps/macos.md)
 - [MacVim](../apps/macvim.md)
+- [Microsoft Edge](../apps/microsoft-edge.md)
 - [Nova](../apps/nova.md)
 - [OpenCode](../apps/opencode.md)
 - [Orchids](../apps/orchids.md)
