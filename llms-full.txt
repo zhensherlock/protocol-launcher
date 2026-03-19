@@ -3245,6 +3245,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Lingma](../apps/lingma.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Microsoft Edge](../apps/microsoft-edge.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [Orchids](../apps/orchids.md)
@@ -5092,6 +5093,80 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'macvim' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macvim.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/microsoft-edge.md
+---
+
+# Microsoft Edge
+
+[Microsoft Edge](https://www.microsoft.com/zh-cn/edge/?form=MA13FJ) is a web browser developed by Microsoft based on the Chromium open-source project. **Protocol Launcher** allows you to generate deep links to open URLs in Microsoft Edge.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Browser
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'microsoftEdge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftEdge.'}}open()
+```
+
+### Open URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'microsoftEdge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftEdge.'}}openUrl({
+  url: 'https://www.google.com/',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/microsoft-edge.md
+---
+
+# Microsoft Edge
+
+[Microsoft Edge](https://www.microsoft.com/zh-cn/edge/?form=MA13FJ) 是微软基于 Chromium 开源项目开发的网页浏览器。**Protocol Launcher** 允许您生成深度链接以在 Microsoft Edge 中打开 URL。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'microsoftEdge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftEdge.'}}open()
+```
+
+### 打开 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'microsoftEdge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftEdge.'}}openUrl({
+  url: 'https://www.google.com/',
 })
 ```
 
@@ -8669,6 +8744,7 @@ Currently, we support the following applications:
 * [Lingma](../apps/lingma.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Microsoft Edge](../apps/microsoft-edge.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [Orchids](../apps/orchids.md)
@@ -9221,6 +9297,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Lingma](../apps/lingma.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Microsoft Edge](../apps/microsoft-edge.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [Orchids](../apps/orchids.md)
@@ -9400,6 +9477,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Lingma](../apps/lingma.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Microsoft Edge](../apps/microsoft-edge.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [Orchids](../apps/orchids.md)
