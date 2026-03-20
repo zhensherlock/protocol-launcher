@@ -2,122 +2,116 @@
 
 ## Project Overview
 
-This is a monorepo (pnpm workspaces + Turbo) for generating one-click launch URLs for protocol-based apps (VS Code, Windsurf, Zed, etc.). It contains:
+Monorepo (pnpm workspaces + Turbo) for generating one-click launch URLs for protocol-based apps (VS Code, Windsurf, Zed, etc.).
+
+**Packages:**
 
 - `packages/protocol-launcher` - Main library with protocol implementations
 - `packages/shared` - Shared utilities
-- `apps/docs` - Documentation site
+- `apps/docs` - VitePress documentation site
 
 ## Commands
 
-### Install Dependencies
+### Install & Build
 
 ```bash
-pnpm install
+pnpm install                    # Install dependencies
+pnpm build                      # Build all packages (uses Turbo)
+pnpm dev                        # Start docs dev server
 ```
 
-### Build
+### Testing (Vitest)
 
 ```bash
-pnpm build              # Build all packages for production
+pnpm test                       # Run all tests
+pnpm test <path>                # Run single file or directory
+pnpm test -t <test-name>        # Run tests matching test name
+pnpm coverage                   # Run with coverage report
 ```
 
-### Development
+**Run a single test file or directory:**
 
 ```bash
-pnpm dev                # Start dev server for docs
-```
-
-### Testing
-
-```bash
-pnpm test               # Run all tests
-pnpm test -- <pattern>  # Run tests matching pattern (e.g., -- shared)
-pnpm coverage           # Run tests with coverage
+pnpm test packages/shared/tests/index.test.ts   # Single file
+pnpm test packages/shared                       # All tests in directory
+pnpm test vscode                                # Match filename pattern
+pnpm test -t "test name"                        # Match test name
 ```
 
 ### Linting & Formatting
 
 ```bash
-npx biome check --write packages/**/*.{ts,js}  # Fix lint issues
-npx biome check packages/**/*.{ts,js}          # Check lint issues (CI)
+npx biome check --write .       # Auto-fix all issues (Biome + ESLint)
+npx biome check .               # Check issues without fixing
+npx biome format --write .      # Format only
+npx tsc --noEmit                # Type check all packages
 ```
 
-### Type Checking
+### Versioning
 
 ```bash
-npx tsc --noEmit        # Type check all packages
-```
-
-### Committing
-
-```bash
-pnpm changeset          # Create a changeset
-pnpm version            # Version bump packages
+pnpm changeset                  # Create a changeset for release
+pnpm version                    # Version bump packages
 ```
 
 ## Code Style
 
-### Formatting (Prettier + Biome)
+### Formatting (Biome)
 
-- 2-space indentation
-- 120 character line width
-- Single quotes for strings
-- No semicolons
-- Trailing commas (all)
-- LF line endings
-- Use Biome to format: `npx biome format --write`
+- 2-space indentation, LF line endings, 120 char line width
+- Single quotes, no semicolons, trailing commas (all)
+- Run: `npx biome format --write .` or `npx biome check --write .`
 
 ### Linting (Biome + ESLint)
 
-- Biome is primary linter for most rules
-- ESLint handles import order and Vue-specific rules
-- Run `npx biome check --write` before committing
+- Biome handles most rules; ESLint handles imports and Vue
+- **Critical:** `noExplicitAny` is error (avoid `any` type)
+- Run: `npx biome check --write .` before committing
 
 ### TypeScript
 
-- Strict type checking enabled
-- Use `const` instead of `var`
-- Avoid `any` type ( Biome will error on explicit `any`)
-- Use type inference where possible
-- Export interfaces for public APIs
+- Strict mode enabled; target ES2022, module ESNext, moduleResolution bundler
+- Path alias: `@/*` → `./src/*` (see tsconfig.root.json)
+- Use `const` over `var`; avoid explicit `any` (Biome errors)
+- Export interfaces for public APIs; use type inference where possible
 
 ### Naming Conventions
 
-- Files: kebab-case (e.g., `open.ts`, `vscode-settings.ts`)
-- Functions: camelCase (e.g., `openFolder()`, `encodeUrlPayload()`)
-- Interfaces: PascalCase (e.g., `EncodeOptions`)
+- Files: kebab-case (`open.ts`, `vscode-settings.ts`)
+- Functions: camelCase (`openFolder()`, `encodeUrlPayload()`)
+- Interfaces/Types: PascalCase (`EncodeOptions`, `ProtocolConfig`)
 - Constants: UPPER_SNAKE_CASE for magic values, camelCase otherwise
 
 ### Imports
 
-- Use path aliases if available (check tsconfig.json)
-- Sort imports with Biome (organizeImports action)
-- Relative imports for intra-package, package imports for external
+- Sort imports with Biome (organizeImports action enabled)
+- Relative imports for intra-package; package imports for external
+- Use path alias `@/` within packages (check tsconfig.json)
 
 ### Error Handling
 
-- Use try/catch for sync operations that may fail
-- Use Result pattern or throw meaningful errors
-- Never expose raw errors to users
+- Use try/catch for operations that may fail
+- Throw meaningful errors; never expose raw errors to users
+- Use Result pattern for recoverable errors
 
-### Vue Files
+### Vue Files (apps/docs)
 
-- Vue SFC with `<script setup lang="ts">`
-- Follow Vue style guide (component names in PascalCase)
-- Use biome check for .vue files (limited rules)
+- Use `<script setup lang="ts">` syntax
+- Component names: PascalCase
+- Biome has limited rules for `.vue`; ESLint handles Vue linting
 
-### Testing
+### Testing (Vitest)
 
-- Use Vitest with describe/test/it syntax
-- Test file location: `packages/*/tests/*.test.ts`
-- Use descriptive test names: `describe('functionName', () => { it('should do X', ...) })`
-- Use async/await for async tests
+- Test files: `packages/*/tests/*.test.ts`
+- Use `describe`/`it` syntax with descriptive names
+- Async tests: use async/await (not done callback)
+- Run single file: `pnpm test packages/shared/tests/index.test.ts`
+- Run by pattern: `pnpm test vscode` or `pnpm test -t "test name"`
 
 ### Git Commits
 
-- Conventional commits: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `build:`, `ci:`, `chore:`, `revert:`, `release:`
-- Subject line lowercase; pre-commit runs `biome check --write` via lint-staged
+- Conventional commits: `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `perf:`, `test:`, `build:`, `ci:`, `chore:`, `revert:`
+- Subject line lowercase; lint-staged runs `biome check --write` pre-commit
 
 ## Project Structure
 
@@ -171,3 +165,7 @@ export function open() {
 - VS Code: Install Biome and ESLint extensions
 - Use pnpm as package manager (configured in packageManager field)
 - Ensure Node.js >= 22 (check pnpm version requirements)
+
+## Cursor/Copilot Rules
+
+No custom Cursor rules (`.cursor/rules/`, `.cursorrules`) or Copilot rules (`.github/copilot-instructions.md`) exist in this repository.
