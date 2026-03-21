@@ -55,6 +55,7 @@ layout: doc
 - [OpenCode](../apps/opencode.md)
 - [Orchids](../apps/orchids.md)
 - [PearAI](../apps/pearai.md)
+- [Pika](../apps/pika.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Qoder](../apps/qoder.md)

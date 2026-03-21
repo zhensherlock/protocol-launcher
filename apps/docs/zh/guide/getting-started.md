@@ -9,6 +9,7 @@ layout: doc
 使用您喜欢的包管理器安装 `protocol-launcher`：
 
 ::: code-group
+
 ```sh [npm]
 $ npm install protocol-launcher
 ```
@@ -24,6 +25,7 @@ $ yarn add protocol-launcher
 ```bash [bun]
 $ bun add protocol-launcher
 ```
+
 :::
 
 ## 使用
@@ -33,6 +35,7 @@ $ bun add protocol-launcher
 为了减小打包体积，建议直接导入特定模块：
 
 ::: code-group
+
 ```typescript [cherry studio]
 // 仅导入 Cherry Studio 相关代码
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -102,6 +105,7 @@ import { openFile } from 'protocol-launcher/webstorm'
 // 仅导入 Xcode 相关代码
 import { cloneProject } from 'protocol-launcher/xcode'
 ```
+
 :::
 
 ### 全量导入
@@ -148,6 +152,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [OpenCode](../apps/opencode.md)
 - [Orchids](../apps/orchids.md)
 - [PearAI](../apps/pearai.md)
+- [Pika](../apps/pika.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Qoder](../apps/qoder.md)

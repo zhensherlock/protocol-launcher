@@ -64,6 +64,7 @@ export default defineAdditionalConfig({
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Orchids', link: '/zh/apps/orchids' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
+          { text: 'Pika', link: '/zh/apps/pika' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'Qoder', link: '/zh/apps/qoder' },

@@ -202,6 +202,10 @@
       "types": "./dist/types/phpstorm/index.d.ts",
       "import": "./dist/phpstorm/index.js"
     },
+    "./pika": {
+      "types": "./dist/types/pika/index.d.ts",
+      "import": "./dist/pika/index.js"
+    },
     "./pycharm": {
       "types": "./dist/types/pycharm/index.d.ts",
       "import": "./dist/pycharm/index.js"

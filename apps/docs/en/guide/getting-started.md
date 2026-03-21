@@ -9,6 +9,7 @@ layout: doc
 Install `protocol-launcher` using your preferred package manager:
 
 ::: code-group
+
 ```sh [npm]
 $ npm install protocol-launcher
 ```
@@ -24,6 +25,7 @@ $ yarn add protocol-launcher
 ```bash [bun]
 $ bun add protocol-launcher
 ```
+
 :::
 
 ## Usage
@@ -33,6 +35,7 @@ $ bun add protocol-launcher
 To minimize bundle size, import specific modules directly:
 
 ::: code-group
+
 ```typescript [cherry studio]
 // Only imports Cherry Studio related code
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -102,6 +105,7 @@ import { openRepo } from 'protocol-launcher/webstorm'
 // Only imports Xcode related code
 import { cloneProject } from 'protocol-launcher/xcode'
 ```
+
 :::
 
 ### Full Import
@@ -148,6 +152,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [OpenCode](../apps/opencode.md)
 - [Orchids](../apps/orchids.md)
 - [PearAI](../apps/pearai.md)
+- [Pika](../apps/pika.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Qoder](../apps/qoder.md)
