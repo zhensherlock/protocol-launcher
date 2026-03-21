@@ -1,5 +1,28 @@
 # protocol-launcher
 
+## 1.18.0
+
+### Minor Changes
+
+- [`e3a5729`](https://github.com/zhensherlock/protocol-launcher/commit/e3a57290499463badcd9f1e55ab1c4372d1087e3) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(apple-map): add AppleMap protocol launcher support
+
+- [`fc4bef6`](https://github.com/zhensherlock/protocol-launcher/commit/fc4bef6be60596e01a693781b50c1d2ef8196a54) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(macos): add support for books, music, photos, podcasts, and system preferences
+
+- [`326afdb`](https://github.com/zhensherlock/protocol-launcher/commit/326afdbb47532034e0aec4669c9d18a708689acb) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pika): add Pika protocol launcher support
+
+- [`7e6bbd0`](https://github.com/zhensherlock/protocol-launcher/commit/7e6bbd02ffe386fc7bc1f44614b67270eb080c2e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(app-store): add AppStore protocol launcher support
+
+- [`ea4637c`](https://github.com/zhensherlock/protocol-launcher/commit/ea4637c3a38186bb1d94e4a8ddf1c1454ee52201) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(macos): add support for more native macOS apps
+
+- [`efb5ebc`](https://github.com/zhensherlock/protocol-launcher/commit/efb5ebcdaac7bddf7b2afb278c412dbce1474799) Thanks [@zhensherlock](https://github.com/zhensherlock)! - docs(microsoft-edge): add Microsoft Edge URL scheme link
+
+### Patch Changes
+
+- [`805ad0b`](https://github.com/zhensherlock/protocol-launcher/commit/805ad0ba181ce68f15304d2f3919c25f52107170) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`805ad0b`](https://github.com/zhensherlock/protocol-launcher/commit/805ad0ba181ce68f15304d2f3919c25f52107170)]:
+  - @protocol-launcher/shared@1.4.2
+
 ## 1.17.0
 
 ### Minor Changes
