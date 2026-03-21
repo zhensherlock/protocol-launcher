@@ -51,6 +51,7 @@ Currently, we support the following applications:
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
 * [Orchids](../apps/orchids.md)
