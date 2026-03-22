@@ -1,1 +1,0 @@
-function e(){return"applescript://com.apple.scripteditor"}function r(p){let{script:t}=p;return`applescript://com.apple.scripteditor?script=${encodeURIComponent(t)}`}const c={script:'display dialog "Hello, World!"'};export{r as a,c as b,e};
