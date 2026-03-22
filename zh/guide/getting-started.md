@@ -157,6 +157,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
+* [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)

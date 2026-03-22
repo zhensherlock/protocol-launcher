@@ -3255,6 +3255,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
+* [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
@@ -6793,6 +6794,96 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/quark.md
+---
+
+# Quark
+
+[Quark](https://www.quark.cn/) is an AI-powered browser developed by Alibaba, featuring AI search, AI assistant, cloud drive, and more. **Protocol Launcher** allows you to generate deep links to open URLs and cloud drive in Quark.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Browser
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'quark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}open()
+```
+
+### Open Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLink' : 'quark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}openLink({
+  url: 'www.baidu.com',
+})
+```
+
+### Open Cloud Drive
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCloudDrive' : 'quark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}openCloudDrive()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/quark.md
+---
+
+# Quark
+
+[Quark](https://www.quark.cn/) 是阿里巴巴推出的 AI 智能浏览器，具备 AI 搜索、AI 助手、网盘等功能。**Protocol Launcher** 允许您生成深度链接以在 Quark 中打开链接和网盘。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'quark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}open()
+```
+
+### 打开链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLink' : 'quark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}openLink({
+  url: 'www.baidu.com',
+})
+```
+
+### 打开网盘
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCloudDrive' : 'quark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}openCloudDrive()
+```
+
+---
+
+---
 url: /protocol-launcher/apps/rustrover.md
 ---
 
@@ -9398,6 +9489,7 @@ Currently, we support the following applications:
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
+* [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
@@ -9953,6 +10045,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
+* [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
@@ -10135,6 +10228,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
+* [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [SourceTree](../apps/sourcetree.md)
