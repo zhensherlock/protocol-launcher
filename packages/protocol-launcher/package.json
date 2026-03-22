@@ -214,6 +214,10 @@
       "types": "./dist/types/qoder/index.d.ts",
       "import": "./dist/qoder/index.js"
     },
+    "./quark": {
+      "types": "./dist/types/quark/index.d.ts",
+      "import": "./dist/quark/index.js"
+    },
     "./rustrover": {
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"

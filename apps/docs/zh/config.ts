@@ -69,6 +69,7 @@ export default defineAdditionalConfig({
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'Qoder', link: '/zh/apps/qoder' },
+          { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Shortcuts', link: '/zh/apps/shortcuts' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
