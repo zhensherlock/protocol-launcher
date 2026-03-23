@@ -230,6 +230,10 @@
       "types": "./dist/types/shortcuts/index.d.ts",
       "import": "./dist/shortcuts/index.js"
     },
+    "./sketch": {
+      "types": "./dist/types/sketch/index.d.ts",
+      "import": "./dist/sketch/index.js"
+    },
     "./soulver": {
       "types": "./dist/types/soulver/index.d.ts",
       "import": "./dist/soulver/index.js"

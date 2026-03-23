@@ -73,6 +73,7 @@ export default defineAdditionalConfig({
           { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Shortcuts', link: '/zh/apps/shortcuts' },
+          { text: 'Sketch', link: '/zh/apps/sketch' },
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Telegram', link: '/zh/apps/telegram' },

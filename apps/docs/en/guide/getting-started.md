@@ -161,6 +161,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Quark](../apps/quark.md)
 - [RustRover](../apps/rustrover.md)
 - [Shortcuts](../apps/shortcuts.md)
+- [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Telegram](../apps/telegram.md)
