@@ -60,6 +60,7 @@ export default defineAdditionalConfig({
           { text: 'macOS', link: '/zh/apps/macos' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
           { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
+          { text: 'Motrix', link: '/zh/apps/motrix' },
           { text: 'Navicat', link: '/zh/apps/navicat' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },

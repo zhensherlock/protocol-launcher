@@ -174,6 +174,10 @@
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"
     },
+    "./motrix": {
+      "types": "./dist/types/motrix/index.d.ts",
+      "import": "./dist/motrix/index.js"
+    },
     "./microsoft-edge": {
       "types": "./dist/types/microsoft-edge/index.d.ts",
       "import": "./dist/microsoft-edge/index.js"
