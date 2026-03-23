@@ -50,6 +50,7 @@
 - [macOS](/protocol-launcher/apps/macos.md)
 - [MacVim](/protocol-launcher/apps/macvim.md)
 - [Microsoft Edge](/protocol-launcher/apps/microsoft-edge.md)
+- [Motrix](/protocol-launcher/apps/motrix.md)
 - [Navicat](/protocol-launcher/apps/navicat.md)
 - [Nova](/protocol-launcher/apps/nova.md)
 - [OpenCode](/protocol-launcher/apps/opencode.md)
@@ -153,3 +154,6 @@
 
 - [示例](/protocol-launcher/zh/extra/examples.md)
 
+### Other
+
+- [Motrix](/protocol-launcher/zh/apps/motrix.md)
