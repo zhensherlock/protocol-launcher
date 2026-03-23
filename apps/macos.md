@@ -315,3 +315,53 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
   host: '192.168.1.100',
 })
 ```
+
+### Open Apple Password (OTP Auth)
+
+Open the Apple Password (OTP Auth) app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
+```
+
+### Open Font Book
+
+Open the Font Book app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
+```
+
+### Open Keynote
+
+Open the Keynote app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
+```
+
+### Open Numbers
+
+Open the Numbers app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
+```
+
+### Open Pages
+
+Open the Pages app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}pages()
+```

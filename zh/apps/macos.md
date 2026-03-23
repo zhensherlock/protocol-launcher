@@ -315,3 +315,53 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
   host: '192.168.1.100',
 })
 ```
+
+### 打开 Apple 密码 (OTP Auth)
+
+打开 Apple 密码 (OTP Auth) 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
+```
+
+### 打开字体册
+
+打开字体册应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
+```
+
+### 打开 Keynote
+
+打开 Keynote 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
+```
+
+### 打开 Numbers
+
+打开 Numbers 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
+```
+
+### 打开 Pages
+
+打开 Pages 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}pages()
+```
