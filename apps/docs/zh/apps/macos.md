@@ -5,12 +5,13 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addressbook, airport, books, calendar, dictionary, facetime, feedback, findMy, freeform, helpViewer, mail, music, notes, photos, podcasts, printer, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
+import { addressbook, airport, appleOtpauth, books, calendar, dictionary, facetime, feedback, findMy, fontbook, freeform, helpViewer, keynote, mail, music, notes, numbers, pages, photos, podcasts, printer, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   addressBookParams,
   airportParams,
+  appleOtpauthParams,
   booksParams,
   calendarParams,
   calendarWithLinkParams,
@@ -23,12 +24,16 @@ import {
   findMyDevicesParams,
   findMyItemsParams,
   findMyFriendsParams,
+  fontbookParams,
   freeformParams,
   helpViewerParams,
   helpViewerWithCollectionParams,
+  keynoteParams,
   mailParams,
   musicParams,
   notesParams,
+  numbersParams,
+  pagesParams,
   photosParams,
   podcastsParams,
   printerParams,
@@ -538,5 +543,85 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
   </VPLink>
   <VPLink :href="printer(printerWithHostParams)" target="_self">
     添加带主机的打印机
+  </VPLink>
+</div>
+
+### 打开 Apple 密码 (OTP Auth)
+
+打开 Apple 密码 (OTP Auth) 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="appleOtpauth(appleOtpauthParams)" target="_self">
+    打开 Apple 密码
+  </VPLink>
+</div>
+
+### 打开字体册
+
+打开字体册应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="fontbook(fontbookParams)" target="_self">
+    打开字体册
+  </VPLink>
+</div>
+
+### 打开 Keynote
+
+打开 Keynote 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="keynote(keynoteParams)" target="_self">
+    打开 Keynote
+  </VPLink>
+</div>
+
+### 打开 Numbers
+
+打开 Numbers 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="numbers(numbersParams)" target="_self">
+    打开 Numbers
+  </VPLink>
+</div>
+
+### 打开 Pages
+
+打开 Pages 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}pages()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="pages(pagesParams)" target="_self">
+    打开 Pages
   </VPLink>
 </div>

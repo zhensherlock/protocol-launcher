@@ -5,12 +5,13 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addressbook, airport, books, calendar, dictionary, facetime, feedback, findMy, freeform, helpViewer, mail, music, notes, photos, podcasts, printer, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
+import { addressbook, airport, appleOtpauth, books, calendar, dictionary, facetime, feedback, findMy, fontbook, freeform, helpViewer, keynote, mail, music, notes, numbers, pages, photos, podcasts, printer, reminders, sms, stocks, systemPreferences, videos, wallet, weather } from 'protocol-launcher/macos';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   addressBookParams,
   airportParams,
+  appleOtpauthParams,
   booksParams,
   calendarParams,
   calendarWithLinkParams,
@@ -23,12 +24,16 @@ import {
   findMyDevicesParams,
   findMyItemsParams,
   findMyFriendsParams,
+  fontbookParams,
   freeformParams,
   helpViewerParams,
   helpViewerWithCollectionParams,
+  keynoteParams,
   mailParams,
   musicParams,
   notesParams,
+  numbersParams,
+  pagesParams,
   photosParams,
   podcastsParams,
   printerParams,
@@ -538,5 +543,85 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
   </VPLink>
   <VPLink :href="printer(printerWithHostParams)" target="_self">
     Add Printer with Host
+  </VPLink>
+</div>
+
+### Open Apple Password (OTP Auth)
+
+Open the Apple Password (OTP Auth) app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="appleOtpauth(appleOtpauthParams)" target="_self">
+    Open Apple Password
+  </VPLink>
+</div>
+
+### Open Font Book
+
+Open the Font Book app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="fontbook(fontbookParams)" target="_self">
+    Open Font Book
+  </VPLink>
+</div>
+
+### Open Keynote
+
+Open the Keynote app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="keynote(keynoteParams)" target="_self">
+    Open Keynote
+  </VPLink>
+</div>
+
+### Open Numbers
+
+Open the Numbers app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="numbers(numbersParams)" target="_self">
+    Open Numbers
+  </VPLink>
+</div>
+
+### Open Pages
+
+Open the Pages app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}pages()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="pages(pagesParams)" target="_self">
+    Open Pages
   </VPLink>
 </div>

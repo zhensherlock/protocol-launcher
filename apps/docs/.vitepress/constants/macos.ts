@@ -93,3 +93,13 @@ export const printerParams = {}
 export const printerWithHostParams = {
   host: '192.168.1.100',
 }
+
+export const appleOtpauthParams = {}
+
+export const fontbookParams = {}
+
+export const keynoteParams = {}
+
+export const numbersParams = {}
+
+export const pagesParams = {}

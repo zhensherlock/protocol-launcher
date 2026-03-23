@@ -2,6 +2,31 @@ import { describe, expect, test } from 'vitest'
 import { macOS } from '../src'
 
 describe('macOS', () => {
+  test('appleOtpauth should return a URL', async () => {
+    const url = macOS.appleOtpauth()
+    expect(url).toBe('apple-otpauth://')
+  })
+
+  test('fontbook should return a URL', async () => {
+    const url = macOS.fontbook()
+    expect(url).toBe('fontbook://')
+  })
+
+  test('keynote should return a URL', async () => {
+    const url = macOS.keynote()
+    expect(url).toBe('com.apple.iwork.keynote-share://')
+  })
+
+  test('numbers should return a URL', async () => {
+    const url = macOS.numbers()
+    expect(url).toBe('com.apple.iwork.numbers-share://')
+  })
+
+  test('pages should return a URL', async () => {
+    const url = macOS.pages()
+    expect(url).toBe('com.apple.iwork.pages-share://')
+  })
+
   test('sms should return a URL without phone', async () => {
     const url = macOS.sms()
     expect(url).toBe('sms://')
