@@ -43,6 +43,7 @@
 - [GoLand](/protocol-launcher/apps/goland.md)
 - [HBuilderX](/protocol-launcher/apps/hbuilderx.md)
 - [IntelliJ IDEA](/protocol-launcher/apps/idea.md)
+- [Itsycal](/protocol-launcher/apps/itsycal.md)
 - [Jump Desktop](/protocol-launcher/apps/jump-desktop.md)
 - [Kaleidoscope](/protocol-launcher/apps/kaleidoscope.md)
 - [Kiro](/protocol-launcher/apps/kiro.md)
@@ -67,6 +68,7 @@
 - [Soulver](/protocol-launcher/apps/soulver.md)
 - [SourceTree](/protocol-launcher/apps/sourcetree.md)
 - [Telegram](/protocol-launcher/apps/telegram.md)
+- [Termius](/protocol-launcher/apps/termius.md)
 - [TextMate](/protocol-launcher/apps/textmate.md)
 - [Theia](/protocol-launcher/apps/theia.md)
 - [Things](/protocol-launcher/apps/things.md)
@@ -116,6 +118,7 @@
 - [GoLand](/protocol-launcher/zh/apps/goland.md)
 - [HBuilderX](/protocol-launcher/zh/apps/hbuilderx.md)
 - [IntelliJ IDEA](/protocol-launcher/zh/apps/idea.md)
+- [Itsycal](/protocol-launcher/zh/apps/itsycal.md)
 - [Jump Desktop](/protocol-launcher/zh/apps/jump-desktop.md)
 - [Kaleidoscope](/protocol-launcher/zh/apps/kaleidoscope.md)
 - [Kiro](/protocol-launcher/zh/apps/kiro.md)
@@ -161,3 +164,4 @@
 ### Other
 
 - [Motrix](/protocol-launcher/zh/apps/motrix.md)
+- [Termius](/protocol-launcher/zh/apps/termius.md)

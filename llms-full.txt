@@ -3389,6 +3389,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -3413,6 +3414,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
+* [Termius](../apps/termius.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -3732,6 +3734,96 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ 
 const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
+```
+
+---
+
+---
+url: /protocol-launcher/apps/itsycal.md
+---
+
+# Itsycal
+
+[Itsycal](https://www.mowglii.com/itsycal/) is a tiny menu bar calendar for Mac. **Protocol Launcher** allows you to generate deep links to open Itsycal and navigate to specific dates.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Itsycal
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'itsycal' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}open()
+```
+
+### Open Date
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'itsycal' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate({
+  date: '2024-01-10',
+})
+```
+
+### Open Today
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'itsycal' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/itsycal.md
+---
+
+# Itsycal
+
+[Itsycal](https://www.mowglii.com/itsycal/) 是 Mac 的一款小型菜单栏日历应用。**Protocol Launcher** 允许您生成深度链接以打开 Itsycal 并导航到特定日期。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Itsycal
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'itsycal' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}open()
+```
+
+### 打开特定日期
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'itsycal' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate({
+  date: '2024-01-10',
+})
+```
+
+### 打开今天
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'itsycal' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate()
 ```
 
 ---
@@ -8087,6 +8179,88 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}openDomain({
 ---
 
 ---
+url: /protocol-launcher/apps/termius.md
+---
+
+# Termius
+
+[Termius](https://termius.com/) is a modern SSH client built for productivity and collaboration, available on macOS, Windows, Linux, iOS, and Android. **Protocol Launcher** allows you to generate deep links to open Termius and quickly add new server hosts.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Termius
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'termius' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'termius.'}}open()
+```
+
+### Add New Host
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appHostSharing' : 'termius' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'termius.'}}appHostSharing({
+  label: 'Production Database',
+  ip: '192.168.1.100',
+  port: 22,
+  username: 'admin',
+  os: 'linux',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/termius.md
+---
+
+# Termius
+
+[Termius](https://termius.com/) 是一款现代化的 SSH 客户端，专为生产力和协作而设计，支持 macOS、Windows、Linux、iOS 和 Android 平台。**Protocol Launcher** 允许您生成深度链接以打开 Termius 并快速添加新的服务器主机。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Termius
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'termius' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'termius.'}}open()
+```
+
+### 添加新主机
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appHostSharing' : 'termius' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'termius.'}}appHostSharing({
+  label: 'Production Database',
+  ip: '192.168.1.100',
+  port: 22,
+  username: 'admin',
+  os: 'linux',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/textmate.md
 ---
 
@@ -10216,6 +10390,7 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -10240,6 +10415,7 @@ Currently, we support the following applications:
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
+* [Termius](../apps/termius.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -10775,6 +10951,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -10799,6 +10976,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
+* [Termius](../apps/termius.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -10961,6 +11139,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -10985,6 +11164,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Telegram](../apps/telegram.md)
+* [Termius](../apps/termius.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
