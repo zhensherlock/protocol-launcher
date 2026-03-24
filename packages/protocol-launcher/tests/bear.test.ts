@@ -609,4 +609,199 @@ describe('bear', () => {
       'bear://x-callback-url/grab-url?url=https%3A%2F%2Fexample.com%2Farticle&tags=reading%2Cweb&pin=yes&wait=no',
     )
   })
+
+  test('create should return a URL with open_note=no', async () => {
+    const url = bear.create({
+      title: 'Test',
+      openNote: false,
+    })
+    expect(url).toBe('bear://x-callback-url/create?title=Test&open_note=no')
+  })
+
+  test('create should return a URL with show_window=no', async () => {
+    const url = bear.create({
+      title: 'Test',
+      showWindow: false,
+    })
+    expect(url).toBe('bear://x-callback-url/create?title=Test&show_window=no')
+  })
+
+  test('create should return a URL with new_window', async () => {
+    const url = bear.create({
+      title: 'Test',
+      newWindow: true,
+    })
+    expect(url).toBe('bear://x-callback-url/create?title=Test&new_window=yes')
+  })
+
+  test('create should return a URL with float', async () => {
+    const url = bear.create({
+      title: 'Test',
+      float: true,
+    })
+    expect(url).toBe('bear://x-callback-url/create?title=Test&float=yes')
+  })
+
+  test('addText should return a URL with open_note=no', async () => {
+    const url = bear.addText({
+      text: 'test',
+      id: '4EDAF0D1',
+      openNote: false,
+    })
+    expect(url).toBe('bear://x-callback-url/add-text?id=4EDAF0D1&text=test&open_note=no')
+  })
+
+  test('addText should return a URL with show_window=no', async () => {
+    const url = bear.addText({
+      text: 'test',
+      id: '4EDAF0D1',
+      showWindow: false,
+    })
+    expect(url).toBe('bear://x-callback-url/add-text?id=4EDAF0D1&text=test&show_window=no')
+  })
+
+  test('addText should return a URL with new_window', async () => {
+    const url = bear.addText({
+      text: 'test',
+      id: '4EDAF0D1',
+      newWindow: true,
+    })
+    expect(url).toBe('bear://x-callback-url/add-text?id=4EDAF0D1&text=test&new_window=yes')
+  })
+
+  test('addText should return a URL with mode replace_all', async () => {
+    const url = bear.addText({
+      text: 'test',
+      id: '4EDAF0D1',
+      mode: 'replace_all',
+    })
+    expect(url).toBe('bear://x-callback-url/add-text?id=4EDAF0D1&text=test&mode=replace_all')
+  })
+
+  test('addText should return a URL with mode replace', async () => {
+    const url = bear.addText({
+      text: 'test',
+      id: '4EDAF0D1',
+      mode: 'replace',
+    })
+    expect(url).toBe('bear://x-callback-url/add-text?id=4EDAF0D1&text=test&mode=replace')
+  })
+
+  test('addFile should return a URL with show_window=no', async () => {
+    const url = bear.addFile({
+      filename: 'file.txt',
+      id: '4EDAF0D1',
+      showWindow: false,
+      file: 'base64data',
+    })
+    expect(url).toBe('bear://x-callback-url/add-file?id=4EDAF0D1&file=base64data&filename=file.txt&show_window=no')
+  })
+
+  test('addFile should return a URL with open_note=no', async () => {
+    const url = bear.addFile({
+      filename: 'file.txt',
+      id: '4EDAF0D1',
+      openNote: false,
+      file: 'base64data',
+    })
+    expect(url).toBe('bear://x-callback-url/add-file?id=4EDAF0D1&file=base64data&filename=file.txt&open_note=no')
+  })
+
+  test('addFile should return a URL with new_window', async () => {
+    const url = bear.addFile({
+      filename: 'file.txt',
+      id: '4EDAF0D1',
+      newWindow: true,
+      file: 'base64data',
+    })
+    expect(url).toBe('bear://x-callback-url/add-file?id=4EDAF0D1&file=base64data&filename=file.txt&new_window=yes')
+  })
+
+  test('addFile should return a URL with mode replace_all', async () => {
+    const url = bear.addFile({
+      filename: 'file.txt',
+      id: '4EDAF0D1',
+      mode: 'replace_all',
+      file: 'base64data',
+    })
+    expect(url).toBe('bear://x-callback-url/add-file?id=4EDAF0D1&file=base64data&filename=file.txt&mode=replace_all')
+  })
+
+  test('addFile should return a URL with mode replace', async () => {
+    const url = bear.addFile({
+      filename: 'file.txt',
+      id: '4EDAF0D1',
+      mode: 'replace',
+      file: 'base64data',
+    })
+    expect(url).toBe('bear://x-callback-url/add-file?id=4EDAF0D1&file=base64data&filename=file.txt&mode=replace')
+  })
+
+  test('renameTag should return a URL with show_window=yes (default)', async () => {
+    const url = bear.renameTag({
+      name: 'old',
+      newName: 'new',
+    })
+    expect(url).toBe('bear://x-callback-url/rename-tag?name=old&new_name=new')
+  })
+
+  test('deleteTag should return a URL with show_window=yes (default)', async () => {
+    const url = bear.deleteTag({
+      name: 'todo',
+    })
+    expect(url).toBe('bear://x-callback-url/delete-tag?name=todo')
+  })
+
+  test('locked should return a URL without show_window when true', async () => {
+    const url = bear.locked({
+      search: 'data',
+    })
+    expect(url).toBe('bear://x-callback-url/locked?search=data')
+  })
+
+  test('search should return a URL without show_window when true', async () => {
+    const url = bear.search({
+      term: 'query',
+    })
+    expect(url).toBe('bear://x-callback-url/search?term=query')
+  })
+
+  test('tags should return a URL with only token', async () => {
+    const url = bear.tags({
+      token: '123456-123456-123456',
+    })
+    expect(url).toBe('bear://x-callback-url/tags?token=123456-123456-123456')
+  })
+
+  test('grabUrl should return a URL with wait=yes', async () => {
+    const url = bear.grabUrl({
+      url: 'https://bear.app',
+      wait: true,
+    })
+    expect(url).toBe('bear://x-callback-url/grab-url?url=https%3A%2F%2Fbear.app')
+  })
+
+  test('locked should return a URL with show_window=yes (default)', async () => {
+    const url = bear.locked({
+      search: 'data',
+    })
+    expect(url).toBe('bear://x-callback-url/locked?search=data')
+  })
+
+  test('search should return a URL with show_window=yes (default)', async () => {
+    const url = bear.search({
+      term: 'query',
+    })
+    expect(url).toBe('bear://x-callback-url/search?term=query')
+  })
+
+  test('search should return a URL without term', async () => {
+    const url = bear.search({})
+    expect(url).toBe('bear://x-callback-url/search')
+  })
+
+  test('locked should return a URL without search', async () => {
+    const url = bear.locked({})
+    expect(url).toBe('bear://x-callback-url/locked')
+  })
 })
