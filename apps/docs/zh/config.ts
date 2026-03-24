@@ -90,6 +90,7 @@ export default defineAdditionalConfig({
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
+          { text: 'WeMeet', link: '/zh/apps/wemeet' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Zed', link: '/zh/apps/zed' },

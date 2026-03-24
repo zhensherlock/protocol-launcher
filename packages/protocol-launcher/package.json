@@ -298,6 +298,10 @@
       "types": "./dist/types/webstorm/index.d.ts",
       "import": "./dist/webstorm/index.js"
     },
+    "./wemeet": {
+      "types": "./dist/types/wemeet/index.d.ts",
+      "import": "./dist/wemeet/index.js"
+    },
     "./windsurf": {
       "types": "./dist/types/windsurf/index.d.ts",
       "import": "./dist/windsurf/index.js"
