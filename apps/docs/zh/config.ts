@@ -78,6 +78,7 @@ export default defineAdditionalConfig({
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
+          { text: 'Termius', link: '/zh/apps/termius' },
           { text: 'TextMate', link: '/zh/apps/textmate' },
           { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Things', link: '/zh/apps/things' },

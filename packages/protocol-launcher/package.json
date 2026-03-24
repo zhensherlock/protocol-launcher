@@ -250,6 +250,10 @@
       "types": "./dist/types/telegram/index.d.ts",
       "import": "./dist/telegram/index.js"
     },
+    "./termius": {
+      "types": "./dist/types/termius/index.d.ts",
+      "import": "./dist/termius/index.js"
+    },
     "./textmate": {
       "types": "./dist/types/textmate/index.d.ts",
       "import": "./dist/textmate/index.js"

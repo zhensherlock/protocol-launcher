@@ -166,6 +166,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Telegram](../apps/telegram.md)
+- [Termius](../apps/termius.md)
 - [TextMate](../apps/textmate.md)
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
