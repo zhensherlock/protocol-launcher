@@ -24,7 +24,7 @@ export function tags(payload: Tags) {
   const { token } = payload
 
   const params = qs({
-    ...(token ? { token } : {}),
+    token,
   })
 
   return `bear://x-callback-url/tags${params}`

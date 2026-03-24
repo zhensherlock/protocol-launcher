@@ -39,7 +39,7 @@ export function grabUrl(payload: GrabUrl) {
   const { url, tags, pin, wait } = payload
 
   const params = qs({
-    ...(url ? { url } : {}),
+    url,
     ...(tags ? { tags } : {}),
     ...(pin ? { pin: 'yes' } : {}),
     ...(wait === false ? { wait: 'no' } : {}),

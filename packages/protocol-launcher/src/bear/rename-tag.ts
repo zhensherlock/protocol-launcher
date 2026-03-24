@@ -34,8 +34,8 @@ export function renameTag(payload: RenameTag) {
   const { name, newName, showWindow } = payload
 
   const params = qs({
-    ...(name ? { name } : {}),
-    ...(newName ? { new_name: newName } : {}),
+    name,
+    new_name: newName,
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 

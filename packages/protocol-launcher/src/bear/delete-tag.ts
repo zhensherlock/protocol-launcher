@@ -29,7 +29,7 @@ export function deleteTag(payload: DeleteTag) {
   const { name, showWindow } = payload
 
   const params = qs({
-    ...(name ? { name } : {}),
+    name,
     ...(showWindow === false ? { show_window: 'no' } : {}),
   })
 
