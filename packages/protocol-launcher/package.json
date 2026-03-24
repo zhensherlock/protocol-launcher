@@ -150,6 +150,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./itsycal": {
+      "types": "./dist/types/itsycal/index.d.ts",
+      "import": "./dist/itsycal/index.js"
+    },
     "./jump-desktop": {
       "types": "./dist/types/jump-desktop/index.d.ts",
       "import": "./dist/jump-desktop/index.js"

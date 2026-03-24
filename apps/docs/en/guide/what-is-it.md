@@ -44,6 +44,7 @@ Currently, we support the following applications:
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [Itsycal](../apps/itsycal.md)
 - [Jump Desktop](../apps/jump-desktop.md)
 - [Kaleidoscope](../apps/kaleidoscope.md)
 - [Kiro](../apps/kiro.md)
