@@ -81,6 +81,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [WeMeet](../apps/wemeet.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)

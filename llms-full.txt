@@ -3426,6 +3426,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [WeMeet](../apps/wemeet.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
@@ -10345,6 +10346,43 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'webstorm.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/wemeet.md
+---
+
+# WeMeet
+
+[WeMeet](https://meeting.tencent.com/) is a cloud video conferencing service provided by Tencent. **Protocol Launcher** allows you to generate deep links to open WeMeet and join meetings.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open WeMeet
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'wemeet' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'wemeet.'}}open()
+```
+
+### Join Meeting
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'joinMeeting' : 'wemeet' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'wemeet.'}}joinMeeting({
+  meetingCode: '123456789',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/guide/what-is-it.md
 ---
 
@@ -10427,6 +10465,7 @@ Currently, we support the following applications:
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [WeMeet](../apps/wemeet.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
@@ -10988,6 +11027,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [WeMeet](../apps/wemeet.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
@@ -11176,6 +11216,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
+* [WeMeet](../apps/wemeet.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
@@ -11224,3 +11265,40 @@ url: /protocol-launcher/zh/extra/examples.md
 
 1. 点击任意 "Open in StackBlitz" 按钮即可查看实时示例
 2. 各框架示例展示了推荐的集成模式
+
+---
+
+---
+url: /protocol-launcher/zh/apps/wemeet.md
+---
+
+# 腾讯会议
+
+[腾讯会议](https://meeting.tencent.com/) 是腾讯云提供的云视频会议服务。**Protocol Launcher** 允许您生成深度链接以打开腾讯会议并加入会议。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开腾讯会议
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'wemeet' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'wemeet.'}}open()
+```
+
+### 加入会议
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'joinMeeting' : 'wemeet' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'wemeet.'}}joinMeeting({
+  meetingCode: '123456789',
+})
+```

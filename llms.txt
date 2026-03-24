@@ -80,13 +80,10 @@
 - [VS Code Insiders](/protocol-launcher/apps/vscode-insiders.md)
 - [VSCodium](/protocol-launcher/apps/vscodium.md)
 - [WebStorm](/protocol-launcher/apps/webstorm.md)
+- [WeMeet](/protocol-launcher/apps/wemeet.md)
 - [Windsurf](/protocol-launcher/apps/windsurf.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
 - [Zed](/protocol-launcher/apps/zed.md)
-
-### Extra
-
-- [Examples](/protocol-launcher/extra/examples.md)
 
 ### 简介
 
@@ -153,6 +150,7 @@
 - [VS Code Insiders](/protocol-launcher/zh/apps/vscode-insiders.md)
 - [VSCodium](/protocol-launcher/zh/apps/vscodium.md)
 - [WebStorm](/protocol-launcher/zh/apps/webstorm.md)
+- [腾讯会议](/protocol-launcher/zh/apps/wemeet.md)
 - [Windsurf](/protocol-launcher/zh/apps/windsurf.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
@@ -163,5 +161,6 @@
 
 ### Other
 
+- [Examples](/protocol-launcher/extra/examples.md)
 - [Motrix](/protocol-launcher/zh/apps/motrix.md)
 - [Termius](/protocol-launcher/zh/apps/termius.md)
