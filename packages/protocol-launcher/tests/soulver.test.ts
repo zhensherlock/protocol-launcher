@@ -26,13 +26,21 @@ describe('soulver', () => {
     expect(url).toBe('x-soulver://x-callback-url/open?id=3BBFDEB9-E705-4AC1-846D-433446BA0C60')
   })
 
-  test('calculate should return a URL with expression', async () => {
+  test('calculate should return a URL with toClipboard', async () => {
     const url = soulver.calculate({
       expression: 'lunch was $55 + 25% tip',
     })
     expect(url).toBe(
       'x-soulver://x-callback-url/calculate?expression=lunch%20was%20%2455%20%2B%2025%25%20tip&to_clipboard=true',
     )
+  })
+
+  test('calculate should return a URL without toClipboard', async () => {
+    const url = soulver.calculate({
+      expression: 'lunch was $55 + 25% tip',
+      toClipboard: false,
+    })
+    expect(url).toBe('x-soulver://x-callback-url/calculate?expression=lunch%20was%20%2455%20%2B%2025%25%20tip')
   })
 
   test('appendLine should return a URL', async () => {
