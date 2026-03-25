@@ -85,6 +85,7 @@ export default defineAdditionalConfig({
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'Trae', link: '/zh/apps/trae' },
           { text: 'Trae China', link: '/zh/apps/trae-cn' },
+          { text: 'uPic', link: '/zh/apps/upic' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },

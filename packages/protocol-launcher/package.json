@@ -274,6 +274,10 @@
       "types": "./dist/types/trae/index.d.ts",
       "import": "./dist/trae/index.js"
     },
+    "./upic": {
+      "types": "./dist/types/upic/index.d.ts",
+      "import": "./dist/upic/index.js"
+    },
     "./trae-cn": {
       "types": "./dist/types/trae-cn/index.d.ts",
       "import": "./dist/trae-cn/index.js"
