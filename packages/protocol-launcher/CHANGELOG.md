@@ -1,5 +1,42 @@
 # protocol-launcher
 
+## 1.19.0
+
+### Minor Changes
+
+- [`b962ae9`](https://github.com/zhensherlock/protocol-launcher/commit/b962ae9baa699d82d5f3d2156e73a93e8421b255) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(upic): add upic protocol launcher support
+
+- [`353094e`](https://github.com/zhensherlock/protocol-launcher/commit/353094eb7709f069e03246eec2f19166226ba27e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(itsycal): add itsycal protocol launcher support
+
+- [`bb55829`](https://github.com/zhensherlock/protocol-launcher/commit/bb558293de9bdafe0cb3c75f63c05bbf22441d4b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(navicat): add Navicat protocol launcher support
+
+- [`d5a28ca`](https://github.com/zhensherlock/protocol-launcher/commit/d5a28ca96363dcbd1db9fb6c2aa0c488b5f31cf9) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(termius): add termius protocol launcher support
+
+- [`9794291`](https://github.com/zhensherlock/protocol-launcher/commit/97942918a9eddf80a9c04b9b35d3e30bbf945138) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(soulver): add Soulver protocol launcher support
+
+- [`0e9bffe`](https://github.com/zhensherlock/protocol-launcher/commit/0e9bffe6931ba13e0423b19a4abfaacc6ccc4cb7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(motrix): add Motrix protocol launcher support
+
+- [`6121c83`](https://github.com/zhensherlock/protocol-launcher/commit/6121c839441d5b42a99f3d460f765e1a2843cfd2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(macos): add support for launching Apple Password, Font Book, and iWork apps
+
+- [`09dc6d3`](https://github.com/zhensherlock/protocol-launcher/commit/09dc6d39115731f36507d7a2543d5400fc77e44a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(quark): add Quark protocol launcher support
+
+- [`851d9c1`](https://github.com/zhensherlock/protocol-launcher/commit/851d9c116720a98591ce841a9995f2d7308ef334) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(wemeet): add wemeet protocol launcher support
+
+- [`35c7aac`](https://github.com/zhensherlock/protocol-launcher/commit/35c7aacc15ace47db3b4720041451c7399e21dc5) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(sketch): add Sketch protocol launcher support
+
+### Patch Changes
+
+- [`469d086`](https://github.com/zhensherlock/protocol-launcher/commit/469d0867111575f9a5fa6e867eda88e225e1351d) Thanks [@zhensherlock](https://github.com/zhensherlock)! - test(soulver): add missing soulver API test cases
+
+- [`df54202`](https://github.com/zhensherlock/protocol-launcher/commit/df542021dc4e6e2be37e6422e911db733cac2340) Thanks [@zhensherlock](https://github.com/zhensherlock)! - test(bear): add missing bear API test cases
+
+- [`46fa154`](https://github.com/zhensherlock/protocol-launcher/commit/46fa1548e83cb721a388135e0d70db2b12e4ed56) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- [`bc2e9e6`](https://github.com/zhensherlock/protocol-launcher/commit/bc2e9e60a697a893572ea00fc9498a419d9a4318) Thanks [@zhensherlock](https://github.com/zhensherlock)! - refactor(bear): simplify parameter construction by removing conditional spreads
+
+- Updated dependencies [[`46fa154`](https://github.com/zhensherlock/protocol-launcher/commit/46fa1548e83cb721a388135e0d70db2b12e4ed56)]:
+  - @protocol-launcher/shared@1.4.3
+
 ## 1.18.0
 
 ### Minor Changes
