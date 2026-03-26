@@ -1,6 +1,6 @@
 {
   "name": "@protocol-launcher/shared",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "One-click launch URL generator for protocol-based apps.",
   "type": "module",
   "author": "zhensherlock",
