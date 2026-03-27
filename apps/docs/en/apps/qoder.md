@@ -30,7 +30,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Qoder
 
-[Qoder](https://qoder.dev/) is an agentic coding platform designed for real software development. It seamlessly integrates enhanced context engineering with intelligent agents to gain a comprehensive understanding of your codebase and systematically tackles software development tasks. **Protocol Launcher** allows you to generate deep links to open and configure resources in Qoder.
+[Qoder](https://qoder.com/) is an agentic coding platform designed for real software development. It seamlessly integrates enhanced context engineering with intelligent agents to gain a comprehensive understanding of your codebase and systematically tackles software development tasks. **Protocol Launcher** allows you to generate deep links to open and configure resources in Qoder.
 
 ## Usage
 

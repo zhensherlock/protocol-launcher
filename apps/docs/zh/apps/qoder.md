@@ -30,7 +30,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Qoder
 
-[Qoder](https://qoder.dev/) 是一款面向真实软件开发的 Agentic 编码平台。通过增强上下文工程与智能体无缝结合，全面理解你的代码库，并以系统化方式推进开发任务。**Protocol Launcher** 允许你生成深度链接，用于在 Qoder 中打开并配置资源。
+[Qoder](https://qoder.com/) 是一款面向真实软件开发的 Agentic 编码平台。通过增强上下文工程与智能体无缝结合，全面理解你的代码库，并以系统化方式推进开发任务。**Protocol Launcher** 允许你生成深度链接，用于在 Qoder 中打开并配置资源。
 
 ## 使用
 
