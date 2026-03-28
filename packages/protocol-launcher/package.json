@@ -90,6 +90,10 @@
       "types": "./dist/types/atom/index.d.ts",
       "import": "./dist/atom/index.js"
     },
+    "./1writer": {
+      "types": "./dist/types/1writer/index.d.ts",
+      "import": "./dist/1writer/index.js"
+    },
     "./bbedit": {
       "types": "./dist/types/bbedit/index.d.ts",
       "import": "./dist/bbedit/index.js"

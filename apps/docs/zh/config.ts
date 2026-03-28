@@ -38,6 +38,7 @@ export default defineAdditionalConfig({
           { text: 'Apple Map', link: '/zh/apps/apple-map' },
           { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },
           { text: 'Atom', link: '/zh/apps/atom' },
+          { text: '1Writer', link: '/zh/apps/1writer' },
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
           { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
