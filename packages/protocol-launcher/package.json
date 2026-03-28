@@ -130,6 +130,10 @@
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
     },
+    "./2do": {
+      "types": "./dist/types/2do/index.d.ts",
+      "import": "./dist/2do/index.js"
+    },
     "./evernote": {
       "types": "./dist/types/evernote/index.d.ts",
       "import": "./dist/evernote/index.js"

@@ -48,6 +48,7 @@ export default defineAdditionalConfig({
           { text: 'CodeLite', link: '/zh/apps/codelite' },
           { text: 'Codex', link: '/zh/apps/codex' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
+          { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Evernote', link: '/zh/apps/evernote' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },

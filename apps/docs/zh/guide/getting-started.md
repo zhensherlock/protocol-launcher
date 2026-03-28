@@ -136,6 +136,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [CodeLite](../apps/codelite.md)
 - [Codex](../apps/codex.md)
 - [Cursor](../apps/cursor.md)
+- [2Do](../apps/2do.md)
 - [Evernote](../apps/evernote.md)
 - [FSNotes](../apps/fsnotes.md)
 - [GitHub Desktop](../apps/github-desktop.md)
