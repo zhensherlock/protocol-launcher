@@ -625,6 +625,348 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}openDoc({
 ---
 
 ---
+url: /protocol-launcher/apps/agenda.md
+---
+
+# Agenda
+
+[Agenda](https://agenda.community/) is a note-taking app designed for creatives and professionals who want to organize their ideas by date. **Protocol Launcher** allows you to generate deep links to create and manage notes, projects, and categories in Agenda.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Create Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}createNote({
+  title: 'Meeting Notes',
+  text: 'Discussion about project roadmap',
+  projectTitle: 'Work',
+  onTheAgenda: true,
+  date: '2024-01-15',
+})
+```
+
+### Create Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createProject' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}createProject({
+  title: 'New Project',
+  categoryTitle: 'Work',
+  select: true,
+  sortOrder: 'newest-first',
+})
+```
+
+### Create Category
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCategory' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}createCategory({
+  title: 'New Category',
+})
+```
+
+### Open Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openNote({
+  title: 'Meeting With Peta',
+  projectTitle: 'Work',
+})
+```
+
+### Open Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProject' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openProject({
+  title: 'Work Project',
+})
+```
+
+### Open Overview
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openOverview' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openOverview({
+  title: 'This Week',
+})
+```
+
+### Open Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSearch' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openSearch({
+  query: '#Important',
+})
+```
+
+### Append to Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appendToNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}appendToNote({
+  title: 'Some Note',
+  text: 'More Text',
+  onTheAgenda: true,
+})
+```
+
+### Replace Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replaceNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}replaceNote({
+  title: 'Some Note',
+  text: 'New Content',
+})
+```
+
+### Get Identifier
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getIdentifier' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getIdentifier({
+  projectTitle: 'Welcome',
+  title: 'Things to Try',
+})
+```
+
+### Get Selection
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection()
+```
+
+### Get Selected Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelectedNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelectedNote()
+```
+
+### Get Selected Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelectedProject' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelectedProject()
+```
+
+### Today
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'today' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}today()
+```
+
+### On the Agenda
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/agenda.md
+---
+
+# Agenda
+
+[Agenda](https://agenda.community/) 是一款专为创意人士和专业人士设计的笔记应用，让您能够按日期组织想法。**Protocol Launcher** 允许您生成深度链接，以在 Agenda 中创建和管理笔记、项目和分类。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 创建笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}createNote({
+  title: '会议记录',
+  text: '讨论项目路线图',
+  projectTitle: '工作',
+  onTheAgenda: true,
+  date: '2024-01-15',
+})
+```
+
+### 创建项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createProject' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}createProject({
+  title: '新项目',
+  categoryTitle: '工作',
+  select: true,
+  sortOrder: 'newest-first',
+})
+```
+
+### 创建分类
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCategory' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}createCategory({
+  title: '新分类',
+})
+```
+
+### 打开笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openNote({
+  title: '与 Peta 的会议',
+  projectTitle: '工作',
+})
+```
+
+### 打开项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProject' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openProject({
+  title: '工作项目',
+})
+```
+
+### 打开概览
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openOverview' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openOverview({
+  title: '本周',
+})
+```
+
+### 打开搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSearch' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}openSearch({
+  query: '#重要',
+})
+```
+
+### 追加到笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'appendToNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}appendToNote({
+  title: '某些笔记',
+  text: '更多文本',
+  onTheAgenda: true,
+})
+```
+
+### 替换笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replaceNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}replaceNote({
+  title: '某些笔记',
+  text: '新内容',
+})
+```
+
+### 获取标识符
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getIdentifier' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getIdentifier({
+  projectTitle: '欢迎',
+  title: '尝试事项',
+})
+```
+
+### 获取选择
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection()
+```
+
+### 获取选中的笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelectedNote' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelectedNote()
+```
+
+### 获取选中的项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelectedProject' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelectedProject()
+```
+
+### 今天
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'today' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}today()
+```
+
+### 在议程上
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
+```
+
+---
+
+---
 url: /protocol-launcher/apps/alfred.md
 ---
 
@@ -3917,6 +4259,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 For detailed usage instructions for each application, please refer to their respective guides:
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
@@ -11849,6 +12192,7 @@ These URLs allow users to trigger specific actions in applications with a single
 Currently, we support the following applications:
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
@@ -12416,6 +12760,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 目前，我们支持以下应用程序：
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
@@ -12610,6 +12955,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)

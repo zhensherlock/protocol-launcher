@@ -22,6 +22,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 目前，我们支持以下应用程序：
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)

@@ -22,6 +22,7 @@ These URLs allow users to trigger specific actions in applications with a single
 Currently, we support the following applications:
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)

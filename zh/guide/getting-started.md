@@ -119,6 +119,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 有关每个应用程序的详细使用说明，请参阅各自的指南：
 
 * [AFFiNE](../apps/affine.md)
+* [Agenda](../apps/agenda.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
