@@ -19,6 +19,7 @@ export default defineConfig({
     'en/guide/getting-started.md': 'guide/getting-started.md',
     'en/extra/examples.md': 'extra/examples.md',
     'en/apps/affine.md': 'apps/affine.md',
+    'en/apps/agenda.md': 'apps/agenda.md',
     'en/apps/alfred.md': 'apps/alfred.md',
     'en/apps/antigravity.md': 'apps/antigravity.md',
     'en/apps/app-store.md': 'apps/app-store.md',
@@ -131,6 +132,7 @@ export default defineConfig({
         text: 'Applications',
         items: [
           { text: 'AFFiNE', link: '/apps/affine' },
+          { text: 'Agenda', link: '/apps/agenda' },
           { text: 'Alfred', link: '/apps/alfred' },
           { text: 'Antigravity', link: '/apps/antigravity' },
           { text: 'App Store', link: '/apps/app-store' },
@@ -248,6 +250,7 @@ export default defineConfig({
             base: '',
             items: [
               { text: 'AFFiNE', link: '/apps/affine' },
+              { text: 'Agenda', link: '/apps/agenda' },
               { text: 'Alfred', link: '/apps/alfred' },
               { text: 'Antigravity', link: '/apps/antigravity' },
               { text: 'App Store', link: '/apps/app-store' },

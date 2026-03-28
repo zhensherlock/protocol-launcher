@@ -31,6 +31,7 @@ export default defineAdditionalConfig({
         text: '应用程序',
         items: [
           { text: 'AFFiNE', link: '/zh/apps/affine' },
+          { text: 'Agenda', link: '/zh/apps/agenda' },
           { text: 'Alfred', link: '/zh/apps/alfred' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
           { text: 'App Store', link: '/zh/apps/app-store' },
