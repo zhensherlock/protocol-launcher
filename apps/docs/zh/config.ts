@@ -77,6 +77,7 @@ export default defineAdditionalConfig({
           { text: 'Sketch', link: '/zh/apps/sketch' },
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
+          { text: 'Steam', link: '/zh/apps/steam' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'Termius', link: '/zh/apps/termius' },
           { text: 'TextMate', link: '/zh/apps/textmate' },

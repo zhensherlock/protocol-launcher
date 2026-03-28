@@ -165,6 +165,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Steam](../apps/steam.md)
 - [Telegram](../apps/telegram.md)
 - [Termius](../apps/termius.md)
 - [TextMate](../apps/textmate.md)

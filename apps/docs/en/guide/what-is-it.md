@@ -68,6 +68,7 @@ Currently, we support the following applications:
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Steam](../apps/steam.md)
 - [Telegram](../apps/telegram.md)
 - [Termius](../apps/termius.md)
 - [TextMate](../apps/textmate.md)
