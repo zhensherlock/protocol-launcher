@@ -170,6 +170,10 @@
       "types": "./dist/types/lingma/index.d.ts",
       "import": "./dist/lingma/index.js"
     },
+    "./longshot": {
+      "types": "./dist/types/longshot/index.d.ts",
+      "import": "./dist/longshot/index.js"
+    },
     "./macos": {
       "types": "./dist/types/macos/index.d.ts",
       "import": "./dist/macos/index.js"
