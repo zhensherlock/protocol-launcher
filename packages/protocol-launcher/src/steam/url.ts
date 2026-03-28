@@ -81,5 +81,5 @@ export function url(payload: Url) {
   if (param) {
     return `steam://url/${page}/${param}`
   }
-  return `steam://url/${page}${page.endsWith('/') ? '' : ''}`
+  return `steam://url/${page}`
 }
