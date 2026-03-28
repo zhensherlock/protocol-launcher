@@ -36,6 +36,7 @@ export default defineAdditionalConfig({
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
           { text: 'App Store', link: '/zh/apps/app-store' },
           { text: 'AppFlowy', link: '/zh/apps/appflowy' },
+          { text: 'Appigo Todo', link: '/zh/apps/appigo-todo' },
           { text: 'Apple Map', link: '/zh/apps/apple-map' },
           { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },
           { text: 'Atom', link: '/zh/apps/atom' },

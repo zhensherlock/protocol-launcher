@@ -82,6 +82,10 @@
       "types": "./dist/types/appflowy/index.d.ts",
       "import": "./dist/appflowy/index.js"
     },
+    "./appigo-todo": {
+      "types": "./dist/types/appigo-todo/index.d.ts",
+      "import": "./dist/appigo-todo/index.js"
+    },
     "./apple-map": {
       "types": "./dist/types/apple-map/index.d.ts",
       "import": "./dist/apple-map/index.js"

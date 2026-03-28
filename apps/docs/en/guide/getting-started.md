@@ -128,6 +128,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Apple Script Editor](../apps/apple-script.md)
 - [Atom](../apps/atom.md)
 - [1Writer](../apps/1writer.md)
+- [Appigo Todo](../apps/appigo-todo.md)
 - [BBEdit](../apps/bbedit.md)
 - [Bear](../apps/bear.md)
 - [Cherry Studio](../apps/cherry-studio.md)
