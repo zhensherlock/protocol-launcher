@@ -1,4 +1,554 @@
 ---
+url: /protocol-launcher/apps/1writer.md
+---
+
+# 1Writer
+
+[1Writer](https://1writerapp.com/) is a powerful Markdown text editor for iOS with Dropbox, Google Drive, and iCloud support. **Protocol Launcher** allows you to generate deep links to create, edit, and manage documents in 1Writer using the `onewriter://` URL scheme with x-callback-url protocol.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Create Document
+
+Creates a new document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}create({
+  path: 'Dropbox/Documents',
+  name: 'Notes.txt',
+  text: 'Hello world',
+})
+```
+
+### Replace Document
+
+Replaces content of a document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}replace({
+  path: 'Dropbox/Documents/Notes.txt',
+  text: 'Hello world',
+})
+```
+
+### Replace Selection
+
+Replaces selected text in the current editing document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replaceSelection' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}replaceSelection({
+  text: 'New text',
+})
+```
+
+### Get Content
+
+Returns content of a document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'content' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}content({
+  path: 'Dropbox/Documents/Notes.txt',
+})
+```
+
+### Open Document
+
+Opens an existing document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}open({
+  path: 'Dropbox/Documents/Notes.txt',
+})
+```
+
+### Append Document
+
+Appends content to an existing document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}append({
+  path: 'Dropbox/Documents/Notes.txt',
+  text: 'Hello world',
+})
+```
+
+### Prepend Document
+
+Prepends content to an existing document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'prepend' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
+  path: 'Dropbox/Documents/Notes.txt',
+  text: 'Hello world',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/1writer.md
+---
+
+# 1Writer
+
+[1Writer](https://1writerapp.com/) 是一款强大的 iOS Markdown 文本编辑器，支持 Dropbox、Google Drive 和 iCloud。**Protocol Launcher** 允许您生成深度链接，使用 `onewriter://` URL scheme 和 x-callback-url 协议在 1Writer 中创建、编辑和管理文档。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 创建文档
+
+创建新文档。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}create({
+  path: 'Dropbox/Documents',
+  name: 'Notes.txt',
+  text: 'Hello world',
+})
+```
+
+### 替换文档
+
+替换文档内容。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}replace({
+  path: 'Dropbox/Documents/Notes.txt',
+  text: 'Hello world',
+})
+```
+
+### 替换选中内容
+
+替换当前编辑文档中的选中文本。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replaceSelection' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}replaceSelection({
+  text: 'New text',
+})
+```
+
+### 获取内容
+
+获取文档内容。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'content' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}content({
+  path: 'Dropbox/Documents/Notes.txt',
+})
+```
+
+### 打开文档
+
+打开现有文档。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}open({
+  path: 'Dropbox/Documents/Notes.txt',
+})
+```
+
+### 追加内容
+
+向现有文档追加内容。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}append({
+  path: 'Dropbox/Documents/Notes.txt',
+  text: 'Hello world',
+})
+```
+
+### 前置内容
+
+向现有文档开头添加内容。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'prepend' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
+  path: 'Dropbox/Documents/Notes.txt',
+  text: 'Hello world',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/2do.md
+---
+
+# 2Do
+
+[2Do](https://www.2doapp.com/) is a powerful personal task manager that supports GTD methodology and more. **Protocol Launcher** allows you to generate deep links to create tasks, search, and navigate lists in 2Do.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}open()
+```
+
+### Show All Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showAll' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showAll()
+```
+
+### Show Today Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showToday' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showToday()
+```
+
+### Show Starred Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showStarred' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showStarred()
+```
+
+### Show Scheduled Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showScheduled' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showScheduled()
+```
+
+### Show List
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showList' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showList({
+  name: 'Work',
+})
+```
+
+### Search Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}search({
+  text: 'John',
+})
+```
+
+### Search Overdue Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}search({
+  text: 'type:overdue',
+})
+```
+
+### Add New Task (Open Screen)
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addNewTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}addNewTask({
+  ignoreDefaults: 1,
+})
+```
+
+### Add Task
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Dinner at 8pm',
+  due: '1',
+})
+```
+
+### Add Task with Priority
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Important task',
+  priority: 3,
+})
+```
+
+### Add Task with Tags
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Monthly subscription',
+  tags: 'bill,payment',
+})
+```
+
+### Add Task to Project
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Buy a new charger',
+  forParentName: 'Shopping List',
+  forList: 'Home',
+})
+```
+
+### Paste Text as Tasks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'paste' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}paste({
+  text: 'Task 1\nTask 2\nTask 3',
+  forList: 'Shopping',
+})
+```
+
+### Get Task ID
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getTaskID' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
+  task: 'My Task',
+  forList: 'Work',
+  saveInClipboard: 1,
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/2do.md
+---
+
+# 2Do
+
+[2Do](https://www.2doapp.com/) 是一款强大的个人任务管理器，支持 GTD 方法论等。**Protocol Launcher** 允许您生成深度链接以在 2Do 中创建任务、搜索和导航列表。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}open()
+```
+
+### 显示所有任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showAll' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showAll()
+```
+
+### 显示今天任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showToday' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showToday()
+```
+
+### 显示星标任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showStarred' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showStarred()
+```
+
+### 显示已安排任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showScheduled' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showScheduled()
+```
+
+### 显示列表
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showList' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showList({
+  name: 'Work',
+})
+```
+
+### 搜索任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}search({
+  text: 'John',
+})
+```
+
+### 搜索逾期任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}search({
+  text: 'type:overdue',
+})
+```
+
+### 新建任务（打开界面）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addNewTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}addNewTask({
+  ignoreDefaults: 1,
+})
+```
+
+### 添加任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Dinner at 8pm',
+  due: '1',
+})
+```
+
+### 添加高优先级任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Important task',
+  priority: 3,
+})
+```
+
+### 添加带标签的任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Monthly subscription',
+  tags: 'bill,payment',
+})
+```
+
+### 添加任务到项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}add({
+  task: 'Buy a new charger',
+  forParentName: 'Shopping List',
+  forList: 'Home',
+})
+```
+
+### 粘贴文本为任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'paste' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}paste({
+  text: 'Task 1\nTask 2\nTask 3',
+  forList: 'Shopping',
+})
+```
+
+### 获取任务 ID
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getTaskID' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
+  task: 'My Task',
+  forList: 'Work',
+  saveInClipboard: 1,
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/affine.md
 ---
 
@@ -3374,6 +3924,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
+* [1Writer](../apps/1writer.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -3383,6 +3934,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [CodeRunner](../apps/code-runner.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [2Do](../apps/2do.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -11304,6 +11856,7 @@ Currently, we support the following applications:
 * [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
+* [1Writer](../apps/1writer.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -11313,6 +11866,7 @@ Currently, we support the following applications:
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [2Do](../apps/2do.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -11869,6 +12423,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
+* [1Writer](../apps/1writer.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -11878,6 +12433,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [2Do](../apps/2do.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -12061,6 +12617,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
+* [1Writer](../apps/1writer.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -12070,6 +12627,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Cursor](../apps/cursor.md)
+* [2Do](../apps/2do.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)

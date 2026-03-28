@@ -28,6 +28,7 @@
 - [Apple Maps](/protocol-launcher/apps/apple-map.md)
 - [Apple Script Editor](/protocol-launcher/apps/apple-script.md)
 - [Atom](/protocol-launcher/apps/atom.md)
+- [1Writer](/protocol-launcher/apps/1writer.md)
 - [BBEdit](/protocol-launcher/apps/bbedit.md)
 - [Bear](/protocol-launcher/apps/bear.md)
 - [Cherry Studio](/protocol-launcher/apps/cherry-studio.md)
@@ -37,6 +38,7 @@
 - [CodeRunner](/protocol-launcher/apps/code-runner.md)
 - [Codex](/protocol-launcher/apps/codex.md)
 - [Cursor](/protocol-launcher/apps/cursor.md)
+- [2Do](/protocol-launcher/apps/2do.md)
 - [Evernote](/protocol-launcher/apps/evernote.md)
 - [FSNotes](/protocol-launcher/apps/fsnotes.md)
 - [GitHub Desktop](/protocol-launcher/apps/github-desktop.md)
@@ -166,6 +168,8 @@
 
 ### Other
 
+- [1Writer](/protocol-launcher/zh/apps/1writer.md)
+- [2Do](/protocol-launcher/zh/apps/2do.md)
 - [Examples](/protocol-launcher/extra/examples.md)
 - [Motrix](/protocol-launcher/zh/apps/motrix.md)
 - [Steam](/protocol-launcher/zh/apps/steam.md)
