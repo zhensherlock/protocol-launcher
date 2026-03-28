@@ -2,11 +2,9 @@ import { qs } from '@protocol-launcher/shared'
 
 /**
  * Task type enum.
+ * 0 = Task, 1 = Project, 2 = Checklist
  */
-type TaskType =
-  | 0 // Task (default)
-  | 1 // Project
-  | 2 // Checklist
+type TaskType = 0 | 1 | 2
 
 /**
  * Priority enum.
@@ -48,9 +46,8 @@ type Add = {
   task?: string
   /**
    * Type of task to create.
-   * 0 = Task (default), 1 = Project, 2 = Checklist
-   *
-   * @default 0
+   * 0 = Task, 1 = Project, 2 = Checklist
+   * 2Do uses Task (0) as default when not specified.
    */
   type?: TaskType
   /**
@@ -82,15 +79,13 @@ type Add = {
   /**
    * Priority level.
    * 0 = none, 1 = low, 2 = medium, 3 = high
-   *
-   * @default 0
+   * 2Do uses none (0) as default when not specified.
    */
   priority?: Priority
   /**
    * Whether the task is starred.
    * 0 = no, 1 = yes
-   *
-   * @default 0
+   * 2Do uses no (0) as default when not specified.
    */
   starred?: 0 | 1
   /**
@@ -153,29 +148,25 @@ type Add = {
   /**
    * Whether to apply default due date/time settings.
    * 0 = apply defaults, 1 = ignore defaults
-   *
-   * @default 0
+   * 2Do applies defaults when not specified.
    */
   ignoreDefaults?: 0 | 1
   /**
    * Whether to save the newly created task's UID in clipboard.
    * 0 = no, 1 = yes (iOS 3.8.3+, Mac 2.2.2+)
-   *
-   * @default 0
+   * 2Do does not save to clipboard when not specified.
    */
   saveInClipboard?: 0 | 1
   /**
    * Mac only: Whether to show Quick Entry window.
    * 0 = add task without allowing edit, 1 = show Quick Entry window
-   *
-   * @default 0
+   * 2Do adds task without edit when not specified.
    */
   useQuickEntry?: 0 | 1
   /**
    * Whether to show edit screen after creating the task.
-   * 0 = add task in background (default), 1 = show edit screen
-   *
-   * @default 0
+   * 0 = add task in background, 1 = show edit screen
+   * 2Do adds task in background when not specified.
    */
   edit?: 0 | 1
 }

@@ -15,8 +15,7 @@ type GetTaskID = {
   /**
    * Whether to save UID in clipboard.
    * 0 = no, 1 = yes
-   *
-   * @default 0
+   * 2Do does not save to clipboard when not specified.
    */
   saveInClipboard?: 0 | 1
 }

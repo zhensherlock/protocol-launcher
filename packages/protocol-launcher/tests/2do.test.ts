@@ -126,6 +126,153 @@ describe('twoDo', () => {
     expect(url).toBe('twodo://x-callback-url/add?task=Title&repeat=2')
   })
 
+  test('add should return a URL with type', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      type: 1,
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&type=1')
+  })
+
+  test('add should return a URL with starred', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      starred: 1,
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&starred=1')
+  })
+
+  test('add should return a URL with locations', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      locations: 'Home,Office',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&locations=Home%2COffice')
+  })
+
+  test('add should return a URL with start', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      start: '2024-01-01 09:00',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&start=2024-01-01%2009%3A00')
+  })
+
+  test('add should return a URL with action', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      action: 'call:123456789',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&action=call%3A123456789')
+  })
+
+  test('add should return a URL with picture', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      picture: 'lastphoto',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&picture=lastphoto')
+  })
+
+  test('add should return a URL with audio', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      audio: 'base64encodedaudio',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&audio=base64encodedaudio')
+  })
+
+  test('add should return a URL with ignoreDefaults', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      ignoreDefaults: 1,
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&ignoreDefaults=1')
+  })
+
+  test('add should return a URL with saveInClipboard', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      saveInClipboard: 1,
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&saveInClipboard=1')
+  })
+
+  test('add should return a URL with useQuickEntry', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      useQuickEntry: 1,
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&useQuickEntry=1')
+  })
+
+  test('add should return a URL with edit', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      edit: 1,
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&edit=1')
+  })
+
+  test('add should return a URL with subtasks', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      subtasks: 'Subtask 1\nSubtask 2',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&subtasks=Subtask%201%0ASubtask%202')
+  })
+
+  test('add should return a URL with note', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      note: 'This is a note',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&note=This%20is%20a%20note')
+  })
+
+  test('add should return a URL with forParentTask', async () => {
+    const url = twoDo.add({
+      task: 'Title',
+      forParentTask: 'unique-task-id-123',
+    })
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&forParentTask=unique-task-id-123')
+  })
+
+  test('add should return a URL with all parameters', async () => {
+    const url = twoDo.add({
+      task: 'Complete task',
+      type: 0,
+      forList: 'Work',
+      forParentName: 'Project A',
+      forParentTask: 'parent-id',
+      note: 'Important note',
+      subtasks: 'Sub 1\nSub 2',
+      priority: 2,
+      starred: 1,
+      tags: 'urgent,work',
+      locations: 'Office',
+      due: '2024-12-31',
+      dueTime: '17:00',
+      start: '2024-01-01 09:00',
+      repeat: 2,
+      action: 'mail:test@example.com',
+      picture: 'lastphoto',
+      audio: 'base64audio',
+      ignoreDefaults: 1,
+      saveInClipboard: 1,
+      useQuickEntry: 1,
+      edit: 1,
+    })
+    expect(url).toBe(
+      'twodo://x-callback-url/add?task=Complete%20task&type=0&forList=Work&forParentName=Project%20A&forParentTask=parent-id&note=Important%20note&subtasks=Sub%201%0ASub%202&priority=2&starred=1&tags=urgent%2Cwork&locations=Office&due=2024-12-31&dueTime=17%3A00&start=2024-01-01%2009%3A00&repeat=2&action=mail%3Atest%40example.com&picture=lastphoto&audio=base64audio&ignoreDefaults=1&saveInClipboard=1&useQuickEntry=1&edit=1',
+    )
+  })
+
+  test('add should return a URL with empty payload', async () => {
+    const url = twoDo.add({})
+    expect(url).toBe('twodo://x-callback-url/add')
+  })
+
   test('paste should return a URL with text', async () => {
     const url = twoDo.paste({
       text: 'Task 1\nTask 2',

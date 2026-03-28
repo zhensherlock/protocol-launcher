@@ -8,8 +8,7 @@ type AddNewTask = {
    * Ignore default due date/time settings in app.
    * 0 = apply any default due date / time settings in app
    * 1 = ignore default dates / times
-   *
-   * @default 0
+   * 2Do applies defaults when not specified.
    */
   ignoreDefaults?: 0 | 1
 }
