@@ -110,6 +110,10 @@
       "types": "./dist/types/bear/index.d.ts",
       "import": "./dist/bear/index.js"
     },
+    "./cal2todo": {
+      "types": "./dist/types/cal2todo/index.d.ts",
+      "import": "./dist/cal2todo/index.js"
+    },
     "./cherry-studio": {
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"

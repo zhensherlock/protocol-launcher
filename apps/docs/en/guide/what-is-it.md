@@ -34,6 +34,7 @@ Currently, we support the following applications:
 - [Appigo Todo](../apps/appigo-todo.md)
 - [BBEdit](../apps/bbedit.md)
 - [Bear](../apps/bear.md)
+- [Cal2Todo](../apps/cal2todo.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeBuddy China](../apps/code-buddy-cn.md)
