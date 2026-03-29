@@ -174,6 +174,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./interact": {
+      "types": "./dist/types/interact/index.d.ts",
+      "import": "./dist/interact/index.js"
+    },
     "./itsycal": {
       "types": "./dist/types/itsycal/index.d.ts",
       "import": "./dist/itsycal/index.js"

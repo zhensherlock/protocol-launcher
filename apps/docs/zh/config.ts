@@ -59,6 +59,7 @@ export default defineAdditionalConfig({
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
+          { text: 'Interact Scratchpad', link: '/zh/apps/interact' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
           { text: 'Jump Desktop', link: '/zh/apps/jump-desktop' },
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
