@@ -147,6 +147,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [2Do](../apps/2do.md)
 - [Drafts](../apps/drafts.md)
 - [Editorial](../apps/editorial.md)
+- [Equipd Bible](../apps/equipd-bible.md)
 - [Due](../apps/due.md)
 - [Evernote](../apps/evernote.md)
 - [FSNotes](../apps/fsnotes.md)
