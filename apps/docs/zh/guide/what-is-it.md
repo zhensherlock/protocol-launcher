@@ -43,6 +43,7 @@ layout: doc
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
 - [Drafts](../apps/drafts.md)
+- [Due](../apps/due.md)
 - [Evernote](../apps/evernote.md)
 - [FSNotes](../apps/fsnotes.md)
 - [GitHub Desktop](../apps/github-desktop.md)

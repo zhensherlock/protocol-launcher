@@ -53,6 +53,7 @@ export default defineAdditionalConfig({
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Drafts', link: '/zh/apps/drafts' },
+          { text: 'Due', link: '/zh/apps/due' },
           { text: 'Evernote', link: '/zh/apps/evernote' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
