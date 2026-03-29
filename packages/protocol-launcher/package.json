@@ -154,6 +154,10 @@
       "types": "./dist/types/2do/index.d.ts",
       "import": "./dist/2do/index.js"
     },
+    "./editorial": {
+      "types": "./dist/types/editorial/index.d.ts",
+      "import": "./dist/editorial/index.js"
+    },
     "./evernote": {
       "types": "./dist/types/evernote/index.d.ts",
       "import": "./dist/evernote/index.js"
