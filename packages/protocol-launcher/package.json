@@ -142,6 +142,10 @@
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
     },
+    "./drafts": {
+      "types": "./dist/types/drafts/index.d.ts",
+      "import": "./dist/drafts/index.js"
+    },
     "./2do": {
       "types": "./dist/types/2do/index.d.ts",
       "import": "./dist/2do/index.js"
