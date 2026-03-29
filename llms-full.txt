@@ -4848,6 +4848,510 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}scanDocument({
 ---
 
 ---
+url: /protocol-launcher/apps/due.md
+---
+
+# Due
+
+[Due](https://www.dueapp.com/) is a superfast reminder app for iPhone, iPad, and Mac that helps you never forget anything again. **Protocol Launcher** allows you to generate deep links to add reminders and search in Due.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Add Reminder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}add({
+  title: 'Call John',
+  duedate: 1333238400,
+})
+```
+
+### Add Recurring Reminder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}add({
+  title: 'Pay rent',
+  duedate: 1306954800,
+  timezone: 'GMT',
+  recurunit: 8,
+  recurfromdate: 1306954800,
+})
+```
+
+### Add Reminder with Callback
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}add({
+  title: 'Call John',
+  secslater: 3600,
+  xSource: 'SuperCal',
+  xSuccess: 'supercal://x-callback-url/returnAction',
+})
+```
+
+### Search Reminders
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({
+  query: '#work',
+  section: 'Reminders',
+})
+```
+
+### Search Timers
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({
+  query: '#HIIT',
+  section: 'Timers',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/due.md
+---
+
+# Due
+
+[Due](https://www.dueapp.com/) 是一款适用于 iPhone、iPad 和 Mac 的超快速提醒应用，帮助您不再忘记任何事情。**Protocol Launcher** 允许您生成深度链接以在 Due 中添加提醒和搜索。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 添加提醒
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}add({
+  title: 'Call John',
+  duedate: 1333238400,
+})
+```
+
+### 添加重复提醒
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}add({
+  title: 'Pay rent',
+  duedate: 1306954800,
+  timezone: 'GMT',
+  recurunit: 8,
+  recurfromdate: 1306954800,
+})
+```
+
+### 添加带回调的提醒
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}add({
+  title: 'Call John',
+  secslater: 3600,
+  xSource: 'SuperCal',
+  xSuccess: 'supercal://x-callback-url/returnAction',
+})
+```
+
+### 搜索提醒
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({
+  query: '#work',
+  section: 'Reminders',
+})
+```
+
+### 搜索计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({
+  query: '#HIIT',
+  section: 'Timers',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/editorial.md
+---
+
+# Editorial
+
+[Editorial](https://omz-software.com/editorial/) is a powerful text editor and automation app for iOS and iPadOS. It features a Python-based scripting environment and workflow automation capabilities. **Protocol Launcher** allows you to generate deep links to open files, create new documents, run workflows, and open web pages in Editorial.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Editorial
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'back' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}back()
+```
+
+### Open Existing File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+})
+```
+
+### Open File from Dropbox
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+  root: 'dropbox',
+})
+```
+
+### Open File with Selection
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+  selection: '0-10',
+})
+```
+
+### Open File with Workflow Command
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+  command: 'My Workflow',
+})
+```
+
+### Create New File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+})
+```
+
+### Create New File in Dropbox
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+  root: 'dropbox',
+})
+```
+
+### Create New File with Selection
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+  selection: '0-10',
+})
+```
+
+### Create New File with Workflow Command
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+  command: 'My Workflow',
+})
+```
+
+### Open Web Page (HTTP)
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeb' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}openWeb({
+  url: 'http://apple.com',
+})
+```
+
+### Open Web Page (HTTPS)
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeb' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}openWeb({
+  url: 'https://google.com',
+})
+```
+
+### Run Workflow Command
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
+  command: 'My Workflow',
+})
+```
+
+### Run Workflow with Input
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
+  command: 'My Workflow',
+  input: 'some input',
+})
+```
+
+### Run Workflow with Success Callback
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
+  command: 'My Workflow',
+  xSuccess: 'myapp://success',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/editorial.md
+---
+
+# Editorial
+
+[Editorial](https://omz-software.com/editorial/) 是一款强大的 iOS 和 iPadOS 文本编辑器和自动化应用。它提供基于 Python 的脚本环境和工作流自动化功能。**Protocol Launcher** 允许您生成深度链接以在 Editorial 中打开文件、创建新文档、运行工作流和打开网页。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Editorial
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'back' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}back()
+```
+
+### 打开现有文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+})
+```
+
+### 从 Dropbox 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+  root: 'dropbox',
+})
+```
+
+### 打开文件并选中文本
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+  selection: '0-10',
+})
+```
+
+### 打开文件并运行工作流
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}open({
+  filename: 'myfile.txt',
+  command: 'My Workflow',
+})
+```
+
+### 创建新文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+})
+```
+
+### 在 Dropbox 中创建新文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+  root: 'dropbox',
+})
+```
+
+### 创建新文件并选中文本
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+  selection: '0-10',
+})
+```
+
+### 创建新文件并运行工作流
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}newFile({
+  filename: 'newfile.txt',
+  command: 'My Workflow',
+})
+```
+
+### 打开网页 (HTTP)
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeb' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}openWeb({
+  url: 'http://apple.com',
+})
+```
+
+### 打开网页 (HTTPS)
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeb' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}openWeb({
+  url: 'https://google.com',
+})
+```
+
+### 运行工作流命令
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
+  command: 'My Workflow',
+})
+```
+
+### 运行工作流并传入参数
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
+  command: 'My Workflow',
+  input: 'some input',
+})
+```
+
+### 运行工作流并设置成功回调
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'editorial' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
+  command: 'My Workflow',
+  xSuccess: 'myapp://success',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/evernote.md
 ---
 
@@ -5238,12 +5742,15 @@ For detailed usage instructions for each application, please refer to their resp
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
+* [Editorial](../apps/editorial.md)
+* [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -5252,6 +5759,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Mail Assistant](../apps/mail-assistant.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
 * [Navicat](../apps/navicat.md)
@@ -5592,6 +6100,80 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/interact.md
+---
+
+# Interact Scratchpad
+
+[Interact Scratchpad](https://docs.getdrafts.com/docs/misc/interact-scratchpad) is a free Mac menu bar utility to ease the creation of contacts from snippets of text, like email signatures and more. **Protocol Launcher** allows you to generate deep links to open the Interact Scratchpad with pre-filled text for contact parsing.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Interact Scratchpad
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'interact' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'interact.'}}open()
+```
+
+### Open Scratchpad with Text
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scratchpad' : 'interact' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'interact.'}}scratchpad({
+  text: 'John Doe\njohn@example.com\n888-555-1234',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/interact.md
+---
+
+# Interact Scratchpad
+
+[Interact Scratchpad](https://docs.getdrafts.com/docs/misc/interact-scratchpad) 是一个免费的 Mac 菜单栏工具，用于从文本片段（如电子邮件签名等）轻松创建联系人。**Protocol Launcher** 允许您生成深度链接以打开 Interact Scratchpad 并预填充文本以进行联系人解析。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Interact Scratchpad
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'interact' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'interact.'}}open()
+```
+
+### 使用文本打开 Scratchpad
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scratchpad' : 'interact' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'interact.'}}scratchpad({
+  text: 'John Doe\njohn@example.com\n888-555-1234',
 })
 ```
 
@@ -7438,6 +8020,72 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'macvim' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'macvim.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/mail-assistant.md
+---
+
+# Mail Assistant
+
+[Mail Assistant](https://docs.getdrafts.com/misc/mail-assistant) is a helper app for Mac that enables sending HTML emails via the Mail app. **Protocol Launcher** allows you to generate deep links to compose and send emails in Mail Assistant.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Send Mail
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sendMail' : 'mailAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mailAssistant.'}}sendMail({
+  to: 'john@example.com',
+  cc: 'jane@example.com',
+  subject: 'Meeting Notes',
+  body: '<h1>Meeting Notes</h1><p>Here are the notes...</p>',
+  html: true,
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/mail-assistant.md
+---
+
+# Mail Assistant
+
+[Mail Assistant](https://docs.getdrafts.com/misc/mail-assistant) 是一款 Mac 辅助应用，可通过 Mail 应用发送 HTML 邮件。**Protocol Launcher** 允许您生成深度链接以在 Mail Assistant 中撰写和发送邮件。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 发送邮件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sendMail' : 'mailAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mailAssistant.'}}sendMail({
+  to: 'john@example.com',
+  cc: 'jane@example.com',
+  subject: 'Meeting Notes',
+  body: '<h1>Meeting Notes</h1><p>Here are the notes...</p>',
+  html: true,
 })
 ```
 
@@ -13174,12 +13822,15 @@ Currently, we support the following applications:
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
+* [Editorial](../apps/editorial.md)
+* [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -13188,6 +13839,7 @@ Currently, we support the following applications:
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Mail Assistant](../apps/mail-assistant.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
 * [Navicat](../apps/navicat.md)
@@ -13744,12 +14396,15 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
+* [Editorial](../apps/editorial.md)
+* [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -13758,6 +14413,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Mail Assistant](../apps/mail-assistant.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
 * [Navicat](../apps/navicat.md)
@@ -13947,12 +14603,15 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
+* [Editorial](../apps/editorial.md)
+* [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -13961,6 +14620,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
+* [Mail Assistant](../apps/mail-assistant.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
 * [Navicat](../apps/navicat.md)
