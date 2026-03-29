@@ -150,6 +150,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Equipd Bible](../apps/equipd-bible.md)
 - [Due](../apps/due.md)
 - [Evernote](../apps/evernote.md)
+- [Fantastical](../apps/fantastical.md)
 - [FSNotes](../apps/fsnotes.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [GoLand](../apps/goland.md)

@@ -57,6 +57,7 @@ export default defineAdditionalConfig({
           { text: 'Equipd Bible', link: '/zh/apps/equipd-bible' },
           { text: 'Due', link: '/zh/apps/due' },
           { text: 'Evernote', link: '/zh/apps/evernote' },
+          { text: 'Fantastical', link: '/zh/apps/fantastical' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'GoLand', link: '/zh/apps/goland' },

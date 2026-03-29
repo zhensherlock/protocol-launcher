@@ -166,6 +166,10 @@
       "types": "./dist/types/evernote/index.d.ts",
       "import": "./dist/evernote/index.js"
     },
+    "./fantastical": {
+      "types": "./dist/types/fantastical/index.d.ts",
+      "import": "./dist/fantastical/index.js"
+    },
     "./fsnotes": {
       "types": "./dist/types/fsnotes/index.d.ts",
       "import": "./dist/fsnotes/index.js"
