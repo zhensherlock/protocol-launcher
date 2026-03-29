@@ -36,6 +36,11 @@ To minimize bundle size, import specific modules directly:
 
 ::: code-group
 
+```typescript [cal2todo]
+// Only imports Cal2Todo related code
+import { add } from 'protocol-launcher/cal2todo'
+```
+
 ```typescript [cherry studio]
 // Only imports Cherry Studio related code
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -128,8 +133,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)

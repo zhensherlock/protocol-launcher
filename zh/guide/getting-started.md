@@ -36,6 +36,11 @@ $ bun add protocol-launcher
 
 ::: code-group
 
+```typescript [cal2todo]
+// 仅导入 Cal2Todo 相关代码
+import { add } from 'protocol-launcher/cal2todo'
+```
+
 ```typescript [cherry studio]
 // 仅导入 Cherry Studio 相关代码
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -128,8 +133,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)

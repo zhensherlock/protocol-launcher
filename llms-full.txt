@@ -1647,6 +1647,278 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'appflowy.'}}open()
 ---
 
 ---
+url: /protocol-launcher/apps/appigo-todo.md
+---
+
+# Appigo Todo
+
+[TaskFire](https://appigo.com/) (formerly Todo Cloud) is a powerful to-do list app and task manager that helps you develop positive habits and achieve goals. **Protocol Launcher** allows you to generate deep links to view lists, tasks, projects and create new tasks in TaskFire.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Show All List
+
+Show all lists in TaskFire.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showAllList' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showAllList()
+```
+
+### Show Focus List
+
+Show the focus list in TaskFire.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showFocusList' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showFocusList()
+```
+
+### Show Starred Tasks
+
+Show starred tasks in TaskFire.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showStarredTasks' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showStarredTasks()
+```
+
+### Show Inbox
+
+Show inbox in TaskFire.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showInbox' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showInbox()
+```
+
+### Show List
+
+Show a specific list by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showList' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showList({
+  name: 'Shopping',
+})
+```
+
+### Show Task
+
+Show a specific task by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showTask({
+  name: 'Buy milk',
+})
+```
+
+### Show Project
+
+Show a specific project by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showProject' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showProject({
+  name: 'Home Renovation',
+})
+```
+
+### Show Checklist
+
+Show a specific checklist by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showChecklist' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showChecklist({
+  name: 'Grocery List',
+})
+```
+
+### Create Task
+
+Create a new task with optional due date, priority, note, and recurrence settings.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createTask' : 'appigoTodo' }} } from '{{ importPath }}'
+
+// Create task with due date and priority
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}createTask({
+  name: 'Call doctor',
+  dueDate: '2024-12-31',
+  priority: 1,
+})
+
+// Create task with note and weekly repeat
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}createTask({
+  name: 'Weekly report',
+  note: 'Submit to manager',
+  repeat: 1,
+})
+
+// Create task with advanced repeat (every Monday and Wednesday)
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}createTask({
+  name: 'Team meeting',
+  repeat: 50,
+  advancedRepeat: 'Every mon and wed',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/appigo-todo.md
+---
+
+# Appigo Todo
+
+[TaskFire](https://appigo.com/)（原名 Todo Cloud）是一款强大的待办事项应用和任务管理器，帮助您培养积极习惯并实现目标。**Protocol Launcher** 允许您生成深度链接以在 TaskFire 中查看列表、任务、项目和创建新任务。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 显示所有列表
+
+显示 TaskFire 中的所有列表。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showAllList' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showAllList()
+```
+
+### 显示焦点列表
+
+显示 TaskFire 中的焦点列表。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showFocusList' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showFocusList()
+```
+
+### 显示星标任务
+
+显示 TaskFire 中的星标任务。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showStarredTasks' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showStarredTasks()
+```
+
+### 显示收件箱
+
+显示 TaskFire 中的收件箱。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showInbox' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showInbox()
+```
+
+### 显示列表
+
+按名称显示特定列表。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showList' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showList({
+  name: 'Shopping',
+})
+```
+
+### 显示任务
+
+按名称显示特定任务。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showTask({
+  name: 'Buy milk',
+})
+```
+
+### 显示项目
+
+按名称显示特定项目。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showProject' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showProject({
+  name: 'Home Renovation',
+})
+```
+
+### 显示清单
+
+按名称显示特定清单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showChecklist' : 'appigoTodo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}showChecklist({
+  name: 'Grocery List',
+})
+```
+
+### 创建任务
+
+创建新任务，可选设置截止日期、优先级、备注和重复规则。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createTask' : 'appigoTodo' }} } from '{{ importPath }}'
+
+// 创建带截止日期和优先级的任务
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}createTask({
+  name: 'Call doctor',
+  dueDate: '2024-12-31',
+  priority: 1,
+})
+
+// 创建带备注和每周重复的任务
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}createTask({
+  name: 'Weekly report',
+  note: 'Submit to manager',
+  repeat: 1,
+})
+
+// 创建高级重复任务（每周一和周三）
+const url = {{currentMethod === 'On-Demand' ? '' : 'appigoTodo.'}}createTask({
+  name: 'Team meeting',
+  repeat: 50,
+  advancedRepeat: 'Every mon and wed',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/apple-map.md
 ---
 
@@ -2694,6 +2966,108 @@ import { {{ currentMethod === 'On-Demand' ? 'tags' : 'bear' }} } from '{{ import
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
   token: '123456-123456-123456',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/cal2todo.md
+---
+
+# Cal2Todo
+
+[Cal2Todo](https://apps.apple.com/sg/app/cal2todo/id475987733) is a simple calendar and task manager for iOS. **Protocol Launcher** allows you to generate deep links to add events to Cal2Todo.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'cal2todo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}open()
+```
+
+### Add Event
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'cal2todo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}add({
+  title: 'Meeting',
+  notes: 'Discuss project roadmap',
+})
+```
+
+### Add Event with Callback URLs
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'cal2todo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}add({
+  title: 'Meeting',
+  xSuccess: 'myapp://ok',
+  xSource: 'myapp',
+  xError: 'myapp://cancel',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/cal2todo.md
+---
+
+# Cal2Todo
+
+[Cal2Todo](https://apps.apple.com/sg/app/cal2todo/id475987733) 是一款适用于 iOS 的简单日历和任务管理器。**Protocol Launcher** 允许您生成深度链接以向 Cal2Todo 添加事件。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'cal2todo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}open()
+```
+
+### 添加事件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'cal2todo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}add({
+  title: 'Meeting',
+  notes: 'Discuss project roadmap',
+})
+```
+
+### 添加带回调 URL 的事件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'cal2todo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}add({
+  title: 'Meeting',
+  xSuccess: 'myapp://ok',
+  xSource: 'myapp',
+  xError: 'myapp://cancel',
 })
 ```
 
@@ -4176,6 +4550,11 @@ To minimize bundle size, import specific modules directly:
 
 ::: code-group
 
+```typescript [cal2todo]
+// Only imports Cal2Todo related code
+import { add } from 'protocol-launcher/cal2todo'
+```
+
 ```typescript [cherry studio]
 // Only imports Cherry Studio related code
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -4268,8 +4647,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
@@ -12201,8 +12582,10 @@ Currently, we support the following applications:
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
@@ -12769,6 +13152,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -12872,6 +13256,11 @@ $ bun add protocol-launcher
 
 ::: code-group
 
+```typescript [cal2todo]
+// 仅导入 Cal2Todo 相关代码
+import { add } from 'protocol-launcher/cal2todo'
+```
+
 ```typescript [cherry studio]
 // 仅导入 Cherry Studio 相关代码
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -12964,8 +13353,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
