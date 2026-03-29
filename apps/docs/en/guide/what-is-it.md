@@ -60,6 +60,7 @@ Currently, we support the following applications:
 - [Longshot](../apps/longshot.md)
 - [macOS](../apps/macos.md)
 - [MacVim](../apps/macvim.md)
+- [Mail Assistant](../apps/mail-assistant.md)
 - [Microsoft Edge](../apps/microsoft-edge.md)
 - [Motrix](../apps/motrix.md)
 - [Navicat](../apps/navicat.md)

@@ -210,6 +210,10 @@
       "types": "./dist/types/macos/index.d.ts",
       "import": "./dist/macos/index.js"
     },
+    "./mail-assistant": {
+      "types": "./dist/types/mail-assistant/index.d.ts",
+      "import": "./dist/mail-assistant/index.js"
+    },
     "./macvim": {
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"

@@ -69,6 +69,7 @@ export default defineAdditionalConfig({
           { text: 'Longshot', link: '/zh/apps/longshot' },
           { text: 'macOS', link: '/zh/apps/macos' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
+          { text: 'Mail Assistant', link: '/zh/apps/mail-assistant' },
           { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
           { text: 'Motrix', link: '/zh/apps/motrix' },
           { text: 'Navicat', link: '/zh/apps/navicat' },
