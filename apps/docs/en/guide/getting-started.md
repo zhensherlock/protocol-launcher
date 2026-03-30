@@ -183,6 +183,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Overcast](../apps/overcast.md)
 - [PearAI](../apps/pearai.md)
 - [Pika](../apps/pika.md)
+- [Pleco](../apps/pleco.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Qoder](../apps/qoder.md)

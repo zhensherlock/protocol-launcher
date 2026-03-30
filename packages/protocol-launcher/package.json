@@ -302,6 +302,10 @@
       "types": "./dist/types/pika/index.d.ts",
       "import": "./dist/pika/index.js"
     },
+    "./pleco": {
+      "types": "./dist/types/pleco/index.d.ts",
+      "import": "./dist/pleco/index.js"
+    },
     "./pycharm": {
       "types": "./dist/types/pycharm/index.d.ts",
       "import": "./dist/pycharm/index.js"

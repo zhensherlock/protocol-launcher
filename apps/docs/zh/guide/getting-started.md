@@ -183,6 +183,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Overcast](../apps/overcast.md)
 - [PearAI](../apps/pearai.md)
 - [Pika](../apps/pika.md)
+- [Pleco](../apps/pleco.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Qoder](../apps/qoder.md)

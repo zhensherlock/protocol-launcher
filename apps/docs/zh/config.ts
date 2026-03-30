@@ -90,6 +90,7 @@ export default defineAdditionalConfig({
           { text: 'Overcast', link: '/zh/apps/overcast' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'Pika', link: '/zh/apps/pika' },
+          { text: 'Pleco', link: '/zh/apps/pleco' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'Qoder', link: '/zh/apps/qoder' },
