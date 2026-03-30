@@ -202,6 +202,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./ipgmail": {
+      "types": "./dist/types/ipgmail/index.d.ts",
+      "import": "./dist/ipgmail/index.js"
+    },
     "./interact": {
       "types": "./dist/types/interact/index.d.ts",
       "import": "./dist/interact/index.js"

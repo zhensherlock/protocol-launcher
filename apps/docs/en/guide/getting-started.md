@@ -161,6 +161,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Instapaper](../apps/instapaper.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Interact Scratchpad](../apps/interact.md)
+- [iPGMail](../apps/ipgmail.md)
 - [Itsycal](../apps/itsycal.md)
 - [Jump Desktop](../apps/jump-desktop.md)
 - [Kaleidoscope](../apps/kaleidoscope.md)
