@@ -206,6 +206,10 @@
       "types": "./dist/types/interact/index.d.ts",
       "import": "./dist/interact/index.js"
     },
+    "./instapaper": {
+      "types": "./dist/types/instapaper/index.d.ts",
+      "import": "./dist/instapaper/index.js"
+    },
     "./itsycal": {
       "types": "./dist/types/itsycal/index.d.ts",
       "import": "./dist/itsycal/index.js"

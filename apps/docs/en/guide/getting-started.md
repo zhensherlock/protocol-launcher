@@ -158,6 +158,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hookmark](../apps/hookmark.md)
 - [iCab Mobile](../apps/icab-mobile.md)
+- [Instapaper](../apps/instapaper.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Interact Scratchpad](../apps/interact.md)
 - [Itsycal](../apps/itsycal.md)

@@ -65,6 +65,7 @@ export default defineAdditionalConfig({
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },
           { text: 'iCab Mobile', link: '/zh/apps/icab-mobile' },
+          { text: 'Instapaper', link: '/zh/apps/instapaper' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
           { text: 'Interact Scratchpad', link: '/zh/apps/interact' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
