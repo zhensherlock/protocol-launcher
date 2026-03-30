@@ -190,6 +190,10 @@
       "types": "./dist/types/hbuilderx/index.d.ts",
       "import": "./dist/hbuilderx/index.js"
     },
+    "./hookmark": {
+      "types": "./dist/types/hookmark/index.d.ts",
+      "import": "./dist/hookmark/index.js"
+    },
     "./idea": {
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
