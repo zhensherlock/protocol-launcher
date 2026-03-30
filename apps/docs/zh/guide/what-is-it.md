@@ -77,6 +77,7 @@ layout: doc
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)
+- [Overcast](../apps/overcast.md)
 - [PearAI](../apps/pearai.md)
 - [Pika](../apps/pika.md)
 - [PhpStorm](../apps/phpstorm.md)
