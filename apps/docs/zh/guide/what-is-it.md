@@ -71,6 +71,7 @@ layout: doc
 - [miCal](../apps/mical.md)
 - [Microsoft Edge](../apps/microsoft-edge.md)
 - [Motrix](../apps/motrix.md)
+- [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
 - [Nova](../apps/nova.md)
 - [OpenCode](../apps/opencode.md)

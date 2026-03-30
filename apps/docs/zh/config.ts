@@ -81,6 +81,7 @@ export default defineAdditionalConfig({
           { text: 'miCal', link: '/zh/apps/mical' },
           { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
           { text: 'Motrix', link: '/zh/apps/motrix' },
+          { text: 'MultiTimer', link: '/zh/apps/multi-timer' },
           { text: 'Navicat', link: '/zh/apps/navicat' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },

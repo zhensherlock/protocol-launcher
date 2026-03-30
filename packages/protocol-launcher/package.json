@@ -258,6 +258,10 @@
       "types": "./dist/types/microsoft-edge/index.d.ts",
       "import": "./dist/microsoft-edge/index.js"
     },
+    "./multi-timer": {
+      "types": "./dist/types/multi-timer/index.d.ts",
+      "import": "./dist/multi-timer/index.js"
+    },
     "./motrix": {
       "types": "./dist/types/motrix/index.d.ts",
       "import": "./dist/motrix/index.js"
