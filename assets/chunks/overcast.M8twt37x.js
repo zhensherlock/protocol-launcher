@@ -1,0 +1,1 @@
+import{i as c}from"./index.CWwLnpeZ.js";function e(s){let{url:t,xSuccess:r}=s;return`overcast://x-callback-url/add${c({url:t,...r?{"x-success":r}:{}})}`}function o(){return"overcast://"}const u={url:"https://example.com/podcast/rss"};export{u as a,o as e,e as t};

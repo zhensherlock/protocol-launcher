@@ -6056,7 +6056,9 @@ For detailed usage instructions for each application, please refer to their resp
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [Pika](../apps/pika.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -9883,6 +9885,118 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'opencode.'}}openProject({
 ---
 
 ---
+url: /protocol-launcher/apps/opener.md
+---
+
+# Opener
+
+[Opener](https://www.opener.link/) is an iOS app that allows you to open links from the web in other apps instead. **Protocol Launcher** allows you to generate deep links to show options and store product details in Opener.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Show Options
+
+Launch Opener and show the available options to open a given URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showOptions' : 'opener' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opener.'}}showOptions({
+  url: 'https://twitter.com/piercedavid/status/594646584232542208',
+})
+```
+
+### Show Options (Disable Auto Open)
+
+Launch Opener and show the available options without automatic opening.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showOptions' : 'opener' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opener.'}}showOptions({
+  url: 'https://example.com',
+  allowAutoOpen: false,
+})
+```
+
+### Show Store Product Details
+
+Show the details of an iTunes product within Opener in an SKStoreProductViewController or an iOS store app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showStoreProductDetails' : 'opener' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opener.'}}showStoreProductDetails({
+  id: '989565871',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/opener.md
+---
+
+# Opener
+
+[Opener](https://www.opener.link/) 是一款 iOS 应用，允许你在其他应用中打开来自网页的链接。**Protocol Launcher** 允许你生成深度链接，用于在 Opener 中显示选项和商店产品详情。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 显示选项
+
+启动 Opener 并显示打开给定 URL 的可用选项。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showOptions' : 'opener' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opener.'}}showOptions({
+  url: 'https://twitter.com/piercedavid/status/594646584232542208',
+})
+```
+
+### 显示选项（禁用自动打开）
+
+启动 Opener 并显示可用选项，但不进行自动打开。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showOptions' : 'opener' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opener.'}}showOptions({
+  url: 'https://example.com',
+  allowAutoOpen: false,
+})
+```
+
+### 显示商店产品详情
+
+在 Opener 中的 SKStoreProductViewController 或 iOS 商店应用中显示 iTunes 产品的详情。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showStoreProductDetails' : 'opener' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'opener.'}}showStoreProductDetails({
+  id: '989565871',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/orchids.md
 ---
 
@@ -9932,6 +10046,110 @@ url: /protocol-launcher/zh/apps/orchids.md
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'orchids' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'orchids.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/overcast.md
+---
+
+# Overcast
+
+[Overcast](https://overcast.fm/) is a popular podcast app for iOS and macOS. **Protocol Launcher** allows you to generate deep links to subscribe to podcasts and open Overcast.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'overcast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}open()
+```
+
+### Add Podcast Subscription
+
+Subscribe to a podcast RSS feed in Overcast using x-callback-url standard.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'overcast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
+  url: 'https://example.com/podcast/rss',
+})
+```
+
+### Add Podcast Subscription with Callback
+
+Subscribe with a callback URL after successfully subscribing.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'overcast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
+  url: 'https://example.com/podcast/rss',
+  xSuccess: 'myapp://success',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/overcast.md
+---
+
+# Overcast
+
+[Overcast](https://overcast.fm/) 是一款适用于 iOS 和 macOS 的热门播客应用程序。**Protocol Launcher** 允许您生成深度链接以订阅播客和打开 Overcast。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'overcast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}open()
+```
+
+### 订阅播客
+
+使用 x-callback-url 标准在 Overcast 中订阅播客 RSS 源。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'overcast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
+  url: 'https://example.com/podcast/rss',
+})
+```
+
+### 带回调的播客订阅
+
+订阅成功后会跳转到回调 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'overcast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
+  url: 'https://example.com/podcast/rss',
+  xSuccess: 'myapp://success',
+})
 ```
 
 ---
@@ -15101,7 +15319,9 @@ Currently, we support the following applications:
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [Pika](../apps/pika.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -15684,7 +15904,9 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [Pika](../apps/pika.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -15900,7 +16122,9 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
+* [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [Pika](../apps/pika.md)
 * [PhpStorm](../apps/phpstorm.md)
