@@ -278,6 +278,10 @@
       "types": "./dist/types/opencode/index.d.ts",
       "import": "./dist/opencode/index.js"
     },
+    "./opener": {
+      "types": "./dist/types/opener/index.d.ts",
+      "import": "./dist/opener/index.js"
+    },
     "./orchids": {
       "types": "./dist/types/orchids/index.d.ts",
       "import": "./dist/orchids/index.js"

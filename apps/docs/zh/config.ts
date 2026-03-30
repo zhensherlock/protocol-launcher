@@ -85,6 +85,7 @@ export default defineAdditionalConfig({
           { text: 'Navicat', link: '/zh/apps/navicat' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
+          { text: 'Opener', link: '/zh/apps/opener' },
           { text: 'Orchids', link: '/zh/apps/orchids' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'Pika', link: '/zh/apps/pika' },

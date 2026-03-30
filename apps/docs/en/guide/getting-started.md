@@ -178,6 +178,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Navicat](../apps/navicat.md)
 - [Nova](../apps/nova.md)
 - [OpenCode](../apps/opencode.md)
+- [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)
 - [PearAI](../apps/pearai.md)
 - [Pika](../apps/pika.md)
