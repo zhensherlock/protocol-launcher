@@ -6039,6 +6039,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
+* [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -6048,8 +6049,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
+* [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
+* [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
@@ -7004,6 +7007,150 @@ import { {{ currentMethod === 'On-Demand' ? 'scratchpad' : 'interact' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'interact.'}}scratchpad({
   text: 'John Doe\njohn@example.com\n888-555-1234',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/ipgmail.md
+---
+
+# iPGMail
+
+[iPGMail](https://ipgmail.com/) is an OpenPGP encryption tool for iOS and macOS. **Protocol Launcher** allows you to generate deep links to encrypt, decrypt, sign, and compose encrypted emails in iPGMail.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Compose
+
+Compose a new encrypted email directly in iPGMail.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compose' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}compose({
+  text: 'This is a test...',
+})
+```
+
+### Decrypt
+
+Decrypt a PGP message and return the status to the caller.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'decrypt' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}decrypt({
+  pgpmsg: 'clipboard',
+  result: 'clipboard',
+})
+```
+
+### Encrypt
+
+Encrypt a block of plaintext and either save it to a file or return it to the requesting app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'encrypt' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}encrypt({
+  datasource: 'clipboard',
+  keyid: '47E3234C',
+  result: 'clipboard',
+})
+```
+
+### Sign
+
+Sign a block of plaintext and either save it to a file or return it to the requesting app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sign' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}sign({
+  datasource: 'clipboard',
+  signkey: '47E3234C',
+  result: 'clipboard',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/ipgmail.md
+---
+
+# iPGMail
+
+[iPGMail](https://ipgmail.com/) 是一款适用于 iOS 和 macOS 的 OpenPGP 加密工具。**Protocol Launcher** 允许您生成深度链接以在 iPGMail 中加密、解密、签名和撰写加密邮件。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 撰写邮件
+
+直接在 iPGMail 中撰写新的加密邮件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compose' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}compose({
+  text: 'This is a test...',
+})
+```
+
+### 解密
+
+解密 PGP 消息并将状态返回给调用者。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'decrypt' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}decrypt({
+  pgpmsg: 'clipboard',
+  result: 'clipboard',
+})
+```
+
+### 加密
+
+加密一段纯文本，并将其保存到文件或返回给请求的应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'encrypt' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}encrypt({
+  datasource: 'clipboard',
+  keyid: '47E3234C',
+  result: 'clipboard',
+})
+```
+
+### 签名
+
+对一段纯文本进行签名，并将其保存到文件或返回给请求的应用程序。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sign' : 'ipgmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ipgmail.'}}sign({
+  datasource: 'clipboard',
+  signkey: '47E3234C',
+  result: 'clipboard',
 })
 ```
 
@@ -8922,6 +9069,136 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'mailAssistant.'}}sendMail({
 ---
 
 ---
+url: /protocol-launcher/apps/mical.md
+---
+
+# miCal
+
+[miCal](http://micalapp.com/en/) is a feature-rich calendar app for Apple's iOS iPhone and iPad, offering a modern design optimized for iOS 16. It provides 8 different views, tasks/reminders support, natural language input, weather integration, birthday reminders, and seamless synchronization with iCloud, Google Calendar, Outlook, Exchange, and more. **Protocol Launcher** allows you to generate deep links to open miCal, show specific views, create events, and add reminders.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open miCal
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}open()
+```
+
+### Show View
+
+Open miCal with a predefined view (dashboard, day, week, weekagenda, month, year, or list).
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}show({
+  view: 'weekagenda',
+})
+```
+
+### Add Event
+
+Create an event in miCal using natural language input.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}add({
+  input: 'Lunch tomorrow at 12',
+  notes: 'Meeting with team',
+})
+```
+
+### Add Reminder
+
+Create a reminder in miCal.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addReminder' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}addReminder({
+  title: 'Buy groceries',
+  notes: 'Milk, eggs, bread',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/mical.md
+---
+
+# miCal
+
+[miCal](http://micalapp.com/en/) 是一款专为 Apple iOS iPhone 和 iPad 设计的多功能日历应用，采用针对 iOS 16 优化的现代设计。它提供 8 种不同的视图、任务/提醒支持、自然语言输入、天气集成、生日提醒，并与 iCloud、Google Calendar、Outlook、Exchange 等服务无缝同步。**Protocol Launcher** 允许您生成深度链接以打开 miCal、显示特定视图、创建事件和添加提醒。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 miCal
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}open()
+```
+
+### 显示视图
+
+使用预定义的视图打开 miCal（dashboard、day、week、weekagenda、month、year 或 list）。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}show({
+  view: 'weekagenda',
+})
+```
+
+### 添加事件
+
+使用自然语言输入在 miCal 中创建事件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}add({
+  input: 'Lunch tomorrow at 12',
+  notes: 'Meeting with team',
+})
+```
+
+### 添加提醒
+
+在 miCal 中创建提醒。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addReminder' : 'mical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}addReminder({
+  title: 'Buy groceries',
+  notes: 'Milk, eggs, bread',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/microsoft-edge.md
 ---
 
@@ -9163,6 +9440,146 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'motrix.'}}preferences()
 import { {{ currentMethod === 'On-Demand' ? 'about' : 'motrix' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'motrix.'}}about()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/multi-timer.md
+---
+
+# MultiTimer
+
+[MultiTimer](https://apps.apple.com/us/app/multitimer-multiple-timers/id973421278) is a versatile multiple timers app for iPhone, iPad, Mac, Apple Watch, and Apple Vision. **Protocol Launcher** allows you to generate deep links to start, stop, pause, and resume timers in MultiTimer.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Start Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  name: 'Lunch',
+})
+```
+
+### Start Timer with Board
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  name: 'Lunch',
+  board: 'Work',
+})
+```
+
+### Stop Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stopTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}stopTimer({
+  name: 'Lunch',
+})
+```
+
+### Pause Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pauseTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}pauseTimer({
+  name: 'Lunch',
+})
+```
+
+### Resume Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'resumeTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
+  name: 'Lunch',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/multi-timer.md
+---
+
+# MultiTimer
+
+[MultiTimer](https://apps.apple.com/us/app/multitimer-multiple-timers/id973421278) 是一款适用于 iPhone、iPad、Mac、Apple Watch 和 Apple Vision 的多功能计时器应用。**Protocol Launcher** 允许您生成深度链接以在 MultiTimer 中启动、停止、暂停和恢复计时器。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 启动计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  name: 'Lunch',
+})
+```
+
+### 在指定面板上启动计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  name: 'Lunch',
+  board: 'Work',
+})
+```
+
+### 停止计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stopTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}stopTimer({
+  name: 'Lunch',
+})
+```
+
+### 暂停计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pauseTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}pauseTimer({
+  name: 'Lunch',
+})
+```
+
+### 恢复计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'resumeTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
+  name: 'Lunch',
+})
 ```
 
 ---
@@ -14667,6 +15084,7 @@ Currently, we support the following applications:
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
+* [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -14676,8 +15094,10 @@ Currently, we support the following applications:
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
+* [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
+* [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
@@ -15247,6 +15667,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
+* [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -15256,8 +15677,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
+* [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
+* [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
@@ -15460,6 +15883,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
+* [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
@@ -15469,8 +15893,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
+* [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Motrix](../apps/motrix.md)
+* [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
 * [OpenCode](../apps/opencode.md)
