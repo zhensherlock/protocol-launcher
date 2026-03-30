@@ -194,6 +194,10 @@
       "types": "./dist/types/hookmark/index.d.ts",
       "import": "./dist/hookmark/index.js"
     },
+    "./icab-mobile": {
+      "types": "./dist/types/icab-mobile/index.d.ts",
+      "import": "./dist/icab-mobile/index.js"
+    },
     "./idea": {
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"

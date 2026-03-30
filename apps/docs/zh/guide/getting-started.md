@@ -157,6 +157,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hookmark](../apps/hookmark.md)
+- [iCab Mobile](../apps/icab-mobile.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Interact Scratchpad](../apps/interact.md)
 - [Itsycal](../apps/itsycal.md)
