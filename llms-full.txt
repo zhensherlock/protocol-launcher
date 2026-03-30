@@ -6035,6 +6035,8 @@ For detailed usage instructions for each application, please refer to their resp
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iCab Mobile](../apps/icab-mobile.md)
+* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
@@ -6645,6 +6647,208 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSearch({
 import { {{ currentMethod === 'On-Demand' ? 'openSpotify' : 'hookmark' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/icab-mobile.md
+---
+
+# iCab Mobile
+
+[iCab Mobile](http://www.icab-mobile.de/index.html) is a web browser for the iPhone, iPad and Apple Watch. **Protocol Launcher** allows you to generate deep links to open URLs, add bookmarks, and search in iCab Mobile.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Browser
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}open()
+```
+
+### Open URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}openUrl({
+  url: 'https://www.example.com/',
+})
+```
+
+### Add Bookmark
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}addBookmark({
+  url: 'https://www.example.com/',
+  title: 'Example',
+})
+```
+
+### Add Bookmark with Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}addBookmark({
+  url: 'https://www.example.com/',
+  title: 'Example',
+  folder: 'Favorites',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}search({
+  query: 'hello world',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/icab-mobile.md
+---
+
+# iCab Mobile
+
+[iCab Mobile](http://www.icab-mobile.de/index.html) 是一款专为 iPhone、iPad 和 Apple Watch 设计的网页浏览器。**Protocol Launcher** 允许您生成深度链接以在 iCab Mobile 中打开 URL、添加书签和搜索。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}open()
+```
+
+### 打开 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}openUrl({
+  url: 'https://www.example.com/',
+})
+```
+
+### 添加书签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}addBookmark({
+  url: 'https://www.example.com/',
+  title: 'Example',
+})
+```
+
+### 添加到指定文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}addBookmark({
+  url: 'https://www.example.com/',
+  title: 'Example',
+  folder: 'Favorites',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'icabMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}search({
+  query: 'hello world',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/instapaper.md
+---
+
+# Instapaper
+
+[Instapaper](https://instapaper.com/) is a read-it-later service that allows you to save web pages and articles for later reading. **Protocol Launcher** allows you to generate deep links to add URLs to Instapaper using the x-callback-url standard.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Add URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'instapaper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'instapaper.'}}add({
+  url: 'https://example.com/article',
+  xSource: 'MyReader',
+  xSuccess: 'myapp://success',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/instapaper.md
+---
+
+# Instapaper
+
+[Instapaper](https://instapaper.com/) 是一项稍后阅读服务，允许您保存网页和文章以供以后阅读。**Protocol Launcher** 允许您使用 x-callback-url 标准生成深度链接以将 URL 添加到 Instapaper。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 添加 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'instapaper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'instapaper.'}}add({
+  url: 'https://example.com/article',
+  xSource: 'MyReader',
+  xSuccess: 'myapp://success',
+})
 ```
 
 ---
@@ -14459,6 +14663,8 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iCab Mobile](../apps/icab-mobile.md)
+* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
@@ -15037,6 +15243,8 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iCab Mobile](../apps/icab-mobile.md)
+* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
@@ -15248,6 +15456,8 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iCab Mobile](../apps/icab-mobile.md)
+* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)

@@ -54,6 +54,8 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iCab Mobile](../apps/icab-mobile.md)
+* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
