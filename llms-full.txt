@@ -5352,6 +5352,108 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'editorial.'}}command({
 ---
 
 ---
+url: /protocol-launcher/apps/equipd-bible.md
+---
+
+# Equipd Bible
+
+[Equipd Bible](https://www.equipd.me/) is an EPUB reader optimised for Bible study and ministry use. Compare multiple languages and translations side-by-side. **Protocol Launcher** allows you to generate deep links to open scriptures in Equipd Bible.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'equipdBible' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'equipdBible.'}}open()
+```
+
+### Lookup Scripture
+
+Lookup a scripture in Equipd Bible using the x-callback-url scheme. This is the most powerful method of integrating with the Equipd Bible app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'lookup' : 'equipdBible' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'equipdBible.'}}lookup({
+  scripture: 'John3:16',
+})
+```
+
+### Open Scripture
+
+Open a specific scripture in Equipd Bible using the basic URL scheme.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scripture' : 'equipdBible' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'equipdBible.'}}scripture({
+  scripture: '2Timothy3:15,16',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/equipd-bible.md
+---
+
+# Equipd Bible
+
+[Equipd Bible](https://www.equipd.me/) 是一款专为圣经学习和事工用途优化的 EPUB 阅读器。支持并排比较多种语言和译本。**Protocol Launcher** 允许您生成深度链接以在 Equipd Bible 中打开经文。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'equipdBible' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'equipdBible.'}}open()
+```
+
+### 查找经文
+
+使用 x-callback-url scheme 在 Equipd Bible 中查找经文。这是与 Equipd Bible 应用集成的最强大方式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'lookup' : 'equipdBible' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'equipdBible.'}}lookup({
+  scripture: 'John3:16',
+})
+```
+
+### 打开经文
+
+使用基本 URL scheme 在 Equipd Bible 中打开特定经文。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scripture' : 'equipdBible' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'equipdBible.'}}scripture({
+  scripture: '2Timothy3:15,16',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/evernote.md
 ---
 
@@ -5471,6 +5573,186 @@ Collection of live examples demonstrating how to integrate protocol-launcher wit
 
 1. Click any "Open in StackBlitz" button to explore the live example
 2. Framework-specific implementations show recommended integration patterns
+
+---
+
+---
+url: /protocol-launcher/apps/fantastical.md
+---
+
+# Fantastical
+
+[Fantastical](https://flexibits.com/fantastical) is a calendar and tasks app you won't be able to live without. Winner of the Apple Design Award and Mac App of the Year, Fantastical combines a beautiful interface with powerful features like natural language event creation, task management, and integration with Google Calendar, iCloud, Exchange, and more. **Protocol Launcher** allows you to generate deep links to create events and navigate dates in Fantastical.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Parse (Create Event)
+
+Create a new event in Fantastical using natural language input:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'parse' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}parse({
+  sentence: 'Lunch with John at 12pm tomorrow',
+})
+```
+
+Create a new event using structured parameters:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'parse' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}parse({
+  title: 'Team Meeting',
+  start: '2026-03-30 10:00',
+  end: '2026-03-30 11:00',
+  location: 'Conference Room A',
+  notes: 'Discuss Q2 roadmap',
+})
+```
+
+Create a reminder instead of an event:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'parse' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}parse({
+  title: 'Call Sarah',
+  reminder: true,
+  due: '2026-03-30 15:00',
+  notes: 'Discuss project update',
+})
+```
+
+### Show (Navigate to Date)
+
+Jump to today's date in Fantastical:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  date: 'today',
+})
+```
+
+Jump to a specific date:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  date: '2026-03-30',
+})
+```
+
+Jump to a date using natural language:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  date: 'next monday',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/fantastical.md
+---
+
+# Fantastical
+
+[Fantastical](https://flexibits.com/fantastical) 是一款您一旦使用就无法离开的日历和任务应用。Fantastical 荣获 Apple Design Award 和 Mac App of the Year 大奖，将精美的界面与强大的功能相结合，支持自然语言事件创建、任务管理，并可集成 Google Calendar、iCloud、Exchange 等多种日历服务。**Protocol Launcher** 允许您生成深度链接以在 Fantastical 中创建事件和导航日期。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### Parse（创建事件）
+
+使用自然语言输入在 Fantastical 中创建新事件：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'parse' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}parse({
+  sentence: '明天中午 12 点和 John 共进午餐',
+})
+```
+
+使用结构化参数创建新事件：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'parse' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}parse({
+  title: '团队会议',
+  start: '2026-03-30 10:00',
+  end: '2026-03-30 11:00',
+  location: 'A 会议室',
+  notes: '讨论第二季度路线图',
+})
+```
+
+创建提醒而不是事件：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'parse' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}parse({
+  title: '给 Sarah 打电话',
+  reminder: true,
+  due: '2026-03-30 15:00',
+  notes: '讨论项目更新',
+})
+```
+
+### Show（导航到日期）
+
+在 Fantastical 中跳转到今天：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  date: 'today',
+})
+```
+
+跳转到特定日期：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  date: '2026-03-30',
+})
+```
+
+使用自然语言跳转到日期：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  date: 'next monday',
+})
+```
 
 ---
 
@@ -5743,12 +6025,16 @@ For detailed usage instructions for each application, please refer to their resp
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
+* [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
+* [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
+* [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
+* [Hookmark](../apps/hookmark.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
@@ -5888,6 +6174,182 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openRepo({
 ---
 
 ---
+url: /protocol-launcher/apps/gladys.md
+---
+
+# Gladys
+
+[Gladys](http://www.bru.build/app/gladys) is a drag-and-drop shelf app for iPad that holds things you want to set aside, such as links, text snippets, map locations, contacts, images, photos, emails, messages and much more. **Protocol Launcher** allows you to generate deep links to create items and paste from clipboard in Gladys.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Create Item with Text
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  text: 'Hi There',
+  title: 'Greeting',
+  labels: 'Created Items,New Items',
+  note: 'Some Notes',
+})
+```
+
+### Create Item with URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  url: 'http://bru.build',
+  title: 'The Gladys Guy',
+  labels: 'Developer,iOS,macOS,Embedded',
+  note: 'Some Notes',
+})
+```
+
+### Create Item with Base64 Data
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  base64data: 'RXhhbXBsZSB0ZXh0IGZpbGUuCg==',
+  title: 'Test.txt',
+  labels: 'Text Files',
+  note: 'Pretending I am a file',
+})
+```
+
+### Paste Clipboard
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteClipboard' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard()
+```
+
+### Paste Clipboard with Title
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteClipboard' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
+  title: 'Override The Title',
+})
+```
+
+### Paste Clipboard with Labels and Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteClipboard' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
+  title: 'Override The Title',
+  labels: 'Pasted Items,New Items',
+  note: 'Some Notes',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/gladys.md
+---
+
+# Gladys
+
+[Gladys](http://www.bru.build/app/gladys) 是一款适用于 iPad 的拖放搁架应用，可以临时存储您想要放置的内容，例如链接、文本片段、地图位置、联系人、图像、照片、电子邮件、消息等等。**Protocol Launcher** 允许您生成深度链接以在 Gladys 中创建项目和从剪贴板粘贴。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 创建文本项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  text: 'Hi There',
+  title: 'Greeting',
+  labels: 'Created Items,New Items',
+  note: 'Some Notes',
+})
+```
+
+### 创建 URL 项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  url: 'http://bru.build',
+  title: 'The Gladys Guy',
+  labels: 'Developer,iOS,macOS,Embedded',
+  note: 'Some Notes',
+})
+```
+
+### 创建 Base64 数据项目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  base64data: 'RXhhbXBsZSB0ZXh0IGZpbGUuCg==',
+  title: 'Test.txt',
+  labels: 'Text Files',
+  note: 'Pretending I am a file',
+})
+```
+
+### 粘贴剪贴板
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteClipboard' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard()
+```
+
+### 粘贴剪贴板（带标题）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteClipboard' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
+  title: 'Override The Title',
+})
+```
+
+### 粘贴剪贴板（带标签和备注）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteClipboard' : 'gladys' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
+  title: 'Override The Title',
+  labels: 'Pasted Items,New Items',
+  note: 'Some Notes',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/goland.md
 ---
 
@@ -6019,6 +6481,170 @@ url: /protocol-launcher/zh/apps/hbuilderx.md
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'hbuilderx' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'hbuilderx.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/hookmark.md
+---
+
+# Hookmark
+
+[Hookmark](https://hookproductivity.com/) is a macOS app that lets you create contextual bookmarks and bidirectional links between files, emails, web pages, and more. **Protocol Launcher** allows you to generate deep links to open resources in Hookmark.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Hookmark
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}open()
+```
+
+### Open Address Book
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openAddressBook' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openAddressBook()
+```
+
+### Open Email
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmail' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openEmail({
+  id: '<CABc123xyz@mail.gmail.com>',
+})
+```
+
+### Open File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openFile({
+  path: '/Applications',
+  name: 'Applications',
+})
+```
+
+### Open Notes
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNotes' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openNotes()
+```
+
+### Open Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSearch' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSearch({
+  query: 'project',
+})
+```
+
+### Open Spotify
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSpotify' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/hookmark.md
+---
+
+# Hookmark
+
+[Hookmark](https://hookproductivity.com/) 是一款 macOS 应用程序，可让您在文件、电子邮件、网页等之间创建上下文书签和双向链接。**Protocol Launcher** 允许您生成深度链接以在 Hookmark 中打开资源。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Hookmark
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}open()
+```
+
+### 打开通讯录
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openAddressBook' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openAddressBook()
+```
+
+### 打开电子邮件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmail' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openEmail({
+  id: '<CABc123xyz@mail.gmail.com>',
+})
+```
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openFile({
+  path: '/Applications',
+  name: 'Applications',
+})
+```
+
+### 打开备忘录
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNotes' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openNotes()
+```
+
+### 打开搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSearch' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSearch({
+  query: 'project',
+})
+```
+
+### 打开 Spotify
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSpotify' : 'hookmark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
 ```
 
 ---
@@ -13823,12 +14449,16 @@ Currently, we support the following applications:
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
+* [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
+* [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
+* [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
+* [Hookmark](../apps/hookmark.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
@@ -14397,12 +15027,16 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
+* [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
+* [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
+* [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
+* [Hookmark](../apps/hookmark.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
@@ -14604,12 +15238,16 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [2Do](../apps/2do.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
+* [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
+* [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
 * [GitHub Desktop](../apps/github-desktop.md)
+* [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
+* [Hookmark](../apps/hookmark.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [Itsycal](../apps/itsycal.md)
