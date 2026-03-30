@@ -50,6 +50,7 @@ layout: doc
 - [Fantastical](../apps/fantastical.md)
 - [FSNotes](../apps/fsnotes.md)
 - [GitHub Desktop](../apps/github-desktop.md)
+- [Gladys](../apps/gladys.md)
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [IntelliJ IDEA](../apps/idea.md)

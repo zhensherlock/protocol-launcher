@@ -60,6 +60,7 @@ export default defineAdditionalConfig({
           { text: 'Fantastical', link: '/zh/apps/fantastical' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
+          { text: 'Gladys', link: '/zh/apps/gladys' },
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
