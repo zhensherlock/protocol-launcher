@@ -6084,11 +6084,13 @@ For detailed usage instructions for each application, please refer to their resp
 * [Thunder](../apps/thunder.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
+* [Trello](../apps/trello.md)
 * [uPic](../apps/upic.md)
 * [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
+* [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To?](../apps/whereto.md)
@@ -14919,6 +14921,158 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/trello.md
+---
+
+# Trello
+
+[Trello](https://trello.com/) is a collaboration tool that organizes your projects into boards. **Protocol Launcher** allows you to generate deep links to create boards and cards, and navigate to specific content in Trello.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Trello
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}open()
+```
+
+### Create Board
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createBoard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}createBoard({
+  name: 'My New Board',
+  organization: 'My Organization',
+  permission: 'private',
+  xSuccess: 'myapp://success',
+  xError: 'myapp://failure',
+})
+```
+
+### Create Card
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}createCard({
+  shortlink: '81QRDHnt',
+  name: 'MyCardName',
+  description: 'MyCardDescription',
+  listId: '526e7338ffa7dfb94d0084a7',
+})
+```
+
+### Show Board
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showBoard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}showBoard({
+  shortlink: '81QRDHnt',
+  xSource: 'MyTestApp',
+})
+```
+
+### Show Card
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}showCard({
+  id: '526e7338ffa7dfb94d0084a6',
+  xSource: 'MyTestApp',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/trello.md
+---
+
+# Trello
+
+[Trello](https://trello.com/) 是一款协作工具，可将您的项目组织成看板。**Protocol Launcher** 允许您生成深度链接以在 Trello 中创建看板和卡片，并导航到特定内容。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Trello
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}open()
+```
+
+### 创建看板
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createBoard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}createBoard({
+  name: 'My New Board',
+  organization: 'My Organization',
+  permission: 'private',
+  xSuccess: 'myapp://success',
+  xError: 'myapp://failure',
+})
+```
+
+### 创建卡片
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}createCard({
+  shortlink: '81QRDHnt',
+  name: 'MyCardName',
+  description: 'MyCardDescription',
+  listId: '526e7338ffa7dfb94d0084a7',
+})
+```
+
+### 显示看板
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showBoard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}showBoard({
+  shortlink: '81QRDHnt',
+  xSource: 'MyTestApp',
+})
+```
+
+### 显示卡片
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCard' : 'trello' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'trello.'}}showCard({
+  id: '526e7338ffa7dfb94d0084a6',
+  xSource: 'MyTestApp',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/upic.md
 ---
 
@@ -15777,6 +15931,236 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscodium.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/waterminder.md
+---
+
+# WaterMinder
+
+[WaterMinder](https://waterminder.com) is the leading hydration tracking app trusted by millions worldwide. **Protocol Launcher** allows you to generate deep links to log water intake, caffeine, and other beverages in WaterMinder.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}open()
+```
+
+### Add Water
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addWater' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addWater({
+  amount: 250,
+})
+```
+
+### Add Water with Time
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addWater' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addWater({
+  amount: 250,
+  time: '22/01/2026T13:17',
+})
+```
+
+### Add Caffeine
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addCaffeine' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addCaffeine({
+  amount: 115,
+})
+```
+
+### Add Caffeine with Time
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addCaffeine' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addCaffeine({
+  amount: 115,
+  time: '09/04/2026T13:17',
+})
+```
+
+### Add Other Drink
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addOther' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addOther({
+  amount: 250,
+  type: 'carbonated_water',
+})
+```
+
+### Add Other Drink with Time
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addOther' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addOther({
+  amount: 200,
+  type: 'coffee',
+  time: '09/04/2026T13:17',
+})
+```
+
+### Log Cup
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'logCup' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}logCup({
+  amount: 250,
+  cupName: 'my mug',
+})
+```
+
+### Log Cup with Time
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'logCup' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}logCup({
+  amount: 300,
+  cupName: 'Morning Glass',
+  time: '22/01/2026T08:00',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/waterminder.md
+---
+
+# WaterMinder
+
+[WaterMinder](https://waterminder.com) 是全球数百万用户信赖的领先饮水追踪应用。**Protocol Launcher** 允许您生成深度链接以在 WaterMinder 中记录饮水量、咖啡因和其他饮料摄入。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}open()
+```
+
+### 添加饮水
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addWater' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addWater({
+  amount: 250,
+})
+```
+
+### 添加饮水（带时间）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addWater' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addWater({
+  amount: 250,
+  time: '22/01/2026T13:17',
+})
+```
+
+### 添加咖啡因
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addCaffeine' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addCaffeine({
+  amount: 115,
+})
+```
+
+### 添加咖啡因（带时间）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addCaffeine' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addCaffeine({
+  amount: 115,
+  time: '09/04/2026T13:17',
+})
+```
+
+### 添加其他饮料
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addOther' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addOther({
+  amount: 250,
+  type: 'carbonated_water',
+})
+```
+
+### 添加其他饮料（带时间）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addOther' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}addOther({
+  amount: 200,
+  type: 'coffee',
+  time: '09/04/2026T13:17',
+})
+```
+
+### 记录杯子
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'logCup' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}logCup({
+  amount: 250,
+  cupName: 'my mug',
+})
+```
+
+### 记录杯子（带时间）
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'logCup' : 'waterminder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'waterminder.'}}logCup({
+  amount: 300,
+  cupName: 'Morning Glass',
+  time: '22/01/2026T08:00',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/webstorm.md
 ---
 
@@ -16001,11 +16385,13 @@ Currently, we support the following applications:
 * [Thunder](../apps/thunder.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
+* [Trello](../apps/trello.md)
 * [uPic](../apps/upic.md)
 * [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
+* [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To?](../apps/whereto.md)
@@ -16752,11 +17138,13 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Thunder](../apps/thunder.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
+* [Trello](../apps/trello.md)
 * [uPic](../apps/upic.md)
 * [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
+* [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To?](../apps/whereto.md)
@@ -16976,11 +17364,13 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Thunder](../apps/thunder.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
+* [Trello](../apps/trello.md)
 * [uPic](../apps/upic.md)
 * [Verdent](../apps/verdent.md)
 * [VS Code](../apps/vscode.md)
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
+* [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To?](../apps/whereto.md)
