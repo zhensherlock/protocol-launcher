@@ -366,6 +366,10 @@
       "types": "./dist/types/textastic/index.d.ts",
       "import": "./dist/textastic/index.js"
     },
+    "./trello": {
+      "types": "./dist/types/trello/index.d.ts",
+      "import": "./dist/trello/index.js"
+    },
     "./textmate": {
       "types": "./dist/types/textmate/index.d.ts",
       "import": "./dist/textmate/index.js"

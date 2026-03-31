@@ -104,6 +104,7 @@ Currently, we support the following applications:
 - [Thunder](../apps/thunder.md)
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
+- [Trello](../apps/trello.md)
 - [uPic](../apps/upic.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)

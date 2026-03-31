@@ -206,6 +206,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Thunder](../apps/thunder.md)
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
+- [Trello](../apps/trello.md)
 - [uPic](../apps/upic.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
