@@ -97,6 +97,7 @@ layout: doc
 - [Steam](../apps/steam.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
+- [Terminology](../apps/terminology.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)
 - [TextMate](../apps/textmate.md)

@@ -366,6 +366,10 @@
       "types": "./dist/types/telegram/index.d.ts",
       "import": "./dist/telegram/index.js"
     },
+    "./terminology": {
+      "types": "./dist/types/terminology/index.d.ts",
+      "import": "./dist/terminology/index.js"
+    },
     "./termius": {
       "types": "./dist/types/termius/index.d.ts",
       "import": "./dist/termius/index.js"

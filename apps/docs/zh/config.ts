@@ -107,6 +107,7 @@ export default defineAdditionalConfig({
           { text: 'Steam', link: '/zh/apps/steam' },
           { text: 'Tally', link: '/zh/apps/tally' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
+          { text: 'Terminology', link: '/zh/apps/terminology' },
           { text: 'Termius', link: '/zh/apps/termius' },
           { text: 'Textastic', link: '/zh/apps/textastic' },
           { text: 'TextMate', link: '/zh/apps/textmate' },
