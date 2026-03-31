@@ -199,6 +199,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Steam](../apps/steam.md)
 - [Telegram](../apps/telegram.md)
 - [Termius](../apps/termius.md)
+- [Textastic](../apps/textastic.md)
 - [TextMate](../apps/textmate.md)
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)

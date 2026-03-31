@@ -362,6 +362,10 @@
       "types": "./dist/types/termius/index.d.ts",
       "import": "./dist/termius/index.js"
     },
+    "./textastic": {
+      "types": "./dist/types/textastic/index.d.ts",
+      "import": "./dist/textastic/index.js"
+    },
     "./textmate": {
       "types": "./dist/types/textmate/index.d.ts",
       "import": "./dist/textmate/index.js"
