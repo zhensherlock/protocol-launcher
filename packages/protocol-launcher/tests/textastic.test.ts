@@ -109,6 +109,23 @@ describe('textastic', () => {
     )
   })
 
+  test('append should return a URL with path', () => {
+    const url = textastic.append({
+      path: 'test',
+      name: 'file.txt',
+      text: 'content',
+    })
+    expect(url).toBe('textastic://x-callback-url/append?path=test&name=file.txt&text=content')
+  })
+
+  test('append should return a URL with snippet', () => {
+    const url = textastic.append({
+      name: 'file.txt',
+      snippet: 'foo $0 bar',
+    })
+    expect(url).toBe('textastic://x-callback-url/append?name=file.txt&snippet=foo%20%240%20bar')
+  })
+
   test('replace should return a URL with location, name and text', () => {
     const url = textastic.replace({
       location: 'iCloud',
@@ -136,6 +153,23 @@ describe('textastic', () => {
     expect(url).toBe(
       'textastic://x-callback-url/replace?location=external&name=file.txt&externalUUID=62E8D362-7DFA-413C-874E-20C1D98B17C0&text=new%20content',
     )
+  })
+
+  test('replace should return a URL with path', () => {
+    const url = textastic.replace({
+      path: 'test',
+      name: 'file.txt',
+      text: 'content',
+    })
+    expect(url).toBe('textastic://x-callback-url/replace?path=test&name=file.txt&text=content')
+  })
+
+  test('replace should return a URL with snippet', () => {
+    const url = textastic.replace({
+      name: 'file.txt',
+      snippet: 'foo $0 bar',
+    })
+    expect(url).toBe('textastic://x-callback-url/replace?name=file.txt&snippet=foo%20%240%20bar')
   })
 
   test('reloadCustomizations should return a URL', () => {
