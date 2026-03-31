@@ -434,6 +434,10 @@
       "types": "./dist/types/windsurf/index.d.ts",
       "import": "./dist/windsurf/index.js"
     },
+    "./working-copy": {
+      "types": "./dist/types/working-copy/index.d.ts",
+      "import": "./dist/working-copy/index.js"
+    },
     "./xcode": {
       "types": "./dist/types/xcode/index.d.ts",
       "import": "./dist/xcode/index.js"

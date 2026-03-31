@@ -124,6 +124,7 @@ export default defineAdditionalConfig({
           { text: 'WeMeet', link: '/zh/apps/wemeet' },
           { text: 'Where To?', link: '/zh/apps/whereto' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
+          { text: 'Working Copy', link: '/zh/apps/working-copy' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Zed', link: '/zh/apps/zed' },
         ],
