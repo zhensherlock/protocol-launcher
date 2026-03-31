@@ -119,6 +119,7 @@ export default defineAdditionalConfig({
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
+          { text: 'WaterMinder', link: '/zh/apps/waterminder' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'WeMeet', link: '/zh/apps/wemeet' },
           { text: 'Where To?', link: '/zh/apps/whereto' },
