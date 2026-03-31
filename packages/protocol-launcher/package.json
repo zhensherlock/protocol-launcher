@@ -346,6 +346,10 @@
       "types": "./dist/types/sourcetree/index.d.ts",
       "import": "./dist/sourcetree/index.js"
     },
+    "./ftstreets": {
+      "types": "./dist/types/ftstreets/index.d.ts",
+      "import": "./dist/ftstreets/index.js"
+    },
     "./steam": {
       "types": "./dist/types/steam/index.d.ts",
       "import": "./dist/steam/index.js"

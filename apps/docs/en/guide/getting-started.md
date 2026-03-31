@@ -152,6 +152,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Evernote](../apps/evernote.md)
 - [Fantastical](../apps/fantastical.md)
 - [FSNotes](../apps/fsnotes.md)
+- [Streets](../apps/ftstreets.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [Gladys](../apps/gladys.md)
 - [GoLand](../apps/goland.md)

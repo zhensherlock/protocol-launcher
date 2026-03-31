@@ -59,6 +59,7 @@ export default defineAdditionalConfig({
           { text: 'Evernote', link: '/zh/apps/evernote' },
           { text: 'Fantastical', link: '/zh/apps/fantastical' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
+          { text: 'Streets', link: '/zh/apps/ftstreets' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'Gladys', link: '/zh/apps/gladys' },
           { text: 'GoLand', link: '/zh/apps/goland' },
