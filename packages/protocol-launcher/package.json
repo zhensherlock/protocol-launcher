@@ -334,6 +334,10 @@
       "types": "./dist/types/shopi/index.d.ts",
       "import": "./dist/shopi/index.js"
     },
+    "./simple-scan": {
+      "types": "./dist/types/simple-scan/index.d.ts",
+      "import": "./dist/simple-scan/index.js"
+    },
     "./sketch": {
       "types": "./dist/types/sketch/index.d.ts",
       "import": "./dist/sketch/index.js"
@@ -353,6 +357,10 @@
     "./steam": {
       "types": "./dist/types/steam/index.d.ts",
       "import": "./dist/steam/index.js"
+    },
+    "./tally": {
+      "types": "./dist/types/tally/index.d.ts",
+      "import": "./dist/tally/index.js"
     },
     "./telegram": {
       "types": "./dist/types/telegram/index.d.ts",

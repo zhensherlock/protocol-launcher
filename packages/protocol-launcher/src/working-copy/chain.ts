@@ -1,5 +1,3 @@
-import { qs } from '@protocol-launcher/shared'
-
 /**
  * Chain command item definition.
  */
@@ -103,7 +101,7 @@ export function chain(payload: Chain) {
     }
   }
 
-  const queryString = params.length > 0 ? `?${params.join('&')}` : ''
+  const queryString = `?${params.join('&')}`
 
   return `working-copy://x-callback-url/chain${queryString}`
 }

@@ -94,6 +94,7 @@ layout: doc
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Steam](../apps/steam.md)
+- [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)
