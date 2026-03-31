@@ -6030,6 +6030,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
+* [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
@@ -6068,6 +6069,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
+* [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
@@ -6088,6 +6090,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [Where To?](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
@@ -11843,6 +11846,166 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'rustrover.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/shopi.md
+---
+
+# Shopi
+
+[Shopi](http://sapient-pair.com/shopi/) is a clever shopping list app for iPhone that's focused on helping you capture and shop for the items you want to buy. **Protocol Launcher** allows you to generate deep links to add items, create lists, and manage your shopping lists in Shopi.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Show Lists
+
+Show all shopping lists in Shopi.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showLists' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}showLists()
+```
+
+### Show List
+
+Show a specific shopping list in Shopi.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showList' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}showList({
+  name: 'groceries',
+})
+```
+
+### Create List
+
+Create a new shopping list in Shopi.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createList' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}createList({
+  name: 'weekly shopping',
+})
+```
+
+### Add Item
+
+Add an item to a shopping list in Shopi.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addItem' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}addItem({
+  list: 'groceries',
+  name: 'milk',
+  amount: '2',
+})
+```
+
+### Clear List
+
+Clear items from a shopping list in Shopi.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clearList' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}clearList({
+  name: 'groceries',
+  crossedOnly: 'yes',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/shopi.md
+---
+
+# Shopi
+
+[Shopi](http://sapient-pair.com/shopi/) 是一款专为 iPhone 设计的智能购物清单应用，专注于帮助您捕获和购买您想买的商品。**Protocol Launcher** 允许您生成深度链接以在 Shopi 中添加商品、创建列表和管理购物清单。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 显示所有列表
+
+显示 Shopi 中的所有购物清单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showLists' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}showLists()
+```
+
+### 显示列表
+
+显示 Shopi 中的特定购物清单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showList' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}showList({
+  name: 'groceries',
+})
+```
+
+### 创建列表
+
+在 Shopi 中创建新的购物清单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createList' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}createList({
+  name: 'weekly shopping',
+})
+```
+
+### 添加商品
+
+向 Shopi 的购物清单中添加商品。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addItem' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}addItem({
+  list: 'groceries',
+  name: 'milk',
+  amount: '2',
+})
+```
+
+### 清空列表
+
+清空 Shopi 中购物清单的商品。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clearList' : 'shopi' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'shopi.'}}clearList({
+  name: 'groceries',
+  crossedOnly: 'yes',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/shortcuts.md
 ---
 
@@ -13135,6 +13298,86 @@ import { {{ currentMethod === 'On-Demand' ? 'url' : 'steam' }} } from '{{ import
 const url = {{currentMethod === 'On-Demand' ? '' : 'steam.'}}url({
   page: 'StoreAppPage',
   param: '730',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/ftstreets.md
+---
+
+# Streets
+
+[Streets](https://www.futuretap.com/apps/streets) is the best way to browse Street View panoramas on iPhone, iPad, Apple Watch, and Mac. **Protocol Launcher** allows you to generate deep links to view Street View panoramas in Streets.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}open()
+```
+
+### View Panorama
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
+  location: { lat: 48.872112, lng: 2.332977 },
+  heading: 60,
+  pitch: 7,
+  title: 'Apple Store Opéra',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/ftstreets.md
+---
+
+# Streets
+
+[Streets](https://www.futuretap.com/apps/streets) 是在 iPhone、iPad、Apple Watch 和 Mac 上浏览街景全景图的最佳方式。**Protocol Launcher** 允许您生成深度链接以在 Streets 中查看街景全景图。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}open()
+```
+
+### 查看全景图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
+  location: { lat: 48.872112, lng: 2.332977 },
+  heading: 60,
+  pitch: 7,
+  title: 'Apple Store Opéra',
 })
 ```
 
@@ -15543,6 +15786,7 @@ Currently, we support the following applications:
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
+* [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
@@ -15581,6 +15825,7 @@ Currently, we support the following applications:
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
+* [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
@@ -15601,11 +15846,172 @@ Currently, we support the following applications:
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [Where To?](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 
 More applications will be added in the future.
+
+---
+
+---
+url: /protocol-launcher/apps/whereto.md
+---
+
+# Where To?
+
+[Where To?](https://www.futuretap.com/apps/whereto) is an incredibly easy way to find the closest steakhouse, bank branch, billiard club, or anything else you might be looking for — whether you are on vacation in Paris or in your own back yard! **Protocol Launcher** allows you to generate deep links to search for places and navigate to locations in Where To?.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}open()
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}search({
+  search: 'Bars',
+})
+```
+
+### Search at Location
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchAtLocation' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}searchAtLocation({
+  search: 'Cafe',
+  location: { lat: 37.332331, lon: -122.031219 },
+})
+```
+
+### Show Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showDirections' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showDirections({
+  location: { lat: 37.332331, lon: -122.031219 },
+  mode: 'car',
+})
+```
+
+### Show Location
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showLocation' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showLocation({
+  location: { lat: 37.332331, lon: -122.031219 },
+  title: 'Apple HQ',
+})
+```
+
+### Show Place
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPlace' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showPlace({
+  poi: '7415861409383649399',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/whereto.md
+---
+
+# Where To?
+
+[Where To?](https://www.futuretap.com/apps/whereto) 是一种极其简单的方式，可帮助您找到附近的牛排馆、银行分行、台球俱乐部或您可能正在寻找的任何其他地方——无论您是在巴黎度假还是在自家后院！**Protocol Launcher** 允许您生成深度链接以在 Where To? 中搜索地点和导航到位置。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}open()
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}search({
+  search: 'Bars',
+})
+```
+
+### 在指定位置搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchAtLocation' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}searchAtLocation({
+  search: 'Cafe',
+  location: { lat: 37.332331, lon: -122.031219 },
+})
+```
+
+### 显示路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showDirections' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showDirections({
+  location: { lat: 37.332331, lon: -122.031219 },
+  mode: 'car',
+})
+```
+
+### 显示位置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showLocation' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showLocation({
+  location: { lat: 37.332331, lon: -122.031219 },
+  title: 'Apple HQ',
+})
+```
+
+### 显示地点
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPlace' : 'whereto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showPlace({
+  poi: '7415861409383649399',
+})
+```
 
 ---
 
@@ -16130,6 +16536,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
+* [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
@@ -16168,6 +16575,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
+* [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
@@ -16188,6 +16596,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [Where To?](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
@@ -16350,6 +16759,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [FSNotes](../apps/fsnotes.md)
+* [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoLand](../apps/goland.md)
@@ -16388,6 +16798,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
+* [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
@@ -16408,6 +16819,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [VSCodium](../apps/vscodium.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [Where To?](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
