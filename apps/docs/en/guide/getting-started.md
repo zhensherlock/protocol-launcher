@@ -184,6 +184,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [PearAI](../apps/pearai.md)
 - [Pika](../apps/pika.md)
 - [Pleco](../apps/pleco.md)
+- [Prizmo](../apps/prizmo.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Qoder](../apps/qoder.md)

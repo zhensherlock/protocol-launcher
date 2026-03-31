@@ -306,6 +306,10 @@
       "types": "./dist/types/pleco/index.d.ts",
       "import": "./dist/pleco/index.js"
     },
+    "./prizmo": {
+      "types": "./dist/types/prizmo/index.d.ts",
+      "import": "./dist/prizmo/index.js"
+    },
     "./pycharm": {
       "types": "./dist/types/pycharm/index.d.ts",
       "import": "./dist/pycharm/index.js"
