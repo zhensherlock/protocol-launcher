@@ -193,6 +193,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [RustRover](../apps/rustrover.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)
+- [Simple Scan](../apps/simple-scan.md)
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)

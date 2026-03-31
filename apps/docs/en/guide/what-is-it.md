@@ -91,6 +91,7 @@ Currently, we support the following applications:
 - [RustRover](../apps/rustrover.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)
+- [Simple Scan](../apps/simple-scan.md)
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
