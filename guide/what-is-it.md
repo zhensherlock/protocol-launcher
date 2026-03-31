@@ -81,6 +81,8 @@ Currently, we support the following applications:
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [Pika](../apps/pika.md)
+* [Pleco](../apps/pleco.md)
+* [Prizmo](../apps/prizmo.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Qoder](../apps/qoder.md)
