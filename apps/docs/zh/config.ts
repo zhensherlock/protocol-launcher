@@ -119,6 +119,7 @@ export default defineAdditionalConfig({
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'WeMeet', link: '/zh/apps/wemeet' },
+          { text: 'Where To?', link: '/zh/apps/whereto' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Zed', link: '/zh/apps/zed' },

@@ -110,6 +110,7 @@ Currently, we support the following applications:
 - [VSCodium](../apps/vscodium.md)
 - [WebStorm](../apps/webstorm.md)
 - [WeMeet](../apps/wemeet.md)
+- [Where To?](../apps/whereto.md)
 - [Windsurf](../apps/windsurf.md)
 - [Xcode](../apps/xcode.md)
 - [Zed](../apps/zed.md)

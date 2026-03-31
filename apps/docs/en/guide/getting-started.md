@@ -212,6 +212,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [VSCodium](../apps/vscodium.md)
 - [WebStorm](../apps/webstorm.md)
 - [WeMeet](../apps/wemeet.md)
+- [Where To?](../apps/whereto.md)
 - [Windsurf](../apps/windsurf.md)
 - [Xcode](../apps/xcode.md)
 - [Zed](../apps/zed.md)

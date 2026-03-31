@@ -414,6 +414,10 @@
       "types": "./dist/types/wemeet/index.d.ts",
       "import": "./dist/wemeet/index.js"
     },
+    "./whereto": {
+      "types": "./dist/types/whereto/index.d.ts",
+      "import": "./dist/whereto/index.js"
+    },
     "./windsurf": {
       "types": "./dist/types/windsurf/index.d.ts",
       "import": "./dist/windsurf/index.js"

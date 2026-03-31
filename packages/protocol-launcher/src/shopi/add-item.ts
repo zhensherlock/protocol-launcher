@@ -39,7 +39,7 @@ export function addItem(payload: AddItem) {
   const { list, name, amount, crossed } = payload
   const params = qs({
     ...(list ? { list } : {}),
-    ...(name ? { name } : {}),
+    name,
     ...(amount ? { amount } : {}),
     ...(crossed ? { crossed } : {}),
   })
