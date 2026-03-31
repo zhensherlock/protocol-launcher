@@ -114,6 +114,7 @@
 - [WeMeet](/protocol-launcher/apps/wemeet.md)
 - [Where To?](/protocol-launcher/apps/whereto.md)
 - [Windsurf](/protocol-launcher/apps/windsurf.md)
+- [Working Copy](/protocol-launcher/apps/working-copy.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
 - [Zed](/protocol-launcher/apps/zed.md)
 
@@ -189,6 +190,7 @@
 - [腾讯会议](/protocol-launcher/zh/apps/wemeet.md)
 - [Where To?](/protocol-launcher/zh/apps/whereto.md)
 - [Windsurf](/protocol-launcher/zh/apps/windsurf.md)
+- [Working Copy](/protocol-launcher/zh/apps/working-copy.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
 

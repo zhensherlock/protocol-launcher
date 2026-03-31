@@ -217,5 +217,6 @@ For detailed usage instructions for each application, please refer to their resp
 * [WeMeet](../apps/wemeet.md)
 * [Where To?](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
+* [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
