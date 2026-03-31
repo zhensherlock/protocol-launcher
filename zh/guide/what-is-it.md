@@ -96,6 +96,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Steam](../apps/steam.md)
 * [Telegram](../apps/telegram.md)
 * [Termius](../apps/termius.md)
+* [Textastic](../apps/textastic.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)

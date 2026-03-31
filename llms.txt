@@ -96,6 +96,7 @@
 - [Steam](/protocol-launcher/apps/steam.md)
 - [Telegram](/protocol-launcher/apps/telegram.md)
 - [Termius](/protocol-launcher/apps/termius.md)
+- [Textastic](/protocol-launcher/apps/textastic.md)
 - [TextMate](/protocol-launcher/apps/textmate.md)
 - [Theia](/protocol-launcher/apps/theia.md)
 - [Things](/protocol-launcher/apps/things.md)
@@ -222,3 +223,4 @@
 - [Steam](/protocol-launcher/zh/apps/steam.md)
 - [Streets](/protocol-launcher/zh/apps/ftstreets.md)
 - [Termius](/protocol-launcher/zh/apps/termius.md)
+- [Textastic](/protocol-launcher/zh/apps/textastic.md)

@@ -97,6 +97,7 @@ Currently, we support the following applications:
 * [Steam](../apps/steam.md)
 * [Telegram](../apps/telegram.md)
 * [Termius](../apps/termius.md)
+* [Textastic](../apps/textastic.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
