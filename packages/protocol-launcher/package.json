@@ -330,6 +330,10 @@
       "types": "./dist/types/shortcuts/index.d.ts",
       "import": "./dist/shortcuts/index.js"
     },
+    "./shopi": {
+      "types": "./dist/types/shopi/index.d.ts",
+      "import": "./dist/shopi/index.js"
+    },
     "./sketch": {
       "types": "./dist/types/sketch/index.d.ts",
       "import": "./dist/sketch/index.js"

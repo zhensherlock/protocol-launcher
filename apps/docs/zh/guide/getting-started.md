@@ -190,6 +190,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [RustRover](../apps/rustrover.md)
+- [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)

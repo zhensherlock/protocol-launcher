@@ -190,6 +190,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [RustRover](../apps/rustrover.md)
+- [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)

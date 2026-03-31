@@ -87,6 +87,7 @@ layout: doc
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [RustRover](../apps/rustrover.md)
+- [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)
 - [Sketch](../apps/sketch.md)
 - [Soulver](../apps/soulver.md)
