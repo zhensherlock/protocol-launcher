@@ -51,6 +51,7 @@ export default defineAdditionalConfig({
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'CodeBuddy China', link: '/zh/apps/code-buddy-cn' },
           { text: 'CodeRunner', link: '/zh/apps/code-runner' },
+          { text: 'CodeHub', link: '/zh/apps/codehub' },
           { text: 'CodeLite', link: '/zh/apps/codelite' },
           { text: 'Codex', link: '/zh/apps/codex' },
           { text: 'Craft', link: '/zh/apps/craft' },

@@ -144,6 +144,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeBuddy China](../apps/code-buddy-cn.md)
 - [CodeRunner](../apps/code-runner.md)
+- [CodeHub](../apps/codehub.md)
 - [CodeLite](../apps/codelite.md)
 - [Codex](../apps/codex.md)
 - [Craft](../apps/craft.md)

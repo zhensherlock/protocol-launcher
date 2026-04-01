@@ -145,6 +145,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [CodeBuddy China](../apps/code-buddy-cn.md)
 - [CodeLite](../apps/codelite.md)
 - [CodeRunner](../apps/code-runner.md)
+- [CodeHub](../apps/codehub.md)
 - [Codex](../apps/codex.md)
 - [Craft](../apps/craft.md)
 - [Cubox](../apps/cubox.md)

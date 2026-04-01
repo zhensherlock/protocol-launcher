@@ -154,6 +154,10 @@
       "types": "./dist/types/codex/index.d.ts",
       "import": "./dist/codex/index.js"
     },
+    "./codehub": {
+      "types": "./dist/types/codehub/index.d.ts",
+      "import": "./dist/codehub/index.js"
+    },
     "./cubox": {
       "types": "./dist/types/cubox/index.d.ts",
       "import": "./dist/cubox/index.js"
