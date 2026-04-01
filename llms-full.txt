@@ -3292,6 +3292,104 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cal2todo.'}}add({
 ---
 
 ---
+url: /protocol-launcher/apps/calca.md
+---
+
+# Calca
+
+[Calca](http://calca.io/) is a text editor that loves math and gives you answers as you type. **Protocol Launcher** allows you to generate deep links to create documents and perform calculations in Calca.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Calca
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'calca' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}open()
+```
+
+### Create Document
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'calca' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}create({
+  body: '2+2=>',
+  title: 'Math',
+})
+```
+
+### Calculate
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'calc' : 'calca' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}calc({
+  body: '2+2=>',
+  xSuccess: 'app://callback',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/calca.md
+---
+
+# Calca
+
+[Calca](http://calca.io/) 是一款热爱数学的文本编辑器，可以在您输入时给出答案。**Protocol Launcher** 允许您生成深度链接以在 Calca 中创建文档和执行计算。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Calca
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'calca' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}open()
+```
+
+### 创建文档
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'calca' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}create({
+  body: '2+2=>',
+  title: 'Math',
+})
+```
+
+### 计算
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'calc' : 'calca' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}calc({
+  body: '2+2=>',
+  xSuccess: 'app://callback',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/cherry-studio.md
 ---
 
@@ -3576,6 +3674,138 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   id: 'new-api',
   baseUrl: 'https://open.cherryin.ai',
   apiKey: 'sk-xxxx',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/coda.md
+---
+
+# Coda
+
+[Coda](https://panic.com/code-editor) (now known as Code Editor) is a portable code editor for iOS, perfect for quick web edits on the go. **Protocol Launcher** allows you to generate deep links to create and edit files in Coda.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}open()
+```
+
+### New File
+
+Creates a new file in Coda. If one exists, a file with a unique name will be created.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}newFile({
+  name: 'foo.txt',
+  text: 'bar',
+})
+```
+
+### Append
+
+Append text to a file in Coda, creating it if necessary.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}append({
+  name: 'foo.txt',
+  text: 'bar',
+})
+```
+
+### Replace
+
+Replaces the contents of a file in Coda, creating it if necessary.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}replace({
+  name: 'foo.txt',
+  text: 'bar',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/coda.md
+---
+
+# Coda
+
+[Coda](https://panic.com/code-editor)（现名为 Code Editor）是一款适用于 iOS 的便携式代码编辑器，非常适合在移动中进行快速的网页编辑。**Protocol Launcher** 允许您生成深度链接以在 Coda 中创建和编辑文件。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}open()
+```
+
+### 新建文件
+
+在 Coda 中创建新文件。如果文件已存在，将创建一个具有唯一名称的文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}newFile({
+  name: 'foo.txt',
+  text: 'bar',
+})
+```
+
+### 追加内容
+
+向 Coda 中的文件追加文本，如果文件不存在则会创建。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}append({
+  name: 'foo.txt',
+  text: 'bar',
+})
+```
+
+### 替换内容
+
+替换 Coda 中文件的内容，如果文件不存在则会创建。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'coda' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'coda.'}}replace({
+  name: 'foo.txt',
+  text: 'bar',
 })
 ```
 
@@ -3948,6 +4178,90 @@ import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'codeBuddyChina' }}
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/codehub.md
+---
+
+# CodeHub
+
+[CodeHub](https://github.com/CodeHubApp/CodeHub) is the best way to browse and maintain your GitHub repositories on iPhone, iPod Touch, and iPad. **Protocol Launcher** allows you to generate deep links to open CodeHub and create GitHub Gists.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codehub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codehub.'}}open()
+```
+
+### Create Gist
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createGist' : 'codehub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codehub.'}}createGist({
+  description: 'Hello from Protocol Launcher',
+  public: true,
+  files: {
+    'hello.txt': 'Hello, World!',
+    'codehub.txt': 'CodeHub is awesome!',
+  },
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/codehub.md
+---
+
+# CodeHub
+
+[CodeHub](https://github.com/CodeHubApp/CodeHub) 是在 iPhone、iPod Touch 和 iPad 上浏览和维护 GitHub 仓库的最佳方式。**Protocol Launcher** 允许您生成深度链接以打开 CodeHub 和创建 GitHub Gist。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'codehub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codehub.'}}open()
+```
+
+### 创建 Gist
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createGist' : 'codehub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codehub.'}}createGist({
+  description: 'Hello from Protocol Launcher',
+  public: true,
+  files: {
+    'hello.txt': 'Hello, World!',
+    'codehub.txt': 'CodeHub is awesome!',
+  },
 })
 ```
 
@@ -5157,6 +5471,126 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openStarred()
 import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/dict-cc.md
+---
+
+# dict.cc
+
+[dict.cc](https://www.dict.cc/) is a free English-German and multilingual dictionary. **Protocol Launcher** allows you to generate deep links to search for translations in dict.cc.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open dict.cc
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}open()
+```
+
+### Open dict.cc Plus
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}open({
+  plus: true,
+})
+```
+
+### Search with Word
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}open({
+  word: 'hello',
+  languagePair: 'de-en',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}search({
+  word: 'world',
+  languagePair: 'en-de',
+  newSearch: true,
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/dict-cc.md
+---
+
+# dict.cc
+
+[dict.cc](https://www.dict.cc/) 是一个免费的英德多语言词典。**Protocol Launcher** 允许您生成深度链接以在 dict.cc 中搜索翻译。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 dict.cc
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}open()
+```
+
+### 打开 dict.cc Plus
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}open({
+  plus: true,
+})
+```
+
+### 搜索单词
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}open({
+  word: 'hello',
+  languagePair: 'de-en',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'dictCc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dictCc.'}}search({
+  word: 'world',
+  languagePair: 'en-de',
+  newSearch: true,
+})
 ```
 
 ---
@@ -6908,17 +7342,21 @@ For detailed usage instructions for each application, please refer to their resp
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
+* [Calca](../apps/calca.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeLite](../apps/codelite.md)
 * [CodeRunner](../apps/code-runner.md)
+* [CodeHub](../apps/codehub.md)
 * [Codex](../apps/codex.md)
 * [Craft](../apps/craft.md)
 * [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -17891,10 +18329,13 @@ Currently, we support the following applications:
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
+* [Calca](../apps/calca.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeRunner](../apps/code-runner.md)
+* [CodeHub](../apps/codehub.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Craft](../apps/craft.md)
@@ -17902,6 +18343,7 @@ Currently, we support the following applications:
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -19351,10 +19793,13 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
+* [Calca](../apps/calca.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeRunner](../apps/code-runner.md)
+* [CodeHub](../apps/codehub.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Craft](../apps/craft.md)
@@ -19362,6 +19807,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -19587,10 +20033,13 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
+* [Calca](../apps/calca.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
 * [CodeRunner](../apps/code-runner.md)
+* [CodeHub](../apps/codehub.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Craft](../apps/craft.md)
@@ -19598,6 +20047,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
