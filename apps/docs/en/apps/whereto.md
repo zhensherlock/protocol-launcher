@@ -19,9 +19,9 @@ const currentMethod = ref('On-Demand');
 const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protocol-launcher/whereto' : 'protocol-launcher');
 </script>
 
-# Where To?
+# Where To
 
-[Where To?](https://www.futuretap.com/apps/whereto) is an incredibly easy way to find the closest steakhouse, bank branch, billiard club, or anything else you might be looking for — whether you are on vacation in Paris or in your own back yard! **Protocol Launcher** allows you to generate deep links to search for places and navigate to locations in Where To?.
+[Where To](https://www.futuretap.com/apps/whereto) is an incredibly easy way to find the closest steakhouse, bank branch, billiard club, or anything else you might be looking for — whether you are on vacation in Paris or in your own back yard! **Protocol Launcher** allows you to generate deep links to search for places and navigate to locations in Where To.
 
 ## Usage
 
@@ -44,7 +44,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}open()
 
 <div class="flex justify-center">
   <VPLink :href="open()" target="_self">
-    Open Where To?
+    Open Where To
   </VPLink>
 </div>
 

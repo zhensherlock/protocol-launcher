@@ -129,7 +129,7 @@ export default defineAdditionalConfig({
           { text: 'WaterMinder', link: '/zh/apps/waterminder' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'WeMeet', link: '/zh/apps/wemeet' },
-          { text: 'Where To?', link: '/zh/apps/whereto' },
+          { text: 'Where To', link: '/zh/apps/whereto' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
           { text: 'Working Copy', link: '/zh/apps/working-copy' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
