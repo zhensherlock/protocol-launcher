@@ -136,6 +136,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Appigo Todo](../apps/appigo-todo.md)
 - [BBEdit](../apps/bbedit.md)
 - [Bear](../apps/bear.md)
+- [Beorg](../apps/beorg.md)
 - [Cal2Todo](../apps/cal2todo.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)

@@ -136,6 +136,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Appigo Todo](../apps/appigo-todo.md)
 - [BBEdit](../apps/bbedit.md)
 - [Bear](../apps/bear.md)
+- [Beorg](../apps/beorg.md)
 - [Cal2Todo](../apps/cal2todo.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)

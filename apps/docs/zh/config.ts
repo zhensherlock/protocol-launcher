@@ -43,6 +43,7 @@ export default defineAdditionalConfig({
           { text: '1Writer', link: '/zh/apps/1writer' },
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
           { text: 'Bear', link: '/zh/apps/bear' },
+          { text: 'Beorg', link: '/zh/apps/beorg' },
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },

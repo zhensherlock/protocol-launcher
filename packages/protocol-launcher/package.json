@@ -110,6 +110,10 @@
       "types": "./dist/types/bear/index.d.ts",
       "import": "./dist/bear/index.js"
     },
+    "./beorg": {
+      "types": "./dist/types/beorg/index.d.ts",
+      "import": "./dist/beorg/index.js"
+    },
     "./cal2todo": {
       "types": "./dist/types/cal2todo/index.d.ts",
       "import": "./dist/cal2todo/index.js"
