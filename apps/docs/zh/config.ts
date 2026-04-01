@@ -99,6 +99,7 @@ export default defineAdditionalConfig({
           { text: 'Prizmo', link: '/zh/apps/prizmo' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
+          { text: 'Pyto', link: '/zh/apps/pyto' },
           { text: 'Qoder', link: '/zh/apps/qoder' },
           { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },

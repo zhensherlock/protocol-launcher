@@ -89,6 +89,7 @@ layout: doc
 - [Prizmo](../apps/prizmo.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
+- [Pyto](../apps/pyto.md)
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [RustRover](../apps/rustrover.md)

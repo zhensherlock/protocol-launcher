@@ -326,6 +326,10 @@
       "types": "./dist/types/prizmo/index.d.ts",
       "import": "./dist/prizmo/index.js"
     },
+    "./pyto": {
+      "types": "./dist/types/pyto/index.d.ts",
+      "import": "./dist/pyto/index.js"
+    },
     "./pycharm": {
       "types": "./dist/types/pycharm/index.d.ts",
       "import": "./dist/pycharm/index.js"
