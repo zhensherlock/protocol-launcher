@@ -3998,6 +3998,424 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codex.'}}openSettings()
 ---
 
 ---
+url: /protocol-launcher/apps/craft.md
+---
+
+# Craft
+
+[Craft](https://www.craft.do) is a powerful, beautiful tool for creating documents, managing tasks, and organizing your work and life. **Protocol Launcher** allows you to generate deep links to open and create content in Craft.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}open()
+```
+
+### Open Document
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openDocument({
+  spaceId: 'abc-123',
+  blockId: 'xyz-789',
+})
+```
+
+### Create Document
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createDocument' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}createDocument({
+  spaceId: 'abc-123',
+  title: 'My Note',
+  content: 'Hello **World**',
+  folderId: '',
+})
+```
+
+### Create New Document
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNewDocument' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}createNewDocument()
+```
+
+### Create Block
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createBlock' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}createBlock({
+  parentBlockId: 'doc-123',
+  spaceId: 'abc-123',
+  content: 'New content',
+  index: 9999,
+})
+```
+
+### Open Daily Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDailyNote' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openDailyNote({
+  spaceId: 'abc-123',
+  type: 'today',
+})
+```
+
+### Open Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSearch' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openSearch({
+  spaceId: 'abc-123',
+  query: 'vacation plans',
+})
+```
+
+### Open Space
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSpace' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openSpace({
+  spaceId: 'abc-123',
+  tab: 'calendar',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/craft.md
+---
+
+# Craft
+
+[Craft](https://www.craft.do) 是一个强大、美观的工具，用于创建文档、管理任务和组织您的工作和生活。**Protocol Launcher** 允许您生成深度链接以在 Craft 中打开和创建内容。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}open()
+```
+
+### 打开文档
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openDocument({
+  spaceId: 'abc-123',
+  blockId: 'xyz-789',
+})
+```
+
+### 创建文档
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createDocument' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}createDocument({
+  spaceId: 'abc-123',
+  title: 'My Note',
+  content: 'Hello **World**',
+  folderId: '',
+})
+```
+
+### 创建新文档
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNewDocument' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}createNewDocument()
+```
+
+### 创建块
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createBlock' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}createBlock({
+  parentBlockId: 'doc-123',
+  spaceId: 'abc-123',
+  content: 'New content',
+  index: 9999,
+})
+```
+
+### 打开每日笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDailyNote' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openDailyNote({
+  spaceId: 'abc-123',
+  type: 'today',
+})
+```
+
+### 打开搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSearch' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openSearch({
+  spaceId: 'abc-123',
+  query: 'vacation plans',
+})
+```
+
+### 打开空间
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSpace' : 'craft' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'craft.'}}openSpace({
+  spaceId: 'abc-123',
+  tab: 'calendar',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/cubox.md
+---
+
+# Cubox
+
+[Cubox](https://www.cubox.pro/) is a next-generation AI-powered read-it-later assistant that helps you save, organize, and truly understand what you read. **Protocol Launcher** allows you to generate deep links to add content and navigate within Cubox.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}open()
+```
+
+### Add Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addLink' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addLink({
+  url: 'https://example.com/article',
+})
+```
+
+### Add Memo
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addMemo' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addMemo({
+  memo: 'Remember to buy groceries',
+})
+```
+
+### Open Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openFolder({
+  name: 'Reading List',
+})
+```
+
+### Open Inbox
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openInbox' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openInbox()
+```
+
+### Open Smart Folder
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSmartFolder' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openSmartFolder({
+  name: 'Recent Articles',
+})
+```
+
+### Open Starred
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStarred' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openStarred()
+```
+
+### Open Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openTag({
+  name: 'important',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}search({
+  query: 'typescript',
+  type: 'card',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/cubox.md
+---
+
+# Cubox
+
+[Cubox](https://www.cubox.pro/) 是新一代 AI 稍后阅读助手，让您的收藏读得懂、记得住、用得上。**Protocol Launcher** 允许您生成深度链接以在 Cubox 中添加内容和导航。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}open()
+```
+
+### 添加链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addLink' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addLink({
+  url: 'https://example.com/article',
+})
+```
+
+### 添加备忘
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addMemo' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addMemo({
+  memo: 'Remember to buy groceries',
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openFolder({
+  name: 'Reading List',
+})
+```
+
+### 打开收件箱
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openInbox' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openInbox()
+```
+
+### 打开智能文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSmartFolder' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openSmartFolder({
+  name: 'Recent Articles',
+})
+```
+
+### 打开星标
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStarred' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openStarred()
+```
+
+### 打开标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}openTag({
+  name: 'important',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'cubox' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}search({
+  query: 'typescript',
+  type: 'card',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/cursor.md
 ---
 
@@ -4265,6 +4683,262 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}openSettings({
 import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: '你好, Cursor!' })
+```
+
+---
+
+---
+url: /protocol-launcher/apps/day-one.md
+---
+
+# Day One
+
+[Day One](https://dayoneapp.com/) is the #1 journaling app for capturing life's moments. **Protocol Launcher** allows you to generate deep links to create, edit, and view journal entries in Day One.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}open()
+```
+
+### Create Entry
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createEntry' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}createEntry({
+  entry: 'Hello World',
+  tags: 'work, test',
+})
+```
+
+### Edit Entry
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editEntry' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}editEntry({
+  entryId: '3415BB00651C4533B41F62544A775CCC',
+})
+```
+
+### View Entry
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewEntry' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}viewEntry({
+  entryId: '22B178B33B2A4149538280F9C34102C5',
+})
+```
+
+### Filter by Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'filterByTag' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}filterByTag({
+  tag: 'work',
+})
+```
+
+### Open Calendar
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCalendar' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openCalendar()
+```
+
+### Open Daily Prompt
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDailyPrompt' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openDailyPrompt({
+  promptId: 'ck7zw8sybj6kv09983znvrmof',
+})
+```
+
+### Open Date
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openDate({
+  date: '2020-04-02',
+})
+```
+
+### Open On This Day
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openOnThisDay' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openOnThisDay()
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSettings()
+```
+
+### Open Starred
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStarred' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openStarred()
+```
+
+### Open Timeline
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/day-one.md
+---
+
+# Day One
+
+[Day One](https://dayoneapp.com/) 是排名第一的日记应用，用于记录生活中的重要时刻。**Protocol Launcher** 允许您生成深度链接以在 Day One 中创建、编辑和查看日记条目。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}open()
+```
+
+### 创建条目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createEntry' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}createEntry({
+  entry: 'Hello World',
+  tags: 'work, test',
+})
+```
+
+### 编辑条目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editEntry' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}editEntry({
+  entryId: '3415BB00651C4533B41F62544A775CCC',
+})
+```
+
+### 查看条目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewEntry' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}viewEntry({
+  entryId: '22B178B33B2A4149538280F9C34102C5',
+})
+```
+
+### 按标签筛选
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'filterByTag' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}filterByTag({
+  tag: 'work',
+})
+```
+
+### 打开日历
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCalendar' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openCalendar()
+```
+
+### 打开每日提示
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDailyPrompt' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openDailyPrompt({
+  promptId: 'ck7zw8sybj6kv09983znvrmof',
+})
+```
+
+### 打开日期
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openDate({
+  date: '2020-04-02',
+})
+```
+
+### 打开历史上的今天
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openOnThisDay' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openOnThisDay()
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSettings()
+```
+
+### 打开星标条目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStarred' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openStarred()
+```
+
+### 打开时间线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
 
 ---
@@ -6021,8 +6695,11 @@ For detailed usage instructions for each application, please refer to their resp
 * [CodeLite](../apps/codelite.md)
 * [CodeRunner](../apps/code-runner.md)
 * [Codex](../apps/codex.md)
+* [Craft](../apps/craft.md)
+* [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
+* [Day One](../apps/day-one.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -6056,6 +6733,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
+* [Obsidian](../apps/obsidian.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -6071,11 +6749,14 @@ For detailed usage instructions for each application, please refer to their resp
 * [RustRover](../apps/rustrover.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
+* [Simple Scan](../apps/simple-scan.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Steam](../apps/steam.md)
+* [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
 * [TextMate](../apps/textmate.md)
@@ -9820,6 +10501,242 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'nova.'}}register({
 ---
 
 ---
+url: /protocol-launcher/apps/obsidian.md
+---
+
+# Obsidian
+
+[Obsidian](https://obsidian.md/) is a powerful knowledge base that works on top of a local folder of plain text Markdown files. **Protocol Launcher** allows you to generate deep links to open notes, create new notes, search, and execute commands in Obsidian.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Obsidian
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}open()
+```
+
+### Open Note
+
+Open a specific note in Obsidian.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}openNote({
+  vault: 'My Vault',
+  file: 'Notes/Meeting.md',
+})
+```
+
+### New Note
+
+Create a new note in Obsidian.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}newNote({
+  vault: 'My Vault',
+  name: 'New Note',
+  content: 'Hello World',
+})
+```
+
+### Search
+
+Search for notes in Obsidian.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}search({
+  vault: 'My Vault',
+  query: 'meeting notes',
+})
+```
+
+### Insert
+
+Insert content into the current note in Obsidian.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'insert' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}insert({
+  vault: 'My Vault',
+  content: '## Heading',
+})
+```
+
+### Command
+
+Execute a command in Obsidian.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}command({
+  vault: 'My Vault',
+  id: 'editor:save-file',
+})
+```
+
+### Options
+
+Open Obsidian options (quick settings) for a vault.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'options' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}options({
+  vault: 'My Vault',
+})
+```
+
+### Settings
+
+Open Obsidian settings.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'settings' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
+  vault: 'My Vault',
+  page: 'editor',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/obsidian.md
+---
+
+# Obsidian
+
+[Obsidian](https://obsidian.md/) 是一个强大的知识库，基于本地纯文本 Markdown 文件夹工作。**Protocol Launcher** 允许您生成深度链接以在 Obsidian 中打开笔记、创建新笔记、搜索和执行命令。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Obsidian
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}open()
+```
+
+### 打开笔记
+
+在 Obsidian 中打开特定的笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}openNote({
+  vault: 'My Vault',
+  file: 'Notes/Meeting.md',
+})
+```
+
+### 新建笔记
+
+在 Obsidian 中创建新笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}newNote({
+  vault: 'My Vault',
+  name: 'New Note',
+  content: 'Hello World',
+})
+```
+
+### 搜索
+
+在 Obsidian 中搜索笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}search({
+  vault: 'My Vault',
+  query: 'meeting notes',
+})
+```
+
+### 插入内容
+
+在 Obsidian 的当前笔记中插入内容。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'insert' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}insert({
+  vault: 'My Vault',
+  content: '## Heading',
+})
+```
+
+### 执行命令
+
+在 Obsidian 中执行命令。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'command' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}command({
+  vault: 'My Vault',
+  id: 'editor:save-file',
+})
+```
+
+### 选项
+
+打开 Obsidian 的选项（快速设置）。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'options' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}options({
+  vault: 'My Vault',
+})
+```
+
+### 设置
+
+打开 Obsidian 设置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'settings' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
+  vault: 'My Vault',
+  page: 'editor',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/opencode.md
 ---
 
@@ -12240,6 +13157,84 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'shortcuts.'}}xCallbackRunSho
 ---
 
 ---
+url: /protocol-launcher/apps/simple-scan.md
+---
+
+# Simple Scan
+
+[Simple Scan](https://agiletortoise.com/simple-scan/) is a quick, easy way to scan paper documents to optimized, searchable PDF documents (or images) and send them almost anywhere. **Protocol Launcher** allows you to generate deep links to open Simple Scan and trigger scanning with predefined destinations and formats.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Simple Scan
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'simpleScan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'simpleScan.'}}open()
+```
+
+### Scan
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scan' : 'simpleScan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'simpleScan.'}}scan({
+  destination: 'email',
+  format: 'pdf',
+  quality: 'original',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/simple-scan.md
+---
+
+# Simple Scan
+
+[Simple Scan](https://agiletortoise.com/simple-scan/) 是 Agile Tortoise 开发的一款快速、简便的文档扫描应用，可将纸质文档扫描为优化后的可搜索 PDF 文档（或图像），并发送到几乎任何地方。**Protocol Launcher** 允许您生成深度链接以打开 Simple Scan 并使用预定义的目的地和格式触发扫描。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Simple Scan
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'simpleScan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'simpleScan.'}}open()
+```
+
+### 扫描
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scan' : 'simpleScan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'simpleScan.'}}scan({
+  destination: 'email',
+  format: 'pdf',
+  quality: 'original',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/sketch.md
 ---
 
@@ -13388,6 +14383,166 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
 ---
 
 ---
+url: /protocol-launcher/apps/tally.md
+---
+
+# Tally
+
+[Tally](https://agiletortoise.com/tally/) is a quick counting, scorekeeping, and habit tracking app for iPhone, iPad, and Apple Watch. **Protocol Launcher** allows you to generate deep links to increment, decrement, reset, and get tally values in Tally.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Tally
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}open()
+```
+
+### Increment Tally
+
+Increase count of specified tally.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'increment' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}increment({
+  tallySet: 'Game Score',
+  tally: 'Player 1',
+})
+```
+
+### Decrement Tally
+
+Decrease count of specified tally.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'decrement' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}decrement({
+  tallySet: 'Game Score',
+  tally: 'Player 1',
+})
+```
+
+### Reset Tally
+
+Reset specified tally to its initial value.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'reset' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}reset({
+  tallySet: 'Daily Habits',
+  tally: 'Exercise',
+})
+```
+
+### Get Tally Value
+
+Get the current value of a specified tally. Requires a callback URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'get' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}get({
+  tallySet: 'Daily Habits',
+  tally: 'Exercise',
+  'x-success': 'myapp://callback',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/tally.md
+---
+
+# Tally
+
+[Tally](https://agiletortoise.com/tally/) 是一款适用于 iPhone、iPad 和 Apple Watch 的快速计数、记分和习惯追踪应用。**Protocol Launcher** 允许您生成深度链接以在 Tally 中增加、减少、重置和获取计数值。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Tally
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}open()
+```
+
+### 增加计数
+
+增加指定计数器的值。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'increment' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}increment({
+  tallySet: 'Game Score',
+  tally: 'Player 1',
+})
+```
+
+### 减少计数
+
+减少指定计数器的值。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'decrement' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}decrement({
+  tallySet: 'Game Score',
+  tally: 'Player 1',
+})
+```
+
+### 重置计数
+
+将指定计数器重置为初始值。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'reset' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}reset({
+  tallySet: 'Daily Habits',
+  tally: 'Exercise',
+})
+```
+
+### 获取计数值
+
+获取指定计数器的当前值。需要提供回调 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'get' : 'tally' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tally.'}}get({
+  tallySet: 'Daily Habits',
+  tally: 'Exercise',
+  'x-success': 'myapp://callback',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/telegram.md
 ---
 
@@ -13456,6 +14611,108 @@ import { {{ currentMethod === 'On-Demand' ? 'openDomain' : 'telegram' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}openDomain({
   domain: 'zhensherlock',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/terminology.md
+---
+
+# Terminology
+
+[Terminology](https://agiletortoise.com/terminology/) is a browser for the English language – part dictionary, part thesaurus, and part research tool. **Protocol Launcher** allows you to generate deep links to look up words and search in Terminology.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Terminology
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'terminology' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}open()
+```
+
+### Lookup Word
+
+Open directly to a detail look up for a term in Terminology.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'lookup' : 'terminology' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}lookup({
+  text: 'automation',
+})
+```
+
+### Search
+
+Open directly to a word search for a string in Terminology.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'terminology' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}search({
+  q: 'protocol',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/terminology.md
+---
+
+# Terminology
+
+[Terminology](https://agiletortoise.com/terminology/) 是一款英语语言浏览器——集词典、同义词词典和研究工具于一体。**Protocol Launcher** 允许您生成深度链接以在 Terminology 中查找单词和搜索。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'terminology' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}open()
+```
+
+### 查找单词
+
+直接在 Terminology 中打开某个术语的详细查询页面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'lookup' : 'terminology' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}lookup({
+  text: 'automation',
+})
+```
+
+### 搜索
+
+直接在 Terminology 中打开单词搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'terminology' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}search({
+  q: 'protocol',
 })
 ```
 
@@ -16323,8 +17580,11 @@ Currently, we support the following applications:
 * [CodeRunner](../apps/code-runner.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
+* [Craft](../apps/craft.md)
+* [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
+* [Day One](../apps/day-one.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -16358,6 +17618,7 @@ Currently, we support the following applications:
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
+* [Obsidian](../apps/obsidian.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -16373,11 +17634,14 @@ Currently, we support the following applications:
 * [RustRover](../apps/rustrover.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
+* [Simple Scan](../apps/simple-scan.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Steam](../apps/steam.md)
+* [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
 * [TextMate](../apps/textmate.md)
@@ -17773,8 +19037,11 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [CodeRunner](../apps/code-runner.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
+* [Craft](../apps/craft.md)
+* [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
+* [Day One](../apps/day-one.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -17808,6 +19075,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
+* [Obsidian](../apps/obsidian.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -17823,11 +19091,14 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [RustRover](../apps/rustrover.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
+* [Simple Scan](../apps/simple-scan.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Steam](../apps/steam.md)
+* [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
 * [TextMate](../apps/textmate.md)
@@ -18000,8 +19271,11 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [CodeRunner](../apps/code-runner.md)
 * [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
+* [Craft](../apps/craft.md)
+* [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
+* [Day One](../apps/day-one.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
@@ -18035,6 +19309,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
 * [Nova](../apps/nova.md)
+* [Obsidian](../apps/obsidian.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -18050,11 +19325,14 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [RustRover](../apps/rustrover.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
+* [Simple Scan](../apps/simple-scan.md)
 * [Sketch](../apps/sketch.md)
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Steam](../apps/steam.md)
+* [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
 * [TextMate](../apps/textmate.md)
