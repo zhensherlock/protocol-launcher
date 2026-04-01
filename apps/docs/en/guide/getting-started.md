@@ -138,6 +138,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Bear](../apps/bear.md)
 - [Beorg](../apps/beorg.md)
 - [Cal2Todo](../apps/cal2todo.md)
+- [Calca](../apps/calca.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeBuddy China](../apps/code-buddy-cn.md)

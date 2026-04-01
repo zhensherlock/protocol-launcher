@@ -45,6 +45,7 @@ export default defineAdditionalConfig({
           { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Beorg', link: '/zh/apps/beorg' },
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
+          { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'CodeBuddy China', link: '/zh/apps/code-buddy-cn' },

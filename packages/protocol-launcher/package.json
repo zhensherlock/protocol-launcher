@@ -118,6 +118,10 @@
       "types": "./dist/types/cal2todo/index.d.ts",
       "import": "./dist/cal2todo/index.js"
     },
+    "./calca": {
+      "types": "./dist/types/calca/index.d.ts",
+      "import": "./dist/calca/index.js"
+    },
     "./craft": {
       "types": "./dist/types/craft/index.d.ts",
       "import": "./dist/craft/index.js"
