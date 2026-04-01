@@ -276,15 +276,16 @@ export default defineConfig({
     ],
 
     search: {
-      provider: 'algolia',
-      options: {
-        appId: 'V6CF28P0PS',
-        apiKey: '692752b7b3c6f794997d8ae22aed79fa',
-        indexName: 'protocol-launcher',
-        searchParameters: {
-          facetFilters: [`tags:${isGithubPages ? 'gh' : 'vercel'}`],
-        },
-      },
+      provider: 'local',
+      // provider: 'algolia',
+      // options: {
+      //   appId: 'V6CF28P0PS',
+      //   apiKey: '692752b7b3c6f794997d8ae22aed79fa',
+      //   indexName: 'protocol-launcher',
+      //   searchParameters: {
+      //     facetFilters: [`tags:${isGithubPages ? 'gh' : 'vercel'}`],
+      //   },
+      // },
     },
   },
   markdown: {
