@@ -38,6 +38,7 @@ Currently, we support the following applications:
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Cherry Studio](../apps/cherry-studio.md)
+- [Coda](../apps/coda.md)
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeBuddy China](../apps/code-buddy-cn.md)
 - [CodeRunner](../apps/code-runner.md)

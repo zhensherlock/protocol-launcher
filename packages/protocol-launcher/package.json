@@ -142,6 +142,10 @@
       "types": "./dist/types/code-runner/index.d.ts",
       "import": "./dist/code-runner/index.js"
     },
+    "./coda": {
+      "types": "./dist/types/coda/index.d.ts",
+      "import": "./dist/coda/index.js"
+    },
     "./codelite": {
       "types": "./dist/types/codelite/index.d.ts",
       "import": "./dist/codelite/index.js"

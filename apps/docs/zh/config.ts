@@ -47,6 +47,7 @@ export default defineAdditionalConfig({
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
+          { text: 'Coda', link: '/zh/apps/coda' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'CodeBuddy China', link: '/zh/apps/code-buddy-cn' },
           { text: 'CodeRunner', link: '/zh/apps/code-runner' },

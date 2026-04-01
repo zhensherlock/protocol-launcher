@@ -140,6 +140,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Cherry Studio](../apps/cherry-studio.md)
+- [Coda](../apps/coda.md)
 - [CodeBuddy](../apps/code-buddy.md)
 - [CodeBuddy China](../apps/code-buddy-cn.md)
 - [CodeLite](../apps/codelite.md)
