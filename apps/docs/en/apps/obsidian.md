@@ -3,16 +3,16 @@ layout: doc
 ---
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import { open, openNote, newNote, search, insert, command, options, settings } from 'protocol-launcher/obsidian'
-import { SelectInstallationMethod } from '../../.vitepress/components'
-import { openNoteParams, newNoteParams, searchParams, insertParams, commandParams, optionsParams, settingsParams } from '../../.vitepress/constants/obsidian'
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { open, openNote, newNote, search, insert, command, options, settings } from 'protocol-launcher/obsidian';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import { openNoteParams, newNoteParams, searchParams, insertParams, commandParams, optionsParams, settingsParams } from '../../.vitepress/constants/obsidian';
 
-const currentMethod = ref('On-Demand')
+const currentMethod = ref('On-Demand');
 const importPath = computed(() =>
   currentMethod.value === 'On-Demand' ? 'protocol-launcher/obsidian' : 'protocol-launcher',
-)
+);
 </script>
 
 # Obsidian
@@ -30,7 +30,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 <SelectInstallationMethod v-model="currentMethod" />
 
-### Open Browser
+### Open Obsidian
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'obsidian' }} } from '{{ importPath }}'
@@ -40,7 +40,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}open()
 
 <div class="flex justify-center">
   <VPLink :href="open()" target="_self">
-    <Button Text>
+    Open Obsidian
   </VPLink>
 </div>
 
