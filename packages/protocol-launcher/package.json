@@ -282,6 +282,10 @@
       "types": "./dist/types/nova/index.d.ts",
       "import": "./dist/nova/index.js"
     },
+    "./obsidian": {
+      "types": "./dist/types/obsidian/index.d.ts",
+      "import": "./dist/obsidian/index.js"
+    },
     "./opencode": {
       "types": "./dist/types/opencode/index.d.ts",
       "import": "./dist/opencode/index.js"

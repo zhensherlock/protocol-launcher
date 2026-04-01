@@ -180,6 +180,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
 - [Nova](../apps/nova.md)
+- [Obsidian](../apps/obsidian.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)
