@@ -1,0 +1,8 @@
+export { createBlock } from './create-block'
+export { createDocument } from './create-document'
+export { createNewDocument } from './create-new-document'
+export { open } from './open'
+export { openDailyNote } from './open-daily-note'
+export { openDocument } from './open-document'
+export { openSearch } from './open-search'
+export { openSpace } from './open-space'

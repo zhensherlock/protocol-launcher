@@ -50,6 +50,7 @@ export default defineAdditionalConfig({
           { text: 'CodeRunner', link: '/zh/apps/code-runner' },
           { text: 'CodeLite', link: '/zh/apps/codelite' },
           { text: 'Codex', link: '/zh/apps/codex' },
+          { text: 'Craft', link: '/zh/apps/craft' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Drafts', link: '/zh/apps/drafts' },

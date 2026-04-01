@@ -143,6 +143,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [CodeLite](../apps/codelite.md)
 - [CodeRunner](../apps/code-runner.md)
 - [Codex](../apps/codex.md)
+- [Craft](../apps/craft.md)
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
 - [Drafts](../apps/drafts.md)

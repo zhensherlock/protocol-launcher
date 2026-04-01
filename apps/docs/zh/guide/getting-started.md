@@ -143,6 +143,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [CodeRunner](../apps/code-runner.md)
 - [CodeLite](../apps/codelite.md)
 - [Codex](../apps/codex.md)
+- [Craft](../apps/craft.md)
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
 - [Drafts](../apps/drafts.md)

@@ -114,6 +114,10 @@
       "types": "./dist/types/cal2todo/index.d.ts",
       "import": "./dist/cal2todo/index.js"
     },
+    "./craft": {
+      "types": "./dist/types/craft/index.d.ts",
+      "import": "./dist/craft/index.js"
+    },
     "./cherry-studio": {
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"
