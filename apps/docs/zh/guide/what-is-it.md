@@ -43,6 +43,7 @@ layout: doc
 - [Craft](../apps/craft.md)
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
+- [Day One](../apps/day-one.md)
 - [Drafts](../apps/drafts.md)
 - [Editorial](../apps/editorial.md)
 - [Equipd Bible](../apps/equipd-bible.md)

@@ -146,6 +146,10 @@
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
     },
+    "./day-one": {
+      "types": "./dist/types/day-one/index.d.ts",
+      "import": "./dist/day-one/index.js"
+    },
     "./due": {
       "types": "./dist/types/due/index.d.ts",
       "import": "./dist/due/index.js"

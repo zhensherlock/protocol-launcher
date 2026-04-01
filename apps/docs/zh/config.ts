@@ -53,6 +53,7 @@ export default defineAdditionalConfig({
           { text: 'Craft', link: '/zh/apps/craft' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: '2Do', link: '/zh/apps/2do' },
+          { text: 'Day One', link: '/zh/apps/day-one' },
           { text: 'Drafts', link: '/zh/apps/drafts' },
           { text: 'Editorial', link: '/zh/apps/editorial' },
           { text: 'Equipd Bible', link: '/zh/apps/equipd-bible' },
