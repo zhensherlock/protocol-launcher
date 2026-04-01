@@ -50,6 +50,7 @@ Currently, we support the following applications:
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
 - [Day One](../apps/day-one.md)
+- [dict.cc](../apps/dict-cc.md)
 - [Drafts](../apps/drafts.md)
 - [Editorial](../apps/editorial.md)
 - [Equipd Bible](../apps/equipd-bible.md)

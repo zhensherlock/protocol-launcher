@@ -170,6 +170,10 @@
       "types": "./dist/types/day-one/index.d.ts",
       "import": "./dist/day-one/index.js"
     },
+    "./dict-cc": {
+      "types": "./dist/types/dict-cc/index.d.ts",
+      "import": "./dist/dict-cc/index.js"
+    },
     "./due": {
       "types": "./dist/types/due/index.d.ts",
       "import": "./dist/due/index.js"
