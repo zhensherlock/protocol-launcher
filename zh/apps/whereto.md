@@ -2,9 +2,9 @@
 url: /protocol-launcher/zh/apps/whereto.md
 ---
 
-# Where To?
+# Where To
 
-[Where To?](https://www.futuretap.com/apps/whereto) 是一种极其简单的方式，可帮助您找到附近的牛排馆、银行分行、台球俱乐部或您可能正在寻找的任何其他地方——无论您是在巴黎度假还是在自家后院！**Protocol Launcher** 允许您生成深度链接以在 Where To? 中搜索地点和导航到位置。
+[Where To](https://www.futuretap.com/apps/whereto) 是一种极其简单的方式，可帮助您找到附近的牛排馆、银行分行、台球俱乐部或您可能正在寻找的任何其他地方——无论您是在巴黎度假还是在自家后院！**Protocol Launcher** 允许您生成深度链接以在 Where To 中搜索地点和导航到位置。
 
 ## 使用方式
 

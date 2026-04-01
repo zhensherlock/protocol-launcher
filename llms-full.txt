@@ -6774,7 +6774,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
-* [Where To?](../apps/whereto.md)
+* [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
@@ -17659,7 +17659,7 @@ Currently, we support the following applications:
 * [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
-* [Where To?](../apps/whereto.md)
+* [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
@@ -17673,9 +17673,9 @@ More applications will be added in the future.
 url: /protocol-launcher/apps/whereto.md
 ---
 
-# Where To?
+# Where To
 
-[Where To?](https://www.futuretap.com/apps/whereto) is an incredibly easy way to find the closest steakhouse, bank branch, billiard club, or anything else you might be looking for — whether you are on vacation in Paris or in your own back yard! **Protocol Launcher** allows you to generate deep links to search for places and navigate to locations in Where To?.
+[Where To](https://www.futuretap.com/apps/whereto) is an incredibly easy way to find the closest steakhouse, bank branch, billiard club, or anything else you might be looking for — whether you are on vacation in Paris or in your own back yard! **Protocol Launcher** allows you to generate deep links to search for places and navigate to locations in Where To.
 
 ## Usage
 
@@ -17753,9 +17753,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'whereto.'}}showPlace({
 url: /protocol-launcher/zh/apps/whereto.md
 ---
 
-# Where To?
+# Where To
 
-[Where To?](https://www.futuretap.com/apps/whereto) 是一种极其简单的方式，可帮助您找到附近的牛排馆、银行分行、台球俱乐部或您可能正在寻找的任何其他地方——无论您是在巴黎度假还是在自家后院！**Protocol Launcher** 允许您生成深度链接以在 Where To? 中搜索地点和导航到位置。
+[Where To](https://www.futuretap.com/apps/whereto) 是一种极其简单的方式，可帮助您找到附近的牛排馆、银行分行、台球俱乐部或您可能正在寻找的任何其他地方——无论您是在巴黎度假还是在自家后院！**Protocol Launcher** 允许您生成深度链接以在 Where To 中搜索地点和导航到位置。
 
 ## 使用方式
 
@@ -19116,7 +19116,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
-* [Where To?](../apps/whereto.md)
+* [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
@@ -19350,7 +19350,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [WaterMinder](../apps/waterminder.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
-* [Where To?](../apps/whereto.md)
+* [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
