@@ -3,16 +3,16 @@ layout: doc
 ---
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import { open, increment, decrement, reset, get } from 'protocol-launcher/tally'
-import { SelectInstallationMethod } from '../../.vitepress/components'
-import { incrementParams, decrementParams, resetParams, getParams } from '../../.vitepress/constants/tally'
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { open, increment, decrement, reset, get } from 'protocol-launcher/tally';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import { incrementParams, decrementParams, resetParams, getParams } from '../../.vitepress/constants/tally';
 
-const currentMethod = ref('On-Demand')
+const currentMethod = ref('On-Demand');
 const importPath = computed(() =>
   currentMethod.value === 'On-Demand' ? 'protocol-launcher/tally' : 'protocol-launcher',
-)
+);
 </script>
 
 # Tally

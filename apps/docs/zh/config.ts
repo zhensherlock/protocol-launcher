@@ -51,6 +51,7 @@ export default defineAdditionalConfig({
           { text: 'CodeLite', link: '/zh/apps/codelite' },
           { text: 'Codex', link: '/zh/apps/codex' },
           { text: 'Craft', link: '/zh/apps/craft' },
+          { text: 'Cubox', link: '/zh/apps/cubox' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Day One', link: '/zh/apps/day-one' },

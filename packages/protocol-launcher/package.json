@@ -142,6 +142,10 @@
       "types": "./dist/types/codex/index.d.ts",
       "import": "./dist/codex/index.js"
     },
+    "./cubox": {
+      "types": "./dist/types/cubox/index.d.ts",
+      "import": "./dist/cubox/index.js"
+    },
     "./cursor": {
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"

@@ -3,16 +3,16 @@ layout: doc
 ---
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import { open, lookup, search } from 'protocol-launcher/terminology'
-import { SelectInstallationMethod } from '../../.vitepress/components'
-import { lookupParams, searchParams } from '../../.vitepress/constants/terminology'
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { open, lookup, search } from 'protocol-launcher/terminology';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import { lookupParams, searchParams } from '../../.vitepress/constants/terminology';
 
-const currentMethod = ref('On-Demand')
+const currentMethod = ref('On-Demand');
 const importPath = computed(() =>
   currentMethod.value === 'On-Demand' ? 'protocol-launcher/terminology' : 'protocol-launcher',
-)
+);
 </script>
 
 # Terminology
@@ -40,7 +40,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}open()
 
 <div class="flex justify-center">
   <VPLink :href="open()" target="_self">
-    <Button Text>
+    打开 Terminology
   </VPLink>
 </div>
 
@@ -58,7 +58,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}lookup({
 
 <div class="flex justify-center">
   <VPLink :href="lookup(lookupParams)" target="_self">
-    <Button Text>
+    在 Terminology 中打开
   </VPLink>
 </div>
 
@@ -76,6 +76,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'terminology.'}}search({
 
 <div class="flex justify-center">
   <VPLink :href="search(searchParams)" target="_self">
-    <Button Text>
+    在 Terminology 中打开
   </VPLink>
 </div>
