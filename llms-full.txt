@@ -2972,6 +2972,224 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
 ---
 
 ---
+url: /protocol-launcher/apps/beorg.md
+---
+
+# Beorg
+
+[Beorg](https://www.beorgapp.com/) is a powerful task management app for iPhone and iPad that uses plain text files in Org mode syntax. **Protocol Launcher** allows you to generate deep links to open Beorg, capture tasks, search for items, and view your agenda and tasks.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Beorg
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'beorg' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}open()
+```
+
+### Capture
+
+Add a new item to Beorg (capture).
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'capture' : 'beorg' }} } from '{{ importPath }}'
+
+// Capture with title, notes, schedule and file
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}capture({
+  title: 'Shopping List',
+  notes: 'Buy eggs',
+  scheduled: '2017-10-03',
+  file: 'shopping',
+})
+
+// Capture with deadline, template and edit option
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}capture({
+  title: 'New task',
+  notes: 'Complete project',
+  deadline: '2017-10-10',
+  template: 'Daily Review',
+  edit: true,
+})
+```
+
+### Search
+
+Search for items in Beorg and return results as JSON.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'beorg' }} } from '{{ importPath }}'
+
+// Simple search
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}search({
+  search: 't bookmark',
+})
+
+// Search with callback URL
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}search({
+  search: 't bookmark',
+  xSuccess: 'shortcuts://x-callback-url/run-shortcut?name=ProcessResults',
+})
+```
+
+### Show Agenda
+
+Show the agenda in Beorg.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showAgenda' : 'beorg' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}showAgenda()
+```
+
+### Show Tasks
+
+Show the tasks tab in Beorg, optionally with a search filter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTasks' : 'beorg' }} } from '{{ importPath }}'
+
+// Show all tasks
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}showTasks({})
+
+// Show tasks with search filter
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}showTasks({
+  search: 't bookmark',
+})
+```
+
+### View File
+
+View a specific file in Beorg.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewFile' : 'beorg' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}viewFile({
+  file: 'shopping',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/beorg.md
+---
+
+# Beorg
+
+[Beorg](https://www.beorgapp.com/) 是一款适用于 iPhone 和 iPad 的强大任务管理应用，使用 Org 模式语法的纯文本文件。**Protocol Launcher** 允许您生成深度链接以打开 Beorg、捕获任务、搜索项目以及查看您的议程和任务。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Beorg
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'beorg' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}open()
+```
+
+### 捕获任务
+
+添加新项目到 Beorg（捕获）。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'capture' : 'beorg' }} } from '{{ importPath }}'
+
+// 捕获带有标题、笔记、计划和文件的任
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}capture({
+  title: 'Shopping List',
+  notes: 'Buy eggs',
+  scheduled: '2017-10-03',
+  file: 'shopping',
+})
+
+// 捕获带有截止日期、模板和编辑选项的任务
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}capture({
+  title: 'New task',
+  notes: 'Complete project',
+  deadline: '2017-10-10',
+  template: 'Daily Review',
+  edit: true,
+})
+```
+
+### 搜索
+
+在 Beorg 中搜索项目并以 JSON 格式返回结果。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'beorg' }} } from '{{ importPath }}'
+
+// 简单搜索
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}search({
+  search: 't bookmark',
+})
+
+// 带回调 URL 的搜索
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}search({
+  search: 't bookmark',
+  xSuccess: 'shortcuts://x-callback-url/run-shortcut?name=ProcessResults',
+})
+```
+
+### 显示议程
+
+在 Beorg 中显示议程。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showAgenda' : 'beorg' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}showAgenda()
+```
+
+### 显示任务
+
+在 Beorg 中显示任务标签页，可选择带搜索过滤器。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTasks' : 'beorg' }} } from '{{ importPath }}'
+
+// 显示所有任务
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}showTasks({})
+
+// 显示带搜索过滤器的任务
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}showTasks({
+  search: 't bookmark',
+})
+```
+
+### 查看文件
+
+在 Beorg 中查看特定文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewFile' : 'beorg' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'beorg.'}}viewFile({
+  file: 'shopping',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/cal2todo.md
 ---
 
@@ -6688,6 +6906,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -6744,6 +6963,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Prizmo](../apps/prizmo.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
+* [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
@@ -12255,6 +12475,102 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pycharm.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/pyto.md
+---
+
+# Pyto
+
+[Pyto](https://pyto.readthedocs.io/) is an open source app to code and run Python code locally on an iPad or iPhone. **Protocol Launcher** allows you to generate deep links to run Python code in Pyto using x-callback URLs.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pyto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pyto.'}}open()
+```
+
+### Run Code
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runCode' : 'pyto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pyto.'}}runCode({
+  code: 'import sys; print(sys.version)',
+})
+```
+
+### Run Code with Callback
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runCode' : 'pyto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pyto.'}}runCode({
+  code: 'import sys; print(sys.version)',
+  xSuccess: 'shortcuts://run-shortcut?name=HandleResult',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/pyto.md
+---
+
+# Pyto
+
+[Pyto](https://pyto.readthedocs.io/) 是一款开源应用，可在 iPad 或 iPhone 上本地编写和运行 Python 代码。**Protocol Launcher** 允许你使用 x-callback URL 生成深度链接，以便在 Pyto 中运行 Python 代码。
+
+## 使用方式
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pyto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pyto.'}}open()
+```
+
+### 运行代码
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runCode' : 'pyto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pyto.'}}runCode({
+  code: 'import sys; print(sys.version)',
+})
+```
+
+### 运行代码带回调
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runCode' : 'pyto' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pyto.'}}runCode({
+  code: 'import sys; print(sys.version)',
+  xSuccess: 'shortcuts://run-shortcut?name=HandleResult',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/qoder.md
 ---
 
@@ -17573,6 +17889,7 @@ Currently, we support the following applications:
 * [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -17629,6 +17946,7 @@ Currently, we support the following applications:
 * [Prizmo](../apps/prizmo.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
+* [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
@@ -19031,6 +19349,8 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Beorg](../apps/beorg.md)
+* [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
@@ -19086,6 +19406,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Prizmo](../apps/prizmo.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
+* [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
@@ -19264,6 +19585,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
+* [Beorg](../apps/beorg.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -19320,6 +19642,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Prizmo](../apps/prizmo.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
+* [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [RustRover](../apps/rustrover.md)
