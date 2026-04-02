@@ -3,16 +3,16 @@ layout: doc
 ---
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import { open, add, project } from 'protocol-launcher/story-planner'
-import { SelectInstallationMethod } from '../../.vitepress/components'
-import { addParams, projectParams } from '../../.vitepress/constants/story-planner'
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { open, add, project } from 'protocol-launcher/story-planner';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import { addParams, projectParams } from '../../.vitepress/constants/story-planner';
 
-const currentMethod = ref('On-Demand')
+const currentMethod = ref('On-Demand');
 const importPath = computed(() =>
   currentMethod.value === 'On-Demand' ? 'protocol-launcher/story-planner' : 'protocol-launcher',
-)
+);
 </script>
 
 # Story Planner
@@ -30,7 +30,7 @@ const importPath = computed(() =>
 
 <SelectInstallationMethod v-model="currentMethod" />
 
-### 打开应用
+### 打开 Story Planner
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'storyPlanner' }} } from '{{ importPath }}'
@@ -40,7 +40,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}open()
 
 <div class="flex justify-center">
   <VPLink :href="open()" target="_self">
-    <Button Text>
+    打开 Story Planner
   </VPLink>
 </div>
 
@@ -56,7 +56,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}add({
 
 <div class="flex justify-center">
   <VPLink :href="add(addParams)" target="_self">
-    <Button Text>
+    在 Story Planner 中打开
   </VPLink>
 </div>
 
@@ -73,6 +73,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}project({
 
 <div class="flex justify-center">
   <VPLink :href="project(projectParams)" target="_self">
-    <Button Text>
+    在 Story Planner 中打开
   </VPLink>
 </div>

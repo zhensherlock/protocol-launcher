@@ -3,16 +3,16 @@ layout: doc
 ---
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue'
-import { open, add, project } from 'protocol-launcher/story-planner'
-import { SelectInstallationMethod } from '../../.vitepress/components'
-import { addParams, projectParams } from '../../.vitepress/constants/story-planner'
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { open, add, project } from 'protocol-launcher/story-planner';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import { addParams, projectParams } from '../../.vitepress/constants/story-planner';
 
-const currentMethod = ref('On-Demand')
+const currentMethod = ref('On-Demand');
 const importPath = computed(() =>
   currentMethod.value === 'On-Demand' ? 'protocol-launcher/story-planner' : 'protocol-launcher',
-)
+);
 </script>
 
 # Story Planner
@@ -30,7 +30,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 <SelectInstallationMethod v-model="currentMethod" />
 
-### Open App
+### Open Story Planner
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'storyPlanner' }} } from '{{ importPath }}'
@@ -40,7 +40,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}open()
 
 <div class="flex justify-center">
   <VPLink :href="open()" target="_self">
-    <Button Text>
+    Open Story Planner
   </VPLink>
 </div>
 
@@ -56,7 +56,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}add({
 
 <div class="flex justify-center">
   <VPLink :href="add(addParams)" target="_self">
-    <Button Text>
+    Open in Story Planner
   </VPLink>
 </div>
 
@@ -73,6 +73,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}project({
 
 <div class="flex justify-center">
   <VPLink :href="project(projectParams)" target="_self">
-    <Button Text>
+    Open in Story Planner
   </VPLink>
 </div>
