@@ -117,6 +117,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Todoist](../apps/todoist.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
 * [Trello](../apps/trello.md)
