@@ -126,6 +126,7 @@ export default defineAdditionalConfig({
           { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Things', link: '/zh/apps/things' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
+          { text: 'Todoist', link: '/zh/apps/todoist' },
           { text: 'Trae', link: '/zh/apps/trae' },
           { text: 'Trae China', link: '/zh/apps/trae-cn' },
           { text: 'Trello', link: '/zh/apps/trello' },

@@ -446,6 +446,10 @@
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
     },
+    "./todoist": {
+      "types": "./dist/types/todoist/index.d.ts",
+      "import": "./dist/todoist/index.js"
+    },
     "./trae": {
       "types": "./dist/types/trae/index.d.ts",
       "import": "./dist/trae/index.js"
