@@ -454,13 +454,17 @@
       "types": "./dist/types/trae/index.d.ts",
       "import": "./dist/trae/index.js"
     },
-    "./upic": {
-      "types": "./dist/types/upic/index.d.ts",
-      "import": "./dist/upic/index.js"
-    },
     "./trae-cn": {
       "types": "./dist/types/trae-cn/index.d.ts",
       "import": "./dist/trae-cn/index.js"
+    },
+    "./ulysses": {
+      "types": "./dist/types/ulysses/index.d.ts",
+      "import": "./dist/ulysses/index.js"
+    },
+    "./upic": {
+      "types": "./dist/types/upic/index.d.ts",
+      "import": "./dist/upic/index.js"
     },
     "./verdent": {
       "types": "./dist/types/verdent/index.d.ts",

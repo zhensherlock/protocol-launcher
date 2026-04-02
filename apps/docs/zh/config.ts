@@ -130,6 +130,7 @@ export default defineAdditionalConfig({
           { text: 'Trae', link: '/zh/apps/trae' },
           { text: 'Trae China', link: '/zh/apps/trae-cn' },
           { text: 'Trello', link: '/zh/apps/trello' },
+          { text: 'Ulysses', link: '/zh/apps/ulysses' },
           { text: 'uPic', link: '/zh/apps/upic' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },

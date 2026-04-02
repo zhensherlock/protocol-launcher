@@ -121,6 +121,7 @@ layout: doc
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
 - [Trello](../apps/trello.md)
+- [Ulysses](../apps/ulysses.md)
 - [uPic](../apps/upic.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
