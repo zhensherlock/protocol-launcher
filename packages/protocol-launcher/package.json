@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
@@ -405,6 +401,10 @@
     "./steam": {
       "types": "./dist/types/steam/index.d.ts",
       "import": "./dist/steam/index.js"
+    },
+    "./story-planner": {
+      "types": "./dist/types/story-planner/index.d.ts",
+      "import": "./dist/story-planner/index.js"
     },
     "./tally": {
       "types": "./dist/types/tally/index.d.ts",

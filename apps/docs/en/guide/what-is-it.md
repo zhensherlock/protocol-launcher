@@ -107,6 +107,7 @@ Currently, we support the following applications:
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Steam](../apps/steam.md)
+- [Story Planner](../apps/story-planner.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
 - [Terminology](../apps/terminology.md)

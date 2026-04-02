@@ -116,6 +116,7 @@ export default defineAdditionalConfig({
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Steam', link: '/zh/apps/steam' },
+          { text: 'Story Planner', link: '/zh/apps/story-planner' },
           { text: 'Tally', link: '/zh/apps/tally' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'Terminology', link: '/zh/apps/terminology' },

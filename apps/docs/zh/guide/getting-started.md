@@ -209,6 +209,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Steam](../apps/steam.md)
+- [Story Planner](../apps/story-planner.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
 - [Terminology](../apps/terminology.md)
