@@ -1,5 +1,106 @@
 # protocol-launcher
 
+## 1.20.0
+
+### Minor Changes
+
+- [`8b7589c`](https://github.com/zhensherlock/protocol-launcher/commit/8b7589c992e77dd469495bba5e78639072b0f5cc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(day-one): add day-one protocol launcher support
+
+- [`b6b4644`](https://github.com/zhensherlock/protocol-launcher/commit/b6b46441122679b46f5cc335b7e5441cd2a7f76f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(steam): add steam protocol launcher support
+
+- [`8b1245d`](https://github.com/zhensherlock/protocol-launcher/commit/8b1245d37fb8d1ce9c38a4b29cbf99f4a0238c30) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(calca): add calca protocol launcher support
+
+- [`6b2acac`](https://github.com/zhensherlock/protocol-launcher/commit/6b2acacc94b4047b4d2b9182b9b46cc0f59c71a0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(icab-mobile): add icab-mobile protocol launcher support
+
+- [`5a2c314`](https://github.com/zhensherlock/protocol-launcher/commit/5a2c314ae50a575aa1c339ebba25145b82936a07) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(multi-timer): add multi-timer protocol launcher support
+
+- [`198df26`](https://github.com/zhensherlock/protocol-launcher/commit/198df266ca0786b78220b9ef520bbd0e64ee0f16) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(textastic): add textastic protocol launcher support
+
+- [`f838105`](https://github.com/zhensherlock/protocol-launcher/commit/f8381055a5bac185fab9eef6c391120c7a865baf) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(1writer): add 1writer protocol launcher support
+
+- [`a606ab7`](https://github.com/zhensherlock/protocol-launcher/commit/a606ab741894cf344bf195433714ef6e28947465) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(longshot): add longshot protocol launcher support
+
+- [`925c42b`](https://github.com/zhensherlock/protocol-launcher/commit/925c42b438e51d5043b0e09efb624fb480ee635e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(due): add due protocol launcher support
+
+- [`93434d0`](https://github.com/zhensherlock/protocol-launcher/commit/93434d062199a2e50ccd528145e1ee7c91cd03bf) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(interact): add interact protocol launcher support
+
+- [`209b561`](https://github.com/zhensherlock/protocol-launcher/commit/209b56154b2707c61199cc0ad487d5d1f977828e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(instapaper): add instapaper protocol launcher support
+
+- [`1e18737`](https://github.com/zhensherlock/protocol-launcher/commit/1e187370dd102916f657c1de8014ea9d406317f2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(craft): add craft protocol launcher support
+
+- [`e45839a`](https://github.com/zhensherlock/protocol-launcher/commit/e45839a8694b5b709ba693ad5025d5f74575a984) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(2do): add 2do protocol launcher support
+
+- [`910c733`](https://github.com/zhensherlock/protocol-launcher/commit/910c7331145c4d127bf18909395caa64c26c6c64) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(gladys): add gladys protocol launcher support
+
+- [`bde4740`](https://github.com/zhensherlock/protocol-launcher/commit/bde4740027fd99b3377143f7ffbdc730132c82b7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(mail-assistant): add mail-assistant protocol launcher support
+
+- [`121728a`](https://github.com/zhensherlock/protocol-launcher/commit/121728a78f63df85bf7f7b9aeca5b5192c04dab5) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(whereto): add whereto protocol launcher support
+
+- [`70410a0`](https://github.com/zhensherlock/protocol-launcher/commit/70410a033d43882272a2ca646315b4f120782cbc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(miCal): add miCal protocol launcher support
+
+- [`9ad98a2`](https://github.com/zhensherlock/protocol-launcher/commit/9ad98a231a39952547c59ad12e06474ffb01745c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(terminology): add terminology protocol launcher support
+
+- [`ae3e97f`](https://github.com/zhensherlock/protocol-launcher/commit/ae3e97fb0d6cee48f8e1bb15186f81084bf7df16) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(coda): add coda protocol launcher support
+
+- [`fbaf46d`](https://github.com/zhensherlock/protocol-launcher/commit/fbaf46d2044cccb9be34ac58d5a5baf09de44522) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(tally): add tally protocol launcher support
+
+- [`6e6382a`](https://github.com/zhensherlock/protocol-launcher/commit/6e6382a6f15d598f9a769b08837bf9194184c9e4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(hookmark): add hookmark protocol launcher support
+
+- [`3d37210`](https://github.com/zhensherlock/protocol-launcher/commit/3d37210c51b6b8a656a13a1f2b9e008ae1b05acf) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(simple-scan): add simple-scan protocol launcher support
+
+- [`f0a9f44`](https://github.com/zhensherlock/protocol-launcher/commit/f0a9f448f2ef965d73df930a5dcb4a6bac0b90b9) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(working-copy): add working-copy protocol launcher support
+
+- [`41c8e3c`](https://github.com/zhensherlock/protocol-launcher/commit/41c8e3c2dda334e47d8bd55ec9e84234061764bd) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(dict.cc): add dict.cc protocol launcher support
+
+- [`43740ef`](https://github.com/zhensherlock/protocol-launcher/commit/43740ef7c401bcbea705727a6d781152ae0719c2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(shopi): add shopi protocol launcher support
+
+- [`495f350`](https://github.com/zhensherlock/protocol-launcher/commit/495f3508cd6baee5018caa5965b6e2e32afd8d06) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(obsidian): add obsidian protocol launcher support
+
+- [`188995d`](https://github.com/zhensherlock/protocol-launcher/commit/188995d38726606973190a744d41a6ed5d3914ae) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(opener): add opener protocol launcher support
+
+- [`852c046`](https://github.com/zhensherlock/protocol-launcher/commit/852c046a4c400a9ce22cab8fe15f54a922f4f8e9) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cubox): add cubox protocol launcher support
+
+- [`5c7d1bc`](https://github.com/zhensherlock/protocol-launcher/commit/5c7d1bcef458d2926e3c1cb9fc07f52afb47722b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pleco): add pleco protocol launcher support
+
+- [`9a82f76`](https://github.com/zhensherlock/protocol-launcher/commit/9a82f76fa999ea7134331e4e12d40b25b139eb5c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(prizmo): add prizmo protocol launcher support
+
+- [`cafedb5`](https://github.com/zhensherlock/protocol-launcher/commit/cafedb5033dcc349a7bf084f540571a4580ce4d9) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(scriptable): add scriptable protocol launcher support
+
+- [`7c97227`](https://github.com/zhensherlock/protocol-launcher/commit/7c97227145bd610c3748174a90f9ebf85b125635) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(overcast): add overcast protocol launcher support
+
+- [`922049f`](https://github.com/zhensherlock/protocol-launcher/commit/922049f53c5d1fc98718c7b69c32db9a75ebcb3a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(streets): add streets protocol launcher support
+
+- [`69cb49d`](https://github.com/zhensherlock/protocol-launcher/commit/69cb49d49fd6c3de1c7c54c87b08e4e8b9dceff0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(appigo): add appigo protocol launcher support
+
+- [`ecf45d6`](https://github.com/zhensherlock/protocol-launcher/commit/ecf45d65f3c874361b26a8775e0f5ea3e547b9d0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(beorg): add beorg protocol launcher support
+
+- [`17fe82b`](https://github.com/zhensherlock/protocol-launcher/commit/17fe82b81dd7167240f5bd23c910d7e6e1b1db2b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(trello): add trello protocol launcher support
+
+- [`b7c496f`](https://github.com/zhensherlock/protocol-launcher/commit/b7c496f352bf474a9cd33f146f33d741c0163f81) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(agenda): add agenda protocol launcher support
+
+- [`6c1f7bf`](https://github.com/zhensherlock/protocol-launcher/commit/6c1f7bfb130622dbde1b4526ed4c07ebf3fd84c2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(waterminder): add waterminder protocol launcher support
+
+- [`811fd82`](https://github.com/zhensherlock/protocol-launcher/commit/811fd822ae7b3e9606728cda6fc24b6ab57deddd) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(fantastical): add fantastical protocol launcher support
+
+- [`45841f6`](https://github.com/zhensherlock/protocol-launcher/commit/45841f66b8a38d9c297aa3a55dd4a4522ef24ea6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(editorial): add editorial protocol launcher support
+
+- [`e61c52e`](https://github.com/zhensherlock/protocol-launcher/commit/e61c52e87c472199dc82605d72420a0ece7b7636) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pyto): add pyto protocol launcher support
+
+- [`6c8016f`](https://github.com/zhensherlock/protocol-launcher/commit/6c8016ff68b628bbcf7b7a3ff107e6e3da7b72e6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cal2todo): add cal2todo protocol launcher support
+
+- [`4812438`](https://github.com/zhensherlock/protocol-launcher/commit/48124385cb0df1bf3a7c2f2f7316002a7b371aa7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(codehub): add codehub protocol launcher support
+
+- [`9776462`](https://github.com/zhensherlock/protocol-launcher/commit/9776462ecf5440b20e513f703e2abf9620fe6432) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(equipd-bible): add equipd-bible protocol launcher support
+
+- [`65b2783`](https://github.com/zhensherlock/protocol-launcher/commit/65b2783dbbbb2118d8adfacda1ce470acc176bc7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(drafts): add drafts protocol launcher support
+
+### Patch Changes
+
+- [`25ad798`](https://github.com/zhensherlock/protocol-launcher/commit/25ad79810f081616bfdf556268d36633b90cd566) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`25ad798`](https://github.com/zhensherlock/protocol-launcher/commit/25ad79810f081616bfdf556268d36633b90cd566)]:
+  - @protocol-launcher/shared@1.4.4
+
 ## 1.19.0
 
 ### Minor Changes
