@@ -108,6 +108,7 @@ export default defineAdditionalConfig({
           { text: 'Qoder', link: '/zh/apps/qoder' },
           { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
+          { text: 'Scriptable', link: '/zh/apps/scriptable' },
           { text: 'Shopi', link: '/zh/apps/shopi' },
           { text: 'Shortcuts', link: '/zh/apps/shortcuts' },
           { text: 'Simple Scan', link: '/zh/apps/simple-scan' },

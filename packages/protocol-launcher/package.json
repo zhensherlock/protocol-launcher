@@ -366,6 +366,10 @@
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"
     },
+    "./scriptable": {
+      "types": "./dist/types/scriptable/index.d.ts",
+      "import": "./dist/scriptable/index.js"
+    },
     "./shortcuts": {
       "types": "./dist/types/shortcuts/index.d.ts",
       "import": "./dist/shortcuts/index.js"

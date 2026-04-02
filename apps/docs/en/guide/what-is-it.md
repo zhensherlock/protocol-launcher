@@ -99,6 +99,7 @@ Currently, we support the following applications:
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [RustRover](../apps/rustrover.md)
+- [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)
 - [Simple Scan](../apps/simple-scan.md)
