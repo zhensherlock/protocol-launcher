@@ -120,6 +120,7 @@
 - [Trae](/protocol-launcher/apps/trae.md)
 - [Trae China](/protocol-launcher/apps/trae-cn.md)
 - [Trello](/protocol-launcher/apps/trello.md)
+- [Ulysses](/protocol-launcher/apps/ulysses.md)
 - [uPic](/protocol-launcher/apps/upic.md)
 - [Verdent](/protocol-launcher/apps/verdent.md)
 - [VS Code](/protocol-launcher/apps/vscode.md)
@@ -261,4 +262,5 @@
 - [Textastic](/protocol-launcher/zh/apps/textastic.md)
 - [Todoist](/protocol-launcher/zh/apps/todoist.md)
 - [Trello](/protocol-launcher/zh/apps/trello.md)
+- [Ulysses](/protocol-launcher/zh/apps/ulysses.md)
 - [WaterMinder](/protocol-launcher/zh/apps/waterminder.md)
