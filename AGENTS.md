@@ -141,7 +141,7 @@ export function open() {
 ## IDE Setup
 
 - VS Code: Install Biome and ESLint extensions
-- Use pnpm (packageManager: pnpm@10.32.1), Node.js >= 22
+- Use pnpm (packageManager: pnpm@10.33.0), Node.js >= 22
 
 ## Cursor/Copilot Rules
 
