@@ -41,8 +41,24 @@ permission:
 ```
 packages/protocol-launcher/src/<name>/
 ├── index.ts          # 导出所有工具函数
-├── open.ts           # open 工具（如需要）
+├── open.ts           # open 工具（必须）
 ├── <tool>.ts         # 其他工具函数
+```
+
+**重要**：每个协议都必须实现 `open.ts` 文件，用于打开应用本身。参考 `vscode/open.ts` 的实现：
+
+```typescript
+/**
+ * Open <ProtocolName>.
+ *
+ * @returns <ProtocolName> open URL.
+ * @example
+ * open()
+ * // => '<scheme>://'
+ */
+export function open() {
+  return '<scheme>://'
+}
 ```
 
 ### 3. 注册导出
@@ -87,6 +103,7 @@ packages/protocol-launcher/tests/<name>.test.ts
 - 每个工具函数至少一个测试
 - 测试不同参数组合的场景
 - 使用 `expect(url).toBe('...')` 验证结果
+- **测试覆盖率必须达到 100%**（包括所有分支和边界情况）
 
 ### 6. 运行验证
 
