@@ -179,10 +179,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'toolName.'}}functionName({
 
 <div class="flex justify-center">
   <VPLink :href="functionName(params)" target="_self">
-    <Button Text>
+    <Descriptive Action Text>
   </VPLink>
 </div>
-```
+
+按钮文本应为描述性操作文本，如：
+
+- 英文：`Open <Tool Name>`、`Open URL in <Tool Name>`、`Open in <Tool Name>`、`Add to <Tool Name>` 等
+- 中文：`打开 <Tool Name>`、`在 <Tool Name> 中打开`、`在 <Tool Name> 中添加` 等
+
+````
 
 ### 代码风格
 
@@ -199,7 +205,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'toolName.'}}functionName({
 export const openUrlParams = {
   url: 'https://www.google.com/',
 }
-```
+````
 
 ### Windows 路径参数
 
