@@ -1,5 +1,12 @@
 # @protocol-launcher/docs
 
+## 0.0.33
+
+### Patch Changes
+
+- Updated dependencies [[`5704443`](https://github.com/zhensherlock/protocol-launcher/commit/57044430dcc06a23dc80fcd25928f9bba716270c), [`0de5367`](https://github.com/zhensherlock/protocol-launcher/commit/0de53678641c1417d8d5ecf5ad1fe9b54068dd3f), [`adf0b38`](https://github.com/zhensherlock/protocol-launcher/commit/adf0b3875b5ac1a08bd1dbf2bb090a20c4c3d700), [`ff8705e`](https://github.com/zhensherlock/protocol-launcher/commit/ff8705e418db8a78461f702969a6c1b0f6c0d32d)]:
+  - protocol-launcher@1.21.0
+
 ## 0.0.32
 
 ### Patch Changes

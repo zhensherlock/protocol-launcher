@@ -1,5 +1,22 @@
 # protocol-launcher
 
+## 1.21.0
+
+### Minor Changes
+
+- [`5704443`](https://github.com/zhensherlock/protocol-launcher/commit/57044430dcc06a23dc80fcd25928f9bba716270c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(ulysses): add ulysses protocol launcher support
+
+- [`0de5367`](https://github.com/zhensherlock/protocol-launcher/commit/0de53678641c1417d8d5ecf5ad1fe9b54068dd3f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(todoist): add todoist protocol launcher support
+
+- [`ff8705e`](https://github.com/zhensherlock/protocol-launcher/commit/ff8705e418db8a78461f702969a6c1b0f6c0d32d) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(story-planner): add story-planner protocol launcher support
+
+### Patch Changes
+
+- [`adf0b38`](https://github.com/zhensherlock/protocol-launcher/commit/adf0b3875b5ac1a08bd1dbf2bb090a20c4c3d700) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`adf0b38`](https://github.com/zhensherlock/protocol-launcher/commit/adf0b3875b5ac1a08bd1dbf2bb090a20c4c3d700)]:
+  - @protocol-launcher/shared@1.4.5
+
 ## 1.20.0
 
 ### Minor Changes
