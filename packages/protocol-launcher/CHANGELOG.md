@@ -1,5 +1,14 @@
 # protocol-launcher
 
+## 1.21.1
+
+### Patch Changes
+
+- [`c825b94`](https://github.com/zhensherlock/protocol-launcher/commit/c825b94435936d0fc0e79f3a3bb5422188abe7ff) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`c825b94`](https://github.com/zhensherlock/protocol-launcher/commit/c825b94435936d0fc0e79f3a3bb5422188abe7ff)]:
+  - @protocol-launcher/shared@1.4.6
+
 ## 1.21.0
 
 ### Minor Changes
