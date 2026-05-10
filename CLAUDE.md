@@ -1,4 +1,4 @@
-# AGENTS.md - Protocol Launcher
+# CLAUDE.md - Protocol Launcher
 
 ## Repo Shape
 
