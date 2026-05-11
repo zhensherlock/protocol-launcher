@@ -14,50 +14,114 @@ One-click launch URL generator for protocol-based apps.
 [![][github-action-build-shield]][github-action-build-link]
 [![][github-license-shield]][github-license-link]
 
-## Features
+`protocol-launcher` helps you generate typed deep links and URL scheme links for desktop, mobile, productivity, AI, and developer tools. Use it to open apps, jump to files or projects, install MCP servers, import provider settings, and create safe one-click launch links for websites, docs, CLIs, and automation flows.
 
-- 🛡️️ Type-Safe
-- 🌍 Multi-App Ready
-- 🌿 On-Demand / Tree-shakable
-- 🔐 Secure Encoding
-- ⚙️ Zero Runtime Dependencies
-- 📦 ESM First
+## Why Protocol Launcher?
+
+- Type-safe builders for supported protocol payloads.
+- On-demand imports such as `protocol-launcher/vscode` and `protocol-launcher/cherry-studio`.
+- Safe query-string and base64 payload encoding, including Unicode payloads.
+- Broad protocol coverage across AI tools, editors, productivity apps, native macOS apps, and utilities.
+- ESM-first output for Node.js and modern bundlers.
+- Zero third-party runtime dependencies.
 
 ## Installation
+
+```bash
+pnpm add protocol-launcher
+```
 
 ```bash
 npm install protocol-launcher
 ```
 
-or
-
 ```bash
 yarn add protocol-launcher
 ```
 
-or
-
 ```bash
-pnpm install protocol-launcher
+bun add protocol-launcher
 ```
 
 ## Usage
 
-### On-Demand Import (Recommended)
+### On-Demand Import
+
+Use direct subpath imports when you only need one app integration.
 
 ```ts
-// Cherry Studio
-import { installMCP, installProvider } from 'protocol-launcher/cherry-studio'
+import { installMCP } from 'protocol-launcher/cursor'
 
-// Cursor
-import { installMCP as installCursorMCP } from 'protocol-launcher/cursor'
+const url = installMCP({
+  name: 'server-everything',
+  type: 'stdio',
+  command: 'npx',
+  args: ['-y', '@modelcontextprotocol/server-everything'],
+  openInNewWindow: true,
+})
+```
+
+```ts
+import { installProvider } from 'protocol-launcher/cherry-studio'
+
+const url = installProvider({
+  id: 'new-api',
+  baseUrl: 'https://open.cherryin.ai',
+  apiKey: 'sk-xxxx',
+})
+```
+
+```ts
+import { openFile } from 'protocol-launcher/vscode'
+
+const url = openFile({
+  path: '/code/protocol-launcher/README.md',
+  line: 1,
+  column: 1,
+})
 ```
 
 ### Full Import
 
+The root entry exports each protocol as a namespace.
+
 ```ts
-import { cherryStudio, cursor } from 'protocol-launcher'
+import { cherryStudio, cursor, vscode } from 'protocol-launcher'
+
+const settingsUrl = vscode.openSettings({
+  path: 'terminal.integrated.suggest.enabled',
+})
+
+const folderUrl = cursor.openFolder({
+  path: '/code/protocol-launcher',
+})
+
+const providerUrl = cherryStudio.installProvider({
+  id: 'openai',
+  baseUrl: 'https://api.openai.com/v1',
+  apiKey: 'sk-xxxx',
+})
 ```
+
+Prefer subpath imports for production bundles when possible.
+
+## Popular Integrations
+
+```ts
+import { openThread } from 'protocol-launcher/codex'
+import { installMCP } from 'protocol-launcher/cursor'
+import { open } from 'protocol-launcher/telegram'
+import { openSettings } from 'protocol-launcher/vscode'
+```
+
+Examples of supported app categories:
+
+- AI and coding tools: `antigravity`, `cherry-studio`, `code-buddy`, `codex`, `cursor`, `kiro`, `lingma`, `opencode`, `qoder`, `trae`, `vscode`, `windsurf`, `zed`
+- Editors and IDEs: `bbedit`, `code-runner`, `goland`, `idea`, `macvim`, `nova`, `phpstorm`, `pycharm`, `rustrover`, `textastic`, `textmate`, `webstorm`, `xcode`
+- Productivity and notes: `agenda`, `bear`, `craft`, `drafts`, `evernote`, `fsnotes`, `obsidian`, `things`, `todoist`, `trello`, `ulysses`, `working-copy`
+- Platform and utilities: `app-store`, `apple-map`, `macos`, `microsoft-edge`, `shortcuts`, `steam`, `telegram`, `thunder`, `wemeet`
+
+See the [documentation site](https://zhensherlock.github.io/protocol-launcher/) for the full app list and exact API examples.
 
 ## Docs
 
