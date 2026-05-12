@@ -18,17 +18,17 @@ Visual Studio Code 是一款轻量但功能强大的源代码编辑器。[Visual
 ### 打开编辑器
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}open()
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}open()
 ```
 
 ### 安装 STDIO MCP 服务
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}installMCP({
   name: 'server-everything',
   type: 'stdio',
   command: 'npx',
@@ -39,9 +39,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMC
 ### 安装 Streamable HTTP MCP 服务
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}installMCP({
   name: '企查查企业信息 MCP',
   type: 'streamable_http',
   url: 'https://mcp.qcc.com/basic/stream',
@@ -54,9 +54,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMC
 ### 安装 SSE MCP 服务
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}installMCP({
   name: '企查查风险信息 MCP',
   type: 'sse',
   url: 'https://mcp.qcc.com/basic/sse',
@@ -69,9 +69,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMC
 ### 打开文件
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFile({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openFile({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
   line: 1,
   column: 2,
@@ -82,9 +82,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFile(
 ### 打开文件夹
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFolder({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
   openInNewWindow: true,
 })
@@ -93,9 +93,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFolde
 ### 远程开发
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openRemote({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openRemote({
   type: 'ssh-remote',
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
@@ -105,9 +105,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openRemot
 ### 克隆项目
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}cloneProject({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}cloneProject({
   repo: 'https://github.com/zhensherlock/protocol-launcher',
 })
 ```
@@ -115,9 +115,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}cloneProj
 ### 打开扩展
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openExtension({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openExtension({
   id: 'esbenp.prettier-vscode',
 })
 ```
@@ -125,9 +125,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openExten
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openSettings({ 
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```

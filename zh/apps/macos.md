@@ -20,13 +20,13 @@ url: /protocol-launcher/zh/apps/macos.md
 打开日历应用程序，可选择带 webcal 订阅链接。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'calendar' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'calendar' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开日历应用
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}calendar()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}calendar()
 
 // 打开带 webcal 订阅的日历
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}calendar({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}calendar({
   link: 'https://p10-calendars.icloud.com/holiday/CN_zh.ics',
 })
 ```
@@ -36,9 +36,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}calendar({
 打开 FaceTime 应用程序，可选择带电话号码。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'facetime' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'facetime' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}facetime({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}facetime({
   phone: '1234567890',
 })
 ```
@@ -48,23 +48,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}facetime({
 打开查找应用程序，可选择指定标签页（设备、物品或联系人）。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'findMy' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'findMy' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开查找应用
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy()
 
 // 打开设备标签页
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy({
   tab: 'devices',
 })
 
 // 打开物品标签页
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy({
   tab: 'items',
 })
 
 // 打开联系人标签页
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy({
   tab: 'friends',
 })
 ```
@@ -74,9 +74,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
 打开邮件应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'mail' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'mail' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}mail()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}mail()
 ```
 
 ### 打开短信
@@ -84,13 +84,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}mail()
 打开短信应用程序，可选择带电话号码。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'sms' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'sms' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开短信应用
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}sms()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}sms()
 
 // 打开带电话号码的短信
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}sms({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}sms({
   phone: '1234567890',
 })
 ```
@@ -100,9 +100,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}sms({
 打开钱包应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'wallet' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'wallet' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}wallet()
 ```
 
 ### 打开通讯录
@@ -110,9 +110,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
 打开通讯录应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}addressbook()
 ```
 
 ### 打开反馈
@@ -120,13 +120,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
 打开反馈助手应用程序，可选择提交新反馈。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开反馈助手
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}feedback()
 
 // 打开反馈助手提交新反馈
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}feedback({
   type: 'new',
 })
 ```
@@ -136,9 +136,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
 打开备忘录应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}notes()
 ```
 
 ### 打开提醒事项
@@ -146,9 +146,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
 打开提醒事项应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}reminders()
 ```
 
 ### 打开股票
@@ -156,13 +156,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
 打开股票应用程序，可选择带股票代码。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开股票应用
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}stocks()
 
 // 打开带股票代码的股票
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}stocks({
   symbol: 'GE',
 })
 ```
@@ -172,9 +172,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
 打开视频应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}videos()
 ```
 
 ### 打开天气
@@ -182,9 +182,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
 打开天气应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}weather()
 ```
 
 ### 打开图书
@@ -192,9 +192,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
 打开图书应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'books' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'books' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}books()
 ```
 
 ### 打开音乐
@@ -202,9 +202,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
 打开音乐应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'music' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'music' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}music()
 ```
 
 ### 打开照片
@@ -212,9 +212,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
 打开照片应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}photos()
 ```
 
 ### 打开播客
@@ -222,9 +222,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
 打开播客应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}podcasts()
 ```
 
 ### 打开系统设置
@@ -232,18 +232,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
 打开系统设置应用程序，可选择指定偏好设置面板。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开系统设置
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}systemPreferences()
 
 // 打开安全性与隐私面板
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}systemPreferences({
   pane: 'com.apple.preference.security',
 })
 
 // 打开软件更新面板
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}systemPreferences({
   pane: 'com.apple.preferences.softwareupdate',
 })
 ```
@@ -253,9 +253,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
 打开 Airport 实用工具应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}airport()
 ```
 
 ### 打开词典
@@ -263,13 +263,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
 搜索词典查找术语。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macOS' }} } from '{{ importPath }}'
 
 // 搜索词典
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}dictionary()
 
 // 搜索带术语的词典
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}dictionary({
   term: 'hello',
 })
 ```
@@ -279,9 +279,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
 打开无边记应用程序。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}freeform()
 ```
 
 ### 打开帮助查看器
@@ -289,13 +289,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
 打开帮助查看器应用程序，可选择指定合集。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macOS' }} } from '{{ importPath }}'
 
 // 打开帮助查看器
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}helpViewer()
 
 // 打开带合集的帮助查看器
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}helpViewer({
   collection: 'WelcomeToMac',
 })
 ```
@@ -305,13 +305,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
 添加打印机，可选择带主机名或 IP 地址。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macOS' }} } from '{{ importPath }}'
 
 // 添加打印机
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}printer()
 
 // 添加带主机的打印机
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}printer({
   host: '192.168.1.100',
 })
 ```
@@ -321,9 +321,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
 打开 Apple 密码 (OTP Auth) 应用。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}appleOtpauth()
 ```
 
 ### 打开字体册
@@ -331,9 +331,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
 打开字体册应用。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}fontbook()
 ```
 
 ### 打开 Keynote
@@ -341,9 +341,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
 打开 Keynote 应用。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}keynote()
 ```
 
 ### 打开 Numbers
@@ -351,9 +351,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
 打开 Numbers 应用。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}numbers()
 ```
 
 ### 打开 Pages
@@ -361,7 +361,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
 打开 Pages 应用。
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}pages()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}pages()
 ```

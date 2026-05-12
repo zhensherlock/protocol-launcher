@@ -63,27 +63,27 @@ import { openRepo } from 'protocol-launcher/github-desktop'
 
 ```typescript [goland]
 // Only imports GoLand related code
-import { openRepo } from 'protocol-launcher/goland'
+import { openFile } from 'protocol-launcher/goland'
 ```
 
 ```typescript [idea]
 // Only imports IntelliJ IDEA related code
-import { openRepo } from 'protocol-launcher/idea'
+import { openFile } from 'protocol-launcher/idea'
 ```
 
 ```typescript [phpstorm]
 // Only imports PhpStorm related code
-import { openRepo } from 'protocol-launcher/phpstorm'
+import { openFile } from 'protocol-launcher/phpstorm'
 ```
 
 ```typescript [pycharm]
 // Only imports PyCharm related code
-import { openRepo } from 'protocol-launcher/pycharm'
+import { openFile } from 'protocol-launcher/pycharm'
 ```
 
 ```typescript [rustrover]
 // Only imports RustRover related code
-import { openRepo } from 'protocol-launcher/rustrover'
+import { openFile } from 'protocol-launcher/rustrover'
 ```
 
 ```typescript [telegram]
@@ -103,7 +103,7 @@ import { openFile } from 'protocol-launcher/vscode'
 
 ```typescript [webstorm]
 // Only imports WebStorm related code
-import { openRepo } from 'protocol-launcher/webstorm'
+import { openFile } from 'protocol-launcher/webstorm'
 ```
 
 ```typescript [xcode]
@@ -129,7 +129,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
-* [Apple Map](../apps/apple-map.md)
+* [Apple Maps](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)

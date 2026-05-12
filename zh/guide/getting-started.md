@@ -63,27 +63,27 @@ import { openRepo } from 'protocol-launcher/github-desktop'
 
 ```typescript [goland]
 // 仅导入 GoLand 相关代码
-import { openRepo } from 'protocol-launcher/goland'
+import { openFile } from 'protocol-launcher/goland'
 ```
 
 ```typescript [idea]
 // 仅导入 IntelliJ IDEA 相关代码
-import { openRepo } from 'protocol-launcher/idea'
+import { openFile } from 'protocol-launcher/idea'
 ```
 
 ```typescript [phpstorm]
 // 仅导入 PhpStorm 相关代码
-import { openRepo } from 'protocol-launcher/phpstorm'
+import { openFile } from 'protocol-launcher/phpstorm'
 ```
 
 ```typescript [pycharm]
 // 仅导入 PyCharm 相关代码
-import { openRepo } from 'protocol-launcher/pycharm'
+import { openFile } from 'protocol-launcher/pycharm'
 ```
 
 ```typescript [rustrover]
 // 仅导入 RustRover 相关代码
-import { openRepo } from 'protocol-launcher/rustrover'
+import { openFile } from 'protocol-launcher/rustrover'
 ```
 
 ```typescript [telegram]
@@ -129,7 +129,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
-* [Apple Map](../apps/apple-map.md)
+* [Apple 地图](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)

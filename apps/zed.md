@@ -72,7 +72,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openGitCommit({
 ### Open Extension
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'cursor' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'zed' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openExtension({
   id: 'html',
@@ -82,7 +82,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openExtension({
 ### Open Agent
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openAgent' : 'cursor' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openAgent' : 'zed' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openAgent({
   prompt: 'Hello World',
@@ -92,7 +92,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openAgent({
 ### Join Agent
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'joinAgent' : 'cursor' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'joinAgent' : 'zed' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}joinAgent({
   id: '12345',
@@ -102,7 +102,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}joinAgent({
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'cursor' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'zed' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
   path: 'autosave',

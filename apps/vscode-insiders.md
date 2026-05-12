@@ -18,17 +18,17 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 ### Open IDE
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}open()
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}open()
 ```
 
 ### Install STDIO MCP Server
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}installMCP({
   name: 'server-everything',
   type: 'stdio',
   command: 'npx',
@@ -39,9 +39,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMC
 ### Install Streamable HTTP MCP Server
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}installMCP({
   name: '企查查企业信息 MCP',
   type: 'http',
   url: 'https://mcp.qcc.com/basic/stream',
@@ -54,9 +54,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMC
 ### Install SSE MCP Server
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}installMCP({
   name: '企查查风险信息 MCP',
   type: 'sse',
   url: 'https://mcp.qcc.com/basic/sse',
@@ -69,9 +69,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}installMC
 ### Open File
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFile({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openFile({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
   line: 1,
   column: 2,
@@ -82,9 +82,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFile(
 ### Open Folder
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFolder({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
   openInNewWindow: true,
 })
@@ -93,9 +93,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openFolde
 ### Open Remote
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openRemote({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openRemote({
   type: 'ssh-remote',
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
@@ -105,9 +105,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openRemot
 ### Clone Project
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'cloneProject' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}cloneProject({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}cloneProject({
   repo: 'https://github.com/zhensherlock/protocol-launcher',
 })
 ```
@@ -115,9 +115,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}cloneProj
 ### Open Extension
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openExtension({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openExtension({
   id: 'esbenp.prettier-vscode',
 })
 ```
@@ -125,9 +125,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openExten
 ### Open Settings
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode-insiders' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscodeInsiders' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode-insiders.'}}openSettings({
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```

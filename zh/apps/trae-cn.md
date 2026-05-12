@@ -22,17 +22,17 @@ url: /protocol-launcher/zh/apps/trae-cn.md
 ### 打开编辑器
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'open' : 'trae' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae.'}}open()
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}open()
 ```
 
 ### 安装 STDIO MCP 服务
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}installMCP({
   name: 'server-everything',
   type: 'stdio',
   command: 'npx',
@@ -43,9 +43,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}installMCP({
 ### 安装 Streamable HTTP MCP 服务
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}installMCP({
   name: '企查查企业信息 MCP',
   type: 'http',
   url: 'https://mcp.qcc.com/basic/stream',
@@ -58,9 +58,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}installMCP({
 ### 安装 SSE MCP 服务
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}installMCP({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}installMCP({
   name: '企查查风险信息 MCP',
   type: 'http',
   url: 'https://mcp.qcc.com/basic/sse',
@@ -73,9 +73,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}installMCP({
 ### 打开文件
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openFile({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}openFile({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
   line: 1,
   column: 2,
@@ -86,9 +86,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openFile({
 ### 打开文件夹
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openFolder({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
   openInNewWindow: true,
 })
@@ -97,9 +97,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openFolder({
 ### 远程开发
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openRemote' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openRemote({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}openRemote({
   type: 'ssh-remote',
   host: 'root@172.18.105.209:22',
   path: '/code/my-project',
@@ -109,9 +109,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openRemote({
 ### 打开扩展
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openExtension' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openExtension({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}openExtension({
   id: 'esbenp.prettier-vscode',
 })
 ```
@@ -119,9 +119,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openExtension({
 ### 打开自定义智能体
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openAgent' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openAgent' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openAgent({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}openAgent({
   agentId: '878f64',
 })
 ```
@@ -129,9 +129,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openAgent({
 ### 打开设置
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'trae-cn' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'traeChina' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'trae-cn.'}}openSettings({
+const url = {{currentMethod === 'On-Demand' ? '' : 'traeChina.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```

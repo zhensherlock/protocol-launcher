@@ -26,9 +26,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}open()
 ### Open Document
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'affine' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openDoc' : 'affine' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}openFile({
+const url = {{currentMethod === 'On-Demand' ? '' : 'affine.'}}openDoc({
   workspaceId: '4f5a46cf-5eeb-4130-beda-25b438cd8c60',
   docId: 'ykchLzhvFXEUMwJu_spHY',
 })
