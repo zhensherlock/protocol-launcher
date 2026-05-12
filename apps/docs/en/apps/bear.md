@@ -10,7 +10,9 @@ import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   openNoteParams,
+  openNoteWithHeaderParams,
   createParams,
+  createWithTagsParams,
   addTextParams,
   searchParams,
   openTagParams,
@@ -87,6 +89,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}create({
 
 <div class="flex flex-col gap-4 items-center">
   <VPLink :href="create(createParams)" target="_self">
+    Add to Bear
+  </VPLink>
+  <VPLink :href="create(createWithTagsParams)" target="_self">
     Add to Bear
   </VPLink>
 </div>

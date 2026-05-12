@@ -10,7 +10,9 @@ import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
   openNoteParams,
+  openNoteWithHeaderParams,
   createParams,
+  createWithTagsParams,
   addTextParams,
   searchParams,
   openTagParams,
@@ -66,6 +68,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
 
 <div class="flex flex-col gap-4 items-center">
   <VPLink :href="openNote(openNoteParams)" target="_self">
+    在 Bear 中打开
+  </VPLink>
+  <VPLink :href="openNote(openNoteWithHeaderParams)" target="_self">
     在 Bear 中打开
   </VPLink>
 </div>

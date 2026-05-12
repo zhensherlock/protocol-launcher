@@ -2,10 +2,21 @@ export const openNoteParams = {
   title: 'Shopping',
 }
 
+export const openNoteWithHeaderParams = {
+  id: 'SFNote2Intro0',
+  header: 'Secondary Title',
+}
+
 export const createParams = {
   title: 'Shopping',
   text: 'Milk',
   tags: 'home,groceries',
+}
+
+export const createWithTagsParams = {
+  title: 'Project Ideas',
+  text: 'Draft landing page',
+  tags: 'work,ideas',
 }
 
 export const addTextParams = {
