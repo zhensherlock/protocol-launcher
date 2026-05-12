@@ -12,6 +12,7 @@ const base = isGithubPages ? '/protocol-launcher/' : '/'
 export default defineConfig({
   title: 'Protocol Launcher',
   description: 'One-click launch URL generator for protocol-based apps.',
+  srcExclude: ['AGENTS.md', 'CLAUDE.md'],
   rewrites: {
     'en/:rest*': ':rest*',
     'en/index.md': 'index.md',
@@ -322,7 +323,7 @@ export default defineConfig({
     plugins: [
       tailwindcss(),
       llmstxt({
-        ignoreFiles: ['en/index.md', 'zh/index.md', 'CHANGELOG.md'],
+        ignoreFiles: ['en/index.md', 'zh/index.md', 'CHANGELOG.md', 'AGENTS.md', 'CLAUDE.md'],
         description:
           'TypeScript library for generating Quick Launch (deep link) URLs to trigger app actions with one click, e.g., installing plugins, configuring servers, or setting API keys.',
         sidebar: [

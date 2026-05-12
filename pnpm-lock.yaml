@@ -124,6 +124,8 @@ importers:
         specifier: ^1.12.2
         version: 1.12.2
 
+  apps/protocol-launcher-promo: {}
+
   packages/protocol-launcher:
     dependencies:
       '@protocol-launcher/shared':

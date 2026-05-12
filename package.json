@@ -6,7 +6,11 @@
   "scripts": {
     "prepare": "husky",
     "dev": "cross-env NODE_ENV=development turbo run dev --filter=./apps/docs...",
+    "dev:promo": "cross-env NODE_ENV=development turbo run dev --filter=./apps/protocol-launcher-promo",
     "build": "cross-env NODE_ENV=production turbo run build --filter=./apps/docs...",
+    "build:promo": "cross-env NODE_ENV=production turbo run build --filter=./apps/protocol-launcher-promo",
+    "check:promo": "pnpm --filter ./apps/protocol-launcher-promo check",
+    "render:promo": "pnpm --filter ./apps/protocol-launcher-promo render",
     "test": "vitest run",
     "coverage": "vitest run --coverage",
     "changeset": "changeset",

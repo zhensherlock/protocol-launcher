@@ -36,11 +36,6 @@ $ bun add protocol-launcher
 
 ::: code-group
 
-```typescript [cal2todo]
-// 仅导入 Cal2Todo 相关代码
-import { add } from 'protocol-launcher/cal2todo'
-```
-
 ```typescript [cherry studio]
 // 仅导入 Cherry Studio 相关代码
 import { installMCP } from 'protocol-launcher/cherry-studio'

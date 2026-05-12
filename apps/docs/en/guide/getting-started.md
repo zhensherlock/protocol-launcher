@@ -36,11 +36,6 @@ To minimize bundle size, import specific modules directly:
 
 ::: code-group
 
-```typescript [cal2todo]
-// Only imports Cal2Todo related code
-import { add } from 'protocol-launcher/cal2todo'
-```
-
 ```typescript [cherry studio]
 // Only imports Cherry Studio related code
 import { installMCP } from 'protocol-launcher/cherry-studio'

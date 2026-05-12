@@ -1,0 +1,1050 @@
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --bg: #121217;
+        --surface: #1b1c24;
+        --surface-soft: #242631;
+        --surface-strong: #101116;
+        --fg: #f4f1ea;
+        --muted: #c7c2ce;
+        --muted-2: #aaa6b3;
+        --line: rgba(244, 241, 234, 0.12);
+        --cyan: #8accd5;
+        --pink: #ff90bb;
+        --blue: #5570f1;
+        --green: #a6e3a1;
+        --yellow: #ffd166;
+        --danger: #ff6b8a;
+        --code: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        --sans: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+      }
+
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: Inter, "SF Pro Display", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        letter-spacing: 0;
+      }
+
+      #root {
+        position: relative;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 80% 20%, rgba(255, 144, 187, 0.18), transparent 31%),
+          radial-gradient(circle at 22% 72%, rgba(138, 204, 213, 0.2), transparent 36%),
+          linear-gradient(135deg, #15161d 0%, #111218 58%, #18141b 100%);
+      }
+
+      .ambient {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .ambient::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.14;
+        background-image:
+          linear-gradient(rgba(244, 241, 234, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(244, 241, 234, 0.08) 1px, transparent 1px);
+        background-size: 80px 80px;
+        mask-image: radial-gradient(circle at 50% 45%, black, transparent 72%);
+      }
+
+      .ambient-line {
+        position: absolute;
+        height: 1px;
+        width: 860px;
+        background: linear-gradient(90deg, transparent, rgba(138, 204, 213, 0.7), rgba(255, 144, 187, 0.55), transparent);
+        opacity: 0.5;
+        transform: rotate(-12deg);
+      }
+
+      .ambient-line.one {
+        left: 960px;
+        top: 248px;
+      }
+
+      .ambient-line.two {
+        left: -180px;
+        top: 790px;
+      }
+
+      .ghost-word {
+        position: absolute;
+        color: rgba(244, 241, 234, 0.045);
+        font-size: 184px;
+        font-weight: 900;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .ghost-word::before {
+        display: block;
+      }
+
+      .ghost-word.one::before {
+        content: "URL SCHEME";
+      }
+
+      .ghost-word.two::before {
+        content: "TYPE SAFE";
+      }
+
+      .ghost-word.one {
+        right: -90px;
+        bottom: 28px;
+      }
+
+      .ghost-word.two {
+        left: -70px;
+        top: 96px;
+      }
+
+      .scene {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        padding: 104px 124px;
+        opacity: 0;
+      }
+
+      #scene-hook {
+        opacity: 1;
+      }
+
+      .scene-content {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 38px;
+      }
+
+      .eyebrow {
+        color: var(--cyan);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 26px;
+        font-weight: 700;
+      }
+
+      .headline {
+        max-width: 1180px;
+        color: var(--fg);
+        font-size: 94px;
+        font-weight: 900;
+        line-height: 1.04;
+      }
+
+      .headline .brand {
+        color: var(--pink);
+      }
+
+      .subhead {
+        max-width: 1040px;
+        color: var(--muted);
+        font-size: 34px;
+        font-weight: 450;
+        line-height: 1.45;
+      }
+
+      .logo-symbol {
+        display: grid;
+        place-items: center;
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cyan), var(--pink));
+        border: 3px solid rgba(244, 241, 234, 0.34);
+        filter: drop-shadow(0 30px 60px rgba(255, 144, 187, 0.2));
+      }
+
+      .logo-symbol svg {
+        width: 76%;
+        height: 76%;
+        filter: drop-shadow(0 8px 14px rgba(255, 255, 255, 0.28));
+      }
+
+      .top-brand {
+        position: absolute;
+        left: 124px;
+        top: 78px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--fg);
+        font-size: 24px;
+        font-weight: 800;
+        z-index: 10;
+      }
+
+      .top-brand .logo-symbol {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border-width: 1px;
+        filter: none;
+      }
+
+      .url-noise {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .url-chip {
+        position: absolute;
+        display: inline-flex;
+        align-items: center;
+        min-height: 54px;
+        padding: 0 24px;
+        border: 1px solid rgba(255, 144, 187, 0.24);
+        border-radius: 999px;
+        background: rgba(27, 28, 36, 0.68);
+        color: rgba(244, 241, 234, 0.78);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 22px;
+        box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+      }
+
+      .url-chip.bad {
+        color: rgba(255, 144, 187, 0.9);
+        border-color: rgba(255, 144, 187, 0.42);
+      }
+
+      .url-chip.ok {
+        color: rgba(138, 204, 213, 0.95);
+        border-color: rgba(138, 204, 213, 0.42);
+      }
+
+      .chip-a { left: 1050px; top: 130px; transform: rotate(-5deg); }
+      .chip-b { left: 1090px; top: 282px; transform: rotate(8deg); }
+      .chip-c { left: 990px; top: 454px; transform: rotate(-9deg); }
+      .chip-d { left: 1120px; top: 644px; transform: rotate(4deg); }
+      .chip-e { left: 920px; top: 806px; transform: rotate(-3deg); }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1.03fr 0.97fr;
+        align-items: center;
+        gap: 72px;
+        height: 100%;
+      }
+
+      #scene-cursor .split {
+        grid-template-columns: minmax(910px, 0.95fr) minmax(680px, 0.75fr);
+        gap: 42px;
+      }
+
+      .code-panel,
+      .url-panel,
+      .app-panel,
+      .metric-card,
+      .final-card {
+        border: 1px solid var(--line);
+        background: linear-gradient(180deg, rgba(36, 38, 49, 0.9), rgba(20, 21, 29, 0.92));
+        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32);
+      }
+
+      .code-panel {
+        width: 100%;
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      .panel-bar {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 64px;
+        padding: 0 26px;
+        border-bottom: 1px solid var(--line);
+        color: var(--muted-2);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 18px;
+      }
+
+      .dot {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+      }
+
+      .dot.red { background: #ff6b8a; }
+      .dot.yellow { background: #ffd166; }
+      .dot.green { background: #8accd5; }
+
+      pre {
+        padding: 34px 38px 38px;
+        color: #d8d4de;
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 25px;
+        line-height: 1.62;
+        white-space: pre-wrap;
+      }
+
+      .kw { color: #ffb3cc; }
+      .fn { color: #abeaf2; }
+      .str { color: #c8f6c4; }
+      .key { color: #ffe09a; }
+      .cm { color: #b4afbd; }
+
+      .transform-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .url-panel {
+        position: relative;
+        min-height: 154px;
+        padding: 28px 34px;
+        border-radius: 24px;
+      }
+
+      .url-label {
+        color: var(--muted);
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 18px;
+      }
+
+      .url-value {
+        color: var(--cyan);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 22px;
+        line-height: 1.45;
+        word-break: break-all;
+      }
+
+      .launch-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        width: fit-content;
+        min-width: 286px;
+        height: 78px;
+        padding: 0 34px;
+        border-radius: 999px;
+        border: 1px solid rgba(244, 241, 234, 0.18);
+        background: linear-gradient(135deg, var(--blue), #7e6bf2);
+        color: white;
+        font-size: 28px;
+        font-weight: 850;
+        box-shadow: 0 22px 64px rgba(85, 112, 241, 0.35);
+      }
+
+      .launch-button .spark {
+        color: var(--yellow);
+      }
+
+      .launch-button.intent-button {
+        position: relative;
+        justify-content: flex-start;
+        gap: 16px;
+        min-width: 342px;
+        height: 82px;
+        padding: 0 18px 0 16px;
+        overflow: hidden;
+        border-radius: 24px;
+        border-color: rgba(138, 204, 213, 0.38);
+        background:
+          linear-gradient(180deg, rgba(36, 38, 49, 0.92), rgba(16, 17, 22, 0.94)),
+          linear-gradient(135deg, rgba(138, 204, 213, 0.2), rgba(255, 144, 187, 0.16));
+        color: var(--fg);
+        box-shadow:
+          inset 0 1px 0 rgba(244, 241, 234, 0.16),
+          0 24px 70px rgba(0, 0, 0, 0.34),
+          0 0 48px rgba(138, 204, 213, 0.16);
+      }
+
+      .launch-button.intent-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(115deg, transparent 8%, rgba(138, 204, 213, 0.18) 45%, transparent 72%);
+        opacity: 0.72;
+      }
+
+      .cursor-mark {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+        border: 1px solid rgba(244, 241, 234, 0.16);
+        background: rgba(12, 13, 18, 0.78);
+        flex: 0 0 auto;
+      }
+
+      .cursor-mark img {
+        display: block;
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+      }
+
+      .intent-copy {
+        position: relative;
+        display: flex;
+        min-width: 0;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .intent-label {
+        color: var(--fg);
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 1;
+      }
+
+      .intent-meta {
+        color: var(--cyan);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .intent-arrow {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 38px;
+        height: 38px;
+        margin-left: auto;
+        border-radius: 50%;
+        background: rgba(138, 204, 213, 0.14);
+        color: var(--cyan);
+        font-size: 24px;
+        font-weight: 900;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .app-panel {
+        border-radius: 26px;
+        padding: 28px;
+      }
+
+      .app-head {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 28px;
+      }
+
+      .app-icon {
+        display: grid;
+        place-items: center;
+        width: 72px;
+        height: 72px;
+        border-radius: 22px;
+        background: rgba(138, 204, 213, 0.12);
+        border: 1px solid rgba(138, 204, 213, 0.22);
+        color: var(--cyan);
+        font-size: 32px;
+        font-weight: 900;
+      }
+
+      .app-icon img {
+        display: block;
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+      }
+
+      .app-title {
+        font-size: 36px;
+        font-weight: 900;
+      }
+
+      .app-caption {
+        margin-top: 4px;
+        color: #d8d4de;
+        font-size: 21px;
+      }
+
+      .action-card {
+        min-height: 142px;
+        padding: 24px;
+        border-radius: 20px;
+        border: 1px solid rgba(244, 241, 234, 0.1);
+        background: rgba(16, 17, 22, 0.62);
+      }
+
+      .action-card strong {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--fg);
+        font-size: 26px;
+      }
+
+      .action-card span {
+        color: #d8d4de;
+        font-size: 20px;
+        line-height: 1.35;
+      }
+
+      .link-arrow {
+        color: var(--cyan);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+      }
+
+      .wide-scene .scene-content {
+        justify-content: flex-start;
+        padding-top: 78px;
+      }
+
+      #scene-ecosystem .scene-content {
+        gap: 58px;
+        padding-top: 88px;
+      }
+
+      .ecosystem-copy .eyebrow {
+        margin-bottom: 18px;
+      }
+
+      .ecosystem-copy .headline {
+        margin-bottom: 22px;
+      }
+
+      .feature-row {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 56px;
+        align-items: stretch;
+      }
+
+      .app-cloud {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px 16px;
+      }
+
+      .app-chip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 66px;
+        padding: 0 18px;
+        border-radius: 18px;
+        border: 1px solid rgba(244, 241, 234, 0.1);
+        background: rgba(27, 28, 36, 0.72);
+        color: rgba(244, 241, 234, 0.83);
+        font-size: 21px;
+        font-weight: 760;
+      }
+
+      .app-chip.hot {
+        color: var(--cyan);
+        border-color: rgba(138, 204, 213, 0.32);
+        background: rgba(138, 204, 213, 0.1);
+      }
+
+      .app-chip.logo-tile {
+        justify-content: flex-start;
+        gap: 12px;
+        padding: 0 16px;
+      }
+
+      .app-chip.logo-tile img {
+        display: block;
+        width: 34px;
+        height: 34px;
+        object-fit: contain;
+        flex: 0 0 auto;
+      }
+
+      .app-chip.logo-tile.logo-on-light img {
+        padding: 5px;
+        border-radius: 10px;
+        background: rgba(244, 241, 234, 0.92);
+        box-shadow: inset 0 0 0 1px rgba(16, 17, 22, 0.08);
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+      }
+
+      .metric-card {
+        min-height: 172px;
+        border-radius: 24px;
+        padding: 26px;
+      }
+
+      .metric-value {
+        color: var(--fg);
+        font-size: 58px;
+        font-weight: 950;
+        line-height: 1;
+      }
+
+      .metric-label {
+        margin-top: 18px;
+        color: var(--muted);
+        font-size: 22px;
+        line-height: 1.35;
+      }
+
+      .final-layout {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 84px;
+        height: 100%;
+        align-items: center;
+        transform: translateY(22px);
+      }
+
+      .final-logo-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 600px;
+      }
+
+      .final-logo-wrap .logo-symbol {
+        width: 250px;
+        height: 250px;
+      }
+
+      .final-name {
+        margin-top: 46px;
+        font-size: 58px;
+        font-weight: 950;
+      }
+
+      .final-tagline {
+        margin-top: 20px;
+        color: var(--muted);
+        font-size: 27px;
+      }
+
+      .final-card {
+        border-radius: 30px;
+        padding: 54px 52px;
+      }
+
+      .final-card .eyebrow {
+        margin-bottom: 24px;
+      }
+
+      .install-command {
+        margin-top: 44px;
+        padding: 28px 32px;
+        border-radius: 20px;
+        background: #0c0d12;
+        border: 1px solid rgba(244, 241, 234, 0.12);
+        color: var(--green);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 32px;
+      }
+
+      .url-footer {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 40px;
+        color: var(--muted);
+        font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+        font-size: 20px;
+      }
+
+      .highlight-ring {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        border: 1px solid rgba(138, 204, 213, 0.24);
+        box-shadow:
+          0 0 0 28px rgba(138, 204, 213, 0.02),
+          0 0 95px rgba(255, 144, 187, 0.18);
+        pointer-events: none;
+      }
+
+      .ring-a {
+        right: 226px;
+        top: 190px;
+      }
+
+      .ring-b {
+        left: 112px;
+        bottom: 78px;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="56" data-width="1920" data-height="1080">
+      <audio
+        id="background-music"
+        data-start="0"
+        data-duration="56"
+        data-track-index="2"
+        data-volume="0.28"
+        src="assets/audio/background.mp3"
+        preload="auto"
+      ></audio>
+      <div class="ambient" data-layout-ignore>
+        <div class="ambient-line one"></div>
+        <div class="ambient-line two"></div>
+        <div class="ghost-word one"></div>
+        <div class="ghost-word two"></div>
+      </div>
+      <div class="top-brand">
+        <div class="logo-symbol" aria-hidden="true">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <path d="M130 30 L60 100 L90 100 L70 170 L140 100 L110 100 Z" fill="#fff" />
+          </svg>
+        </div>
+        <span>Protocol Launcher</span>
+      </div>
+
+      <section id="scene-hook" class="clip scene" data-start="0" data-duration="7" data-track-index="1">
+        <div class="url-noise" data-layout-ignore>
+          <div class="url-chip bad chip-a">cursor://anysphere.cursor-deeplink/mcp/install?name=...</div>
+          <div class="url-chip bad chip-b">vscode://file/etc/hosts:1:2?windowId=_blank</div>
+          <div class="url-chip bad chip-c">cherrystudio://mcp/install?config=eyJ0eXBl...</div>
+          <div class="url-chip ok chip-d">protocol-launcher/cursor</div>
+          <div class="url-chip bad chip-e">x-apple.systempreferences:com.apple.preference...</div>
+        </div>
+        <div class="scene-content">
+          <div class="eyebrow">deep-link fatigue</div>
+          <h1 class="headline">别再手写<br />复杂启动链接</h1>
+          <p class="subhead">URL Scheme 一旦参数、编码或平台差异出错，用户的一键体验就会断掉</p>
+        </div>
+      </section>
+
+      <section id="scene-transform" class="clip scene" data-start="7" data-duration="9" data-track-index="1">
+        <div class="highlight-ring ring-a" data-layout-ignore></div>
+        <div class="split">
+          <div class="scene-content">
+            <div class="eyebrow">code -> url -> action</div>
+            <h2 class="headline">用 <span class="brand">TypeScript</span><br />描述意图</h2>
+            <p class="subhead">Protocol Launcher 生成安全、可点击、可分发的一键启动链接</p>
+          </div>
+          <div class="transform-stack">
+            <div class="code-panel">
+              <div class="panel-bar">
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span>install-mcp.ts</span>
+              </div>
+              <pre><span class="kw">import</span> { <span class="fn">installMCP</span> } <span class="kw">from</span> <span class="str">'protocol-launcher/cursor'</span>
+
+<span class="kw">const</span> url = <span class="fn">installMCP</span>({
+  <span class="key">name</span>: <span class="str">'server-everything'</span>,
+  <span class="key">type</span>: <span class="str">'stdio'</span>,
+  <span class="key">command</span>: <span class="str">'npx'</span>,
+  <span class="key">args</span>: [
+    <span class="str">'-y'</span>,
+    <span class="str">'@modelcontextprotocol/server-everything'</span>,
+  ],
+})</pre>model
+            </div>
+            <div class="url-panel">
+              <div class="url-label">Generated launch URL</div>
+              <div class="url-value">cursor://anysphere.cursor-deeplink/mcp/install?name=server-everything&config=...</div>
+            </div>
+            <div class="launch-button intent-button">
+              <span class="cursor-mark"><img src="assets/logos/cursor.svg" alt="" /></span>
+              <span class="intent-copy">
+                <span class="intent-label">添加到 Cursor</span>
+                <span class="intent-meta">launch URL ready</span>
+              </span>
+              <span class="intent-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-cursor" class="clip scene" data-start="16" data-duration="9" data-track-index="1">
+        <div class="split">
+          <div class="code-panel">
+            <div class="panel-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span>cursor.installMCP()</span>
+            </div>
+            <pre><span class="fn">installMCP</span>({
+  <span class="key">name</span>: <span class="str">'企查查企业信息 MCP'</span>,
+  <span class="key">type</span>: <span class="str">'streamable_http'</span>,
+  <span class="key">url</span>: <span class="str">'https://agent.qcc.com/mcp/company/stream'</span>,
+  <span class="key">headers</span>: {
+    <span class="key">Authorization</span>: <span class="str">'Bearer REPLACE_WITH_YOUR_TOKEN'</span>,
+  },
+})</pre>
+          </div>
+          <div class="app-panel">
+            <div class="app-head">
+              <div class="app-icon">
+                <img src="assets/logos/cursor.svg" alt="" />
+              </div>
+              <div>
+                <div class="app-title">Cursor</div>
+                <div class="app-caption">AI coding workflow</div>
+              </div>
+            </div>
+            <h2 class="headline" style="font-size: 66px; max-width: 680px;">一键安装 MCP 服务</h2>
+            <div class="action-grid" style="margin-top: 36px;">
+              <div class="action-card"><strong>STDIO</strong><span>本地命令启动服务</span></div>
+              <div class="action-card"><strong>HTTP / SSE</strong><span>远程服务配置</span></div>
+            </div>
+            <div class="launch-button intent-button" style="margin-top: 34px;">
+              <span class="cursor-mark"><img src="assets/logos/cursor.svg" alt="" /></span>
+              <span class="intent-copy">
+                <span class="intent-label">添加到 Cursor</span>
+                <span class="intent-meta">install MCP ready</span>
+              </span>
+              <span class="intent-arrow">→</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-cherry" class="clip scene" data-start="25" data-duration="9" data-track-index="1">
+        <div class="split">
+          <div class="scene-content">
+            <div class="eyebrow">AI client setup</div>
+            <h2 class="headline">Cherry Studio<br />配置也能一键完成</h2>
+            <p class="subhead">把 MCP、模型提供商、Base URL 和 API Key 打包成可点击入口</p>
+          </div>
+          <div class="app-panel">
+            <div class="app-head">
+              <div class="app-icon" style="color: var(--pink); background: rgba(255, 144, 187, 0.12); border-color: rgba(255, 144, 187, 0.24);">
+                <img src="assets/logos/cherry-studio.svg" alt="" />
+              </div>
+              <div>
+                <div class="app-title">Cherry Studio</div>
+                <div class="app-caption">MCP + Provider import</div>
+              </div>
+            </div>
+            <div class="action-grid">
+              <div class="action-card"><strong>installMCP()</strong><span>一次导入多个 MCP Servers</span></div>
+              <div class="action-card"><strong>installProvider()</strong><span>快速配置模型服务商</span></div>
+              <div class="action-card"><strong>Unicode-safe</strong><span>中文配置稳定编码</span></div>
+              <div class="action-card"><strong>Encoded payload</strong><span>安全传递结构化配置</span></div>
+            </div>
+            <div class="url-panel" style="margin-top: 26px;">
+              <div class="url-value">cherrystudio://mcp/install?config=eyJtY3BTZXJ2ZXJzIjp7...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-vscode" class="clip scene" data-start="34" data-duration="9" data-track-index="1">
+        <div class="highlight-ring ring-b" data-layout-ignore></div>
+        <div class="split">
+          <div class="app-panel">
+            <div class="app-head">
+              <div class="app-icon" style="color: var(--blue); background: rgba(85, 112, 241, 0.12); border-color: rgba(85, 112, 241, 0.28);">
+                <img src="assets/logos/vscode.svg" alt="" />
+              </div>
+              <div>
+                <div class="app-title">VS Code</div>
+                <div class="app-caption">Editor deep links</div>
+              </div>
+            </div>
+            <div class="action-grid">
+              <div class="action-card"><strong>openFile()</strong><span>/etc/hosts:1:2 <span class="link-arrow">→</span> 编辑器</span></div>
+              <div class="action-card"><strong>openFolder()</strong><span>项目目录一键打开</span></div>
+              <div class="action-card"><strong>cloneProject()</strong><span>仓库到工作区</span></div>
+              <div class="action-card"><strong>openRemote()</strong><span>SSH 远程开发入口</span></div>
+            </div>
+          </div>
+          <div class="code-panel">
+            <div class="panel-bar">
+              <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+              <span>vscode.openFile()</span>
+            </div>
+            <pre><span class="kw">import</span> { <span class="fn">openFile</span> } <span class="kw">from</span> <span class="str">'protocol-launcher/vscode'</span>
+
+<span class="kw">const</span> url = <span class="fn">openFile</span>({
+  <span class="key">path</span>: <span class="str">'/etc/hosts'</span>,
+  <span class="key">line</span>: 1,
+  <span class="key">column</span>: 2,
+  <span class="key">openInNewWindow</span>: true,
+})
+
+<span class="cm">// vscode://file/etc/hosts:1:2?windowId=_blank</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-ecosystem" class="clip scene wide-scene" data-start="43" data-duration="8" data-track-index="1">
+        <div class="scene-content">
+          <div class="ecosystem-copy">
+            <div class="eyebrow">broad protocol coverage</div>
+            <h2 class="headline" style="max-width: 1680px; font-size: 86px;">一个库，连接现代 App 的一键入口</h2>
+            <p class="subhead">从 AI 工具到编辑器，再到效率应用和 macOS 工具</p>
+          </div>
+          <div class="feature-row">
+            <div class="app-cloud">
+              <div class="app-chip hot logo-tile"><img src="assets/logos/cursor.svg" alt="" />Cursor</div>
+              <div class="app-chip hot logo-tile"><img src="assets/logos/cherry-studio.svg" alt="" />Cherry Studio</div>
+              <div class="app-chip hot logo-tile"><img src="assets/logos/vscode.svg" alt="" />VS Code</div>
+              <div class="app-chip hot logo-tile"><img src="assets/logos/codebuddy.svg" alt="" />CodeBuddy</div>
+              <div class="app-chip hot logo-tile"><img src="assets/logos/thunder.svg" alt="" />Thunder</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/windsurf.svg" alt="" />Windsurf</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/opencode.png" alt="" />OpenCode</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/trae.png" alt="" />Trae</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/github.svg" alt="" />GitHub</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/xcode.svg" alt="" />Xcode</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/obsidian.svg" alt="" />Obsidian</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/bear.svg" alt="" />Bear</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/things.svg" alt="" />Things</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/todoist.svg" alt="" />Todoist</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/telegram.svg" alt="" />Telegram</div>
+              <div class="app-chip logo-tile logo-on-light"><img src="assets/logos/steam.svg" alt="" />Steam</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/macos.svg" alt="" />macOS</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/drafts.png" alt="" />Drafts</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/fantastical.png" alt="" />Fantastical</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/kiro.svg" alt="" />Kiro</div>
+            </div>
+            <div class="metrics">
+              <div class="metric-card"><div class="metric-value">114</div><div class="metric-label">supported applications</div></div>
+              <div class="metric-card"><div class="metric-value">0</div><div class="metric-label">runtime dependencies</div></div>
+              <div class="metric-card"><div class="metric-value">ESM</div><div class="metric-label">modern Node and bundlers</div></div>
+              <div class="metric-card"><div class="metric-value">TS</div><div class="metric-label">typed payload builders</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="scene-final" class="clip scene" data-start="51" data-duration="5" data-track-index="1">
+        <div class="final-layout">
+          <div class="final-logo-wrap">
+            <div class="logo-symbol" aria-hidden="true">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <path d="M130 30 L60 100 L90 100 L70 170 L140 100 L110 100 Z" fill="#fff" />
+              </svg>
+            </div>
+            <div class="final-name">Protocol Launcher</div>
+            <div class="final-tagline">One-click launch URLs for modern apps</div>
+          </div>
+          <div class="final-card">
+            <div class="eyebrow">get started</div>
+            <h2 class="headline" style="font-size: 78px; max-width: 850px;">把复杂配置，变成一个按钮</h2>
+            <div class="install-command">$ pnpm add protocol-launcher</div>
+            <div class="url-footer">
+              <span>https://github.com/zhensherlock/protocol-launcher</span>
+              <span>https://protocol-launcher.vercel.app/</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+
+      tl.to(".ambient-line.one", { x: -90, opacity: 0.24, duration: 56, ease: "none" }, 0);
+      tl.to(".ambient-line.two", { x: 110, opacity: 0.38, duration: 56, ease: "none" }, 0);
+      tl.to(".ghost-word.one", { x: -80, y: -24, duration: 56, ease: "none" }, 0);
+      tl.to(".ghost-word.two", { x: 60, y: 18, duration: 56, ease: "none" }, 0);
+      tl.to(".logo-symbol", { filter: "drop-shadow(0 34px 72px rgba(138, 204, 213, 0.3))", duration: 2.4, repeat: 23, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to(".highlight-ring", { scale: 1.08, opacity: 0.55, duration: 2.2, repeat: 24, yoyo: true, ease: "sine.inOut" }, 0);
+
+      function sceneIn(id, at) {
+        const eyebrow = `${id} .eyebrow`;
+        const headline = `${id} .headline`;
+        const subhead = `${id} .subhead`;
+        tl.set(id, { opacity: 1, scale: 1 }, at);
+        if (document.querySelector(eyebrow)) {
+          tl.from(eyebrow, { y: 28, opacity: 0, duration: 0.45, ease: "power3.out" }, at + 0.18);
+        }
+        if (document.querySelector(headline)) {
+          tl.from(headline, { y: 44, opacity: 0, duration: 0.58, ease: "power3.out" }, at + 0.32);
+        }
+        if (document.querySelector(subhead)) {
+          tl.from(subhead, { y: 26, opacity: 0, duration: 0.5, ease: "power2.out" }, at + 0.56);
+        }
+      }
+
+      function sceneOut(id, at) {
+        tl.to(id, { opacity: 0, scale: 0.985, duration: 0.44, ease: "power2.in" }, at);
+      }
+
+      sceneIn("#scene-hook", 0);
+      tl.from("#scene-hook .url-chip", { x: 180, opacity: 0, scale: 0.94, duration: 0.62, stagger: 0.1, ease: "power3.out" }, 0.55);
+      tl.to("#scene-hook .url-chip.bad", { x: -30, borderColor: "rgba(255, 107, 138, 0.7)", duration: 0.46, stagger: 0.06, ease: "power2.inOut" }, 4.7);
+      sceneOut("#scene-hook", 6.45);
+
+      sceneIn("#scene-transform", 7);
+      tl.from("#scene-transform .code-panel", { y: 54, opacity: 0, scale: 0.96, duration: 0.64, ease: "power3.out" }, 7.52);
+      tl.from("#scene-transform .url-panel", { y: 42, opacity: 0, duration: 0.5, ease: "power3.out" }, 10.35);
+      tl.from("#scene-transform .launch-button", { y: 28, opacity: 0, scale: 0.86, duration: 0.5, ease: "back.out(1.7)" }, 12.25);
+      tl.to("#scene-transform .launch-button", { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.inOut" }, 14.35);
+      sceneOut("#scene-transform", 15.45);
+
+      tl.set("#scene-cursor", { opacity: 1, scale: 1 }, 16);
+      tl.from("#scene-cursor .code-panel", { x: -62, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 16.25);
+      tl.from("#scene-cursor .app-panel", { x: 62, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 16.42);
+      tl.from("#scene-cursor .action-card", { y: 34, opacity: 0, duration: 0.42, stagger: 0.1, ease: "power2.out" }, 18.85);
+      tl.from("#scene-cursor .launch-button", { y: 24, opacity: 0, scale: 0.88, duration: 0.42, ease: "back.out(1.6)" }, 20.85);
+      tl.to("#scene-cursor .launch-button", { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.inOut" }, 22.75);
+      sceneOut("#scene-cursor", 24.45);
+
+      sceneIn("#scene-cherry", 25);
+      tl.from("#scene-cherry .app-panel", { x: 68, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 25.55);
+      tl.from("#scene-cherry .action-card", { y: 34, opacity: 0, duration: 0.42, stagger: 0.08, ease: "power2.out" }, 27.0);
+      tl.from("#scene-cherry .url-panel", { y: 26, opacity: 0, duration: 0.44, ease: "power2.out" }, 29.55);
+      sceneOut("#scene-cherry", 33.45);
+
+      tl.set("#scene-vscode", { opacity: 1, scale: 1 }, 34);
+      tl.from("#scene-vscode .app-panel", { x: -66, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 34.25);
+      tl.from("#scene-vscode .code-panel", { x: 66, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 34.42);
+      tl.from("#scene-vscode .action-card", { y: 34, opacity: 0, duration: 0.42, stagger: 0.08, ease: "power2.out" }, 36.3);
+      sceneOut("#scene-vscode", 42.45);
+
+      sceneIn("#scene-ecosystem", 43);
+      tl.from("#scene-ecosystem .app-chip", { y: 24, opacity: 0, scale: 0.94, duration: 0.34, stagger: 0.035, ease: "power2.out" }, 44.2);
+      tl.from("#scene-ecosystem .metric-card", { y: 40, opacity: 0, scale: 0.96, duration: 0.48, stagger: 0.11, ease: "power2.out" }, 45.1);
+      tl.to("#scene-ecosystem .app-chip.hot", { borderColor: "rgba(255, 144, 187, 0.6)", duration: 0.45, yoyo: true, repeat: 5, ease: "sine.inOut" }, 46.8);
+      sceneOut("#scene-ecosystem", 50.55);
+
+      tl.set("#scene-final", { opacity: 1, scale: 1 }, 51);
+      tl.from("#scene-final .final-logo-wrap", { y: 38, opacity: 0, scale: 0.94, duration: 0.7, ease: "power3.out" }, 51.15);
+      tl.from("#scene-final .final-card", { x: 72, opacity: 0, scale: 0.96, duration: 0.7, ease: "power3.out" }, 51.35);
+      tl.from("#scene-final .install-command", { y: 26, opacity: 0, duration: 0.45, ease: "power2.out" }, 52.55);
+      tl.from("#scene-final .url-footer span", { y: 18, opacity: 0, duration: 0.34, stagger: 0.12, ease: "power2.out" }, 53.1);
+
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>

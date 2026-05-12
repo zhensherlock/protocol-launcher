@@ -106,6 +106,9 @@ dist
 .tern-port
 
 /apps/docs/.vitepress/cache/
+apps/*/.thumbnails/
+apps/*/renders/
+apps/*/.waveform-cache/
 
 stats.html
 
