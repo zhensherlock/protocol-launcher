@@ -271,11 +271,11 @@ For detailed usage instructions for each application, please refer to their resp
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [Apple Maps](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
-* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
@@ -309,8 +309,8 @@ For detailed usage instructions for each application, please refer to their resp
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
 * [iCab Mobile](../apps/icab-mobile.md)
-* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Instapaper](../apps/instapaper.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
@@ -10849,11 +10849,11 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Antigravity](../apps/antigravity.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
+* [Appigo Todo](../apps/appigo-todo.md)
 * [Apple 地图](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
-* [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
@@ -10863,9 +10863,9 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
 * [CodeBuddy China](../apps/code-buddy-cn.md)
+* [CodeLite](../apps/codelite.md)
 * [CodeRunner](../apps/code-runner.md)
 * [CodeHub](../apps/codehub.md)
-* [CodeLite](../apps/codelite.md)
 * [Codex](../apps/codex.md)
 * [Craft](../apps/craft.md)
 * [Cubox](../apps/cubox.md)
@@ -10887,8 +10887,8 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
 * [iCab Mobile](../apps/icab-mobile.md)
-* [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Instapaper](../apps/instapaper.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
@@ -12887,6 +12887,47 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codeBuddyChina.'}}openSettin
 ---
 
 ---
+url: /protocol-launcher/zh/apps/codelite.md
+---
+
+# CodeLite
+
+[CodeLite](https://codelite.org/) 是一款免费、开源、跨平台的集成开发环境 (IDE)， 专注于 C、C++、Rust、Python、Node.js 和 PHP 开发。**Protocol Launcher** 允许你生成深度链接，用于在 CodeLite 中打开资源。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'codelite' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codelite.'}}openFile({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
+  line: 1,
+  column: 2,
+})
+```
+
+### 打开文件夹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'codelite' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'codelite.'}}openFolder({
+  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/zh/apps/code-runner.md
 ---
 
@@ -12970,47 +13011,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'codehub.'}}createGist({
     'hello.txt': 'Hello, World!',
     'codehub.txt': 'CodeHub is awesome!',
   },
-})
-```
-
----
-
----
-url: /protocol-launcher/zh/apps/codelite.md
----
-
-# CodeLite
-
-[CodeLite](https://codelite.org/) 是一款免费、开源、跨平台的集成开发环境 (IDE)， 专注于 C、C++、Rust、Python、Node.js 和 PHP 开发。**Protocol Launcher** 允许你生成深度链接，用于在 CodeLite 中打开资源。
-
-## 使用
-
-提供两种使用方式：
-
-* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
-* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
-
-生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
-
-### 打开文件
-
-```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'codelite' }} } from '{{ importPath }}'
-
-const url = {{currentMethod === 'On-Demand' ? '' : 'codelite.'}}openFile({
-  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc\hosts' : '/etc/hosts' }}',
-  line: 1,
-  column: 2,
-})
-```
-
-### 打开文件夹
-
-```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'codelite' }} } from '{{ importPath }}'
-
-const url = {{currentMethod === 'On-Demand' ? '' : 'codelite.'}}openFolder({
-  path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
 ```
 
@@ -14933,37 +14933,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'icabMobile.'}}search({
 ---
 
 ---
-url: /protocol-launcher/zh/apps/instapaper.md
----
-
-# Instapaper
-
-[Instapaper](https://instapaper.com/) 是一项稍后阅读服务，允许您保存网页和文章以供以后阅读。**Protocol Launcher** 允许您使用 x-callback-url 标准生成深度链接以将 URL 添加到 Instapaper。
-
-## 使用方式
-
-有两种使用此库的方式：
-
-* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
-* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
-
-生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
-
-### 添加 URL
-
-```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'add' : 'instapaper' }} } from '{{ importPath }}'
-
-const url = {{currentMethod === 'On-Demand' ? '' : 'instapaper.'}}add({
-  url: 'https://example.com/article',
-  xSource: 'MyReader',
-  xSuccess: 'myapp://success',
-})
-```
-
----
-
----
 url: /protocol-launcher/zh/apps/idea.md
 ---
 
@@ -14999,6 +14968,37 @@ import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'idea' }} } from '{{ 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'idea.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/instapaper.md
+---
+
+# Instapaper
+
+[Instapaper](https://instapaper.com/) 是一项稍后阅读服务，允许您保存网页和文章以供以后阅读。**Protocol Launcher** 允许您使用 x-callback-url 标准生成深度链接以将 URL 添加到 Instapaper。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 添加 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'instapaper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'instapaper.'}}add({
+  url: 'https://example.com/article',
+  xSource: 'MyReader',
+  xSuccess: 'myapp://success',
 })
 ```
 
