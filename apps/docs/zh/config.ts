@@ -3,7 +3,7 @@ import pkg from '../../../packages/protocol-launcher/package.json' with { type: 
 
 // https://vitepress.dev/reference/site-config
 export default defineAdditionalConfig({
-  description: 'Cherry Studio 和 Cursor 的一键启动链接生成器',
+  description: '面向多种协议应用的一键启动链接生成器',
   themeConfig: {
     nav: [
       { text: '首页', link: '/zh/' },
@@ -37,7 +37,7 @@ export default defineAdditionalConfig({
           { text: 'App Store', link: '/zh/apps/app-store' },
           { text: 'AppFlowy', link: '/zh/apps/appflowy' },
           { text: 'Appigo Todo', link: '/zh/apps/appigo-todo' },
-          { text: 'Apple Map', link: '/zh/apps/apple-map' },
+          { text: 'Apple 地图', link: '/zh/apps/apple-map' },
           { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },
           { text: 'Atom', link: '/zh/apps/atom' },
           { text: '1Writer', link: '/zh/apps/1writer' },

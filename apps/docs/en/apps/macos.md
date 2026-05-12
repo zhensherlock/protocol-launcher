@@ -76,13 +76,13 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 Open the Calendar app, optionally with a webcal subscription link.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'calendar' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'calendar' : 'macOS' }} } from '{{ importPath }}'
 
 // Open Calendar app
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}calendar()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}calendar()
 
 // Open Calendar with webcal subscription
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}calendar({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}calendar({
   link: 'https://p10-calendars.icloud.com/holiday/CN_zh.ics',
 })
 ```
@@ -101,9 +101,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}calendar({
 Open the FaceTime app, optionally with a phone number.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'facetime' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'facetime' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}facetime({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}facetime({
   phone: '1234567890',
 })
 ```
@@ -119,23 +119,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}facetime({
 Open the Find My app, optionally specifying a tab (devices, items, or friends).
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'findMy' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'findMy' : 'macOS' }} } from '{{ importPath }}'
 
 // Open Find My app
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy()
 
 // Open Devices tab
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy({
   tab: 'devices',
 })
 
 // Open Items tab
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy({
   tab: 'items',
 })
 
 // Open Friends tab
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}findMy({
   tab: 'friends',
 })
 ```
@@ -160,9 +160,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}findMy({
 Open the Mail app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'mail' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'mail' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}mail()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}mail()
 ```
 
 <div class="flex justify-center">
@@ -176,13 +176,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}mail()
 Open the SMS app, optionally with a phone number.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'sms' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'sms' : 'macOS' }} } from '{{ importPath }}'
 
 // Open SMS app
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}sms()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}sms()
 
 // Open SMS with phone number
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}sms({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}sms({
   phone: '1234567890',
 })
 ```
@@ -201,9 +201,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}sms({
 Open the Wallet app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'wallet' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'wallet' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}wallet()
 ```
 
 <div class="flex justify-center">
@@ -217,9 +217,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}wallet()
 Open the Address Book app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'addressbook' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}addressbook()
 ```
 
 <div class="flex justify-center">
@@ -233,13 +233,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}addressbook()
 Open the Feedback Assistant app, optionally to submit new feedback.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'feedback' : 'macOS' }} } from '{{ importPath }}'
 
 // Open Feedback Assistant
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}feedback()
 
 // Open Feedback Assistant to submit new feedback
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}feedback({
   type: 'new',
 })
 ```
@@ -258,9 +258,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}feedback({
 Open the Notes app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'notes' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}notes()
 ```
 
 <div class="flex justify-center">
@@ -274,9 +274,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}notes()
 Open the Reminders app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'reminders' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}reminders()
 ```
 
 <div class="flex justify-center">
@@ -290,13 +290,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}reminders()
 Open the Stocks app, optionally with a stock symbol.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'stocks' : 'macOS' }} } from '{{ importPath }}'
 
 // Open Stocks app
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}stocks()
 
 // Open Stocks with symbol
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}stocks({
   symbol: 'GE',
 })
 ```
@@ -315,9 +315,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}stocks({
 Open the Videos app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'videos' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}videos()
 ```
 
 <div class="flex justify-center">
@@ -331,9 +331,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}videos()
 Open the Weather app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'weather' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}weather()
 ```
 
 <div class="flex justify-center">
@@ -347,9 +347,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}weather()
 Open the Books app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'books' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'books' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}books()
 ```
 
 <div class="flex justify-center">
@@ -363,9 +363,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}books()
 Open the Music app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'music' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'music' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}music()
 ```
 
 <div class="flex justify-center">
@@ -379,9 +379,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}music()
 Open the Photos app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'photos' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}photos()
 ```
 
 <div class="flex justify-center">
@@ -395,9 +395,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}photos()
 Open the Podcasts app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'podcasts' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}podcasts()
 ```
 
 <div class="flex justify-center">
@@ -411,18 +411,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}podcasts()
 Open the System Preferences (Settings) app, optionally with a specific preference pane.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'systemPreferences' : 'macOS' }} } from '{{ importPath }}'
 
 // Open System Preferences
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}systemPreferences()
 
 // Open Security & Privacy pane
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}systemPreferences({
   pane: 'com.apple.preference.security',
 })
 
 // Open Software Update pane
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}systemPreferences({
   pane: 'com.apple.preferences.softwareupdate',
 })
 ```
@@ -444,9 +444,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}systemPreferences({
 Open the Airport Utility app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'airport' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}airport()
 ```
 
 <div class="flex justify-center">
@@ -460,13 +460,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}airport()
 Search dictionaries for a term.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'dictionary' : 'macOS' }} } from '{{ importPath }}'
 
 // Search dictionary
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}dictionary()
 
 // Search dictionary with term
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}dictionary({
   term: 'hello',
 })
 ```
@@ -485,9 +485,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}dictionary({
 Open the Freeform app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'freeform' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}freeform()
 ```
 
 <div class="flex justify-center">
@@ -501,13 +501,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}freeform()
 Open the Help Viewer app, optionally with a specific collection.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'helpViewer' : 'macOS' }} } from '{{ importPath }}'
 
 // Open Help Viewer
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}helpViewer()
 
 // Open Help Viewer with collection
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}helpViewer({
   collection: 'WelcomeToMac',
 })
 ```
@@ -526,13 +526,13 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}helpViewer({
 Add a printer, optionally with a hostname or IP address.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'printer' : 'macOS' }} } from '{{ importPath }}'
 
 // Add printer
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}printer()
 
 // Add printer with host
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}printer({
   host: '192.168.1.100',
 })
 ```
@@ -551,9 +551,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}printer({
 Open the Apple Password (OTP Auth) app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'appleOtpauth' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}appleOtpauth()
 ```
 
 <div class="flex justify-center">
@@ -567,9 +567,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}appleOtpauth()
 Open the Font Book app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'fontbook' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}fontbook()
 ```
 
 <div class="flex justify-center">
@@ -583,9 +583,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}fontbook()
 Open the Keynote app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'keynote' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}keynote()
 ```
 
 <div class="flex justify-center">
@@ -599,9 +599,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}keynote()
 Open the Numbers app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'numbers' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}numbers()
 ```
 
 <div class="flex justify-center">
@@ -615,9 +615,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}numbers()
 Open the Pages app.
 
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macos' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'pages' : 'macOS' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'macos.'}}pages()
+const url = {{currentMethod === 'On-Demand' ? '' : 'macOS.'}}pages()
 ```
 
 <div class="flex justify-center">

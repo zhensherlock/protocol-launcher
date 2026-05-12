@@ -32,9 +32,9 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 ### 打开文件
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'github' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'githubDesktop' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openFile({
+const url = {{currentMethod === 'On-Demand' ? '' : 'githubDesktop.'}}openFile({
   owner: 'zhensherlock',
   repo: 'protocol-launcher',
   branch: 'main',
@@ -49,9 +49,9 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openFile({
 
 ### 打开仓库
 ```ts-vue [{{currentMethod}}]
-import { {{ currentMethod === 'On-Demand' ? 'openRepo' : 'github' }} } from '{{ importPath }}'
+import { {{ currentMethod === 'On-Demand' ? 'openRepo' : 'githubDesktop' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'github.'}}openRepo({
+const url = {{currentMethod === 'On-Demand' ? '' : 'githubDesktop.'}}openRepo({
   owner: 'zhensherlock',
   repo: 'protocol-launcher',
   branch: 'main',

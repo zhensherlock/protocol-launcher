@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, open, openRemote, openSettings, cloneProject, openExtension } from 'protocol-launcher/code-runner';
+import { openFile, openFolder, open } from 'protocol-launcher/code-runner';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
