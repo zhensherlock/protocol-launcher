@@ -124,7 +124,7 @@ importers:
         specifier: ^1.12.2
         version: 1.12.2
 
-  apps/protocol-launcher-promo: {}
+  apps/promo-video: {}
 
   packages/protocol-launcher:
     dependencies:

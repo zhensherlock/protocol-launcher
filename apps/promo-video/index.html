@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-Hans">
+<html lang="zh-Hans" data-locale="zh">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=1920, height=1080" />
@@ -664,6 +664,10 @@
         margin-bottom: 24px;
       }
 
+      .final-card .headline {
+        line-height: 1.14;
+      }
+
       .install-command {
         margin-top: 44px;
         padding: 28px 32px;
@@ -745,9 +749,9 @@
           <div class="url-chip bad chip-e">x-apple.systempreferences:com.apple.preference...</div>
         </div>
         <div class="scene-content">
-          <div class="eyebrow">deep-link fatigue</div>
-          <h1 class="headline">别再手写<br />复杂启动链接</h1>
-          <p class="subhead">URL Scheme 一旦参数、编码或平台差异出错，用户的一键体验就会断掉</p>
+          <div class="eyebrow" data-i18n="hook.eyebrow">deep-link fatigue</div>
+          <h1 class="headline" data-i18n-html="hook.headline">别再手写<br />复杂启动链接</h1>
+          <p class="subhead" data-i18n="hook.subhead">URL Scheme 一旦参数、编码或平台差异出错，用户的一键体验就会断掉</p>
         </div>
       </section>
 
@@ -755,9 +759,9 @@
         <div class="highlight-ring ring-a" data-layout-ignore></div>
         <div class="split">
           <div class="scene-content">
-            <div class="eyebrow">code -> url -> action</div>
-            <h2 class="headline">用 <span class="brand">TypeScript</span><br />描述意图</h2>
-            <p class="subhead">Protocol Launcher 生成安全、可点击、可分发的一键启动链接</p>
+            <div class="eyebrow" data-i18n="transform.eyebrow">code -> url -> action</div>
+            <h2 class="headline" data-i18n-html="transform.headline">用 <span class="brand">TypeScript</span><br />描述意图</h2>
+            <p class="subhead" data-i18n="transform.subhead">Protocol Launcher 生成安全、可点击、可分发的一键启动链接</p>
           </div>
           <div class="transform-stack">
             <div class="code-panel">
@@ -765,7 +769,7 @@
                 <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
                 <span>install-mcp.ts</span>
               </div>
-              <pre><span class="kw">import</span> { <span class="fn">installMCP</span> } <span class="kw">from</span> <span class="str">'protocol-launcher/cursor'</span>
+              <pre data-i18n-html="transform.code"><span class="kw">import</span> { <span class="fn">installMCP</span> } <span class="kw">from</span> <span class="str">'protocol-launcher/cursor'</span>
 
 <span class="kw">const</span> url = <span class="fn">installMCP</span>({
   <span class="key">name</span>: <span class="str">'server-everything'</span>,
@@ -775,17 +779,17 @@
     <span class="str">'-y'</span>,
     <span class="str">'@modelcontextprotocol/server-everything'</span>,
   ],
-})</pre>model
+})</pre>
             </div>
             <div class="url-panel">
-              <div class="url-label">Generated launch URL</div>
+              <div class="url-label" data-i18n="transform.urlLabel">Generated launch URL</div>
               <div class="url-value">cursor://anysphere.cursor-deeplink/mcp/install?name=server-everything&config=...</div>
             </div>
             <div class="launch-button intent-button">
               <span class="cursor-mark"><img src="assets/logos/cursor.svg" alt="" /></span>
               <span class="intent-copy">
-                <span class="intent-label">添加到 Cursor</span>
-                <span class="intent-meta">launch URL ready</span>
+                <span class="intent-label" data-i18n="transform.cta">添加到 Cursor</span>
+                <span class="intent-meta" data-i18n="transform.meta">launch URL ready</span>
               </span>
               <span class="intent-arrow">→</span>
             </div>
@@ -800,7 +804,7 @@
               <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
               <span>cursor.installMCP()</span>
             </div>
-            <pre><span class="fn">installMCP</span>({
+            <pre data-i18n-html="cursor.code"><span class="fn">installMCP</span>({
   <span class="key">name</span>: <span class="str">'企查查企业信息 MCP'</span>,
   <span class="key">type</span>: <span class="str">'streamable_http'</span>,
   <span class="key">url</span>: <span class="str">'https://agent.qcc.com/mcp/company/stream'</span>,
@@ -819,16 +823,16 @@
                 <div class="app-caption">AI coding workflow</div>
               </div>
             </div>
-            <h2 class="headline" style="font-size: 66px; max-width: 680px;">一键安装 MCP 服务</h2>
+            <h2 class="headline" style="font-size: 66px; max-width: 680px;" data-i18n-html="cursor.headline">一键安装 MCP 服务</h2>
             <div class="action-grid" style="margin-top: 36px;">
-              <div class="action-card"><strong>STDIO</strong><span>本地命令启动服务</span></div>
-              <div class="action-card"><strong>HTTP / SSE</strong><span>远程服务配置</span></div>
+              <div class="action-card"><strong>STDIO</strong><span data-i18n="cursor.stdio">本地命令启动服务</span></div>
+              <div class="action-card"><strong>HTTP / SSE</strong><span data-i18n="cursor.http">远程服务配置</span></div>
             </div>
             <div class="launch-button intent-button" style="margin-top: 34px;">
               <span class="cursor-mark"><img src="assets/logos/cursor.svg" alt="" /></span>
               <span class="intent-copy">
-                <span class="intent-label">添加到 Cursor</span>
-                <span class="intent-meta">install MCP ready</span>
+                <span class="intent-label" data-i18n="cursor.cta">添加到 Cursor</span>
+                <span class="intent-meta" data-i18n="cursor.meta">install MCP ready</span>
               </span>
               <span class="intent-arrow">→</span>
             </div>
@@ -839,9 +843,9 @@
       <section id="scene-cherry" class="clip scene" data-start="25" data-duration="9" data-track-index="1">
         <div class="split">
           <div class="scene-content">
-            <div class="eyebrow">AI client setup</div>
-            <h2 class="headline">Cherry Studio<br />配置也能一键完成</h2>
-            <p class="subhead">把 MCP、模型提供商、Base URL 和 API Key 打包成可点击入口</p>
+            <div class="eyebrow" data-i18n="cherry.eyebrow">AI client setup</div>
+            <h2 class="headline" data-i18n-html="cherry.headline">Cherry Studio<br />配置也能一键完成</h2>
+            <p class="subhead" data-i18n="cherry.subhead">把 MCP、模型提供商、Base URL 和 API Key 打包成可点击入口</p>
           </div>
           <div class="app-panel">
             <div class="app-head">
@@ -850,14 +854,14 @@
               </div>
               <div>
                 <div class="app-title">Cherry Studio</div>
-                <div class="app-caption">MCP + Provider import</div>
+                <div class="app-caption" data-i18n="cherry.caption">MCP + Provider import</div>
               </div>
             </div>
             <div class="action-grid">
-              <div class="action-card"><strong>installMCP()</strong><span>一次导入多个 MCP Servers</span></div>
-              <div class="action-card"><strong>installProvider()</strong><span>快速配置模型服务商</span></div>
-              <div class="action-card"><strong>Unicode-safe</strong><span>中文配置稳定编码</span></div>
-              <div class="action-card"><strong>Encoded payload</strong><span>安全传递结构化配置</span></div>
+              <div class="action-card"><strong>installMCP()</strong><span data-i18n="cherry.installMcp">一次导入多个 MCP Servers</span></div>
+              <div class="action-card"><strong>installProvider()</strong><span data-i18n="cherry.installProvider">快速配置模型服务商</span></div>
+              <div class="action-card"><strong>Unicode-safe</strong><span data-i18n="cherry.unicode">中文配置稳定编码</span></div>
+              <div class="action-card"><strong>Encoded payload</strong><span data-i18n="cherry.payload">安全传递结构化配置</span></div>
             </div>
             <div class="url-panel" style="margin-top: 26px;">
               <div class="url-value">cherrystudio://mcp/install?config=eyJtY3BTZXJ2ZXJzIjp7...</div>
@@ -876,14 +880,14 @@
               </div>
               <div>
                 <div class="app-title">VS Code</div>
-                <div class="app-caption">Editor deep links</div>
+                <div class="app-caption" data-i18n="vscode.caption">Editor deep links</div>
               </div>
             </div>
             <div class="action-grid">
-              <div class="action-card"><strong>openFile()</strong><span>/etc/hosts:1:2 <span class="link-arrow">→</span> 编辑器</span></div>
-              <div class="action-card"><strong>openFolder()</strong><span>项目目录一键打开</span></div>
-              <div class="action-card"><strong>cloneProject()</strong><span>仓库到工作区</span></div>
-              <div class="action-card"><strong>openRemote()</strong><span>SSH 远程开发入口</span></div>
+              <div class="action-card"><strong>openFile()</strong><span data-i18n-html="vscode.openFile">/etc/hosts:1:2 <span class="link-arrow">→</span> 编辑器</span></div>
+              <div class="action-card"><strong>openFolder()</strong><span data-i18n="vscode.openFolder">项目目录一键打开</span></div>
+              <div class="action-card"><strong>cloneProject()</strong><span data-i18n="vscode.cloneProject">仓库到工作区</span></div>
+              <div class="action-card"><strong>openRemote()</strong><span data-i18n="vscode.openRemote">SSH 远程开发入口</span></div>
             </div>
           </div>
           <div class="code-panel">
@@ -908,9 +912,9 @@
       <section id="scene-ecosystem" class="clip scene wide-scene" data-start="43" data-duration="8" data-track-index="1">
         <div class="scene-content">
           <div class="ecosystem-copy">
-            <div class="eyebrow">broad protocol coverage</div>
-            <h2 class="headline" style="max-width: 1680px; font-size: 86px;">一个库，连接现代 App 的一键入口</h2>
-            <p class="subhead">从 AI 工具到编辑器，再到效率应用和 macOS 工具</p>
+            <div class="eyebrow" data-i18n="ecosystem.eyebrow">broad protocol coverage</div>
+            <h2 class="headline" style="max-width: 1680px; font-size: 86px;" data-i18n-html="ecosystem.headline">一个库，连接现代 App 的一键入口</h2>
+            <p class="subhead" data-i18n="ecosystem.subhead">从 AI 工具到编辑器，再到效率应用和 macOS 工具</p>
           </div>
           <div class="feature-row">
             <div class="app-cloud">
@@ -936,10 +940,10 @@
               <div class="app-chip logo-tile"><img src="assets/logos/kiro.svg" alt="" />Kiro</div>
             </div>
             <div class="metrics">
-              <div class="metric-card"><div class="metric-value">114</div><div class="metric-label">supported applications</div></div>
-              <div class="metric-card"><div class="metric-value">0</div><div class="metric-label">runtime dependencies</div></div>
-              <div class="metric-card"><div class="metric-value">ESM</div><div class="metric-label">modern Node and bundlers</div></div>
-              <div class="metric-card"><div class="metric-value">TS</div><div class="metric-label">typed payload builders</div></div>
+              <div class="metric-card"><div class="metric-value">114</div><div class="metric-label" data-i18n="ecosystem.metricApps">supported applications</div></div>
+              <div class="metric-card"><div class="metric-value">0</div><div class="metric-label" data-i18n="ecosystem.metricDeps">runtime dependencies</div></div>
+              <div class="metric-card"><div class="metric-value">ESM</div><div class="metric-label" data-i18n="ecosystem.metricEsm">modern Node and bundlers</div></div>
+              <div class="metric-card"><div class="metric-value">TS</div><div class="metric-label" data-i18n="ecosystem.metricTs">typed payload builders</div></div>
             </div>
           </div>
         </div>
@@ -954,11 +958,11 @@
               </svg>
             </div>
             <div class="final-name">Protocol Launcher</div>
-            <div class="final-tagline">One-click launch URLs for modern apps</div>
+            <div class="final-tagline" data-i18n="final.tagline">One-click launch URLs for modern apps</div>
           </div>
           <div class="final-card">
-            <div class="eyebrow">get started</div>
-            <h2 class="headline" style="font-size: 78px; max-width: 850px;">把复杂配置，变成一个按钮</h2>
+            <div class="eyebrow" data-i18n="final.eyebrow">get started</div>
+            <h2 class="headline" style="font-size: 78px; max-width: 850px;" data-i18n-html="final.headline">把复杂配置，变成一个按钮</h2>
             <div class="install-command">$ pnpm add protocol-launcher</div>
             <div class="url-footer">
               <span>https://github.com/zhensherlock/protocol-launcher</span>
@@ -969,7 +973,129 @@
       </section>
     </div>
 
+    <script src="promo.config.js"></script>
     <script>
+      const PROMO_COPY = {
+        en: {
+          hook: {
+            eyebrow: "deep-link fatigue",
+            headline: "Stop hand-writing<br />complex launch URLs",
+            subhead: "When parameters, encoding, or platform rules drift, one-click launch flows break",
+          },
+          transform: {
+            eyebrow: "code -> url -> action",
+            headline: "Describe intent<br />with <span class=\"brand\">TypeScript</span>",
+            subhead: "Protocol Launcher turns typed intent into safe, shareable launch URLs",
+            code: [
+              "<span class=\"kw\">import</span> { <span class=\"fn\">installMCP</span> } <span class=\"kw\">from</span> <span class=\"str\">'protocol-launcher/cursor'</span>",
+              "",
+              "<span class=\"kw\">const</span> url = <span class=\"fn\">installMCP</span>({",
+              "  <span class=\"key\">name</span>: <span class=\"str\">'server-everything'</span>,",
+              "  <span class=\"key\">type</span>: <span class=\"str\">'stdio'</span>,",
+              "  <span class=\"key\">command</span>: <span class=\"str\">'npx'</span>,",
+              "  <span class=\"key\">args</span>: [",
+              "    <span class=\"str\">'-y'</span>,",
+              "    <span class=\"str\">'@modelcontextprotocol/server-everything'</span>,",
+              "  ],",
+              "})",
+            ].join("\n"),
+            urlLabel: "Generated launch URL",
+            cta: "Add to Cursor",
+            meta: "launch URL ready",
+          },
+          cursor: {
+            code: [
+              "<span class=\"fn\">installMCP</span>({",
+              "  <span class=\"key\">name</span>: <span class=\"str\">'QCC Company Intelligence MCP'</span>,",
+              "  <span class=\"key\">type</span>: <span class=\"str\">'streamable_http'</span>,",
+              "  <span class=\"key\">url</span>: <span class=\"str\">'https://agent.qcc.com/mcp/company/stream'</span>,",
+              "  <span class=\"key\">headers</span>: {",
+              "    <span class=\"key\">Authorization</span>: <span class=\"str\">'Bearer REPLACE_WITH_YOUR_TOKEN'</span>,",
+              "  },",
+              "})",
+            ].join("\n"),
+            headline: "Install MCP services<br />in one click",
+            stdio: "Start local services from commands",
+            http: "Configure remote services",
+            cta: "Add to Cursor",
+            meta: "install MCP ready",
+          },
+          cherry: {
+            eyebrow: "AI client setup",
+            headline: "Cherry Studio setup<br />in one click",
+            subhead: "Package MCP, providers, Base URLs, and API keys into clickable entry points",
+            caption: "MCP + Provider import",
+            installMcp: "Import multiple MCP servers",
+            installProvider: "Set up model providers fast",
+            unicode: "Stable encoding for any locale",
+            payload: "Pass structured config safely",
+          },
+          vscode: {
+            caption: "Editor deep links",
+            openFile: "/etc/hosts:1:2 <span class=\"link-arrow\">→</span> editor",
+            openFolder: "Open project folders instantly",
+            cloneProject: "Clone repos into the workspace",
+            openRemote: "SSH remote development entry",
+          },
+          ecosystem: {
+            eyebrow: "broad protocol coverage",
+            headline: "One library,<br />one-click app launch URLs",
+            subhead: "From AI tools to editors, productivity apps, and macOS utilities",
+            metricApps: "supported applications",
+            metricDeps: "runtime dependencies",
+            metricEsm: "modern Node and bundlers",
+            metricTs: "typed payload builders",
+          },
+          final: {
+            tagline: "One-click launch URLs for modern apps",
+            eyebrow: "get started",
+            headline: "Turn complex config<br />into one button",
+          },
+        },
+      };
+
+      function normalizePromoLocale(value) {
+        const locale = String(value || "").toLowerCase();
+        if (locale.startsWith("en")) return "en";
+        return "zh";
+      }
+
+      function getHashParams() {
+        const queryStart = window.location.hash.indexOf("?");
+        return queryStart === -1 ? new URLSearchParams() : new URLSearchParams(window.location.hash.slice(queryStart + 1));
+      }
+
+      function readPromoLocale() {
+        const searchParams = new URLSearchParams(window.location.search);
+        return normalizePromoLocale(
+          searchParams.get("lang") ||
+            getHashParams().get("lang") ||
+            window.PROTOCOL_LAUNCHER_PROMO?.lang ||
+            window.PROTOCOL_LAUNCHER_PROMO_LANG ||
+            document.documentElement.dataset.locale,
+        );
+      }
+
+      function readCopy(copy, path) {
+        return path.split(".").reduce((value, part) => value && value[part], copy);
+      }
+
+      const promoLocale = readPromoLocale();
+      document.documentElement.dataset.locale = promoLocale;
+      document.documentElement.lang = promoLocale === "en" ? "en" : "zh-Hans";
+
+      if (promoLocale !== "zh") {
+        const copy = PROMO_COPY[promoLocale];
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const value = readCopy(copy, element.dataset.i18n);
+          if (value) element.textContent = value;
+        });
+        document.querySelectorAll("[data-i18n-html]").forEach((element) => {
+          const value = readCopy(copy, element.dataset.i18nHtml);
+          if (value) element.innerHTML = value;
+        });
+      }
+
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
 
