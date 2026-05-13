@@ -178,11 +178,6 @@ To minimize bundle size, import specific modules directly:
 
 ::: code-group
 
-```typescript [cal2todo]
-// Only imports Cal2Todo related code
-import { add } from 'protocol-launcher/cal2todo'
-```
-
 ```typescript [cherry studio]
 // Only imports Cherry Studio related code
 import { installMCP } from 'protocol-launcher/cherry-studio'
@@ -10755,11 +10750,6 @@ $ bun add protocol-launcher
 为了减小打包体积，建议直接导入特定模块：
 
 ::: code-group
-
-```typescript [cal2todo]
-// 仅导入 Cal2Todo 相关代码
-import { add } from 'protocol-launcher/cal2todo'
-```
 
 ```typescript [cherry studio]
 // 仅导入 Cherry Studio 相关代码
