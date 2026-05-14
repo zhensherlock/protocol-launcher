@@ -12,17 +12,17 @@
       }
 
       :root {
-        --bg: #121217;
-        --surface: #1b1c24;
-        --surface-soft: #242631;
-        --surface-strong: #101116;
-        --fg: #f4f1ea;
-        --muted: #c7c2ce;
-        --muted-2: #aaa6b3;
-        --line: rgba(244, 241, 234, 0.12);
-        --cyan: #8accd5;
-        --pink: #ff90bb;
-        --blue: #5570f1;
+        --bg: #f5fbff;
+        --surface: #ffffff;
+        --surface-soft: #eef7fb;
+        --surface-strong: #dfeaf1;
+        --fg: #17202a;
+        --muted: #3f4a59;
+        --muted-2: #596374;
+        --line: rgba(23, 32, 42, 0.12);
+        --cyan: #0f6f7d;
+        --pink: #c62d63;
+        --blue: #4057d5;
         --green: #a6e3a1;
         --yellow: #ffd166;
         --danger: #ff6b8a;
@@ -47,9 +47,9 @@
         height: 1080px;
         overflow: hidden;
         background:
-          radial-gradient(circle at 80% 20%, rgba(255, 144, 187, 0.18), transparent 31%),
-          radial-gradient(circle at 22% 72%, rgba(138, 204, 213, 0.2), transparent 36%),
-          linear-gradient(135deg, #15161d 0%, #111218 58%, #18141b 100%);
+          radial-gradient(circle at 80% 20%, rgba(255, 144, 187, 0.26), transparent 31%),
+          radial-gradient(circle at 22% 72%, rgba(138, 204, 213, 0.28), transparent 36%),
+          linear-gradient(135deg, #ffffff 0%, #eef8fb 56%, #fff6fb 100%);
       }
 
       .ambient {
@@ -63,10 +63,10 @@
         content: "";
         position: absolute;
         inset: 0;
-        opacity: 0.14;
+        opacity: 0.5;
         background-image:
-          linear-gradient(rgba(244, 241, 234, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(244, 241, 234, 0.08) 1px, transparent 1px);
+          linear-gradient(rgba(23, 32, 42, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(23, 32, 42, 0.07) 1px, transparent 1px);
         background-size: 80px 80px;
         mask-image: radial-gradient(circle at 50% 45%, black, transparent 72%);
       }
@@ -92,7 +92,7 @@
 
       .ghost-word {
         position: absolute;
-        color: rgba(244, 241, 234, 0.045);
+        color: rgba(23, 32, 42, 0.055);
         font-size: 184px;
         font-weight: 900;
         line-height: 1;
@@ -165,7 +165,7 @@
       }
 
       .subhead {
-        max-width: 1040px;
+        max-width: 740px;
         color: var(--muted);
         font-size: 34px;
         font-weight: 450;
@@ -178,15 +178,13 @@
         width: 190px;
         height: 190px;
         border-radius: 50%;
-        background: linear-gradient(135deg, var(--cyan), var(--pink));
-        border: 3px solid rgba(244, 241, 234, 0.34);
-        filter: drop-shadow(0 30px 60px rgba(255, 144, 187, 0.2));
+        background: transparent;
       }
 
-      .logo-symbol svg {
-        width: 76%;
-        height: 76%;
-        filter: drop-shadow(0 8px 14px rgba(255, 255, 255, 0.28));
+      .logo-symbol img {
+        width: 100%;
+        height: 100%;
+        display: block;
       }
 
       .top-brand {
@@ -206,8 +204,6 @@
         width: 42px;
         height: 42px;
         border-radius: 50%;
-        border-width: 1px;
-        filter: none;
       }
 
       .url-noise {
@@ -224,22 +220,22 @@
         padding: 0 24px;
         border: 1px solid rgba(255, 144, 187, 0.24);
         border-radius: 999px;
-        background: rgba(27, 28, 36, 0.68);
-        color: rgba(244, 241, 234, 0.78);
+        background: rgba(255, 255, 255, 0.76);
+        color: rgba(23, 32, 42, 0.72);
         font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
         font-size: 22px;
-        box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 20px 55px rgba(82, 107, 124, 0.18);
         white-space: nowrap;
       }
 
       .url-chip.bad {
-        color: rgba(255, 144, 187, 0.9);
-        border-color: rgba(255, 144, 187, 0.42);
+        color: #981245;
+        border-color: rgba(152, 18, 69, 0.42);
       }
 
       .url-chip.ok {
-        color: rgba(138, 204, 213, 0.95);
-        border-color: rgba(138, 204, 213, 0.42);
+        color: rgba(15, 111, 125, 0.95);
+        border-color: rgba(15, 111, 125, 0.42);
       }
 
       .chip-a { left: 1050px; top: 130px; transform: rotate(-5deg); }
@@ -267,8 +263,8 @@
       .metric-card,
       .final-card {
         border: 1px solid var(--line);
-        background: linear-gradient(180deg, rgba(36, 38, 49, 0.9), rgba(20, 21, 29, 0.92));
-        box-shadow: 0 28px 90px rgba(0, 0, 0, 0.32);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(238, 247, 251, 0.95));
+        box-shadow: 0 28px 90px rgba(82, 107, 124, 0.16);
       }
 
       .code-panel {
@@ -301,18 +297,18 @@
 
       pre {
         padding: 34px 38px 38px;
-        color: #d8d4de;
+        color: #243142;
         font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
         font-size: 25px;
         line-height: 1.62;
         white-space: pre-wrap;
       }
 
-      .kw { color: #ffb3cc; }
-      .fn { color: #abeaf2; }
-      .str { color: #c8f6c4; }
-      .key { color: #ffe09a; }
-      .cm { color: #b4afbd; }
+      .kw { color: #d94675; }
+      .fn { color: #0b7480; }
+      .str { color: #23825c; }
+      .key { color: #765400; }
+      .cm { color: #738095; }
 
       .transform-stack {
         display: flex;
@@ -375,12 +371,12 @@
         border-radius: 24px;
         border-color: rgba(138, 204, 213, 0.38);
         background:
-          linear-gradient(180deg, rgba(36, 38, 49, 0.92), rgba(16, 17, 22, 0.94)),
-          linear-gradient(135deg, rgba(138, 204, 213, 0.2), rgba(255, 144, 187, 0.16));
+          linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(235, 247, 250, 0.96)),
+          linear-gradient(135deg, rgba(138, 204, 213, 0.24), rgba(255, 144, 187, 0.18));
         color: var(--fg);
         box-shadow:
-          inset 0 1px 0 rgba(244, 241, 234, 0.16),
-          0 24px 70px rgba(0, 0, 0, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.72),
+          0 24px 70px rgba(82, 107, 124, 0.18),
           0 0 48px rgba(138, 204, 213, 0.16);
       }
 
@@ -399,8 +395,8 @@
         width: 50px;
         height: 50px;
         border-radius: 16px;
-        border: 1px solid rgba(244, 241, 234, 0.16);
-        background: rgba(12, 13, 18, 0.78);
+        border: 1px solid rgba(23, 32, 42, 0.12);
+        background: rgba(255, 255, 255, 0.82);
         flex: 0 0 auto;
       }
 
@@ -493,7 +489,7 @@
 
       .app-caption {
         margin-top: 4px;
-        color: #d8d4de;
+        color: var(--muted);
         font-size: 21px;
       }
 
@@ -501,8 +497,8 @@
         min-height: 142px;
         padding: 24px;
         border-radius: 20px;
-        border: 1px solid rgba(244, 241, 234, 0.1);
-        background: rgba(16, 17, 22, 0.62);
+        border: 1px solid rgba(23, 32, 42, 0.1);
+        background: rgba(255, 255, 255, 0.72);
       }
 
       .action-card strong {
@@ -513,7 +509,7 @@
       }
 
       .action-card span {
-        color: #d8d4de;
+        color: var(--muted);
         font-size: 20px;
         line-height: 1.35;
       }
@@ -561,9 +557,9 @@
         min-height: 66px;
         padding: 0 18px;
         border-radius: 18px;
-        border: 1px solid rgba(244, 241, 234, 0.1);
-        background: rgba(27, 28, 36, 0.72);
-        color: rgba(244, 241, 234, 0.83);
+        border: 1px solid rgba(23, 32, 42, 0.1);
+        background: rgba(255, 255, 255, 0.76);
+        color: rgba(23, 32, 42, 0.78);
         font-size: 21px;
         font-weight: 760;
       }
@@ -571,7 +567,7 @@
       .app-chip.hot {
         color: var(--cyan);
         border-color: rgba(138, 204, 213, 0.32);
-        background: rgba(138, 204, 213, 0.1);
+        background: rgba(138, 204, 213, 0.16);
       }
 
       .app-chip.logo-tile {
@@ -591,8 +587,8 @@
       .app-chip.logo-tile.logo-on-light img {
         padding: 5px;
         border-radius: 10px;
-        background: rgba(244, 241, 234, 0.92);
-        box-shadow: inset 0 0 0 1px rgba(16, 17, 22, 0.08);
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: inset 0 0 0 1px rgba(23, 32, 42, 0.08);
       }
 
       .metrics {
@@ -672,9 +668,9 @@
         margin-top: 44px;
         padding: 28px 32px;
         border-radius: 20px;
-        background: #0c0d12;
-        border: 1px solid rgba(244, 241, 234, 0.12);
-        color: var(--green);
+        background: #f3f8fb;
+        border: 1px solid rgba(23, 32, 42, 0.12);
+        color: #19744f;
         font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
         font-size: 32px;
       }
@@ -715,11 +711,11 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="56" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="42" data-width="1920" data-height="1080">
       <audio
         id="background-music"
         data-start="0"
-        data-duration="56"
+        data-duration="42"
         data-track-index="2"
         data-volume="0.28"
         src="assets/audio/background.mp3"
@@ -733,14 +729,12 @@
       </div>
       <div class="top-brand">
         <div class="logo-symbol" aria-hidden="true">
-          <svg viewBox="0 0 200 200" aria-hidden="true">
-            <path d="M130 30 L60 100 L90 100 L70 170 L140 100 L110 100 Z" fill="#fff" />
-          </svg>
+          <img src="assets/logos/protocol-launcher.svg" alt="" />
         </div>
         <span>Protocol Launcher</span>
       </div>
 
-      <section id="scene-hook" class="clip scene" data-start="0" data-duration="7" data-track-index="1">
+      <section id="scene-hook" class="clip scene" data-start="0" data-duration="5.5" data-track-index="1">
         <div class="url-noise" data-layout-ignore>
           <div class="url-chip bad chip-a">cursor://anysphere.cursor-deeplink/mcp/install?name=...</div>
           <div class="url-chip bad chip-b">vscode://file/etc/hosts:1:2?windowId=_blank</div>
@@ -755,7 +749,7 @@
         </div>
       </section>
 
-      <section id="scene-transform" class="clip scene" data-start="7" data-duration="9" data-track-index="1">
+      <section id="scene-transform" class="clip scene" data-start="5.5" data-duration="7" data-track-index="1">
         <div class="highlight-ring ring-a" data-layout-ignore></div>
         <div class="split">
           <div class="scene-content">
@@ -797,7 +791,7 @@
         </div>
       </section>
 
-      <section id="scene-cursor" class="clip scene" data-start="16" data-duration="9" data-track-index="1">
+      <section id="scene-cursor" class="clip scene" data-start="12.5" data-duration="6.5" data-track-index="1">
         <div class="split">
           <div class="code-panel">
             <div class="panel-bar">
@@ -840,7 +834,7 @@
         </div>
       </section>
 
-      <section id="scene-cherry" class="clip scene" data-start="25" data-duration="9" data-track-index="1">
+      <section id="scene-cherry" class="clip scene" data-start="19" data-duration="6.5" data-track-index="1">
         <div class="split">
           <div class="scene-content">
             <div class="eyebrow" data-i18n="cherry.eyebrow">AI client setup</div>
@@ -870,7 +864,7 @@
         </div>
       </section>
 
-      <section id="scene-vscode" class="clip scene" data-start="34" data-duration="9" data-track-index="1">
+      <section id="scene-vscode" class="clip scene" data-start="25.5" data-duration="6.5" data-track-index="1">
         <div class="highlight-ring ring-b" data-layout-ignore></div>
         <div class="split">
           <div class="app-panel">
@@ -909,7 +903,7 @@
         </div>
       </section>
 
-      <section id="scene-ecosystem" class="clip scene wide-scene" data-start="43" data-duration="8" data-track-index="1">
+      <section id="scene-ecosystem" class="clip scene wide-scene" data-start="32" data-duration="6" data-track-index="1">
         <div class="scene-content">
           <div class="ecosystem-copy">
             <div class="eyebrow" data-i18n="ecosystem.eyebrow">broad protocol coverage</div>
@@ -949,13 +943,11 @@
         </div>
       </section>
 
-      <section id="scene-final" class="clip scene" data-start="51" data-duration="5" data-track-index="1">
+      <section id="scene-final" class="clip scene" data-start="38" data-duration="4" data-track-index="1">
         <div class="final-layout">
           <div class="final-logo-wrap">
             <div class="logo-symbol" aria-hidden="true">
-              <svg viewBox="0 0 200 200" aria-hidden="true">
-                <path d="M130 30 L60 100 L90 100 L70 170 L140 100 L110 100 Z" fill="#fff" />
-              </svg>
+              <img src="assets/logos/protocol-launcher.svg" alt="" />
             </div>
             <div class="final-name">Protocol Launcher</div>
             <div class="final-tagline" data-i18n="final.tagline">One-click launch URLs for modern apps</div>
@@ -1098,13 +1090,13 @@
 
       window.__timelines = window.__timelines || {};
       const tl = gsap.timeline({ paused: true });
+      const VIDEO_DURATION = 42;
 
-      tl.to(".ambient-line.one", { x: -90, opacity: 0.24, duration: 56, ease: "none" }, 0);
-      tl.to(".ambient-line.two", { x: 110, opacity: 0.38, duration: 56, ease: "none" }, 0);
-      tl.to(".ghost-word.one", { x: -80, y: -24, duration: 56, ease: "none" }, 0);
-      tl.to(".ghost-word.two", { x: 60, y: 18, duration: 56, ease: "none" }, 0);
-      tl.to(".logo-symbol", { filter: "drop-shadow(0 34px 72px rgba(138, 204, 213, 0.3))", duration: 2.4, repeat: 23, yoyo: true, ease: "sine.inOut" }, 0);
-      tl.to(".highlight-ring", { scale: 1.08, opacity: 0.55, duration: 2.2, repeat: 24, yoyo: true, ease: "sine.inOut" }, 0);
+      tl.to(".ambient-line.one", { x: -90, opacity: 0.24, duration: VIDEO_DURATION, ease: "none" }, 0);
+      tl.to(".ambient-line.two", { x: 110, opacity: 0.38, duration: VIDEO_DURATION, ease: "none" }, 0);
+      tl.to(".ghost-word.one", { x: -80, y: -24, duration: VIDEO_DURATION, ease: "none" }, 0);
+      tl.to(".ghost-word.two", { x: 60, y: 18, duration: VIDEO_DURATION, ease: "none" }, 0);
+      tl.to(".highlight-ring", { scale: 1.08, opacity: 0.55, duration: 2.2, repeat: Math.floor(VIDEO_DURATION / 2.2) - 1, yoyo: true, ease: "sine.inOut" }, 0);
 
       function sceneIn(id, at) {
         const eyebrow = `${id} .eyebrow`;
@@ -1112,63 +1104,63 @@
         const subhead = `${id} .subhead`;
         tl.set(id, { opacity: 1, scale: 1 }, at);
         if (document.querySelector(eyebrow)) {
-          tl.from(eyebrow, { y: 28, opacity: 0, duration: 0.45, ease: "power3.out" }, at + 0.18);
+          tl.from(eyebrow, { y: 28, opacity: 0, duration: 0.36, ease: "power3.out" }, at + 0.14);
         }
         if (document.querySelector(headline)) {
-          tl.from(headline, { y: 44, opacity: 0, duration: 0.58, ease: "power3.out" }, at + 0.32);
+          tl.from(headline, { y: 44, opacity: 0, duration: 0.46, ease: "power3.out" }, at + 0.24);
         }
         if (document.querySelector(subhead)) {
-          tl.from(subhead, { y: 26, opacity: 0, duration: 0.5, ease: "power2.out" }, at + 0.56);
+          tl.from(subhead, { y: 26, opacity: 0, duration: 0.38, ease: "power2.out" }, at + 0.42);
         }
       }
 
       function sceneOut(id, at) {
-        tl.to(id, { opacity: 0, scale: 0.985, duration: 0.44, ease: "power2.in" }, at);
+        tl.to(id, { opacity: 0, scale: 0.985, duration: 0.36, ease: "power2.in" }, at);
       }
 
       sceneIn("#scene-hook", 0);
-      tl.from("#scene-hook .url-chip", { x: 180, opacity: 0, scale: 0.94, duration: 0.62, stagger: 0.1, ease: "power3.out" }, 0.55);
-      tl.to("#scene-hook .url-chip.bad", { x: -30, borderColor: "rgba(255, 107, 138, 0.7)", duration: 0.46, stagger: 0.06, ease: "power2.inOut" }, 4.7);
-      sceneOut("#scene-hook", 6.45);
+      tl.from("#scene-hook .url-chip", { x: 180, opacity: 0, scale: 0.94, duration: 0.5, stagger: 0.08, ease: "power3.out" }, 0.45);
+      tl.to("#scene-hook .url-chip.bad", { x: -30, borderColor: "rgba(255, 107, 138, 0.7)", duration: 0.36, stagger: 0.05, ease: "power2.inOut" }, 3.6);
+      sceneOut("#scene-hook", 5.05);
 
-      sceneIn("#scene-transform", 7);
-      tl.from("#scene-transform .code-panel", { y: 54, opacity: 0, scale: 0.96, duration: 0.64, ease: "power3.out" }, 7.52);
-      tl.from("#scene-transform .url-panel", { y: 42, opacity: 0, duration: 0.5, ease: "power3.out" }, 10.35);
-      tl.from("#scene-transform .launch-button", { y: 28, opacity: 0, scale: 0.86, duration: 0.5, ease: "back.out(1.7)" }, 12.25);
-      tl.to("#scene-transform .launch-button", { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.inOut" }, 14.35);
-      sceneOut("#scene-transform", 15.45);
+      sceneIn("#scene-transform", 5.5);
+      tl.from("#scene-transform .code-panel", { y: 54, opacity: 0, scale: 0.96, duration: 0.52, ease: "power3.out" }, 5.92);
+      tl.from("#scene-transform .url-panel", { y: 42, opacity: 0, duration: 0.42, ease: "power3.out" }, 8.05);
+      tl.from("#scene-transform .launch-button", { y: 28, opacity: 0, scale: 0.86, duration: 0.42, ease: "back.out(1.7)" }, 9.5);
+      tl.to("#scene-transform .launch-button", { scale: 1.04, duration: 0.16, yoyo: true, repeat: 1, ease: "power2.inOut" }, 10.85);
+      sceneOut("#scene-transform", 12.05);
 
-      tl.set("#scene-cursor", { opacity: 1, scale: 1 }, 16);
-      tl.from("#scene-cursor .code-panel", { x: -62, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 16.25);
-      tl.from("#scene-cursor .app-panel", { x: 62, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 16.42);
-      tl.from("#scene-cursor .action-card", { y: 34, opacity: 0, duration: 0.42, stagger: 0.1, ease: "power2.out" }, 18.85);
-      tl.from("#scene-cursor .launch-button", { y: 24, opacity: 0, scale: 0.88, duration: 0.42, ease: "back.out(1.6)" }, 20.85);
-      tl.to("#scene-cursor .launch-button", { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: "power2.inOut" }, 22.75);
-      sceneOut("#scene-cursor", 24.45);
+      tl.set("#scene-cursor", { opacity: 1, scale: 1 }, 12.5);
+      tl.from("#scene-cursor .code-panel", { x: -62, opacity: 0, scale: 0.96, duration: 0.5, ease: "power3.out" }, 12.72);
+      tl.from("#scene-cursor .app-panel", { x: 62, opacity: 0, scale: 0.96, duration: 0.5, ease: "power3.out" }, 12.88);
+      tl.from("#scene-cursor .action-card", { y: 34, opacity: 0, duration: 0.34, stagger: 0.08, ease: "power2.out" }, 14.55);
+      tl.from("#scene-cursor .launch-button", { y: 24, opacity: 0, scale: 0.88, duration: 0.36, ease: "back.out(1.6)" }, 16.0);
+      tl.to("#scene-cursor .launch-button", { scale: 1.04, duration: 0.16, yoyo: true, repeat: 1, ease: "power2.inOut" }, 17.4);
+      sceneOut("#scene-cursor", 18.55);
 
-      sceneIn("#scene-cherry", 25);
-      tl.from("#scene-cherry .app-panel", { x: 68, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 25.55);
-      tl.from("#scene-cherry .action-card", { y: 34, opacity: 0, duration: 0.42, stagger: 0.08, ease: "power2.out" }, 27.0);
-      tl.from("#scene-cherry .url-panel", { y: 26, opacity: 0, duration: 0.44, ease: "power2.out" }, 29.55);
-      sceneOut("#scene-cherry", 33.45);
+      sceneIn("#scene-cherry", 19);
+      tl.from("#scene-cherry .app-panel", { x: 68, opacity: 0, scale: 0.96, duration: 0.5, ease: "power3.out" }, 19.38);
+      tl.from("#scene-cherry .action-card", { y: 34, opacity: 0, duration: 0.34, stagger: 0.06, ease: "power2.out" }, 20.55);
+      tl.from("#scene-cherry .url-panel", { y: 26, opacity: 0, duration: 0.36, ease: "power2.out" }, 22.35);
+      sceneOut("#scene-cherry", 25.05);
 
-      tl.set("#scene-vscode", { opacity: 1, scale: 1 }, 34);
-      tl.from("#scene-vscode .app-panel", { x: -66, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 34.25);
-      tl.from("#scene-vscode .code-panel", { x: 66, opacity: 0, scale: 0.96, duration: 0.62, ease: "power3.out" }, 34.42);
-      tl.from("#scene-vscode .action-card", { y: 34, opacity: 0, duration: 0.42, stagger: 0.08, ease: "power2.out" }, 36.3);
-      sceneOut("#scene-vscode", 42.45);
+      tl.set("#scene-vscode", { opacity: 1, scale: 1 }, 25.5);
+      tl.from("#scene-vscode .app-panel", { x: -66, opacity: 0, scale: 0.96, duration: 0.5, ease: "power3.out" }, 25.72);
+      tl.from("#scene-vscode .code-panel", { x: 66, opacity: 0, scale: 0.96, duration: 0.5, ease: "power3.out" }, 25.88);
+      tl.from("#scene-vscode .action-card", { y: 34, opacity: 0, duration: 0.34, stagger: 0.06, ease: "power2.out" }, 27.3);
+      sceneOut("#scene-vscode", 31.55);
 
-      sceneIn("#scene-ecosystem", 43);
-      tl.from("#scene-ecosystem .app-chip", { y: 24, opacity: 0, scale: 0.94, duration: 0.34, stagger: 0.035, ease: "power2.out" }, 44.2);
-      tl.from("#scene-ecosystem .metric-card", { y: 40, opacity: 0, scale: 0.96, duration: 0.48, stagger: 0.11, ease: "power2.out" }, 45.1);
-      tl.to("#scene-ecosystem .app-chip.hot", { borderColor: "rgba(255, 144, 187, 0.6)", duration: 0.45, yoyo: true, repeat: 5, ease: "sine.inOut" }, 46.8);
-      sceneOut("#scene-ecosystem", 50.55);
+      sceneIn("#scene-ecosystem", 32);
+      tl.from("#scene-ecosystem .app-chip", { y: 24, opacity: 0, scale: 0.94, duration: 0.28, stagger: 0.026, ease: "power2.out" }, 32.85);
+      tl.from("#scene-ecosystem .metric-card", { y: 40, opacity: 0, scale: 0.96, duration: 0.38, stagger: 0.08, ease: "power2.out" }, 33.55);
+      tl.to("#scene-ecosystem .app-chip.hot", { borderColor: "rgba(255, 144, 187, 0.6)", duration: 0.38, yoyo: true, repeat: 4, ease: "sine.inOut" }, 34.7);
+      sceneOut("#scene-ecosystem", 37.55);
 
-      tl.set("#scene-final", { opacity: 1, scale: 1 }, 51);
-      tl.from("#scene-final .final-logo-wrap", { y: 38, opacity: 0, scale: 0.94, duration: 0.7, ease: "power3.out" }, 51.15);
-      tl.from("#scene-final .final-card", { x: 72, opacity: 0, scale: 0.96, duration: 0.7, ease: "power3.out" }, 51.35);
-      tl.from("#scene-final .install-command", { y: 26, opacity: 0, duration: 0.45, ease: "power2.out" }, 52.55);
-      tl.from("#scene-final .url-footer span", { y: 18, opacity: 0, duration: 0.34, stagger: 0.12, ease: "power2.out" }, 53.1);
+      tl.set("#scene-final", { opacity: 1, scale: 1 }, 38);
+      tl.from("#scene-final .final-logo-wrap", { y: 38, opacity: 0, scale: 0.94, duration: 0.56, ease: "power3.out" }, 38.1);
+      tl.from("#scene-final .final-card", { x: 72, opacity: 0, scale: 0.96, duration: 0.56, ease: "power3.out" }, 38.25);
+      tl.from("#scene-final .install-command", { y: 26, opacity: 0, duration: 0.36, ease: "power2.out" }, 39.1);
+      tl.from("#scene-final .url-footer span", { y: 18, opacity: 0, duration: 0.28, stagger: 0.09, ease: "power2.out" }, 39.6);
 
       window.__timelines["main"] = tl;
     </script>

@@ -2,18 +2,20 @@
 
 ## Style Prompt
 
-A cinematic developer-tool product promo for Protocol Launcher. Dark documentation-inspired canvas, crisp code surfaces, precise motion, and the existing pink-to-cyan lightning identity. The video should feel fast, useful, and trustworthy: a TypeScript object becomes a safe one-click launch URL, then expands into Cursor, Cherry Studio, VS Code, and a broad app ecosystem.
+A cinematic developer-tool product promo for Protocol Launcher. Bright documentation-inspired canvas, crisp light code surfaces, precise motion, and the existing pink-to-cyan lightning identity. The video should feel fast, useful, and trustworthy: a TypeScript object becomes a safe one-click launch URL, then expands into Cursor, Cherry Studio, VS Code, and a broad app ecosystem.
 
 ## Colors
 
-- Background: `#121217`
-- Surface: `#1B1C24`
-- Surface soft: `#242631`
-- Foreground: `#F4F1EA`
-- Muted text: `#AAA6B3`
-- Brand cyan: `#8ACCD5`
-- Brand pink: `#FF90BB`
-- Brand blue CTA: `#5570F1`
+- Background: `#F5FBFF`
+- Surface: `#FFFFFF`
+- Surface soft: `#EEF7FB`
+- Foreground: `#17202A`
+- Muted text: `#3F4A59`
+- Brand cyan text: `#0F6F7D`
+- Brand pink text: `#C62D63`
+- Brand blue CTA: `#4057D5`
+- Soft cyan glow: `#8ACCD5`
+- Soft pink glow: `#FF90BB`
 - Code green: `#A6E3A1`
 - Warning accent: `#FFD166`
 
@@ -36,4 +38,5 @@ A cinematic developer-tool product promo for Protocol Launcher. Dark documentati
 - Do not make the video only a website scroll recording.
 - Do not rely on abstract gradients without product-specific code, URLs, and app actions.
 - Do not turn every feature into identical cards; lead with the code-to-link transformation.
+- Do not introduce dark full-screen backgrounds; keep the promo bright and app-like.
 - Do not introduce colors outside the palette unless they are syntax-highlight accents.

@@ -3,10 +3,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "npx --yes hyperframes@0.5.7 preview",
+    "dev": "npx --yes hyperframes@0.5.7 preview --port 6001",
     "build": "npx --yes hyperframes@0.5.7 render",
     "check": "npx --yes hyperframes@0.5.7 lint && npx --yes hyperframes@0.5.7 validate && npx --yes hyperframes@0.5.7 inspect",
     "render": "npx --yes hyperframes@0.5.7 render",
+    "render:mp4": "npx --yes hyperframes@0.5.7 render --format mp4 --output renders/protocol-launcher-promo.mp4",
+    "render:webm": "npx --yes hyperframes@0.5.7 render --format webm --output renders/protocol-launcher-promo.webm",
+    "render:all": "pnpm render:mp4 && pnpm render:webm",
     "publish": "npx --yes hyperframes@0.5.7 publish"
   }
 }
