@@ -711,7 +711,15 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="42" data-width="1920" data-height="1080">
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="42"
+      data-width="1920"
+      data-height="1080"
+      data-composition-variables='{"lang":"zh"}'
+    >
       <audio
         id="background-music"
         data-start="0"
@@ -1057,11 +1065,18 @@
         return queryStart === -1 ? new URLSearchParams() : new URLSearchParams(window.location.hash.slice(queryStart + 1));
       }
 
+      function readRenderVariables() {
+        if (typeof window.__hyperframes?.getVariables !== "function") return {};
+        return window.__hyperframes.getVariables() || {};
+      }
+
       function readPromoLocale() {
         const searchParams = new URLSearchParams(window.location.search);
+        const renderVariables = readRenderVariables();
         return normalizePromoLocale(
           searchParams.get("lang") ||
             getHashParams().get("lang") ||
+            renderVariables.lang ||
             window.PROTOCOL_LAUNCHER_PROMO?.lang ||
             window.PROTOCOL_LAUNCHER_PROMO_LANG ||
             document.documentElement.dataset.locale,

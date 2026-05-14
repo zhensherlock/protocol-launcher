@@ -4,12 +4,16 @@
   "type": "module",
   "scripts": {
     "dev": "npx --yes hyperframes@0.5.7 preview --port 6001",
-    "build": "npx --yes hyperframes@0.5.7 render",
+    "build": "pnpm run render:mp4",
     "check": "npx --yes hyperframes@0.5.7 lint && npx --yes hyperframes@0.5.7 validate && npx --yes hyperframes@0.5.7 inspect",
-    "render": "npx --yes hyperframes@0.5.7 render",
-    "render:mp4": "npx --yes hyperframes@0.5.7 render --format mp4 --output renders/protocol-launcher-promo.mp4",
+    "render": "pnpm run render:mp4",
+    "render:mp4": "pnpm run render:mp4:i18n",
+    "render:mp4:zh": "npx --yes hyperframes@0.5.7 render --format mp4 --crf 30 --variables '{\"lang\":\"zh\"}' --output renders/protocol-launcher-promo.zh.mp4",
+    "render:mp4:en": "npx --yes hyperframes@0.5.7 render --format mp4 --crf 30 --variables '{\"lang\":\"en\"}' --output renders/protocol-launcher-promo.en.mp4",
+    "render:mp4:i18n": "pnpm run render:mp4:en && pnpm run render:mp4:zh",
+    "render:mp4:standard": "npx --yes hyperframes@0.5.7 render --format mp4 --output renders/protocol-launcher-promo.mp4",
     "render:webm": "npx --yes hyperframes@0.5.7 render --format webm --output renders/protocol-launcher-promo.webm",
-    "render:all": "pnpm render:mp4 && pnpm render:webm",
+    "render:all": "pnpm run render:mp4:i18n",
     "publish": "npx --yes hyperframes@0.5.7 publish"
   }
 }
