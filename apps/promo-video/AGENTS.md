@@ -1,5 +1,11 @@
 # HyperFrames Composition Project
 
+## Scope
+
+- This file applies to `apps/promo-video`, the HyperFrames composition workspace.
+- Keep the root `AGENTS.md` in mind for workspace and generated-output rules.
+- Do not edit generated `renders`, `.thumbnails`, or `.waveform-cache` output.
+
 ## Skills
 
 This project uses AI agent skills for framework-specific patterns. Install them if not already present:
@@ -13,12 +19,14 @@ Skills encode patterns like `window.__timelines` registration, `data-*` attribut
 ## Commands
 
 ```bash
-npm run dev          # preview in browser (studio editor)
-npm run check        # lint + validate + inspect
-npm run render       # render to MP4
-npm run publish      # publish and get a shareable link
+pnpm --filter ./apps/promo-video dev     # preview in browser (studio editor)
+pnpm --filter ./apps/promo-video check   # lint + validate + inspect
+pnpm --filter ./apps/promo-video render  # render to MP4
+pnpm --filter ./apps/promo-video publish # publish and get a shareable link
 npx hyperframes docs <topic> # reference docs in terminal
 ```
+
+Root shortcuts exist for common checks: `pnpm check:promo`, `pnpm build:promo`, and `pnpm render:promo`.
 
 ## Project Structure
 
@@ -33,7 +41,7 @@ npx hyperframes docs <topic> # reference docs in terminal
 After creating or editing any `.html` composition, run the full check before considering the task complete:
 
 ```bash
-npm run check
+pnpm --filter ./apps/promo-video check
 ```
 
 Fix all errors before presenting the result.

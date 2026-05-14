@@ -9,7 +9,7 @@
 ## Commands
 
 - From the repo root, use path filters because multiple packages are named `protocol-launcher`.
-- Docs dev server: `pnpm --filter ./apps/docs dev`; root `pnpm dev` also starts docs with workspace dependency watchers.
+- Docs dev server: `pnpm --filter ./apps/docs dev`; root `pnpm dev` starts all apps plus workspace dependency watchers.
 - Docs build: `pnpm --filter ./apps/docs build`.
 - CI-equivalent docs path: `pnpm build`, which builds docs and its workspace dependencies.
 - There is no docs-specific test script. For docs changes, run the docs build when practical.
@@ -53,8 +53,3 @@
 - Prefer realistic but non-sensitive example values. Use placeholders such as `REPLACE_WITH_YOUR_TOKEN` for credentials.
 - Do not hardcode absolute site paths. `.vitepress/config.ts` sets `base` to `/protocol-launcher/` unless `VERCEL` is set.
 - Avoid touching unrelated guide copy or generated `llms.txt` output.
-
-## Packages Assessment
-
-- `packages/protocol-launcher` and `packages/shared` do not currently need their own nested `AGENTS.md`; the root instructions already cover their build, test, export, and implementation rules.
-- Add package-level agent files later only if a package gains rules that differ materially from the root guidance.
