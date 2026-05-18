@@ -33,32 +33,32 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       providerUrl: 'https://modelcontextprotocol.io/',
       logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
     },
-    'qcc-company-basic-stream': {
+    'qcc-company-stream': {
       name: '企查查企业信息 MCP',
       description:
         '企业信息 MCP 提供全面的企业画像分析与企业信息洞察服务，助您快速验证企业  真实性、评估其稳定性和发展轨迹，为您的商业行动提供坚实的数据支撑。',
       type: 'streamableHttp',
-      baseUrl: 'https://mcp.qcc.com/basic/stream',
+      baseUrl: 'https://agent.qcc.com/mcp/company/stream',
       headers: {
-        Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+        Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
       provider: 'QCC',
-      providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
+      providerUrl: 'https://agent.qcc.com',
       logoUrl: 'https://openapi.qcc.com/favicon.ico',
       tags: ['company-basic', '企业信息'],
       timeout: 30,
     },
-    'qcc-company-risk-sse': {
+    'qcc-risk-stream': {
       name: '企查查风险信息 MCP',
       description:
         '风险信息 MCP 提供全面的企业风险透视扫描能力，可识别企业在司法、行政、经营等方面的信用与合规隐患，助您精准评估合作对象的可靠性，有效规避商业陷阱与连带风险。',
-      type: 'sse',
-      baseUrl: 'https://mcp.qcc.com/basic/sse',
+      type: 'streamableHttp',
+      baseUrl: 'https://agent.qcc.com/mcp/risk/stream',
       headers: {
-        Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+        Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
       provider: 'QCC',
-      providerUrl: 'https://openapi.qcc.com/mcpTools?service=risk',
+      providerUrl: 'https://agent.qcc.com',
       logoUrl: 'https://openapi.qcc.com/favicon.ico',
       tags: ['company-risk', '风险信息'],
       timeout: 30,
@@ -95,12 +95,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   description:
     '企业信息 MCP 提供全面的企业画像分析与企业信息洞察服务，助您快速验证企业真实性、评估其稳定性和发展轨迹，为您的商业行动提供坚实的数据支撑。',
   type: 'streamableHttp',
-  baseUrl: 'https://mcp.qcc.com/basic/stream',
+  baseUrl: 'https://agent.qcc.com/mcp/company/stream',
   headers: {
-    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+    Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
   provider: 'QCC',
-  providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
+  providerUrl: 'https://agent.qcc.com',
   logoUrl: 'https://openapi.qcc.com/favicon.ico',
   tags: ['company-basic', '企业信息'],
   timeout: 30,
@@ -119,10 +119,10 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'sse',
   baseUrl: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+    Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
   provider: 'QCC',
-  providerUrl: 'https://openapi.qcc.com/mcpTools?service=risk',
+  providerUrl: 'https://agent.qcc.com',
   logoUrl: 'https://openapi.qcc.com/favicon.ico',
   tags: ['company-risk', '风险信息'],
   timeout: 30,
