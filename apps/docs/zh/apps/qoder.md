@@ -125,9 +125,9 @@ import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'qoder' }} } from '{{
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}installMCP({
   name: '企查查企业信息 MCP',
   type: 'streamable_http',
-  url: 'https://mcp.qcc.com/basic/stream',
+  url: 'https://agent.qcc.com/mcp/company/stream',
   headers: {
-    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+    Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
 })
 ```
@@ -146,7 +146,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}installMCP({
   type: 'sse',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+    Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
 })
 ```

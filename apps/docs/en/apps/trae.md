@@ -85,9 +85,9 @@ import { {{ currentMethod === 'On-Demand' ? 'installMCP' : 'trae' }} } from '{{ 
 const url = {{currentMethod === 'On-Demand' ? '' : 'trae.'}}installMCP({
   name: '企查查企业信息 MCP',
   type: 'http',
-  url: 'https://mcp.qcc.com/basic/stream',
+  url: 'https://agent.qcc.com/mcp/company/stream',
   headers: {
-    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+    Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
 })
 ```
@@ -108,7 +108,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'trae.'}}installMCP({
   type: 'http',
   url: 'https://mcp.qcc.com/basic/sse',
   headers: {
-    Authorization: 'REPLACE_WITH_YOUR_TOKEN',
+    Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
 })
 ```
