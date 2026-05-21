@@ -214,6 +214,10 @@
       "types": "./dist/types/gladys/index.d.ts",
       "import": "./dist/gladys/index.js"
     },
+    "./goodlinks": {
+      "types": "./dist/types/goodlinks/index.d.ts",
+      "import": "./dist/goodlinks/index.js"
+    },
     "./github-desktop": {
       "types": "./dist/types/github-desktop/index.d.ts",
       "import": "./dist/github-desktop/index.js"
