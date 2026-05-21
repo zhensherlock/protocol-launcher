@@ -186,6 +186,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
 - [NotePlan](../apps/noteplan.md)
+- [Nozbe](../apps/nozbe.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
 - [OmniFocus](../apps/omnifocus.md)
