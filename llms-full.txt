@@ -50,6 +50,7 @@ Currently, we support the following applications:
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [DEVONthink](../apps/devonthink.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -61,9 +62,11 @@ Currently, we support the following applications:
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
+* [GoodLinks](../apps/goodlinks.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -83,8 +86,10 @@ Currently, we support the following applications:
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
+* [NotePlan](../apps/noteplan.md)
 * [Nova](../apps/nova.md)
 * [Obsidian](../apps/obsidian.md)
+* [OmniFocus](../apps/omnifocus.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -289,6 +294,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [DEVONthink](../apps/devonthink.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -300,9 +306,11 @@ For detailed usage instructions for each application, please refer to their resp
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
+* [GoodLinks](../apps/goodlinks.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Instapaper](../apps/instapaper.md)
@@ -322,8 +330,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
+* [NotePlan](../apps/noteplan.md)
 * [Nova](../apps/nova.md)
 * [Obsidian](../apps/obsidian.md)
+* [OmniFocus](../apps/omnifocus.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -3116,6 +3126,207 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ---
 
 ---
+url: /protocol-launcher/apps/devonthink.md
+---
+
+# DEVONthink
+
+[DEVONthink](https://www.devontechnologies.com/apps/devonthink) is a document and information manager for macOS. **Protocol Launcher** generates both DEVONthink URL commands (`x-devonthink://`) and DEVONthink item links (`x-devonthink-item://`) from the official DEVONthink Help references.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Commands
+
+DEVONthink URL commands use the `x-devonthink://<command>` scheme. They are commands, not x-callback-url links.
+
+### Create Formatted Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createFormattedNote' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createFormattedNote({
+  title: 'New Note',
+  source: '<p>Hello</p>',
+})
+```
+
+### Create HTML
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createHTML' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createHTML({
+  title: 'Page',
+  source: '<h1>Hello</h1>',
+})
+```
+
+### Create Markdown
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createMarkdown' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createMarkdown({
+  title: 'Readme',
+  text: '# Hello',
+})
+```
+
+### Create PDF
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createPDF' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createPDF({
+  location: 'https://www.devontechnologies.com',
+  width: 800,
+  paginated: 1,
+})
+```
+
+### Create RTF
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRTF' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createRTF({
+  title: 'New bookmark',
+  location: 'http://www.devontechnologies.com',
+  noselector: 1,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createRTF({
+  title: 'Selection',
+  selection: 'Selected text',
+})
+```
+
+### Create Web Archive
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createWebArchive' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createWebArchive({
+  title: 'DEVONtechnologies',
+  location: 'https://www.devontechnologies.com',
+})
+```
+
+### Create Bookmark
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createBookmark' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createBookmark({
+  title: 'DEVONtechnologies',
+  location: 'https://www.devontechnologies.com',
+})
+```
+
+### Create Group
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createGroup' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createGroup({
+  title: 'Inbox',
+  destination: 'F8E2A5A6-0000-0000-0000-000000000000',
+})
+```
+
+### Create Text
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createText' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createText({
+  title: 'Plain Note',
+  text: 'Hello World',
+})
+```
+
+### Clip
+
+Open the Clip to DEVONthink panel.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clip' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}clip()
+```
+
+### Note
+
+Open the Take Note panel.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'note' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}note()
+```
+
+### Search
+
+Initiate a search in open DEVONthink databases.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}search({
+  query: 'invoice',
+})
+```
+
+## Item Links
+
+DEVONthink item links use the `x-devonthink-item://<uuid>` scheme. They point to existing DEVONthink databases, groups, documents, or specific locations inside supported documents.
+
+### Item Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'itemLink' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: '929D101B-35AC-474C-801C-D8818C48DB80',
+  reveal: 1,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: 'PDF-ID',
+  page: 5,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: 'TEXT-FILE-ID',
+  search: 'iPad Pro',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: 'MOVIE-ID',
+  time: 43.5,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: '929D101B-35AC-474C-801C-D8818C48DB80',
+  line: 125,
+})
+```
+
+## Official References
+
+* [DEVONthink URL Commands](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-urlcommands.html)
+* [DEVONthink Item Links](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-itemlinks.html)
+
+---
+
+---
 url: /protocol-launcher/apps/dict-cc.md
 ---
 
@@ -4129,6 +4340,119 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
 ---
 
 ---
+url: /protocol-launcher/apps/goodlinks.md
+---
+
+# GoodLinks
+
+[GoodLinks](https://goodlinks.app/) is a read-it-later app for saving and reading links. **Protocol Launcher** allows you to generate GoodLinks x-callback-url actions exactly from the official URL scheme: save, open, pick, last, random, unread, starred, untagged, read, and tag.
+
+GoodLinks supports `x-success`, `x-error`, and `x-cancel` callback URLs. Pass them as `xSuccess`, `xError`, and `xCancel` when needed.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Save Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'save' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}save({
+  url: 'https://apple.com',
+  starred: '1',
+  tags: 'apple ios',
+})
+```
+
+### Open Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}open({
+  url: 'https://example.com/article',
+})
+```
+
+### Pick Link Details
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pick' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}pick({
+  urlParam: 'link',
+  titleParam: 'name',
+  summaryParam: 'description',
+})
+```
+
+### Open Last Unread Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'last' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}last()
+```
+
+### Open Random Unread Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'random' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}random()
+```
+
+### Show Unread List
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'unread' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}unread()
+```
+
+### Show Starred List
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'starred' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}starred()
+```
+
+### Show Untagged List
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'untagged' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}untagged()
+```
+
+### Show Read List
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'read' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}read()
+```
+
+### Show Tagged Links
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'tag' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}tag({
+  name: 'apple',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/goland.md
 ---
 
@@ -4275,6 +4599,112 @@ import { {{ currentMethod === 'On-Demand' ? 'openSpotify' : 'hookmark' }} } from
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/ia-writer.md
+---
+
+# iA Writer
+
+[iA Writer](https://ia.net/writer) is a focused writing app for macOS, iPadOS, and iOS. **Protocol Launcher** allows you to generate iA Writer URL Commands with the `ia-writer://` scheme and x-callback-url support.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Document
+
+Opens Editor with an existing document if found, or a new empty document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}open({
+  path: '/Drafts/Notes.txt',
+})
+```
+
+### New File
+
+Opens Editor with a new document.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}newFile({
+  path: '/Drafts/Meeting Notes.txt',
+  text: '# Meeting Notes\n\n',
+  author: 'AI',
+})
+```
+
+### Quick Search
+
+Opens Quick Search with a given query.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickSearch' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}quickSearch({
+  query: 'meeting notes',
+})
+```
+
+### Read File
+
+Reads and returns file contents. iA Writer requires an `auth-token` for data commands and returns `path` and `text` parameters on `x-success`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'read' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}read({
+  authToken: 'REPLACE_WITH_YOUR_TOKEN',
+  path: '/Drafts/Notes.txt',
+  xSuccess: 'myapp://callback',
+})
+```
+
+### Write File
+
+Creates or modifies an existing file and returns file contents. iA Writer requires an `auth-token` for data commands and returns `path` and `text` parameters on `x-success`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'write' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}write({
+  authToken: 'REPLACE_WITH_YOUR_TOKEN',
+  path: '/Drafts/Notes.txt',
+  text: 'Hello world',
+  mode: 'add',
+  addLocation: 'end',
+  addPadding: 'paragraph',
+  author: 'AI',
+  xSuccess: 'myapp://callback',
+})
+```
+
+### Version
+
+Returns iA Writer app version and URL scheme version. iA Writer returns `scheme-version` and `app-version` parameters on `x-success`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'version' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}version({
+  xSuccess: 'myapp://callback',
+})
+```
+
+## Official Documentation
+
+* [iA Writer URL Commands](https://ia.net/writer/support/help/url-commands)
 
 ---
 
@@ -5777,6 +6207,230 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'navicat.'}}conn({
 ---
 
 ---
+url: /protocol-launcher/apps/noteplan.md
+---
+
+# NotePlan
+
+[NotePlan](https://noteplan.co/) combines notes, calendar notes, and tasks. **Protocol Launcher** allows you to generate NotePlan x-callback-url links for the actions documented in NotePlan's official URL scheme reference.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Note
+
+Open a calendar note, regular note, or note filename.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openNote({
+  noteDate: 'today',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openNote({
+  noteTitle: 'Fleeting Notes#Second Brain',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openNote({
+  filename: 'folder/note.txt',
+  heading: 'Ideas',
+  splitView: 'yes',
+})
+```
+
+### Open View
+
+Open a view by name and/or folder.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openView' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openView({
+  name: 'Project Tasks',
+  folder: '10 - Projects',
+})
+```
+
+### Add Text
+
+Add text to a note identified by date, title, or filename.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addText' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addText({
+  noteDate: 'today',
+  text: '* Hello World',
+  mode: 'append',
+  openNote: 'yes',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addText({
+  noteTitle: 'Test Note',
+  text: '* Hello World',
+  mode: 'prepend',
+})
+```
+
+### Add Note
+
+Create a regular note with a title and/or text.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addNote' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addNote({
+  noteTitle: 'New Note',
+  openNote: 'yes',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addNote({
+  text: 'Hello World',
+  folder: 'Projects',
+  highlightStart: 9999,
+  highlightLength: 0,
+})
+```
+
+### Delete Note
+
+Generate a URL that deletes a note identified by title, date, or filename.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteNote' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}deleteNote({
+  noteTitle: 'New Note',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}deleteNote({
+  noteDate: 'tomorrow',
+})
+```
+
+### Select Tag
+
+Select a tag or mention. Include the leading `#` or `@`; pass an empty string to show all notes.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'selectTag' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}selectTag({
+  name: '#noteplan',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}selectTag({
+  name: '',
+})
+```
+
+### Search
+
+Search by text or open an existing filter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}search({
+  text: 'noteplan',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}search({
+  filter: 'Upcoming',
+})
+```
+
+### Run Plugin
+
+Run a NotePlan plugin command by plugin name or plugin ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runPlugin' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}runPlugin({
+  pluginName: ' Note Statistics',
+  command: 'nc',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}runPlugin({
+  pluginID: 'example.Plugin',
+  command: 'run',
+  arg0: 'first',
+  arg1: 'second',
+})
+```
+
+### Install Plugin
+
+Generate a URL to install a NotePlan plugin by plugin ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installPlugin' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}installPlugin({
+  pluginID: 'dwertheimer.Favorites',
+})
+```
+
+### Toggle Sidebar
+
+Toggle, show, or hide the sidebar.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleSidebar' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}toggleSidebar()
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}toggleSidebar({
+  forceOpen: 'yes',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}toggleSidebar({
+  forceCollapse: 'yes',
+  animated: 'no',
+})
+```
+
+### Note Info
+
+Request the absolute file path and name of the currently opened note through `x-success`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'noteInfo' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}noteInfo({
+  xSuccess: 'sourceapp://x-callback-url',
+})
+```
+
+### x-success
+
+Every documented NotePlan x-callback-url action supports `xSuccess`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addText' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addText({
+  noteDate: 'today',
+  text: 'Hello',
+  xSuccess: 'sourceapp://x-callback-url',
+})
+```
+
+## Official Reference
+
+* [NotePlan X-Callback-Url Scheme](https://help.noteplan.co/article/49-x-callback-url-scheme)
+
+---
+
+---
 url: /protocol-launcher/apps/nova.md
 ---
 
@@ -5970,6 +6624,115 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
   page: 'editor',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/omnifocus.md
+---
+
+# OmniFocus
+
+[OmniFocus](https://www.omnigroup.com/omnifocus/) is a professional task manager for organizing projects, actions, tags, and forecast views. **Protocol Launcher** allows you to generate OmniFocus URL scheme links for adding actions, pasting TaskPaper content, and opening key perspectives.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open OmniFocus
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}open()
+```
+
+### Add Action
+
+Create a new action, optionally assigning project, tag/context, due date, flag, and x-callback-url parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}add({
+  name: 'Pick up milk',
+  note: 'You gotta',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}add({
+  name: 'Email team',
+  context: 'Mac',
+  due: 'jun 25 8am',
+  estimate: '30m',
+  flag: true,
+  project: 'Launch',
+  revealNewItem: true,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}add({
+  name: 'My shiny new task',
+  autosave: true,
+  xSuccess: 'omnifocus:///',
+})
+```
+
+### Paste TaskPaper
+
+Paste TaskPaper content into the Inbox, Projects, or another OmniFocus target.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'paste' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}paste({
+  content: '- Pick up milk',
+  target: 'inbox',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}paste({
+  content: 'Launch:\n\t- Draft announcement',
+  target: 'projects',
+  index: 0,
+})
+```
+
+### Open Built-In Perspectives
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openInbox, openForecast, openToday' : 'omnifocus' }} } from '{{ importPath }}'
+
+const inboxUrl = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openInbox()
+const forecastUrl = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openForecast()
+const todayUrl = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openToday()
+```
+
+### Open Custom Perspective
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPerspective' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openPerspective({
+  name: 'Due Soon',
+})
+```
+
+### Open Task
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTask' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openTask({
+  id: 'mbp0SlWkvqq',
+})
+```
+
+## Official Documentation
+
+* [OmniFocus URL Schemes](https://inside.omnifocus.com/url-schemes)
 
 ---
 
@@ -10623,6 +11386,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [DEVONthink](../apps/devonthink.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -10634,9 +11398,11 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
+* [GoodLinks](../apps/goodlinks.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -10656,8 +11422,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
+* [NotePlan](../apps/noteplan.md)
 * [Nova](../apps/nova.md)
 * [Obsidian](../apps/obsidian.md)
+* [OmniFocus](../apps/omnifocus.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -10862,6 +11630,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [DEVONthink](../apps/devonthink.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -10873,9 +11642,11 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
+* [GoodLinks](../apps/goodlinks.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hookmark](../apps/hookmark.md)
+* [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Instapaper](../apps/instapaper.md)
@@ -10895,8 +11666,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
+* [NotePlan](../apps/noteplan.md)
 * [Nova](../apps/nova.md)
 * [Obsidian](../apps/obsidian.md)
+* [OmniFocus](../apps/omnifocus.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -13690,6 +14463,207 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ---
 
 ---
+url: /protocol-launcher/zh/apps/devonthink.md
+---
+
+# DEVONthink
+
+[DEVONthink](https://www.devontechnologies.com/apps/devonthink) 是 macOS 上的文档和信息管理工具。**Protocol Launcher** 可以根据 DEVONthink 官方帮助文档生成两类链接：URL commands（`x-devonthink://`）和 item links（`x-devonthink-item://`）。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+## URL Commands
+
+DEVONthink URL commands 使用 `x-devonthink://<command>` scheme。它们是命令 URL，不是 x-callback-url。
+
+### 创建格式化笔记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createFormattedNote' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createFormattedNote({
+  title: 'New Note',
+  source: '<p>Hello</p>',
+})
+```
+
+### 创建 HTML
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createHTML' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createHTML({
+  title: 'Page',
+  source: '<h1>Hello</h1>',
+})
+```
+
+### 创建 Markdown
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createMarkdown' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createMarkdown({
+  title: 'Readme',
+  text: '# Hello',
+})
+```
+
+### 创建 PDF
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createPDF' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createPDF({
+  location: 'https://www.devontechnologies.com',
+  width: 800,
+  paginated: 1,
+})
+```
+
+### 创建 RTF
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRTF' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createRTF({
+  title: 'New bookmark',
+  location: 'http://www.devontechnologies.com',
+  noselector: 1,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createRTF({
+  title: 'Selection',
+  selection: 'Selected text',
+})
+```
+
+### 创建网页归档
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createWebArchive' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createWebArchive({
+  title: 'DEVONtechnologies',
+  location: 'https://www.devontechnologies.com',
+})
+```
+
+### 创建书签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createBookmark' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createBookmark({
+  title: 'DEVONtechnologies',
+  location: 'https://www.devontechnologies.com',
+})
+```
+
+### 创建组
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createGroup' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createGroup({
+  title: 'Inbox',
+  destination: 'F8E2A5A6-0000-0000-0000-000000000000',
+})
+```
+
+### 创建文本
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createText' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}createText({
+  title: 'Plain Note',
+  text: 'Hello World',
+})
+```
+
+### Clip
+
+打开 Clip to DEVONthink 面板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clip' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}clip()
+```
+
+### Note
+
+打开 Take Note 面板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'note' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}note()
+```
+
+### 搜索
+
+在已打开的 DEVONthink 数据库中发起搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}search({
+  query: 'invoice',
+})
+```
+
+## Item Links
+
+DEVONthink item links 使用 `x-devonthink-item://<uuid>` scheme。它们指向已有的 DEVONthink 数据库、组、文档，或受支持文档里的具体位置。
+
+### Item Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'itemLink' : 'devonthink' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: '929D101B-35AC-474C-801C-D8818C48DB80',
+  reveal: 1,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: 'PDF-ID',
+  page: 5,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: 'TEXT-FILE-ID',
+  search: 'iPad Pro',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: 'MOVIE-ID',
+  time: 43.5,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
+  uuid: '929D101B-35AC-474C-801C-D8818C48DB80',
+  line: 125,
+})
+```
+
+## 官方参考
+
+* [DEVONthink URL Commands](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-urlcommands.html)
+* [DEVONthink Item Links](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-itemlinks.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/dict-cc.md
 ---
 
@@ -14703,6 +15677,119 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/goodlinks.md
+---
+
+# GoodLinks
+
+[GoodLinks](https://goodlinks.app/) 是一个用于保存和阅读链接的稍后阅读应用。**Protocol Launcher** 允许您完全基于官方 URL scheme 生成 GoodLinks x-callback-url 动作：save、open、pick、last、random、unread、starred、untagged、read 和 tag。
+
+GoodLinks 支持 `x-success`、`x-error` 和 `x-cancel` 回调 URL。需要时可分别通过 `xSuccess`、`xError` 和 `xCancel` 传入。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 保存链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'save' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}save({
+  url: 'https://apple.com',
+  starred: '1',
+  tags: 'apple ios',
+})
+```
+
+### 打开链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}open({
+  url: 'https://example.com/article',
+})
+```
+
+### 选择链接详情
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pick' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}pick({
+  urlParam: 'link',
+  titleParam: 'name',
+  summaryParam: 'description',
+})
+```
+
+### 打开最后一个未读链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'last' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}last()
+```
+
+### 打开随机未读链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'random' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}random()
+```
+
+### 显示未读列表
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'unread' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}unread()
+```
+
+### 显示星标列表
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'starred' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}starred()
+```
+
+### 显示未标记列表
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'untagged' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}untagged()
+```
+
+### 显示已读列表
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'read' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}read()
+```
+
+### 显示带标签的链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'tag' : 'goodlinks' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}tag({
+  name: 'apple',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/zh/apps/goland.md
 ---
 
@@ -14849,6 +15936,112 @@ import { {{ currentMethod === 'On-Demand' ? 'openSpotify' : 'hookmark' }} } from
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/ia-writer.md
+---
+
+# iA Writer
+
+[iA Writer](https://ia.net/writer) 是一款适用于 macOS、iPadOS 和 iOS 的专注写作应用。**Protocol Launcher** 允许您生成 iA Writer URL Commands，使用 `ia-writer://` URL scheme，并支持 x-callback-url。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开文档
+
+如果找到现有文档则在编辑器中打开，否则打开新的空文档。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}open({
+  path: '/Drafts/Notes.txt',
+})
+```
+
+### 新建文件
+
+在编辑器中打开一个新文档。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}newFile({
+  path: '/Drafts/Meeting Notes.txt',
+  text: '# Meeting Notes\n\n',
+  author: 'AI',
+})
+```
+
+### 快速搜索
+
+使用给定查询打开 Quick Search。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickSearch' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}quickSearch({
+  query: 'meeting notes',
+})
+```
+
+### 读取文件
+
+读取并返回文件内容。iA Writer 的数据命令需要 `auth-token`，并会在 `x-success` 上返回 `path` 和 `text` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'read' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}read({
+  authToken: 'REPLACE_WITH_YOUR_TOKEN',
+  path: '/Drafts/Notes.txt',
+  xSuccess: 'myapp://callback',
+})
+```
+
+### 写入文件
+
+创建或修改现有文件，并返回文件内容。iA Writer 的数据命令需要 `auth-token`，并会在 `x-success` 上返回 `path` 和 `text` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'write' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}write({
+  authToken: 'REPLACE_WITH_YOUR_TOKEN',
+  path: '/Drafts/Notes.txt',
+  text: 'Hello world',
+  mode: 'add',
+  addLocation: 'end',
+  addPadding: 'paragraph',
+  author: 'AI',
+  xSuccess: 'myapp://callback',
+})
+```
+
+### 版本信息
+
+返回 iA Writer 应用版本和 URL scheme 版本。iA Writer 会在 `x-success` 上返回 `scheme-version` 和 `app-version` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'version' : 'iaWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'iaWriter.'}}version({
+  xSuccess: 'myapp://callback',
+})
+```
+
+## 官方文档
+
+* [iA Writer URL Commands](https://ia.net/writer/support/help/url-commands)
 
 ---
 
@@ -16351,6 +17544,230 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'navicat.'}}conn({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/noteplan.md
+---
+
+# NotePlan
+
+[NotePlan](https://noteplan.co/) 将笔记、日历笔记和任务结合在一起。**Protocol Launcher** 可以为 NotePlan 官方 URL scheme 文档中列出的 x-callback-url 动作生成链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开笔记
+
+打开日历笔记、普通笔记或指定文件名的笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openNote({
+  noteDate: 'today',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openNote({
+  noteTitle: 'Fleeting Notes#Second Brain',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openNote({
+  filename: 'folder/note.txt',
+  heading: 'Ideas',
+  splitView: 'yes',
+})
+```
+
+### 打开视图
+
+按名称和/或文件夹打开视图。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openView' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}openView({
+  name: 'Project Tasks',
+  folder: '10 - Projects',
+})
+```
+
+### 添加文本
+
+向通过日期、标题或文件名识别的笔记添加文本。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addText' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addText({
+  noteDate: 'today',
+  text: '* Hello World',
+  mode: 'append',
+  openNote: 'yes',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addText({
+  noteTitle: 'Test Note',
+  text: '* Hello World',
+  mode: 'prepend',
+})
+```
+
+### 添加笔记
+
+用标题和/或文本创建普通笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addNote' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addNote({
+  noteTitle: 'New Note',
+  openNote: 'yes',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addNote({
+  text: 'Hello World',
+  folder: 'Projects',
+  highlightStart: 9999,
+  highlightLength: 0,
+})
+```
+
+### 删除笔记
+
+生成一个按标题、日期或文件名删除笔记的 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteNote' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}deleteNote({
+  noteTitle: 'New Note',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}deleteNote({
+  noteDate: 'tomorrow',
+})
+```
+
+### 选择标签
+
+选择标签或提及。选择标签时包含开头的 `#` 或 `@`；传入空字符串会显示所有笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'selectTag' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}selectTag({
+  name: '#noteplan',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}selectTag({
+  name: '',
+})
+```
+
+### 搜索
+
+按文本搜索，或打开已有筛选器。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}search({
+  text: 'noteplan',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}search({
+  filter: 'Upcoming',
+})
+```
+
+### 运行插件
+
+通过插件名称或插件 ID 运行 NotePlan 插件命令。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runPlugin' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}runPlugin({
+  pluginName: ' Note Statistics',
+  command: 'nc',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}runPlugin({
+  pluginID: 'example.Plugin',
+  command: 'run',
+  arg0: 'first',
+  arg1: 'second',
+})
+```
+
+### 安装插件
+
+生成通过插件 ID 安装 NotePlan 插件的 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installPlugin' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}installPlugin({
+  pluginID: 'dwertheimer.Favorites',
+})
+```
+
+### 切换侧边栏
+
+切换、显示或隐藏侧边栏。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleSidebar' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}toggleSidebar()
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}toggleSidebar({
+  forceOpen: 'yes',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}toggleSidebar({
+  forceCollapse: 'yes',
+  animated: 'no',
+})
+```
+
+### 笔记信息
+
+通过 `x-success` 请求当前打开笔记的绝对文件路径和名称。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'noteInfo' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}noteInfo({
+  xSuccess: 'sourceapp://x-callback-url',
+})
+```
+
+### x-success
+
+NotePlan 官方文档列出的每个 x-callback-url 动作都支持 `xSuccess`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addText' : 'noteplan' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'noteplan.'}}addText({
+  noteDate: 'today',
+  text: 'Hello',
+  xSuccess: 'sourceapp://x-callback-url',
+})
+```
+
+## 官方参考
+
+* [NotePlan X-Callback-Url Scheme](https://help.noteplan.co/article/49-x-callback-url-scheme)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/nova.md
 ---
 
@@ -16544,6 +17961,115 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
   page: 'editor',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/omnifocus.md
+---
+
+# OmniFocus
+
+[OmniFocus](https://www.omnigroup.com/omnifocus/) 是一款专业任务管理器，可用于组织项目、动作、标签和 Forecast 视图。**Protocol Launcher** 可以生成 OmniFocus URL Scheme 链接，用于添加动作、粘贴 TaskPaper 内容，以及打开关键透视视图。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+### 打开 OmniFocus
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}open()
+```
+
+### 添加动作
+
+创建新的动作，并可设置项目、标签/Context、截止日期、旗标和 x-callback-url 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}add({
+  name: 'Pick up milk',
+  note: 'You gotta',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}add({
+  name: 'Email team',
+  context: 'Mac',
+  due: 'jun 25 8am',
+  estimate: '30m',
+  flag: true,
+  project: 'Launch',
+  revealNewItem: true,
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}add({
+  name: 'My shiny new task',
+  autosave: true,
+  xSuccess: 'omnifocus:///',
+})
+```
+
+### 粘贴 TaskPaper
+
+将 TaskPaper 内容粘贴到 Inbox、Projects 或其他 OmniFocus 目标位置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'paste' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}paste({
+  content: '- Pick up milk',
+  target: 'inbox',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}paste({
+  content: 'Launch:\n\t- Draft announcement',
+  target: 'projects',
+  index: 0,
+})
+```
+
+### 打开内置透视视图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openInbox, openForecast, openToday' : 'omnifocus' }} } from '{{ importPath }}'
+
+const inboxUrl = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openInbox()
+const forecastUrl = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openForecast()
+const todayUrl = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openToday()
+```
+
+### 打开自定义透视视图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPerspective' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openPerspective({
+  name: 'Due Soon',
+})
+```
+
+### 打开任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTask' : 'omnifocus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openTask({
+  id: 'mbp0SlWkvqq',
+})
+```
+
+## 官方文档
+
+* [OmniFocus URL Schemes](https://inside.omnifocus.com/url-schemes)
 
 ---
 
