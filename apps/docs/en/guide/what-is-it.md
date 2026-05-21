@@ -83,6 +83,7 @@ Currently, we support the following applications:
 - [Motrix](../apps/motrix.md)
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
+- [NotePlan](../apps/noteplan.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
 - [OmniFocus](../apps/omnifocus.md)

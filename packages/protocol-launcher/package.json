@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
@@ -305,6 +301,10 @@
     "./navicat": {
       "types": "./dist/types/navicat/index.d.ts",
       "import": "./dist/navicat/index.js"
+    },
+    "./noteplan": {
+      "types": "./dist/types/noteplan/index.d.ts",
+      "import": "./dist/noteplan/index.js"
     },
     "./nova": {
       "types": "./dist/types/nova/index.d.ts",

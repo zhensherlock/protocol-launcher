@@ -2,4 +2,4 @@
 'protocol-launcher': minor
 ---
 
-feat(OmniFocus): add OmniFocus protocol launcher support
+feat(OmniFocus): add OmniFocus protocol URL scheme support

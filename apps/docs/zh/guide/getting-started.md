@@ -180,6 +180,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Motrix](../apps/motrix.md)
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
+- [NotePlan](../apps/noteplan.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
 - [OmniFocus](../apps/omnifocus.md)

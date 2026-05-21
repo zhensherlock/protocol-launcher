@@ -180,6 +180,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Motrix](../apps/motrix.md)
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
+- [NotePlan](../apps/noteplan.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
 - [OmniFocus](../apps/omnifocus.md)

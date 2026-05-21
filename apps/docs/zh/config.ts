@@ -92,6 +92,7 @@ export default defineAdditionalConfig({
           { text: 'Motrix', link: '/zh/apps/motrix' },
           { text: 'MultiTimer', link: '/zh/apps/multi-timer' },
           { text: 'Navicat', link: '/zh/apps/navicat' },
+          { text: 'NotePlan', link: '/zh/apps/noteplan' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'Obsidian', link: '/zh/apps/obsidian' },
           { text: 'OmniFocus', link: '/zh/apps/omnifocus' },
