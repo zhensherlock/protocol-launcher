@@ -222,6 +222,10 @@
       "types": "./dist/types/goodlinks/index.d.ts",
       "import": "./dist/goodlinks/index.js"
     },
+    "./goodtask": {
+      "types": "./dist/types/goodtask/index.d.ts",
+      "import": "./dist/goodtask/index.js"
+    },
     "./github-desktop": {
       "types": "./dist/types/github-desktop/index.d.ts",
       "import": "./dist/github-desktop/index.js"

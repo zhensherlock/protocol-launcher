@@ -73,6 +73,7 @@ export default defineAdditionalConfig({
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'Gladys', link: '/zh/apps/gladys' },
           { text: 'GoodLinks', link: '/zh/apps/goodlinks' },
+          { text: 'GoodTask', link: '/zh/apps/goodtask' },
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },

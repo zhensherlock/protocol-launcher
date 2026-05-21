@@ -161,6 +161,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [GitHub Desktop](../apps/github-desktop.md)
 - [Gladys](../apps/gladys.md)
 - [GoodLinks](../apps/goodlinks.md)
+- [GoodTask](../apps/goodtask.md)
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hookmark](../apps/hookmark.md)
