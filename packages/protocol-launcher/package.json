@@ -74,6 +74,10 @@
       "types": "./dist/types/antigravity/index.d.ts",
       "import": "./dist/antigravity/index.js"
     },
+    "./anybox": {
+      "types": "./dist/types/anybox/index.d.ts",
+      "import": "./dist/anybox/index.js"
+    },
     "./app-store": {
       "types": "./dist/types/app-store/index.d.ts",
       "import": "./dist/app-store/index.js"

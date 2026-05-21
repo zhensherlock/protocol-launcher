@@ -25,6 +25,7 @@ Currently, we support the following applications:
 - [Agenda](../apps/agenda.md)
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
+- [Anybox](../apps/anybox.md)
 - [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Maps](../apps/apple-map.md)

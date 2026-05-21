@@ -25,6 +25,7 @@ layout: doc
 - [Agenda](../apps/agenda.md)
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
+- [Anybox](../apps/anybox.md)
 - [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Map](../apps/apple-map.md)

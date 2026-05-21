@@ -122,6 +122,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Agenda](../apps/agenda.md)
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
+- [Anybox](../apps/anybox.md)
 - [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Appigo Todo](../apps/appigo-todo.md)
