@@ -170,6 +170,10 @@
       "types": "./dist/types/day-one/index.d.ts",
       "import": "./dist/day-one/index.js"
     },
+    "./devonthink": {
+      "types": "./dist/types/devonthink/index.d.ts",
+      "import": "./dist/devonthink/index.js"
+    },
     "./dict-cc": {
       "types": "./dist/types/dict-cc/index.d.ts",
       "import": "./dist/dict-cc/index.js"
