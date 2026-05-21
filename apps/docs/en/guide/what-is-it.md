@@ -2,11 +2,17 @@
 layout: doc
 ---
 
+<script setup lang="ts">
+import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue';
+</script>
+
 # What is Protocol Launcher?
 
 **Protocol Launcher** is a TypeScript library designed to generate "Quick Launch" URLs (Deep Links) for various applications.
 
 These URLs allow users to trigger specific actions in applications with a single click, such as installing plugins, configuring servers, or setting up API keys.
+
+<HomePromoVideo variant="doc" />
 
 ## Key Features
 
