@@ -65,6 +65,7 @@ Currently, we support the following applications:
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hookmark](../apps/hookmark.md)
+- [iA Writer](../apps/ia-writer.md)
 - [iCab Mobile](../apps/icab-mobile.md)
 - [Instapaper](../apps/instapaper.md)
 - [IntelliJ IDEA](../apps/idea.md)

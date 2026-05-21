@@ -230,6 +230,10 @@
       "types": "./dist/types/hookmark/index.d.ts",
       "import": "./dist/hookmark/index.js"
     },
+    "./ia-writer": {
+      "types": "./dist/types/ia-writer/index.d.ts",
+      "import": "./dist/ia-writer/index.js"
+    },
     "./icab-mobile": {
       "types": "./dist/types/icab-mobile/index.d.ts",
       "import": "./dist/icab-mobile/index.js"

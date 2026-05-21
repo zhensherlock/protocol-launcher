@@ -1,0 +1,6 @@
+export { newFile } from './new'
+export { open } from './open'
+export { quickSearch } from './quick-search'
+export { read } from './read'
+export { version } from './version'
+export { write } from './write'

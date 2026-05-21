@@ -74,6 +74,7 @@ export default defineAdditionalConfig({
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },
+          { text: 'iA Writer', link: '/zh/apps/ia-writer' },
           { text: 'iCab Mobile', link: '/zh/apps/icab-mobile' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
           { text: 'Instapaper', link: '/zh/apps/instapaper' },

@@ -162,6 +162,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [GoLand](../apps/goland.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hookmark](../apps/hookmark.md)
+- [iA Writer](../apps/ia-writer.md)
 - [iCab Mobile](../apps/icab-mobile.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Instapaper](../apps/instapaper.md)
