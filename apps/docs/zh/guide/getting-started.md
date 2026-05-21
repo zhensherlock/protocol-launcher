@@ -182,6 +182,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Navicat](../apps/navicat.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
+- [OmniFocus](../apps/omnifocus.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)

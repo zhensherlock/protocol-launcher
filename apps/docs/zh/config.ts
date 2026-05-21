@@ -94,6 +94,7 @@ export default defineAdditionalConfig({
           { text: 'Navicat', link: '/zh/apps/navicat' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'Obsidian', link: '/zh/apps/obsidian' },
+          { text: 'OmniFocus', link: '/zh/apps/omnifocus' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Opener', link: '/zh/apps/opener' },
           { text: 'Orchids', link: '/zh/apps/orchids' },

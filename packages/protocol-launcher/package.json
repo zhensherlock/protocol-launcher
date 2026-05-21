@@ -318,6 +318,10 @@
       "types": "./dist/types/opencode/index.d.ts",
       "import": "./dist/opencode/index.js"
     },
+    "./omnifocus": {
+      "types": "./dist/types/omnifocus/index.d.ts",
+      "import": "./dist/omnifocus/index.js"
+    },
     "./opener": {
       "types": "./dist/types/opener/index.d.ts",
       "import": "./dist/opener/index.js"

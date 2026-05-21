@@ -182,6 +182,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Navicat](../apps/navicat.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
+- [OmniFocus](../apps/omnifocus.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)
