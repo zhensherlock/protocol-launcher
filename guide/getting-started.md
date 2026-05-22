@@ -173,6 +173,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [iPGMail](../apps/ipgmail.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
+* [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [Lingma](../apps/lingma.md)
