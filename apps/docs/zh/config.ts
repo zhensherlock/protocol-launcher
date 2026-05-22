@@ -85,6 +85,7 @@ export default defineAdditionalConfig({
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
           { text: 'Jump Desktop', link: '/zh/apps/jump-desktop' },
+          { text: 'Keyboard Maestro', link: '/zh/apps/keyboard-maestro' },
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Lingma', link: '/zh/apps/lingma' },

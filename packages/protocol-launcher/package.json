@@ -274,6 +274,10 @@
       "types": "./dist/types/jump-desktop/index.d.ts",
       "import": "./dist/jump-desktop/index.js"
     },
+    "./keyboard-maestro": {
+      "types": "./dist/types/keyboard-maestro/index.d.ts",
+      "import": "./dist/keyboard-maestro/index.js"
+    },
     "./kaleidoscope": {
       "types": "./dist/types/kaleidoscope/index.d.ts",
       "import": "./dist/kaleidoscope/index.js"
