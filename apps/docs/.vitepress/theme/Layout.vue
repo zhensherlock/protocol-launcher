@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import DefaultTheme from 'vitepress/theme'
-import HomePromoVideo from './components/HomePromoVideo.vue'
+import HomeAppLogoLoop from './components/HomeAppLogoLoop.vue'
 
 const { Layout } = DefaultTheme
 </script>
@@ -8,7 +8,7 @@ const { Layout } = DefaultTheme
 <template>
   <Layout>
     <template #home-hero-after>
-      <HomePromoVideo />
+      <HomeAppLogoLoop />
     </template>
   </Layout>
 </template>

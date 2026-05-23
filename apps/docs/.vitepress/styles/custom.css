@@ -25,6 +25,16 @@
   padding: 18px;
 }
 
+.VPHome .VPHero {
+  padding-bottom: 16px;
+}
+
+@media (min-width: 960px) {
+  .VPHome .VPHero {
+    padding-bottom: 24px;
+  }
+}
+
 @keyframes blur-in {
   0% {
     filter: brightness(1) blur(10px);
