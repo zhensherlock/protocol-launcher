@@ -1,0 +1,1130 @@
+[
+  {
+    "slug": "1writer",
+    "officialUrl": "https://1writerapp.com/",
+    "status": "saved",
+    "filename": "1writer.ico",
+    "url": "https://1writerapp.com/favicon.ico",
+    "source": "icon",
+    "bytes": 5430
+  },
+  {
+    "slug": "2do",
+    "officialUrl": "https://www.2doapp.com/",
+    "status": "saved",
+    "filename": "2do.svg",
+    "url": "https://www.2doapp.com/img/favicon.svg",
+    "source": "icon",
+    "bytes": 2326
+  },
+  {
+    "slug": "affine",
+    "officialUrl": "https://affine.pro/",
+    "status": "saved",
+    "filename": "affine.png",
+    "url": "https://affine.pro/favicon-96.png",
+    "source": "icon",
+    "bytes": 6248
+  },
+  {
+    "slug": "agenda",
+    "officialUrl": "https://agenda.community/",
+    "status": "saved",
+    "filename": "agenda.png",
+    "url": "https://agenda.community/uploads/db1357/optimized/2X/8/831caa601b504f383e170b601a8058a78a5ae967_2_512x512.png",
+    "source": "manifest",
+    "bytes": 14498
+  },
+  {
+    "slug": "alfred",
+    "officialUrl": "https://www.alfredapp.com/",
+    "status": "saved",
+    "filename": "alfred.png",
+    "url": "https://www.alfredapp.com/apple-touch-icon.png",
+    "source": "apple-touch-icon",
+    "bytes": 12451
+  },
+  {
+    "slug": "antigravity",
+    "officialUrl": "https://antigravity.google/",
+    "status": "saved",
+    "filename": "antigravity.svg",
+    "url": "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/antigravity-color.svg",
+    "fetchedUrl": "https://unpkg.com/@lobehub/icons-static-svg@1.90.0/icons/antigravity-color.svg",
+    "source": "mirror-official-logo",
+    "bytes": 7634,
+    "note": "Official antigravity.google timed out from this environment; icon package mirrors the Google Antigravity mark."
+  },
+  {
+    "slug": "anybox",
+    "officialUrl": "https://anybox.app/",
+    "status": "saved",
+    "filename": "anybox.png",
+    "url": "https://anybox.app/android-chrome-512x512.png",
+    "source": "manifest",
+    "bytes": 68186
+  },
+  {
+    "slug": "app-store",
+    "officialUrl": "https://www.apple.com/app-store/",
+    "status": "saved",
+    "filename": "app-store.png",
+    "url": "https://www.apple.com/apple-touch-icon.png",
+    "source": "fallback",
+    "bytes": 4506
+  },
+  {
+    "slug": "appflowy",
+    "officialUrl": "https://appflowy.io/",
+    "status": "saved",
+    "filename": "appflowy.svg",
+    "url": "https://cdn.jsdelivr.net/gh/AppFlowy-IO/AppFlowy@main/frontend/scripts/linux_distribution/packaging/appflowy.svg",
+    "fetchedUrl": "https://cdn.jsdelivr.net/gh/AppFlowy-IO/AppFlowy@main/frontend/scripts/linux_distribution/packaging/appflowy.svg",
+    "source": "official-github",
+    "bytes": 2665
+  },
+  {
+    "slug": "appigo-todo",
+    "officialUrl": "https://appigo.com/",
+    "status": "saved",
+    "filename": "appigo-todo.png",
+    "url": "https://appigo.com/wp-content/uploads/2021/09/cropped-128x128-1-192x192.png",
+    "source": "icon",
+    "bytes": 22088
+  },
+  {
+    "slug": "apple-map",
+    "officialUrl": "https://www.apple.com/maps/",
+    "status": "saved",
+    "filename": "apple-map.png",
+    "url": "https://www.apple.com/apple-touch-icon.png",
+    "source": "fallback",
+    "bytes": 4506
+  },
+  {
+    "slug": "apple-script",
+    "officialUrl": "https://support.apple.com/guide/script-editor/welcome/mac",
+    "status": "saved",
+    "filename": "apple-script.ico",
+    "url": "https://support.apple.com/favicon.ico",
+    "source": "apple-touch-icon",
+    "bytes": 22382
+  },
+  {
+    "slug": "atom",
+    "officialUrl": "https://atom.io/",
+    "status": "saved",
+    "filename": "atom.webp",
+    "url": "https://github.blog/wp-content/uploads/2019/01/cropped-github-favicon-512.png?fit=192%2C192",
+    "source": "icon",
+    "bytes": 3488
+  },
+  {
+    "slug": "bbedit",
+    "officialUrl": "https://www.barebones.com/products/bbedit/",
+    "status": "saved",
+    "filename": "bbedit.png",
+    "url": "https://www.barebones.com/favicon.png",
+    "source": "icon",
+    "bytes": 1156
+  },
+  {
+    "slug": "bear",
+    "officialUrl": "https://bear.app/",
+    "status": "saved",
+    "filename": "bear.svg",
+    "url": "https://bear.app/images/website-icons/icon.svg",
+    "source": "icon",
+    "bytes": 1120
+  },
+  {
+    "slug": "beorg",
+    "officialUrl": "https://www.beorgapp.com/",
+    "status": "saved",
+    "filename": "beorg.png",
+    "url": "https://www.beorgapp.com/images/beorg_banner_logo.png",
+    "fetchedUrl": "https://www.beorgapp.com/images/beorg_banner_logo.png",
+    "source": "official-site-image",
+    "bytes": 10503
+  },
+  {
+    "slug": "cal2todo",
+    "officialUrl": "https://apps.apple.com/sg/app/cal2todo/id475987733",
+    "status": "saved",
+    "filename": "cal2todo.png",
+    "url": "https://apps.apple.com/assets/favicon/favicon-180.png",
+    "source": "apple-touch-icon",
+    "bytes": 9269
+  },
+  {
+    "slug": "calca",
+    "officialUrl": "http://calca.io/",
+    "status": "saved",
+    "filename": "calca.webp",
+    "url": "https://images.squarespace-cdn.com/content/v1/51969d17e4b04e94848c1da1/1373068347041-CL51ZW54QM0JIXY978U9/favicon.ico?format=100w",
+    "source": "icon",
+    "bytes": 12480
+  },
+  {
+    "slug": "cherry-studio",
+    "officialUrl": "https://cherry-ai.com",
+    "status": "saved",
+    "filename": "cherry-studio.png",
+    "url": "https://www.cherry-ai.com/assets/favicon-BmbgeFTf.png",
+    "source": "shortcut icon",
+    "bytes": 14397
+  },
+  {
+    "slug": "coda",
+    "officialUrl": "https://panic.com/code-editor",
+    "status": "saved",
+    "filename": "coda.png",
+    "url": "https://panic.com/apple-touch-icon.png",
+    "source": "apple-touch-icon",
+    "bytes": 6656
+  },
+  {
+    "slug": "code-buddy-cn",
+    "officialUrl": "https://codebuddy.ai",
+    "status": "saved",
+    "filename": "code-buddy-cn.svg",
+    "url": "https://codebuddy-1328495429.cos.accelerate.myqcloud.com/web/ide/logo.svg",
+    "source": "icon",
+    "bytes": 4186
+  },
+  {
+    "slug": "code-buddy",
+    "officialUrl": "https://codebuddy.ai",
+    "status": "saved",
+    "filename": "code-buddy.svg",
+    "url": "https://codebuddy-1328495429.cos.accelerate.myqcloud.com/web/ide/logo.svg",
+    "source": "icon",
+    "bytes": 4186
+  },
+  {
+    "slug": "code-runner",
+    "officialUrl": "https://coderunnerapp.com/",
+    "status": "saved",
+    "filename": "code-runner.png",
+    "url": "https://coderunnerapp.com/images/favicon.png",
+    "source": "shortcut icon",
+    "bytes": 3589
+  },
+  {
+    "slug": "codehub",
+    "officialUrl": "https://github.com/CodeHubApp/CodeHub",
+    "status": "saved",
+    "filename": "codehub.png",
+    "url": "https://github.githubassets.com/assets/app-icon-512-7f9c4ff2e960.png",
+    "source": "manifest",
+    "bytes": 9825
+  },
+  {
+    "slug": "codelite",
+    "officialUrl": "https://codelite.org/",
+    "status": "saved",
+    "filename": "codelite.ico",
+    "url": "https://codelite.org/favicon.ico",
+    "source": "shortcut icon",
+    "bytes": 3903
+  },
+  {
+    "slug": "codex",
+    "officialUrl": "https://openai.com/codex/",
+    "status": "saved",
+    "filename": "codex.svg",
+    "url": "https://images.ctfassets.net/kftzwdyauwt9/3hUGLn3ypllZ0oa01qOYVq/28e8188e6f11b84c3e876569d492734f/Blossom_Light.svg?q=90&w=3840",
+    "fetchedUrl": "https://images.ctfassets.net/kftzwdyauwt9/3hUGLn3ypllZ0oa01qOYVq/28e8188e6f11b84c3e876569d492734f/Blossom_Light.svg?q=90&w=3840",
+    "source": "official-openai-brand",
+    "bytes": 6789
+  },
+  {
+    "slug": "craft",
+    "officialUrl": "https://www.craft.do",
+    "status": "saved",
+    "filename": "craft.png",
+    "url": "https://www.craft.do/favicons/light/light_192.png",
+    "source": "icon",
+    "bytes": 3044
+  },
+  {
+    "slug": "cubox",
+    "officialUrl": "https://www.cubox.pro/",
+    "status": "saved",
+    "filename": "cubox.png",
+    "url": "https://www.cubox.pro/favicon.png",
+    "source": "icon",
+    "bytes": 5123
+  },
+  {
+    "slug": "cursor",
+    "officialUrl": "https://cursor.sh",
+    "status": "saved",
+    "filename": "cursor.png",
+    "url": "https://cursor.com/marketing-static/icon-512x512.png",
+    "source": "icon",
+    "bytes": 3991
+  },
+  {
+    "slug": "day-one",
+    "officialUrl": "https://dayoneapp.com/",
+    "status": "saved",
+    "filename": "day-one.webp",
+    "url": "https://i0.wp.com/dayoneapp.com/wp-content/uploads/2021/11/favicon-32x32-1.png?fit=32%2C32&",
+    "source": "icon",
+    "bytes": 474
+  },
+  {
+    "slug": "devonthink",
+    "officialUrl": "https://www.devontechnologies.com/apps/devonthink",
+    "status": "saved",
+    "filename": "devonthink.svg",
+    "url": "https://www.devontechnologies.com/assets/images/favicon/icon.svg",
+    "source": "icon",
+    "bytes": 1952
+  },
+  {
+    "slug": "dict-cc",
+    "officialUrl": "https://www.dict.cc/",
+    "status": "saved",
+    "filename": "dict-cc.png",
+    "url": "https://www4.dict.cc/img/favicons/favicon4.png",
+    "source": "shortcut icon",
+    "bytes": 570
+  },
+  {
+    "slug": "drafts",
+    "officialUrl": "https://getdrafts.com/",
+    "status": "saved",
+    "filename": "drafts.png",
+    "url": "https://getdrafts.com/assets/img/custom/favicons/android-chrome-192x192.png",
+    "source": "icon",
+    "bytes": 11973
+  },
+  {
+    "slug": "due",
+    "officialUrl": "https://www.dueapp.com/",
+    "status": "saved",
+    "filename": "due.png",
+    "url": "https://www.dueapp.com/apple-touch-icon.png",
+    "source": "apple-touch-icon",
+    "bytes": 7605
+  },
+  {
+    "slug": "editorial",
+    "officialUrl": "https://omz-software.com/editorial/",
+    "status": "saved",
+    "filename": "editorial.ico",
+    "url": "https://omz-software.com/favicon.ico",
+    "source": "fallback",
+    "bytes": 1406
+  },
+  {
+    "slug": "equipd-bible",
+    "officialUrl": "https://www.equipd.me/",
+    "status": "saved",
+    "filename": "equipd-bible.png",
+    "url": "https://www.equipd.me/wp-content/uploads/fbrfg/android-chrome-512x512.png?v=3eK2mqjzbw",
+    "source": "manifest",
+    "bytes": 5421
+  },
+  {
+    "slug": "evernote",
+    "officialUrl": "https://evernote.com/",
+    "status": "saved",
+    "filename": "evernote.jpg",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/af/62/d5af6215-db3c-bb4c-a554-dcc980308f01/AppIcon-0-0-1x_U007epad-0-0-0-1-0-85-220.png/512x512bb.jpg",
+    "fetchedUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d5/af/62/d5af6215-db3c-bb4c-a554-dcc980308f01/AppIcon-0-0-1x_U007epad-0-0-0-1-0-85-220.png/512x512bb.jpg",
+    "source": "official-app-store-artwork",
+    "bytes": 18330
+  },
+  {
+    "slug": "fantastical",
+    "officialUrl": "https://flexibits.com/fantastical",
+    "status": "saved",
+    "filename": "fantastical.png",
+    "url": "https://flexibits.com/apple-touch-icon-152x152.png",
+    "source": "apple-touch-icon",
+    "bytes": 2101
+  },
+  {
+    "slug": "fsnotes",
+    "officialUrl": "https://fsnot.es",
+    "status": "saved",
+    "filename": "fsnotes.png",
+    "url": "https://fsnot.es/android-chrome-512x512.png",
+    "source": "manifest",
+    "bytes": 95215
+  },
+  {
+    "slug": "ftstreets",
+    "officialUrl": "https://www.futuretap.com/apps/streets",
+    "status": "saved",
+    "filename": "ftstreets.png",
+    "url": "https://www.futuretap.com/apple-touch-icon.png",
+    "source": "fallback",
+    "bytes": 4984
+  },
+  {
+    "slug": "github-desktop",
+    "officialUrl": "https://github.com/apps/desktop",
+    "status": "saved",
+    "filename": "github-desktop.png",
+    "url": "https://github.githubassets.com/assets/app-icon-512-7f9c4ff2e960.png",
+    "source": "manifest",
+    "bytes": 9825
+  },
+  {
+    "slug": "gladys",
+    "officialUrl": "http://www.bru.build/app/gladys",
+    "status": "saved",
+    "filename": "gladys.webp",
+    "url": "https://images.squarespace-cdn.com/content/v1/545c89e5e4b039195ee53e4a/1527764795988-YX5NUGFKZA8DOBOY1OLH/favicon.ico?format=100w",
+    "source": "icon",
+    "bytes": 3402
+  },
+  {
+    "slug": "goland",
+    "officialUrl": "https://www.jetbrains.com/go/",
+    "status": "saved",
+    "filename": "goland.webp",
+    "url": "https://www.jetbrains.com/icon-512.png",
+    "source": "manifest",
+    "bytes": 9100
+  },
+  {
+    "slug": "goodlinks",
+    "officialUrl": "https://goodlinks.app/",
+    "status": "saved",
+    "filename": "goodlinks.png",
+    "url": "https://goodlinks.app/apple-touch-icon.png",
+    "source": "apple-touch-icon",
+    "bytes": 29785
+  },
+  {
+    "slug": "goodtask",
+    "officialUrl": "https://goodtaskapp.com/",
+    "status": "saved",
+    "filename": "goodtask.png",
+    "url": "https://goodtaskapp.com/wp-content/uploads/2021/03/iTunesArtwork-300x300.png",
+    "source": "icon",
+    "bytes": 7507
+  },
+  {
+    "slug": "hbuilderx",
+    "officialUrl": "https://www.dcloud.io/hbuilderx.html",
+    "status": "saved",
+    "filename": "hbuilderx.png",
+    "url": "https://ask.dcloud.net.cn/static/css/classblack/img/favicon.png?v=20141207",
+    "source": "shortcut icon",
+    "bytes": 1205
+  },
+  {
+    "slug": "hookmark",
+    "officialUrl": "https://hookproductivity.com/",
+    "status": "saved",
+    "filename": "hookmark.ico",
+    "url": "https://hookproductivity.com/favicon.ico",
+    "fetchedUrl": "https://hookproductivity.com/favicon.ico",
+    "source": "official-site-icon",
+    "bytes": 48826
+  },
+  {
+    "slug": "ia-writer",
+    "officialUrl": "https://ia.net/writer",
+    "status": "saved",
+    "filename": "ia-writer.webp",
+    "url": "https://static.ia.net/favicon-192.png",
+    "source": "apple-touch-icon",
+    "bytes": 3268
+  },
+  {
+    "slug": "icab-mobile",
+    "officialUrl": "http://www.icab-mobile.de/index.html",
+    "status": "saved",
+    "filename": "icab-mobile.png",
+    "url": "http://www.icab-mobile.de/logos/icabmobile.png",
+    "fetchedUrl": "http://www.icab-mobile.de/logos/icabmobile.png",
+    "source": "official-site-image",
+    "bytes": 5387
+  },
+  {
+    "slug": "idea",
+    "officialUrl": "https://www.jetbrains.com/idea/",
+    "status": "saved",
+    "filename": "idea.webp",
+    "url": "https://www.jetbrains.com/icon-512.png",
+    "source": "manifest",
+    "bytes": 9100
+  },
+  {
+    "slug": "instapaper",
+    "officialUrl": "https://instapaper.com/",
+    "status": "saved",
+    "filename": "instapaper.png",
+    "url": "https://d2kfnvwohu0503.cloudfront.net/img/apple-icon-144x144.png?v=adc2299ff5374cfd25bb9598e2b987710f473be13b18fe22b7b42cfa4c5273e19fed8d342c45d9900ab6a48b2ce6918835ea7ffbea851fab3b51f03444637524",
+    "source": "apple-touch-icon",
+    "bytes": 15313
+  },
+  {
+    "slug": "interact",
+    "officialUrl": "https://docs.getdrafts.com/docs/misc/interact-scratchpad",
+    "status": "saved",
+    "filename": "interact.png",
+    "url": "https://docs.getdrafts.com/images/favicons/android-chrome-192x192.png",
+    "source": "icon",
+    "bytes": 4326
+  },
+  {
+    "slug": "ipgmail",
+    "officialUrl": "https://ipgmail.com/",
+    "status": "saved",
+    "filename": "ipgmail.webp",
+    "url": "https://ipgmail.com/wp-content/uploads/2018/10/cropped-ipgmail-512-ios7-1-192x192.png",
+    "source": "icon",
+    "bytes": 1880
+  },
+  {
+    "slug": "itsycal",
+    "officialUrl": "https://www.mowglii.com/itsycal/",
+    "status": "saved",
+    "filename": "itsycal.png",
+    "url": "https://www.mowglii.com/static/apple-touch-icon.png?v=1778821903",
+    "source": "apple-touch-icon-precomposed",
+    "bytes": 7235
+  },
+  {
+    "slug": "jump-desktop",
+    "officialUrl": "https://jumpdesktop.com",
+    "status": "saved",
+    "filename": "jump-desktop.png",
+    "url": "https://jumpdesktop.com/assets/images/favicon32x32.png",
+    "source": "icon",
+    "bytes": 1499
+  },
+  {
+    "slug": "kaleidoscope",
+    "officialUrl": "https://kaleidoscope.app/",
+    "status": "saved",
+    "filename": "kaleidoscope.png",
+    "url": "https://framerusercontent.com/images/sBfXC6Y8Hm7Ivd2oT5Spzd8atw.png",
+    "source": "apple-touch-icon",
+    "bytes": 9633
+  },
+  {
+    "slug": "keyboard-maestro",
+    "officialUrl": "https://www.keyboardmaestro.com/",
+    "status": "saved",
+    "filename": "keyboard-maestro.ico",
+    "url": "https://www.keyboardmaestro.com/favicon.ico",
+    "source": "fallback",
+    "bytes": 4414
+  },
+  {
+    "slug": "kiro",
+    "officialUrl": "https://kiro.dev/",
+    "status": "saved",
+    "filename": "kiro.png",
+    "url": "https://kiro.dev/apple-icon.png?4cefa8c54a20b098",
+    "source": "apple-touch-icon",
+    "bytes": 2635
+  },
+  {
+    "slug": "lingma",
+    "officialUrl": "https://lingma.aliyun.com/",
+    "status": "saved",
+    "filename": "lingma.png",
+    "url": "https://img.alicdn.com/imgextra/i1/O1CN01BN6Jtc1lCfJNviV7H_!!6000000004783-2-tps-134-133.png",
+    "source": "shortcut icon",
+    "bytes": 11836
+  },
+  {
+    "slug": "longshot",
+    "officialUrl": "https://longshot.chitaner.com/",
+    "status": "saved",
+    "filename": "longshot.png",
+    "url": "https://longshot.chitaner.com/images/logo.png",
+    "source": "shortcut icon",
+    "bytes": 1431
+  },
+  {
+    "slug": "macos",
+    "officialUrl": "https://www.apple.com/macos/",
+    "status": "saved",
+    "filename": "macos.png",
+    "url": "https://www.apple.com/apple-touch-icon.png",
+    "source": "fallback",
+    "bytes": 4506
+  },
+  {
+    "slug": "macvim",
+    "officialUrl": "https://macvim.org/",
+    "status": "saved",
+    "filename": "macvim.png",
+    "url": "https://macvim.org/images/favicon-macvim-256.png",
+    "source": "icon",
+    "bytes": 32762
+  },
+  {
+    "slug": "mail-assistant",
+    "officialUrl": "https://docs.getdrafts.com/misc/mail-assistant",
+    "status": "saved",
+    "filename": "mail-assistant.png",
+    "url": "https://docs.getdrafts.com/images/favicons/android-chrome-192x192.png",
+    "source": "icon",
+    "bytes": 4326
+  },
+  {
+    "slug": "mical",
+    "officialUrl": "http://micalapp.com/en/",
+    "status": "saved",
+    "filename": "mical.png",
+    "url": "http://micalapp.com/img/icon-small.png",
+    "fetchedUrl": "http://micalapp.com/img/icon-small.png",
+    "source": "official-site-image",
+    "bytes": 2640
+  },
+  {
+    "slug": "microsoft-edge",
+    "officialUrl": "https://www.microsoft.com/zh-cn/edge/?form=MA13FJ",
+    "status": "saved",
+    "filename": "microsoft-edge.png",
+    "url": "https://edgecdn-embza6g8cacagcbn.z01.azurefd.net/welcome/static/favicon.png",
+    "source": "icon",
+    "bytes": 7904
+  },
+  {
+    "slug": "motrix",
+    "officialUrl": "https://motrix.app",
+    "status": "saved",
+    "filename": "motrix.png",
+    "url": "https://s.motrix.app/images/app-icon-square@2x.png",
+    "fetchedUrl": "https://s.motrix.app/images/app-icon-square@2x.png",
+    "source": "official-site-cdn",
+    "bytes": 24021
+  },
+  {
+    "slug": "multi-timer",
+    "officialUrl": "https://apps.apple.com/us/app/multitimer-multiple-timers/id973421278",
+    "status": "saved",
+    "filename": "multi-timer.png",
+    "url": "https://apps.apple.com/assets/favicon/favicon-180.png",
+    "source": "apple-touch-icon",
+    "bytes": 9269
+  },
+  {
+    "slug": "navicat",
+    "officialUrl": "https://www.navicat.com/en/products/navicat-premium",
+    "status": "saved",
+    "filename": "navicat.ico",
+    "url": "https://www.navicat.com/images/Navicat_16_Premium_win_256x256.ico",
+    "source": "icon",
+    "bytes": 135236
+  },
+  {
+    "slug": "noteplan",
+    "officialUrl": "https://noteplan.co/",
+    "status": "saved",
+    "filename": "noteplan.png",
+    "url": "https://noteplan.co/_next/static/media/apple-touch-icon.96227383.png",
+    "source": "apple-touch-icon",
+    "bytes": 5831
+  },
+  {
+    "slug": "nova",
+    "officialUrl": "https://nova.app/",
+    "status": "saved",
+    "filename": "nova.png",
+    "url": "https://nova.app/apple-touch-icon.png",
+    "source": "apple-touch-icon",
+    "bytes": 32762
+  },
+  {
+    "slug": "nozbe",
+    "officialUrl": "https://nozbe.com/",
+    "status": "saved",
+    "filename": "nozbe.png",
+    "url": "https://nozbe.com/images/base/favicon/196x196.png",
+    "source": "shortcut icon",
+    "bytes": 24339
+  },
+  {
+    "slug": "obsidian",
+    "officialUrl": "https://obsidian.md/",
+    "status": "saved",
+    "filename": "obsidian.svg",
+    "url": "https://obsidian.md/favicon.svg",
+    "source": "icon",
+    "bytes": 1361
+  },
+  {
+    "slug": "omnifocus",
+    "officialUrl": "https://www.omnigroup.com/omnifocus/",
+    "status": "saved",
+    "filename": "omnifocus.png",
+    "url": "https://www.omnigroup.com/assets/img/logo/BlueOmni.png",
+    "source": "apple-touch-icon",
+    "bytes": 13373
+  },
+  {
+    "slug": "opencode",
+    "officialUrl": "https://opencode.ai/",
+    "status": "saved",
+    "filename": "opencode.png",
+    "url": "https://opencode.ai/web-app-manifest-512x512.png",
+    "source": "manifest",
+    "bytes": 7194
+  },
+  {
+    "slug": "opener",
+    "officialUrl": "https://www.opener.link/",
+    "status": "saved",
+    "filename": "opener.png",
+    "url": "https://www.opener.link/apple-touch-icon-precomposed.png",
+    "source": "fallback",
+    "bytes": 6868
+  },
+  {
+    "slug": "orchids",
+    "officialUrl": "https://www.orchids.app/",
+    "status": "saved",
+    "filename": "orchids.svg",
+    "url": "https://www.orchids.app/orchids-icon.svg",
+    "source": "icon",
+    "bytes": 1508
+  },
+  {
+    "slug": "overcast",
+    "officialUrl": "https://overcast.fm/",
+    "status": "saved",
+    "filename": "overcast.jpg",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9b/c2/8f/9bc28fbb-e46d-1df2-3cf6-5b37835266c1/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
+    "fetchedUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/9b/c2/8f/9bc28fbb-e46d-1df2-3cf6-5b37835266c1/AppIcon-0-0-1x_U007epad-0-1-sRGB-85-220.png/512x512bb.jpg",
+    "source": "official-app-store-artwork",
+    "bytes": 49810
+  },
+  {
+    "slug": "pearai",
+    "officialUrl": "https://www.trypear.ai/",
+    "status": "saved",
+    "filename": "pearai.png",
+    "url": "https://github.com/trypear/pearai-app/blob/main/resources/linux/code.png",
+    "fetchedUrl": "https://api.github.com/repos/trypear/pearai-app/git/blobs/c9ecb172b7b7cb31db5ce3ab2340c6325d2c3913",
+    "source": "official-github",
+    "bytes": 40391
+  },
+  {
+    "slug": "phpstorm",
+    "officialUrl": "https://www.jetbrains.com/phpstorm/",
+    "status": "saved",
+    "filename": "phpstorm.webp",
+    "url": "https://www.jetbrains.com/icon-512.png",
+    "source": "manifest",
+    "bytes": 9100
+  },
+  {
+    "slug": "pika",
+    "officialUrl": "https://superhighfives.com/pika",
+    "status": "saved",
+    "filename": "pika.ico",
+    "url": "https://superhighfives.com/assets/favicon-pika.ico",
+    "source": "icon",
+    "bytes": 6518
+  },
+  {
+    "slug": "pleco",
+    "officialUrl": "https://www.pleco.com/",
+    "status": "saved",
+    "filename": "pleco.svg",
+    "url": "https://www.pleco.com/",
+    "fetchedUrl": "https://www.pleco.com/",
+    "source": "official-page-inline-svg",
+    "bytes": 2165
+  },
+  {
+    "slug": "prizmo",
+    "officialUrl": "https://creaceed.com/prizmo",
+    "status": "saved",
+    "filename": "prizmo.jpg",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/76/20/c9/7620c9c2-f2e1-5342-17b1-0f2fe31747c6/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "fetchedUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/76/20/c9/7620c9c2-f2e1-5342-17b1-0f2fe31747c6/AppIcon-0-0-1x_U007epad-0-0-0-1-0-0-sRGB-0-85-220.png/512x512bb.jpg",
+    "source": "official-app-store-artwork",
+    "bytes": 37494
+  },
+  {
+    "slug": "pycharm",
+    "officialUrl": "https://www.jetbrains.com/pycharm/",
+    "status": "saved",
+    "filename": "pycharm.webp",
+    "url": "https://www.jetbrains.com/icon-512.png",
+    "source": "manifest",
+    "bytes": 9100
+  },
+  {
+    "slug": "pyto",
+    "officialUrl": "https://pyto.readthedocs.io/",
+    "status": "saved",
+    "filename": "pyto.ico",
+    "url": "https://pyto.readthedocs.io/favicon.ico",
+    "source": "fallback",
+    "bytes": 766
+  },
+  {
+    "slug": "qoder",
+    "officialUrl": "https://qoder.com/",
+    "status": "saved",
+    "filename": "qoder.png",
+    "url": "https://img.alicdn.com/imgextra/i4/O1CN01OQC0dn1xLcdAaRALo_!!6000000006427-2-tps-180-180.png",
+    "source": "icon",
+    "bytes": 1258
+  },
+  {
+    "slug": "quark",
+    "officialUrl": "https://www.quark.cn/",
+    "status": "saved",
+    "filename": "quark.png",
+    "url": "https://gw.alicdn.com/imgextra/i3/O1CN018r2tKf28YP7ev0fPF_!!6000000007944-2-tps-48-48.png",
+    "source": "shortcut icon",
+    "bytes": 1210
+  },
+  {
+    "slug": "rustrover",
+    "officialUrl": "https://www.jetbrains.com/rustrover/",
+    "status": "saved",
+    "filename": "rustrover.webp",
+    "url": "https://www.jetbrains.com/icon-512.png",
+    "source": "manifest",
+    "bytes": 9100
+  },
+  {
+    "slug": "scriptable",
+    "officialUrl": "https://www.scriptable.app/",
+    "status": "saved",
+    "filename": "scriptable.png",
+    "url": "https://scriptable.app/assets/appicon.png",
+    "source": "shortcut icon",
+    "bytes": 65040
+  },
+  {
+    "slug": "shopi",
+    "officialUrl": "http://sapient-pair.com/shopi/",
+    "status": "saved",
+    "filename": "shopi.png",
+    "url": "http://sapient-pair.com/shopi/shopi-shortcut-icon.png",
+    "source": "shortcut icon",
+    "bytes": 4152
+  },
+  {
+    "slug": "shortcuts",
+    "officialUrl": "https://www.apple.com/shortcuts/",
+    "status": "saved",
+    "filename": "shortcuts.jpg",
+    "url": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3e/52/07/3e520776-0908-893c-2248-6c9d29a03cc7/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/512x512bb.jpg",
+    "fetchedUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3e/52/07/3e520776-0908-893c-2248-6c9d29a03cc7/AppIcon-0-1x_U007emarketing-0-0-GLES2_U002c0-512MB-sRGB-0-0-0-85-220-0-0-0-7.png/512x512bb.jpg",
+    "source": "official-app-store-artwork",
+    "bytes": 17659
+  },
+  {
+    "slug": "simple-scan",
+    "officialUrl": "https://agiletortoise.com/simple-scan/",
+    "status": "saved",
+    "filename": "simple-scan.png",
+    "url": "https://agiletortoise.com/images/favicon.png",
+    "source": "shortcut icon",
+    "bytes": 6377
+  },
+  {
+    "slug": "sketch",
+    "officialUrl": "https://www.sketch.com/",
+    "status": "saved",
+    "filename": "sketch.png",
+    "url": "https://www.sketch.com/images/metadata/icon-180.png",
+    "source": "apple-touch-icon-precomposed",
+    "bytes": 17867
+  },
+  {
+    "slug": "soulver",
+    "officialUrl": "https://soulver.app/",
+    "status": "saved",
+    "filename": "soulver.png",
+    "url": "https://soulver.app/favicon.png",
+    "source": "shortcut icon",
+    "bytes": 1495
+  },
+  {
+    "slug": "sourcetree",
+    "officialUrl": "https://www.sourcetreeapp.com/",
+    "status": "saved",
+    "filename": "sourcetree.svg",
+    "url": "https://wac-cdn.atlassian.com/dam/jcr:2f7db492-c688-401b-93cf-70215edeade5/Sourcetree%20ios%20app%20icon%20beta%20shadow%20red.svg?cdnVersion=3035",
+    "source": "official-site-image",
+    "bytes": 774319,
+    "fetchedUrl": "https://wac-cdn.atlassian.com/dam/jcr:2f7db492-c688-401b-93cf-70215edeade5/Sourcetree%20ios%20app%20icon%20beta%20shadow%20red.svg?cdnVersion=3035"
+  },
+  {
+    "slug": "steam",
+    "officialUrl": "https://store.steampowered.com/",
+    "status": "saved",
+    "filename": "steam.svg",
+    "url": "https://store.steampowered.com/",
+    "fetchedUrl": "https://store.steampowered.com/",
+    "source": "existing-docs-brand-asset",
+    "bytes": 1206,
+    "note": "Official site timed out from this environment; reused the existing docs brand asset."
+  },
+  {
+    "slug": "story-planner",
+    "officialUrl": "https://www.storyplanner.app/",
+    "status": "saved",
+    "filename": "story-planner.png",
+    "url": "https://www.storyplanner.app/assets/story_planner_180.png",
+    "source": "apple-touch-icon",
+    "bytes": 16027
+  },
+  {
+    "slug": "tally",
+    "officialUrl": "https://agiletortoise.com/tally/",
+    "status": "saved",
+    "filename": "tally.png",
+    "url": "https://agiletortoise.com/images/favicon.png",
+    "source": "shortcut icon",
+    "bytes": 6377
+  },
+  {
+    "slug": "telegram",
+    "officialUrl": "https://telegram.org",
+    "status": "saved",
+    "filename": "telegram.svg",
+    "url": "https://telegram.org",
+    "fetchedUrl": "https://telegram.org",
+    "source": "existing-docs-brand-asset",
+    "bytes": 1177,
+    "note": "Official site timed out from this environment; reused the existing docs brand asset."
+  },
+  {
+    "slug": "terminology",
+    "officialUrl": "https://agiletortoise.com/terminology/",
+    "status": "saved",
+    "filename": "terminology.png",
+    "url": "https://agiletortoise.com/images/favicon.png",
+    "source": "shortcut icon",
+    "bytes": 6377
+  },
+  {
+    "slug": "termius",
+    "officialUrl": "https://termius.com/",
+    "status": "saved",
+    "filename": "termius.png",
+    "url": "https://framerusercontent.com/images/RaVfXKUnfCfHvsZac7elxD7jVtc.png",
+    "source": "apple-touch-icon",
+    "bytes": 3116
+  },
+  {
+    "slug": "textastic",
+    "officialUrl": "https://www.textasticapp.com/",
+    "status": "saved",
+    "filename": "textastic.ico",
+    "url": "https://www.textasticapp.com/favicon.ico",
+    "source": "shortcut icon",
+    "bytes": 25271
+  },
+  {
+    "slug": "textmate",
+    "officialUrl": "https://macromates.com/",
+    "status": "saved",
+    "filename": "textmate.ico",
+    "url": "https://macromates.com/textmate/favicon.ico",
+    "source": "icon",
+    "bytes": 5430
+  },
+  {
+    "slug": "theia",
+    "officialUrl": "https://theia-ide.org/",
+    "status": "saved",
+    "filename": "theia.svg",
+    "url": "https://theia-ide.org/",
+    "fetchedUrl": "https://theia-ide.org/",
+    "source": "official-page-data-uri",
+    "bytes": 1103
+  },
+  {
+    "slug": "things",
+    "officialUrl": "https://culturedcode.com/things/",
+    "status": "saved",
+    "filename": "things.svg",
+    "url": "https://culturedcode.com/favicon.svg?breackcache=ddi27f1a",
+    "source": "icon",
+    "bytes": 5958
+  },
+  {
+    "slug": "thunder",
+    "officialUrl": "https://www.xunlei.com/",
+    "status": "saved",
+    "filename": "thunder.png",
+    "url": "https://www.xunlei.com/android-chrome-512x512.png",
+    "source": "manifest",
+    "bytes": 35798
+  },
+  {
+    "slug": "todoist",
+    "officialUrl": "https://www.todoist.com/",
+    "status": "saved",
+    "filename": "todoist.png",
+    "url": "https://www.todoist.com/static/android-chrome-256x256.png",
+    "source": "manifest",
+    "bytes": 9654
+  },
+  {
+    "slug": "trae-cn",
+    "officialUrl": "https://trae.cn",
+    "status": "saved",
+    "filename": "trae-cn.png",
+    "url": "https://lf-cdn.trae.com.cn/obj/trae-com-cn/trae_website_prod_cn/favicon.png",
+    "source": "icon",
+    "bytes": 488
+  },
+  {
+    "slug": "trae",
+    "officialUrl": "https://trae.ai",
+    "status": "saved",
+    "filename": "trae.png",
+    "url": "https://lf16-web-neutral.traecdn.ai/obj/trae-ai-static/trae_website/favicon.png",
+    "source": "icon",
+    "bytes": 488
+  },
+  {
+    "slug": "trello",
+    "officialUrl": "https://trello.com/",
+    "status": "saved",
+    "filename": "trello.ico",
+    "url": "https://trello.com/favicon.ico",
+    "source": "icon",
+    "bytes": 108167
+  },
+  {
+    "slug": "ulysses",
+    "officialUrl": "https://ulysses.app/",
+    "status": "saved",
+    "filename": "ulysses.png",
+    "url": "https://ulysses.app/assets/images/favicon/apple-touch-icon.png?v1",
+    "source": "apple-touch-icon",
+    "bytes": 24947
+  },
+  {
+    "slug": "upic",
+    "officialUrl": "https://blog.svend.cc/upic/",
+    "status": "saved",
+    "filename": "upic.ico",
+    "url": "https://blog.svend.cc/images/favicon.ico",
+    "source": "icon",
+    "bytes": 15086
+  },
+  {
+    "slug": "verdent",
+    "officialUrl": "https://verdent.ai/",
+    "status": "saved",
+    "filename": "verdent.ico",
+    "url": "https://www.verdent.ai/favicon.ico",
+    "source": "icon",
+    "bytes": 16958
+  },
+  {
+    "slug": "vscode-insiders",
+    "officialUrl": "https://code.visualstudio.com/insiders",
+    "status": "saved",
+    "filename": "vscode-insiders.ico",
+    "url": "https://code.visualstudio.com/assets/favicon.ico",
+    "source": "shortcut icon",
+    "bytes": 113128
+  },
+  {
+    "slug": "vscode",
+    "officialUrl": "https://code.visualstudio.com",
+    "status": "saved",
+    "filename": "vscode.ico",
+    "url": "https://code.visualstudio.com/assets/favicon.ico",
+    "source": "shortcut icon",
+    "bytes": 113128
+  },
+  {
+    "slug": "vscodium",
+    "officialUrl": "https://vscodium.com/",
+    "status": "saved",
+    "filename": "vscodium.svg",
+    "url": "https://vscodium.com/img/favicon.svg",
+    "source": "icon",
+    "bytes": 3970
+  },
+  {
+    "slug": "waterminder",
+    "officialUrl": "https://waterminder.com",
+    "status": "saved",
+    "filename": "waterminder.png",
+    "url": "https://waterminder.com/images/favicon/android-icon-192x192.png",
+    "source": "icon",
+    "bytes": 14471
+  },
+  {
+    "slug": "webstorm",
+    "officialUrl": "https://www.jetbrains.com/webstorm/",
+    "status": "saved",
+    "filename": "webstorm.webp",
+    "url": "https://www.jetbrains.com/icon-512.png",
+    "source": "manifest",
+    "bytes": 9100
+  },
+  {
+    "slug": "wemeet",
+    "officialUrl": "https://meeting.tencent.com/",
+    "status": "saved",
+    "filename": "wemeet.webp",
+    "url": "https://cdn.meeting.tencent.com/assets/next-website/logo512.png",
+    "source": "manifest",
+    "bytes": 7102
+  },
+  {
+    "slug": "whereto",
+    "officialUrl": "https://www.futuretap.com/apps/whereto",
+    "status": "saved",
+    "filename": "whereto.png",
+    "url": "https://www.futuretap.com/apple-touch-icon.png",
+    "source": "fallback",
+    "bytes": 4984
+  },
+  {
+    "slug": "windsurf",
+    "officialUrl": "https://windsurf.com/",
+    "status": "saved",
+    "filename": "windsurf.png",
+    "url": "https://windsurf.com/favicon_512.png",
+    "source": "apple-touch-icon",
+    "bytes": 8617
+  },
+  {
+    "slug": "working-copy",
+    "officialUrl": "https://workingcopyapp.com/",
+    "status": "saved",
+    "filename": "working-copy.svg",
+    "url": "https://workingcopyapp.com/img/mask-icon.svg",
+    "source": "mask-icon",
+    "bytes": 3164
+  },
+  {
+    "slug": "xcode",
+    "officialUrl": "https://developer.apple.com/xcode/",
+    "status": "saved",
+    "filename": "xcode.svg",
+    "url": "https://developer.apple.com/apple-logo.svg",
+    "source": "mask-icon",
+    "bytes": 1933
+  },
+  {
+    "slug": "zed",
+    "officialUrl": "https://zed.dev/",
+    "status": "saved",
+    "filename": "zed.png",
+    "url": "https://zed.dev/favicon_black_64.png",
+    "source": "icon",
+    "bytes": 2546
+  }
+]
