@@ -1,4 +1,3 @@
-// Generated from apps/docs/en/apps official links. Update by re-running the logo fetcher.
 export const appLogoFiles = {
   '1writer': '1writer.ico',
   '2do': '2do.svg',
