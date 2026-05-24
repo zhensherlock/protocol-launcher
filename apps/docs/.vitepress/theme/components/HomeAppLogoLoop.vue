@@ -102,22 +102,9 @@ const setupGsap = async () => {
       }
 
       const tracks = gsap.utils.toArray<HTMLElement>(root.querySelectorAll('.logoTrack'))
-      const items = gsap.utils.toArray<HTMLElement>(root.querySelectorAll('.logoItem'))
-
-      gsap.set(items, { autoAlpha: 1, y: 0, scale: 1 })
-
       if (reduceMotion) {
         return undefined
       }
-
-      gsap.from(items, {
-        autoAlpha: 0,
-        y: 12,
-        scale: 0.96,
-        duration: 1,
-        ease: 'power3.out',
-        stagger: { amount: 0.65, from: 'center' },
-      })
 
       tracks.forEach((track, index) => {
         const reverse = index === 1
