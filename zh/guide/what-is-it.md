@@ -116,6 +116,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Shortcuts](../apps/shortcuts.md)
 * [Simple Scan](../apps/simple-scan.md)
 * [Sketch](../apps/sketch.md)
+* [Slack](../apps/slack.md)
 * [Soulver](../apps/soulver.md)
 * [SourceTree](../apps/sourcetree.md)
 * [Steam](../apps/steam.md)
