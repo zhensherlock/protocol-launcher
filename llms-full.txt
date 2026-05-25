@@ -109,6 +109,7 @@ Currently, we support the following applications:
 * [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
+* [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
@@ -359,6 +360,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
+* [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
@@ -8724,6 +8726,87 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}openCloudDrive()
 ---
 
 ---
+url: /protocol-launcher/apps/raycast.md
+---
+
+# Raycast
+
+[Raycast](https://www.raycast.com/) is a launcher and productivity app. **Protocol Launcher** generates Raycast deeplinks documented by the official Raycast developer and manual pages: extension command deeplinks with the `raycast://extensions/...` format, and custom window management command deeplinks with the `raycast://customWindowManagementCommand` format.
+
+Raycast asks for confirmation when an extension command is launched from a deeplink.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Extension Command
+
+Generate a Raycast extension command deeplink. Raycast requires the owner or author, extension name, and command name from the extension manifest. Built-in extensions use `raycast` as the owner and slugified extension and command names.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'extensionCommand' : 'raycast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}extensionCommand({
+  authorOrOwner: '{{ extensionCommandParams.authorOrOwner }}',
+  extensionName: '{{ extensionCommandParams.extensionName }}',
+  commandName: '{{ extensionCommandParams.commandName }}',
+  arguments: {
+    title: '{{ extensionCommandParams.arguments.title }}',
+  },
+})
+
+const withOptionsUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}extensionCommand({
+  authorOrOwner: '{{ extensionCommandWithOptionsParams.authorOrOwner }}',
+  extensionName: '{{ extensionCommandWithOptionsParams.extensionName }}',
+  commandName: '{{ extensionCommandWithOptionsParams.commandName }}',
+  launchType: '{{ extensionCommandWithOptionsParams.launchType }}',
+  context: {
+    source: '{{ extensionCommandWithOptionsParams.context.source }}',
+  },
+  fallbackText: '{{ extensionCommandWithOptionsParams.fallbackText }}',
+})
+```
+
+### Custom Window Management Command
+
+Generate a Raycast custom window management command deeplink. A matching `name` opens an existing custom single-window command; omitting `name` creates a temporary command from the provided window arguments.
+
+For Window Layout deeplinks, Raycast only supports the `name` argument.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'customWindowManagementCommand' : 'raycast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWindowManagementCommand({
+  name: '{{ customWindowManagementCommandParams.name }}',
+  position: '{{ customWindowManagementCommandParams.position }}',
+  absoluteWidth: {{ customWindowManagementCommandParams.absoluteWidth }},
+  relativeHeight: {{ customWindowManagementCommandParams.relativeHeight }},
+  absoluteXOffset: {{ customWindowManagementCommandParams.absoluteXOffset }},
+  absoluteYOffset: {{ customWindowManagementCommandParams.absoluteYOffset }},
+})
+
+const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWindowManagementCommand({
+  position: '{{ temporaryWindowManagementCommandParams.position }}',
+  relativeWidth: {{ temporaryWindowManagementCommandParams.relativeWidth }},
+  relativeHeight: {{ temporaryWindowManagementCommandParams.relativeHeight }},
+  relativeXOffset: {{ temporaryWindowManagementCommandParams.relativeXOffset }},
+  relativeYOffset: {{ temporaryWindowManagementCommandParams.relativeYOffset }},
+})
+```
+
+## Official Documentation
+
+* [Raycast Deeplinks](https://developers.raycast.com/information/lifecycle/deeplinks)
+* [Raycast Window Management Deeplinks](https://manual.raycast.com/window-management#deeplinks)
+
+---
+
+---
 url: /protocol-launcher/apps/rustrover.md
 ---
 
@@ -12410,6 +12493,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
+* [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
@@ -12660,6 +12744,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
+* [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
@@ -17488,7 +17573,7 @@ url: /protocol-launcher/zh/apps/hammerspoon.md
 
 # Hammerspoon
 
-[Hammerspoon](https://www.hammerspoon.org/) 是一款 macOS 自动化工具。**Protocol Launcher** 会为 Hammerspoon 官方 `hs.urlevent` 扩展生成 `hammerspoon://` URL event。
+[Hammerspoon](https://www.hammerspoon.org/) 是一款 macOS 自动化工具。**Protocol Launcher** 会为 Hammerspoon 官方 `hs.urlevent` 扩展生成 `hammerspoon://` URL 事件。
 
 官方 URL 格式将 URL host 作为 event name。URL 不包含 path，只由 host 和可选查询参数组成。
 
@@ -17501,9 +17586,9 @@ url: /protocol-launcher/zh/apps/hammerspoon.md
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
-### URL Event
+### URL 事件
 
-为通过 `hs.urlevent.bind` 注册的 callback 生成 Hammerspoon URL event。
+为通过 `hs.urlevent.bind` 注册的 callback 生成 Hammerspoon URL 事件。
 
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'urlEvent' : 'hammerspoon' }} } from '{{ importPath }}'
@@ -21022,6 +21107,87 @@ import { {{ currentMethod === 'On-Demand' ? 'openCloudDrive' : 'quark' }} } from
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'quark.'}}openCloudDrive()
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/raycast.md
+---
+
+# Raycast
+
+[Raycast](https://www.raycast.com/) 是一款启动器和效率工具。**Protocol Launcher** 会根据 Raycast 官方开发者文档和用户手册生成 deeplink：使用 `raycast://extensions/...` 格式的扩展命令 deeplink，以及使用 `raycast://customWindowManagementCommand` 格式的自定义窗口管理命令 deeplink。
+
+通过 deeplink 启动扩展命令时，Raycast 会要求用户确认。
+
+## 用法
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）从子路径导入，支持 tree-shaking，保持打包体积小。
+* 完整导入（Full Import）从根包导入，使用方便但包含所有应用模块。
+
+生产构建请选择按需导入；完整导入适合快速脚本或演示。
+
+### 扩展命令
+
+生成 Raycast 扩展命令 deeplink。Raycast 需要扩展 manifest 中的 owner 或 author、extension name 和 command name。内置扩展使用 `raycast` 作为 owner，并使用 slugified 后的扩展名和命令名。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'extensionCommand' : 'raycast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}extensionCommand({
+  authorOrOwner: '{{ extensionCommandParams.authorOrOwner }}',
+  extensionName: '{{ extensionCommandParams.extensionName }}',
+  commandName: '{{ extensionCommandParams.commandName }}',
+  arguments: {
+    title: '{{ extensionCommandParams.arguments.title }}',
+  },
+})
+
+const withOptionsUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}extensionCommand({
+  authorOrOwner: '{{ extensionCommandWithOptionsParams.authorOrOwner }}',
+  extensionName: '{{ extensionCommandWithOptionsParams.extensionName }}',
+  commandName: '{{ extensionCommandWithOptionsParams.commandName }}',
+  launchType: '{{ extensionCommandWithOptionsParams.launchType }}',
+  context: {
+    source: '{{ extensionCommandWithOptionsParams.context.source }}',
+  },
+  fallbackText: '{{ extensionCommandWithOptionsParams.fallbackText }}',
+})
+```
+
+### 自定义窗口管理命令
+
+生成 Raycast 自定义窗口管理命令 deeplink。提供匹配的 `name` 会打开已有的自定义单窗口命令；省略 `name` 时，Raycast 会根据提供的窗口参数创建临时命令。
+
+对于 Window Layout deeplink，Raycast 只支持 `name` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'customWindowManagementCommand' : 'raycast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWindowManagementCommand({
+  name: '{{ customWindowManagementCommandParams.name }}',
+  position: '{{ customWindowManagementCommandParams.position }}',
+  absoluteWidth: {{ customWindowManagementCommandParams.absoluteWidth }},
+  relativeHeight: {{ customWindowManagementCommandParams.relativeHeight }},
+  absoluteXOffset: {{ customWindowManagementCommandParams.absoluteXOffset }},
+  absoluteYOffset: {{ customWindowManagementCommandParams.absoluteYOffset }},
+})
+
+const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWindowManagementCommand({
+  position: '{{ temporaryWindowManagementCommandParams.position }}',
+  relativeWidth: {{ temporaryWindowManagementCommandParams.relativeWidth }},
+  relativeHeight: {{ temporaryWindowManagementCommandParams.relativeHeight }},
+  relativeXOffset: {{ temporaryWindowManagementCommandParams.relativeXOffset }},
+  relativeYOffset: {{ temporaryWindowManagementCommandParams.relativeYOffset }},
+})
+```
+
+## 官方文档
+
+* [Raycast Deeplinks](https://developers.raycast.com/information/lifecycle/deeplinks)
+* [Raycast Window Management Deeplinks](https://manual.raycast.com/window-management#deeplinks)
 
 ---
 
