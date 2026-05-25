@@ -133,6 +133,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [BBEdit](../apps/bbedit.md)
 - [Bear](../apps/bear.md)
 - [Beorg](../apps/beorg.md)
+- [BetterTouchTool](../apps/bettertouchtool.md)
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Cherry Studio](../apps/cherry-studio.md)

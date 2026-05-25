@@ -118,6 +118,10 @@
       "types": "./dist/types/beorg/index.d.ts",
       "import": "./dist/beorg/index.js"
     },
+    "./bettertouchtool": {
+      "types": "./dist/types/bettertouchtool/index.d.ts",
+      "import": "./dist/bettertouchtool/index.js"
+    },
     "./cal2todo": {
       "types": "./dist/types/cal2todo/index.d.ts",
       "import": "./dist/cal2todo/index.js"

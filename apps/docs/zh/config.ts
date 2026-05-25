@@ -45,6 +45,7 @@ export default defineAdditionalConfig({
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
           { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Beorg', link: '/zh/apps/beorg' },
+          { text: 'BetterTouchTool', link: '/zh/apps/bettertouchtool' },
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
