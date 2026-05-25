@@ -242,6 +242,10 @@
       "types": "./dist/types/hbuilderx/index.d.ts",
       "import": "./dist/hbuilderx/index.js"
     },
+    "./hammerspoon": {
+      "types": "./dist/types/hammerspoon/index.d.ts",
+      "import": "./dist/hammerspoon/index.js"
+    },
     "./hookmark": {
       "types": "./dist/types/hookmark/index.d.ts",
       "import": "./dist/hookmark/index.js"

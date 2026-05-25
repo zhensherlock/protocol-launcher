@@ -77,6 +77,7 @@ export default defineAdditionalConfig({
           { text: 'GoodTask', link: '/zh/apps/goodtask' },
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
+          { text: 'Hammerspoon', link: '/zh/apps/hammerspoon' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },
           { text: 'iA Writer', link: '/zh/apps/ia-writer' },
           { text: 'iCab Mobile', link: '/zh/apps/icab-mobile' },
