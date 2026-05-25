@@ -118,6 +118,7 @@ export default defineAdditionalConfig({
           { text: 'Pyto', link: '/zh/apps/pyto' },
           { text: 'Qoder', link: '/zh/apps/qoder' },
           { text: 'Quark', link: '/zh/apps/quark' },
+          { text: 'Raycast', link: '/zh/apps/raycast' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Scriptable', link: '/zh/apps/scriptable' },
           { text: 'Shopi', link: '/zh/apps/shopi' },

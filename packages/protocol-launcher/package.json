@@ -406,6 +406,10 @@
       "types": "./dist/types/quark/index.d.ts",
       "import": "./dist/quark/index.js"
     },
+    "./raycast": {
+      "types": "./dist/types/raycast/index.d.ts",
+      "import": "./dist/raycast/index.js"
+    },
     "./rustrover": {
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"

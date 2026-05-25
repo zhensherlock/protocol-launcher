@@ -87,6 +87,7 @@ export const appLogoFiles = {
   pyto: 'pyto.webp',
   qoder: 'qoder.png',
   quark: 'quark.png',
+  raycast: 'raycast.webp',
   rustrover: 'rustrover.webp',
   scriptable: 'scriptable.webp',
   shopi: 'shopi.webp',

@@ -1,0 +1,114 @@
+---
+layout: doc
+---
+
+<script setup lang="ts">
+import { ref, computed } from 'vue';
+import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
+import { customWindowManagementCommand, extensionCommand } from 'protocol-launcher/raycast';
+import { SelectInstallationMethod } from '../../.vitepress/components';
+import {
+  customWindowManagementCommandParams,
+  extensionCommandParams,
+  extensionCommandWithOptionsParams,
+  temporaryWindowManagementCommandParams,
+} from '../../.vitepress/constants/raycast';
+
+const currentMethod = ref('On-Demand');
+const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protocol-launcher/raycast' : 'protocol-launcher');
+</script>
+
+# Raycast
+
+[Raycast](https://www.raycast.com/) 是一款启动器和效率工具。**Protocol Launcher** 会根据 Raycast 官方开发者文档和用户手册生成 deeplink：使用 `raycast://extensions/...` 格式的扩展命令 deeplink，以及使用 `raycast://customWindowManagementCommand` 格式的自定义窗口管理命令 deeplink。
+
+通过 deeplink 启动扩展命令时，Raycast 会要求用户确认。
+
+## 用法
+
+有两种使用此库的方式：
+
+- 按需导入（On-Demand）从子路径导入，支持 tree-shaking，保持打包体积小。
+- 完整导入（Full Import）从根包导入，使用方便但包含所有应用模块。
+
+生产构建请选择按需导入；完整导入适合快速脚本或演示。
+
+<SelectInstallationMethod v-model="currentMethod" />
+
+### 扩展命令
+
+生成 Raycast 扩展命令 deeplink。Raycast 需要扩展 manifest 中的 owner 或 author、extension name 和 command name。内置扩展使用 `raycast` 作为 owner，并使用 slugified 后的扩展名和命令名。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'extensionCommand' : 'raycast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}extensionCommand({
+  authorOrOwner: '{{ extensionCommandParams.authorOrOwner }}',
+  extensionName: '{{ extensionCommandParams.extensionName }}',
+  commandName: '{{ extensionCommandParams.commandName }}',
+  arguments: {
+    title: '{{ extensionCommandParams.arguments.title }}',
+  },
+})
+
+const withOptionsUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}extensionCommand({
+  authorOrOwner: '{{ extensionCommandWithOptionsParams.authorOrOwner }}',
+  extensionName: '{{ extensionCommandWithOptionsParams.extensionName }}',
+  commandName: '{{ extensionCommandWithOptionsParams.commandName }}',
+  launchType: '{{ extensionCommandWithOptionsParams.launchType }}',
+  context: {
+    source: '{{ extensionCommandWithOptionsParams.context.source }}',
+  },
+  fallbackText: '{{ extensionCommandWithOptionsParams.fallbackText }}',
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="extensionCommand(extensionCommandParams)" target="_self">
+    启动扩展命令
+  </VPLink>
+  <VPLink :href="extensionCommand(extensionCommandWithOptionsParams)" target="_self">
+    带参数启动扩展命令
+  </VPLink>
+</div>
+
+### 自定义窗口管理命令
+
+生成 Raycast 自定义窗口管理命令 deeplink。提供匹配的 `name` 会打开已有的自定义单窗口命令；省略 `name` 时，Raycast 会根据提供的窗口参数创建临时命令。
+
+对于 Window Layout deeplink，Raycast 只支持 `name` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'customWindowManagementCommand' : 'raycast' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWindowManagementCommand({
+  name: '{{ customWindowManagementCommandParams.name }}',
+  position: '{{ customWindowManagementCommandParams.position }}',
+  absoluteWidth: {{ customWindowManagementCommandParams.absoluteWidth }},
+  relativeHeight: {{ customWindowManagementCommandParams.relativeHeight }},
+  absoluteXOffset: {{ customWindowManagementCommandParams.absoluteXOffset }},
+  absoluteYOffset: {{ customWindowManagementCommandParams.absoluteYOffset }},
+})
+
+const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWindowManagementCommand({
+  position: '{{ temporaryWindowManagementCommandParams.position }}',
+  relativeWidth: {{ temporaryWindowManagementCommandParams.relativeWidth }},
+  relativeHeight: {{ temporaryWindowManagementCommandParams.relativeHeight }},
+  relativeXOffset: {{ temporaryWindowManagementCommandParams.relativeXOffset }},
+  relativeYOffset: {{ temporaryWindowManagementCommandParams.relativeYOffset }},
+})
+```
+
+<div class="flex flex-col gap-4 items-center">
+  <VPLink :href="customWindowManagementCommand(customWindowManagementCommandParams)" target="_self">
+    运行自定义窗口管理命令
+  </VPLink>
+  <VPLink :href="customWindowManagementCommand(temporaryWindowManagementCommandParams)" target="_self">
+    运行临时窗口管理命令
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [Raycast Deeplinks](https://developers.raycast.com/information/lifecycle/deeplinks)
+- [Raycast Window Management Deeplinks](https://manual.raycast.com/window-management#deeplinks)
