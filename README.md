@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://zhensherlock.github.io/protocol-launcher/" target="_blank" rel="noopener noreferrer">
-    <img width="300" src="https://zhensherlock.github.io/protocol-launcher/logo.svg" alt="protocol-launcher">
+    <img width="900" src="./apps/docs/public/readme-preview.png" alt="Protocol Launcher one-click launch URL generator preview">
   </a>
 </p>
 
