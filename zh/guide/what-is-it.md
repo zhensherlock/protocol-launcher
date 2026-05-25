@@ -68,6 +68,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoodTask](../apps/goodtask.md)
 * [GoLand](../apps/goland.md)
 * [HBuilderX](../apps/hbuilderx.md)
+* [Hammerspoon](../apps/hammerspoon.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
