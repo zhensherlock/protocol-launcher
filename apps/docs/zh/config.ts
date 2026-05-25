@@ -139,6 +139,7 @@ export default defineAdditionalConfig({
           { text: 'Things', link: '/zh/apps/things' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'Todoist', link: '/zh/apps/todoist' },
+          { text: 'Tower', link: '/zh/apps/tower' },
           { text: 'Trae', link: '/zh/apps/trae' },
           { text: 'Trae China', link: '/zh/apps/trae-cn' },
           { text: 'Trello', link: '/zh/apps/trello' },

@@ -66,9 +66,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # BetterTouchTool
 
-[BetterTouchTool](https://folivora.ai/) is a macOS automation app. **Protocol Launcher** generates `btt://` URLs for the official BetterTouchTool Custom URL Scheme interfaces.
-
-BetterTouchTool can require a `shared_secret` query parameter. Pass it as `sharedSecret` on query-based helpers when your BetterTouchTool advanced preferences require it.
+[BetterTouchTool](https://folivora.ai/) is a macOS automation app for customizing gestures, shortcuts, Touch Bar controls, Stream Deck buttons, menu bar items, and other system-level workflows.
 
 ## Usage
 

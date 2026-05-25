@@ -40,7 +40,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Anybox
 
-[Anybox](https://anybox.app/) is a bookmark and link manager for saving, finding, and organizing links. **Protocol Launcher** generates Anybox URLs from the official URL Schemes documentation, including save, paste, Quick Find, macOS utilities, iOS photo actions, and x-callback-url save/paste actions.
+[Anybox](https://anybox.app/) is a bookmark and link manager for saving, finding, and organizing links.
 
 ## Usage
 

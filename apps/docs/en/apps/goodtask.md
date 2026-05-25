@@ -24,9 +24,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # GoodTask
 
-[GoodTask](https://goodtaskapp.com/) is a to-do list, task manager, and planner based on Apple's Reminders and Calendars. **Protocol Launcher** generates GoodTask URLs from the official URL scheme: open, openadd, view, task, smartadd, and add.
-
-GoodTask's URL scheme is `goodtask3://`. The official page also documents the x-callback-url form for actions, and its add example uses `x-success`; pass it as `xSuccess` when adding a task.
+[GoodTask](https://goodtaskapp.com/) is a task manager and planner based on Apple's Reminders and Calendars. **Protocol Launcher** allows you to generate deep links for GoodTask.
 
 ## Usage
 

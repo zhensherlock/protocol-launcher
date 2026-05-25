@@ -15,7 +15,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # DEVONthink
 
-[DEVONthink](https://www.devontechnologies.com/apps/devonthink) is a document and information manager for macOS. **Protocol Launcher** generates both DEVONthink URL commands (`x-devonthink://`) and DEVONthink item links (`x-devonthink-item://`) from the official DEVONthink Help references.
+[DEVONthink](https://www.devontechnologies.com/apps/devonthink) is a document and information manager for macOS. **Protocol Launcher** allows you to generate links for DEVONthink.
 
 ## Usage
 

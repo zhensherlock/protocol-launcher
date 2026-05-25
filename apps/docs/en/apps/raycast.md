@@ -20,9 +20,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Raycast
 
-[Raycast](https://www.raycast.com/) is a launcher and productivity app. **Protocol Launcher** generates Raycast deeplinks documented by the official Raycast developer and manual pages: extension command deeplinks with the `raycast://extensions/...` format, and custom window management command deeplinks with the `raycast://customWindowManagementCommand` format.
-
-Raycast asks for confirmation when an extension command is launched from a deeplink.
+[Raycast](https://www.raycast.com/) is a launcher and productivity app for opening tools, running commands, managing windows, and extending macOS workflows from one command bar. **Protocol Launcher** generates Raycast deeplinks documented by the official Raycast developer and manual pages.
 
 ## Usage
 

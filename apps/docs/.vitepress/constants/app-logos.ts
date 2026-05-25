@@ -108,6 +108,7 @@ export const appLogoFiles = {
   things: 'things.png',
   thunder: 'thunder.svg',
   todoist: 'todoist.svg',
+  tower: 'tower.png',
   trae: 'trae.png',
   'trae-cn': 'trae-cn.png',
   trello: 'trello.webp',

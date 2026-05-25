@@ -498,6 +498,10 @@
       "types": "./dist/types/todoist/index.d.ts",
       "import": "./dist/todoist/index.js"
     },
+    "./tower": {
+      "types": "./dist/types/tower/index.d.ts",
+      "import": "./dist/tower/index.js"
+    },
     "./trae": {
       "types": "./dist/types/trae/index.d.ts",
       "import": "./dist/trae/index.js"

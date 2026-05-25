@@ -15,9 +15,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Hammerspoon
 
-[Hammerspoon](https://www.hammerspoon.org/) 是一款 macOS 自动化工具。**Protocol Launcher** 会为 Hammerspoon 官方 `hs.urlevent` 扩展生成 `hammerspoon://` URL 事件。
-
-官方 URL 格式将 URL host 作为 event name。URL 不包含 path，只由 host 和可选查询参数组成。
+[Hammerspoon](https://www.hammerspoon.org/) 是一款 macOS 自动化工具，可以通过 Lua 脚本控制和扩展系统行为。
 
 ## 使用方式
 

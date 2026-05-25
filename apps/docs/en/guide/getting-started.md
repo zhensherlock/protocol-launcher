@@ -227,6 +227,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
 - [Todoist](../apps/todoist.md)
+- [Tower](../apps/tower.md)
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
 - [Trello](../apps/trello.md)

@@ -33,7 +33,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Keyboard Maestro
 
-[Keyboard Maestro](https://www.keyboardmaestro.com/) is a macOS automation app for creating and running macros. **Protocol Launcher** generates Keyboard Maestro URLs documented by the official URL Schemes page: editor URLs with the `keyboardmaestro` scheme and macro trigger URLs with the `kmtrigger` scheme.
+[Keyboard Maestro](https://www.keyboardmaestro.com/) is a macOS automation app for creating and running macros. **Protocol Launcher** allows you to generate links for editing, filtering, and triggering Keyboard Maestro macros.
 
 ## Usage
 

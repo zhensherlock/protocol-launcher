@@ -37,7 +37,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # OmniFocus
 
-[OmniFocus](https://www.omnigroup.com/omnifocus/) 是一款专业任务管理器，可用于组织项目、动作、标签和 Forecast 视图。**Protocol Launcher** 可以生成 OmniFocus URL Scheme 链接，用于添加动作、粘贴 TaskPaper 内容，以及打开关键透视视图。
+[OmniFocus](https://www.omnigroup.com/omnifocus/) 是一款专业任务管理应用。**Protocol Launcher** 可以为 OmniFocus 生成深度链接。
 
 ## 使用
 

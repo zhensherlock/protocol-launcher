@@ -37,7 +37,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # OmniFocus
 
-[OmniFocus](https://www.omnigroup.com/omnifocus/) is a professional task manager for organizing projects, actions, tags, and forecast views. **Protocol Launcher** allows you to generate OmniFocus URL scheme links for adding actions, pasting TaskPaper content, and opening key perspectives.
+[OmniFocus](https://www.omnigroup.com/omnifocus/) is a professional task management app. **Protocol Launcher** allows you to generate deep links for OmniFocus.
 
 ## Usage
 

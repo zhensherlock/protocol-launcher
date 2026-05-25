@@ -24,9 +24,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # GoodTask
 
-[GoodTask](https://goodtaskapp.com/) 是一款基于 Apple 提醒事项和日历的待办事项、任务管理和计划应用。**Protocol Launcher** 可以按官方 URL scheme 生成 GoodTask 链接：open、openadd、view、task、smartadd 和 add。
-
-GoodTask 的 URL scheme 是 `goodtask3://`。官方页面也说明了动作的 x-callback-url 形式，其中 add 示例使用 `x-success`；添加任务时可通过 `xSuccess` 传入。
+[GoodTask](https://goodtaskapp.com/) 是一款基于 Apple 提醒事项和日历的任务管理与计划应用。**Protocol Launcher** 可以为 GoodTask 生成深度链接。
 
 ## 使用方式
 

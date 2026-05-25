@@ -40,7 +40,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 # Anybox
 
-[Anybox](https://anybox.app/) 是一个用于保存、查找和整理链接的书签与链接管理应用。**Protocol Launcher** 基于官方 URL Schemes 文档生成 Anybox URL，包括 save、paste、Quick Find、macOS 工具、iOS 照片动作，以及 x-callback-url save/paste 动作。
+[Anybox](https://anybox.app/) 是一个用于保存、查找和整理链接的书签与链接管理应用。
 
 ## 使用方式
 
