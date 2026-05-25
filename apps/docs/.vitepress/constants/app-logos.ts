@@ -94,6 +94,7 @@ export const appLogoFiles = {
   shortcuts: 'shortcuts.png',
   'simple-scan': 'simple-scan.webp',
   sketch: 'sketch.png',
+  slack: 'slack.webp',
   soulver: 'soulver.png',
   sourcetree: 'sourcetree.png',
   steam: 'steam.webp',

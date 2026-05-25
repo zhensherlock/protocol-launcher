@@ -122,6 +122,7 @@ Currently, we support the following applications:
 - [Shortcuts](../apps/shortcuts.md)
 - [Simple Scan](../apps/simple-scan.md)
 - [Sketch](../apps/sketch.md)
+- [Slack](../apps/slack.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Steam](../apps/steam.md)

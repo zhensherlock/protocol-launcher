@@ -125,6 +125,7 @@ export default defineAdditionalConfig({
           { text: 'Shortcuts', link: '/zh/apps/shortcuts' },
           { text: 'Simple Scan', link: '/zh/apps/simple-scan' },
           { text: 'Sketch', link: '/zh/apps/sketch' },
+          { text: 'Slack', link: '/zh/apps/slack' },
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Steam', link: '/zh/apps/steam' },
