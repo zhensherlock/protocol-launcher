@@ -4,9 +4,7 @@ url: /protocol-launcher/zh/apps/goodlinks.md
 
 # GoodLinks
 
-[GoodLinks](https://goodlinks.app/) 是一个用于保存和阅读链接的稍后阅读应用。**Protocol Launcher** 允许您完全基于官方 URL scheme 生成 GoodLinks x-callback-url 动作：save、open、pick、last、random、unread、starred、untagged、read 和 tag。
-
-GoodLinks 支持 `x-success`、`x-error` 和 `x-cancel` 回调 URL。需要时可分别通过 `xSuccess`、`xError` 和 `xCancel` 传入。
+[GoodLinks](https://goodlinks.app/) 是一个用于保存和阅读链接的稍后阅读应用。**Protocol Launcher** 允许您生成深度链接以保存链接并在 GoodLinks 中导航。
 
 ## 使用方式
 

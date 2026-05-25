@@ -4,9 +4,7 @@ url: /protocol-launcher/apps/nozbe.md
 
 # Nozbe
 
-[Nozbe](https://nozbe.com/) is a task and project management app. **Protocol Launcher** generates Nozbe `nozbe4://` URLs for the actions documented in Nozbe's official x-callback-url reference: `/goto`, `/add_task`, `/update_task`, and `/add_project`.
-
-Nozbe requires a `secret` for x-callback-url actions. Generate it in Nozbe under Settings -> Advanced -> Automate with x-callback-url, and keep it private.
+[Nozbe](https://nozbe.com/) is a task and project management app for organizing work across projects, teams, and priorities.
 
 ## Usage
 

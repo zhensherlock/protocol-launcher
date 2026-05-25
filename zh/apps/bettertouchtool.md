@@ -4,9 +4,7 @@ url: /protocol-launcher/zh/apps/bettertouchtool.md
 
 # BetterTouchTool
 
-[BetterTouchTool](https://folivora.ai/) 是一款 macOS 自动化应用。**Protocol Launcher** 会为 BetterTouchTool 官方 Custom URL Scheme 接口生成 `btt://` URL。
-
-BetterTouchTool 可以要求 URL 中包含 `shared_secret` 查询参数。如果你的 BetterTouchTool 高级偏好设置启用了 shared secret，可在基于查询参数的 helper 中通过 `sharedSecret` 传入。
+[BetterTouchTool](https://folivora.ai/) 是一款 macOS 自动化应用，可用于自定义手势、快捷键、Touch Bar 控件、Stream Deck 按钮、菜单栏项目以及其他系统级工作流。
 
 ## 使用方式
 

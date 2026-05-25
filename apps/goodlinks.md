@@ -4,9 +4,7 @@ url: /protocol-launcher/apps/goodlinks.md
 
 # GoodLinks
 
-[GoodLinks](https://goodlinks.app/) is a read-it-later app for saving and reading links. **Protocol Launcher** allows you to generate GoodLinks x-callback-url actions exactly from the official URL scheme: save, open, pick, last, random, unread, starred, untagged, read, and tag.
-
-GoodLinks supports `x-success`, `x-error`, and `x-cancel` callback URLs. Pass them as `xSuccess`, `xError`, and `xCancel` when needed.
+[GoodLinks](https://goodlinks.app/) is a read-it-later app for saving and reading links. **Protocol Launcher** allows you to generate deep links to save links and navigate within GoodLinks.
 
 ## Usage
 

@@ -4,9 +4,7 @@ url: /protocol-launcher/apps/hammerspoon.md
 
 # Hammerspoon
 
-[Hammerspoon](https://www.hammerspoon.org/) is a macOS automation tool. **Protocol Launcher** generates `hammerspoon://` URL events for Hammerspoon's official `hs.urlevent` extension.
-
-The official URL format uses the URL host as the event name. No path is specified; the URL consists only of the host and optional query parameters.
+[Hammerspoon](https://www.hammerspoon.org/) is a macOS automation tool that lets you script and control the system with Lua.
 
 ## Usage
 

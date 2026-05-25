@@ -4,9 +4,7 @@ url: /protocol-launcher/zh/apps/nozbe.md
 
 # Nozbe
 
-[Nozbe](https://nozbe.com/) 是一款任务和项目管理应用。**Protocol Launcher** 可以根据 Nozbe 官方 x-callback-url 文档生成 `nozbe4://` URL，覆盖 `/goto`、`/add_task`、`/update_task` 和 `/add_project`。
-
-Nozbe 的 x-callback-url 动作需要 `secret`。你可以在 Nozbe 的 Settings -> Advanced -> Automate with x-callback-url 中生成它，并且应该妥善保管。
+[Nozbe](https://nozbe.com/) 是一款用于按项目、团队和优先级组织工作的任务与项目管理应用。
 
 ## 用法
 

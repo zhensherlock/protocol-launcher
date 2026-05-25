@@ -4,7 +4,7 @@ url: /protocol-launcher/zh/apps/keyboard-maestro.md
 
 # Keyboard Maestro
 
-[Keyboard Maestro](https://www.keyboardmaestro.com/) 是一款用于创建和运行宏的 macOS 自动化应用。**Protocol Launcher** 会根据官方 URL Schemes 页面生成 Keyboard Maestro 链接：使用 `keyboardmaestro` scheme 的编辑器 URL，以及使用 `kmtrigger` scheme 的宏触发 URL。
+[Keyboard Maestro](https://www.keyboardmaestro.com/) 是一款用于创建和运行宏的 macOS 自动化应用。**Protocol Launcher** 允许你生成用于编辑、筛选和触发 Keyboard Maestro 宏的链接。
 
 ## 用法
 

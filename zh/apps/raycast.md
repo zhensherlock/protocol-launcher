@@ -4,9 +4,7 @@ url: /protocol-launcher/zh/apps/raycast.md
 
 # Raycast
 
-[Raycast](https://www.raycast.com/) 是一款启动器和效率工具。**Protocol Launcher** 会根据 Raycast 官方开发者文档和用户手册生成 deeplink：使用 `raycast://extensions/...` 格式的扩展命令 deeplink，以及使用 `raycast://customWindowManagementCommand` 格式的自定义窗口管理命令 deeplink。
-
-通过 deeplink 启动扩展命令时，Raycast 会要求用户确认。
+[Raycast](https://www.raycast.com/) 是一款启动器和效率工具，可以从统一的命令栏打开工具、运行命令、管理窗口并扩展 macOS 工作流。**Protocol Launcher** 会根据 Raycast 官方开发者文档和用户手册生成 deeplink。
 
 ## 用法
 

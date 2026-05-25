@@ -4,7 +4,7 @@ url: /protocol-launcher/zh/apps/devonthink.md
 
 # DEVONthink
 
-[DEVONthink](https://www.devontechnologies.com/apps/devonthink) 是 macOS 上的文档和信息管理工具。**Protocol Launcher** 可以根据 DEVONthink 官方帮助文档生成两类链接：URL commands（`x-devonthink://`）和 item links（`x-devonthink-item://`）。
+[DEVONthink](https://www.devontechnologies.com/apps/devonthink) 是 macOS 上的文档和信息管理工具。**Protocol Launcher** 允许你为 DEVONthink 生成链接。
 
 ## 使用
 

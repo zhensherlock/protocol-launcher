@@ -130,6 +130,7 @@ Currently, we support the following applications:
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Todoist](../apps/todoist.md)
+* [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
 * [Trello](../apps/trello.md)
@@ -381,6 +382,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Todoist](../apps/todoist.md)
+* [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
 * [Trello](../apps/trello.md)
@@ -861,7 +863,7 @@ url: /protocol-launcher/apps/anybox.md
 
 # Anybox
 
-[Anybox](https://anybox.app/) is a bookmark and link manager for saving, finding, and organizing links. **Protocol Launcher** generates Anybox URLs from the official URL Schemes documentation, including save, paste, Quick Find, macOS utilities, iOS photo actions, and x-callback-url save/paste actions.
+[Anybox](https://anybox.app/) is a bookmark and link manager for saving, finding, and organizing links.
 
 ## Usage
 
@@ -2006,9 +2008,7 @@ url: /protocol-launcher/apps/bettertouchtool.md
 
 # BetterTouchTool
 
-[BetterTouchTool](https://folivora.ai/) is a macOS automation app. **Protocol Launcher** generates `btt://` URLs for the official BetterTouchTool Custom URL Scheme interfaces.
-
-BetterTouchTool can require a `shared_secret` query parameter. Pass it as `sharedSecret` on query-based helpers when your BetterTouchTool advanced preferences require it.
+[BetterTouchTool](https://folivora.ai/) is a macOS automation app for customizing gestures, shortcuts, Touch Bar controls, Stream Deck buttons, menu bar items, and other system-level workflows.
 
 ## Usage
 
@@ -3678,7 +3678,7 @@ url: /protocol-launcher/apps/devonthink.md
 
 # DEVONthink
 
-[DEVONthink](https://www.devontechnologies.com/apps/devonthink) is a document and information manager for macOS. **Protocol Launcher** generates both DEVONthink URL commands (`x-devonthink://`) and DEVONthink item links (`x-devonthink-item://`) from the official DEVONthink Help references.
+[DEVONthink](https://www.devontechnologies.com/apps/devonthink) is a document and information manager for macOS. **Protocol Launcher** allows you to generate links for DEVONthink.
 
 ## Usage
 
@@ -4892,9 +4892,7 @@ url: /protocol-launcher/apps/goodlinks.md
 
 # GoodLinks
 
-[GoodLinks](https://goodlinks.app/) is a read-it-later app for saving and reading links. **Protocol Launcher** allows you to generate GoodLinks x-callback-url actions exactly from the official URL scheme: save, open, pick, last, random, unread, starred, untagged, read, and tag.
-
-GoodLinks supports `x-success`, `x-error`, and `x-cancel` callback URLs. Pass them as `xSuccess`, `xError`, and `xCancel` when needed.
+[GoodLinks](https://goodlinks.app/) is a read-it-later app for saving and reading links. **Protocol Launcher** allows you to generate deep links to save links and navigate within GoodLinks.
 
 ## Usage
 
@@ -5005,9 +5003,7 @@ url: /protocol-launcher/apps/goodtask.md
 
 # GoodTask
 
-[GoodTask](https://goodtaskapp.com/) is a to-do list, task manager, and planner based on Apple's Reminders and Calendars. **Protocol Launcher** generates GoodTask URLs from the official URL scheme: open, openadd, view, task, smartadd, and add.
-
-GoodTask's URL scheme is `goodtask3://`. The official page also documents the x-callback-url form for actions, and its add example uses `x-success`; pass it as `xSuccess` when adding a task.
+[GoodTask](https://goodtaskapp.com/) is a task manager and planner based on Apple's Reminders and Calendars. **Protocol Launcher** allows you to generate deep links for GoodTask.
 
 ## Usage
 
@@ -5188,9 +5184,7 @@ url: /protocol-launcher/apps/hammerspoon.md
 
 # Hammerspoon
 
-[Hammerspoon](https://www.hammerspoon.org/) is a macOS automation tool. **Protocol Launcher** generates `hammerspoon://` URL events for Hammerspoon's official `hs.urlevent` extension.
-
-The official URL format uses the URL host as the event name. No path is specified; the URL consists only of the host and optional query parameters.
+[Hammerspoon](https://www.hammerspoon.org/) is a macOS automation tool that lets you script and control the system with Lua.
 
 ## Usage
 
@@ -5785,7 +5779,7 @@ url: /protocol-launcher/apps/keyboard-maestro.md
 
 # Keyboard Maestro
 
-[Keyboard Maestro](https://www.keyboardmaestro.com/) is a macOS automation app for creating and running macros. **Protocol Launcher** generates Keyboard Maestro URLs documented by the official URL Schemes page: editor URLs with the `keyboardmaestro` scheme and macro trigger URLs with the `kmtrigger` scheme.
+[Keyboard Maestro](https://www.keyboardmaestro.com/) is a macOS automation app for creating and running macros. **Protocol Launcher** allows you to generate links for editing, filtering, and triggering Keyboard Maestro macros.
 
 ## Usage
 
@@ -7258,9 +7252,7 @@ url: /protocol-launcher/apps/nozbe.md
 
 # Nozbe
 
-[Nozbe](https://nozbe.com/) is a task and project management app. **Protocol Launcher** generates Nozbe `nozbe4://` URLs for the actions documented in Nozbe's official x-callback-url reference: `/goto`, `/add_task`, `/update_task`, and `/add_project`.
-
-Nozbe requires a `secret` for x-callback-url actions. Generate it in Nozbe under Settings -> Advanced -> Automate with x-callback-url, and keep it private.
+[Nozbe](https://nozbe.com/) is a task and project management app for organizing work across projects, teams, and priorities.
 
 ## Usage
 
@@ -7600,7 +7592,7 @@ url: /protocol-launcher/apps/omnifocus.md
 
 # OmniFocus
 
-[OmniFocus](https://www.omnigroup.com/omnifocus/) is a professional task manager for organizing projects, actions, tags, and forecast views. **Protocol Launcher** allows you to generate OmniFocus URL scheme links for adding actions, pasting TaskPaper content, and opening key perspectives.
+[OmniFocus](https://www.omnigroup.com/omnifocus/) is a professional task management app. **Protocol Launcher** allows you to generate deep links for OmniFocus.
 
 ## Usage
 
@@ -8731,9 +8723,7 @@ url: /protocol-launcher/apps/raycast.md
 
 # Raycast
 
-[Raycast](https://www.raycast.com/) is a launcher and productivity app. **Protocol Launcher** generates Raycast deeplinks documented by the official Raycast developer and manual pages: extension command deeplinks with the `raycast://extensions/...` format, and custom window management command deeplinks with the `raycast://customWindowManagementCommand` format.
-
-Raycast asks for confirmation when an extension command is launched from a deeplink.
+[Raycast](https://www.raycast.com/) is a launcher and productivity app for opening tools, running commands, managing windows, and extending macOS workflows from one command bar. **Protocol Launcher** generates Raycast deeplinks documented by the official Raycast developer and manual pages.
 
 ## Usage
 
@@ -10582,6 +10572,37 @@ Open the Profile view (Mobile only).
 import { {{ currentMethod === 'On-Demand' ? 'openProfile' : 'todoist' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'todoist.'}}openProfile()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/tower.md
+---
+
+# Tower
+
+[Tower](https://www.git-tower.com/mac/) is a Git client for Mac and Windows. **Protocol Launcher** allows you to generate Tower's documented custom URL scheme to open Tower and offer to clone a remote repository.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Repository
+
+Tower documents this URL format as `gittower://openRepo/<remote-repository-URL>`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRepo' : 'tower' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tower.'}}openRepo({
+  remoteRepositoryUrl: 'git@example.beanstalkapp.com:/project.git',
+})
 ```
 
 ---
@@ -12514,6 +12535,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Todoist](../apps/todoist.md)
+* [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
 * [Trello](../apps/trello.md)
@@ -12765,6 +12787,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Todoist](../apps/todoist.md)
+* [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
 * [Trae China](../apps/trae-cn.md)
 * [Trello](../apps/trello.md)
@@ -13245,7 +13268,7 @@ url: /protocol-launcher/zh/apps/anybox.md
 
 # Anybox
 
-[Anybox](https://anybox.app/) 是一个用于保存、查找和整理链接的书签与链接管理应用。**Protocol Launcher** 基于官方 URL Schemes 文档生成 Anybox URL，包括 save、paste、Quick Find、macOS 工具、iOS 照片动作，以及 x-callback-url save/paste 动作。
+[Anybox](https://anybox.app/) 是一个用于保存、查找和整理链接的书签与链接管理应用。
 
 ## 使用方式
 
@@ -14391,9 +14414,7 @@ url: /protocol-launcher/zh/apps/bettertouchtool.md
 
 # BetterTouchTool
 
-[BetterTouchTool](https://folivora.ai/) 是一款 macOS 自动化应用。**Protocol Launcher** 会为 BetterTouchTool 官方 Custom URL Scheme 接口生成 `btt://` URL。
-
-BetterTouchTool 可以要求 URL 中包含 `shared_secret` 查询参数。如果你的 BetterTouchTool 高级偏好设置启用了 shared secret，可在基于查询参数的 helper 中通过 `sharedSecret` 传入。
+[BetterTouchTool](https://folivora.ai/) 是一款 macOS 自动化应用，可用于自定义手势、快捷键、Touch Bar 控件、Stream Deck 按钮、菜单栏项目以及其他系统级工作流。
 
 ## 使用方式
 
@@ -16063,7 +16084,7 @@ url: /protocol-launcher/zh/apps/devonthink.md
 
 # DEVONthink
 
-[DEVONthink](https://www.devontechnologies.com/apps/devonthink) 是 macOS 上的文档和信息管理工具。**Protocol Launcher** 可以根据 DEVONthink 官方帮助文档生成两类链接：URL commands（`x-devonthink://`）和 item links（`x-devonthink-item://`）。
+[DEVONthink](https://www.devontechnologies.com/apps/devonthink) 是 macOS 上的文档和信息管理工具。**Protocol Launcher** 允许你为 DEVONthink 生成链接。
 
 ## 使用
 
@@ -17277,9 +17298,7 @@ url: /protocol-launcher/zh/apps/goodlinks.md
 
 # GoodLinks
 
-[GoodLinks](https://goodlinks.app/) 是一个用于保存和阅读链接的稍后阅读应用。**Protocol Launcher** 允许您完全基于官方 URL scheme 生成 GoodLinks x-callback-url 动作：save、open、pick、last、random、unread、starred、untagged、read 和 tag。
-
-GoodLinks 支持 `x-success`、`x-error` 和 `x-cancel` 回调 URL。需要时可分别通过 `xSuccess`、`xError` 和 `xCancel` 传入。
+[GoodLinks](https://goodlinks.app/) 是一个用于保存和阅读链接的稍后阅读应用。**Protocol Launcher** 允许您生成深度链接以保存链接并在 GoodLinks 中导航。
 
 ## 使用方式
 
@@ -17390,9 +17409,7 @@ url: /protocol-launcher/zh/apps/goodtask.md
 
 # GoodTask
 
-[GoodTask](https://goodtaskapp.com/) 是一款基于 Apple 提醒事项和日历的待办事项、任务管理和计划应用。**Protocol Launcher** 可以按官方 URL scheme 生成 GoodTask 链接：open、openadd、view、task、smartadd 和 add。
-
-GoodTask 的 URL scheme 是 `goodtask3://`。官方页面也说明了动作的 x-callback-url 形式，其中 add 示例使用 `x-success`；添加任务时可通过 `xSuccess` 传入。
+[GoodTask](https://goodtaskapp.com/) 是一款基于 Apple 提醒事项和日历的任务管理与计划应用。**Protocol Launcher** 可以为 GoodTask 生成深度链接。
 
 ## 使用方式
 
@@ -17573,9 +17590,7 @@ url: /protocol-launcher/zh/apps/hammerspoon.md
 
 # Hammerspoon
 
-[Hammerspoon](https://www.hammerspoon.org/) 是一款 macOS 自动化工具。**Protocol Launcher** 会为 Hammerspoon 官方 `hs.urlevent` 扩展生成 `hammerspoon://` URL 事件。
-
-官方 URL 格式将 URL host 作为 event name。URL 不包含 path，只由 host 和可选查询参数组成。
+[Hammerspoon](https://www.hammerspoon.org/) 是一款 macOS 自动化工具，可以通过 Lua 脚本控制和扩展系统行为。
 
 ## 使用方式
 
@@ -18170,7 +18185,7 @@ url: /protocol-launcher/zh/apps/keyboard-maestro.md
 
 # Keyboard Maestro
 
-[Keyboard Maestro](https://www.keyboardmaestro.com/) 是一款用于创建和运行宏的 macOS 自动化应用。**Protocol Launcher** 会根据官方 URL Schemes 页面生成 Keyboard Maestro 链接：使用 `keyboardmaestro` scheme 的编辑器 URL，以及使用 `kmtrigger` scheme 的宏触发 URL。
+[Keyboard Maestro](https://www.keyboardmaestro.com/) 是一款用于创建和运行宏的 macOS 自动化应用。**Protocol Launcher** 允许你生成用于编辑、筛选和触发 Keyboard Maestro 宏的链接。
 
 ## 用法
 
@@ -19643,9 +19658,7 @@ url: /protocol-launcher/zh/apps/nozbe.md
 
 # Nozbe
 
-[Nozbe](https://nozbe.com/) 是一款任务和项目管理应用。**Protocol Launcher** 可以根据 Nozbe 官方 x-callback-url 文档生成 `nozbe4://` URL，覆盖 `/goto`、`/add_task`、`/update_task` 和 `/add_project`。
-
-Nozbe 的 x-callback-url 动作需要 `secret`。你可以在 Nozbe 的 Settings -> Advanced -> Automate with x-callback-url 中生成它，并且应该妥善保管。
+[Nozbe](https://nozbe.com/) 是一款用于按项目、团队和优先级组织工作的任务与项目管理应用。
 
 ## 用法
 
@@ -19985,7 +19998,7 @@ url: /protocol-launcher/zh/apps/omnifocus.md
 
 # OmniFocus
 
-[OmniFocus](https://www.omnigroup.com/omnifocus/) 是一款专业任务管理器，可用于组织项目、动作、标签和 Forecast 视图。**Protocol Launcher** 可以生成 OmniFocus URL Scheme 链接，用于添加动作、粘贴 TaskPaper 内容，以及打开关键透视视图。
+[OmniFocus](https://www.omnigroup.com/omnifocus/) 是一款专业任务管理应用。**Protocol Launcher** 可以为 OmniFocus 生成深度链接。
 
 ## 使用
 
@@ -21116,9 +21129,7 @@ url: /protocol-launcher/zh/apps/raycast.md
 
 # Raycast
 
-[Raycast](https://www.raycast.com/) 是一款启动器和效率工具。**Protocol Launcher** 会根据 Raycast 官方开发者文档和用户手册生成 deeplink：使用 `raycast://extensions/...` 格式的扩展命令 deeplink，以及使用 `raycast://customWindowManagementCommand` 格式的自定义窗口管理命令 deeplink。
-
-通过 deeplink 启动扩展命令时，Raycast 会要求用户确认。
+[Raycast](https://www.raycast.com/) 是一款启动器和效率工具，可以从统一的命令栏打开工具、运行命令、管理窗口并扩展 macOS 工作流。**Protocol Launcher** 会根据 Raycast 官方开发者文档和用户手册生成 deeplink。
 
 ## 用法
 
@@ -22967,6 +22978,37 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'todoist.'}}openNotifications
 import { {{ currentMethod === 'On-Demand' ? 'openProfile' : 'todoist' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'todoist.'}}openProfile()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/tower.md
+---
+
+# Tower
+
+[Tower](https://www.git-tower.com/mac/) 是一款适用于 Mac 和 Windows 的 Git 客户端。**Protocol Launcher** 允许你生成 Tower 官方文档中的自定义 URL Scheme，用于打开 Tower 并提示克隆远程仓库。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开仓库
+
+Tower 官方文档给出的 URL 格式是 `gittower://openRepo/<remote-repository-URL>`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRepo' : 'tower' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tower.'}}openRepo({
+  remoteRepositoryUrl: 'git@example.beanstalkapp.com:/project.git',
+})
 ```
 
 ---
