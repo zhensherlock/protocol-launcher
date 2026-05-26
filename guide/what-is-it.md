@@ -144,6 +144,7 @@ Currently, we support the following applications:
 * [VS Code Insiders](../apps/vscode-insiders.md)
 * [VSCodium](../apps/vscodium.md)
 * [WaterMinder](../apps/waterminder.md)
+* [Waze](../apps/waze.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To](../apps/whereto.md)
