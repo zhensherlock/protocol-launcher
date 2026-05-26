@@ -18,6 +18,7 @@ export const appLogoFiles = {
   bettertouchtool: 'bettertouchtool.png',
   cal2todo: 'cal2todo.webp',
   calca: 'calca.webp',
+  capacities: 'capacities.webp',
   'cherry-studio': 'cherry-studio.svg',
   coda: 'coda.svg',
   'code-buddy': 'code-buddy.svg',

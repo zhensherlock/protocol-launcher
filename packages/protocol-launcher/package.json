@@ -130,6 +130,10 @@
       "types": "./dist/types/calca/index.d.ts",
       "import": "./dist/calca/index.js"
     },
+    "./capacities": {
+      "types": "./dist/types/capacities/index.d.ts",
+      "import": "./dist/capacities/index.js"
+    },
     "./craft": {
       "types": "./dist/types/craft/index.d.ts",
       "import": "./dist/craft/index.js"
