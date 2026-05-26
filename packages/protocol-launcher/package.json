@@ -410,6 +410,10 @@
       "types": "./dist/types/pycharm/index.d.ts",
       "import": "./dist/pycharm/index.js"
     },
+    "./pythonista": {
+      "types": "./dist/types/pythonista/index.d.ts",
+      "import": "./dist/pythonista/index.js"
+    },
     "./qoder": {
       "types": "./dist/types/qoder/index.d.ts",
       "import": "./dist/qoder/index.js"

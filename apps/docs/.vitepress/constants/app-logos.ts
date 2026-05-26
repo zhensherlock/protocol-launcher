@@ -87,6 +87,7 @@ export const appLogoFiles = {
   pleco: 'pleco.webp',
   prizmo: 'prizmo.webp',
   pycharm: 'pycharm.png',
+  pythonista: 'pythonista.webp',
   pyto: 'pyto.webp',
   qoder: 'qoder.png',
   quark: 'quark.png',
