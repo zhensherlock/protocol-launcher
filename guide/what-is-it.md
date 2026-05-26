@@ -109,6 +109,7 @@ Currently, we support the following applications:
 * [Prizmo](../apps/prizmo.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
+* [Pythonista](../apps/pythonista.md)
 * [Pyto](../apps/pyto.md)
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
