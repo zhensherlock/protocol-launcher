@@ -122,6 +122,7 @@ export const appLogoFiles = {
   'vscode-insiders': 'visual-studio-code-insiders.png',
   vscodium: 'vscodium.png',
   waterminder: 'waterminder.png',
+  waze: 'waze.png',
   webstorm: 'webstorm.png',
   wemeet: 'wemeet.png',
   whereto: 'whereto.png',

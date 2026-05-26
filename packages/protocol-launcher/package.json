@@ -550,6 +550,10 @@
       "types": "./dist/types/waterminder/index.d.ts",
       "import": "./dist/waterminder/index.js"
     },
+    "./waze": {
+      "types": "./dist/types/waze/index.d.ts",
+      "import": "./dist/waze/index.js"
+    },
     "./webstorm": {
       "types": "./dist/types/webstorm/index.d.ts",
       "import": "./dist/webstorm/index.js"
