@@ -238,6 +238,10 @@
       "types": "./dist/types/goland/index.d.ts",
       "import": "./dist/goland/index.js"
     },
+    "./google-maps": {
+      "types": "./dist/types/google-maps/index.d.ts",
+      "import": "./dist/google-maps/index.js"
+    },
     "./hbuilderx": {
       "types": "./dist/types/hbuilderx/index.d.ts",
       "import": "./dist/hbuilderx/index.js"

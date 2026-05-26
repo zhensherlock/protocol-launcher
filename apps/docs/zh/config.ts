@@ -76,6 +76,7 @@ export default defineAdditionalConfig({
           { text: 'GoodLinks', link: '/zh/apps/goodlinks' },
           { text: 'GoodTask', link: '/zh/apps/goodtask' },
           { text: 'GoLand', link: '/zh/apps/goland' },
+          { text: 'Google Maps', link: '/zh/apps/google-maps' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'Hammerspoon', link: '/zh/apps/hammerspoon' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },

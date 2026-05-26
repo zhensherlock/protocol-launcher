@@ -164,6 +164,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [GoodLinks](../apps/goodlinks.md)
 - [GoodTask](../apps/goodtask.md)
 - [GoLand](../apps/goland.md)
+- [Google Maps](../apps/google-maps.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hammerspoon](../apps/hammerspoon.md)
 - [Hookmark](../apps/hookmark.md)
