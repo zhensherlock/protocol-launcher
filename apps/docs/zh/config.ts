@@ -46,6 +46,7 @@ export default defineAdditionalConfig({
           { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Beorg', link: '/zh/apps/beorg' },
           { text: 'BetterTouchTool', link: '/zh/apps/bettertouchtool' },
+          { text: 'Bunch', link: '/zh/apps/bunch' },
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Capacities', link: '/zh/apps/capacities' },
