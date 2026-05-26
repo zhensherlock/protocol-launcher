@@ -88,6 +88,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Mail Assistant](../apps/mail-assistant.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Teams](../apps/microsoft-teams.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
