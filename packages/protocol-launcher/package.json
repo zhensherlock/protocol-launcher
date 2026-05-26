@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
@@ -325,6 +321,10 @@
     "./microsoft-edge": {
       "types": "./dist/types/microsoft-edge/index.d.ts",
       "import": "./dist/microsoft-edge/index.js"
+    },
+    "./microsoft-teams": {
+      "types": "./dist/types/microsoft-teams/index.d.ts",
+      "import": "./dist/microsoft-teams/index.js"
     },
     "./multi-timer": {
       "types": "./dist/types/multi-timer/index.d.ts",
