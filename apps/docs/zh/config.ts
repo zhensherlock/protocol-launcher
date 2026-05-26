@@ -98,6 +98,7 @@ export default defineAdditionalConfig({
           { text: 'macOS', link: '/zh/apps/macos' },
           { text: 'MacVim', link: '/zh/apps/macvim' },
           { text: 'Mail Assistant', link: '/zh/apps/mail-assistant' },
+          { text: 'Marked', link: '/zh/apps/marked' },
           { text: 'miCal', link: '/zh/apps/mical' },
           { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
           { text: 'Microsoft Teams', link: '/zh/apps/microsoft-teams' },

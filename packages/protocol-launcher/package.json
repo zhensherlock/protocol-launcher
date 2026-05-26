@@ -326,6 +326,10 @@
       "types": "./dist/types/mail-assistant/index.d.ts",
       "import": "./dist/mail-assistant/index.js"
     },
+    "./marked": {
+      "types": "./dist/types/marked/index.d.ts",
+      "import": "./dist/marked/index.js"
+    },
     "./macvim": {
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"
