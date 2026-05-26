@@ -39,6 +39,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
+* [Capacities](../apps/capacities.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)

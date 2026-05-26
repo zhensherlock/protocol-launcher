@@ -136,6 +136,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
+* [Capacities](../apps/capacities.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
