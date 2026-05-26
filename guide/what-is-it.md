@@ -37,6 +37,7 @@ Currently, we support the following applications:
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
+* [Bunch](../apps/bunch.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
 * [Capacities](../apps/capacities.md)
