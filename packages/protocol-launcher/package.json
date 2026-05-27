@@ -310,6 +310,10 @@
       "types": "./dist/types/kiro/index.d.ts",
       "import": "./dist/kiro/index.js"
     },
+    "./launchbar": {
+      "types": "./dist/types/launchbar/index.d.ts",
+      "import": "./dist/launchbar/index.js"
+    },
     "./lingma": {
       "types": "./dist/types/lingma/index.d.ts",
       "import": "./dist/lingma/index.js"

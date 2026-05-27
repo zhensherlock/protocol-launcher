@@ -63,6 +63,7 @@ export const appLogoFiles = {
   kaleidoscope: 'kaleidoscope.png',
   'keyboard-maestro': 'keyboard-maestro.png',
   kiro: 'kiro.png',
+  launchbar: 'launchbar.png',
   lingma: 'lingma.png',
   longshot: 'longshot.png',
   macos: 'macos.svg',

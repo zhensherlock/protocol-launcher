@@ -94,6 +94,7 @@ export default defineAdditionalConfig({
           { text: 'Keyboard Maestro', link: '/zh/apps/keyboard-maestro' },
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
+          { text: 'LaunchBar', link: '/zh/apps/launchbar' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'Longshot', link: '/zh/apps/longshot' },
           { text: 'macOS', link: '/zh/apps/macos' },
