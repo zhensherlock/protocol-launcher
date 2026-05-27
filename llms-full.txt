@@ -62,6 +62,7 @@ Currently, we support the following applications:
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
+* [Claris FileMaker](../apps/filemaker.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -325,6 +326,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
+* [Claris FileMaker](../apps/filemaker.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -4980,6 +4982,86 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
 ---
 
 ---
+url: /protocol-launcher/apps/filemaker.md
+---
+
+# Claris FileMaker
+
+[Claris FileMaker](https://www.claris.com/filemaker/) is a database app platform. **Protocol Launcher** allows you to generate FileMaker Pro URLs for opening files and running scripts.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+The helpers below mirror Claris's official [Opening FileMaker Pro files using a URL](https://help.claris.com/en/pro-help/content/opening-files-url.html) documentation. Only the documented file-opening URL and script URL parameters are exposed: `script`, `param`, `option`, and local variables.
+
+### Open File
+
+Open a shared or local FileMaker Pro file. The official URL format supports `fmp` for the last installed version and `fmpXX` for a specific major version. The `address` can be a DNS name or IP address, `~` for the user's Documents folder, or `$` for an already open file. The optional `credentials` payload maps to the documented `account:password@` URL segment; examples omit credentials.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'filemaker' }} } from '{{ importPath }}'
+
+const hostedUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}openFile({
+  address: 'sales.example.com',
+  filename: 'My Addresses.fmp12',
+})
+
+const documentsUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}openFile({
+  address: '~',
+  filename: 'Clients',
+})
+
+const versionedUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}openFile({
+  version: 22,
+  address: 'sales.example.com',
+  filename: 'My Addresses',
+})
+```
+
+### Run Script
+
+Run a FileMaker script in a shared, local, or already open file. The official format allows a script parameter, an option value for handling a running script, and multiple local variables.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runScript' : 'filemaker' }} } from '{{ importPath }}'
+
+const localUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScript({
+  address: '~',
+  filename: 'Clients',
+  script: 'ListClients',
+})
+
+const parameterUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScript({
+  address: 'sales.example.com',
+  filename: 'Clients',
+  script: 'ListClients',
+  param: 'TopClients',
+  option: 3,
+  variables: [{ name: 'NumberToList', value: 10 }],
+})
+
+const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScript({
+  address: '$',
+  filename: 'Clients',
+  script: 'ListClients',
+})
+```
+
+## Official Documentation
+
+* [Opening FileMaker Pro files using a URL](https://help.claris.com/en/pro-help/content/opening-files-url.html)
+
+---
+
+---
 url: /protocol-launcher/apps/fsnotes.md
 ---
 
@@ -6186,19 +6268,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ithoughts.'}}amendMap({
 })
 ```
 
-## Generated URLs
-
-```ts-vue
-makeMap(makeMapMarkdownParams)
-// ithoughts://x-callback-url/makeMap?text=%23%20Project%0A-%20Collect%20ideas%0A-%20Draft%20outline&note=Created%20from%20Markdown&link=https%3A%2F%2Fwww.toketaware.com%2Fithoughts-howto-x-callback-url&format=md
-
-makeMap(makeMapClipboardParams)
-// ithoughts://x-callback-url/makeMap?text=%5B%5Bclipboard%5D%5D&format=text
-
-amendMap(amendMapParams)
-// ithoughts://x-callback-url/amendMap?text=Follow%20up&path=%2Ftasks&target=newtasks&edit=YES
-```
-
 ## Official Documentation
 
 * [iThoughts x-callback-url](https://www.toketaware.com/ithoughts-howto-x-callback-url)
@@ -6747,58 +6816,6 @@ const celsiusTemplateUrl = {{currentMethod === 'On-Demand' ? '' : 'launchbar.'}}
 import { {{ currentMethod === 'On-Demand' ? 'hide' : 'launchbar' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'launchbar.'}}hide()
-```
-
-## Generated URLs
-
-```ts-vue
-largeType(largeTypeParams)
-// x-launchbar:large-type?string=LaunchBar+4.3
-
-largeType(largeTypeTitleParams)
-// x-launchbar:large-type?title=Large+Type&string=Small+Example
-
-largeType(largeTypeFontParams)
-// x-launchbar:large-type?font-name=Times-Bold&string=Hello+World
-
-select(selectFileParams)
-// x-launchbar:select?file=/Applications
-
-select(selectUrlParams)
-// x-launchbar:select?url=www.obdev.at
-
-select(selectNamedUrlParams)
-// x-launchbar:select?url=www.obdev.at&name=Objective+Development
-
-select(selectStringParams)
-// x-launchbar:select?string=Hello,+I'm+a+text
-
-select(selectAbbreviationParams)
-// x-launchbar:select?abbreviation=SAFARI
-
-execute(executeArgumentParams)
-// x-launchbar:execute?path=/usr/local/bin/MyScript&argument=*
-
-execute(executeArgumentsParams)
-// x-launchbar:execute?path=/usr/bin/open&arguments=-a+%22*%22
-
-calculate(calculateParams)
-// x-launchbar:calculate?expression=2*sin(pi/4)^2
-
-calculate(calculateTitleParams)
-// x-launchbar:calculate?expression=(1+sqrt(5))/2&title=Golden%20Ratio
-
-calculate(calculateResultParams)
-// x-launchbar:calculate?expression=(1+sqrt(5))/2&title=Golden%20Ratio&result=%cf%86=@
-
-calculate(calculateTemplateParams)
-// x-launchbar:calculate?argument=*&expression=(@-32)/1.8&title=@%c2%b0F%20=&result=@%c2%b0C
-
-calculate(calculateCelsiusTemplateParams)
-// x-launchbar:calculate?argument=*&expression=@*1.8+32&title=@%c2%b0C%20=&result=@%c2%b0F
-
-hide()
-// x-launchbar:hide
 ```
 
 ---
@@ -7622,61 +7639,6 @@ const pathUrl = {{currentMethod === 'On-Demand' ? '' : 'marked.'}}style({
 })
 ```
 
-## Generated URLs
-
-```ts-vue
-addStyle(addStyleCssParams)
-// x-marked://addstyle?name=My%20new%20style&css=body%20%7B%20color:%20red%3B%20%7D
-
-addStyle(addStyleFileParams)
-// x-marked://addstyle?file=/Users/myuser/Custom%20Styles/Unicorn.css
-
-defaults(defaultsParams)
-// x-marked://defaults?syntaxHighlight=1&includeMathJax=0
-
-defaults(defaultsNoRefreshParams)
-// x-marked://defaults?syntaxHighlight=1&refresh=0
-
-runJavaScript(runJavaScriptParams)
-// x-marked://do?js=Marked.file.refresh()
-
-runJavaScript(runJavaScriptPathParams)
-// x-marked://do/filename1/filename2?js=Marked.file.refresh()
-
-open(openParams)
-// x-marked://open?file=/Users/username/Desktop/report.md
-
-open(openPathParams)
-// x-marked://open/~/nvALT2.2
-
-open(openDirectPathParams)
-// x-marked:///Users/username/Desktop/report.md
-
-open(openRaiseParams)
-// x-marked://open?file=filename.md&raise=true
-
-paste()
-// x-marked://paste
-
-refresh(refreshFileParams)
-// x-marked://refresh?file=/Users/username/Desktop/report.md
-
-refresh(refreshAllParams)
-// x-marked://refresh?file=all
-
-refresh(refreshPathParams)
-// x-marked://refresh/filename1/filename2
-
-style(styleParams)
-// x-marked://style?css=Github
-
-style(styleFileParams)
-// x-marked://style?file=filename1,filename2&css=Github
-
-style(stylePathParams)
-// x-marked://style/all?css=Github
-```
-
 ## Official Documentation
 
 * [Marked URL Handler](https://marked2app.com/help/URL_Handler.html)
@@ -8126,22 +8088,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
   date: '20260527',
   currency: 'USD',
 })
-```
-
-## Generated URLs
-
-```ts-vue
-expense(expenseParams)
-// moneywiz://expense?amount=5.99&account=Wallet&currency=EUR&category=Other&save=false
-
-income(incomeParams)
-// moneywiz://income?amount=1200.00&account=Checking&currency=USD&payee=Acme%20Payroll&category=Salary&save=false
-
-transfer(transferParams)
-// moneywiz://transfer?account=Checking&toAccount=Savings&amount=250.00&save=false
-
-updateHolding(updateHoldingParams)
-// moneywiz://updateholding?symbol=AAPL&price=189.98&date=20260527&currency=USD
 ```
 
 ---
@@ -14164,6 +14110,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
+* [Claris FileMaker](../apps/filemaker.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -14427,6 +14374,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
+* [Claris FileMaker](../apps/filemaker.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -19083,6 +19031,86 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/filemaker.md
+---
+
+# Claris FileMaker
+
+[Claris FileMaker](https://www.claris.com/filemaker/) 是一款数据库应用平台。**Protocol Launcher** 可以生成 FileMaker Pro URL，用于打开文件和运行脚本。
+
+## 使用方式
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+## URL 方法
+
+以下 helper 对应 Claris 官方 [Opening FileMaker Pro files using a URL](https://help.claris.com/en/pro-help/content/opening-files-url.html) 文档。这里只暴露官方文件打开 URL 与脚本 URL 参数：`script`、`param`、`option` 和本地变量。
+
+### 打开文件
+
+打开共享或本地 FileMaker Pro 文件。官方 URL 格式支持用 `fmp` 交给最后安装的版本处理，也支持用 `fmpXX` 指定主版本号。`address` 可以是 DNS 名称或 IP 地址、表示用户 Documents 文件夹的 `~`，或表示文件已打开的 `$`。可选的 `credentials` payload 对应官方文档里的 `account:password@` URL 片段；示例中不放账号密码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'filemaker' }} } from '{{ importPath }}'
+
+const hostedUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}openFile({
+  address: 'sales.example.com',
+  filename: 'My Addresses.fmp12',
+})
+
+const documentsUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}openFile({
+  address: '~',
+  filename: 'Clients',
+})
+
+const versionedUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}openFile({
+  version: 22,
+  address: 'sales.example.com',
+  filename: 'My Addresses',
+})
+```
+
+### 运行脚本
+
+在共享、本地或已打开的文件中运行 FileMaker 脚本。官方格式允许传入脚本参数、用于处理正在运行脚本的 option 值，以及多个本地变量。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runScript' : 'filemaker' }} } from '{{ importPath }}'
+
+const localUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScript({
+  address: '~',
+  filename: 'Clients',
+  script: 'ListClients',
+})
+
+const parameterUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScript({
+  address: 'sales.example.com',
+  filename: 'Clients',
+  script: 'ListClients',
+  param: 'TopClients',
+  option: 3,
+  variables: [{ name: 'NumberToList', value: 10 }],
+})
+
+const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScript({
+  address: '$',
+  filename: 'Clients',
+  script: 'ListClients',
+})
+```
+
+## 官方文档
+
+* [Opening FileMaker Pro files using a URL](https://help.claris.com/en/pro-help/content/opening-files-url.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/fsnotes.md
 ---
 
@@ -20289,19 +20317,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ithoughts.'}}amendMap({
 })
 ```
 
-## 生成结果
-
-```ts-vue
-makeMap(makeMapMarkdownParams)
-// ithoughts://x-callback-url/makeMap?text=%23%20Project%0A-%20Collect%20ideas%0A-%20Draft%20outline&note=Created%20from%20Markdown&link=https%3A%2F%2Fwww.toketaware.com%2Fithoughts-howto-x-callback-url&format=md
-
-makeMap(makeMapClipboardParams)
-// ithoughts://x-callback-url/makeMap?text=%5B%5Bclipboard%5D%5D&format=text
-
-amendMap(amendMapParams)
-// ithoughts://x-callback-url/amendMap?text=Follow%20up&path=%2Ftasks&target=newtasks&edit=YES
-```
-
 ## 官方文档
 
 * [iThoughts x-callback-url](https://www.toketaware.com/ithoughts-howto-x-callback-url)
@@ -20850,58 +20865,6 @@ const celsiusTemplateUrl = {{currentMethod === 'On-Demand' ? '' : 'launchbar.'}}
 import { {{ currentMethod === 'On-Demand' ? 'hide' : 'launchbar' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'launchbar.'}}hide()
-```
-
-## 生成结果
-
-```ts-vue
-largeType(largeTypeParams)
-// x-launchbar:large-type?string=LaunchBar+4.3
-
-largeType(largeTypeTitleParams)
-// x-launchbar:large-type?title=Large+Type&string=Small+Example
-
-largeType(largeTypeFontParams)
-// x-launchbar:large-type?font-name=Times-Bold&string=Hello+World
-
-select(selectFileParams)
-// x-launchbar:select?file=/Applications
-
-select(selectUrlParams)
-// x-launchbar:select?url=www.obdev.at
-
-select(selectNamedUrlParams)
-// x-launchbar:select?url=www.obdev.at&name=Objective+Development
-
-select(selectStringParams)
-// x-launchbar:select?string=Hello,+I'm+a+text
-
-select(selectAbbreviationParams)
-// x-launchbar:select?abbreviation=SAFARI
-
-execute(executeArgumentParams)
-// x-launchbar:execute?path=/usr/local/bin/MyScript&argument=*
-
-execute(executeArgumentsParams)
-// x-launchbar:execute?path=/usr/bin/open&arguments=-a+%22*%22
-
-calculate(calculateParams)
-// x-launchbar:calculate?expression=2*sin(pi/4)^2
-
-calculate(calculateTitleParams)
-// x-launchbar:calculate?expression=(1+sqrt(5))/2&title=Golden%20Ratio
-
-calculate(calculateResultParams)
-// x-launchbar:calculate?expression=(1+sqrt(5))/2&title=Golden%20Ratio&result=%cf%86=@
-
-calculate(calculateTemplateParams)
-// x-launchbar:calculate?argument=*&expression=(@-32)/1.8&title=@%c2%b0F%20=&result=@%c2%b0C
-
-calculate(calculateCelsiusTemplateParams)
-// x-launchbar:calculate?argument=*&expression=@*1.8+32&title=@%c2%b0C%20=&result=@%c2%b0F
-
-hide()
-// x-launchbar:hide
 ```
 
 ---
@@ -21725,61 +21688,6 @@ const pathUrl = {{currentMethod === 'On-Demand' ? '' : 'marked.'}}style({
 })
 ```
 
-## 生成结果
-
-```ts-vue
-addStyle(addStyleCssParams)
-// x-marked://addstyle?name=My%20new%20style&css=body%20%7B%20color:%20red%3B%20%7D
-
-addStyle(addStyleFileParams)
-// x-marked://addstyle?file=/Users/myuser/Custom%20Styles/Unicorn.css
-
-defaults(defaultsParams)
-// x-marked://defaults?syntaxHighlight=1&includeMathJax=0
-
-defaults(defaultsNoRefreshParams)
-// x-marked://defaults?syntaxHighlight=1&refresh=0
-
-runJavaScript(runJavaScriptParams)
-// x-marked://do?js=Marked.file.refresh()
-
-runJavaScript(runJavaScriptPathParams)
-// x-marked://do/filename1/filename2?js=Marked.file.refresh()
-
-open(openParams)
-// x-marked://open?file=/Users/username/Desktop/report.md
-
-open(openPathParams)
-// x-marked://open/~/nvALT2.2
-
-open(openDirectPathParams)
-// x-marked:///Users/username/Desktop/report.md
-
-open(openRaiseParams)
-// x-marked://open?file=filename.md&raise=true
-
-paste()
-// x-marked://paste
-
-refresh(refreshFileParams)
-// x-marked://refresh?file=/Users/username/Desktop/report.md
-
-refresh(refreshAllParams)
-// x-marked://refresh?file=all
-
-refresh(refreshPathParams)
-// x-marked://refresh/filename1/filename2
-
-style(styleParams)
-// x-marked://style?css=Github
-
-style(styleFileParams)
-// x-marked://style?file=filename1,filename2&css=Github
-
-style(stylePathParams)
-// x-marked://style/all?css=Github
-```
-
 ## 官方文档
 
 * [Marked URL Handler](https://marked2app.com/help/URL_Handler.html)
@@ -22229,22 +22137,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
   date: '20260527',
   currency: 'USD',
 })
-```
-
-## 生成结果
-
-```ts-vue
-expense(expenseParams)
-// moneywiz://expense?amount=5.99&account=Wallet&currency=EUR&category=Other&save=false
-
-income(incomeParams)
-// moneywiz://income?amount=1200.00&account=Checking&currency=USD&payee=Acme%20Payroll&category=Salary&save=false
-
-transfer(transferParams)
-// moneywiz://transfer?account=Checking&toAccount=Savings&amount=250.00&save=false
-
-updateHolding(updateHoldingParams)
-// moneywiz://updateholding?symbol=AAPL&price=189.98&date=20260527&currency=USD
 ```
 
 ---

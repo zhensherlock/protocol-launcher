@@ -159,6 +159,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Due](../apps/due.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
+* [Claris FileMaker](../apps/filemaker.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)

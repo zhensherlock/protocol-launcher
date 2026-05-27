@@ -54,19 +54,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ithoughts.'}}amendMap({
 })
 ```
 
-## Generated URLs
-
-```ts-vue
-makeMap(makeMapMarkdownParams)
-// ithoughts://x-callback-url/makeMap?text=%23%20Project%0A-%20Collect%20ideas%0A-%20Draft%20outline&note=Created%20from%20Markdown&link=https%3A%2F%2Fwww.toketaware.com%2Fithoughts-howto-x-callback-url&format=md
-
-makeMap(makeMapClipboardParams)
-// ithoughts://x-callback-url/makeMap?text=%5B%5Bclipboard%5D%5D&format=text
-
-amendMap(amendMapParams)
-// ithoughts://x-callback-url/amendMap?text=Follow%20up&path=%2Ftasks&target=newtasks&edit=YES
-```
-
 ## Official Documentation
 
 * [iThoughts x-callback-url](https://www.toketaware.com/ithoughts-howto-x-callback-url)
