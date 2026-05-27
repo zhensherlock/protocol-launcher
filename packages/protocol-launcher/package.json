@@ -286,6 +286,10 @@
       "types": "./dist/types/instapaper/index.d.ts",
       "import": "./dist/instapaper/index.js"
     },
+    "./ithoughts": {
+      "types": "./dist/types/ithoughts/index.d.ts",
+      "import": "./dist/ithoughts/index.js"
+    },
     "./itsycal": {
       "types": "./dist/types/itsycal/index.d.ts",
       "import": "./dist/itsycal/index.js"

@@ -88,6 +88,7 @@ export default defineAdditionalConfig({
           { text: 'Instapaper', link: '/zh/apps/instapaper' },
           { text: 'Interact Scratchpad', link: '/zh/apps/interact' },
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },
+          { text: 'iThoughts', link: '/zh/apps/ithoughts' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
           { text: 'Jump Desktop', link: '/zh/apps/jump-desktop' },
           { text: 'Keyboard Maestro', link: '/zh/apps/keyboard-maestro' },

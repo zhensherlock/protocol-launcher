@@ -57,6 +57,7 @@ export const appLogoFiles = {
   instapaper: 'instapaper.webp',
   interact: 'interact-scratchpad.png',
   ipgmail: 'ipgmail.webp',
+  ithoughts: 'ithoughtsx.png',
   itsycal: 'itsycal.png',
   'jump-desktop': 'jump-desktop.png',
   kaleidoscope: 'kaleidoscope.png',
