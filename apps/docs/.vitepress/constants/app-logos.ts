@@ -21,6 +21,7 @@ export const appLogoFiles = {
   calca: 'calca.webp',
   capacities: 'capacities.webp',
   'cherry-studio': 'cherry-studio.svg',
+  cloze: 'cloze.webp',
   coda: 'coda.svg',
   'code-buddy': 'code-buddy.svg',
   'code-buddy-cn': 'code-buddy-cn.svg',

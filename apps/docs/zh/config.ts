@@ -51,6 +51,7 @@ export default defineAdditionalConfig({
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Capacities', link: '/zh/apps/capacities' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
+          { text: 'Cloze', link: '/zh/apps/cloze' },
           { text: 'Coda', link: '/zh/apps/coda' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },
           { text: 'CodeBuddy China', link: '/zh/apps/code-buddy-cn' },
