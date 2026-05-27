@@ -182,6 +182,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
+* [LaunchBar](../apps/launchbar.md)
 * [Lingma](../apps/lingma.md)
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)

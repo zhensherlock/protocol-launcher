@@ -530,6 +530,15 @@
     "bytes": 2635
   },
   {
+    "slug": "launchbar",
+    "officialUrl": "https://www.obdev.at/products/launchbar/index.html",
+    "status": "saved",
+    "filename": "launchbar.png",
+    "url": "https://www.obdev.at/Images/product-icons/launchbar_320.png",
+    "source": "official-product-icon",
+    "bytes": 62919
+  },
+  {
     "slug": "lingma",
     "officialUrl": "https://lingma.aliyun.com/",
     "status": "saved",
