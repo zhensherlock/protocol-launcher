@@ -104,6 +104,7 @@ export default defineAdditionalConfig({
           { text: 'miCal', link: '/zh/apps/mical' },
           { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
           { text: 'Microsoft Teams', link: '/zh/apps/microsoft-teams' },
+          { text: 'MoneyWiz', link: '/zh/apps/moneywiz' },
           { text: 'Motrix', link: '/zh/apps/motrix' },
           { text: 'MultiTimer', link: '/zh/apps/multi-timer' },
           { text: 'Navicat', link: '/zh/apps/navicat' },

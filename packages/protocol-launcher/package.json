@@ -350,6 +350,10 @@
       "types": "./dist/types/microsoft-teams/index.d.ts",
       "import": "./dist/microsoft-teams/index.js"
     },
+    "./moneywiz": {
+      "types": "./dist/types/moneywiz/index.d.ts",
+      "import": "./dist/moneywiz/index.js"
+    },
     "./multi-timer": {
       "types": "./dist/types/multi-timer/index.d.ts",
       "import": "./dist/multi-timer/index.js"

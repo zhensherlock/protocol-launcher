@@ -101,6 +101,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [miCal](../apps/mical.md)
 - [Microsoft Edge](../apps/microsoft-edge.md)
 - [Microsoft Teams](../apps/microsoft-teams.md)
+- [MoneyWiz](../apps/moneywiz.md)
 - [Motrix](../apps/motrix.md)
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
