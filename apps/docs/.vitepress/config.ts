@@ -707,9 +707,9 @@ export default defineConfig({
       // https://icon-sets.iconify.design/vscode-icons/?keyword=vscode-icons
       groupIconVitePlugin({
         customIcon: {
-          'cherry studio': localIconLoader(import.meta.url, '../assets/cherry-studio.svg'),
-          codebuddy: localIconLoader(import.meta.url, '../assets/codebuddy.svg'),
-          cursor: localIconLoader(import.meta.url, '../assets/cursor.svg'),
+          'cherry studio': localIconLoader(import.meta.url, '../public/app-logos/cherry-studio.svg'),
+          codebuddy: localIconLoader(import.meta.url, '../public/app-logos/code-buddy.svg'),
+          cursor: localIconLoader(import.meta.url, '../public/app-logos/cursor.svg'),
           'github desktop': 'logos:github-octocat',
           goland: 'logos:goland',
           idea: 'logos:intellij-idea',
@@ -717,7 +717,7 @@ export default defineConfig({
           pycharm: 'logos:pycharm',
           rustrover: 'logos:rust',
           telegram: 'logos:telegram',
-          thunder: localIconLoader(import.meta.url, '../assets/thunder.svg'),
+          thunder: localIconLoader(import.meta.url, '../public/app-logos/thunder.svg'),
           vscode: 'vscode-icons:file-type-vscode',
           webstorm: 'logos:webstorm',
           xcode: 'logos:xcode',
