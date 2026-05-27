@@ -186,6 +186,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
+* [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
