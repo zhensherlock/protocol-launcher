@@ -95,6 +95,7 @@ Currently, we support the following applications:
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
@@ -357,6 +358,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
@@ -8051,6 +8053,100 @@ const nativeUrl = {{currentMethod === 'On-Demand' ? '' : 'microsoftTeams.'}}shar
 ---
 
 ---
+url: /protocol-launcher/apps/moneywiz.md
+---
+
+# MoneyWiz
+
+[MoneyWiz](https://wiz.money/) is a personal finance app for tracking accounts, budgets, transactions, and investments. **Protocol Launcher** allows you to generate MoneyWiz deep links for transaction templates and holding price updates.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+The helpers below mirror MoneyWiz's official [URL Schemas](https://help.wiz.money/en/articles/4525440-automate-transaction-management-with-url-schemas) documentation. Only the documented `expense`, `income`, `transfer`, and `updateholding` operations are exposed. Account names should be provided without spaces.
+
+### Expense
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'expense' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}expense({
+  account: 'Wallet',
+  amount: 5.99,
+  currency: 'EUR',
+  category: 'Other',
+  save: false,
+})
+```
+
+### Income
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'income' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}income({
+  account: 'Checking',
+  amount: '1200.00',
+  currency: 'USD',
+  payee: 'Acme Payroll',
+  category: 'Salary',
+  save: false,
+})
+```
+
+### Transfer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'transfer' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}transfer({
+  account: 'Checking',
+  toAccount: 'Savings',
+  amount: '250.00',
+  save: false,
+})
+```
+
+### Update Holding
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'updateHolding' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
+  symbol: 'AAPL',
+  price: 189.98,
+  date: '20260527',
+  currency: 'USD',
+})
+```
+
+## Generated URLs
+
+```ts-vue
+expense(expenseParams)
+// moneywiz://expense?amount=5.99&account=Wallet&currency=EUR&category=Other&save=false
+
+income(incomeParams)
+// moneywiz://income?amount=1200.00&account=Checking&currency=USD&payee=Acme%20Payroll&category=Salary&save=false
+
+transfer(transferParams)
+// moneywiz://transfer?account=Checking&toAccount=Savings&amount=250.00&save=false
+
+updateHolding(updateHoldingParams)
+// moneywiz://updateholding?symbol=AAPL&price=189.98&date=20260527&currency=USD
+```
+
+---
+
+---
 url: /protocol-launcher/apps/motrix.md
 ---
 
@@ -14101,6 +14197,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
@@ -14363,6 +14460,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
 * [Navicat](../apps/navicat.md)
@@ -22054,6 +22152,100 @@ const nativeUrl = {{currentMethod === 'On-Demand' ? '' : 'microsoftTeams.'}}shar
 * [Deep link to an application](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-application)
 * [Deep link to Teams chat](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-teams)
 * [Deep link to a workflow in Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/moneywiz.md
+---
+
+# MoneyWiz
+
+[MoneyWiz](https://wiz.money/) 是一款个人财务管理应用，可用于跟踪账户、预算、交易和投资。**Protocol Launcher** 允许你生成 MoneyWiz 深度链接，用于交易模板和持仓价格更新。
+
+## 使用方式
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+## URL 方法
+
+以下 helper 对应 MoneyWiz 官方 [URL Schemas](https://help.wiz.money/en/articles/4525440-automate-transaction-management-with-url-schemas) 文档。这里只暴露官方列出的 `expense`、`income`、`transfer` 和 `updateholding` 操作。账户名称应按官方要求去掉空格。
+
+### 支出
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'expense' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}expense({
+  account: 'Wallet',
+  amount: 5.99,
+  currency: 'EUR',
+  category: 'Other',
+  save: false,
+})
+```
+
+### 收入
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'income' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}income({
+  account: 'Checking',
+  amount: '1200.00',
+  currency: 'USD',
+  payee: 'Acme Payroll',
+  category: 'Salary',
+  save: false,
+})
+```
+
+### 转账
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'transfer' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}transfer({
+  account: 'Checking',
+  toAccount: 'Savings',
+  amount: '250.00',
+  save: false,
+})
+```
+
+### 更新持仓
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'updateHolding' : 'moneywiz' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
+  symbol: 'AAPL',
+  price: 189.98,
+  date: '20260527',
+  currency: 'USD',
+})
+```
+
+## 生成结果
+
+```ts-vue
+expense(expenseParams)
+// moneywiz://expense?amount=5.99&account=Wallet&currency=EUR&category=Other&save=false
+
+income(incomeParams)
+// moneywiz://income?amount=1200.00&account=Checking&currency=USD&payee=Acme%20Payroll&category=Salary&save=false
+
+transfer(transferParams)
+// moneywiz://transfer?account=Checking&toAccount=Savings&amount=250.00&save=false
+
+updateHolding(updateHoldingParams)
+// moneywiz://updateholding?symbol=AAPL&price=189.98&date=20260527&currency=USD
+```
 
 ---
 
