@@ -109,19 +109,3 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
   currency: 'USD',
 })
 ```
-
-## Generated URLs
-
-```ts-vue
-expense(expenseParams)
-// moneywiz://expense?amount=5.99&account=Wallet&currency=EUR&category=Other&save=false
-
-income(incomeParams)
-// moneywiz://income?amount=1200.00&account=Checking&currency=USD&payee=Acme%20Payroll&category=Salary&save=false
-
-transfer(transferParams)
-// moneywiz://transfer?account=Checking&toAccount=Savings&amount=250.00&save=false
-
-updateHolding(updateHoldingParams)
-// moneywiz://updateholding?symbol=AAPL&price=189.98&date=20260527&currency=USD
-```

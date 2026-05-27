@@ -107,28 +107,6 @@ const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScri
   </VPLink>
 </div>
 
-## Generated URLs
-
-```ts-vue
-openFile(openHostedFileParams)
-// fmp://sales.example.com/My%20Addresses.fmp12
-
-openFile(openDocumentsFileParams)
-// fmp://~/Clients
-
-openFile(openVersionedFileParams)
-// fmp22://sales.example.com/My%20Addresses
-
-runScript(runScriptParams)
-// fmp://~/Clients?script=ListClients
-
-runScript(runScriptWithParams)
-// fmp://sales.example.com/Clients?script=ListClients&param=TopClients&option=3&$NumberToList=10
-
-runScript(runScriptOpenFileParams)
-// fmp://$/Clients?script=ListClients
-```
-
 ## Official Documentation
 
 - [Opening FileMaker Pro files using a URL](https://help.claris.com/en/pro-help/content/opening-files-url.html)
