@@ -40,6 +40,7 @@ export const appLogoFiles = {
   'equipd-bible': 'equipd-bible.webp',
   evernote: 'evernote.png',
   fantastical: 'fantastical.webp',
+  filemaker: 'filemaker.png',
   fsnotes: 'fsnotes.webp',
   ftstreets: 'ftstreets.png',
   'github-desktop': 'github-desktop.png',

@@ -222,6 +222,10 @@
       "types": "./dist/types/fantastical/index.d.ts",
       "import": "./dist/fantastical/index.js"
     },
+    "./filemaker": {
+      "types": "./dist/types/filemaker/index.d.ts",
+      "import": "./dist/filemaker/index.js"
+    },
     "./fsnotes": {
       "types": "./dist/types/fsnotes/index.d.ts",
       "import": "./dist/fsnotes/index.js"
