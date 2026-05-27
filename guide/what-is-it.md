@@ -79,6 +79,7 @@ Currently, we support the following applications:
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
+* [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)

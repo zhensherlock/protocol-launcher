@@ -176,6 +176,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Instapaper](../apps/instapaper.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
+* [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)

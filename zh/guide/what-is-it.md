@@ -79,6 +79,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [IntelliJ IDEA](../apps/idea.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
+* [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)

@@ -176,6 +176,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Instapaper](../apps/instapaper.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
+* [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
