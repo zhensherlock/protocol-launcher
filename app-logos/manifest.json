@@ -175,6 +175,15 @@
     "bytes": 14397
   },
   {
+    "slug": "cloze",
+    "officialUrl": "https://www.cloze.com/",
+    "status": "saved",
+    "filename": "cloze.svg",
+    "url": "https://ai.cloze.com/wp-content/themes/cloze_custom/images/cloze-logo.svg",
+    "source": "official-site-logo",
+    "bytes": 2248
+  },
+  {
     "slug": "coda",
     "officialUrl": "https://panic.com/code-editor",
     "status": "saved",
