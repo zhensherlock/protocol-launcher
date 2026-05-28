@@ -89,6 +89,7 @@ Currently, we support the following applications:
 - [iPGMail](../apps/ipgmail.md)
 - [iThoughts](../apps/ithoughts.md)
 - [Itsycal](../apps/itsycal.md)
+- [Joplin](../apps/joplin.md)
 - [Jump Desktop](../apps/jump-desktop.md)
 - [Keyboard Maestro](../apps/keyboard-maestro.md)
 - [Kaleidoscope](../apps/kaleidoscope.md)

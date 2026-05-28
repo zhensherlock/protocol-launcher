@@ -61,6 +61,7 @@ export const appLogoFiles = {
   ipgmail: 'ipgmail.webp',
   ithoughts: 'ithoughtsx.png',
   itsycal: 'itsycal.png',
+  joplin: 'joplin.webp',
   'jump-desktop': 'jump-desktop.png',
   kaleidoscope: 'kaleidoscope.png',
   'keyboard-maestro': 'keyboard-maestro.png',

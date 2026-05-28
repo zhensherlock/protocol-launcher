@@ -302,6 +302,10 @@
       "types": "./dist/types/itsycal/index.d.ts",
       "import": "./dist/itsycal/index.js"
     },
+    "./joplin": {
+      "types": "./dist/types/joplin/index.d.ts",
+      "import": "./dist/joplin/index.js"
+    },
     "./jump-desktop": {
       "types": "./dist/types/jump-desktop/index.d.ts",
       "import": "./dist/jump-desktop/index.js"
