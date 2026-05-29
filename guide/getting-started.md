@@ -175,6 +175,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
+* [Infuse](../apps/infuse.md)
 * [Instapaper](../apps/instapaper.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
