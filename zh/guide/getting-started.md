@@ -187,6 +187,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
 * [LaunchBar](../apps/launchbar.md)
+* [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
