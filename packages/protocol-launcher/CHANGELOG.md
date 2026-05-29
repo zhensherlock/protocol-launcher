@@ -1,5 +1,60 @@
 # protocol-launcher
 
+## 1.23.0
+
+### Minor Changes
+
+- [`264845b`](https://github.com/zhensherlock/protocol-launcher/commit/264845b98aa55f0f5e1dd2cb5c61294df2f385aa) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cloze): add Cloze URL scheme support
+
+- [`1fea6e8`](https://github.com/zhensherlock/protocol-launcher/commit/1fea6e87a66130bb3df6e79dacccd43bbcae39f2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(filemaker): add Claris FileMaker URL Schema support
+
+- [`8d67d5f`](https://github.com/zhensherlock/protocol-launcher/commit/8d67d5f75a42124d17f00d50e5716ff6946bcff6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(spotify): add Spotify URL scheme support
+
+- [`15749e2`](https://github.com/zhensherlock/protocol-launcher/commit/15749e2a4ca619cb81473a0484b30a57ed012a6c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(moneywiz): add MoneyWiz URL Schema support
+
+- [`85306fd`](https://github.com/zhensherlock/protocol-launcher/commit/85306fd060344f73cdb104373c310434a4843574) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(skype): add Skype URL scheme support
+
+- [`4afdc31`](https://github.com/zhensherlock/protocol-launcher/commit/4afdc317db16422361ef52946424509c7762d150) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pythonista): add Pythonista URL scheme support
+
+- [`67b0143`](https://github.com/zhensherlock/protocol-launcher/commit/67b0143307526fb49632e6522af9234620e5756a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(google-chrome-ios): add Chrome for iOS URL scheme support
+
+- [`8a55abf`](https://github.com/zhensherlock/protocol-launcher/commit/8a55abf43eec53507ff893453cdde23ad47a91ca) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(google-maps): add Google Maps URL scheme support
+
+- [`f80f251`](https://github.com/zhensherlock/protocol-launcher/commit/f80f251431c9ca84e4968d545301b4f900b87c14) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(launchbar): add LaunchBar URL scheme support
+
+- [`b86b043`](https://github.com/zhensherlock/protocol-launcher/commit/b86b043e7d0a97f0e9c22c47affb1701f0a64387) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(marked): add Marked URL scheme support
+
+- [`2d2dbfe`](https://github.com/zhensherlock/protocol-launcher/commit/2d2dbfe707b706b151b29a34b81185392812b229) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(waze): add Waze URL scheme support
+
+- [`215527c`](https://github.com/zhensherlock/protocol-launcher/commit/215527cb86aac5821aabbd89efdfcd48f7314d53) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(line): add LINE URL scheme support
+
+- [`42aba12`](https://github.com/zhensherlock/protocol-launcher/commit/42aba12fc4b70668b1b967931117420bc3d9b45a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(bunch): add Bunch URL scheme support
+
+- [`7db333d`](https://github.com/zhensherlock/protocol-launcher/commit/7db333db423ea46a90c163201d5ec6dbbd686041) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(webex): add Webex URL scheme support
+
+- [`a22567c`](https://github.com/zhensherlock/protocol-launcher/commit/a22567c330506b5a5a2419d4a90bf8ce5650c93b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(joplin): add Joplin URL scheme support
+
+- [`4724f59`](https://github.com/zhensherlock/protocol-launcher/commit/4724f598be806f48aa71b6aabeff43b2698690f3) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(zoom): add Zoom URL scheme support
+
+- [`c93604d`](https://github.com/zhensherlock/protocol-launcher/commit/c93604d1289dc46aa2ed6d553d2ab91dcc56533c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(microsoft-teams): add Microsoft Teams URL scheme support
+
+- [`98f5388`](https://github.com/zhensherlock/protocol-launcher/commit/98f53888f6443d4fb9988d90491d9d2b0152a80c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(ithoughts): add iThoughts URL scheme support
+
+- [`3bcb2c6`](https://github.com/zhensherlock/protocol-launcher/commit/3bcb2c6cca9625748ee2be30989dd681ec9d3a33) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(slack): add Slack URL scheme support
+
+- [`2122dfb`](https://github.com/zhensherlock/protocol-launcher/commit/2122dfb11b0e87514a2405ca1ecbd54c58568711) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(tablepro): add TablePro URL scheme support
+
+- [`5aebddf`](https://github.com/zhensherlock/protocol-launcher/commit/5aebddf18106224e28a19e1cab336aac616b2afc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(infuse): add Infuse URL scheme support
+
+- [`331174d`](https://github.com/zhensherlock/protocol-launcher/commit/331174d3e498e8bb0ee92d6c319a34d815f9a6e2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(capacities): add Capacities URL scheme support
+
+### Patch Changes
+
+- [`17fd7a0`](https://github.com/zhensherlock/protocol-launcher/commit/17fd7a0e862a68f394f1b5d37390e7f6e78ac799) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`17fd7a0`](https://github.com/zhensherlock/protocol-launcher/commit/17fd7a0e862a68f394f1b5d37390e7f6e78ac799)]:
+  - @protocol-launcher/shared@1.4.9
+
 ## 1.22.0
 
 ### Minor Changes
