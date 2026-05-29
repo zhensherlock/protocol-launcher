@@ -250,6 +250,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
+- [Timepage](../apps/timepage.md)
 - [Todoist](../apps/todoist.md)
 - [Tower](../apps/tower.md)
 - [Trae](../apps/trae.md)

@@ -162,6 +162,7 @@ export default defineAdditionalConfig({
           { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Things', link: '/zh/apps/things' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
+          { text: 'Timepage', link: '/zh/apps/timepage' },
           { text: 'Todoist', link: '/zh/apps/todoist' },
           { text: 'Tower', link: '/zh/apps/tower' },
           { text: 'Trae', link: '/zh/apps/trae' },

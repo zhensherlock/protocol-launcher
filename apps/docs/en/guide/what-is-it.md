@@ -159,6 +159,7 @@ Currently, we support the following applications:
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
+- [Timepage](../apps/timepage.md)
 - [Todoist](../apps/todoist.md)
 - [Tower](../apps/tower.md)
 - [Trae](../apps/trae.md)

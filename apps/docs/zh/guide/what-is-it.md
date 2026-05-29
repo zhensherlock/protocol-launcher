@@ -159,6 +159,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
+- [Timepage](../apps/timepage.md)
 - [Todoist](../apps/todoist.md)
 - [Tower](../apps/tower.md)
 - [Trae](../apps/trae.md)
