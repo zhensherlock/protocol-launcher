@@ -1,0 +1,8 @@
+export { newCamera } from './new-camera'
+export { newDate } from './new-date'
+export { newMoment } from './new-moment'
+export { newPeople } from './new-people'
+export { newPhotos } from './new-photos'
+export { newPlaces } from './new-places'
+export { newTags } from './new-tags'
+export { open } from './open'

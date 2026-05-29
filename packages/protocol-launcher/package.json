@@ -386,6 +386,10 @@
       "types": "./dist/types/microsoft-teams/index.d.ts",
       "import": "./dist/microsoft-teams/index.js"
     },
+    "./momento": {
+      "types": "./dist/types/momento/index.d.ts",
+      "import": "./dist/momento/index.js"
+    },
     "./moneywiz": {
       "types": "./dist/types/moneywiz/index.d.ts",
       "import": "./dist/moneywiz/index.js"

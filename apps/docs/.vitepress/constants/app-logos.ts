@@ -82,6 +82,7 @@ export const appLogoFiles = {
   mical: 'mical.webp',
   'microsoft-edge': 'microsoft-edge.png',
   'microsoft-teams': 'microsoft-teams.webp',
+  momento: 'momento.webp',
   moneywiz: 'moneywiz.webp',
   motrix: 'motrix.png',
   'multi-timer': 'multi-timer.webp',
