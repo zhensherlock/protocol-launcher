@@ -2,7 +2,7 @@
 
 ## Style Prompt
 
-A cinematic developer-tool product promo for Protocol Launcher. Bright documentation-inspired canvas, crisp light code surfaces, precise motion, and the existing pink-to-cyan lightning identity. The video should feel fast, useful, and trustworthy: a TypeScript object becomes a safe one-click launch URL, then expands into Cursor, Cherry Studio, VS Code, and a broad app ecosystem.
+A cinematic developer-tool product promo for Protocol Launcher. Bright documentation-inspired canvas, crisp light code surfaces, precise motion, and the existing pink-to-cyan lightning identity. The video should feel fast, useful, and trustworthy: a TypeScript object becomes a safe one-click launch URL, then expands into Cursor, Cherry Studio, VS Code, and a 154-app ecosystem led by modern AI coding tools.
 
 ## Colors
 

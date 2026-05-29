@@ -37,7 +37,7 @@ Point: Editor deep links.
 ## 32-38s Ecosystem
 
 Visual: App names form a connected grid with feature counters.
-Copy: "114 个应用。类型安全。按需导入。零运行时依赖。"
+Copy: "154 个应用。类型安全。按需导入。零运行时依赖。"
 Point: Breadth and library quality.
 
 ## 38-42s CTA
