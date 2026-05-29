@@ -164,6 +164,7 @@ export default defineAdditionalConfig({
           { text: 'Trello', link: '/zh/apps/trello' },
           { text: 'Ulysses', link: '/zh/apps/ulysses' },
           { text: 'uPic', link: '/zh/apps/upic' },
+          { text: 'UpNote', link: '/zh/apps/upnote' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },

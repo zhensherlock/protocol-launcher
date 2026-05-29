@@ -133,6 +133,7 @@ export const appLogoFiles = {
   trello: 'trello.webp',
   ulysses: 'ulysses.webp',
   upic: 'upic.png',
+  upnote: 'upnote.webp',
   verdent: 'verdent.png',
   vscode: 'visual-studio-code.png',
   'vscode-insiders': 'visual-studio-code-insiders.png',

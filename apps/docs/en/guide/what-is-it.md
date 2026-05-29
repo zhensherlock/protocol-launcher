@@ -161,6 +161,7 @@ Currently, we support the following applications:
 - [Trello](../apps/trello.md)
 - [Ulysses](../apps/ulysses.md)
 - [uPic](../apps/upic.md)
+- [UpNote](../apps/upnote.md)
 - [Verdent](../apps/verdent.md)
 - [VS Code](../apps/vscode.md)
 - [VS Code Insiders](../apps/vscode-insiders.md)

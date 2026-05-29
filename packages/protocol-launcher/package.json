@@ -598,6 +598,10 @@
       "types": "./dist/types/upic/index.d.ts",
       "import": "./dist/upic/index.js"
     },
+    "./upnote": {
+      "types": "./dist/types/upnote/index.d.ts",
+      "import": "./dist/upnote/index.js"
+    },
     "./verdent": {
       "types": "./dist/types/verdent/index.d.ts",
       "import": "./dist/verdent/index.js"
