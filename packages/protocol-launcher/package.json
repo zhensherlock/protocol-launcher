@@ -526,6 +526,10 @@
       "types": "./dist/types/story-planner/index.d.ts",
       "import": "./dist/story-planner/index.js"
     },
+    "./tablepro": {
+      "types": "./dist/types/tablepro/index.d.ts",
+      "import": "./dist/tablepro/index.js"
+    },
     "./tally": {
       "types": "./dist/types/tally/index.d.ts",
       "import": "./dist/tally/index.js"

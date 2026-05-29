@@ -147,6 +147,7 @@ export default defineAdditionalConfig({
           { text: 'Spotify', link: '/zh/apps/spotify' },
           { text: 'Steam', link: '/zh/apps/steam' },
           { text: 'Story Planner', link: '/zh/apps/story-planner' },
+          { text: 'TablePro', link: '/zh/apps/tablepro' },
           { text: 'Tally', link: '/zh/apps/tally' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
           { text: 'Terminology', link: '/zh/apps/terminology' },

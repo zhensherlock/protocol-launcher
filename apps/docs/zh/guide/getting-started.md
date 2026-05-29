@@ -235,6 +235,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
 - [Story Planner](../apps/story-planner.md)
+- [TablePro](../apps/tablepro.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
 - [Terminology](../apps/terminology.md)
