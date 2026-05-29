@@ -135,6 +135,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Shortcuts](../apps/shortcuts.md)
 - [Simple Scan](../apps/simple-scan.md)
 - [Sketch](../apps/sketch.md)
+- [Skype](../apps/skype.md)
 - [Slack](../apps/slack.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)

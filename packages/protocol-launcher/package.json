@@ -486,6 +486,10 @@
       "types": "./dist/types/sketch/index.d.ts",
       "import": "./dist/sketch/index.js"
     },
+    "./skype": {
+      "types": "./dist/types/skype/index.d.ts",
+      "import": "./dist/skype/index.js"
+    },
     "./slack": {
       "types": "./dist/types/slack/index.d.ts",
       "import": "./dist/slack/index.js"

@@ -226,6 +226,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Shortcuts](../apps/shortcuts.md)
 - [Simple Scan](../apps/simple-scan.md)
 - [Sketch](../apps/sketch.md)
+- [Skype](../apps/skype.md)
 - [Slack](../apps/slack.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
