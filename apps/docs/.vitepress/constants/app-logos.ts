@@ -49,6 +49,7 @@ export const appLogoFiles = {
   goland: 'goland.png',
   goodlinks: 'goodlinks.webp',
   goodtask: 'goodtask.webp',
+  'google-chrome-ios': 'google-chrome.webp',
   'google-maps': 'google-maps.webp',
   hammerspoon: 'hammerspoon.png',
   hbuilderx: 'hbuilderx.png',

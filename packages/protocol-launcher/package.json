@@ -254,6 +254,10 @@
       "types": "./dist/types/goland/index.d.ts",
       "import": "./dist/goland/index.js"
     },
+    "./google-chrome-ios": {
+      "types": "./dist/types/google-chrome-ios/index.d.ts",
+      "import": "./dist/google-chrome-ios/index.js"
+    },
     "./google-maps": {
       "types": "./dist/types/google-maps/index.d.ts",
       "import": "./dist/google-maps/index.js"

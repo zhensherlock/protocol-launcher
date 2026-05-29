@@ -77,6 +77,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [GoodLinks](../apps/goodlinks.md)
 - [GoodTask](../apps/goodtask.md)
 - [GoLand](../apps/goland.md)
+- [Google Chrome iOS](../apps/google-chrome-ios.md)
 - [Google Maps](../apps/google-maps.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hammerspoon](../apps/hammerspoon.md)
