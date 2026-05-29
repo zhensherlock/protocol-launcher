@@ -125,6 +125,7 @@ Currently, we support the following applications:
 - [Orchids](../apps/orchids.md)
 - [Overcast](../apps/overcast.md)
 - [PearAI](../apps/pearai.md)
+- [PDF Viewer](../apps/pdf-viewer.md)
 - [Pika](../apps/pika.md)
 - [Pleco](../apps/pleco.md)
 - [Prizmo](../apps/prizmo.md)

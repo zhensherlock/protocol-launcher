@@ -446,6 +446,10 @@
       "types": "./dist/types/pearai/index.d.ts",
       "import": "./dist/pearai/index.js"
     },
+    "./pdf-viewer": {
+      "types": "./dist/types/pdf-viewer/index.d.ts",
+      "import": "./dist/pdf-viewer/index.js"
+    },
     "./phpstorm": {
       "types": "./dist/types/phpstorm/index.d.ts",
       "import": "./dist/phpstorm/index.js"

@@ -128,6 +128,7 @@ export default defineAdditionalConfig({
           { text: 'Orchids', link: '/zh/apps/orchids' },
           { text: 'Overcast', link: '/zh/apps/overcast' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
+          { text: 'PDF Viewer', link: '/zh/apps/pdf-viewer' },
           { text: 'Pika', link: '/zh/apps/pika' },
           { text: 'Pleco', link: '/zh/apps/pleco' },
           { text: 'Prizmo', link: '/zh/apps/prizmo' },

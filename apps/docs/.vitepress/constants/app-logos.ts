@@ -97,6 +97,7 @@ export const appLogoFiles = {
   orchids: 'orchids.svg',
   overcast: 'overcast.svg',
   pearai: 'pearai.png',
+  'pdf-viewer': 'pdf-viewer.webp',
   phpstorm: 'phpstorm.png',
   pika: 'pika.png',
   pleco: 'pleco.webp',
