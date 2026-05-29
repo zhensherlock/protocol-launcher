@@ -164,6 +164,7 @@ export default defineConfig({
     'en/apps/working-copy.md': 'apps/working-copy.md',
     'en/apps/xcode.md': 'apps/xcode.md',
     'en/apps/zed.md': 'apps/zed.md',
+    'en/apps/zoom.md': 'apps/zoom.md',
   },
   base,
   head: [
@@ -352,6 +353,7 @@ export default defineConfig({
           { text: 'Working Copy', link: '/apps/working-copy' },
           { text: 'Xcode', link: '/apps/xcode' },
           { text: 'Zed', link: '/apps/zed' },
+          { text: 'Zoom', link: '/apps/zoom' },
         ],
       },
       {
@@ -546,6 +548,7 @@ export default defineConfig({
               { text: 'Working Copy', link: '/apps/working-copy' },
               { text: 'Xcode', link: '/apps/xcode' },
               { text: 'Zed', link: '/apps/zed' },
+              { text: 'Zoom', link: '/apps/zoom' },
             ],
           },
           {
@@ -705,6 +708,7 @@ export default defineConfig({
               { text: 'Working Copy', link: '/zh/apps/working-copy' },
               { text: 'Xcode', link: '/zh/apps/xcode' },
               { text: 'Zed', link: '/zh/apps/zed' },
+              { text: 'Zoom', link: '/zh/apps/zoom' },
             ],
           },
           {

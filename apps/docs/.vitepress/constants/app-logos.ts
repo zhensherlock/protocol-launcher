@@ -144,4 +144,5 @@ export const appLogoFiles = {
   'working-copy': 'working-copy.webp',
   xcode: 'xcode.png',
   zed: 'zed.png',
+  zoom: 'zoom.webp',
 } as const

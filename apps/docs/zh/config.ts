@@ -175,6 +175,7 @@ export default defineAdditionalConfig({
           { text: 'Working Copy', link: '/zh/apps/working-copy' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Zed', link: '/zh/apps/zed' },
+          { text: 'Zoom', link: '/zh/apps/zoom' },
         ],
       },
       {
