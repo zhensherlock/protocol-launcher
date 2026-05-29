@@ -257,6 +257,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [VSCodium](../apps/vscodium.md)
 - [WaterMinder](../apps/waterminder.md)
 - [Waze](../apps/waze.md)
+- [Webex](../apps/webex.md)
 - [WebStorm](../apps/webstorm.md)
 - [WeMeet](../apps/wemeet.md)
 - [Where To](../apps/whereto.md)

@@ -169,6 +169,7 @@ export default defineAdditionalConfig({
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
           { text: 'WaterMinder', link: '/zh/apps/waterminder' },
           { text: 'Waze', link: '/zh/apps/waze' },
+          { text: 'Webex', link: '/zh/apps/webex' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'WeMeet', link: '/zh/apps/wemeet' },
           { text: 'Where To', link: '/zh/apps/whereto' },

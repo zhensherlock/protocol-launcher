@@ -614,6 +614,10 @@
       "types": "./dist/types/waze/index.d.ts",
       "import": "./dist/waze/index.js"
     },
+    "./webex": {
+      "types": "./dist/types/webex/index.d.ts",
+      "import": "./dist/webex/index.js"
+    },
     "./webstorm": {
       "types": "./dist/types/webstorm/index.d.ts",
       "import": "./dist/webstorm/index.js"

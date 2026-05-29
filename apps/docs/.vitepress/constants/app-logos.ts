@@ -138,6 +138,7 @@ export const appLogoFiles = {
   vscodium: 'vscodium.png',
   waterminder: 'waterminder.png',
   waze: 'waze.png',
+  webex: 'webex.webp',
   webstorm: 'webstorm.png',
   wemeet: 'wemeet.png',
   whereto: 'whereto.png',
