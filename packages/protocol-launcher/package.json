@@ -198,6 +198,10 @@
       "types": "./dist/types/devonthink/index.d.ts",
       "import": "./dist/devonthink/index.js"
     },
+    "./diarly": {
+      "types": "./dist/types/diarly/index.d.ts",
+      "import": "./dist/diarly/index.js"
+    },
     "./dict-cc": {
       "types": "./dist/types/dict-cc/index.d.ts",
       "import": "./dist/dict-cc/index.js"

@@ -66,6 +66,7 @@ export default defineAdditionalConfig({
           { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Day One', link: '/zh/apps/day-one' },
           { text: 'DEVONthink', link: '/zh/apps/devonthink' },
+          { text: 'Diarly', link: '/zh/apps/diarly' },
           { text: 'dict.cc', link: '/zh/apps/dict-cc' },
           { text: 'Drafts', link: '/zh/apps/drafts' },
           { text: 'Editorial', link: '/zh/apps/editorial' },

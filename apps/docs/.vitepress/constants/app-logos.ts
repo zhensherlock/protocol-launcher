@@ -35,6 +35,7 @@ export const appLogoFiles = {
   cursor: 'cursor.svg',
   'day-one': 'day-one.webp',
   devonthink: 'devonthink.png',
+  diarly: 'diarly.webp',
   'dict-cc': 'dict-cc.webp',
   drafts: 'drafts.webp',
   due: 'due.webp',
