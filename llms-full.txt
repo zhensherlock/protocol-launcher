@@ -138,6 +138,7 @@ Currently, we support the following applications:
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
 * [Terminology](../apps/terminology.md)
@@ -160,6 +161,7 @@ Currently, we support the following applications:
 * [VSCodium](../apps/vscodium.md)
 * [WaterMinder](../apps/waterminder.md)
 * [Waze](../apps/waze.md)
+* [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To](../apps/whereto.md)
@@ -410,6 +412,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
 * [Terminology](../apps/terminology.md)
@@ -432,6 +435,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [VSCodium](../apps/vscodium.md)
 * [WaterMinder](../apps/waterminder.md)
 * [Waze](../apps/waze.md)
+* [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To](../apps/whereto.md)
@@ -11954,6 +11958,148 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}project({
 ---
 
 ---
+url: /protocol-launcher/apps/tablepro.md
+---
+
+# TablePro
+
+[TablePro](https://tablepro.app/) is a database client for browsing, querying, and managing databases. **Protocol Launcher** allows you to generate TablePro URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+TablePro documents the `tablepro://` scheme for GUI navigation and integration bootstrap flows. The scheme covers navigating to a connection, table, or query tab, plus MCP pairing and integration bootstrapping. Data exchange is not part of the URL scheme.
+
+Connection paths use the connection UUID, not the display name. TablePro removed older `tablepro://connect/<name>/...` paths in version 0.37, so this module only generates UUID-keyed URLs.
+
+The query URL opens a new query tab with SQL pre-filled; TablePro shows a confirmation dialog and does not auto-execute the SQL. TablePro documents a 51,200-character cap for SQL passed through the URL scheme. Connection import URLs never accept passwords.
+
+### Connect
+
+Open a saved TablePro connection by UUID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connect' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}connect({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+})
+```
+
+### Open Table
+
+Open a table in the current database, in a specific database, or in a specific database and schema.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTable' : 'tablepro' }} } from '{{ importPath }}'
+
+const currentDatabaseUrl = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openTable({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  table: 'users',
+})
+
+const databaseUrl = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openTable({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  database: 'analytics',
+  table: 'events',
+})
+
+const schemaUrl = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openTable({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  database: 'app',
+  schema: 'reporting',
+  table: 'daily_events',
+})
+```
+
+### Open Query
+
+Open a new query tab with SQL pre-filled.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openQuery' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openQuery({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  sql: 'SELECT * FROM users LIMIT 10',
+})
+```
+
+### Pair
+
+Start a TablePro MCP pairing flow. TablePro returns a one-time code via the `redirect` URL after user approval. The requested `scopes` values documented by TablePro are `readOnly`, `readWrite`, and `fullAccess`. If omitted, `scopes` defaults to `readOnly` and `connection-ids` defaults to all. The query parameters are a request, not a grant.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pair' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}pair({
+  client: 'Raycast on macbook-pro',
+  challenge: 'REPLACE_WITH_PKCE_CHALLENGE',
+  redirect: 'raycast://extensions/ngoquocdat/tablepro/pair-callback',
+  scopes: ['readOnly', 'readWrite'],
+  connectionIds: ['9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1'],
+})
+```
+
+### Start MCP
+
+Lazy-start the TablePro MCP server. TablePro starts the server on a free port in the `51000-52000` range and writes a handshake file at `~/Library/Application Support/TablePro/mcp-handshake.json`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startMCP' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}startMCP()
+```
+
+### Import Connection
+
+Create a saved connection from URL parameters and open TablePro's connection editor for review. Required parameters are `name`, `host`, and `type`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importConnection' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}importConnection({
+  name: 'Staging',
+  host: 'db.example.com',
+  port: 5432,
+  type: 'postgresql',
+  username: 'admin',
+  database: 'mydb',
+  safeModeLevel: 'readOnly',
+  aiPolicy: 'askEachTime',
+  ssh: 1,
+  sshHost: 'bastion.example.com',
+  sshAuthMethod: 'privateKey',
+  sshPrivateKeyPath: '/Users/me/.ssh/id_ed25519',
+  sslMode: 'verify-full',
+  sslCaCertPath: '/Users/me/certs/ca.pem',
+  af_replicaSet: 'myrs',
+})
+```
+
+Core parameters from the official URL scheme are `port`, `username`, `database`, `color`, `tagName`, `groupName`, `safeModeLevel`, and `aiPolicy`. `safeModeLevel` accepts `silent`, `alert`, `alertFull`, `safeMode`, `safeModeFull`, or `readOnly`. `aiPolicy` accepts `useDefault`, `alwaysAllow`, `askEachTime`, or `never`.
+
+SSH parameters from the official URL scheme are `sshHost`, `sshPort`, `sshUsername`, `sshAuthMethod`, `sshPrivateKeyPath`, `sshUseSSHConfig`, `sshAgentSocketPath`, `sshJumpHosts`, and `sshTotpMode`. Set `ssh=1` to enable SSH tunneling. `sshAuthMethod` accepts `password`, `privateKey`, `agent`, or `keyboardInteractive`.
+
+SSL parameters from the official URL scheme are `sslMode`, `sslCaCertPath`, `sslClientCertPath`, and `sslClientKeyPath`. `sslMode` accepts `disabled`, `preferred`, `required`, `verify-ca`, or `verify-full`.
+
+Plugin-specific fields use the official `af_` prefix. For example, `af_replicaSet=myrs` passes `replicaSet` to the MongoDB plugin.
+
+## Official Documentation
+
+* [TablePro URL Scheme](https://docs.tablepro.app/external-api/url-scheme)
+
+---
+
+---
 url: /protocol-launcher/apps/tally.md
 ---
 
@@ -13986,6 +14132,139 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'waze.'}}searchAndNavigate({
 ---
 
 ---
+url: /protocol-launcher/apps/webex.md
+---
+
+# Webex
+
+[Webex](https://www.webex.com/) is a collaboration app for messaging, meetings, and calling. **Protocol Launcher** allows you to generate Webex URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Webex documents `webexteams://im?email=...` for creating or opening a one-person space and `webexteams://im?space=...` for opening an existing space. A Webex developer blog documents `webexteams://meet?sip=...` and `webextel:` click-to-call examples. Webex's cross-launch documentation documents `webextel://login?...`, `webexauth://login?...`, `webexauth://logout`, and `https://cisco.webex.com/logout?...` with the parameters shown below.
+
+Webex also lists `CLICKTOCALL:`, `SIP:`, `TEL:` (not on iOS), and `WEBEXTEL:` as protocol handlers that can start calls when Webex App is the default calling application. This module only adds helpers for complete URL formats that Webex documents with concrete parameters or examples.
+
+### Open Chat
+
+Create or open a Webex chat/space with one person by email address.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openChat' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}openChat({
+  email: 'barbara@example.com',
+})
+```
+
+### Open Space
+
+Open an existing Webex space by space ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSpace' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}openSpace({
+  space: '0000aa-a0a0',
+})
+```
+
+### Meet by SIP
+
+Place a Webex App meeting/call to a SIP address using `webexteams://meet?sip=...`. This may launch a call, so the docs show the generated URL without a live preview link.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'meet' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}meet({
+  sip: 'user@example.com',
+})
+```
+
+### Webex Click-to-Call
+
+Place a URI based call with the Webex App using the `webextel:` protocol handler.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'call' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}call({
+  destination: '+1234567890',
+})
+```
+
+### Cross-Launch Call
+
+Cross launch Webex App to make a call with the documented `webextel://login` URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'crossLaunchCall' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}crossLaunchCall({
+  telephone: '123456789',
+  xSource: 'App B',
+  xSuccess: 'appb://success_flow',
+  xCancel: 'appb://cancel_flow',
+})
+```
+
+### Cross-Launch Sign-In
+
+Cross launch Webex App to sign in with an email address using the documented `webexauth://login` URL. Webex documents `telephone`, `x-source`, `x-success`, and `x-cancel` as iOS-only parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'crossLaunchSignIn' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}crossLaunchSignIn({
+  email: 'user1@example.com',
+  telephone: '123456789',
+  xSource: 'App B',
+  xSuccess: 'appb://success_flow',
+  xCancel: 'appb://cancel_flow',
+})
+```
+
+### Logout
+
+Log out of Webex App using the documented `webexauth://logout` URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'logout' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}logout()
+```
+
+### Universal Link Logout
+
+Log out of Webex App on managed iOS/iPadOS devices with the documented Universal Link Callback URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'universalLinkLogout' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}universalLinkLogout({
+  ulcSuccess: 'https://sampledomain.com/success',
+  ulcError: 'https://sampledomain.com/error',
+})
+```
+
+## Official Documentation
+
+* [Webex App: Add links for meetings or spaces with webexteams protocol](https://help.webex.com/en-us/article/n5yzg8y/Webex-Add-Links)
+* [Build a Click-to-Call Shortcut Using Adaptive Cards in Webex](https://developer.webex.com/blog/build-a-click-to-call-shortcut-using-adaptive-cards-in-webex)
+* [Webex App: Cross launch URL for sign-in and calling](https://help.webex.com/en-us/article/n45mhmab/Webex-App-%7C-Cross-launch-URL-for-sign-in-and-calling)
+
+---
+
+---
 url: /protocol-launcher/apps/webstorm.md
 ---
 
@@ -14957,6 +15236,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
 * [Terminology](../apps/terminology.md)
@@ -14979,6 +15259,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [VSCodium](../apps/vscodium.md)
 * [WaterMinder](../apps/waterminder.md)
 * [Waze](../apps/waze.md)
+* [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To](../apps/whereto.md)
@@ -15229,6 +15510,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
 * [Terminology](../apps/terminology.md)
@@ -15251,6 +15533,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [VSCodium](../apps/vscodium.md)
 * [WaterMinder](../apps/waterminder.md)
 * [Waze](../apps/waze.md)
+* [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
 * [Where To](../apps/whereto.md)
@@ -26774,6 +27057,148 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}project({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/tablepro.md
+---
+
+# TablePro
+
+[TablePro](https://tablepro.app/) 是一款用于浏览、查询和管理数据库的数据库客户端。**Protocol Launcher** 可以生成 TablePro URL scheme 链接。
+
+## 用法
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+TablePro 官方文档将 `tablepro://` scheme 用于 GUI 导航和集成启动流程。该 scheme 覆盖打开连接、数据表或查询标签页，以及 MCP 配对和集成启动。数据交换不属于 URL scheme。
+
+连接路径使用 connection UUID，而不是显示名称。TablePro 在 0.37 版本移除了旧的 `tablepro://connect/<name>/...` 路径，所以本模块只生成基于 UUID 的 URL。
+
+查询 URL 会打开一个新的查询标签页并预填 SQL；TablePro 会显示确认对话框，且不会自动执行 SQL。TablePro 官方文档说明通过 URL scheme 传入的 SQL 上限是 51,200 个字符。连接导入 URL 不接受密码。
+
+### Connect
+
+通过 UUID 打开已保存的 TablePro 连接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connect' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}connect({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+})
+```
+
+### 打开数据表
+
+在当前数据库、指定数据库，或指定数据库和 schema 中打开数据表。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTable' : 'tablepro' }} } from '{{ importPath }}'
+
+const currentDatabaseUrl = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openTable({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  table: 'users',
+})
+
+const databaseUrl = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openTable({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  database: 'analytics',
+  table: 'events',
+})
+
+const schemaUrl = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openTable({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  database: 'app',
+  schema: 'reporting',
+  table: 'daily_events',
+})
+```
+
+### 打开查询
+
+打开一个新查询标签页，并预填 SQL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openQuery' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}openQuery({
+  connectionId: '9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1',
+  sql: 'SELECT * FROM users LIMIT 10',
+})
+```
+
+### 配对
+
+启动 TablePro MCP 配对流程。用户批准后，TablePro 会通过 `redirect` URL 返回一次性 code。TablePro 文档列出的 `scopes` 值是 `readOnly`、`readWrite` 和 `fullAccess`。省略时，`scopes` 默认为 `readOnly`，`connection-ids` 默认为全部连接。query 参数是请求，不是授权结果。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pair' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}pair({
+  client: 'Raycast on macbook-pro',
+  challenge: 'REPLACE_WITH_PKCE_CHALLENGE',
+  redirect: 'raycast://extensions/ngoquocdat/tablepro/pair-callback',
+  scopes: ['readOnly', 'readWrite'],
+  connectionIds: ['9f1f0c3e-2e3d-4b14-9c3a-1d2f4ad1f6f1'],
+})
+```
+
+### 启动 MCP
+
+懒启动 TablePro MCP server。TablePro 会在 `51000-52000` 范围内选择空闲端口启动 server，并在 `~/Library/Application Support/TablePro/mcp-handshake.json` 写入 handshake 文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startMCP' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}startMCP()
+```
+
+### 导入连接
+
+通过 URL 参数创建已保存连接，并打开 TablePro 的连接编辑器供用户确认。必填参数是 `name`、`host` 和 `type`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importConnection' : 'tablepro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}importConnection({
+  name: 'Staging',
+  host: 'db.example.com',
+  port: 5432,
+  type: 'postgresql',
+  username: 'admin',
+  database: 'mydb',
+  safeModeLevel: 'readOnly',
+  aiPolicy: 'askEachTime',
+  ssh: 1,
+  sshHost: 'bastion.example.com',
+  sshAuthMethod: 'privateKey',
+  sshPrivateKeyPath: '/Users/me/.ssh/id_ed25519',
+  sslMode: 'verify-full',
+  sslCaCertPath: '/Users/me/certs/ca.pem',
+  af_replicaSet: 'myrs',
+})
+```
+
+官方 URL scheme 的 core 参数包括 `port`、`username`、`database`、`color`、`tagName`、`groupName`、`safeModeLevel` 和 `aiPolicy`。`safeModeLevel` 接受 `silent`、`alert`、`alertFull`、`safeMode`、`safeModeFull` 或 `readOnly`。`aiPolicy` 接受 `useDefault`、`alwaysAllow`、`askEachTime` 或 `never`。
+
+官方 URL scheme 的 SSH 参数包括 `sshHost`、`sshPort`、`sshUsername`、`sshAuthMethod`、`sshPrivateKeyPath`、`sshUseSSHConfig`、`sshAgentSocketPath`、`sshJumpHosts` 和 `sshTotpMode`。设置 `ssh=1` 启用 SSH tunneling。`sshAuthMethod` 接受 `password`、`privateKey`、`agent` 或 `keyboardInteractive`。
+
+官方 URL scheme 的 SSL 参数包括 `sslMode`、`sslCaCertPath`、`sslClientCertPath` 和 `sslClientKeyPath`。`sslMode` 接受 `disabled`、`preferred`、`required`、`verify-ca` 或 `verify-full`。
+
+插件专用字段使用官方 `af_` 前缀。例如，`af_replicaSet=myrs` 会把 `replicaSet` 传给 MongoDB plugin。
+
+## 官方文档
+
+* [TablePro URL Scheme](https://docs.tablepro.app/external-api/url-scheme)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/tally.md
 ---
 
@@ -28802,6 +29227,139 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'waze.'}}searchAndNavigate({
 ## 官方文档
 
 * [How to use Waze Deep Links](https://developers.google.com/waze/deeplinks)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/webex.md
+---
+
+# Webex
+
+[Webex](https://www.webex.com/) 是一款用于消息、会议和通话的协作应用。**Protocol Launcher** 可以生成 Webex URL scheme 链接。
+
+## 用法
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Webex 文档明确了 `webexteams://im?email=...` 用于创建或打开单人空间，`webexteams://im?space=...` 用于打开已有空间。Webex 开发者博客明确了 `webexteams://meet?sip=...` 和 `webextel:` click-to-call 示例。Webex 的 cross-launch 文档明确了 `webextel://login?...`、`webexauth://login?...`、`webexauth://logout` 和 `https://cisco.webex.com/logout?...`，以及下面展示的参数。
+
+Webex 也列出了 `CLICKTOCALL:`、`SIP:`、`TEL:`（iOS 不支持）和 `WEBEXTEL:` 这些协议处理器；当 Webex App 是默认呼叫应用时，它们可以发起通话。本模块只为 Webex 官方文档给出完整 URL 格式、参数或示例的内容添加 helper。
+
+### 打开聊天
+
+通过邮箱地址创建或打开一个 Webex 单人聊天/空间。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openChat' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}openChat({
+  email: 'barbara@example.com',
+})
+```
+
+### 打开空间
+
+通过空间 ID 打开已有的 Webex 空间。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSpace' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}openSpace({
+  space: '0000aa-a0a0',
+})
+```
+
+### 通过 SIP 发起会议/通话
+
+使用 `webexteams://meet?sip=...` 对 SIP 地址发起 Webex App 会议/通话。这个链接可能会启动通话，所以文档只展示生成示例，不提供实时预览链接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'meet' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}meet({
+  sip: 'user@example.com',
+})
+```
+
+### Webex Click-to-Call
+
+使用 `webextel:` 协议处理器通过 Webex App 发起基于 URI 的通话。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'call' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}call({
+  destination: '+1234567890',
+})
+```
+
+### Cross-Launch 通话
+
+使用官方文档中的 `webextel://login` URL 跨应用启动 Webex App 并拨出电话。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'crossLaunchCall' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}crossLaunchCall({
+  telephone: '123456789',
+  xSource: 'App B',
+  xSuccess: 'appb://success_flow',
+  xCancel: 'appb://cancel_flow',
+})
+```
+
+### Cross-Launch 登录
+
+使用官方文档中的 `webexauth://login` URL 通过邮箱地址跨应用启动 Webex App 并登录。Webex 文档说明 `telephone`、`x-source`、`x-success` 和 `x-cancel` 是仅 iOS 支持的参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'crossLaunchSignIn' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}crossLaunchSignIn({
+  email: 'user1@example.com',
+  telephone: '123456789',
+  xSource: 'App B',
+  xSuccess: 'appb://success_flow',
+  xCancel: 'appb://cancel_flow',
+})
+```
+
+### 退出登录
+
+使用官方文档中的 `webexauth://logout` URL 退出 Webex App。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'logout' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}logout()
+```
+
+### Universal Link 退出登录
+
+在受管理的 iOS/iPadOS 设备上，使用官方文档中的 Universal Link Callback URL 退出 Webex App。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'universalLinkLogout' : 'webex' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'webex.'}}universalLinkLogout({
+  ulcSuccess: 'https://sampledomain.com/success',
+  ulcError: 'https://sampledomain.com/error',
+})
+```
+
+## 官方文档
+
+* [Webex App: Add links for meetings or spaces with webexteams protocol](https://help.webex.com/en-us/article/n5yzg8y/Webex-Add-Links)
+* [Build a Click-to-Call Shortcut Using Adaptive Cards in Webex](https://developer.webex.com/blog/build-a-click-to-call-shortcut-using-adaptive-cards-in-webex)
+* [Webex App: Cross launch URL for sign-in and calling](https://help.webex.com/en-us/article/n45mhmab/Webex-App-%7C-Cross-launch-URL-for-sign-in-and-calling)
 
 ---
 
