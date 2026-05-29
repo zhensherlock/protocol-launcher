@@ -153,6 +153,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
 - [Day One](../apps/day-one.md)
+- [Debit & Credit](../apps/debit-credit.md)
 - [DEVONthink](../apps/devonthink.md)
 - [Diarly](../apps/diarly.md)
 - [dict.cc](../apps/dict-cc.md)
