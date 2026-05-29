@@ -56,7 +56,9 @@ Currently, we support the following applications:
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [Debit & Credit](../apps/debit-credit.md)
 * [DEVONthink](../apps/devonthink.md)
+* [Diarly](../apps/diarly.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -102,6 +104,7 @@ Currently, we support the following applications:
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
@@ -332,7 +335,9 @@ For detailed usage instructions for each application, please refer to their resp
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [Debit & Credit](../apps/debit-credit.md)
 * [DEVONthink](../apps/devonthink.md)
+* [Diarly](../apps/diarly.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -378,6 +383,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
@@ -4210,6 +4216,77 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ---
 
 ---
+url: /protocol-launcher/apps/debit-credit.md
+---
+
+# Debit & Credit
+
+[Debit & Credit](https://debitandcredit.app/) is a personal finance app. **Protocol Launcher** allows you to generate Debit & Credit URLs for creating expense, income, and transfer transactions.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+The helpers below mirror Debit & Credit's official [URL Schemes](https://debitandcredit.app/help/advanced-features-url-schemes.html) documentation. Only the documented `expense`, `income`, and `transfer` actions are exposed. The official query parameters must be URL-encoded; `qs()` handles that for generated links.
+
+### Expense
+
+Create an expense with required `amount` and `account`. Debit & Credit documents optional `description`, `category`, `payee`, `tag`, and `notes` fields for this action.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'expense' : 'debitCredit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'debitCredit.'}}expense({
+  amount: '500.34',
+  account: 'Amex',
+  category: 'Computers',
+  payee: 'Apple Store',
+})
+```
+
+### Income
+
+Create income with the same arguments documented for the expense action.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'income' : 'debitCredit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'debitCredit.'}}income({
+  amount: '1200',
+  account: 'Citibank',
+  category: 'Salary',
+  payee: 'Work',
+})
+```
+
+### Transfer
+
+Create a transfer with required `amount`, `source_account`, and `destination_account`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'transfer' : 'debitCredit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'debitCredit.'}}transfer({
+  amount: '2000',
+  source_account: 'Citibank',
+  destination_account: 'Amex',
+})
+```
+
+## Official Documentation
+
+* [Debit & Credit URL Schemes](https://debitandcredit.app/help/advanced-features-url-schemes.html)
+
+---
+
+---
 url: /protocol-launcher/apps/devonthink.md
 ---
 
@@ -4407,6 +4484,109 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
 
 * [DEVONthink URL Commands](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-urlcommands.html)
 * [DEVONthink Item Links](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-itemlinks.html)
+
+---
+
+---
+url: /protocol-launcher/apps/diarly.md
+---
+
+# Diarly
+
+[Diarly](https://diarly.app/) is a journaling app for writing and organizing daily entries. **Protocol Launcher** allows you to generate links for opening entries or notes, appending text, creating notes, and searching entries in Diarly.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Diarly documents `diarly://x-callback-url/[action]?[parameters]` for `open`, `append`, and `create`, plus `diarly://search?text=...` for search. Daily entry identifiers use `day` in `dd-mm-yyyy` format and optional `journal`; note identifiers use `id`.
+
+### Open
+
+Open a note by its unique `id`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}open({
+  id: 'REPLACE_WITH_NOTE_ID',
+})
+```
+
+Open a daily entry with `day` and optional `journal`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}open({
+  day: '01-01-2019',
+  journal: '2bc759b2-9dd8-4186-ba64-12890f5642c9',
+})
+```
+
+### Append / Add
+
+Append text to a note or daily entry identified by `id` or by `day` and optional `journal`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}append({
+  day: '16-12-2020',
+  text: 'Hello World',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}append({
+  id: 'REPLACE_WITH_NOTE_ID',
+  text: 'Hello World',
+})
+```
+
+### Create Note
+
+Create a new note with `text` and optional `journal`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}create({
+  text: 'Hello World',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}create({
+  journal: 'Personal',
+  text: 'Hello World',
+})
+```
+
+### Search
+
+Search Diarly entries with `text`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}search({
+  text: '@onThisDay',
+})
+```
+
+## Official Documentation
+
+* [Diarly X-Callback-URL Scheme Documentation](https://diarly.app/help/x-callback-url-scheme-documentation.html)
 
 ---
 
@@ -8638,6 +8818,152 @@ const nativeUrl = {{currentMethod === 'On-Demand' ? '' : 'microsoftTeams.'}}shar
 * [Deep link to an application](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-application)
 * [Deep link to Teams chat](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-teams)
 * [Deep link to a workflow in Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow)
+
+---
+
+---
+url: /protocol-launcher/apps/momento.md
+---
+
+# Momento
+
+[Momento](https://momentoapp.com/) is a diary and life-logging app. **Protocol Launcher** allows you to generate links for launching Momento and opening its official Add Moment shortcuts.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+The helpers below mirror Momento's official [URL Scheme](https://momento.zendesk.com/hc/en-us/articles/205668512-Momento-URL-Scheme) documentation. Only the documented launch, Add Moment, Add Photos, Add People, Add Places, Add Tags, Add Moment and Change Date, and Camera URLs are exposed. The official URL examples use `text` and repeated `tag` query parameters for Add Moment, Add Places, and Camera; Camera also documents `front=true`.
+
+Momento also documents replacing `momento://` with `momento-3://` to target Momento 3 when Momento Classic is installed. Pass `scheme: 'momento-3'` to any helper to generate that form.
+
+### Open
+
+Launch Momento.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}open()
+```
+
+Launch Momento 3 explicitly.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}open({
+  scheme: 'momento-3',
+})
+```
+
+### Add Moment
+
+Open Add Moment. You can include the `text` and repeated `tag` parameters shown in Momento's official examples.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newMoment' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newMoment({
+  text: 'Just Arrived!',
+  tag: ['Holiday', 'Summer'],
+})
+```
+
+### Add Photos
+
+Open Add Photos.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newPhotos' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newPhotos()
+```
+
+### Add People
+
+Open Add People.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newPeople' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newPeople()
+```
+
+### Add Places
+
+Open Add Places. Momento's official examples also show `text` and repeated `tag` parameters on this URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newPlaces' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newPlaces({
+  text: 'Just Arrived!',
+  tag: ['Holiday', 'Summer'],
+})
+```
+
+### Add Tags
+
+Open Add Tags.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newTags' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newTags()
+```
+
+### Add Moment And Change Date
+
+Open Add Moment and Change Date.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newDate' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newDate()
+```
+
+### Camera
+
+Open Camera.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newCamera' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newCamera()
+```
+
+Open the front camera with the documented `front=true` parameter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newCamera' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newCamera({
+  front: true,
+})
+```
+
+Momento's official examples also show `text` and repeated `tag` parameters on the Camera URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newCamera' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newCamera({
+  text: 'Just Arrived!',
+  tag: ['Holiday', 'Summer'],
+})
+```
+
+## Official Documentation
+
+* [Momento URL Scheme](https://momento.zendesk.com/hc/en-us/articles/205668512-Momento-URL-Scheme)
 
 ---
 
@@ -15390,7 +15716,9 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [Debit & Credit](../apps/debit-credit.md)
 * [DEVONthink](../apps/devonthink.md)
+* [Diarly](../apps/diarly.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -15436,6 +15764,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
@@ -15666,7 +15995,9 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Cursor](../apps/cursor.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
+* [Debit & Credit](../apps/debit-credit.md)
 * [DEVONthink](../apps/devonthink.md)
+* [Diarly](../apps/diarly.md)
 * [dict.cc](../apps/dict-cc.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
@@ -15712,6 +16043,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
@@ -19545,6 +19877,77 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ---
 
 ---
+url: /protocol-launcher/zh/apps/debit-credit.md
+---
+
+# Debit & Credit
+
+[Debit & Credit](https://debitandcredit.app/) 是一款个人财务应用。**Protocol Launcher** 可以生成 Debit & Credit URL，用于创建支出、收入和转账交易。
+
+## 使用方式
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+## URL 方法
+
+以下 helper 对应 Debit & Credit 官方 [URL Schemes](https://debitandcredit.app/help/advanced-features-url-schemes.html) 文档。这里只暴露官方列出的 `expense`、`income` 和 `transfer` action。官方要求 query 参数正确进行 URL 编码；生成链接时会由 `qs()` 处理。
+
+### 支出
+
+使用必填的 `amount` 和 `account` 创建支出。Debit & Credit 文档还为此 action 列出了可选的 `description`、`category`、`payee`、`tag` 和 `notes` 字段。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'expense' : 'debitCredit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'debitCredit.'}}expense({
+  amount: '500.34',
+  account: 'Amex',
+  category: 'Computers',
+  payee: 'Apple Store',
+})
+```
+
+### 收入
+
+使用与支出 action 相同的参数创建收入。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'income' : 'debitCredit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'debitCredit.'}}income({
+  amount: '1200',
+  account: 'Citibank',
+  category: 'Salary',
+  payee: 'Work',
+})
+```
+
+### 转账
+
+使用必填的 `amount`、`source_account` 和 `destination_account` 创建转账。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'transfer' : 'debitCredit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'debitCredit.'}}transfer({
+  amount: '2000',
+  source_account: 'Citibank',
+  destination_account: 'Amex',
+})
+```
+
+## 官方文档
+
+* [Debit & Credit URL Schemes](https://debitandcredit.app/help/advanced-features-url-schemes.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/devonthink.md
 ---
 
@@ -19742,6 +20145,109 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'devonthink.'}}itemLink({
 
 * [DEVONthink URL Commands](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-urlcommands.html)
 * [DEVONthink Item Links](https://download.devontechnologies.com/download/devonthink/3.8.2/DEVONthink.help/Contents/Resources/pgs/automation-itemlinks.html)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/diarly.md
+---
+
+# Diarly
+
+[Diarly](https://diarly.app/) 是一款用于书写和整理每日条目的日记应用。**Protocol Launcher** 可以生成用于在 Diarly 中打开条目或笔记、追加文本、创建笔记和搜索条目的链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+Diarly 官方文档列出了 `diarly://x-callback-url/[action]?[parameters]`，其中 `open`、`append` 和 `create` 使用 x-callback 路径；搜索使用 `diarly://search?text=...`。每日条目的 identifier 使用 `dd-mm-yyyy` 格式的 `day` 和可选 `journal`；笔记的 identifier 使用 `id`。
+
+### Open
+
+通过唯一 `id` 打开笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}open({
+  id: 'REPLACE_WITH_NOTE_ID',
+})
+```
+
+通过 `day` 和可选 `journal` 打开每日条目。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}open({
+  day: '01-01-2019',
+  journal: '2bc759b2-9dd8-4186-ba64-12890f5642c9',
+})
+```
+
+### 追加 / 添加
+
+向通过 `id` 或 `day` 加可选 `journal` 标识的笔记或每日条目追加文本。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}append({
+  day: '16-12-2020',
+  text: 'Hello World',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}append({
+  id: 'REPLACE_WITH_NOTE_ID',
+  text: 'Hello World',
+})
+```
+
+### 创建笔记
+
+使用 `text` 和可选 `journal` 创建新笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}create({
+  text: 'Hello World',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}create({
+  journal: 'Personal',
+  text: 'Hello World',
+})
+```
+
+### 搜索
+
+使用 `text` 搜索 Diarly 条目。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'diarly' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'diarly.'}}search({
+  text: '@onThisDay',
+})
+```
+
+## 官方文档
+
+* [Diarly X-Callback-URL Scheme Documentation](https://diarly.app/help/x-callback-url-scheme-documentation.html)
 
 ---
 
@@ -23973,6 +24479,152 @@ const nativeUrl = {{currentMethod === 'On-Demand' ? '' : 'microsoftTeams.'}}shar
 * [Deep link to an application](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-application)
 * [Deep link to Teams chat](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-teams)
 * [Deep link to a workflow in Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/momento.md
+---
+
+# Momento
+
+[Momento](https://momentoapp.com/) 是一款日记和生活记录应用。**Protocol Launcher** 可以生成用于启动 Momento 和打开其官方 Add Moment 快捷入口的链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+## URL 方法
+
+下面的 helpers 与 Momento 官方 [URL Scheme](https://momento.zendesk.com/hc/en-us/articles/205668512-Momento-URL-Scheme) 文档保持一致。这里只暴露官方列出的启动、Add Moment、Add Photos、Add People、Add Places、Add Tags、Add Moment and Change Date 和 Camera URL。官方 URL 示例在 Add Moment、Add Places 和 Camera URL 上使用 `text` 与重复的 `tag` query 参数；Camera 还文档化了 `front=true`。
+
+Momento 官方也说明，当同时安装 Momento Classic 时，可以把 `momento://` 替换为 `momento-3://` 来定位 Momento 3。给任意 helper 传入 `scheme: 'momento-3'` 即可生成这种形式。
+
+### 打开
+
+启动 Momento。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}open()
+```
+
+明确启动 Momento 3。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}open({
+  scheme: 'momento-3',
+})
+```
+
+### Add Moment
+
+打开 Add Moment。你可以传入 Momento 官方示例中展示的 `text` 和重复 `tag` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newMoment' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newMoment({
+  text: 'Just Arrived!',
+  tag: ['Holiday', 'Summer'],
+})
+```
+
+### Add Photos
+
+打开 Add Photos。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newPhotos' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newPhotos()
+```
+
+### Add People
+
+打开 Add People。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newPeople' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newPeople()
+```
+
+### Add Places
+
+打开 Add Places。Momento 官方示例也在这个 URL 上展示了 `text` 和重复的 `tag` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newPlaces' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newPlaces({
+  text: 'Just Arrived!',
+  tag: ['Holiday', 'Summer'],
+})
+```
+
+### Add Tags
+
+打开 Add Tags。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newTags' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newTags()
+```
+
+### Add Moment And Change Date
+
+打开 Add Moment and Change Date。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newDate' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newDate()
+```
+
+### Camera
+
+打开 Camera。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newCamera' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newCamera()
+```
+
+使用文档中的 `front=true` 参数打开前置摄像头。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newCamera' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newCamera({
+  front: true,
+})
+```
+
+Momento 官方示例也在 Camera URL 上展示了 `text` 和重复的 `tag` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newCamera' : 'momento' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'momento.'}}newCamera({
+  text: 'Just Arrived!',
+  tag: ['Holiday', 'Summer'],
+})
+```
+
+## 官方文档
+
+* [Momento URL Scheme](https://momento.zendesk.com/hc/en-us/articles/205668512-Momento-URL-Scheme)
 
 ---
 
