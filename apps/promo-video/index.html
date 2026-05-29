@@ -539,8 +539,8 @@
 
       .feature-row {
         display: grid;
-        grid-template-columns: 1.15fr 0.85fr;
-        gap: 56px;
+        grid-template-columns: 1.32fr 0.68fr;
+        gap: 46px;
         align-items: stretch;
       }
 
@@ -560,20 +560,14 @@
         border: 1px solid rgba(23, 32, 42, 0.1);
         background: rgba(255, 255, 255, 0.76);
         color: rgba(23, 32, 42, 0.78);
-        font-size: 21px;
+        font-size: 20px;
         font-weight: 760;
-      }
-
-      .app-chip.hot {
-        color: var(--cyan);
-        border-color: rgba(138, 204, 213, 0.32);
-        background: rgba(138, 204, 213, 0.16);
       }
 
       .app-chip.logo-tile {
         justify-content: flex-start;
-        gap: 12px;
-        padding: 0 16px;
+        gap: 10px;
+        padding: 0 14px;
       }
 
       .app-chip.logo-tile img {
@@ -916,18 +910,25 @@
           <div class="ecosystem-copy">
             <div class="eyebrow" data-i18n="ecosystem.eyebrow">broad protocol coverage</div>
             <h2 class="headline" style="max-width: 1680px; font-size: 86px;" data-i18n-html="ecosystem.headline">一个库，连接现代 App 的一键入口</h2>
-            <p class="subhead" data-i18n="ecosystem.subhead">从 AI 工具到编辑器，再到效率应用和 macOS 工具</p>
+            <p class="subhead" data-i18n="ecosystem.subhead">从 AI 编程工具到编辑器，再到效率应用和 macOS 工具</p>
           </div>
           <div class="feature-row">
             <div class="app-cloud">
-              <div class="app-chip hot logo-tile"><img src="assets/logos/cursor.svg" alt="" />Cursor</div>
-              <div class="app-chip hot logo-tile"><img src="assets/logos/cherry-studio.svg" alt="" />Cherry Studio</div>
-              <div class="app-chip hot logo-tile"><img src="assets/logos/vscode.svg" alt="" />VS Code</div>
-              <div class="app-chip hot logo-tile"><img src="assets/logos/codebuddy.svg" alt="" />CodeBuddy</div>
-              <div class="app-chip hot logo-tile"><img src="assets/logos/thunder.svg" alt="" />Thunder</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/cursor.svg" alt="" />Cursor</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/cherry-studio.svg" alt="" />Cherry Studio</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/vscode.svg" alt="" />VS Code</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/codebuddy.svg" alt="" />CodeBuddy</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/thunder.svg" alt="" />Thunder</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/antigravity.svg" alt="" />Antigravity</div>
+              <div class="app-chip logo-tile logo-on-light"><img src="assets/logos/codex.png" alt="" />Codex</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/qoder.png" alt="" />Qoder</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/pearai.png" alt="" />PearAI</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/lingma.png" alt="" />Lingma</div>
               <div class="app-chip logo-tile"><img src="assets/logos/windsurf.svg" alt="" />Windsurf</div>
               <div class="app-chip logo-tile"><img src="assets/logos/opencode.png" alt="" />OpenCode</div>
               <div class="app-chip logo-tile"><img src="assets/logos/trae.png" alt="" />Trae</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/kiro.svg" alt="" />Kiro</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/verdent.png" alt="" />Verdent</div>
               <div class="app-chip logo-tile"><img src="assets/logos/github.svg" alt="" />GitHub</div>
               <div class="app-chip logo-tile"><img src="assets/logos/xcode.svg" alt="" />Xcode</div>
               <div class="app-chip logo-tile"><img src="assets/logos/obsidian.svg" alt="" />Obsidian</div>
@@ -939,10 +940,13 @@
               <div class="app-chip logo-tile"><img src="assets/logos/macos.svg" alt="" />macOS</div>
               <div class="app-chip logo-tile"><img src="assets/logos/drafts.png" alt="" />Drafts</div>
               <div class="app-chip logo-tile"><img src="assets/logos/fantastical.png" alt="" />Fantastical</div>
-              <div class="app-chip logo-tile"><img src="assets/logos/kiro.svg" alt="" />Kiro</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/slack.webp" alt="" />Slack</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/raycast.webp" alt="" />Raycast</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/spotify.webp" alt="" />Spotify</div>
+              <div class="app-chip logo-tile"><img src="assets/logos/zoom.webp" alt="" />Zoom</div>
             </div>
             <div class="metrics">
-              <div class="metric-card"><div class="metric-value">114</div><div class="metric-label" data-i18n="ecosystem.metricApps">supported applications</div></div>
+              <div class="metric-card"><div class="metric-value">154</div><div class="metric-label" data-i18n="ecosystem.metricApps">supported applications</div></div>
               <div class="metric-card"><div class="metric-value">0</div><div class="metric-label" data-i18n="ecosystem.metricDeps">runtime dependencies</div></div>
               <div class="metric-card"><div class="metric-value">ESM</div><div class="metric-label" data-i18n="ecosystem.metricEsm">modern Node and bundlers</div></div>
               <div class="metric-card"><div class="metric-value">TS</div><div class="metric-label" data-i18n="ecosystem.metricTs">typed payload builders</div></div>
@@ -966,7 +970,7 @@
             <div class="install-command">$ pnpm add protocol-launcher</div>
             <div class="url-footer">
               <span>https://github.com/zhensherlock/protocol-launcher</span>
-              <span>https://protocol-launcher.vercel.app/</span>
+              <span>https://zhensherlock.github.io/protocol-launcher/</span>
             </div>
           </div>
         </div>
@@ -1040,7 +1044,7 @@
           ecosystem: {
             eyebrow: "broad protocol coverage",
             headline: "One library,<br />one-click app launch URLs",
-            subhead: "From AI tools to editors, productivity apps, and macOS utilities",
+            subhead: "From AI coding tools to editors, productivity apps, and macOS utilities",
             metricApps: "supported applications",
             metricDeps: "runtime dependencies",
             metricEsm: "modern Node and bundlers",
@@ -1168,7 +1172,7 @@
       sceneIn("#scene-ecosystem", 32);
       tl.from("#scene-ecosystem .app-chip", { y: 24, opacity: 0, scale: 0.94, duration: 0.28, stagger: 0.026, ease: "power2.out" }, 32.85);
       tl.from("#scene-ecosystem .metric-card", { y: 40, opacity: 0, scale: 0.96, duration: 0.38, stagger: 0.08, ease: "power2.out" }, 33.55);
-      tl.to("#scene-ecosystem .app-chip.hot", { borderColor: "rgba(255, 144, 187, 0.6)", duration: 0.38, yoyo: true, repeat: 4, ease: "sine.inOut" }, 34.7);
+      tl.to("#scene-ecosystem .metric-card:first-child", { borderColor: "rgba(255, 144, 187, 0.6)", duration: 0.38, yoyo: true, repeat: 4, ease: "sine.inOut" }, 34.7);
       sceneOut("#scene-ecosystem", 37.55);
 
       tl.set("#scene-final", { opacity: 1, scale: 1 }, 38);
