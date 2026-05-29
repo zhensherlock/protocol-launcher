@@ -462,6 +462,10 @@
       "types": "./dist/types/prizmo/index.d.ts",
       "import": "./dist/prizmo/index.js"
     },
+    "./pushcut": {
+      "types": "./dist/types/pushcut/index.d.ts",
+      "import": "./dist/pushcut/index.js"
+    },
     "./pyto": {
       "types": "./dist/types/pyto/index.d.ts",
       "import": "./dist/pyto/index.js"

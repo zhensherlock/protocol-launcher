@@ -131,6 +131,7 @@ export default defineAdditionalConfig({
           { text: 'Pika', link: '/zh/apps/pika' },
           { text: 'Pleco', link: '/zh/apps/pleco' },
           { text: 'Prizmo', link: '/zh/apps/prizmo' },
+          { text: 'Pushcut', link: '/zh/apps/pushcut' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },
           { text: 'PyCharm', link: '/zh/apps/pycharm' },
           { text: 'Pythonista', link: '/zh/apps/pythonista' },

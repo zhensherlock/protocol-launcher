@@ -101,6 +101,7 @@ export const appLogoFiles = {
   pika: 'pika.png',
   pleco: 'pleco.webp',
   prizmo: 'prizmo.webp',
+  pushcut: 'pushcut.webp',
   pycharm: 'pycharm.png',
   pythonista: 'pythonista.webp',
   pyto: 'pyto.webp',

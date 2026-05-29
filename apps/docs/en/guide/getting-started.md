@@ -219,6 +219,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Pika](../apps/pika.md)
 - [Pleco](../apps/pleco.md)
 - [Prizmo](../apps/prizmo.md)
+- [Pushcut](../apps/pushcut.md)
 - [PhpStorm](../apps/phpstorm.md)
 - [PyCharm](../apps/pycharm.md)
 - [Pythonista](../apps/pythonista.md)
