@@ -20,6 +20,7 @@ export const appLogoFiles = {
   cal2todo: 'cal2todo.webp',
   calca: 'calca.webp',
   capacities: 'capacities.webp',
+  cardhop: 'cardhop.webp',
   'cherry-studio': 'cherry-studio.svg',
   cloze: 'cloze.webp',
   coda: 'coda.svg',

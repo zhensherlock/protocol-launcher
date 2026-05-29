@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
@@ -141,6 +137,10 @@
     "./capacities": {
       "types": "./dist/types/capacities/index.d.ts",
       "import": "./dist/capacities/index.js"
+    },
+    "./cardhop": {
+      "types": "./dist/types/cardhop/index.d.ts",
+      "import": "./dist/cardhop/index.js"
     },
     "./craft": {
       "types": "./dist/types/craft/index.d.ts",

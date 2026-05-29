@@ -47,6 +47,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Capacities](../apps/capacities.md)
+- [Cardhop](../apps/cardhop.md)
 - [Cherry Studio](../apps/cherry-studio.md)
 - [Cloze](../apps/cloze.md)
 - [Coda](../apps/coda.md)

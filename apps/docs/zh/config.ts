@@ -50,6 +50,7 @@ export default defineAdditionalConfig({
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Capacities', link: '/zh/apps/capacities' },
+          { text: 'Cardhop', link: '/zh/apps/cardhop' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'Cloze', link: '/zh/apps/cloze' },
           { text: 'Coda', link: '/zh/apps/coda' },
