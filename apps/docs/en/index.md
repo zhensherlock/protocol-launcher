@@ -18,22 +18,33 @@ hero:
 
 features:
   - title: Type-Safe
-    icon: 🛡️
+    icon:
+      src: /home-icons/type-safe.png
+      alt: Type-Safe
     details: Strict TypeScript types validate payloads and prevent malformed links.
   - title: Multi-App Ready
-    icon: 🌍
+    icon:
+      src: /home-icons/multi-app-ready.png
+      alt: Multi-App Ready
     details: Extensible design to support many apps via URL schemes.
   - title: On-Demand / Tree-shakable
-    icon: 🌿
+    icon:
+      src: /home-icons/tree-shakable.png
+      alt: On-Demand / Tree-shakable
     details: Import only what you need; small bundle footprint.
   - title: Secure Encoding
-    icon: 🔐
+    icon:
+      src: /home-icons/secure-encoding.png
+      alt: Secure Encoding
     details: Encodes configs safely to avoid injection. Supports Unicode characters including Chinese.
   - title: Zero Runtime Dependencies
-    icon: ⚙️
+    icon:
+      src: /home-icons/zero-runtime-dependencies.png
+      alt: Zero Runtime Dependencies
     details: Lightweight library with no external runtime dependencies.
   - title: ESM First
-    icon: 📦
+    icon:
+      src: /home-icons/esm-first.png
+      alt: ESM First
     details: Modern ES Modules, works in Node and bundlers.
 ---
-
