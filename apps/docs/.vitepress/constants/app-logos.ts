@@ -111,6 +111,7 @@ export const appLogoFiles = {
   slack: 'slack.webp',
   soulver: 'soulver.png',
   sourcetree: 'sourcetree.png',
+  spotify: 'spotify.webp',
   steam: 'steam.webp',
   'story-planner': 'story-planner.webp',
   tally: 'tally-quick-counter.webp',

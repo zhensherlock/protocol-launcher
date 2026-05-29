@@ -230,6 +230,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Slack](../apps/slack.md)
 - [Soulver](../apps/soulver.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
 - [Story Planner](../apps/story-planner.md)
 - [Tally](../apps/tally.md)

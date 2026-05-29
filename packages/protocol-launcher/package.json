@@ -502,6 +502,10 @@
       "types": "./dist/types/sourcetree/index.d.ts",
       "import": "./dist/sourcetree/index.js"
     },
+    "./spotify": {
+      "types": "./dist/types/spotify/index.d.ts",
+      "import": "./dist/spotify/index.js"
+    },
     "./ftstreets": {
       "types": "./dist/types/ftstreets/index.d.ts",
       "import": "./dist/ftstreets/index.js"

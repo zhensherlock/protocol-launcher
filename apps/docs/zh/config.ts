@@ -142,6 +142,7 @@ export default defineAdditionalConfig({
           { text: 'Slack', link: '/zh/apps/slack' },
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
+          { text: 'Spotify', link: '/zh/apps/spotify' },
           { text: 'Steam', link: '/zh/apps/steam' },
           { text: 'Story Planner', link: '/zh/apps/story-planner' },
           { text: 'Tally', link: '/zh/apps/tally' },
