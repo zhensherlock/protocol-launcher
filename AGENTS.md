@@ -2,11 +2,11 @@
 
 ## Repo Shape
 
-- PNPM workspace + Turbo monorepo; main CI uses Node 22 and `packageManager` is `pnpm@10.33.4` (npm-publish builds with Node 22, then publishes the packed tgz with Node 24).
+- PNPM workspace + Turbo monorepo; main CI uses Node 22 and `packageManager` is `pnpm@10.34.0` (npm-publish builds with Node 22, then publishes the packed tgz with Node 24).
 - Workspaces are `packages/shared` (`qs`, `encodeUrlPayload`), `packages/protocol-launcher` (published URL generator library), `apps/docs` (VitePress EN/ZH docs), and `apps/promo-video` (HyperFrames composition).
 - The root package and library package are both named `protocol-launcher`; use path filters like `pnpm --filter ./packages/protocol-launcher build`, not name filters.
 - Respect nested workspace instructions before editing package/app code: `packages/shared/AGENTS.md`, `packages/protocol-launcher/AGENTS.md`, `apps/docs/AGENTS.md`, and `apps/promo-video/AGENTS.md`.
-- Build outputs are ignored (`dist`, `coverage`, `apps/docs/.vitepress/dist`, `.vitepress/cache`, `.turbo`, `apps/*/renders`, `apps/*/.thumbnails`, `apps/*/.waveform-cache`); do not edit generated output.
+- Build outputs are ignored (`dist`, `coverage`, `apps/docs/.vitepress/dist`, `apps/docs/.vitepress/cache`, `.turbo`, `apps/*/renders`, `apps/*/.thumbnails`, `apps/*/.waveform-cache`); do not edit generated output.
 
 ## Commands That Matter
 
@@ -19,7 +19,7 @@
 - Tests: `pnpm test` for all Vitest projects; focus with `pnpm test packages/protocol-launcher/tests/vscode.test.ts`, `pnpm test vscode`, or `pnpm test -t "test name"`.
 - Coverage gate: `pnpm coverage` matches the build workflow's test step.
 - Formatting/linting: there is no root lint script; use `npx biome check .` or `npx biome check --write .`. Pre-commit only runs `biome check --write` on staged `packages/**/*.{ts,js}`.
-- Type checking: do not use bare `npx tsc --noEmit` from the root; there is no root `tsconfig.json`. Use package builds or `npx tsc -p packages/protocol-launcher/tsconfig.json --noEmit`.
+- Type checking: do not use bare `npx tsc --noEmit` from the root; there is no root `tsconfig.json` and `tsconfig.root.json` is the shared base. Use package builds or `npx tsc -p packages/protocol-launcher/tsconfig.json --noEmit`.
 
 ## Protocol Library
 
