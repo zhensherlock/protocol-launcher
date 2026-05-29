@@ -263,3 +263,4 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
+* [Zoom](../apps/zoom.md)

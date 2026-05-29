@@ -165,6 +165,7 @@
 - [Working Copy](/protocol-launcher/apps/working-copy.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
 - [Zed](/protocol-launcher/apps/zed.md)
+- [Zoom](/protocol-launcher/apps/zoom.md)
 
 ### 简介
 
@@ -318,6 +319,7 @@
 - [Working Copy](/protocol-launcher/zh/apps/working-copy.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
+- [Zoom](/protocol-launcher/zh/apps/zoom.md)
 
 ### 扩展
 

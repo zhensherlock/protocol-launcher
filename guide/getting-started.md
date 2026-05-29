@@ -263,3 +263,4 @@ For detailed usage instructions for each application, please refer to their resp
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
+* [Zoom](../apps/zoom.md)

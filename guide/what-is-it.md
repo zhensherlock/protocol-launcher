@@ -166,5 +166,6 @@ Currently, we support the following applications:
 * [Working Copy](../apps/working-copy.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
+* [Zoom](../apps/zoom.md)
 
 More applications will be added in the future.
