@@ -85,6 +85,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [iCab Mobile](../apps/icab-mobile.md)
 - [Instapaper](../apps/instapaper.md)
 - [IntelliJ IDEA](../apps/idea.md)
+- [Infuse](../apps/infuse.md)
 - [Interact Scratchpad](../apps/interact.md)
 - [iPGMail](../apps/ipgmail.md)
 - [iThoughts](../apps/ithoughts.md)

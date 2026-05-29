@@ -282,6 +282,10 @@
       "types": "./dist/types/idea/index.d.ts",
       "import": "./dist/idea/index.js"
     },
+    "./infuse": {
+      "types": "./dist/types/infuse/index.d.ts",
+      "import": "./dist/infuse/index.js"
+    },
     "./ipgmail": {
       "types": "./dist/types/ipgmail/index.d.ts",
       "import": "./dist/ipgmail/index.js"

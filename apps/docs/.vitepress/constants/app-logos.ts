@@ -56,6 +56,7 @@ export const appLogoFiles = {
   'ia-writer': 'ia-writer.webp',
   'icab-mobile': 'icab-mobile.webp',
   idea: 'intellij-idea.png',
+  infuse: 'infuse.webp',
   instapaper: 'instapaper.webp',
   interact: 'interact-scratchpad.png',
   ipgmail: 'ipgmail.webp',

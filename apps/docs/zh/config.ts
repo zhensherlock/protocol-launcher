@@ -87,6 +87,7 @@ export default defineAdditionalConfig({
           { text: 'iA Writer', link: '/zh/apps/ia-writer' },
           { text: 'iCab Mobile', link: '/zh/apps/icab-mobile' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
+          { text: 'Infuse', link: '/zh/apps/infuse' },
           { text: 'Instapaper', link: '/zh/apps/instapaper' },
           { text: 'Interact Scratchpad', link: '/zh/apps/interact' },
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },
