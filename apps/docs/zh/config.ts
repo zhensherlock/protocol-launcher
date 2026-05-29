@@ -99,6 +99,7 @@ export default defineAdditionalConfig({
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'LaunchBar', link: '/zh/apps/launchbar' },
+          { text: 'LINE', link: '/zh/apps/line' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'Longshot', link: '/zh/apps/longshot' },
           { text: 'macOS', link: '/zh/apps/macos' },

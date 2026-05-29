@@ -68,6 +68,7 @@ export const appLogoFiles = {
   'keyboard-maestro': 'keyboard-maestro.png',
   kiro: 'kiro.png',
   launchbar: 'launchbar.png',
+  line: 'line.webp',
   lingma: 'lingma.png',
   longshot: 'longshot.png',
   macos: 'macos.svg',

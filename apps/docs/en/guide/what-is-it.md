@@ -96,6 +96,7 @@ Currently, we support the following applications:
 - [Kaleidoscope](../apps/kaleidoscope.md)
 - [Kiro](../apps/kiro.md)
 - [LaunchBar](../apps/launchbar.md)
+- [LINE](../apps/line.md)
 - [Lingma](../apps/lingma.md)
 - [Longshot](../apps/longshot.md)
 - [macOS](../apps/macos.md)
