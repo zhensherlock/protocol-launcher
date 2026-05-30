@@ -294,6 +294,10 @@
       "types": "./dist/types/hammerspoon/index.d.ts",
       "import": "./dist/hammerspoon/index.js"
     },
+    "./hiddify": {
+      "types": "./dist/types/hiddify/index.d.ts",
+      "import": "./dist/hiddify/index.js"
+    },
     "./home-assistant": {
       "types": "./dist/types/home-assistant/index.d.ts",
       "import": "./dist/home-assistant/index.js"

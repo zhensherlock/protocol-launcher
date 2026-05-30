@@ -90,6 +90,7 @@ export default defineAdditionalConfig({
           { text: 'Google Maps', link: '/zh/apps/google-maps' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'Hammerspoon', link: '/zh/apps/hammerspoon' },
+          { text: 'Hiddify', link: '/zh/apps/hiddify' },
           { text: 'Home Assistant', link: '/zh/apps/home-assistant' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },
           { text: 'iA Writer', link: '/zh/apps/ia-writer' },
