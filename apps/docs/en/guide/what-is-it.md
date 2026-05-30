@@ -52,6 +52,7 @@ Currently, we support the following applications:
 - [Capacities](../apps/capacities.md)
 - [Cardhop](../apps/cardhop.md)
 - [Cherry Studio](../apps/cherry-studio.md)
+- [Citymapper](../apps/citymapper.md)
 - [Cloze](../apps/cloze.md)
 - [Coda](../apps/coda.md)
 - [CodeBuddy](../apps/code-buddy.md)

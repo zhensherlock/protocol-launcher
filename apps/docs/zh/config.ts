@@ -55,6 +55,7 @@ export default defineAdditionalConfig({
           { text: 'Capacities', link: '/zh/apps/capacities' },
           { text: 'Cardhop', link: '/zh/apps/cardhop' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
+          { text: 'Citymapper', link: '/zh/apps/citymapper' },
           { text: 'Cloze', link: '/zh/apps/cloze' },
           { text: 'Coda', link: '/zh/apps/coda' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },

@@ -162,6 +162,10 @@
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"
     },
+    "./citymapper": {
+      "types": "./dist/types/citymapper/index.d.ts",
+      "import": "./dist/citymapper/index.js"
+    },
     "./cloze": {
       "types": "./dist/types/cloze/index.d.ts",
       "import": "./dist/cloze/index.js"

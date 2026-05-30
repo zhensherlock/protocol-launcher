@@ -25,6 +25,7 @@ export const appLogoFiles = {
   capacities: 'capacities.webp',
   cardhop: 'cardhop.webp',
   'cherry-studio': 'cherry-studio.svg',
+  citymapper: 'citymapper.webp',
   cloze: 'cloze.webp',
   coda: 'coda.svg',
   'code-buddy': 'code-buddy.svg',
