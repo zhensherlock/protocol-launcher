@@ -108,6 +108,7 @@ Currently, we support the following applications:
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
 * [Marked](../apps/marked.md)
+* [Mattermost](../apps/mattermost.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
@@ -132,6 +133,7 @@ Currently, we support the following applications:
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
+* [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -403,6 +405,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
 * [Marked](../apps/marked.md)
+* [Mattermost](../apps/mattermost.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
@@ -427,6 +430,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
+* [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -9276,6 +9280,80 @@ const pathUrl = {{currentMethod === 'On-Demand' ? '' : 'marked.'}}style({
 ---
 
 ---
+url: /protocol-launcher/apps/mattermost.md
+---
+
+# Mattermost
+
+[Mattermost](https://mattermost.com/) is a self-hostable team collaboration platform. **Protocol Launcher** allows you to generate Mattermost deep links using the official `mattermost://` formats.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Mattermost documents `mattermost://` deep links for teams, channels, channel messages or threads, and direct messages. The `serverUrl` value is the value placed in the official `<your-Mattermost-server-URL>` segment. Use the team name, channel name, post ID, and user name exactly as they exist in your Mattermost workspace.
+
+### Open Team
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTeam' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openTeam({
+  serverUrl: '{{ openTeamParams.serverUrl }}',
+  teamName: '{{ openTeamParams.teamName }}',
+})
+```
+
+### Open Channel
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openChannel' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openChannel({
+  serverUrl: '{{ openChannelParams.serverUrl }}',
+  teamName: '{{ openChannelParams.teamName }}',
+  channelName: '{{ openChannelParams.channelName }}',
+})
+```
+
+### Open Channel Message Or Thread
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPost' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openPost({
+  serverUrl: '{{ openPostParams.serverUrl }}',
+  teamName: '{{ openPostParams.teamName }}',
+  postId: '{{ openPostParams.postId }}',
+})
+```
+
+### Open Direct Message
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDirectMessage' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openDirectMessage({
+  serverUrl: '{{ openDirectMessageParams.serverUrl }}',
+  teamName: '{{ openDirectMessageParams.teamName }}',
+  userName: '{{ openDirectMessageParams.userName }}',
+})
+```
+
+## Official Documentation
+
+* [Mattermost Deep Links](https://docs.mattermost.com/end-user-guide/collaborate/share-links.html#format-deep-links)
+
+---
+
+---
 url: /protocol-launcher/apps/mical.md
 ---
 
@@ -11741,6 +11819,61 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pleco.'}}importFlashcards({
   u: 'https://example.com/flashcards.txt',
   xSource: 'MyApp',
   xSuccess: 'myapp://success',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/apps/pocket-casts.md
+---
+
+# Pocket Casts
+
+[Pocket Casts](https://pocketcasts.com/) is a podcast app for listening to and following shows. **Protocol Launcher** allows you to generate Pocket Casts iOS URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}open()
+```
+
+### Play Paused Episode
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'play' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}play()
+```
+
+### Pause Playing Episode
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pause' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}pause()
+```
+
+### Follow Podcast by Feed URL
+
+Pocket Casts expects the feed URL without a leading `http://`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'subscribe' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
+  feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
 
@@ -17539,6 +17672,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
 * [Marked](../apps/marked.md)
+* [Mattermost](../apps/mattermost.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
@@ -17563,6 +17697,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
+* [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -17834,6 +17969,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [MacVim](../apps/macvim.md)
 * [Mail Assistant](../apps/mail-assistant.md)
 * [Marked](../apps/marked.md)
+* [Mattermost](../apps/mattermost.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
@@ -17858,6 +17994,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
+* [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -26708,6 +26845,80 @@ const pathUrl = {{currentMethod === 'On-Demand' ? '' : 'marked.'}}style({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/mattermost.md
+---
+
+# Mattermost
+
+[Mattermost](https://mattermost.com/) 是一款可自托管的团队协作平台。**Protocol Launcher** 允许你按照官方 `mattermost://` 格式生成 Mattermost 深度链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+Mattermost 官方文档列出了用于团队、频道、频道消息或讨论串、私信的 `mattermost://` 深度链接。`serverUrl` 对应官方格式中的 `<your-Mattermost-server-URL>` 片段。请使用你的 Mattermost 工作区中实际存在的团队名称、频道名称、帖子 ID 和用户名。
+
+### 打开团队
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTeam' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openTeam({
+  serverUrl: '{{ openTeamParams.serverUrl }}',
+  teamName: '{{ openTeamParams.teamName }}',
+})
+```
+
+### 打开频道
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openChannel' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openChannel({
+  serverUrl: '{{ openChannelParams.serverUrl }}',
+  teamName: '{{ openChannelParams.teamName }}',
+  channelName: '{{ openChannelParams.channelName }}',
+})
+```
+
+### 打开频道消息或讨论串
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPost' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openPost({
+  serverUrl: '{{ openPostParams.serverUrl }}',
+  teamName: '{{ openPostParams.teamName }}',
+  postId: '{{ openPostParams.postId }}',
+})
+```
+
+### 打开私信
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDirectMessage' : 'mattermost' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mattermost.'}}openDirectMessage({
+  serverUrl: '{{ openDirectMessageParams.serverUrl }}',
+  teamName: '{{ openDirectMessageParams.teamName }}',
+  userName: '{{ openDirectMessageParams.userName }}',
+})
+```
+
+## 官方文档
+
+* [Mattermost Deep Links](https://docs.mattermost.com/end-user-guide/collaborate/share-links.html#format-deep-links)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/mical.md
 ---
 
@@ -29173,6 +29384,61 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pleco.'}}importFlashcards({
   u: 'https://example.com/flashcards.txt',
   xSource: 'MyApp',
   xSuccess: 'myapp://success',
+})
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/pocket-casts.md
+---
+
+# Pocket Casts
+
+[Pocket Casts](https://pocketcasts.com/) 是一款用于收听和关注节目的播客应用。**Protocol Launcher** 允许您生成 Pocket Casts iOS URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}open()
+```
+
+### 播放已暂停的节目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'play' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}play()
+```
+
+### 暂停正在播放的节目
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pause' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}pause()
+```
+
+### 通过 Feed URL 关注播客
+
+Pocket Casts 要求 feed URL 不带开头的 `http://`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'subscribe' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
+  feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
 
