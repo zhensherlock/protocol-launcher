@@ -630,6 +630,15 @@
     "bytes": 7904
   },
   {
+    "slug": "microsoft-onenote",
+    "officialUrl": "https://www.onenote.com/",
+    "status": "saved",
+    "filename": "microsoft-onenote.webp",
+    "url": "apps/docs/public/app-logos/microsoft-onenote.webp",
+    "source": "existing-asset",
+    "bytes": 9154
+  },
+  {
     "slug": "motrix",
     "officialUrl": "https://motrix.app",
     "status": "saved",

@@ -402,6 +402,10 @@
       "types": "./dist/types/microsoft-office/index.d.ts",
       "import": "./dist/microsoft-office/index.js"
     },
+    "./microsoft-onenote": {
+      "types": "./dist/types/microsoft-onenote/index.d.ts",
+      "import": "./dist/microsoft-onenote/index.js"
+    },
     "./microsoft-teams": {
       "types": "./dist/types/microsoft-teams/index.d.ts",
       "import": "./dist/microsoft-teams/index.js"
