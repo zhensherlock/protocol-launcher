@@ -142,6 +142,7 @@ export default defineAdditionalConfig({
           { text: 'PDF Viewer', link: '/zh/apps/pdf-viewer' },
           { text: 'Pika', link: '/zh/apps/pika' },
           { text: 'Pleco', link: '/zh/apps/pleco' },
+          { text: 'Pocket Casts', link: '/zh/apps/pocket-casts' },
           { text: 'Prizmo', link: '/zh/apps/prizmo' },
           { text: 'Pushcut', link: '/zh/apps/pushcut' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },

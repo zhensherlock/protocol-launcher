@@ -230,6 +230,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [PDF Viewer](../apps/pdf-viewer.md)
 - [Pika](../apps/pika.md)
 - [Pleco](../apps/pleco.md)
+- [Pocket Casts](../apps/pocket-casts.md)
 - [Prizmo](../apps/prizmo.md)
 - [Pushcut](../apps/pushcut.md)
 - [PhpStorm](../apps/phpstorm.md)

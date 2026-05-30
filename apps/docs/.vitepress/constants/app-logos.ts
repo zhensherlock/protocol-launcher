@@ -112,6 +112,7 @@ export const appLogoFiles = {
   phpstorm: 'phpstorm.png',
   pika: 'pika.png',
   pleco: 'pleco.webp',
+  'pocket-casts': 'pocket-casts.webp',
   prizmo: 'prizmo.webp',
   pushcut: 'pushcut.webp',
   pycharm: 'pycharm.png',

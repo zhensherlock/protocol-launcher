@@ -506,6 +506,10 @@
       "types": "./dist/types/pleco/index.d.ts",
       "import": "./dist/pleco/index.js"
     },
+    "./pocket-casts": {
+      "types": "./dist/types/pocket-casts/index.d.ts",
+      "import": "./dist/pocket-casts/index.js"
+    },
     "./prizmo": {
       "types": "./dist/types/prizmo/index.d.ts",
       "import": "./dist/prizmo/index.js"
