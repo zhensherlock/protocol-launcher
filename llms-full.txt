@@ -46,6 +46,7 @@ Currently, we support the following applications:
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -81,6 +82,7 @@ Currently, we support the following applications:
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
@@ -337,6 +339,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -372,6 +375,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
@@ -3423,6 +3427,91 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/citymapper.md
+---
+
+# Citymapper
+
+[Citymapper](https://citymapper.com/) is a public transport and urban navigation app. **Protocol Launcher** allows you to generate official Citymapper directions links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Citymapper documents `endcoord` as the required destination coordinate, formatted as `latitude,longitude`. `endname` and `endaddress` are optional destination details. `startcoord`, `startname`, and `startaddress` use the same format for an explicit start point.
+
+`arrivalTime` maps to Citymapper's documented `arrival_time` parameter and should be an ISO-8601 date/time string. Citymapper's page also mentions the older `arriveby` parameter as deprecated, so this module only exposes `arrivalTime`.
+
+For x-callback-url links, `xSource` and `xSuccess` serialize to the official `x-source` and `x-success` parameters.
+
+### Web Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'webDirections' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}webDirections({
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+})
+```
+
+### Native Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}directions({
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+})
+```
+
+### Directions With Arrival Time
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}directions({
+  startcoord: '51.500729,-0.124625',
+  startname: 'Westminster',
+  startaddress: 'London SW1A 0AA',
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+  arrivalTime: '2016-08-06T21:00+01:00',
+})
+```
+
+### X-Callback Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackDirections' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}xCallbackDirections({
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+  xSource: 'My App Name',
+  xSuccess: 'myappscheme://',
+})
+```
+
+## Official Documentation
+
+* [Launch Citymapper for Directions](https://citymapper.com/tools/1053/automatically-generating-citymapper-directions-links)
 
 ---
 
@@ -6548,6 +6637,86 @@ const multiParamUrl = {{currentMethod === 'On-Demand' ? '' : 'hammerspoon.'}}url
 ## Official Documentation
 
 * [Hammerspoon hs.urlevent](https://www.hammerspoon.org/docs/hs.urlevent.html)
+
+---
+
+---
+url: /protocol-launcher/apps/hiddify.md
+---
+
+# Hiddify
+
+[Hiddify](https://hiddify.com/) is a proxy and VPN client. **Protocol Launcher** allows you to generate Hiddify URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Hiddify documents the active URL scheme as `hiddify://import/<sublink>#name`. The `<sublink>` value may be a Clash link, Singbox link, v2ray sublink, or a single proxy link. The older `install-sub`, `install-config`, and `install-proxy` URL forms are marked deprecated in Hiddify's documentation, so this module does not expose helpers for them.
+
+Hiddify's Profile Title section lists the URL fragment, anything after `#`, as one source for the imported profile title. Use placeholder or synthetic values in examples and tests. Do not publish real subscription tokens, proxy passwords, or private server names.
+
+### Import Config
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importConfig' : 'hiddify' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hiddify.'}}importConfig({
+  sublink: 'https://hiddify.com/autosub',
+  name: 'name',
+})
+```
+
+### Import Subscription URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importSubscriptionUrl' : 'hiddify' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hiddify.'}}importSubscriptionUrl({
+  sublink: 'https://example.com/subscriptions/v2ray.txt',
+})
+```
+
+### Import Proxy URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importProxyUrl' : 'hiddify' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hiddify.'}}importProxyUrl({
+  sublink: 'trojan://REPLACE_WITH_PASSWORD@example.com:443#name',
+})
+```
+
+## Generated URLs
+
+```ts
+importConfig({
+  sublink: 'https://hiddify.com/autosub',
+  name: 'name',
+})
+// => 'hiddify://import/https://hiddify.com/autosub#name'
+
+importSubscriptionUrl({
+  sublink: 'https://example.com/subscriptions/v2ray.txt',
+})
+// => 'hiddify://import/https://example.com/subscriptions/v2ray.txt'
+
+importProxyUrl({
+  sublink: 'trojan://REPLACE_WITH_PASSWORD@example.com:443#name',
+})
+// => 'hiddify://import/trojan://REPLACE_WITH_PASSWORD@example.com:443#name'
+```
+
+## References
+
+* [Hiddify URL Scheme](https://hiddify.com/app/URL-Scheme/)
 
 ---
 
@@ -17009,6 +17178,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -17044,6 +17214,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
@@ -17300,6 +17471,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
 * [CodeBuddy](../apps/code-buddy.md)
@@ -17335,6 +17507,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
@@ -20387,6 +20560,91 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/citymapper.md
+---
+
+# Citymapper
+
+[Citymapper](https://citymapper.com/) 是一款公共交通和城市导航应用。**Protocol Launcher** 可以生成 Citymapper 官方路线链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+Citymapper 文档将 `endcoord` 标为必需的目的地坐标，格式为 `latitude,longitude`。`endname` 和 `endaddress` 是可选的目的地信息。`startcoord`、`startname` 和 `startaddress` 用同样的格式指定起点。
+
+`arrivalTime` 会映射到 Citymapper 文档中的 `arrival_time` 参数，应传入 ISO-8601 日期时间字符串。Citymapper 页面也提到旧的 `arriveby` 参数已 deprecated，因此此模块只暴露 `arrivalTime`。
+
+x-callback-url 链接中的 `xSource` 和 `xSuccess` 会分别序列化为官方参数 `x-source` 和 `x-success`。
+
+### 网页路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'webDirections' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}webDirections({
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+})
+```
+
+### 原生路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}directions({
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+})
+```
+
+### 带到达时间的路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}directions({
+  startcoord: '51.500729,-0.124625',
+  startname: 'Westminster',
+  startaddress: 'London SW1A 0AA',
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+  arrivalTime: '2016-08-06T21:00+01:00',
+})
+```
+
+### X-Callback 路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackDirections' : 'citymapper' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'citymapper.'}}xCallbackDirections({
+  endcoord: '51.537060,-0.079179',
+  endname: 'The Proud Archivist',
+  endaddress: '2-10 Hertford Road, London, N1 5ET',
+  xSource: 'My App Name',
+  xSuccess: 'myappscheme://',
+})
+```
+
+## 官方文档
+
+* [Launch Citymapper for Directions](https://citymapper.com/tools/1053/automatically-generating-citymapper-directions-links)
 
 ---
 
@@ -23512,6 +23770,86 @@ const multiParamUrl = {{currentMethod === 'On-Demand' ? '' : 'hammerspoon.'}}url
 ## 官方文档
 
 * [Hammerspoon hs.urlevent](https://www.hammerspoon.org/docs/hs.urlevent.html)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/hiddify.md
+---
+
+# Hiddify
+
+[Hiddify](https://hiddify.com/) 是一款代理与 VPN 客户端。**Protocol Launcher** 允许你生成 Hiddify URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Hiddify 官方文档记录的当前 URL scheme 是 `hiddify://import/<sublink>#name`。`<sublink>` 可以是 Clash link、Singbox link、v2ray sublink，或单个代理链接。旧的 `install-sub`、`install-config` 和 `install-proxy` URL 形式已在 Hiddify 文档中标记为 deprecated，因此本模块不提供这些 helper。
+
+Hiddify 的 Profile Title 部分把 URL fragment，也就是 `#` 后面的内容，列为导入配置标题的来源之一。示例与测试应使用占位或合成值。不要公开真实订阅 token、代理密码或私有服务器名称。
+
+### 导入配置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importConfig' : 'hiddify' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hiddify.'}}importConfig({
+  sublink: 'https://hiddify.com/autosub',
+  name: 'name',
+})
+```
+
+### 导入订阅 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importSubscriptionUrl' : 'hiddify' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hiddify.'}}importSubscriptionUrl({
+  sublink: 'https://example.com/subscriptions/v2ray.txt',
+})
+```
+
+### 导入代理 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importProxyUrl' : 'hiddify' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hiddify.'}}importProxyUrl({
+  sublink: 'trojan://REPLACE_WITH_PASSWORD@example.com:443#name',
+})
+```
+
+## 生成的 URL
+
+```ts
+importConfig({
+  sublink: 'https://hiddify.com/autosub',
+  name: 'name',
+})
+// => 'hiddify://import/https://hiddify.com/autosub#name'
+
+importSubscriptionUrl({
+  sublink: 'https://example.com/subscriptions/v2ray.txt',
+})
+// => 'hiddify://import/https://example.com/subscriptions/v2ray.txt'
+
+importProxyUrl({
+  sublink: 'trojan://REPLACE_WITH_PASSWORD@example.com:443#name',
+})
+// => 'hiddify://import/trojan://REPLACE_WITH_PASSWORD@example.com:443#name'
+```
+
+## 参考资料
+
+* [Hiddify URL Scheme](https://hiddify.com/app/URL-Scheme/)
 
 ---
 
