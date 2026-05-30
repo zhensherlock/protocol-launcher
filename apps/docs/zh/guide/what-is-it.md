@@ -159,6 +159,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
 - [Story Planner](../apps/story-planner.md)
+- [Surge](../apps/surge.md)
 - [TablePro](../apps/tablepro.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)

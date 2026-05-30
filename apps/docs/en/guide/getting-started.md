@@ -250,6 +250,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
 - [Story Planner](../apps/story-planner.md)
+- [Surge](../apps/surge.md)
 - [TablePro](../apps/tablepro.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)

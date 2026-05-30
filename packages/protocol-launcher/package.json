@@ -586,6 +586,10 @@
       "types": "./dist/types/story-planner/index.d.ts",
       "import": "./dist/story-planner/index.js"
     },
+    "./surge": {
+      "types": "./dist/types/surge/index.d.ts",
+      "import": "./dist/surge/index.js"
+    },
     "./tablepro": {
       "types": "./dist/types/tablepro/index.d.ts",
       "import": "./dist/tablepro/index.js"

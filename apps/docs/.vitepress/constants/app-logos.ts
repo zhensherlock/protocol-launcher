@@ -131,6 +131,7 @@ export const appLogoFiles = {
   spotify: 'spotify.webp',
   steam: 'steam.webp',
   'story-planner': 'story-planner.webp',
+  surge: 'surge.webp',
   tablepro: 'tablepro.png',
   tally: 'tally-quick-counter.webp',
   telegram: 'telegram.svg',
