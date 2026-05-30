@@ -179,6 +179,7 @@ export default defineAdditionalConfig({
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },
           { text: 'VSCodium', link: '/zh/apps/vscodium' },
+          { text: 'Warp', link: '/zh/apps/warp' },
           { text: 'WaterMinder', link: '/zh/apps/waterminder' },
           { text: 'Waze', link: '/zh/apps/waze' },
           { text: 'Webex', link: '/zh/apps/webex' },

@@ -267,6 +267,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [VS Code](../apps/vscode.md)
 - [VS Code Insiders](../apps/vscode-insiders.md)
 - [VSCodium](../apps/vscodium.md)
+- [Warp](../apps/warp.md)
 - [WaterMinder](../apps/waterminder.md)
 - [Waze](../apps/waze.md)
 - [Webex](../apps/webex.md)

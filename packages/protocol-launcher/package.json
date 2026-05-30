@@ -654,6 +654,10 @@
       "types": "./dist/types/vscodium/index.d.ts",
       "import": "./dist/vscodium/index.js"
     },
+    "./warp": {
+      "types": "./dist/types/warp/index.d.ts",
+      "import": "./dist/warp/index.js"
+    },
     "./waterminder": {
       "types": "./dist/types/waterminder/index.d.ts",
       "import": "./dist/waterminder/index.js"

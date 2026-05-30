@@ -1074,6 +1074,15 @@
     "bytes": 3970
   },
   {
+    "slug": "warp",
+    "officialUrl": "https://www.warp.dev/",
+    "status": "saved",
+    "filename": "warp.png",
+    "url": "https://www.warp.dev/android-chrome-512x512.png",
+    "source": "official-site-icon",
+    "bytes": 8077
+  },
+  {
     "slug": "waterminder",
     "officialUrl": "https://waterminder.com",
     "status": "saved",
