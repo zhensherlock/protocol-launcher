@@ -123,6 +123,7 @@ export default defineAdditionalConfig({
           { text: 'MultiTimer', link: '/zh/apps/multi-timer' },
           { text: 'Navicat', link: '/zh/apps/navicat' },
           { text: 'NotePlan', link: '/zh/apps/noteplan' },
+          { text: 'Notebooks', link: '/zh/apps/notebooks' },
           { text: 'Nozbe', link: '/zh/apps/nozbe' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'Obsidian', link: '/zh/apps/obsidian' },

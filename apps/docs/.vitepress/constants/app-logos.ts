@@ -92,6 +92,7 @@ export const appLogoFiles = {
   'multi-timer': 'multi-timer.webp',
   navicat: 'navicat.png',
   noteplan: 'noteplan.webp',
+  notebooks: 'notebooks.webp',
   nova: 'nova.png',
   nozbe: 'nozbe.png',
   obsidian: 'obsidian.svg',

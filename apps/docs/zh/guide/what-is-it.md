@@ -120,6 +120,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [MultiTimer](../apps/multi-timer.md)
 - [Navicat](../apps/navicat.md)
 - [NotePlan](../apps/noteplan.md)
+- [Notebooks](../apps/notebooks.md)
 - [Nozbe](../apps/nozbe.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)

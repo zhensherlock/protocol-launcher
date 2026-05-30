@@ -426,6 +426,10 @@
       "types": "./dist/types/noteplan/index.d.ts",
       "import": "./dist/noteplan/index.js"
     },
+    "./notebooks": {
+      "types": "./dist/types/notebooks/index.d.ts",
+      "import": "./dist/notebooks/index.js"
+    },
     "./nozbe": {
       "types": "./dist/types/nozbe/index.d.ts",
       "import": "./dist/nozbe/index.js"
