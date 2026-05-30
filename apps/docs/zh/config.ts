@@ -32,6 +32,7 @@ export default defineAdditionalConfig({
         items: [
           { text: 'AFFiNE', link: '/zh/apps/affine' },
           { text: 'Agenda', link: '/zh/apps/agenda' },
+          { text: 'Airmail', link: '/zh/apps/airmail' },
           { text: 'Alfred', link: '/zh/apps/alfred' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
           { text: 'Anybox', link: '/zh/apps/anybox' },

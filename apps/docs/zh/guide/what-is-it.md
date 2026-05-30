@@ -29,6 +29,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 
 - [AFFiNE](../apps/affine.md)
 - [Agenda](../apps/agenda.md)
+- [Airmail](../apps/airmail.md)
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
 - [Anybox](../apps/anybox.md)

@@ -21,6 +21,7 @@ export default defineConfig({
     'en/extra/examples.md': 'extra/examples.md',
     'en/apps/affine.md': 'apps/affine.md',
     'en/apps/agenda.md': 'apps/agenda.md',
+    'en/apps/airmail.md': 'apps/airmail.md',
     'en/apps/alfred.md': 'apps/alfred.md',
     'en/apps/antigravity.md': 'apps/antigravity.md',
     'en/apps/anybox.md': 'apps/anybox.md',
@@ -223,6 +224,7 @@ export default defineConfig({
         items: [
           { text: 'AFFiNE', link: '/apps/affine' },
           { text: 'Agenda', link: '/apps/agenda' },
+          { text: 'Airmail', link: '/apps/airmail' },
           { text: 'Alfred', link: '/apps/alfred' },
           { text: 'Antigravity', link: '/apps/antigravity' },
           { text: 'Anybox', link: '/apps/anybox' },
@@ -431,6 +433,7 @@ export default defineConfig({
             items: [
               { text: 'AFFiNE', link: '/apps/affine' },
               { text: 'Agenda', link: '/apps/agenda' },
+              { text: 'Airmail', link: '/apps/airmail' },
               { text: 'Alfred', link: '/apps/alfred' },
               { text: 'Antigravity', link: '/apps/antigravity' },
               { text: 'Anybox', link: '/apps/anybox' },
@@ -604,6 +607,7 @@ export default defineConfig({
             items: [
               { text: 'AFFiNE', link: '/zh/apps/affine' },
               { text: 'Agenda', link: '/zh/apps/agenda' },
+              { text: 'Airmail', link: '/zh/apps/airmail' },
               { text: 'Alfred', link: '/zh/apps/alfred' },
               { text: 'Antigravity', link: '/zh/apps/antigravity' },
               { text: 'Anybox', link: '/zh/apps/anybox' },

@@ -3,6 +3,7 @@ export const appLogoFiles = {
   '2do': '2do.webp',
   affine: 'affine.png',
   agenda: 'agenda.webp',
+  airmail: 'airmail.webp',
   alfred: 'alfred.png',
   antigravity: 'antigravity.svg',
   anybox: 'anybox.webp',

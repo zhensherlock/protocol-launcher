@@ -70,6 +70,10 @@
       "types": "./dist/types/agenda/index.d.ts",
       "import": "./dist/agenda/index.js"
     },
+    "./airmail": {
+      "types": "./dist/types/airmail/index.d.ts",
+      "import": "./dist/airmail/index.js"
+    },
     "./antigravity": {
       "types": "./dist/types/antigravity/index.d.ts",
       "import": "./dist/antigravity/index.js"
