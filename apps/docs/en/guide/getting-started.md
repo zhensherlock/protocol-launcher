@@ -175,6 +175,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Google Maps](../apps/google-maps.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hammerspoon](../apps/hammerspoon.md)
+- [Home Assistant](../apps/home-assistant.md)
 - [Hookmark](../apps/hookmark.md)
 - [iA Writer](../apps/ia-writer.md)
 - [iCab Mobile](../apps/icab-mobile.md)

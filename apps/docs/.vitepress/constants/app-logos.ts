@@ -56,6 +56,7 @@ export const appLogoFiles = {
   'google-maps': 'google-maps.webp',
   hammerspoon: 'hammerspoon.png',
   hbuilderx: 'hbuilderx.png',
+  'home-assistant': 'home-assistant.webp',
   hookmark: 'hookmark.png',
   'ia-writer': 'ia-writer.webp',
   'icab-mobile': 'icab-mobile.webp',
