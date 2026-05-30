@@ -177,6 +177,7 @@ Currently, we support the following applications:
 - [uPic](../apps/upic.md)
 - [UpNote](../apps/upnote.md)
 - [Verdent](../apps/verdent.md)
+- [Viber](../apps/viber.md)
 - [VS Code](../apps/vscode.md)
 - [VS Code Insiders](../apps/vscode-insiders.md)
 - [VSCodium](../apps/vscodium.md)

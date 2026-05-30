@@ -180,6 +180,7 @@ export default defineAdditionalConfig({
           { text: 'uPic', link: '/zh/apps/upic' },
           { text: 'UpNote', link: '/zh/apps/upnote' },
           { text: 'Verdent', link: '/zh/apps/verdent' },
+          { text: 'Viber', link: '/zh/apps/viber' },
           { text: 'VS Code', link: '/zh/apps/vscode' },
           { text: 'VS Code Insiders', link: '/zh/apps/vscode-insiders' },
           { text: 'VSCodium', link: '/zh/apps/vscodium' },

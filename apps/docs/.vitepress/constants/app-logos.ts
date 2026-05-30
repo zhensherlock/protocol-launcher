@@ -149,6 +149,7 @@ export const appLogoFiles = {
   upic: 'upic.png',
   upnote: 'upnote.webp',
   verdent: 'verdent.png',
+  viber: 'viber.webp',
   vscode: 'visual-studio-code.png',
   'vscode-insiders': 'visual-studio-code-insiders.png',
   vscodium: 'vscodium.png',

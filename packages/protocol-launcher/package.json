@@ -658,6 +658,10 @@
       "types": "./dist/types/verdent/index.d.ts",
       "import": "./dist/verdent/index.js"
     },
+    "./viber": {
+      "types": "./dist/types/viber/index.d.ts",
+      "import": "./dist/viber/index.js"
+    },
     "./vscode": {
       "types": "./dist/types/vscode/index.d.ts",
       "import": "./dist/vscode/index.js"
