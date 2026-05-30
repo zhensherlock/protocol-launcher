@@ -86,6 +86,7 @@ export const appLogoFiles = {
   macvim: 'macvim.png',
   'mail-assistant': 'mail-assistant.png',
   marked: 'marked.webp',
+  mattermost: 'mattermost.webp',
   mical: 'mical.webp',
   'microsoft-edge': 'microsoft-edge.png',
   'microsoft-office': 'microsoft-365.webp',

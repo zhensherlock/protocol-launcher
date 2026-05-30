@@ -402,6 +402,10 @@
       "types": "./dist/types/marked/index.d.ts",
       "import": "./dist/marked/index.js"
     },
+    "./mattermost": {
+      "types": "./dist/types/mattermost/index.d.ts",
+      "import": "./dist/mattermost/index.js"
+    },
     "./macvim": {
       "types": "./dist/types/macvim/index.d.ts",
       "import": "./dist/macvim/index.js"

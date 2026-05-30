@@ -114,6 +114,7 @@ Currently, we support the following applications:
 - [MacVim](../apps/macvim.md)
 - [Mail Assistant](../apps/mail-assistant.md)
 - [Marked](../apps/marked.md)
+- [Mattermost](../apps/mattermost.md)
 - [miCal](../apps/mical.md)
 - [Microsoft Edge](../apps/microsoft-edge.md)
 - [Microsoft Office](../apps/microsoft-office.md)
