@@ -157,6 +157,15 @@
     "bytes": 8899
   },
   {
+    "slug": "busycontacts",
+    "officialUrl": "https://www.busymac.com/busycontacts/",
+    "status": "saved",
+    "filename": "busycontacts.png",
+    "url": "apps/docs/public/app-logos/busycontacts.png",
+    "source": "existing-asset",
+    "bytes": 892439
+  },
+  {
     "slug": "cal2todo",
     "officialUrl": "https://apps.apple.com/sg/app/cal2todo/id475987733",
     "status": "saved",

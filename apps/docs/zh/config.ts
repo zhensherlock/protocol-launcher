@@ -49,6 +49,7 @@ export default defineAdditionalConfig({
           { text: 'BetterTouchTool', link: '/zh/apps/bettertouchtool' },
           { text: 'Bunch', link: '/zh/apps/bunch' },
           { text: 'BusyCal', link: '/zh/apps/busycal' },
+          { text: 'BusyContacts', link: '/zh/apps/busycontacts' },
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Capacities', link: '/zh/apps/capacities' },

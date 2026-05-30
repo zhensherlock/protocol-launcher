@@ -134,6 +134,10 @@
       "types": "./dist/types/busycal/index.d.ts",
       "import": "./dist/busycal/index.js"
     },
+    "./busycontacts": {
+      "types": "./dist/types/busycontacts/index.d.ts",
+      "import": "./dist/busycontacts/index.js"
+    },
     "./cal2todo": {
       "types": "./dist/types/cal2todo/index.d.ts",
       "import": "./dist/cal2todo/index.js"

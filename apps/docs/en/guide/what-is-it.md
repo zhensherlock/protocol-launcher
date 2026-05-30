@@ -46,6 +46,7 @@ Currently, we support the following applications:
 - [BetterTouchTool](../apps/bettertouchtool.md)
 - [Bunch](../apps/bunch.md)
 - [BusyCal](../apps/busycal.md)
+- [BusyContacts](../apps/busycontacts.md)
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Capacities](../apps/capacities.md)
