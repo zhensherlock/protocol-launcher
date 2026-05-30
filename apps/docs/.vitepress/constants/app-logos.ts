@@ -18,6 +18,7 @@ export const appLogoFiles = {
   beorg: 'beorg.webp',
   bettertouchtool: 'bettertouchtool.png',
   bunch: 'bunch.png',
+  busycal: 'busycal.png',
   cal2todo: 'cal2todo.webp',
   calca: 'calca.webp',
   capacities: 'capacities.webp',

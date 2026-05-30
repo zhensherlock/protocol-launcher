@@ -136,6 +136,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Beorg](../apps/beorg.md)
 - [BetterTouchTool](../apps/bettertouchtool.md)
 - [Bunch](../apps/bunch.md)
+- [BusyCal](../apps/busycal.md)
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Capacities](../apps/capacities.md)

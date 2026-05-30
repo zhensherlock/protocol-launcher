@@ -130,6 +130,10 @@
       "types": "./dist/types/bunch/index.d.ts",
       "import": "./dist/bunch/index.js"
     },
+    "./busycal": {
+      "types": "./dist/types/busycal/index.d.ts",
+      "import": "./dist/busycal/index.js"
+    },
     "./cal2todo": {
       "types": "./dist/types/cal2todo/index.d.ts",
       "import": "./dist/cal2todo/index.js"

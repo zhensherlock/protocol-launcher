@@ -148,6 +148,15 @@
     "bytes": 10503
   },
   {
+    "slug": "busycal",
+    "officialUrl": "https://www.busymac.com/busycal/",
+    "status": "saved",
+    "filename": "busycal.png",
+    "url": "https://downloads.busymac.com/resources/img/busycal-mac/icon_128@2x.png",
+    "source": "official-site-image",
+    "bytes": 8899
+  },
+  {
     "slug": "cal2todo",
     "officialUrl": "https://apps.apple.com/sg/app/cal2todo/id475987733",
     "status": "saved",
