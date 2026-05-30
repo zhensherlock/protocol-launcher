@@ -110,6 +110,7 @@ Currently, we support the following applications:
 - [Marked](../apps/marked.md)
 - [miCal](../apps/mical.md)
 - [Microsoft Edge](../apps/microsoft-edge.md)
+- [Microsoft Office](../apps/microsoft-office.md)
 - [Microsoft Teams](../apps/microsoft-teams.md)
 - [Momento](../apps/momento.md)
 - [MoneyWiz](../apps/moneywiz.md)

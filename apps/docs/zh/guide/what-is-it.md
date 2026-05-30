@@ -110,6 +110,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Marked](../apps/marked.md)
 - [miCal](../apps/mical.md)
 - [Microsoft Edge](../apps/microsoft-edge.md)
+- [Microsoft Office](../apps/microsoft-office.md)
 - [Microsoft Teams](../apps/microsoft-teams.md)
 - [Momento](../apps/momento.md)
 - [MoneyWiz](../apps/moneywiz.md)

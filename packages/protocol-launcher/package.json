@@ -386,6 +386,10 @@
       "types": "./dist/types/microsoft-edge/index.d.ts",
       "import": "./dist/microsoft-edge/index.js"
     },
+    "./microsoft-office": {
+      "types": "./dist/types/microsoft-office/index.d.ts",
+      "import": "./dist/microsoft-office/index.js"
+    },
     "./microsoft-teams": {
       "types": "./dist/types/microsoft-teams/index.d.ts",
       "import": "./dist/microsoft-teams/index.js"
