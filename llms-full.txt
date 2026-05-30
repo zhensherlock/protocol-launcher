@@ -94,6 +94,7 @@ Currently, we support the following applications:
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
@@ -153,6 +154,7 @@ Currently, we support the following applications:
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
@@ -387,6 +389,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
@@ -446,6 +449,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
@@ -7519,6 +7523,170 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate()
 ---
 
 ---
+url: /protocol-launcher/apps/ivory.md
+---
+
+# Ivory
+
+[Ivory](https://tapbots.com/ivory/) is a Mastodon client by Tapbots. **Protocol Launcher** allows you to generate Ivory URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Tapbots documents `acct` as the account selector. It can be a fully qualified `@user@host`, a short `@user`, or blank for the currently active Ivory account. When `acct` is omitted, Protocol Launcher generates URLs such as `ivory:///home`.
+
+This module only exposes the official Ivory URL shapes: tab URLs, `openURL`, `status`, `user_profile`, and `post`. `callbackUrl` is only available for the documented modal actions and serializes to the official `callback_url` query parameter.
+
+### Tabs
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHome, openTimeline, openMentions, openLists, openFavorites, openBookmarks, openStatistics, openProfileTab, openSearch' : 'ivory' }} } from '{{ importPath }}'
+
+const homeUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openHome()
+const timelineUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openTimeline({ acct: '@alice' })
+const mentionsUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openMentions({ acct: '@alice' })
+const listsUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openLists()
+const favoritesUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openFavorites()
+const bookmarksUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openBookmarks()
+const statisticsUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openStatistics()
+const profileTabUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openProfileTab({ acct: '@alice@mastodon.social' })
+const searchUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openSearch()
+```
+
+### Open URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openUrl({
+  acct: '@alice@mastodon.social',
+  url: 'https://mastodon.social/@tapbots',
+  callbackUrl: 'launcher://done',
+})
+```
+
+### Open Status
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStatus' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openStatus({
+  acct: '@alice@mastodon.social',
+  statusId: '110123456789',
+})
+```
+
+### Open Profile
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProfile' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openProfile({
+  acct: '@alice@mastodon.social',
+  userAcct: '@tapbots@mastodon.social',
+})
+```
+
+### Compose
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compose' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}compose({
+  acct: '@alice',
+  callbackUrl: 'launcher://done',
+})
+```
+
+### Compose Text Path
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'composeText' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}composeText({
+  acct: '@alice',
+  text: 'Hello Ivory',
+})
+```
+
+### Compose Reply
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'composeReply' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}composeReply({
+  acct: '@alice',
+  text: 'Hello Ivory',
+  inReplyToStatusUrl: 'https://mastodon.social/@tapbots/110123456789',
+})
+```
+
+## Generated URLs
+
+```ts
+openHome()
+// => 'ivory:///home'
+
+openTimeline({ acct: '@alice' })
+// => 'ivory://@alice/timeline'
+
+openUrl({
+  acct: '@alice@mastodon.social',
+  url: 'https://mastodon.social/@tapbots',
+  callbackUrl: 'launcher://done',
+})
+// => 'ivory://@alice@mastodon.social/openURL?url=https%3A%2F%2Fmastodon.social%2F%40tapbots&callback_url=launcher%3A%2F%2Fdone'
+
+openStatus({
+  acct: '@alice@mastodon.social',
+  statusId: '110123456789',
+})
+// => 'ivory://@alice@mastodon.social/status/110123456789'
+
+openProfile({
+  acct: '@alice@mastodon.social',
+  userAcct: '@tapbots@mastodon.social',
+})
+// => 'ivory://@alice@mastodon.social/user_profile/@tapbots@mastodon.social'
+
+compose()
+// => 'ivory:///post'
+
+compose({
+  acct: '@alice',
+  callbackUrl: 'launcher://done',
+})
+// => 'ivory://@alice/post?callback_url=launcher%3A%2F%2Fdone'
+
+composeText({
+  acct: '@alice',
+  text: 'Hello Ivory',
+})
+// => 'ivory://@alice/post/Hello%20Ivory'
+
+composeReply({
+  acct: '@alice',
+  text: 'Hello Ivory',
+  inReplyToStatusUrl: 'https://mastodon.social/@tapbots/110123456789',
+})
+// => 'ivory://@alice/post?text=Hello%20Ivory&in_reply_to_status_url=https%3A%2F%2Fmastodon.social%2F%40tapbots%2F110123456789'
+```
+
+## Official Documentation
+
+* [Ivory URL Schemes](https://tapbots.com/support/ivory/tips/urlschemes)
+
+---
+
+---
 url: /protocol-launcher/apps/joplin.md
 ---
 
@@ -13555,6 +13723,137 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}project({
 ---
 
 ---
+url: /protocol-launcher/apps/surge.md
+---
+
+# Surge
+
+[Surge](https://nssurge.com/) is a network toolbox. **Protocol Launcher** allows you to generate Surge URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Surge's official manual documents four iOS URL scheme actions: `surge:///start`, `surge:///stop`, `surge:///toggle`, and `surge:///install-config?url=x`. The `url` value for `install-config` must be percent-encoded, so `installConfig()` accepts the raw configuration URL and serializes it as the official `url` query parameter.
+
+The only documented option is `autoclose=true`, which can be used with `start`, `stop`, and `toggle`, but cannot be used with `install-config`.
+
+Surge also documents x-callback-url support from v3.4 with the `surge` scheme and only the `start`, `stop`, and `toggle` actions. This module therefore exposes only those three x-callback action URLs and does not add callback query parameters that are not listed on the Surge page.
+
+### Start
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}start()
+```
+
+### Start And Auto Close
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}start({
+  autoclose: true,
+})
+```
+
+### Stop
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stop' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}stop()
+```
+
+### Toggle
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggle' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}toggle({
+  autoclose: true,
+})
+```
+
+### Install Config
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installConfig' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}installConfig({
+  url: 'https://example.com/surge.conf',
+})
+```
+
+### X-Callback Start
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStart' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackStart()
+```
+
+### X-Callback Stop
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStop' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackStop()
+```
+
+### X-Callback Toggle
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackToggle()
+```
+
+## Generated URLs
+
+```ts
+start()
+// => 'surge:///start'
+
+start({ autoclose: true })
+// => 'surge:///start?autoclose=true'
+
+stop()
+// => 'surge:///stop'
+
+toggle({ autoclose: true })
+// => 'surge:///toggle?autoclose=true'
+
+installConfig({
+  url: 'https://example.com/surge.conf',
+})
+// => 'surge:///install-config?url=https%3A%2F%2Fexample.com%2Fsurge.conf'
+
+xCallbackStart()
+// => 'surge://x-callback-url/start'
+
+xCallbackStop()
+// => 'surge://x-callback-url/stop'
+
+xCallbackToggle()
+// => 'surge://x-callback-url/toggle'
+```
+
+## Official Documentation
+
+* [Surge URL Scheme](https://manual.nssurge.com/others/url-scheme.html)
+
+---
+
+---
 url: /protocol-launcher/apps/tablepro.md
 ---
 
@@ -17226,6 +17525,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
@@ -17285,6 +17585,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
@@ -17519,6 +17820,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
@@ -17578,6 +17880,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Story Planner](../apps/story-planner.md)
+* [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
@@ -24652,6 +24955,170 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate()
 ---
 
 ---
+url: /protocol-launcher/zh/apps/ivory.md
+---
+
+# Ivory
+
+[Ivory](https://tapbots.com/ivory/) 是 Tapbots 开发的 Mastodon 客户端。**Protocol Launcher** 允许你生成 Ivory URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Tapbots 将 `acct` 记录为账户选择器。它可以是完整的 `@user@host`、短格式 `@user`，也可以留空表示当前激活的 Ivory 账户。省略 `acct` 时，Protocol Launcher 会生成类似 `ivory:///home` 的 URL。
+
+本模块只暴露 Ivory 官方列出的 URL 形态：tab URL、`openURL`、`status`、`user_profile` 和 `post`。`callbackUrl` 只用于官方记录的 modal action，并会序列化为官方 `callback_url` query 参数。
+
+### Tabs
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHome, openTimeline, openMentions, openLists, openFavorites, openBookmarks, openStatistics, openProfileTab, openSearch' : 'ivory' }} } from '{{ importPath }}'
+
+const homeUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openHome()
+const timelineUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openTimeline({ acct: '@alice' })
+const mentionsUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openMentions({ acct: '@alice' })
+const listsUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openLists()
+const favoritesUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openFavorites()
+const bookmarksUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openBookmarks()
+const statisticsUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openStatistics()
+const profileTabUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openProfileTab({ acct: '@alice@mastodon.social' })
+const searchUrl = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openSearch()
+```
+
+### 打开 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openUrl({
+  acct: '@alice@mastodon.social',
+  url: 'https://mastodon.social/@tapbots',
+  callbackUrl: 'launcher://done',
+})
+```
+
+### 打开 Status
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStatus' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openStatus({
+  acct: '@alice@mastodon.social',
+  statusId: '110123456789',
+})
+```
+
+### 打开 Profile
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProfile' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}openProfile({
+  acct: '@alice@mastodon.social',
+  userAcct: '@tapbots@mastodon.social',
+})
+```
+
+### Compose
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compose' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}compose({
+  acct: '@alice',
+  callbackUrl: 'launcher://done',
+})
+```
+
+### Compose Text Path
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'composeText' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}composeText({
+  acct: '@alice',
+  text: 'Hello Ivory',
+})
+```
+
+### Compose Reply
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'composeReply' : 'ivory' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivory.'}}composeReply({
+  acct: '@alice',
+  text: 'Hello Ivory',
+  inReplyToStatusUrl: 'https://mastodon.social/@tapbots/110123456789',
+})
+```
+
+## 生成的 URL
+
+```ts
+openHome()
+// => 'ivory:///home'
+
+openTimeline({ acct: '@alice' })
+// => 'ivory://@alice/timeline'
+
+openUrl({
+  acct: '@alice@mastodon.social',
+  url: 'https://mastodon.social/@tapbots',
+  callbackUrl: 'launcher://done',
+})
+// => 'ivory://@alice@mastodon.social/openURL?url=https%3A%2F%2Fmastodon.social%2F%40tapbots&callback_url=launcher%3A%2F%2Fdone'
+
+openStatus({
+  acct: '@alice@mastodon.social',
+  statusId: '110123456789',
+})
+// => 'ivory://@alice@mastodon.social/status/110123456789'
+
+openProfile({
+  acct: '@alice@mastodon.social',
+  userAcct: '@tapbots@mastodon.social',
+})
+// => 'ivory://@alice@mastodon.social/user_profile/@tapbots@mastodon.social'
+
+compose()
+// => 'ivory:///post'
+
+compose({
+  acct: '@alice',
+  callbackUrl: 'launcher://done',
+})
+// => 'ivory://@alice/post?callback_url=launcher%3A%2F%2Fdone'
+
+composeText({
+  acct: '@alice',
+  text: 'Hello Ivory',
+})
+// => 'ivory://@alice/post/Hello%20Ivory'
+
+composeReply({
+  acct: '@alice',
+  text: 'Hello Ivory',
+  inReplyToStatusUrl: 'https://mastodon.social/@tapbots/110123456789',
+})
+// => 'ivory://@alice/post?text=Hello%20Ivory&in_reply_to_status_url=https%3A%2F%2Fmastodon.social%2F%40tapbots%2F110123456789'
+```
+
+## 官方文档
+
+* [Ivory URL Schemes](https://tapbots.com/support/ivory/tips/urlschemes)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/joplin.md
 ---
 
@@ -30684,6 +31151,137 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'storyPlanner.'}}project({
   tab: 'characters',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/surge.md
+---
+
+# Surge
+
+[Surge](https://nssurge.com/) 是一款网络工具箱。**Protocol Launcher** 允许你生成 Surge URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Surge 官方手册记录了四个 iOS URL scheme action：`surge:///start`、`surge:///stop`、`surge:///toggle` 和 `surge:///install-config?url=x`。`install-config` 的 `url` 值必须进行 percent encoding，因此 `installConfig()` 接收原始配置 URL，并序列化为官方的 `url` query 参数。
+
+官方记录的唯一选项是 `autoclose=true`，可用于 `start`、`stop` 和 `toggle`，但不能用于 `install-config`。
+
+Surge 还记录了 v3.4 起支持 x-callback-url，scheme 为 `surge`，并且只有 `start`、`stop`、`toggle` 三个 action。因此本模块只暴露这三个 x-callback action URL，不添加 Surge 页面未列出的 callback query 参数。
+
+### 启动
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}start()
+```
+
+### 启动并自动关闭
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}start({
+  autoclose: true,
+})
+```
+
+### 停止
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stop' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}stop()
+```
+
+### 切换
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggle' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}toggle({
+  autoclose: true,
+})
+```
+
+### 安装配置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installConfig' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}installConfig({
+  url: 'https://example.com/surge.conf',
+})
+```
+
+### X-Callback 启动
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStart' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackStart()
+```
+
+### X-Callback 停止
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStop' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackStop()
+```
+
+### X-Callback 切换
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackToggle()
+```
+
+## 生成的 URL
+
+```ts
+start()
+// => 'surge:///start'
+
+start({ autoclose: true })
+// => 'surge:///start?autoclose=true'
+
+stop()
+// => 'surge:///stop'
+
+toggle({ autoclose: true })
+// => 'surge:///toggle?autoclose=true'
+
+installConfig({
+  url: 'https://example.com/surge.conf',
+})
+// => 'surge:///install-config?url=https%3A%2F%2Fexample.com%2Fsurge.conf'
+
+xCallbackStart()
+// => 'surge://x-callback-url/start'
+
+xCallbackStop()
+// => 'surge://x-callback-url/stop'
+
+xCallbackToggle()
+// => 'surge://x-callback-url/toggle'
+```
+
+## 官方文档
+
+* [Surge URL Scheme](https://manual.nssurge.com/others/url-scheme.html)
 
 ---
 
