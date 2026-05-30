@@ -157,6 +157,15 @@
     "bytes": 8899
   },
   {
+    "slug": "busycontacts",
+    "officialUrl": "https://www.busymac.com/busycontacts/",
+    "status": "saved",
+    "filename": "busycontacts.png",
+    "url": "apps/docs/public/app-logos/busycontacts.png",
+    "source": "existing-asset",
+    "bytes": 892439
+  },
+  {
     "slug": "cal2todo",
     "officialUrl": "https://apps.apple.com/sg/app/cal2todo/id475987733",
     "status": "saved",
@@ -619,6 +628,15 @@
     "url": "https://edgecdn-embza6g8cacagcbn.z01.azurefd.net/welcome/static/favicon.png",
     "source": "icon",
     "bytes": 7904
+  },
+  {
+    "slug": "microsoft-onenote",
+    "officialUrl": "https://www.onenote.com/",
+    "status": "saved",
+    "filename": "microsoft-onenote.webp",
+    "url": "apps/docs/public/app-logos/microsoft-onenote.webp",
+    "source": "existing-asset",
+    "bytes": 9154
   },
   {
     "slug": "motrix",
