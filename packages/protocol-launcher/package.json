@@ -346,6 +346,10 @@
       "types": "./dist/types/itsycal/index.d.ts",
       "import": "./dist/itsycal/index.js"
     },
+    "./ivory": {
+      "types": "./dist/types/ivory/index.d.ts",
+      "import": "./dist/ivory/index.js"
+    },
     "./joplin": {
       "types": "./dist/types/joplin/index.d.ts",
       "import": "./dist/joplin/index.js"

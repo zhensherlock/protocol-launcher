@@ -103,6 +103,7 @@ export default defineAdditionalConfig({
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },
           { text: 'iThoughts', link: '/zh/apps/ithoughts' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
+          { text: 'Ivory', link: '/zh/apps/ivory' },
           { text: 'Joplin', link: '/zh/apps/joplin' },
           { text: 'Jump Desktop', link: '/zh/apps/jump-desktop' },
           { text: 'Keyboard Maestro', link: '/zh/apps/keyboard-maestro' },
