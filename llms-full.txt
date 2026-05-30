@@ -78,6 +78,7 @@ Currently, we support the following applications:
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
@@ -119,9 +120,11 @@ Currently, we support the following applications:
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
 * [Prizmo](../apps/prizmo.md)
+* [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Pythonista](../apps/pythonista.md)
@@ -152,6 +155,7 @@ Currently, we support the following applications:
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timepage](../apps/timepage.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -357,6 +361,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
@@ -398,9 +403,11 @@ For detailed usage instructions for each application, please refer to their resp
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
 * [Prizmo](../apps/prizmo.md)
+* [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Pythonista](../apps/pythonista.md)
@@ -431,6 +438,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timepage](../apps/timepage.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -6197,6 +6205,137 @@ const multiParamUrl = {{currentMethod === 'On-Demand' ? '' : 'hammerspoon.'}}url
 ---
 
 ---
+url: /protocol-launcher/apps/home-assistant.md
+---
+
+# Home Assistant
+
+[Home Assistant](https://www.home-assistant.io/) is an open source home automation platform. **Protocol Launcher** allows you to generate official Home Assistant companion app URL handler links and tag universal links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Navigate
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}navigate({
+  path: '/dashboard-mobile/my-subview',
+})
+```
+
+Use the documented `server` query parameter to select a configured server:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}navigate({
+  path: '/webcams',
+  server: 'My home',
+})
+```
+
+### Call Service
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'callService' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}callService({
+  service: 'device_tracker.see',
+  params: {
+    entity_id: 'device_tracker.entity',
+  },
+})
+```
+
+### Fire Event
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'fireEvent' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}fireEvent({
+  eventType: 'custom_event',
+  params: {
+    entity_id: 'MY_CUSTOM_EVENT',
+  },
+})
+```
+
+### Send Location
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sendLocation' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}sendLocation()
+```
+
+### Open Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}openTag({
+  tagId: '50A3C7C8-1FE7-4BE8-8DC9-06E07D41B63D',
+})
+```
+
+Home Assistant documents tags as universal links with the `https://www.home-assistant.io/tag/<tag id>` format.
+
+### NFC Universal Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'nfcUniversalLink' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}nfcUniversalLink({
+  url: 'homeassistant://navigate/dashboard-mobile/my-subview',
+})
+```
+
+Home Assistant documents the old-style universal link format as `https://www.home-assistant.io/ios/nfc/?url=<a URL you could use with the existing URL handler>`.
+
+## Generated URLs
+
+```ts
+navigate(navigateParams)
+// => 'homeassistant://navigate/dashboard-mobile/my-subview?server=My%20home'
+
+callService({
+  service: 'device_tracker.see',
+  params: { entity_id: 'device_tracker.entity' },
+})
+// => 'homeassistant://call_service/device_tracker.see?entity_id=device_tracker.entity'
+
+fireEvent({
+  eventType: 'custom_event',
+  params: { entity_id: 'MY_CUSTOM_EVENT' },
+})
+// => 'homeassistant://fire_event/custom_event?entity_id=MY_CUSTOM_EVENT'
+
+sendLocation()
+// => 'homeassistant://send_location/'
+
+openTag({ tagId: '50A3C7C8-1FE7-4BE8-8DC9-06E07D41B63D' })
+// => 'https://www.home-assistant.io/tag/50A3C7C8-1FE7-4BE8-8DC9-06E07D41B63D'
+
+nfcUniversalLink({ url: 'homeassistant://navigate/dashboard-mobile/my-subview' })
+// => 'https://www.home-assistant.io/ios/nfc/?url=homeassistant%3A%2F%2Fnavigate%2Fdashboard-mobile%2Fmy-subview'
+```
+
+## References
+
+* [Home Assistant URL Handler](https://companion.home-assistant.io/docs/integrations/url-handler/)
+* [Home Assistant Universal Links, NFC & QR Tags](https://companion.home-assistant.io/docs/integrations/universal-links/)
+
+---
+
+---
 url: /protocol-launcher/apps/hookmark.md
 ---
 
@@ -10173,6 +10312,68 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/pdf-viewer.md
+---
+
+# PDF Viewer
+
+[PDF Viewer](https://pdfviewer.io/) is a PDF reader for viewing and managing PDF documents. **Protocol Launcher** allows you to generate PDF Viewer URL scheme links.
+
+PDF Viewer's official URL scheme action form is `pdfviewer://x-callback-url/[action]?[action parameters]&[x-callback parameters]`. The official FAQ documents `open-file` and `add-file` action parameters.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open File
+
+Open a local file from the documented `path` parameter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'pdfViewer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfViewer.'}}openFile({
+  path: '/Quick Start.pdf',
+})
+```
+
+### Add File
+
+Store a file, or download from `url`, locally as `filename`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'pdfViewer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfViewer.'}}addFile({
+  open: true,
+  url: 'https://pspdfkit.com/downloads/case-study-box.pdf',
+})
+```
+
+Both `data` and `filename` are required to add a file from base64 data. The generated URL encodes the `data` parameter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'pdfViewer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfViewer.'}}addFile({
+  open: false,
+  filename: 'Document.pdf',
+  data: 'JVBERi0xLjMKJcTl8uXrp/Og0MTGCg==',
+})
+```
+
+## References
+
+* [PDF Viewer URL Scheme](https://pdfviewer.io/faq/ios-how-can-i-integrate-pdf-viewer-into-my-website-or-iphone-ipad-app/)
+
+---
+
+---
 url: /protocol-launcher/apps/pika.md
 ---
 
@@ -10581,6 +10782,113 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'prizmo.'}}readText({
   voice: 'Ryan',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/pushcut.md
+---
+
+# Pushcut
+
+[Pushcut](https://www.pushcut.io/) is an automation app. **Protocol Launcher** allows you to generate official Pushcut URL scheme links for opening Pushcut and its documented views.
+
+Pushcut's official URL scheme starts with `pushcut://`. The documented open form is `pushcut://open/` followed by one of these view names: `notifications`, `triggers`, `widgets`, `server`, `account`, `runServer`, `monitorServer`, or `notificationsLog`.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Pushcut
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}open()
+```
+
+### Open View
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openView' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openView({
+  view: 'notifications',
+})
+```
+
+### Open Notifications
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNotifications' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openNotifications()
+```
+
+### Open Triggers
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTriggers' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openTriggers()
+```
+
+### Open Widgets
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWidgets' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openWidgets()
+```
+
+### Open Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openServer' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openServer()
+```
+
+### Open Account
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openAccount' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openAccount()
+```
+
+### Run Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runServer' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}runServer()
+```
+
+### Monitor Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'monitorServer' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}monitorServer()
+```
+
+### Open Notifications Log
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNotificationsLog' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openNotificationsLog()
+```
+
+## References
+
+* [Pushcut URL Scheme](https://www.pushcut.io/support/url-scheme)
 
 ---
 
@@ -13151,6 +13459,162 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/timepage.md
+---
+
+# Timepage
+
+[Timepage](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/) is a calendar app for managing schedules, events, and weather. **Protocol Launcher** allows you to generate official Timepage URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Timepage
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}open()
+```
+
+### Add Event
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}addEvent({
+  title: 'Team Sync',
+  day: 'today',
+})
+```
+
+Use `x-success` or `x-cancel` only when you want Timepage's documented x-callback-url form:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}addEvent({
+  title: 'Team Sync',
+  day: 'tomorrow',
+  xSuccess: 'shortcuts://callback',
+  xCancel: 'shortcuts://cancel',
+})
+```
+
+### Open Event
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openEvent({
+  event: 'next',
+})
+```
+
+### Open Event Map
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEventMap' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openEventMap({
+  event: 'next',
+})
+```
+
+### Open Day
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDay' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openDay({
+  day: '2026-03-30',
+})
+```
+
+### Open Week
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeek' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeek({
+  week: 'this',
+})
+```
+
+Numeric offsets are also supported by the official `index` parameter:
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeek' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeek({
+  week: -1,
+})
+```
+
+### Open Month
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMonth' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openMonth({
+  month: 'next',
+})
+```
+
+### Open Weather
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeather' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeather({
+  day: 'today',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeather' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeather({
+  week: 'next',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}search({
+  query: 'project review',
+})
+```
+
+### Get Event
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getEvent({
+  event: 'next',
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+Timepage calls the `x-success` callback with `start`, `end`, `title`, and `location` parameters.
+
+## References
+
+* [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
 
 ---
 
@@ -15738,6 +16202,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
@@ -15779,9 +16244,11 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
 * [Prizmo](../apps/prizmo.md)
+* [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Pythonista](../apps/pythonista.md)
@@ -15812,6 +16279,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timepage](../apps/timepage.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -16017,6 +16485,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Google Maps](../apps/google-maps.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
+* [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
@@ -16058,9 +16527,11 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Pleco](../apps/pleco.md)
 * [Prizmo](../apps/prizmo.md)
+* [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
 * [PyCharm](../apps/pycharm.md)
 * [Pythonista](../apps/pythonista.md)
@@ -16091,6 +16562,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timepage](../apps/timepage.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -21858,6 +22330,137 @@ const multiParamUrl = {{currentMethod === 'On-Demand' ? '' : 'hammerspoon.'}}url
 ---
 
 ---
+url: /protocol-launcher/zh/apps/home-assistant.md
+---
+
+# Home Assistant
+
+[Home Assistant](https://www.home-assistant.io/) 是一个开源家庭自动化平台。**Protocol Launcher** 可以生成官方 Home Assistant companion app URL Handler 链接和 tag universal link。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 导航
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}navigate({
+  path: '/dashboard-mobile/my-subview',
+})
+```
+
+使用官方文档中的 `server` 查询参数来选择已配置的服务器：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}navigate({
+  path: '/webcams',
+  server: 'My home',
+})
+```
+
+### 调用服务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'callService' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}callService({
+  service: 'device_tracker.see',
+  params: {
+    entity_id: 'device_tracker.entity',
+  },
+})
+```
+
+### 触发事件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'fireEvent' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}fireEvent({
+  eventType: 'custom_event',
+  params: {
+    entity_id: 'MY_CUSTOM_EVENT',
+  },
+})
+```
+
+### 发送位置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sendLocation' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}sendLocation()
+```
+
+### 打开标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}openTag({
+  tagId: '50A3C7C8-1FE7-4BE8-8DC9-06E07D41B63D',
+})
+```
+
+Home Assistant 官方文档将标签记录为 `https://www.home-assistant.io/tag/<tag id>` 格式的 universal link。
+
+### NFC Universal Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'nfcUniversalLink' : 'homeAssistant' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'homeAssistant.'}}nfcUniversalLink({
+  url: 'homeassistant://navigate/dashboard-mobile/my-subview',
+})
+```
+
+Home Assistant 官方文档将旧式 universal link 格式记录为 `https://www.home-assistant.io/ios/nfc/?url=<a URL you could use with the existing URL handler>`。
+
+## 生成的 URL
+
+```ts
+navigate(navigateParams)
+// => 'homeassistant://navigate/dashboard-mobile/my-subview?server=My%20home'
+
+callService({
+  service: 'device_tracker.see',
+  params: { entity_id: 'device_tracker.entity' },
+})
+// => 'homeassistant://call_service/device_tracker.see?entity_id=device_tracker.entity'
+
+fireEvent({
+  eventType: 'custom_event',
+  params: { entity_id: 'MY_CUSTOM_EVENT' },
+})
+// => 'homeassistant://fire_event/custom_event?entity_id=MY_CUSTOM_EVENT'
+
+sendLocation()
+// => 'homeassistant://send_location/'
+
+openTag({ tagId: '50A3C7C8-1FE7-4BE8-8DC9-06E07D41B63D' })
+// => 'https://www.home-assistant.io/tag/50A3C7C8-1FE7-4BE8-8DC9-06E07D41B63D'
+
+nfcUniversalLink({ url: 'homeassistant://navigate/dashboard-mobile/my-subview' })
+// => 'https://www.home-assistant.io/ios/nfc/?url=homeassistant%3A%2F%2Fnavigate%2Fdashboard-mobile%2Fmy-subview'
+```
+
+## 参考资料
+
+* [Home Assistant URL Handler](https://companion.home-assistant.io/docs/integrations/url-handler/)
+* [Home Assistant Universal Links, NFC 与 QR Tags](https://companion.home-assistant.io/docs/integrations/universal-links/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/hookmark.md
 ---
 
@@ -25834,6 +26437,68 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/pdf-viewer.md
+---
+
+# PDF Viewer
+
+[PDF Viewer](https://pdfviewer.io/) 是一款用于阅读和管理 PDF 文档的 PDF 阅读器。**Protocol Launcher** 可以生成 PDF Viewer URL scheme 链接。
+
+PDF Viewer 官方 URL scheme 动作格式为 `pdfviewer://x-callback-url/[action]?[action parameters]&[x-callback parameters]`。官方 FAQ 明确记录了 `open-file` 和 `add-file` 的动作参数。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开文件
+
+通过官方文档中的 `path` 参数打开本地文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'pdfViewer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfViewer.'}}openFile({
+  path: '/Quick Start.pdf',
+})
+```
+
+### 添加文件
+
+将文件，或从 `url` 下载的文件，以 `filename` 存储到本地。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'pdfViewer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfViewer.'}}addFile({
+  open: true,
+  url: 'https://pspdfkit.com/downloads/case-study-box.pdf',
+})
+```
+
+如果通过 base64 `data` 添加文件，`data` 与 `filename` 都是必需的。helper 会在生成 URL 时对 `data` 参数进行 URL 编码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'pdfViewer' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfViewer.'}}addFile({
+  open: false,
+  filename: 'Document.pdf',
+  data: 'JVBERi0xLjMKJcTl8uXrp/Og0MTGCg==',
+})
+```
+
+## 参考资料
+
+* [PDF Viewer URL Scheme](https://pdfviewer.io/faq/ios-how-can-i-integrate-pdf-viewer-into-my-website-or-iphone-ipad-app/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/pika.md
 ---
 
@@ -26242,6 +26907,113 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'prizmo.'}}readText({
   voice: 'Ryan',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/pushcut.md
+---
+
+# Pushcut
+
+[Pushcut](https://www.pushcut.io/) 是一款自动化应用。**Protocol Launcher** 可以生成官方 Pushcut URL scheme 链接，用于打开 Pushcut 及其文档列出的视图。
+
+Pushcut 官方 URL scheme 以 `pushcut://` 开头。文档列出的打开形式是 `pushcut://open/` 后接视图名：`notifications`、`triggers`、`widgets`、`server`、`account`、`runServer`、`monitorServer` 或 `notificationsLog`。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Pushcut
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}open()
+```
+
+### 打开视图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openView' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openView({
+  view: 'notifications',
+})
+```
+
+### 打开 Notifications
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNotifications' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openNotifications()
+```
+
+### 打开 Triggers
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTriggers' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openTriggers()
+```
+
+### 打开 Widgets
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWidgets' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openWidgets()
+```
+
+### 打开 Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openServer' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openServer()
+```
+
+### 打开 Account
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openAccount' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openAccount()
+```
+
+### Run Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runServer' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}runServer()
+```
+
+### Monitor Server
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'monitorServer' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}monitorServer()
+```
+
+### 打开 Notifications Log
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNotificationsLog' : 'pushcut' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pushcut.'}}openNotificationsLog()
+```
+
+## 参考资料
+
+* [Pushcut URL Scheme](https://www.pushcut.io/support/url-scheme)
 
 ---
 
@@ -28812,6 +29584,162 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/timepage.md
+---
+
+# Timepage
+
+[Timepage](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/) 是一款用于管理日程、事件和天气的日历应用。**Protocol Launcher** 可以生成官方 Timepage URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 Timepage
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}open()
+```
+
+### 添加事件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}addEvent({
+  title: 'Team Sync',
+  day: 'today',
+})
+```
+
+只有在需要 Timepage 官方 x-callback-url 形式时，才传入 `x-success` 或 `x-cancel`：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}addEvent({
+  title: 'Team Sync',
+  day: 'tomorrow',
+  xSuccess: 'shortcuts://callback',
+  xCancel: 'shortcuts://cancel',
+})
+```
+
+### 打开事件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openEvent({
+  event: 'next',
+})
+```
+
+### 打开事件地图
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEventMap' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openEventMap({
+  event: 'next',
+})
+```
+
+### 打开日期
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDay' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openDay({
+  day: '2026-03-30',
+})
+```
+
+### 打开周
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeek' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeek({
+  week: 'this',
+})
+```
+
+官方 `index` 参数也支持数字偏移量：
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeek' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeek({
+  week: -1,
+})
+```
+
+### 打开月份
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMonth' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openMonth({
+  month: 'next',
+})
+```
+
+### 打开天气
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeather' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeather({
+  day: 'today',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWeather' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openWeather({
+  week: 'next',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}search({
+  query: 'project review',
+})
+```
+
+### 获取事件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getEvent' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getEvent({
+  event: 'next',
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+Timepage 会调用 `x-success` 回调，并带上 `start`、`end`、`title` 和 `location` 参数。
+
+## 参考资料
+
+* [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
 
 ---
 
