@@ -120,6 +120,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 * [AFFiNE](../apps/affine.md)
 * [Agenda](../apps/agenda.md)
+* [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
@@ -201,6 +202,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)

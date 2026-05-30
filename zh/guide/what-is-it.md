@@ -23,6 +23,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [AFFiNE](../apps/affine.md)
 * [Agenda](../apps/agenda.md)
+* [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
@@ -104,6 +105,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)

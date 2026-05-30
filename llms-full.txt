@@ -23,6 +23,7 @@ Currently, we support the following applications:
 
 * [AFFiNE](../apps/affine.md)
 * [Agenda](../apps/agenda.md)
+* [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
@@ -104,6 +105,7 @@ Currently, we support the following applications:
 * [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
@@ -306,6 +308,7 @@ For detailed usage instructions for each application, please refer to their resp
 
 * [AFFiNE](../apps/affine.md)
 * [Agenda](../apps/agenda.md)
+* [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
@@ -387,6 +390,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
@@ -670,6 +674,56 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}today()
 import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/airmail.md
+---
+
+# Airmail
+
+[Airmail](https://airmailapp.com/) is an email client. **Protocol Launcher** allows you to generate official Airmail iOS URL scheme links to compose and send messages.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Compose
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compose' : 'airmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'airmail.'}}compose({
+  subject: 'Message subject',
+  to: 'joe@example.com',
+  plainBody: 'Message body',
+})
+```
+
+### Send
+
+Airmail documents `send` as an x-callback-url endpoint with `from`, `subject`, `to`, `plainBody`, and x-callback parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'send' : 'airmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'airmail.'}}send({
+  from: 'info@email.com',
+  subject: 'subj',
+  to: 'infoto@email.com',
+  plainBody: 'hello',
+  xSource: 'sourceapp',
+  xSuccess: 'sourceapp://success',
+  xError: 'sourceapp://error',
+  xCancel: 'sourceapp://cancelled',
+})
 ```
 
 ---
@@ -8694,6 +8748,125 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftEdge.'}}openUrl({
 ---
 
 ---
+url: /protocol-launcher/apps/microsoft-office.md
+---
+
+# Microsoft Office
+
+[Microsoft Office](https://www.microsoft.com/microsoft-365/) is Microsoft's productivity suite for creating and working with documents, spreadsheets, presentations, and other Office files. **Protocol Launcher** allows you to generate official Office URI Scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Microsoft documents these scheme names: `ms-word`, `ms-powerpoint`, `ms-excel`, `ms-visio`, `ms-access`, `ms-project`, `ms-publisher`, `ms-spd`, and `ms-infopath`.
+
+The full command form is `scheme:command|descriptor|argument`. The helpers preserve document and template URI strings as provided, including the `:` and `/` characters that Microsoft defines as argument data inside command arguments. SharePoint Designer and InfoPath app launchers do not expose `newFromTemplate` because Microsoft does not document the `nft` command for those two schemes.
+
+Document and template arguments must be valid `http` or `https` URIs. The helpers also enforce Microsoft's documented Office 2013 command-argument restrictions: path length is limited to 256 characters, except Excel where it is 216 characters, and path file names cannot contain `\ / : ? < > | " *`. When `saveLocation` is supplied for `newFromTemplate`, Microsoft requires it to point to the same host name as the template URI.
+
+### Open Document
+
+Use the abbreviated schema when you want the Office app to open a resource for viewing.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}openDocument({
+  scheme: 'ms-word',
+  uri: 'https://contoso.com/documents/report.docx',
+})
+```
+
+### Open For Edit
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openForEdit' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}openForEdit({
+  scheme: 'ms-word',
+  uri: 'https://contoso.com/documents/report.docx',
+})
+```
+
+### Open For View
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openForView' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}openForView({
+  scheme: 'ms-excel',
+  uri: 'https://contoso.com/Q4/budget.xlsx',
+})
+```
+
+### New From Template
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFromTemplate' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}newFromTemplate({
+  scheme: 'ms-powerpoint',
+  templateUri: 'https://contoso.com/templates/status.potx',
+  saveLocation: 'https://contoso.com/presentations/',
+})
+```
+
+### App Launchers
+
+Use app launchers when the target Office app is known up front.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'word, powerPoint' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const editWordUrl = {{currentMethod === 'On-Demand' ? 'word' : 'microsoftOffice.word'}}.openForEdit({
+  uri: 'https://contoso.com/documents/report.docx',
+})
+
+const newDeckUrl = {{currentMethod === 'On-Demand' ? 'powerPoint' : 'microsoftOffice.powerPoint'}}.newFromTemplate({
+  templateUri: 'https://contoso.com/templates/status.potx',
+  saveLocation: 'https://contoso.com/presentations/',
+})
+```
+
+The package also exports `excel`, `visio`, `access`, `project`, `publisher`, `sharePointDesigner`, and `infoPath` launchers.
+
+## Generated URLs
+
+```ts
+openDocument(openDocumentParams)
+// => 'ms-word:https://contoso.com/documents/report.docx'
+
+openForEdit(openForEditParams)
+// => 'ms-word:ofe|u|https://contoso.com/documents/report.docx'
+
+openForView(openForViewParams)
+// => 'ms-excel:ofv|u|https://contoso.com/Q4/budget.xlsx'
+
+newFromTemplate(newFromTemplateParams)
+// => 'ms-powerpoint:nft|u|https://contoso.com/templates/status.potx|s|https://contoso.com/presentations/'
+
+word.openForEdit(wordDocumentParams)
+// => 'ms-word:ofe|u|https://contoso.com/documents/report.docx'
+
+powerPoint.newFromTemplate(powerPointTemplateParams)
+// => 'ms-powerpoint:nft|u|https://contoso.com/templates/status.potx|s|https://contoso.com/presentations/'
+```
+
+## References
+
+* [Office URI Schemes](https://learn.microsoft.com/en-us/office/client-developer/office-uri-schemes)
+
+---
+
+---
 url: /protocol-launcher/apps/microsoft-teams.md
 ---
 
@@ -16147,6 +16320,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 
 * [AFFiNE](../apps/affine.md)
 * [Agenda](../apps/agenda.md)
+* [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
@@ -16228,6 +16402,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
@@ -16430,6 +16605,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 
 * [AFFiNE](../apps/affine.md)
 * [Agenda](../apps/agenda.md)
+* [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
@@ -16511,6 +16687,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Marked](../apps/marked.md)
 * [miCal](../apps/mical.md)
 * [Microsoft Edge](../apps/microsoft-edge.md)
+* [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
@@ -16794,6 +16971,56 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}today()
 import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/airmail.md
+---
+
+# Airmail
+
+[Airmail](https://airmailapp.com/) 是一款邮件客户端。**Protocol Launcher** 允许您生成官方 Airmail iOS URL scheme 链接，用于撰写和发送邮件。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 撰写邮件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'compose' : 'airmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'airmail.'}}compose({
+  subject: 'Message subject',
+  to: 'joe@example.com',
+  plainBody: 'Message body',
+})
+```
+
+### 发送邮件
+
+Airmail 将 `send` 记录为 x-callback-url 端点，包含 `from`、`subject`、`to`、`plainBody` 和 x-callback 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'send' : 'airmail' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'airmail.'}}send({
+  from: 'info@email.com',
+  subject: 'subj',
+  to: 'infoto@email.com',
+  plainBody: 'hello',
+  xSource: 'sourceapp',
+  xSuccess: 'sourceapp://success',
+  xError: 'sourceapp://error',
+  xCancel: 'sourceapp://cancelled',
+})
 ```
 
 ---
@@ -24815,6 +25042,125 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftEdge.'}}openUrl({
   url: 'https://www.google.com/',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/microsoft-office.md
+---
+
+# Microsoft Office
+
+[Microsoft Office](https://www.microsoft.com/microsoft-365/) 是 Microsoft 用于创建和处理文档、电子表格、演示文稿及其他 Office 文件的生产力套件。**Protocol Launcher** 可以生成官方 Office URI Scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 说明
+
+Microsoft 文档记录了这些 scheme 名称：`ms-word`、`ms-powerpoint`、`ms-excel`、`ms-visio`、`ms-access`、`ms-project`、`ms-publisher`、`ms-spd` 和 `ms-infopath`。
+
+完整命令格式为 `scheme:command|descriptor|argument`。这些 helper 会原样保留文档和模板 URI 字符串，包括 Microsoft 定义为命令参数数据的 `:` 和 `/` 字符。SharePoint Designer 和 InfoPath 的 app launcher 不暴露 `newFromTemplate`，因为 Microsoft 没有为这两个 scheme 记录 `nft` 命令。
+
+文档和模板参数必须是有效的 `http` 或 `https` URI。helper 也会执行 Microsoft 记录的 Office 2013 command-argument 限制：path 长度最多 256 个字符，Excel 为 216 个字符，path 中的文件名不能包含 `\ / : ? < > | " *`。为 `newFromTemplate` 提供 `saveLocation` 时，Microsoft 要求它与模板 URI 指向同一个 host name。
+
+### Open Document
+
+需要让 Office 应用以查看方式打开资源时，可以使用缩写 schema。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}openDocument({
+  scheme: 'ms-word',
+  uri: 'https://contoso.com/documents/report.docx',
+})
+```
+
+### Open For Edit
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openForEdit' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}openForEdit({
+  scheme: 'ms-word',
+  uri: 'https://contoso.com/documents/report.docx',
+})
+```
+
+### Open For View
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openForView' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}openForView({
+  scheme: 'ms-excel',
+  uri: 'https://contoso.com/Q4/budget.xlsx',
+})
+```
+
+### New From Template
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFromTemplate' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftOffice.'}}newFromTemplate({
+  scheme: 'ms-powerpoint',
+  templateUri: 'https://contoso.com/templates/status.potx',
+  saveLocation: 'https://contoso.com/presentations/',
+})
+```
+
+### App Launchers
+
+目标 Office 应用已知时，可以使用 app launcher。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'word, powerPoint' : 'microsoftOffice' }} } from '{{ importPath }}'
+
+const editWordUrl = {{currentMethod === 'On-Demand' ? 'word' : 'microsoftOffice.word'}}.openForEdit({
+  uri: 'https://contoso.com/documents/report.docx',
+})
+
+const newDeckUrl = {{currentMethod === 'On-Demand' ? 'powerPoint' : 'microsoftOffice.powerPoint'}}.newFromTemplate({
+  templateUri: 'https://contoso.com/templates/status.potx',
+  saveLocation: 'https://contoso.com/presentations/',
+})
+```
+
+包中还导出 `excel`、`visio`、`access`、`project`、`publisher`、`sharePointDesigner` 和 `infoPath` launcher。
+
+## 生成的 URL
+
+```ts
+openDocument(openDocumentParams)
+// => 'ms-word:https://contoso.com/documents/report.docx'
+
+openForEdit(openForEditParams)
+// => 'ms-word:ofe|u|https://contoso.com/documents/report.docx'
+
+openForView(openForViewParams)
+// => 'ms-excel:ofv|u|https://contoso.com/Q4/budget.xlsx'
+
+newFromTemplate(newFromTemplateParams)
+// => 'ms-powerpoint:nft|u|https://contoso.com/templates/status.potx|s|https://contoso.com/presentations/'
+
+word.openForEdit(wordDocumentParams)
+// => 'ms-word:ofe|u|https://contoso.com/documents/report.docx'
+
+powerPoint.newFromTemplate(powerPointTemplateParams)
+// => 'ms-powerpoint:nft|u|https://contoso.com/templates/status.potx|s|https://contoso.com/presentations/'
+```
+
+## 参考资料
+
+* [Office URI Schemes](https://learn.microsoft.com/en-us/office/client-developer/office-uri-schemes)
 
 ---
 
