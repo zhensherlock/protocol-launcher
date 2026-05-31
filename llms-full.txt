@@ -44,6 +44,7 @@ Currently, we support the following applications:
 * [BusyContacts](../apps/busycontacts.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
+* [Calendar 366](../apps/calendar-366.md)
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -149,6 +150,7 @@ Currently, we support the following applications:
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
+* [Scannr](../apps/scannr.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -348,6 +350,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [BusyContacts](../apps/busycontacts.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
+* [Calendar 366](../apps/calendar-366.md)
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -453,6 +456,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
+* [Scannr](../apps/scannr.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -3238,6 +3242,140 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}calc({
   body: '2+2=>',
   xSuccess: 'app://callback',
 })
+```
+
+---
+
+---
+url: /protocol-launcher/apps/calendar-366.md
+---
+
+# Calendar 366
+
+[Calendar 366](https://calendar366.com/) is a calendar and tasks app for iPhone, iPad, Apple Watch, and Mac. **Protocol Launcher** allows you to generate Calendar 366 URL scheme links to add events and tasks, open items, show views, summarize, and import calendars.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Add Event or Task
+
+Calendar 366 documents `cal366://add` with `type` set to `event` or `task`, and an optional natural-language `query`. `addEvent()` and `addTask()` are thin helpers around the same official command.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add, addEvent, addTask' : 'calendar366' }} } from '{{ importPath }}'
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}add({
+  type: 'event',
+  query: 'Meeting tomorrow 10am',
+})
+
+const eventShortcutUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}addEvent({
+  query: 'Meeting tomorrow 10am',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}addTask({
+  query: 'Call dentist',
+})
+```
+
+### Open Item
+
+Open an event or task by `calendarItemExternalIdentifier` or identifier. Calendar 366 documents `date` as optional for tasks.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openItem' : 'calendar366' }} } from '{{ importPath }}'
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}openItem({
+  type: 'event',
+  id: 'ABC123',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}openItem({
+  type: 'task',
+  id: 'TASK123',
+  date: 1717200000,
+})
+```
+
+### Show View, Tasks, or Date
+
+Use `view` with one of Calendar 366's documented view names, `tasks` with the official task-list number, and `date` as `timeIntervalSince1970`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'calendar366' }} } from '{{ importPath }}'
+
+const monthUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}show({
+  view: 'month',
+})
+
+const overdueTasksUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}show({
+  tasks: 1,
+})
+
+const dayUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}show({
+  view: 'day',
+  date: 1717200000,
+})
+```
+
+### Summarize
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'summarize' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}summarize()
+```
+
+### Import Calendar
+
+Calendar 366 documents `file://` and `https://` calendar file URLs.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importCalendar' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalendar({
+  url: 'https://example.com/calendar.ics',
+})
+```
+
+## Generated URLs
+
+```ts
+add({ type: 'event', query: 'Meeting tomorrow 10am' })
+// => 'cal366://add?type=event&query=Meeting%20tomorrow%2010am'
+
+addEvent({ query: 'Meeting tomorrow 10am' })
+// => 'cal366://add?type=event&query=Meeting%20tomorrow%2010am'
+
+addTask({ query: 'Call dentist' })
+// => 'cal366://add?type=task&query=Call%20dentist'
+
+openItem({ type: 'event', id: 'ABC123' })
+// => 'cal366://open?type=event&id=ABC123'
+
+openItem({ type: 'task', id: 'TASK123', date: 1717200000 })
+// => 'cal366://open?type=task&id=TASK123&date=1717200000'
+
+show({ view: 'month' })
+// => 'cal366://show?view=month'
+
+show({ tasks: 1 })
+// => 'cal366://show?tasks=1'
+
+show({ view: 'day', date: 1717200000 })
+// => 'cal366://show?view=day&date=1717200000'
+
+summarize()
+// => 'cal366://summarize'
+
+importCalendar({ url: 'https://example.com/calendar.ics' })
+// => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
 
 ---
@@ -13254,6 +13392,51 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'rustrover.'}}openFolder({
 ---
 
 ---
+url: /protocol-launcher/apps/scannr.md
+---
+
+# Scannr
+
+[Scannr](https://scannrapp.com/) is an app for ID scanning to obtain data from driver's licences. **Protocol Launcher** allows you to generate the official Scannr URL scheme links documented as `scannr://` and `scannr://?callbackScheme=<foo>`.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Scan ID
+
+Launch Scannr with the Android URL scheme documented as `scannr://`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scanId' : 'scannr' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'scannr.'}}scanId()
+```
+
+### Scan ID with iOS Callback
+
+Launch Scannr with the iOS URL scheme documented as `scannr://?callbackScheme=<foo>`. The calling app must define the `foo` URL scheme and follow Scannr's `LSApplicationQueriesSchemes` setup.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scanId' : 'scannr' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'scannr.'}}scanId({
+  callbackScheme: 'foo',
+})
+```
+
+## Official Documentation
+
+* [Scannr URL scheme integration](https://scannrapp.com/scannr_url_scheme.pdf)
+
+---
+
+---
 url: /protocol-launcher/apps/scriptable.md
 ---
 
@@ -18477,6 +18660,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [BusyContacts](../apps/busycontacts.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
+* [Calendar 366](../apps/calendar-366.md)
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -18582,6 +18766,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
+* [Scannr](../apps/scannr.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -18781,6 +18966,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [BusyContacts](../apps/busycontacts.md)
 * [Cal2Todo](../apps/cal2todo.md)
 * [Calca](../apps/calca.md)
+* [Calendar 366](../apps/calendar-366.md)
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
@@ -18886,6 +19072,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
+* [Scannr](../apps/scannr.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -21672,6 +21859,140 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calca.'}}calc({
   body: '2+2=>',
   xSuccess: 'app://callback',
 })
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/calendar-366.md
+---
+
+# Calendar 366
+
+[Calendar 366](https://calendar366.com/) 是一款适用于 iPhone、iPad、Apple Watch 和 Mac 的日历与任务应用。**Protocol Launcher** 允许你生成 Calendar 366 URL scheme 链接，用于添加事件和任务、打开项目、显示视图、生成摘要和导入日历。
+
+## 使用
+
+这个库有两种使用方式：
+
+* 从子路径按需导入，支持 Tree Shaking 并保持较小的包体积。
+* 从根包完整导入更适合快速脚本或演示，但会包含所有应用模块。
+
+生产构建建议选择按需导入；完整导入适合快速脚本或演示。
+
+### 添加事件或任务
+
+Calendar 366 官方文档列出了 `cal366://add`，其中 `type` 为 `event` 或 `task`，`query` 是可选的自然语言输入。`addEvent()` 和 `addTask()` 只是围绕同一个官方命令的轻量 helper。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add, addEvent, addTask' : 'calendar366' }} } from '{{ importPath }}'
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}add({
+  type: 'event',
+  query: 'Meeting tomorrow 10am',
+})
+
+const eventShortcutUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}addEvent({
+  query: 'Meeting tomorrow 10am',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}addTask({
+  query: 'Call dentist',
+})
+```
+
+### 打开项目
+
+通过 `calendarItemExternalIdentifier` 或 identifier 打开事件或任务。Calendar 366 官方文档说明 `date` 是任务的可选参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openItem' : 'calendar366' }} } from '{{ importPath }}'
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}openItem({
+  type: 'event',
+  id: 'ABC123',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}openItem({
+  type: 'task',
+  id: 'TASK123',
+  date: 1717200000,
+})
+```
+
+### 显示视图、任务或日期
+
+`view` 使用 Calendar 366 官方列出的视图名称，`tasks` 使用官方任务列表编号，`date` 使用 `timeIntervalSince1970`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'calendar366' }} } from '{{ importPath }}'
+
+const monthUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}show({
+  view: 'month',
+})
+
+const overdueTasksUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}show({
+  tasks: 1,
+})
+
+const dayUrl = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}show({
+  view: 'day',
+  date: 1717200000,
+})
+```
+
+### 摘要
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'summarize' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}summarize()
+```
+
+### 导入日历
+
+Calendar 366 官方文档列出的日历文件 URL 类型是 `file://` 和 `https://`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importCalendar' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalendar({
+  url: 'https://example.com/calendar.ics',
+})
+```
+
+## 生成的 URL
+
+```ts
+add({ type: 'event', query: 'Meeting tomorrow 10am' })
+// => 'cal366://add?type=event&query=Meeting%20tomorrow%2010am'
+
+addEvent({ query: 'Meeting tomorrow 10am' })
+// => 'cal366://add?type=event&query=Meeting%20tomorrow%2010am'
+
+addTask({ query: 'Call dentist' })
+// => 'cal366://add?type=task&query=Call%20dentist'
+
+openItem({ type: 'event', id: 'ABC123' })
+// => 'cal366://open?type=event&id=ABC123'
+
+openItem({ type: 'task', id: 'TASK123', date: 1717200000 })
+// => 'cal366://open?type=task&id=TASK123&date=1717200000'
+
+show({ view: 'month' })
+// => 'cal366://show?view=month'
+
+show({ tasks: 1 })
+// => 'cal366://show?tasks=1'
+
+show({ view: 'day', date: 1717200000 })
+// => 'cal366://show?view=day&date=1717200000'
+
+summarize()
+// => 'cal366://summarize'
+
+importCalendar({ url: 'https://example.com/calendar.ics' })
+// => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
 
 ---
@@ -31684,6 +32005,51 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'rustrover.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/scannr.md
+---
+
+# Scannr
+
+[Scannr](https://scannrapp.com/) 是一款用于 ID 扫描并获取驾驶证数据的应用。**Protocol Launcher** 允许您生成 Scannr 官方文档中的 URL scheme 链接：`scannr://` 和 `scannr://?callbackScheme=<foo>`。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 扫描 ID
+
+使用官方文档中的 Android URL scheme `scannr://` 启动 Scannr。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scanId' : 'scannr' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'scannr.'}}scanId()
+```
+
+### 带 iOS 回调的 ID 扫描
+
+使用官方文档中的 iOS URL scheme `scannr://?callbackScheme=<foo>` 启动 Scannr。调用方应用需要定义 `foo` URL scheme，并按 Scannr 官方说明配置 `LSApplicationQueriesSchemes`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scanId' : 'scannr' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'scannr.'}}scanId({
+  callbackScheme: 'foo',
+})
+```
+
+## 官方文档
+
+* [Scannr URL scheme 集成文档](https://scannrapp.com/scannr_url_scheme.pdf)
 
 ---
 
