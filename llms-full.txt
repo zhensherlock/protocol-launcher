@@ -38,6 +38,7 @@ Currently, we support the following applications:
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
+* [Bike Outliner](../apps/bike-outliner.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -76,6 +77,7 @@ Currently, we support the following applications:
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
@@ -87,6 +89,7 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
@@ -142,6 +145,7 @@ Currently, we support the following applications:
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Picsew](../apps/picsew.md)
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
@@ -154,6 +158,7 @@ Currently, we support the following applications:
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Reeder](../apps/reeder.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -181,6 +186,7 @@ Currently, we support the following applications:
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Tim](../apps/tim.md)
 * [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
@@ -351,6 +357,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
+* [Bike Outliner](../apps/bike-outliner.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -389,6 +396,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
@@ -400,6 +408,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
@@ -455,6 +464,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Picsew](../apps/picsew.md)
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
@@ -467,6 +477,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Reeder](../apps/reeder.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -494,6 +505,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Tim](../apps/tim.md)
 * [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
@@ -2531,6 +2543,94 @@ const uncompressUrl = {{currentMethod === 'On-Demand' ? '' : 'betterTouchTool.'}
 ## Official Documentation
 
 * [BetterTouchTool Custom URL Scheme](https://docs.folivora.ai/docs/scripting/url-scheme/)
+
+---
+
+---
+url: /protocol-launcher/apps/bike-outliner.md
+---
+
+# Bike Outliner
+
+[Bike Outliner](https://www.hogbaysoftware.com/bike/) is an outliner app. **Protocol Launcher** allows you to generate Bike Outliner row links and path row links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Bike Outliner's official documentation defines row links with the `bike://<rootid>/<focusid>#<selectid>` pattern. The focused row id and selected row id are optional. It also defines path row links in the `bike:///path/to/file.bike#row` form.
+
+This module exposes only those documented link forms. Use `openRowLink()` when you already have a complete Bike Outliner link copied from Bike Outliner.
+
+### Open Row
+
+Open Bike Outliner and select a row by using the document root id, optional focused row id, and optional selected row id.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRow' : 'bikeOutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bikeOutliner.'}}openRow({
+  rootId: 'KOcw9x9N',
+  focusId: 'ch',
+  selectedId: 'zf',
+})
+```
+
+### Open Path Row
+
+Use a file path to locate the Bike Outliner outline file, then select the row identified by the fragment id.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPathRow' : 'bikeOutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bikeOutliner.'}}openPathRow({
+  path: '/Users/jessegrosjean/Documents/todo.bike',
+  selectedId: 'aF',
+})
+```
+
+### Open Existing Row Link
+
+Use `openRowLink()` when you already have a full Bike Outliner row link or path row link.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRowLink' : 'bikeOutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bikeOutliner.'}}openRowLink({
+  url: 'bike://KOcw9x9N/ch#zf',
+})
+```
+
+## Generated URLs
+
+```ts
+openRow({
+  rootId: 'KOcw9x9N',
+  focusId: 'ch',
+  selectedId: 'zf',
+})
+// => 'bike://KOcw9x9N/ch#zf'
+
+openPathRow({
+  path: '/Users/jessegrosjean/Documents/todo.bike',
+  selectedId: 'aF',
+})
+// => 'bike:///Users/jessegrosjean/Documents/todo.bike#aF'
+
+openRowLink({ url: 'bike://KOcw9x9N/ch#zf' })
+// => 'bike://KOcw9x9N/ch#zf'
+```
+
+## Official Documentation
+
+* [Bike Outliner Using Links](https://bikeguide.hogbaysoftware.com/using-bike/using-links)
 
 ---
 
@@ -6496,6 +6596,119 @@ const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScri
 ---
 
 ---
+url: /protocol-launcher/apps/find-any-file.md
+---
+
+# Find Any File
+
+[Find Any File](https://findanyfile.app/) is a macOS file search app. **Protocol Launcher** allows you to generate Find Any File URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Find Any File's official URL scheme documentation defines `fafapp://find?...` for query-parameter searches and `fafapp://findjson/jsondata` or `fafapp://findjson/jsondata/wmode` for JSON search rules. This module exposes only those documented forms.
+
+For `find()`, `findInLocation()`, and `findWithTemplate()`, the payload uses FAF's documented parameter names: `inp`, `loc`, `win`, `root`, `run`, `norun`, and `tpl`. A string `inp` is serialized as `inp`; an array is serialized as `inp1`, `inp2`, and so on. A string `loc` is serialized as `loc`; an array is serialized as `loc1`, `loc2`, and so on.
+
+### Find
+
+Open Find Any File and search with the first input field.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'find' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}find({
+  inp: 'invoice',
+})
+```
+
+### Find In Location
+
+Search inside a specific Find Any File location such as `~`, a POSIX path, a file URL, an HFS path, or one of FAF's documented special `#` locations.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findInLocation' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}findInLocation({
+  loc: '~',
+  inp: 'invoice',
+})
+```
+
+### Find With Template
+
+Use a saved Search Template name without the `.faf` extension.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findWithTemplate' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}findWithTemplate({
+  tpl: 'LastWeek',
+  inp: 'invoice',
+})
+```
+
+### Find JSON
+
+Use JSON search rules copied from a saved Find Any File search. When `jsondata` is an object, string values are percent-encoded and the JSON punctuation is kept in the same form as FAF's official example. When `jsondata` is a string, it is used unchanged. `wmode` appends the optional documented window-mode path segment.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findJson' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}findJson({
+  jsondata: {
+    specs: [{ verb: 9, val: 'report 2021', subj: 0 }],
+    title: 'Name contains report 2021',
+    autoStart: true,
+    sources: ['/'],
+  },
+})
+```
+
+## Generated URLs
+
+```ts
+find({ inp: 'invoice' })
+// => 'fafapp://find?inp=invoice'
+
+findInLocation({
+  loc: '~',
+  inp: 'invoice',
+})
+// => 'fafapp://find?inp=invoice&loc=~'
+
+findWithTemplate({
+  tpl: 'LastWeek',
+  inp: 'invoice',
+})
+// => 'fafapp://find?inp=invoice&tpl=LastWeek'
+
+findJson({
+  jsondata: {
+    specs: [{ verb: 9, val: 'report 2021', subj: 0 }],
+    title: 'Name contains report 2021',
+    autoStart: true,
+    sources: ['/'],
+  },
+})
+// => 'fafapp://findjson/{"specs":[{"verb":9,"val":"report%202021","subj":0}],"title":"Name%20contains%20report%202021","autoStart":true,"sources":["%2F"]}'
+```
+
+## Official Documentation
+
+* [Find Any File URL scheme](https://findanyfile.app/url-scheme.html)
+
+---
+
+---
 url: /protocol-launcher/apps/focus.md
 ---
 
@@ -7377,6 +7590,99 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'googleMaps.'}}openUrl({
 ## Official Documentation
 
 * [Google Maps URL Scheme for iOS](https://developers.google.com/maps/documentation/urls/ios-urlscheme)
+
+---
+
+---
+url: /protocol-launcher/apps/hapigo.md
+---
+
+# HapiGo
+
+[HapiGo](https://www.hapigo.com/) is a macOS launcher for quickly opening apps and files. **Protocol Launcher** allows you to generate HapiGo URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+HapiGo's official URL scheme is `hapigo://open?extensionID={id}&query={query}`. The documentation defines `query` as the keyword and `extensionID` as the extension id. It currently exposes four built-in extension IDs: `APP`, `FILE`, `CLIPBOARD`, and `TRANSLATE`. This module only provides helpers for those documented IDs.
+
+When HapiGo is in mixed search mode, HapiGo documents that `APP` and `FILE` have the same effect and both send text to the main search.
+
+### Search App
+
+Send text to HapiGo app search.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchApp' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}searchApp({
+  query: 'hapigo',
+})
+```
+
+### Search File
+
+Send text to HapiGo file search.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchFile' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}searchFile({
+  query: 'pdf',
+})
+```
+
+### Search Clipboard
+
+Send text to HapiGo clipboard search.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchClipboard' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}searchClipboard({
+  query: 'request',
+})
+```
+
+### Translate
+
+Send text to HapiGo Translate.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'translate' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}translate({
+  query: 'app',
+})
+```
+
+## Generated URLs
+
+```ts
+searchApp({ query: 'hapigo' })
+// => 'hapigo://open?extensionID=APP&query=hapigo'
+
+searchFile({ query: 'pdf' })
+// => 'hapigo://open?extensionID=FILE&query=pdf'
+
+searchClipboard({ query: 'request' })
+// => 'hapigo://open?extensionID=CLIPBOARD&query=request'
+
+translate({ query: 'app' })
+// => 'hapigo://open?extensionID=TRANSLATE&query=app'
+```
+
+## Official Documentation
+
+* [HapiGo API & PopClip plugin](https://docs-cn.hapigo.com/adv/urlscheme)
 
 ---
 
@@ -12904,6 +13210,106 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
 ---
 
 ---
+url: /protocol-launcher/apps/picsew.md
+---
+
+# Picsew
+
+[Picsew](https://docs.picsew.app/) is a screenshot stitching app for iOS. **Protocol Launcher** allows you to generate Picsew x-callback-url links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Picsew's official x-callback-url documentation defines three actions: `/scroll`, `/vert`, and `/hori`. This module exposes only those documented actions as `scroll()`, `vert()`, and `hori()`.
+
+The payload mirrors the documented action parameters: `in`, `count` when `in=latest`, `out`, `watermark`, `border`, `mockup2`, `clean_status`, `remove_scrollbar`, and `delete_source`. The older `mockup` parameter is marked unavailable by Picsew, so it is not exposed.
+
+### Scrollshot Stitching
+
+Use the specified images for Picsew Scrollshot Stitching.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scroll' : 'picsew' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}scroll({
+  in: 'recent',
+  out: 'save',
+  clean_status: 'yes',
+  mockup2: 'iphone-14-blue',
+  delete_source: 'yes',
+})
+```
+
+### Vertical Stitching
+
+Use the specified images for Picsew Vertical Stitching.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'vert' : 'picsew' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}vert({
+  in: 'latest',
+  count: 3,
+  out: 'copy',
+  watermark: 'repeat',
+})
+```
+
+### Horizontal Stitching
+
+Use the specified images for Picsew Horizontal Stitching.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hori' : 'picsew' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}hori({
+  in: 'paste',
+  out: 'copy',
+})
+```
+
+## Generated URLs
+
+```ts
+scroll({
+  in: 'recent',
+  out: 'save',
+  clean_status: 'yes',
+  mockup2: 'iphone-14-blue',
+  delete_source: 'yes',
+})
+// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup2=iphone-14-blue&delete_source=yes'
+
+vert({
+  in: 'latest',
+  count: 3,
+  out: 'copy',
+  watermark: 'repeat',
+})
+// => 'picsew://x-callback-url/vert?in=latest&count=3&out=copy&watermark=repeat'
+
+hori({
+  in: 'paste',
+  out: 'copy',
+})
+// => 'picsew://x-callback-url/hori?in=paste&out=copy'
+```
+
+## Official Documentation
+
+* [Picsew x-callback-url](https://docs.picsew.app/getting-started/x-callback-url/)
+
+---
+
+---
 url: /protocol-launcher/apps/pincase.md
 ---
 
@@ -13901,6 +14307,65 @@ const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWi
 
 * [Raycast Deeplinks](https://developers.raycast.com/information/lifecycle/deeplinks)
 * [Raycast Window Management Deeplinks](https://manual.raycast.com/window-management#deeplinks)
+
+---
+
+---
+url: /protocol-launcher/apps/reeder.md
+---
+
+# Reeder
+
+[Reeder](https://reeder.app/) is a feed reader app. **Protocol Launcher** allows you to generate Reeder URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Reeder's official help documents only two URL scheme forms: `reed://` to open Reeder, and `reed://feed-url.com` to open Reeder and automatically search for a feed at the specified URL. This module exposes only those documented forms.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'reeder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'reeder.'}}open()
+```
+
+### Open Feed
+
+Open Reeder and automatically search for a feed at the specified URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'reeder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'reeder.'}}openFeed({
+  url: 'feed-url.com',
+})
+```
+
+## Generated URLs
+
+```ts
+open()
+// => 'reed://'
+
+openFeed({
+  url: 'feed-url.com',
+})
+// => 'reed://feed-url.com'
+```
+
+## Official Documentation
+
+* [Reeder Help - URL Scheme](https://reederapp.com/help/)
 
 ---
 
@@ -16320,6 +16785,142 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/tim.md
+---
+
+# Tim
+
+[Tim](https://tim.neat.software/) is a macOS time tracker. **Protocol Launcher** allows you to generate Tim deep links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Tim's official help page documents exactly these URL forms: `tim://`, `tim://[id]`, `tim://[id]?action=start&notes=My%20Notes`, `tim://?action=stop`, `tim://create?type=[task|group]&title=My%20Title&notes=My%20Notes`, and `tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com`.
+
+`createTask()` and `createGroup()` expose only the documented `task`/`group` type plus `title` and `notes`. The official page does not name any other query fields, so this module does not add them.
+
+### Open Tim
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}open()
+```
+
+### Open Task Or Group
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTaskOrGroup' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openTaskOrGroup({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+})
+```
+
+### Start Task
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTask' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}startTask({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+  notes: 'My Notes',
+})
+```
+
+### Stop Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stopTimer' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}stopTimer()
+```
+
+### Create Task
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createTask' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createTask({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+```
+
+### Create Group
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createGroup' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createGroup({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+```
+
+### Get Current URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentUrl' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}getCurrentUrl({
+  xSuccess: 'https://www.apple.com',
+})
+```
+
+## Generated URLs
+
+```ts
+open()
+// => 'tim://'
+
+openTaskOrGroup({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+})
+// => 'tim://D43FA035-6406-495D-9ADD-46721986040F'
+
+startTask({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+  notes: 'My Notes',
+})
+// => 'tim://D43FA035-6406-495D-9ADD-46721986040F?action=start&notes=My%20Notes'
+
+stopTimer()
+// => 'tim://?action=stop'
+
+createTask({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+// => 'tim://create?type=task&title=My%20Title&notes=My%20Notes'
+
+createGroup({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+// => 'tim://create?type=group&title=My%20Title&notes=My%20Notes'
+
+getCurrentUrl({
+  xSuccess: 'https://www.apple.com',
+})
+// => 'tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com'
+```
+
+## Official Documentation
+
+* [Tim Time Tracker Help](https://tim.neat.software/help)
 
 ---
 
@@ -19351,6 +19952,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
+* [Bike Outliner](../apps/bike-outliner.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -19389,6 +19991,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
@@ -19400,6 +20003,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
@@ -19455,6 +20059,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Picsew](../apps/picsew.md)
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
@@ -19467,6 +20072,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Reeder](../apps/reeder.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -19494,6 +20100,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Tim](../apps/tim.md)
 * [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
@@ -19664,6 +20271,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
+* [Bike Outliner](../apps/bike-outliner.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -19702,6 +20310,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
@@ -19713,6 +20322,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
@@ -19768,6 +20378,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Picsew](../apps/picsew.md)
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
@@ -19780,6 +20391,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Reeder](../apps/reeder.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -19807,6 +20419,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Tim](../apps/tim.md)
 * [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
@@ -21845,6 +22458,94 @@ const uncompressUrl = {{currentMethod === 'On-Demand' ? '' : 'betterTouchTool.'}
 ## 官方文档
 
 * [BetterTouchTool Custom URL Scheme](https://docs.folivora.ai/docs/scripting/url-scheme/)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/bike-outliner.md
+---
+
+# Bike Outliner
+
+[Bike Outliner](https://www.hogbaysoftware.com/bike/) 是一款大纲软件。**Protocol Launcher** 可以生成 Bike Outliner row link 和 path row link。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## 说明
+
+Bike Outliner 官方文档定义的 row link 形状为 `bike://<rootid>/<focusid>#<selectid>`。focused row id 和 selected row id 都是可选项。官方还定义了 `bike:///path/to/file.bike#row` 形式的 path row link。
+
+此模块只暴露这些官方文档化的链接形式。当你已经有从 Bike Outliner 复制出的完整 Bike Outliner link 时，可以使用 `openRowLink()`。
+
+### 打开行
+
+使用文档 root id、可选的 focused row id 和可选的 selected row id 打开 Bike Outliner 并选中行。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRow' : 'bikeOutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bikeOutliner.'}}openRow({
+  rootId: 'KOcw9x9N',
+  focusId: 'ch',
+  selectedId: 'zf',
+})
+```
+
+### 打开路径行
+
+使用文件路径定位 Bike Outliner outline 文件，然后通过 fragment id 选中对应行。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPathRow' : 'bikeOutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bikeOutliner.'}}openPathRow({
+  path: '/Users/jessegrosjean/Documents/todo.bike',
+  selectedId: 'aF',
+})
+```
+
+### 打开已有 Row Link
+
+当你已经有完整 Bike Outliner row link 或 path row link 时，可以使用 `openRowLink()`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRowLink' : 'bikeOutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bikeOutliner.'}}openRowLink({
+  url: 'bike://KOcw9x9N/ch#zf',
+})
+```
+
+## 生成的 URL
+
+```ts
+openRow({
+  rootId: 'KOcw9x9N',
+  focusId: 'ch',
+  selectedId: 'zf',
+})
+// => 'bike://KOcw9x9N/ch#zf'
+
+openPathRow({
+  path: '/Users/jessegrosjean/Documents/todo.bike',
+  selectedId: 'aF',
+})
+// => 'bike:///Users/jessegrosjean/Documents/todo.bike#aF'
+
+openRowLink({ url: 'bike://KOcw9x9N/ch#zf' })
+// => 'bike://KOcw9x9N/ch#zf'
+```
+
+## 官方文档
+
+* [Bike Outliner Using Links](https://bikeguide.hogbaysoftware.com/using-bike/using-links)
 
 ---
 
@@ -25810,6 +26511,119 @@ const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScri
 ---
 
 ---
+url: /protocol-launcher/zh/apps/find-any-file.md
+---
+
+# Find Any File
+
+[Find Any File](https://findanyfile.app/) 是一款 macOS 文件搜索应用。**Protocol Launcher** 可以生成 Find Any File URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## 说明
+
+Find Any File 官方 URL scheme 文档定义了用于查询参数搜索的 `fafapp://find?...`，以及用于 JSON 搜索规则的 `fafapp://findjson/jsondata` 或 `fafapp://findjson/jsondata/wmode`。此模块只暴露这些已文档化的形式。
+
+在 `find()`、`findInLocation()` 和 `findWithTemplate()` 中，payload 使用 FAF 官方文档里的参数名：`inp`、`loc`、`win`、`root`、`run`、`norun` 和 `tpl`。字符串 `inp` 会序列化为 `inp`；数组会序列化为 `inp1`、`inp2` 等。字符串 `loc` 会序列化为 `loc`；数组会序列化为 `loc1`、`loc2` 等。
+
+### 查找
+
+打开 Find Any File，并填入第一个输入框进行搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'find' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}find({
+  inp: 'invoice',
+})
+```
+
+### 在指定位置查找
+
+在指定 Find Any File 位置中搜索，例如 `~`、POSIX 路径、file URL、HFS 路径，或 FAF 文档列出的特殊 `#` 位置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findInLocation' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}findInLocation({
+  loc: '~',
+  inp: 'invoice',
+})
+```
+
+### 使用模板查找
+
+使用保存的 Search Template 名称，不包含 `.faf` 扩展名。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findWithTemplate' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}findWithTemplate({
+  tpl: 'LastWeek',
+  inp: 'invoice',
+})
+```
+
+### JSON 查找
+
+使用从 Find Any File 已保存搜索中复制出的 JSON 搜索规则。当 `jsondata` 是对象时，字符串值会进行百分号编码，JSON 标点会保留为 FAF 官方示例中的形式。当 `jsondata` 是字符串时，会原样使用。`wmode` 会追加官方文档中的可选窗口模式 path 片段。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'findJson' : 'findAnyFile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'findAnyFile.'}}findJson({
+  jsondata: {
+    specs: [{ verb: 9, val: 'report 2021', subj: 0 }],
+    title: 'Name contains report 2021',
+    autoStart: true,
+    sources: ['/'],
+  },
+})
+```
+
+## 生成的 URL
+
+```ts
+find({ inp: 'invoice' })
+// => 'fafapp://find?inp=invoice'
+
+findInLocation({
+  loc: '~',
+  inp: 'invoice',
+})
+// => 'fafapp://find?inp=invoice&loc=~'
+
+findWithTemplate({
+  tpl: 'LastWeek',
+  inp: 'invoice',
+})
+// => 'fafapp://find?inp=invoice&tpl=LastWeek'
+
+findJson({
+  jsondata: {
+    specs: [{ verb: 9, val: 'report 2021', subj: 0 }],
+    title: 'Name contains report 2021',
+    autoStart: true,
+    sources: ['/'],
+  },
+})
+// => 'fafapp://findjson/{"specs":[{"verb":9,"val":"report%202021","subj":0}],"title":"Name%20contains%20report%202021","autoStart":true,"sources":["%2F"]}'
+```
+
+## 官方文档
+
+* [Find Any File URL scheme](https://findanyfile.app/url-scheme.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/focus.md
 ---
 
@@ -26691,6 +27505,99 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'googleMaps.'}}openUrl({
 ## 官方文档
 
 * [Google Maps URL Scheme for iOS](https://developers.google.com/maps/documentation/urls/ios-urlscheme)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/hapigo.md
+---
+
+# HapiGo
+
+[HapiGo](https://www.hapigo.com/) 是一款 macOS 启动器，可用于快速打开应用和文件。**Protocol Launcher** 可以生成 HapiGo URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## 说明
+
+HapiGo 官方 URL scheme 是 `hapigo://open?extensionID={id}&query={query}`。官方文档说明 `query` 是关键词变量，`extensionID` 是扩展的 id，并且目前开放了四个内置扩展 ID：`APP`、`FILE`、`CLIPBOARD` 和 `TRANSLATE`。本模块只提供这些已文档化 ID 对应的 helper。
+
+当 HapiGo 搜索模式为“混合搜索”时，HapiGo 文档说明 `APP` 和 `FILE` 效果相同，均为发送文本至主搜索。
+
+### 应用搜索
+
+发送文本至 HapiGo 应用搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchApp' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}searchApp({
+  query: 'hapigo',
+})
+```
+
+### 文件搜索
+
+发送文本至 HapiGo 文件搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchFile' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}searchFile({
+  query: 'pdf',
+})
+```
+
+### 剪贴板搜索
+
+发送文本至 HapiGo 剪贴板搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchClipboard' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}searchClipboard({
+  query: 'request',
+})
+```
+
+### 翻译
+
+发送文本至 HapiGo 翻译。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'translate' : 'hapigo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hapigo.'}}translate({
+  query: 'app',
+})
+```
+
+## 生成的 URL
+
+```ts
+searchApp({ query: 'hapigo' })
+// => 'hapigo://open?extensionID=APP&query=hapigo'
+
+searchFile({ query: 'pdf' })
+// => 'hapigo://open?extensionID=FILE&query=pdf'
+
+searchClipboard({ query: 'request' })
+// => 'hapigo://open?extensionID=CLIPBOARD&query=request'
+
+translate({ query: 'app' })
+// => 'hapigo://open?extensionID=TRANSLATE&query=app'
+```
+
+## 官方文档
+
+* [HapiGo API & PopClip 插件](https://docs-cn.hapigo.com/adv/urlscheme)
 
 ---
 
@@ -32218,6 +33125,106 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/picsew.md
+---
+
+# Picsew
+
+[Picsew](https://docs.picsew.app/zh-hans/) 是一款 iOS 截图拼接应用。**Protocol Launcher** 允许您生成 Picsew x-callback-url 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+Picsew 官方 x-callback-url 文档定义了三个动作：`/scroll`、`/vert` 和 `/hori`。此模块只暴露这些官方动作，对应为 `scroll()`、`vert()` 和 `hori()`。
+
+Payload 与官方记录的动作参数保持一致：`in`、`in=latest` 时需要的 `count`、`out`、`watermark`、`border`、`mockup2`、`clean_status`、`remove_scrollbar` 和 `delete_source`。Picsew 已将旧的 `mockup` 参数标记为不可用，因此这里不暴露它。
+
+### 长截图拼接
+
+使用指定图片进行 Picsew 长截图拼接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'scroll' : 'picsew' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}scroll({
+  in: 'recent',
+  out: 'save',
+  clean_status: 'yes',
+  mockup2: 'iphone-14-blue',
+  delete_source: 'yes',
+})
+```
+
+### 竖向拼接
+
+使用指定图片进行 Picsew 竖向拼接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'vert' : 'picsew' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}vert({
+  in: 'latest',
+  count: 3,
+  out: 'copy',
+  watermark: 'repeat',
+})
+```
+
+### 横向拼接
+
+使用指定图片进行 Picsew 横向拼接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hori' : 'picsew' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}hori({
+  in: 'paste',
+  out: 'copy',
+})
+```
+
+## 生成的 URL
+
+```ts
+scroll({
+  in: 'recent',
+  out: 'save',
+  clean_status: 'yes',
+  mockup2: 'iphone-14-blue',
+  delete_source: 'yes',
+})
+// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup2=iphone-14-blue&delete_source=yes'
+
+vert({
+  in: 'latest',
+  count: 3,
+  out: 'copy',
+  watermark: 'repeat',
+})
+// => 'picsew://x-callback-url/vert?in=latest&count=3&out=copy&watermark=repeat'
+
+hori({
+  in: 'paste',
+  out: 'copy',
+})
+// => 'picsew://x-callback-url/hori?in=paste&out=copy'
+```
+
+## 官方文档
+
+* [Picsew x-callback-url](https://docs.picsew.app/zh-hans/getting-started/x-callback-url/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/pincase.md
 ---
 
@@ -33215,6 +34222,65 @@ const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWi
 
 * [Raycast Deeplinks](https://developers.raycast.com/information/lifecycle/deeplinks)
 * [Raycast Window Management Deeplinks](https://manual.raycast.com/window-management#deeplinks)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/reeder.md
+---
+
+# Reeder
+
+[Reeder](https://reeder.app/) 是一款订阅阅读器应用。**Protocol Launcher** 可以生成 Reeder URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## 说明
+
+Reeder 官方帮助只文档化了两种 URL scheme 形式：`reed://` 用于打开 Reeder，`reed://feed-url.com` 用于打开 Reeder 并自动搜索指定 URL 的 feed。此模块只暴露这些已文档化的形式。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'reeder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'reeder.'}}open()
+```
+
+### 打开 Feed
+
+打开 Reeder，并自动搜索指定 URL 的 feed。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'reeder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'reeder.'}}openFeed({
+  url: 'feed-url.com',
+})
+```
+
+## 生成的 URL
+
+```ts
+open()
+// => 'reed://'
+
+openFeed({
+  url: 'feed-url.com',
+})
+// => 'reed://feed-url.com'
+```
+
+## 官方文档
+
+* [Reeder Help - URL Scheme](https://reederapp.com/help/)
 
 ---
 
@@ -35634,6 +36700,142 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/tim.md
+---
+
+# Tim
+
+[Tim](https://tim.neat.software/) 是一款 macOS 时间追踪应用。**Protocol Launcher** 允许您生成 Tim 深度链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+Tim 官方帮助页明确列出的 URL 形式只有：`tim://`、`tim://[id]`、`tim://[id]?action=start&notes=My%20Notes`、`tim://?action=stop`、`tim://create?type=[task|group]&title=My%20Title&notes=My%20Notes` 和 `tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com`。
+
+`createTask()` 和 `createGroup()` 只暴露官方明确列出的 `task`/`group` 类型以及 `title` 和 `notes`。官方页面没有列出其他 query 字段名，因此这里不额外添加。
+
+### 打开 Tim
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}open()
+```
+
+### 打开任务或分组
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTaskOrGroup' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openTaskOrGroup({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+})
+```
+
+### 开始任务计时
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTask' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}startTask({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+  notes: 'My Notes',
+})
+```
+
+### 停止计时
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stopTimer' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}stopTimer()
+```
+
+### 创建任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createTask' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createTask({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+```
+
+### 创建分组
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createGroup' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createGroup({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+```
+
+### 获取当前 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentUrl' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}getCurrentUrl({
+  xSuccess: 'https://www.apple.com',
+})
+```
+
+## 生成的 URL
+
+```ts
+open()
+// => 'tim://'
+
+openTaskOrGroup({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+})
+// => 'tim://D43FA035-6406-495D-9ADD-46721986040F'
+
+startTask({
+  id: 'D43FA035-6406-495D-9ADD-46721986040F',
+  notes: 'My Notes',
+})
+// => 'tim://D43FA035-6406-495D-9ADD-46721986040F?action=start&notes=My%20Notes'
+
+stopTimer()
+// => 'tim://?action=stop'
+
+createTask({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+// => 'tim://create?type=task&title=My%20Title&notes=My%20Notes'
+
+createGroup({
+  title: 'My Title',
+  notes: 'My Notes',
+})
+// => 'tim://create?type=group&title=My%20Title&notes=My%20Notes'
+
+getCurrentUrl({
+  xSuccess: 'https://www.apple.com',
+})
+// => 'tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com'
+```
+
+## 官方文档
+
+* [Tim Time Tracker Help](https://tim.neat.software/help)
 
 ---
 

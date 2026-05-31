@@ -1,0 +1,1 @@
+import{i as r}from"./index.CWwLnpeZ.js";function o(t,n={}){return`tim://${t}${r(n)}`}function e(){return"tim://"}function u(t){let{id:n}=t;return o(n)}const m={id:"D43FA035-6406-495D-9ADD-46721986040F"};export{e,m as o,u as t};
