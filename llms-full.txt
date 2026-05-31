@@ -72,6 +72,7 @@ Currently, we support the following applications:
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Focus](../apps/focus.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -127,6 +128,7 @@ Currently, we support the following applications:
 * [Obsidian](../apps/obsidian.md)
 * [OK JSON](../apps/ok-json.md)
 * [OmniFocus](../apps/omnifocus.md)
+* [OmniOutliner](../apps/omnioutliner.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -372,6 +374,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Focus](../apps/focus.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -427,6 +430,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Obsidian](../apps/obsidian.md)
 * [OK JSON](../apps/ok-json.md)
 * [OmniFocus](../apps/omnifocus.md)
+* [OmniOutliner](../apps/omnioutliner.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -6035,6 +6039,122 @@ const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScri
 ---
 
 ---
+url: /protocol-launcher/apps/focus.md
+---
+
+# Focus
+
+[Focus](https://meaningful-things.com/focusapp) is a productivity and Pomodoro timer app. **Protocol Launcher** allows you to generate deep links to add and delete tasks, start timers, and pause the current timer in Focus.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Add Task
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Read chapter 3',
+})
+```
+
+### Add Task with Estimate
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Prepare Presentation',
+  note: 'Referecene mail notes',
+  sessionEstimate: 8,
+  due: 'monday',
+})
+```
+
+### Add Task with Minutes Estimate
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Study documentation',
+  note: 'make notes',
+  minutesEstimate: 120,
+  due: 'tomorrow',
+})
+```
+
+### Delete Task
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}deleteTask({
+  id: 'B1127BC6-3CC3-4AC4-B561-3CD493D2EDD6',
+})
+```
+
+Focus also supports deleting multiple tasks with a single `ids` string separated by `?`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}deleteTask({
+  ids: 'B1127BC6-3CC3-4AC4-B561-3CD493D2EDD6?U36SAM-3CD3-1BC4-B481-2CD590D2EDD2',
+})
+```
+
+### Start Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}startTimer()
+```
+
+### Start Timer with Duration
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}startTimer({
+  type: 'focus',
+  duration: 40,
+})
+```
+
+### Pause Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pauseTimer' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}pauseTimer()
+```
+
+### x-callback-url
+
+Focus supports `x-success` and `x-error` callback parameters on every command. The add command returns the new task id as `id` on the `x-success` callback.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Read chapter 3',
+  xSuccess: 'shortcuts://x-callback-url/run-shortcut?name=Focus Added',
+  xError: 'shortcuts://x-callback-url/run-shortcut?name=Focus Error',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/fsnotes.md
 ---
 
@@ -11368,6 +11488,107 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openTask({
 ## Official Documentation
 
 * [OmniFocus URL Schemes](https://inside.omnifocus.com/url-schemes)
+
+---
+
+---
+url: /protocol-launcher/apps/omnioutliner.md
+---
+
+# OmniOutliner
+
+[OmniOutliner](https://www.omnigroup.com/omnioutliner/) is an outlining app from The Omni Group. **Protocol Launcher** allows you to generate OmniOutliner Omni Links and Legacy Links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Document
+
+Omni Links support document (`doc`) links. Provide the path, document name, and Omni Links Folder ID from your OmniOutliner Connected Folder.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openDocument({
+  documentName: 'My Outline.ooutline',
+  folder: 'iCloud Drive',
+})
+```
+
+### Open Document Row
+
+Document Omni Links can include optional Elements, each added after the `folder` parameter with `&`. OmniOutliner currently documents `focus` for Focus and `row` for Row Selection.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocumentRow' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openDocumentRow({
+  path: 'foo/bar',
+  documentName: 'My Outline.ooutline',
+  folder: 'Work Server 9070',
+  focus: 'mDFTZpAeCb8',
+  row: 'fh4Q0jgg5iB',
+})
+```
+
+### Open Legacy Link
+
+Legacy Links only support the `open` link type. They work as long as the document containing the destination is open, and can include optional `focus` and `row` Elements.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLegacyLink' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const openUrl = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openLegacyLink()
+
+const rowUrl = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openLegacyLink({
+  focus: 'nBZUyLQl3b6',
+  row: 'j3NzslZpCi8',
+})
+```
+
+### Open Existing Link
+
+Use `openLink()` when you already have a full `omnioutliner:///doc/...` Omni Link or `omnioutliner:///open...` Legacy Link copied from OmniOutliner.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLink' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openLink({
+  url: 'omnioutliner:///doc/My%20Outline.ooutline?folder=iCloud%20Drive',
+})
+```
+
+## Generated URLs
+
+```ts
+openDocument({ documentName: 'My Outline.ooutline', folder: 'iCloud Drive' })
+// => 'omnioutliner:///doc/My%20Outline.ooutline?folder=iCloud%20Drive'
+
+openDocumentRow({
+  path: 'foo/bar',
+  documentName: 'My Outline.ooutline',
+  folder: 'Work Server 9070',
+  focus: 'mDFTZpAeCb8',
+  row: 'fh4Q0jgg5iB',
+})
+// => 'omnioutliner:///doc/foo/bar/My%20Outline.ooutline?folder=Work%20Server%209070&focus=mDFTZpAeCb8&row=fh4Q0jgg5iB'
+
+openLegacyLink()
+// => 'omnioutliner:///open'
+
+openLegacyLink({ focus: 'nBZUyLQl3b6', row: 'j3NzslZpCi8' })
+// => 'omnioutliner:///open?focus=nBZUyLQl3b6&row=j3NzslZpCi8'
+```
+
+## Official Documentation
+
+* [OmniOutliner 6 Omni Links and Legacy Links](https://support.omnigroup.com/documentation/omnioutliner/universal/6.1/en/connect/)
 
 ---
 
@@ -18055,6 +18276,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Focus](../apps/focus.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -18110,6 +18332,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Obsidian](../apps/obsidian.md)
 * [OK JSON](../apps/ok-json.md)
 * [OmniFocus](../apps/omnifocus.md)
+* [OmniOutliner](../apps/omnioutliner.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -18355,6 +18578,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
+* [Focus](../apps/focus.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
 * [GitHub Desktop](../apps/github-desktop.md)
@@ -18410,6 +18634,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Obsidian](../apps/obsidian.md)
 * [OK JSON](../apps/ok-json.md)
 * [OmniFocus](../apps/omnifocus.md)
+* [OmniOutliner](../apps/omnioutliner.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
@@ -24019,6 +24244,122 @@ const openFileUrl = {{currentMethod === 'On-Demand' ? '' : 'filemaker.'}}runScri
 ---
 
 ---
+url: /protocol-launcher/zh/apps/focus.md
+---
+
+# Focus
+
+[Focus](https://meaningful-things.com/focusapp) 是一款效率与番茄钟应用。**Protocol Launcher** 允许您生成深度链接以在 Focus 中添加和删除任务、启动计时器，以及暂停当前计时器。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 添加任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Read chapter 3',
+})
+```
+
+### 添加带估算的任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Prepare Presentation',
+  note: 'Referecene mail notes',
+  sessionEstimate: 8,
+  due: 'monday',
+})
+```
+
+### 添加带分钟估算的任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Study documentation',
+  note: 'make notes',
+  minutesEstimate: 120,
+  due: 'tomorrow',
+})
+```
+
+### 删除任务
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}deleteTask({
+  id: 'B1127BC6-3CC3-4AC4-B561-3CD493D2EDD6',
+})
+```
+
+Focus 也支持通过一个用 `?` 分隔的 `ids` 字符串删除多个任务。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'deleteTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}deleteTask({
+  ids: 'B1127BC6-3CC3-4AC4-B561-3CD493D2EDD6?U36SAM-3CD3-1BC4-B481-2CD590D2EDD2',
+})
+```
+
+### 启动计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}startTimer()
+```
+
+### 启动指定时长的计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}startTimer({
+  type: 'focus',
+  duration: 40,
+})
+```
+
+### 暂停计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pauseTimer' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}pauseTimer()
+```
+
+### x-callback-url
+
+Focus 的每个命令都支持 `x-success` 和 `x-error` 回调参数。添加任务成功时，Focus 会在 `x-success` 回调里返回新任务的 `id`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addTask' : 'focus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
+  title: 'Read chapter 3',
+  xSuccess: 'shortcuts://x-callback-url/run-shortcut?name=Focus Added',
+  xError: 'shortcuts://x-callback-url/run-shortcut?name=Focus Error',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/zh/apps/fsnotes.md
 ---
 
@@ -29352,6 +29693,107 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'omnifocus.'}}openTask({
 ## 官方文档
 
 * [OmniFocus URL Schemes](https://inside.omnifocus.com/url-schemes)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/omnioutliner.md
+---
+
+# OmniOutliner
+
+[OmniOutliner](https://www.omnigroup.com/omnioutliner/) 是 The Omni Group 的大纲应用。**Protocol Launcher** 可以生成 OmniOutliner Omni Links 与 Legacy Links。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+### 打开文档
+
+Omni Links 支持 document（`doc`）links。请提供 OmniOutliner Connected Folder 中的 path、document name 和 Omni Links Folder ID。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openDocument({
+  documentName: 'My Outline.ooutline',
+  folder: 'iCloud Drive',
+})
+```
+
+### 打开文档中的行
+
+Document Omni Links 可以包含可选 Elements，每个 Element 都在 `folder` 参数之后用 `&` 追加。OmniOutliner 目前记录了用于 Focus 的 `focus`，以及用于 Row Selection 的 `row`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocumentRow' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openDocumentRow({
+  path: 'foo/bar',
+  documentName: 'My Outline.ooutline',
+  folder: 'Work Server 9070',
+  focus: 'mDFTZpAeCb8',
+  row: 'fh4Q0jgg5iB',
+})
+```
+
+### 打开 Legacy Link
+
+Legacy Links 只支持 `open` link type。只要包含目标位置的文档已经打开，它们就可以工作，并可包含可选的 `focus` 和 `row` Elements。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLegacyLink' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const openUrl = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openLegacyLink()
+
+const rowUrl = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openLegacyLink({
+  focus: 'nBZUyLQl3b6',
+  row: 'j3NzslZpCi8',
+})
+```
+
+### 打开已有链接
+
+当你已经有从 OmniOutliner 复制出的完整 `omnioutliner:///doc/...` Omni Link 或 `omnioutliner:///open...` Legacy Link 时，可以使用 `openLink()`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLink' : 'omnioutliner' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'omnioutliner.'}}openLink({
+  url: 'omnioutliner:///doc/My%20Outline.ooutline?folder=iCloud%20Drive',
+})
+```
+
+## 生成的 URL
+
+```ts
+openDocument({ documentName: 'My Outline.ooutline', folder: 'iCloud Drive' })
+// => 'omnioutliner:///doc/My%20Outline.ooutline?folder=iCloud%20Drive'
+
+openDocumentRow({
+  path: 'foo/bar',
+  documentName: 'My Outline.ooutline',
+  folder: 'Work Server 9070',
+  focus: 'mDFTZpAeCb8',
+  row: 'fh4Q0jgg5iB',
+})
+// => 'omnioutliner:///doc/foo/bar/My%20Outline.ooutline?folder=Work%20Server%209070&focus=mDFTZpAeCb8&row=fh4Q0jgg5iB'
+
+openLegacyLink()
+// => 'omnioutliner:///open'
+
+openLegacyLink({ focus: 'nBZUyLQl3b6', row: 'j3NzslZpCi8' })
+// => 'omnioutliner:///open?focus=nBZUyLQl3b6&row=j3NzslZpCi8'
+```
+
+## 官方文档
+
+* [OmniOutliner 6 Omni Links and Legacy Links](https://support.omnigroup.com/documentation/omnioutliner/universal/6.1/en/connect/)
 
 ---
 
