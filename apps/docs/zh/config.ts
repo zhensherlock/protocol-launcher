@@ -53,6 +53,7 @@ export default defineAdditionalConfig({
           { text: 'BusyContacts', link: '/zh/apps/busycontacts' },
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
+          { text: 'Calendar 366', link: '/zh/apps/calendar-366' },
           { text: 'Capacities', link: '/zh/apps/capacities' },
           { text: 'Cardhop', link: '/zh/apps/cardhop' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },

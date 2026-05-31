@@ -150,6 +150,10 @@
       "types": "./dist/types/calca/index.d.ts",
       "import": "./dist/calca/index.js"
     },
+    "./calendar-366": {
+      "types": "./dist/types/calendar-366/index.d.ts",
+      "import": "./dist/calendar-366/index.js"
+    },
     "./capacities": {
       "types": "./dist/types/capacities/index.d.ts",
       "import": "./dist/capacities/index.js"
