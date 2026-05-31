@@ -159,6 +159,7 @@ Currently, we support the following applications:
 - [Raycast](../apps/raycast.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
+- [Screens](../apps/screens.md)
 - [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)

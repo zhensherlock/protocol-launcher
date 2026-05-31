@@ -131,6 +131,7 @@ export const appLogoFiles = {
   raycast: 'raycast.webp',
   rustrover: 'rustrover.webp',
   scannr: 'scannr.webp',
+  screens: 'screens.webp',
   scriptable: 'scriptable.webp',
   shopi: 'shopi.webp',
   shortcuts: 'shortcuts.png',

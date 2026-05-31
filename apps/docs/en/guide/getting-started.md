@@ -250,6 +250,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Raycast](../apps/raycast.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
+- [Screens](../apps/screens.md)
 - [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)

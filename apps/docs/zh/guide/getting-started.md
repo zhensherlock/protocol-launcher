@@ -250,6 +250,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Raycast](../apps/raycast.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
+- [Screens](../apps/screens.md)
 - [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)

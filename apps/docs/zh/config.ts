@@ -162,6 +162,7 @@ export default defineAdditionalConfig({
           { text: 'Raycast', link: '/zh/apps/raycast' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Scannr', link: '/zh/apps/scannr' },
+          { text: 'Screens', link: '/zh/apps/screens' },
           { text: 'Scriptable', link: '/zh/apps/scriptable' },
           { text: 'Shopi', link: '/zh/apps/shopi' },
           { text: 'Shortcuts', link: '/zh/apps/shortcuts' },
