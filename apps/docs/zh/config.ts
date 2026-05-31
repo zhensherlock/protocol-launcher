@@ -98,6 +98,7 @@ export default defineAdditionalConfig({
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'Google Chrome iOS', link: '/zh/apps/google-chrome-ios' },
           { text: 'Google Maps', link: '/zh/apps/google-maps' },
+          { text: 'HapiGo', link: '/zh/apps/hapigo' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
           { text: 'Hammerspoon', link: '/zh/apps/hammerspoon' },
           { text: 'Hiddify', link: '/zh/apps/hiddify' },

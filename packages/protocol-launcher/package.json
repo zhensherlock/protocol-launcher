@@ -326,6 +326,10 @@
       "types": "./dist/types/google-maps/index.d.ts",
       "import": "./dist/google-maps/index.js"
     },
+    "./hapigo": {
+      "types": "./dist/types/hapigo/index.d.ts",
+      "import": "./dist/hapigo/index.js"
+    },
     "./hbuilderx": {
       "types": "./dist/types/hbuilderx/index.d.ts",
       "import": "./dist/hbuilderx/index.js"

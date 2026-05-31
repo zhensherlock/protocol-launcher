@@ -95,6 +95,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [GoLand](../apps/goland.md)
 - [Google Chrome iOS](../apps/google-chrome-ios.md)
 - [Google Maps](../apps/google-maps.md)
+- [HapiGo](../apps/hapigo.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hammerspoon](../apps/hammerspoon.md)
 - [Hiddify](../apps/hiddify.md)

@@ -67,6 +67,7 @@ export const appLogoFiles = {
   goodtask: 'goodtask.webp',
   'google-chrome-ios': 'google-chrome.webp',
   'google-maps': 'google-maps.webp',
+  hapigo: 'hapigo.png',
   hammerspoon: 'hammerspoon.png',
   hbuilderx: 'hbuilderx.png',
   hiddify: 'hiddify.webp',
