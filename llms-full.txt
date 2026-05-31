@@ -136,6 +136,7 @@ Currently, we support the following applications:
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
@@ -173,6 +174,7 @@ Currently, we support the following applications:
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Timepage](../apps/timepage.md)
+* [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -438,6 +440,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
@@ -475,6 +478,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Timepage](../apps/timepage.md)
+* [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -12208,6 +12212,144 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
 ---
 
 ---
+url: /protocol-launcher/apps/pincase.md
+---
+
+# Pincase
+
+[Pincase](https://pincaseapp.com/) is a Pinboard.in client for iOS. **Protocol Launcher** allows you to generate Pincase x-callback-url links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Pincase's official API page documents only these URL scheme actions:
+
+* `pincaseapp://x-callback-url/add`
+* `pincaseapp://x-callback-url/open`
+
+For `add`, the official parameter table lists `url`, `title`, `private`, `toread`, `noui`, `x-success`, `x-error`, and `x-cancel`. The same official page's add-bookmark example uses `later=yes`; `addBookmark()` serializes either `toread` or `later` only when you pass that key and does not infer one from the other.
+
+For `open`, Pincase documents `mode`, `tag`, and `username`. It also says `x-source`, `x-success`, `x-error`, and `x-cancel` will not work for this action, so the open helpers do not accept callback options. Official mode values are `menu`, `personal_unread`, `personal_recent`, `personal_tag`, `public_popular`, `public_recent`, `public_japanese`, `public_wikipedia`, `public_fandom`, `public_favorite_stream`, `public_tag`, and `public_username`. The official parameter row says `tag` is used with `mode=personal_tag` or `mode=public_tag`; `openTag()` is limited to those two values.
+
+### Add Bookmark
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}addBookmark({
+  url: 'http://pincaseapp.com/',
+  title: 'Pincase - A simple, elegant and powerful Pinboard.in client for iOS',
+  noui: 'yes',
+  later: 'yes',
+})
+```
+
+### Add Bookmark with Callbacks
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}addBookmark({
+  url: 'https://www.example.com/article?ref=url scheme',
+  title: 'Example Article',
+  private: 'no',
+  toread: 'no',
+  noui: 'no',
+  xSuccess: 'myapp://success',
+  xError: 'myapp://error',
+  xCancel: 'myapp://cancel',
+})
+```
+
+### Open Public Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}open({
+  mode: 'public_tag',
+  tag: 'iOS',
+})
+```
+
+### Open Unread
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUnread' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}openUnread()
+```
+
+### Open Recent
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecent' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}openRecent()
+```
+
+### Open Tag
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}openTag({
+  mode: 'personal_tag',
+  tag: 'reading list',
+})
+```
+
+## Generated URLs
+
+```ts
+addBookmark({
+  url: 'http://pincaseapp.com/',
+  title: 'Pincase - A simple, elegant and powerful Pinboard.in client for iOS',
+  noui: 'yes',
+  later: 'yes',
+})
+// => 'pincaseapp://x-callback-url/add?url=http%3A%2F%2Fpincaseapp.com%2F&title=Pincase%20-%20A%20simple%2C%20elegant%20and%20powerful%20Pinboard.in%20client%20for%20iOS&noui=yes&later=yes'
+
+addBookmark({
+  url: 'https://www.example.com/article?ref=url scheme',
+  title: 'Example Article',
+  private: 'no',
+  toread: 'no',
+  noui: 'no',
+  xSuccess: 'myapp://success',
+  xError: 'myapp://error',
+  xCancel: 'myapp://cancel',
+})
+// => 'pincaseapp://x-callback-url/add?url=https%3A%2F%2Fwww.example.com%2Farticle%3Fref%3Durl%20scheme&title=Example%20Article&private=no&toread=no&noui=no&x-success=myapp%3A%2F%2Fsuccess&x-error=myapp%3A%2F%2Ferror&x-cancel=myapp%3A%2F%2Fcancel'
+
+open({ mode: 'public_tag', tag: 'iOS' })
+// => 'pincaseapp://x-callback-url/open?mode=public_tag&tag=iOS'
+
+openUnread()
+// => 'pincaseapp://x-callback-url/open?mode=personal_unread'
+
+openRecent()
+// => 'pincaseapp://x-callback-url/open?mode=personal_recent'
+
+openTag({ mode: 'personal_tag', tag: 'reading list' })
+// => 'pincaseapp://x-callback-url/open?mode=personal_tag&tag=reading%20list'
+```
+
+## Official Documentation
+
+* [Pincase URL Schemes](https://pincaseapp.com/api.html)
+
+---
+
+---
 url: /protocol-launcher/apps/pleco.md
 ---
 
@@ -15543,6 +15685,93 @@ Timepage calls the `x-success` callback with `start`, `end`, `title`, and `locat
 ---
 
 ---
+url: /protocol-launcher/apps/today-habit-tracker.md
+---
+
+# Today Habit Tracker
+
+[Today Habit Tracker](https://neybox.com/today-habit-tracker) is a habit tracking app. **Protocol Launcher** allows you to generate deep links to open habits, check in, revoke check-ins, and show habit lists in Today.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Today action URLs use `today://x-callback-url/<action>`. The API fields `xSuccess` and `xError` generate the documented `x-success` and `x-error` query parameters.
+
+### Open Habit
+
+Open Today, jump to a specific habit, and retrieve information about that habit.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHabit' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}openHabit({
+  id: 'p14',
+})
+```
+
+### Check In
+
+Perform a check-in on a specific habit.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'checkIn' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}checkIn({
+  id: 'p14',
+})
+```
+
+### Revoke Check-In
+
+Revoke a check-in on a specific habit.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'revokeCheckIn' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}revokeCheckIn({
+  id: 'p14',
+})
+```
+
+### Show Habits
+
+Open Today's habit overview screen. The documented filter values are `today` and `all`; Today defaults to `today` when the filter is omitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showHabits' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}showHabits({
+  filter: 'all',
+})
+```
+
+### x-callback-url
+
+Today returns habit data on `x-success` for habit-specific actions, and returns habit title/id dictionaries plus totals for `showHabits`. Errors are returned through `x-error`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHabit' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}openHabit({
+  id: 'p14',
+  xSuccess: 'shortcuts://x-callback-url/run-shortcut?name=Habit Info',
+  xError: 'shortcuts://x-callback-url/run-shortcut?name=Habit Error',
+})
+```
+
+## Official Documentation
+
+* [Today Action URLs Documentation](https://intercom.help/today_habit_tracker/en/articles/3745810-action-urls-documentation)
+
+---
+
+---
 url: /protocol-launcher/apps/todoist.md
 ---
 
@@ -18340,6 +18569,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
@@ -18377,6 +18607,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Timepage](../apps/timepage.md)
+* [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -18642,6 +18873,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [PearAI](../apps/pearai.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
+* [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Prizmo](../apps/prizmo.md)
@@ -18679,6 +18911,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
 * [Timepage](../apps/timepage.md)
+* [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
 * [Tower](../apps/tower.md)
 * [Trae](../apps/trae.md)
@@ -30413,6 +30646,144 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/pincase.md
+---
+
+# Pincase
+
+[Pincase](https://pincaseapp.com/) 是一款 iOS Pinboard.in 客户端。**Protocol Launcher** 允许您生成 Pincase x-callback-url 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+Pincase 官方 API 页面只记录了以下 URL scheme action：
+
+* `pincaseapp://x-callback-url/add`
+* `pincaseapp://x-callback-url/open`
+
+对于 `add`，官方参数表列出了 `url`、`title`、`private`、`toread`、`noui`、`x-success`、`x-error` 和 `x-cancel`。同一个官方页面的添加书签示例使用了 `later=yes`；`addBookmark()` 只会序列化您传入的 `toread` 或 `later` key，不会在二者之间推断或转换。
+
+对于 `open`，Pincase 记录了 `mode`、`tag` 和 `username`。官方也说明 `x-source`、`x-success`、`x-error`、`x-cancel` 对此 action 不生效，因此 open 相关 helper 不接受 callback 选项。官方 mode 值为 `menu`、`personal_unread`、`personal_recent`、`personal_tag`、`public_popular`、`public_recent`、`public_japanese`、`public_wikipedia`、`public_fandom`、`public_favorite_stream`、`public_tag` 和 `public_username`。官方参数行说明 `tag` 与 `mode=personal_tag` 或 `mode=public_tag` 一起使用；`openTag()` 也只限定为这两个值。
+
+### 添加书签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}addBookmark({
+  url: 'http://pincaseapp.com/',
+  title: 'Pincase - A simple, elegant and powerful Pinboard.in client for iOS',
+  noui: 'yes',
+  later: 'yes',
+})
+```
+
+### 添加带回调的书签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addBookmark' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}addBookmark({
+  url: 'https://www.example.com/article?ref=url scheme',
+  title: 'Example Article',
+  private: 'no',
+  toread: 'no',
+  noui: 'no',
+  xSuccess: 'myapp://success',
+  xError: 'myapp://error',
+  xCancel: 'myapp://cancel',
+})
+```
+
+### 打开公开标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}open({
+  mode: 'public_tag',
+  tag: 'iOS',
+})
+```
+
+### 打开未读
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUnread' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}openUnread()
+```
+
+### 打开最近书签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecent' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}openRecent()
+```
+
+### 打开标签
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'pincase' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pincase.'}}openTag({
+  mode: 'personal_tag',
+  tag: 'reading list',
+})
+```
+
+## 生成的 URL
+
+```ts
+addBookmark({
+  url: 'http://pincaseapp.com/',
+  title: 'Pincase - A simple, elegant and powerful Pinboard.in client for iOS',
+  noui: 'yes',
+  later: 'yes',
+})
+// => 'pincaseapp://x-callback-url/add?url=http%3A%2F%2Fpincaseapp.com%2F&title=Pincase%20-%20A%20simple%2C%20elegant%20and%20powerful%20Pinboard.in%20client%20for%20iOS&noui=yes&later=yes'
+
+addBookmark({
+  url: 'https://www.example.com/article?ref=url scheme',
+  title: 'Example Article',
+  private: 'no',
+  toread: 'no',
+  noui: 'no',
+  xSuccess: 'myapp://success',
+  xError: 'myapp://error',
+  xCancel: 'myapp://cancel',
+})
+// => 'pincaseapp://x-callback-url/add?url=https%3A%2F%2Fwww.example.com%2Farticle%3Fref%3Durl%20scheme&title=Example%20Article&private=no&toread=no&noui=no&x-success=myapp%3A%2F%2Fsuccess&x-error=myapp%3A%2F%2Ferror&x-cancel=myapp%3A%2F%2Fcancel'
+
+open({ mode: 'public_tag', tag: 'iOS' })
+// => 'pincaseapp://x-callback-url/open?mode=public_tag&tag=iOS'
+
+openUnread()
+// => 'pincaseapp://x-callback-url/open?mode=personal_unread'
+
+openRecent()
+// => 'pincaseapp://x-callback-url/open?mode=personal_recent'
+
+openTag({ mode: 'personal_tag', tag: 'reading list' })
+// => 'pincaseapp://x-callback-url/open?mode=personal_tag&tag=reading%20list'
+```
+
+## 官方文档
+
+* [Pincase URL Schemes](https://pincaseapp.com/api.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/pleco.md
 ---
 
@@ -33744,6 +34115,93 @@ Timepage 会调用 `x-success` 回调，并带上 `start`、`end`、`title` 和 
 ## 参考资料
 
 * [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/today-habit-tracker.md
+---
+
+# Today Habit Tracker
+
+[Today Habit Tracker](https://neybox.com/today-habit-tracker) 是一款习惯追踪应用。**Protocol Launcher** 允许您生成深度链接，以在 Today 中打开习惯、完成打卡、撤销打卡和显示习惯列表。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+Today Action URL 使用 `today://x-callback-url/<action>`。API 字段 `xSuccess` 和 `xError` 会生成官方文档中的 `x-success` 与 `x-error` query 参数。
+
+### Open Habit
+
+打开 Today，跳转到指定习惯，并取回该习惯的信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHabit' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}openHabit({
+  id: 'p14',
+})
+```
+
+### Check In
+
+为指定习惯执行一次 check-in。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'checkIn' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}checkIn({
+  id: 'p14',
+})
+```
+
+### Revoke Check-In
+
+撤销指定习惯的一次 check-in。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'revokeCheckIn' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}revokeCheckIn({
+  id: 'p14',
+})
+```
+
+### Show Habits
+
+打开 Today 的习惯总览页。官方文档中的 filter 值为 `today` 和 `all`；省略 filter 时，Today 默认使用 `today`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showHabits' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}showHabits({
+  filter: 'all',
+})
+```
+
+### x-callback-url
+
+Today 会在 habit-specific action 的 `x-success` 中返回 habit 数据，并在 `showHabits` 的 `x-success` 中返回 habit title/id 字典和统计值。错误会通过 `x-error` 返回。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHabit' : 'todayHabitTracker' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'todayHabitTracker.'}}openHabit({
+  id: 'p14',
+  xSuccess: 'shortcuts://x-callback-url/run-shortcut?name=Habit Info',
+  xError: 'shortcuts://x-callback-url/run-shortcut?name=Habit Error',
+})
+```
+
+## 官方文档
+
+* [Today Action URLs Documentation](https://intercom.help/today_habit_tracker/en/articles/3745810-action-urls-documentation)
 
 ---
 
