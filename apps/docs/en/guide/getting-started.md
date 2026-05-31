@@ -224,6 +224,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Obsidian](../apps/obsidian.md)
 - [OK JSON](../apps/ok-json.md)
 - [OmniFocus](../apps/omnifocus.md)
+- [OmniOutliner](../apps/omnioutliner.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)

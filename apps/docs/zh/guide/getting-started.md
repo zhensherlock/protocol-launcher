@@ -224,6 +224,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Obsidian](../apps/obsidian.md)
 - [OK JSON](../apps/ok-json.md)
 - [OmniFocus](../apps/omnifocus.md)
+- [OmniOutliner](../apps/omnioutliner.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)

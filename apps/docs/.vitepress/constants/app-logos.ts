@@ -105,6 +105,7 @@ export const appLogoFiles = {
   obsidian: 'obsidian.svg',
   'ok-json': 'ok-json.webp',
   omnifocus: 'omnifocus.png',
+  omnioutliner: 'omnioutliner.webp',
   opencode: 'opencode.png',
   opener: 'opener.webp',
   orchids: 'orchids.svg',

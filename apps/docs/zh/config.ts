@@ -136,6 +136,7 @@ export default defineAdditionalConfig({
           { text: 'Obsidian', link: '/zh/apps/obsidian' },
           { text: 'OK JSON', link: '/zh/apps/ok-json' },
           { text: 'OmniFocus', link: '/zh/apps/omnifocus' },
+          { text: 'OmniOutliner', link: '/zh/apps/omnioutliner' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Opener', link: '/zh/apps/opener' },
           { text: 'Orchids', link: '/zh/apps/orchids' },
