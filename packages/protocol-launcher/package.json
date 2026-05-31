@@ -518,6 +518,10 @@
       "types": "./dist/types/pika/index.d.ts",
       "import": "./dist/pika/index.js"
     },
+    "./pincase": {
+      "types": "./dist/types/pincase/index.d.ts",
+      "import": "./dist/pincase/index.js"
+    },
     "./pleco": {
       "types": "./dist/types/pleco/index.d.ts",
       "import": "./dist/pleco/index.js"

@@ -145,6 +145,7 @@ export default defineAdditionalConfig({
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PDF Viewer', link: '/zh/apps/pdf-viewer' },
           { text: 'Pika', link: '/zh/apps/pika' },
+          { text: 'Pincase', link: '/zh/apps/pincase' },
           { text: 'Pleco', link: '/zh/apps/pleco' },
           { text: 'Pocket Casts', link: '/zh/apps/pocket-casts' },
           { text: 'Prizmo', link: '/zh/apps/prizmo' },
