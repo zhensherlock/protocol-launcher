@@ -2,4 +2,4 @@
 "protocol-launcher": minor
 ---
 
-feat(bike): add Bike URL scheme support
+feat(bike-outliner): add Bike Outliner URL scheme support

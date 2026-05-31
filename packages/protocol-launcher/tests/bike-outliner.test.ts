@@ -1,9 +1,9 @@
 import { describe, expect, test } from 'vitest'
-import { bike } from '../src'
+import { bikeOutliner } from '../src'
 
-describe('bike', () => {
+describe('bike-outliner', () => {
   test('openRow should return the official row link example URL', () => {
-    const url = bike.openRow({
+    const url = bikeOutliner.openRow({
       rootId: 'KOcw9x9N',
       focusId: 'ch',
       selectedId: 'zf',
@@ -13,7 +13,7 @@ describe('bike', () => {
   })
 
   test('openRow should omit optional focus and selected row ids', () => {
-    const url = bike.openRow({
+    const url = bikeOutliner.openRow({
       rootId: 'KOcw9x9N',
     })
 
@@ -21,7 +21,7 @@ describe('bike', () => {
   })
 
   test('openPathRow should return the official path row link example URL', () => {
-    const url = bike.openPathRow({
+    const url = bikeOutliner.openPathRow({
       path: '/Users/jessegrosjean/Documents/todo.bike',
       selectedId: 'aF',
     })
@@ -29,16 +29,16 @@ describe('bike', () => {
     expect(url).toBe('bike:///Users/jessegrosjean/Documents/todo.bike#aF')
   })
 
-  test('openRowLink should return an existing Bike row link unchanged', () => {
-    const url = bike.openRowLink({
+  test('openRowLink should return an existing Bike Outliner row link unchanged', () => {
+    const url = bikeOutliner.openRowLink({
       url: 'bike://KOcw9x9N/ch#zf',
     })
 
     expect(url).toBe('bike://KOcw9x9N/ch#zf')
   })
 
-  test('openRowLink should return an existing Bike path row link unchanged', () => {
-    const url = bike.openRowLink({
+  test('openRowLink should return an existing Bike Outliner path row link unchanged', () => {
+    const url = bikeOutliner.openRowLink({
       url: 'bike:///Users/jessegrosjean/Documents/todo.bike#aF',
     })
 

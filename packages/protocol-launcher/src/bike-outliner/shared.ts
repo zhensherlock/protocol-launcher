@@ -1,4 +1,4 @@
-export type BikeRowLinkPayload = {
+export type BikeOutlinerRowLinkPayload = {
   /**
    * The id of the root node of the document.
    */
@@ -15,7 +15,7 @@ export type BikeRowLinkPayload = {
   selectedId?: string
 }
 
-export type BikePathRowLinkPayload = {
+export type BikeOutlinerPathRowLinkPayload = {
   /**
    * File path to the associated outline file.
    */
@@ -27,20 +27,20 @@ export type BikePathRowLinkPayload = {
   selectedId: string
 }
 
-export type BikeRowLink = `bike://${string}`
+export type BikeOutlinerRowLink = `bike://${string}`
 
-export type BikeOpenRowLinkPayload = {
+export type BikeOutlinerOpenRowLinkPayload = {
   /**
-   * Full Bike row link or path row link copied from Bike.
+   * Full Bike Outliner row link or path row link copied from Bike Outliner.
    */
-  url: BikeRowLink
+  url: BikeOutlinerRowLink
 }
 
-export function encodeBikeId(id: string) {
+export function encodeBikeOutlinerId(id: string) {
   return encodeURIComponent(id)
 }
 
-export function encodeBikePath(path: string) {
+export function encodeBikeOutlinerPath(path: string) {
   return path
     .split('/')
     .filter(Boolean)

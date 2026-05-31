@@ -126,9 +126,9 @@
       "types": "./dist/types/bettertouchtool/index.d.ts",
       "import": "./dist/bettertouchtool/index.js"
     },
-    "./bike": {
-      "types": "./dist/types/bike/index.d.ts",
-      "import": "./dist/bike/index.js"
+    "./bike-outliner": {
+      "types": "./dist/types/bike-outliner/index.d.ts",
+      "import": "./dist/bike-outliner/index.js"
     },
     "./buchen": {
       "types": "./dist/types/buchen/index.d.ts",
@@ -281,6 +281,10 @@
     "./filemaker": {
       "types": "./dist/types/filemaker/index.d.ts",
       "import": "./dist/filemaker/index.js"
+    },
+    "./find-any-file": {
+      "types": "./dist/types/find-any-file/index.d.ts",
+      "import": "./dist/find-any-file/index.js"
     },
     "./focus": {
       "types": "./dist/types/focus/index.d.ts",
