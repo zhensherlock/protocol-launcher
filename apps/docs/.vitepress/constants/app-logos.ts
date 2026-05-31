@@ -17,6 +17,7 @@ export const appLogoFiles = {
   bear: 'bear.png',
   beorg: 'beorg.webp',
   bettertouchtool: 'bettertouchtool.png',
+  bike: 'bike-outliner.webp',
   buchen: 'buchen.webp',
   bunch: 'bunch.png',
   busycal: 'busycal.png',

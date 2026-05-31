@@ -126,6 +126,10 @@
       "types": "./dist/types/bettertouchtool/index.d.ts",
       "import": "./dist/bettertouchtool/index.js"
     },
+    "./bike": {
+      "types": "./dist/types/bike/index.d.ts",
+      "import": "./dist/bike/index.js"
+    },
     "./buchen": {
       "types": "./dist/types/buchen/index.d.ts",
       "import": "./dist/buchen/index.js"

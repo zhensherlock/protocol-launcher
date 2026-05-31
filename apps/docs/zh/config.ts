@@ -47,6 +47,7 @@ export default defineAdditionalConfig({
           { text: 'Bear', link: '/zh/apps/bear' },
           { text: 'Beorg', link: '/zh/apps/beorg' },
           { text: 'BetterTouchTool', link: '/zh/apps/bettertouchtool' },
+          { text: 'Bike', link: '/zh/apps/bike' },
           { text: 'Buchen', link: '/zh/apps/buchen' },
           { text: 'Bunch', link: '/zh/apps/bunch' },
           { text: 'BusyCal', link: '/zh/apps/busycal' },
