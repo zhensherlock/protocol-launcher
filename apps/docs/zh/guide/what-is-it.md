@@ -44,6 +44,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Bear](../apps/bear.md)
 - [Beorg](../apps/beorg.md)
 - [BetterTouchTool](../apps/bettertouchtool.md)
+- [Buchen](../apps/buchen.md)
 - [Bunch](../apps/bunch.md)
 - [BusyCal](../apps/busycal.md)
 - [BusyContacts](../apps/busycontacts.md)
