@@ -191,6 +191,7 @@ export default defineAdditionalConfig({
           { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Things', link: '/zh/apps/things' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
+          { text: 'Tim', link: '/zh/apps/tim' },
           { text: 'Timer+', link: '/zh/apps/timer-plus' },
           { text: 'Timepage', link: '/zh/apps/timepage' },
           { text: 'Today Habit Tracker', link: '/zh/apps/today-habit-tracker' },

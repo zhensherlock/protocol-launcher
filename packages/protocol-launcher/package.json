@@ -706,6 +706,10 @@
       "types": "./dist/types/thunder/index.d.ts",
       "import": "./dist/thunder/index.js"
     },
+    "./tim": {
+      "types": "./dist/types/tim/index.d.ts",
+      "import": "./dist/tim/index.js"
+    },
     "./timer-plus": {
       "types": "./dist/types/timer-plus/index.d.ts",
       "import": "./dist/timer-plus/index.js"
