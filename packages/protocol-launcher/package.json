@@ -274,6 +274,10 @@
       "types": "./dist/types/focus/index.d.ts",
       "import": "./dist/focus/index.js"
     },
+    "./forscore": {
+      "types": "./dist/types/forscore/index.d.ts",
+      "import": "./dist/forscore/index.js"
+    },
     "./fsnotes": {
       "types": "./dist/types/fsnotes/index.d.ts",
       "import": "./dist/fsnotes/index.js"

@@ -53,6 +53,7 @@ export const appLogoFiles = {
   fantastical: 'fantastical.webp',
   filemaker: 'filemaker.png',
   focus: 'focus.webp',
+  forscore: 'forscore.webp',
   fsnotes: 'fsnotes.webp',
   ftstreets: 'ftstreets.png',
   'github-desktop': 'github-desktop.png',
