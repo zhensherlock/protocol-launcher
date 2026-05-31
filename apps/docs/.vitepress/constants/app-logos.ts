@@ -127,6 +127,7 @@ export const appLogoFiles = {
   quark: 'quark.png',
   raycast: 'raycast.webp',
   rustrover: 'rustrover.webp',
+  scannr: 'scannr.webp',
   scriptable: 'scriptable.webp',
   shopi: 'shopi.webp',
   shortcuts: 'shortcuts.png',

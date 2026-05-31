@@ -155,6 +155,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
 - [RustRover](../apps/rustrover.md)
+- [Scannr](../apps/scannr.md)
 - [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)

@@ -158,6 +158,7 @@ export default defineAdditionalConfig({
           { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'Raycast', link: '/zh/apps/raycast' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
+          { text: 'Scannr', link: '/zh/apps/scannr' },
           { text: 'Scriptable', link: '/zh/apps/scriptable' },
           { text: 'Shopi', link: '/zh/apps/shopi' },
           { text: 'Shortcuts', link: '/zh/apps/shortcuts' },

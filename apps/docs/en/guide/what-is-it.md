@@ -155,6 +155,7 @@ Currently, we support the following applications:
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
 - [RustRover](../apps/rustrover.md)
+- [Scannr](../apps/scannr.md)
 - [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)

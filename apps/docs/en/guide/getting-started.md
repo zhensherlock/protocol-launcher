@@ -246,6 +246,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
 - [RustRover](../apps/rustrover.md)
+- [Scannr](../apps/scannr.md)
 - [Scriptable](../apps/scriptable.md)
 - [Shopi](../apps/shopi.md)
 - [Shortcuts](../apps/shortcuts.md)

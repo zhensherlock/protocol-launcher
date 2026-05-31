@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "prepare": "husky",
-    "dev": "cross-env NODE_ENV=development turbo run dev --filter=./apps/*... --filter=!@protocol-launcher/promo-video",
+    "dev": "cross-env NODE_ENV=development turbo run dev --filter=./apps/*...",
     "build": "cross-env NODE_ENV=production turbo run build --filter=./apps/docs...",
     "build:promo": "cross-env NODE_ENV=production turbo run build --filter=./apps/promo-video",
     "check:promo": "pnpm --filter ./apps/promo-video check",
