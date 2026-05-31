@@ -161,6 +161,7 @@ export default defineAdditionalConfig({
           { text: 'Skype', link: '/zh/apps/skype' },
           { text: 'Slack', link: '/zh/apps/slack' },
           { text: 'Soulver', link: '/zh/apps/soulver' },
+          { text: 'Sorted³', link: '/zh/apps/sorted' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Spotify', link: '/zh/apps/spotify' },
           { text: 'Steam', link: '/zh/apps/steam' },

@@ -130,6 +130,7 @@ export const appLogoFiles = {
   skype: 'skype.webp',
   slack: 'slack.webp',
   soulver: 'soulver.png',
+  sorted: 'sorted.webp',
   sourcetree: 'sourcetree.png',
   spotify: 'spotify.webp',
   steam: 'steam.webp',

@@ -158,6 +158,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Skype](../apps/skype.md)
 - [Slack](../apps/slack.md)
 - [Soulver](../apps/soulver.md)
+- [Sorted³](../apps/sorted.md)
 - [SourceTree](../apps/sourcetree.md)
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)

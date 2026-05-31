@@ -578,6 +578,10 @@
       "types": "./dist/types/soulver/index.d.ts",
       "import": "./dist/soulver/index.js"
     },
+    "./sorted": {
+      "types": "./dist/types/sorted/index.d.ts",
+      "import": "./dist/sorted/index.js"
+    },
     "./sourcetree": {
       "types": "./dist/types/sourcetree/index.d.ts",
       "import": "./dist/sourcetree/index.js"
