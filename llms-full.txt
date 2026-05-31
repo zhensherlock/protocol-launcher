@@ -49,6 +49,7 @@ Currently, we support the following applications:
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
@@ -153,6 +154,7 @@ Currently, we support the following applications:
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
+* [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -177,6 +179,7 @@ Currently, we support the following applications:
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
@@ -357,6 +360,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
@@ -461,6 +465,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
+* [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -485,6 +490,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
@@ -3826,6 +3832,137 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/chute.md
+---
+
+# Chute
+
+[Chute](https://www.chute.life/) is an advanced network toolbox. **Protocol Launcher** allows you to generate URL scheme links to start, stop, and toggle Chute.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Chute's official manual documents three iOS URL scheme action groups from version 1.0.2: `start | connect | on`, `stop | disconnect | off`, and `toggle | switch`. Protocol Launcher exposes helpers for the first action in each group: `start`, `stop`, and `toggle`.
+
+The only documented option is `autoclose=true`, which automatically closes Chute after the action completes.
+
+Chute also documents x-callback-url support with the `chute` scheme and only the `start`, `stop`, and `toggle` actions. Its example uses `x-success` and `x-error`, so this module exposes only those callback query parameters.
+
+### Start
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}start()
+```
+
+### Start And Auto Close
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}start({
+  autoclose: true,
+})
+```
+
+### Stop
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stop' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}stop()
+```
+
+### Toggle
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggle' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}toggle({
+  autoclose: true,
+})
+```
+
+### X-Callback Start
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStart' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}xCallbackStart({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+```
+
+### X-Callback Stop
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStop' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}xCallbackStop({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+```
+
+### X-Callback Toggle
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}xCallbackToggle({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+```
+
+## Generated URLs
+
+```ts
+start()
+// => 'chute:///start'
+
+start({ autoclose: true })
+// => 'chute:///start?autoclose=true'
+
+stop()
+// => 'chute:///stop'
+
+stop({ autoclose: true })
+// => 'chute:///stop?autoclose=true'
+
+toggle({ autoclose: true })
+// => 'chute:///toggle?autoclose=true'
+
+xCallbackStart({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+// => 'chute://x-callback-url/start?x-success=sms%3A%2F%2F&x-error=tel%3A%2F%2F'
+
+xCallbackStop()
+// => 'chute://x-callback-url/stop'
+
+xCallbackToggle()
+// => 'chute://x-callback-url/toggle'
+```
+
+## Official Documentation
+
+* [Chute URL Scheme](https://manual.chute.life/other/url-scheme.html)
 
 ---
 
@@ -13648,6 +13785,64 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'scannr.'}}scanId({
 ---
 
 ---
+url: /protocol-launcher/apps/screens.md
+---
+
+# Screens
+
+[Screens](https://edovia.com/en/screens/) is a remote desktop app by Edovia for connecting to Macs, PCs, Linux PCs, and Raspberry Pi devices. **Protocol Launcher** allows you to generate deep links for saved screens, VNC connections, and SSH-secured Screens sessions.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Saved Screen
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSavedScreen' : 'screens' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'screens.'}}openSavedScreen({
+  target: 'Johns-MacBook-Pro.local',
+  guest: true,
+})
+```
+
+### Connect via VNC
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'vnc' : 'screens' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'screens.'}}vnc({
+  host: '192.168.1.14',
+  port: 5900,
+  username: 'john',
+  observe: true,
+})
+```
+
+### Connect via SSH
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'ssh' : 'screens' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'screens.'}}ssh({
+  host: 'server.example.com',
+  username: 'john',
+  port: 22,
+  sshKey: 'My Work Key',
+})
+```
+
+Only the parameters documented by Edovia are exposed: `ssh-key` for `ssh://` URLs, and `guest=true` / `observe=true` for `screens://`, `vnc://`, and `ssh://` URLs. See the [official Screens URL Schemes documentation](https://help.edovia.com/en/screens-5/features/url-schemes).
+
+---
+
+---
 url: /protocol-launcher/apps/scriptable.md
 ---
 
@@ -15919,6 +16114,91 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/timer-plus.md
+---
+
+# Timer+
+
+[Timer+](https://www.timerplusapp.com/) is an iOS timer and stopwatch app. **Protocol Launcher** allows you to generate official URL scheme links to start quick timers and quick stopwatches in Timer+.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Start Quick Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickTimer' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickTimer({
+  minutes: 50,
+  name: 'Laundry',
+})
+```
+
+Timer+ accepts any combination of `hours`, `minutes`, and `seconds`. Its official documentation states the total duration is limited to 100 hours, and that omitting the duration or setting it to 0 opens the new Quick Timer screen.
+
+### Start Quick Timer with Hours, Minutes, and Seconds
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickTimer' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickTimer({
+  hours: 1,
+  minutes: 23,
+  seconds: 45,
+})
+```
+
+### Start Quick Stopwatch
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickStopwatch' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickStopwatch({
+  name: 'Plank',
+})
+```
+
+### x-callback-url
+
+Timer+ partially supports x-callback-url. Its official documentation accepts only `x-source` and `x-success`, and uses the `timerplus://x-callback-url/` prefix instead of `timerplus://app/`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickTimer' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickTimer({
+  hours: 1,
+  minutes: 5,
+  seconds: 30,
+  name: 'Tea',
+  xSource: 'Shortcuts',
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickStopwatch' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickStopwatch({
+  name: 'Plank',
+  xSource: 'Shortcuts',
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+## Official Documentation
+
+* [Timer+ URL scheme](https://www.timerplusapp.com/help/BkG3d6F_d-/)
 
 ---
 
@@ -18876,6 +19156,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
@@ -18980,6 +19261,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
+* [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -19004,6 +19286,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
@@ -19184,6 +19467,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
 * [Coda](../apps/coda.md)
@@ -19288,6 +19572,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Raycast](../apps/raycast.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
+* [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
 * [Shopi](../apps/shopi.md)
 * [Shortcuts](../apps/shortcuts.md)
@@ -19312,6 +19597,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
 * [Thunder](../apps/thunder.md)
+* [Timer+](../apps/timer-plus.md)
 * [Timepage](../apps/timepage.md)
 * [Today Habit Tracker](../apps/today-habit-tracker.md)
 * [Todoist](../apps/todoist.md)
@@ -22654,6 +22940,137 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/chute.md
+---
+
+# Chute
+
+[Chute](https://www.chute.life/) 是一款高级网络工具箱。**Protocol Launcher** 允许你生成用于启动、停止和切换 Chute 的 URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Chute 官方手册记录了从 1.0.2 起支持的三组 iOS URL scheme action：`start | connect | on`、`stop | disconnect | off` 和 `toggle | switch`。Protocol Launcher 为每组中的第一个 action 暴露 helper：`start`、`stop` 和 `toggle`。
+
+官方记录的唯一选项是 `autoclose=true`，用于在 action 完成后自动关闭 Chute。
+
+Chute 还记录了 x-callback-url 支持，scheme 为 `chute`，并且只有 `start`、`stop`、`toggle` 三个 action。官方示例使用 `x-success` 和 `x-error`，因此本模块只暴露这两个 callback query 参数。
+
+### 启动
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}start()
+```
+
+### 启动并自动关闭
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'start' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}start({
+  autoclose: true,
+})
+```
+
+### 停止
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'stop' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}stop()
+```
+
+### 切换
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggle' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}toggle({
+  autoclose: true,
+})
+```
+
+### X-Callback 启动
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStart' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}xCallbackStart({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+```
+
+### X-Callback 停止
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStop' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}xCallbackStop({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+```
+
+### X-Callback 切换
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'chute' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'chute.'}}xCallbackToggle({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+```
+
+## 生成的 URL
+
+```ts
+start()
+// => 'chute:///start'
+
+start({ autoclose: true })
+// => 'chute:///start?autoclose=true'
+
+stop()
+// => 'chute:///stop'
+
+stop({ autoclose: true })
+// => 'chute:///stop?autoclose=true'
+
+toggle({ autoclose: true })
+// => 'chute:///toggle?autoclose=true'
+
+xCallbackStart({
+  xSuccess: 'sms://',
+  xError: 'tel://',
+})
+// => 'chute://x-callback-url/start?x-success=sms%3A%2F%2F&x-error=tel%3A%2F%2F'
+
+xCallbackStop()
+// => 'chute://x-callback-url/stop'
+
+xCallbackToggle()
+// => 'chute://x-callback-url/toggle'
+```
+
+## 官方文档
+
+* [Chute URL Scheme](https://manual.chute.life/other/url-scheme.html)
 
 ---
 
@@ -32476,6 +32893,64 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'scannr.'}}scanId({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/screens.md
+---
+
+# Screens
+
+[Screens](https://edovia.com/en/screens/) 是 Edovia 的远程桌面应用，可连接 Mac、PC、Linux PC 和 Raspberry Pi 设备。**Protocol Launcher** 允许你生成用于已保存 Screen、VNC 连接和 SSH 安全连接的深度链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 打开已保存的 Screen
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSavedScreen' : 'screens' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'screens.'}}openSavedScreen({
+  target: 'Johns-MacBook-Pro.local',
+  guest: true,
+})
+```
+
+### 通过 VNC 连接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'vnc' : 'screens' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'screens.'}}vnc({
+  host: '192.168.1.14',
+  port: 5900,
+  username: 'john',
+  observe: true,
+})
+```
+
+### 通过 SSH 连接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'ssh' : 'screens' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'screens.'}}ssh({
+  host: 'server.example.com',
+  username: 'john',
+  port: 22,
+  sshKey: 'My Work Key',
+})
+```
+
+这里仅暴露 Edovia 官方文档列出的参数：`ssh://` URL 的 `ssh-key`，以及 `screens://`、`vnc://`、`ssh://` 都支持的 `guest=true` / `observe=true`。请参考 [Screens 官方 URL Schemes 文档](https://help.edovia.com/en/screens-5/features/url-schemes)。
+
+---
+
+---
 url: /protocol-launcher/zh/apps/scriptable.md
 ---
 
@@ -34747,6 +35222,91 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'thunder.'}}downloadUrl({
   url: 'https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/timer-plus.md
+---
+
+# Timer+
+
+[Timer+](https://www.timerplusapp.com/) 是一款 iOS 计时器与秒表应用。**Protocol Launcher** 允许您生成官方 URL scheme 链接，在 Timer+ 中启动 quick timer 和 quick stopwatch。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 启动 Quick Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickTimer' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickTimer({
+  minutes: 50,
+  name: 'Laundry',
+})
+```
+
+Timer+ 支持任意组合 `hours`、`minutes` 和 `seconds`。官方文档说明总时长最多 100 小时；如果省略时长，或时长合计为 0，会打开新的 Quick Timer 编辑界面。
+
+### 启动带时分秒的 Quick Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickTimer' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickTimer({
+  hours: 1,
+  minutes: 23,
+  seconds: 45,
+})
+```
+
+### 启动 Quick Stopwatch
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickStopwatch' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickStopwatch({
+  name: 'Plank',
+})
+```
+
+### x-callback-url
+
+Timer+ 部分支持 x-callback-url。官方文档只接受 `x-source` 和 `x-success`，并使用 `timerplus://x-callback-url/` 前缀替代 `timerplus://app/`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickTimer' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickTimer({
+  hours: 1,
+  minutes: 5,
+  seconds: 30,
+  name: 'Tea',
+  xSource: 'Shortcuts',
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickStopwatch' : 'timerPlus' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timerPlus.'}}quickStopwatch({
+  name: 'Plank',
+  xSource: 'Shortcuts',
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+## 官方文档
+
+* [Timer+ URL scheme](https://www.timerplusapp.com/help/BkG3d6F_d-/)
 
 ---
 
