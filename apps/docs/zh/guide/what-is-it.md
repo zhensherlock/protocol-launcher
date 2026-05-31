@@ -164,6 +164,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
+- [Reeder](../apps/reeder.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)

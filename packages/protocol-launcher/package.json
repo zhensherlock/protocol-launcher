@@ -602,6 +602,10 @@
       "types": "./dist/types/raycast/index.d.ts",
       "import": "./dist/raycast/index.js"
     },
+    "./reeder": {
+      "types": "./dist/types/reeder/index.d.ts",
+      "import": "./dist/reeder/index.js"
+    },
     "./rustrover": {
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"

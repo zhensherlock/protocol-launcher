@@ -255,6 +255,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
+- [Reeder](../apps/reeder.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)

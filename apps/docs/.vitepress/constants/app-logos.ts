@@ -136,6 +136,7 @@ export const appLogoFiles = {
   qoder: 'qoder.png',
   quark: 'quark.png',
   raycast: 'raycast.webp',
+  reeder: 'reeder.webp',
   rustrover: 'rustrover.webp',
   scannr: 'scannr.webp',
   screens: 'screens.webp',
