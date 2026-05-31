@@ -151,6 +151,7 @@ export const appLogoFiles = {
   things: 'things.png',
   thunder: 'thunder.svg',
   timepage: 'moleskine-planner.webp',
+  'today-habit-tracker': 'today-habit-tracker.webp',
   todoist: 'todoist.svg',
   tower: 'tower.png',
   trae: 'trae.png',

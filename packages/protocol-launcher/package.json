@@ -670,6 +670,10 @@
       "types": "./dist/types/timepage/index.d.ts",
       "import": "./dist/timepage/index.js"
     },
+    "./today-habit-tracker": {
+      "types": "./dist/types/today-habit-tracker/index.d.ts",
+      "import": "./dist/today-habit-tracker/index.js"
+    },
     "./todoist": {
       "types": "./dist/types/todoist/index.d.ts",
       "import": "./dist/todoist/index.js"

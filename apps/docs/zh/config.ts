@@ -182,6 +182,7 @@ export default defineAdditionalConfig({
           { text: 'Things', link: '/zh/apps/things' },
           { text: 'Thunder', link: '/zh/apps/thunder' },
           { text: 'Timepage', link: '/zh/apps/timepage' },
+          { text: 'Today Habit Tracker', link: '/zh/apps/today-habit-tracker' },
           { text: 'Todoist', link: '/zh/apps/todoist' },
           { text: 'Tower', link: '/zh/apps/tower' },
           { text: 'Trae', link: '/zh/apps/trae' },

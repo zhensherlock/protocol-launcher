@@ -179,6 +179,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
 - [Timepage](../apps/timepage.md)
+- [Today Habit Tracker](../apps/today-habit-tracker.md)
 - [Todoist](../apps/todoist.md)
 - [Tower](../apps/tower.md)
 - [Trae](../apps/trae.md)
