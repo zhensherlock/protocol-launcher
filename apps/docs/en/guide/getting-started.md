@@ -239,6 +239,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [PearAI](../apps/pearai.md)
 - [PDF Viewer](../apps/pdf-viewer.md)
 - [Pika](../apps/pika.md)
+- [Picsew](../apps/picsew.md)
 - [Pincase](../apps/pincase.md)
 - [Pleco](../apps/pleco.md)
 - [Pocket Casts](../apps/pocket-casts.md)

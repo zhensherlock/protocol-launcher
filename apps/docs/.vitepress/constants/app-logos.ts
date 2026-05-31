@@ -121,6 +121,7 @@ export const appLogoFiles = {
   'pdf-viewer': 'pdf-viewer.webp',
   phpstorm: 'phpstorm.png',
   pika: 'pika.png',
+  picsew: 'picsew.webp',
   pincase: 'pincase.webp',
   pleco: 'pleco.webp',
   'pocket-casts': 'pocket-casts.webp',

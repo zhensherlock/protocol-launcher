@@ -542,6 +542,10 @@
       "types": "./dist/types/pika/index.d.ts",
       "import": "./dist/pika/index.js"
     },
+    "./picsew": {
+      "types": "./dist/types/picsew/index.d.ts",
+      "import": "./dist/picsew/index.js"
+    },
     "./pincase": {
       "types": "./dist/types/pincase/index.d.ts",
       "import": "./dist/pincase/index.js"
