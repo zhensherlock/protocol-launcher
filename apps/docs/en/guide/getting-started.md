@@ -169,6 +169,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Evernote](../apps/evernote.md)
 - [Fantastical](../apps/fantastical.md)
 - [Claris FileMaker](../apps/filemaker.md)
+- [Focus](../apps/focus.md)
 - [FSNotes](../apps/fsnotes.md)
 - [Streets](../apps/ftstreets.md)
 - [GitHub Desktop](../apps/github-desktop.md)

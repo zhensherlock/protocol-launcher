@@ -262,6 +262,10 @@
       "types": "./dist/types/filemaker/index.d.ts",
       "import": "./dist/filemaker/index.js"
     },
+    "./focus": {
+      "types": "./dist/types/focus/index.d.ts",
+      "import": "./dist/focus/index.js"
+    },
     "./fsnotes": {
       "types": "./dist/types/fsnotes/index.d.ts",
       "import": "./dist/fsnotes/index.js"

@@ -78,6 +78,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Evernote](../apps/evernote.md)
 - [Fantastical](../apps/fantastical.md)
 - [Claris FileMaker](../apps/filemaker.md)
+- [Focus](../apps/focus.md)
 - [FSNotes](../apps/fsnotes.md)
 - [Streets](../apps/ftstreets.md)
 - [GitHub Desktop](../apps/github-desktop.md)

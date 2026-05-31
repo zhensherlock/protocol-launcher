@@ -50,6 +50,7 @@ export const appLogoFiles = {
   evernote: 'evernote.png',
   fantastical: 'fantastical.webp',
   filemaker: 'filemaker.png',
+  focus: 'focus.webp',
   fsnotes: 'fsnotes.webp',
   ftstreets: 'ftstreets.png',
   'github-desktop': 'github-desktop.png',

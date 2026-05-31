@@ -81,6 +81,7 @@ export default defineAdditionalConfig({
           { text: 'Evernote', link: '/zh/apps/evernote' },
           { text: 'Fantastical', link: '/zh/apps/fantastical' },
           { text: 'Claris FileMaker', link: '/zh/apps/filemaker' },
+          { text: 'Focus', link: '/zh/apps/focus' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'Streets', link: '/zh/apps/ftstreets' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
