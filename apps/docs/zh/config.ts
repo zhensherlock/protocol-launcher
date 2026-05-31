@@ -133,6 +133,7 @@ export default defineAdditionalConfig({
           { text: 'Nozbe', link: '/zh/apps/nozbe' },
           { text: 'Nova', link: '/zh/apps/nova' },
           { text: 'Obsidian', link: '/zh/apps/obsidian' },
+          { text: 'OK JSON', link: '/zh/apps/ok-json' },
           { text: 'OmniFocus', link: '/zh/apps/omnifocus' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Opener', link: '/zh/apps/opener' },

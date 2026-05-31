@@ -130,6 +130,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Nozbe](../apps/nozbe.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
+- [OK JSON](../apps/ok-json.md)
 - [OmniFocus](../apps/omnifocus.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)

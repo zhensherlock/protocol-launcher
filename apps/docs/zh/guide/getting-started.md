@@ -221,6 +221,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Nozbe](../apps/nozbe.md)
 - [Nova](../apps/nova.md)
 - [Obsidian](../apps/obsidian.md)
+- [OK JSON](../apps/ok-json.md)
 - [OmniFocus](../apps/omnifocus.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)

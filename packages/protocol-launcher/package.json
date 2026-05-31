@@ -466,6 +466,10 @@
       "types": "./dist/types/obsidian/index.d.ts",
       "import": "./dist/obsidian/index.js"
     },
+    "./ok-json": {
+      "types": "./dist/types/ok-json/index.d.ts",
+      "import": "./dist/ok-json/index.js"
+    },
     "./opencode": {
       "types": "./dist/types/opencode/index.d.ts",
       "import": "./dist/opencode/index.js"

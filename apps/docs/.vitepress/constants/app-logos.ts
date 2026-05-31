@@ -102,6 +102,7 @@ export const appLogoFiles = {
   nova: 'nova.png',
   nozbe: 'nozbe.png',
   obsidian: 'obsidian.svg',
+  'ok-json': 'ok-json.webp',
   omnifocus: 'omnifocus.png',
   opencode: 'opencode.png',
   opener: 'opener.webp',
