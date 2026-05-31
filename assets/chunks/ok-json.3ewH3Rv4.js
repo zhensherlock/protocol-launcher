@@ -1,0 +1,1 @@
+import{i as o}from"./index.CWwLnpeZ.js";function t(n){return`okjson://${n}`}function r(n){return`okjson://new${o({content:n.content})}`}function s(){return t("history")}function c(n){return r(n)}function u(){return t("paste")}function a(){return t("scripts-panel")}const i={content:'{"hello":"world"}'};export{c as a,s as b,a as c,i as n,u as t};
