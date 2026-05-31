@@ -156,6 +156,7 @@ export const appLogoFiles = {
   theia: 'theiaide.png',
   things: 'things.png',
   thunder: 'thunder.svg',
+  'timer-plus': 'timer-plus.webp',
   timepage: 'moleskine-planner.webp',
   'today-habit-tracker': 'today-habit-tracker.webp',
   todoist: 'todoist.svg',

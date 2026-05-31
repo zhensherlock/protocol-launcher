@@ -184,6 +184,7 @@ Currently, we support the following applications:
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
+- [Timer+](../apps/timer-plus.md)
 - [Timepage](../apps/timepage.md)
 - [Today Habit Tracker](../apps/today-habit-tracker.md)
 - [Todoist](../apps/todoist.md)
