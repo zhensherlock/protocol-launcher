@@ -154,6 +154,10 @@
       "types": "./dist/types/calendar-366/index.d.ts",
       "import": "./dist/calendar-366/index.js"
     },
+    "./calendars-readdle": {
+      "types": "./dist/types/calendars-readdle/index.d.ts",
+      "import": "./dist/calendars-readdle/index.js"
+    },
     "./capacities": {
       "types": "./dist/types/capacities/index.d.ts",
       "import": "./dist/capacities/index.js"

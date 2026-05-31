@@ -54,6 +54,7 @@ export default defineAdditionalConfig({
           { text: 'Cal2Todo', link: '/zh/apps/cal2todo' },
           { text: 'Calca', link: '/zh/apps/calca' },
           { text: 'Calendar 366', link: '/zh/apps/calendar-366' },
+          { text: 'Calendars by Readdle', link: '/zh/apps/calendars-readdle' },
           { text: 'Capacities', link: '/zh/apps/capacities' },
           { text: 'Cardhop', link: '/zh/apps/cardhop' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },

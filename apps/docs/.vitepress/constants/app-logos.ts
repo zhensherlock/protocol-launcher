@@ -24,6 +24,7 @@ export const appLogoFiles = {
   cal2todo: 'cal2todo.webp',
   calca: 'calca.webp',
   'calendar-366': 'calendar-366.webp',
+  'calendars-readdle': 'calendars-readdle.webp',
   capacities: 'capacities.webp',
   cardhop: 'cardhop.webp',
   'cherry-studio': 'cherry-studio.svg',

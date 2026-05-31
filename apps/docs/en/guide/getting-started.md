@@ -142,6 +142,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Cal2Todo](../apps/cal2todo.md)
 - [Calca](../apps/calca.md)
 - [Calendar 366](../apps/calendar-366.md)
+- [Calendars by Readdle](../apps/calendars-readdle.md)
 - [Capacities](../apps/capacities.md)
 - [Cardhop](../apps/cardhop.md)
 - [Cherry Studio](../apps/cherry-studio.md)
