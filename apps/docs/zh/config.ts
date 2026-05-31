@@ -112,6 +112,7 @@ export default defineAdditionalConfig({
           { text: 'Ivory', link: '/zh/apps/ivory' },
           { text: 'Joplin', link: '/zh/apps/joplin' },
           { text: 'Jump Desktop', link: '/zh/apps/jump-desktop' },
+          { text: 'Just Timers', link: '/zh/apps/just-timers' },
           { text: 'Keyboard Maestro', link: '/zh/apps/keyboard-maestro' },
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
