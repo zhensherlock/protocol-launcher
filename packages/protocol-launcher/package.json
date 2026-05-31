@@ -226,6 +226,10 @@
       "types": "./dist/types/day-one/index.d.ts",
       "import": "./dist/day-one/index.js"
     },
+    "./downcast": {
+      "types": "./dist/types/downcast/index.d.ts",
+      "import": "./dist/downcast/index.js"
+    },
     "./debit-credit": {
       "types": "./dist/types/debit-credit/index.d.ts",
       "import": "./dist/debit-credit/index.js"

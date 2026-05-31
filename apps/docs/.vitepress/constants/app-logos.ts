@@ -42,6 +42,7 @@ export const appLogoFiles = {
   cubox: 'cubox.webp',
   cursor: 'cursor.svg',
   'day-one': 'day-one.webp',
+  downcast: 'downcast.webp',
   'debit-credit': 'debit-credit.webp',
   devonthink: 'devonthink.png',
   diarly: 'diarly.webp',

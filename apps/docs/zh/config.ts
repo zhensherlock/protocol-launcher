@@ -73,6 +73,7 @@ export default defineAdditionalConfig({
           { text: 'Cursor', link: '/zh/apps/cursor' },
           { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Day One', link: '/zh/apps/day-one' },
+          { text: 'Downcast', link: '/zh/apps/downcast' },
           { text: 'Debit & Credit', link: '/zh/apps/debit-credit' },
           { text: 'DEVONthink', link: '/zh/apps/devonthink' },
           { text: 'Diarly', link: '/zh/apps/diarly' },

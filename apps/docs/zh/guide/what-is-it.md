@@ -70,6 +70,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Cursor](../apps/cursor.md)
 - [2Do](../apps/2do.md)
 - [Day One](../apps/day-one.md)
+- [Downcast](../apps/downcast.md)
 - [Debit & Credit](../apps/debit-credit.md)
 - [DEVONthink](../apps/devonthink.md)
 - [Diarly](../apps/diarly.md)
