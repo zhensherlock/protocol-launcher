@@ -362,6 +362,10 @@
       "types": "./dist/types/hot-tub/index.d.ts",
       "import": "./dist/hot-tub/index.js"
     },
+    "./houdahspot": {
+      "types": "./dist/types/houdahspot/index.d.ts",
+      "import": "./dist/houdahspot/index.js"
+    },
     "./ia-writer": {
       "types": "./dist/types/ia-writer/index.d.ts",
       "import": "./dist/ia-writer/index.js"

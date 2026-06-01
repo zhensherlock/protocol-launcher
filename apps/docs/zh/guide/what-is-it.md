@@ -103,6 +103,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Home Assistant](../apps/home-assistant.md)
 - [Hookmark](../apps/hookmark.md)
 - [Hot Tub](../apps/hot-tub.md)
+- [HoudahSpot](../apps/houdahspot.md)
 - [iA Writer](../apps/ia-writer.md)
 - [iCab Mobile](../apps/icab-mobile.md)
 - [Instapaper](../apps/instapaper.md)

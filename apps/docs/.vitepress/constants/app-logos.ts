@@ -75,6 +75,7 @@ export const appLogoFiles = {
   'home-assistant': 'home-assistant.webp',
   hookmark: 'hookmark.png',
   'hot-tub': 'hot-tub.png',
+  houdahspot: 'houdahspot.webp',
   'ia-writer': 'ia-writer.webp',
   'icab-mobile': 'icab-mobile.webp',
   idea: 'intellij-idea.png',

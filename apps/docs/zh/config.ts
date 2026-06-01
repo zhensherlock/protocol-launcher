@@ -106,6 +106,7 @@ export default defineAdditionalConfig({
           { text: 'Home Assistant', link: '/zh/apps/home-assistant' },
           { text: 'Hookmark', link: '/zh/apps/hookmark' },
           { text: 'Hot Tub', link: '/zh/apps/hot-tub' },
+          { text: 'HoudahSpot', link: '/zh/apps/houdahspot' },
           { text: 'iA Writer', link: '/zh/apps/ia-writer' },
           { text: 'iCab Mobile', link: '/zh/apps/icab-mobile' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
