@@ -192,6 +192,7 @@ export const appLogoFiles = {
   whereto: 'whereto.png',
   windsurf: 'windsurf.png',
   'working-copy': 'working-copy.webp',
+  'written-down': 'written-down.png',
   xcode: 'xcode.png',
   zed: 'zed.png',
   zoom: 'zoom.webp',

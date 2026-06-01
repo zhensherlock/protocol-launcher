@@ -220,6 +220,7 @@ Currently, we support the following applications:
 - [Where To](../apps/whereto.md)
 - [Windsurf](../apps/windsurf.md)
 - [Working Copy](../apps/working-copy.md)
+- [Written Down](../apps/written-down.md)
 - [Xcode](../apps/xcode.md)
 - [Zed](../apps/zed.md)
 - [Zoom](../apps/zoom.md)

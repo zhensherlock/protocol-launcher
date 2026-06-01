@@ -830,6 +830,10 @@
       "types": "./dist/types/working-copy/index.d.ts",
       "import": "./dist/working-copy/index.js"
     },
+    "./written-down": {
+      "types": "./dist/types/written-down/index.d.ts",
+      "import": "./dist/written-down/index.js"
+    },
     "./xcode": {
       "types": "./dist/types/xcode/index.d.ts",
       "import": "./dist/xcode/index.js"

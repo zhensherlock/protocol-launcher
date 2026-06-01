@@ -223,6 +223,7 @@ export default defineAdditionalConfig({
           { text: 'Where To', link: '/zh/apps/whereto' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
           { text: 'Working Copy', link: '/zh/apps/working-copy' },
+          { text: 'Written Down', link: '/zh/apps/written-down' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Zed', link: '/zh/apps/zed' },
           { text: 'Zoom', link: '/zh/apps/zoom' },
