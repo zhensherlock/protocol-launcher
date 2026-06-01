@@ -284,6 +284,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Tadam](../apps/tadam.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
+- [Tembo](../apps/tembo.md)
 - [Terminology](../apps/terminology.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)

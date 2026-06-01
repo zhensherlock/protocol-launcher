@@ -284,6 +284,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Tadam](../apps/tadam.md)
 - [Tally](../apps/tally.md)
 - [Telegram](../apps/telegram.md)
+- [Tembo](../apps/tembo.md)
 - [Terminology](../apps/terminology.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)

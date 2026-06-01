@@ -196,6 +196,7 @@ export default defineAdditionalConfig({
           { text: 'Tadam', link: '/zh/apps/tadam' },
           { text: 'Tally', link: '/zh/apps/tally' },
           { text: 'Telegram', link: '/zh/apps/telegram' },
+          { text: 'Tembo', link: '/zh/apps/tembo' },
           { text: 'Terminology', link: '/zh/apps/terminology' },
           { text: 'Termius', link: '/zh/apps/termius' },
           { text: 'Textastic', link: '/zh/apps/textastic' },

@@ -165,6 +165,7 @@ export const appLogoFiles = {
   tadam: 'tadam.webp',
   tally: 'tally-quick-counter.webp',
   telegram: 'telegram.svg',
+  tembo: 'tembo.webp',
   terminology: 'terminology.webp',
   termius: 'termius.png',
   textastic: 'textastic.png',
