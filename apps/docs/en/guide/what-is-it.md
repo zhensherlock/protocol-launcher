@@ -190,6 +190,7 @@ Currently, we support the following applications:
 - [SourceTree](../apps/sourcetree.md)
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
+- [Stream Deck](../apps/stream-deck.md)
 - [Story Planner](../apps/story-planner.md)
 - [Surge](../apps/surge.md)
 - [TablePro](../apps/tablepro.md)

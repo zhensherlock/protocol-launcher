@@ -162,6 +162,7 @@ export const appLogoFiles = {
   sourcetree: 'sourcetree.png',
   spotify: 'spotify.webp',
   steam: 'steam.webp',
+  'stream-deck': 'stream-deck.webp',
   'story-planner': 'story-planner.webp',
   surge: 'surge.webp',
   tablepro: 'tablepro.png',

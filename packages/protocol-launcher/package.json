@@ -714,6 +714,10 @@
       "types": "./dist/types/steam/index.d.ts",
       "import": "./dist/steam/index.js"
     },
+    "./stream-deck": {
+      "types": "./dist/types/stream-deck/index.d.ts",
+      "import": "./dist/stream-deck/index.js"
+    },
     "./story-planner": {
       "types": "./dist/types/story-planner/index.d.ts",
       "import": "./dist/story-planner/index.js"

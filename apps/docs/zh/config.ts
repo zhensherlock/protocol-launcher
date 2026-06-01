@@ -193,6 +193,7 @@ export default defineAdditionalConfig({
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
           { text: 'Spotify', link: '/zh/apps/spotify' },
           { text: 'Steam', link: '/zh/apps/steam' },
+          { text: 'Stream Deck', link: '/zh/apps/stream-deck' },
           { text: 'Story Planner', link: '/zh/apps/story-planner' },
           { text: 'Surge', link: '/zh/apps/surge' },
           { text: 'TablePro', link: '/zh/apps/tablepro' },
