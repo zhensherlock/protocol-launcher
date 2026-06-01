@@ -9,6 +9,7 @@
 One-click launch URL generator for protocol-based apps.
 
 [![][npm-release-shield]][npm-release-link]
+[![][npm-downloads-shield]][npm-downloads-link]
 [![][codecov-shield]][codecov-link]
 [![][github-release-date-shield]][github-release-date-link]
 [![][github-action-build-shield]][github-action-build-link]
@@ -147,6 +148,8 @@ This project exists thanks to all the people who contribute.
 
 [npm-release-link]: https://www.npmjs.com/package/protocol-launcher
 [npm-release-shield]: https://img.shields.io/npm/v/protocol-launcher?color=1677FF&labelColor=black&logo=npm&logoColor=white&style=flat-square
+[npm-downloads-link]: https://www.npmjs.com/package/protocol-launcher
+[npm-downloads-shield]: https://img.shields.io/npm/dw/protocol-launcher.svg?labelColor=black&style=flat-square&color=1677FF
 [codecov-link]: http://app.codecov.io/gh/zhensherlock/protocol-launcher
 [codecov-shield]: https://img.shields.io/codecov/c/github/zhensherlock/protocol-launcher?color=1677FF&labelColor=black&style=flat-square&logo=codecov&logoColor=white
 [github-release-date-link]: https://github.com/zhensherlock/protocol-launcher/releases
