@@ -354,6 +354,10 @@
       "types": "./dist/types/hookmark/index.d.ts",
       "import": "./dist/hookmark/index.js"
     },
+    "./hot-tub": {
+      "types": "./dist/types/hot-tub/index.d.ts",
+      "import": "./dist/hot-tub/index.js"
+    },
     "./ia-writer": {
       "types": "./dist/types/ia-writer/index.d.ts",
       "import": "./dist/ia-writer/index.js"
@@ -705,6 +709,10 @@
     "./tablepro": {
       "types": "./dist/types/tablepro/index.d.ts",
       "import": "./dist/tablepro/index.js"
+    },
+    "./tadam": {
+      "types": "./dist/types/tadam/index.d.ts",
+      "import": "./dist/tadam/index.js"
     },
     "./tally": {
       "types": "./dist/types/tally/index.d.ts",
