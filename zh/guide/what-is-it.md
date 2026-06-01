@@ -97,6 +97,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
+* [HoudahSpot](../apps/houdahspot.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)

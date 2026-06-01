@@ -97,6 +97,7 @@ Currently, we support the following applications:
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
+* [HoudahSpot](../apps/houdahspot.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)
@@ -428,6 +429,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
+* [HoudahSpot](../apps/houdahspot.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -8342,6 +8344,111 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}message({
 ## Official Documentation
 
 * [Hot Tub URL Schemes](https://docs.hottubapp.io/developers/url-schemes/)
+
+---
+
+---
+url: /protocol-launcher/apps/houdahspot.md
+---
+
+# HoudahSpot
+
+[HoudahSpot](https://www.houdah.com/houdahSpot/) is a macOS file search app. **Protocol Launcher** allows you to generate HoudahSpot URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+HoudahSpot's official user guide defines one URL scheme endpoint for starting searches: `houdahspot4://search?q=QUERY&location=PATH&template=PATH&s=ATTRIBUTE`. This module exposes only that documented endpoint and the documented search attributes.
+
+The payload uses the parameter names from the documented URL format: `q` for the search string, `location` for one or more folder paths, `template` for a template path that includes the `.hstemplate` extension, and `s` for the search attribute. It also supports HoudahSpot's documented aliases: `query`, `l`, `t`, and `search`. The documented `s` or `search` values are `name`, `content`, and `anytext`.
+
+### Search
+
+Start a HoudahSpot search with any supported combination of the documented parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}search({
+  q: 'Houdah Software',
+  location: '~/Documents',
+})
+```
+
+### Search Name
+
+Start a HoudahSpot search with the search attribute set to `name`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchName' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}searchName({
+  q: 'invoice',
+  location: '~/Documents',
+})
+```
+
+### Search Content
+
+Start a HoudahSpot search with the search attribute set to `content`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchContent' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}searchContent({
+  q: 'project plan',
+  location: '~/Documents',
+})
+```
+
+### Search Any Text
+
+Start a HoudahSpot search with the search attribute set to `anytext`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchAnyText' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}searchAnyText({
+  q: 'tag:orange',
+})
+```
+
+## Generated URLs
+
+```ts
+search({
+  q: 'Houdah Software',
+  location: '~/Documents',
+})
+// => 'houdahspot4://search?q=Houdah%20Software&location=~/Documents'
+
+searchName({
+  q: 'invoice',
+})
+// => 'houdahspot4://search?q=invoice&s=name'
+
+searchContent({
+  q: 'project plan',
+})
+// => 'houdahspot4://search?q=project%20plan&s=content'
+
+searchAnyText({
+  q: 'tag:orange',
+})
+// => 'houdahspot4://search?q=tag:orange&s=anytext'
+```
+
+## Official Documentation
+
+* [HoudahSpot User Guide](https://www.houdah.com/houdahSpot/help/HoudahSpot%20Help%20EN.pdf)
 
 ---
 
@@ -21684,6 +21791,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
+* [HoudahSpot](../apps/houdahspot.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)
@@ -22015,6 +22123,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
+* [HoudahSpot](../apps/houdahspot.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -29930,6 +30039,111 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}message({
 ## 官方文档
 
 * [Hot Tub URL Schemes](https://docs.hottubapp.io/developers/url-schemes/)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/houdahspot.md
+---
+
+# HoudahSpot
+
+[HoudahSpot](https://www.houdah.com/houdahSpot/) 是一款 macOS 文件搜索应用。**Protocol Launcher** 可以生成 HoudahSpot URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## 说明
+
+HoudahSpot 官方用户指南只定义了一个用于启动搜索的 URL scheme 端点：`houdahspot4://search?q=QUERY&location=PATH&template=PATH&s=ATTRIBUTE`。此模块只暴露这个已文档化的端点，以及文档中列出的搜索属性。
+
+payload 使用官方 URL 格式中的参数名：`q` 是搜索字符串，`location` 是一个或多个待搜索文件夹路径，`template` 是包含 `.hstemplate` 扩展名的模板路径，`s` 是搜索属性。同时也支持 HoudahSpot 文档列出的别名：`query`、`l`、`t` 和 `search`。官方文档列出的 `s` 或 `search` 值为 `name`、`content` 和 `anytext`。
+
+### 搜索
+
+使用官方文档支持的参数组合启动 HoudahSpot 搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}search({
+  q: 'Houdah Software',
+  location: '~/Documents',
+})
+```
+
+### 按名称搜索
+
+启动 HoudahSpot 搜索，并将搜索属性设为 `name`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchName' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}searchName({
+  q: 'invoice',
+  location: '~/Documents',
+})
+```
+
+### 按内容搜索
+
+启动 HoudahSpot 搜索，并将搜索属性设为 `content`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchContent' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}searchContent({
+  q: 'project plan',
+  location: '~/Documents',
+})
+```
+
+### 按任意文本搜索
+
+启动 HoudahSpot 搜索，并将搜索属性设为 `anytext`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchAnyText' : 'houdahspot' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'houdahspot.'}}searchAnyText({
+  q: 'tag:orange',
+})
+```
+
+## 生成的 URL
+
+```ts
+search({
+  q: 'Houdah Software',
+  location: '~/Documents',
+})
+// => 'houdahspot4://search?q=Houdah%20Software&location=~/Documents'
+
+searchName({
+  q: 'invoice',
+})
+// => 'houdahspot4://search?q=invoice&s=name'
+
+searchContent({
+  q: 'project plan',
+})
+// => 'houdahspot4://search?q=project%20plan&s=content'
+
+searchAnyText({
+  q: 'tag:orange',
+})
+// => 'houdahspot4://search?q=tag:orange&s=anytext'
+```
+
+## 官方文档
+
+* [HoudahSpot User Guide](https://www.houdah.com/houdahSpot/help/HoudahSpot%20Help%20EN.pdf)
 
 ---
 

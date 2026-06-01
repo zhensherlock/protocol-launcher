@@ -194,6 +194,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
+* [HoudahSpot](../apps/houdahspot.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
