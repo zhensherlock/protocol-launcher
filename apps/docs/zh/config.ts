@@ -59,6 +59,7 @@ export default defineAdditionalConfig({
           { text: 'Calendars by Readdle', link: '/zh/apps/calendars-readdle' },
           { text: 'Capacities', link: '/zh/apps/capacities' },
           { text: 'Cardhop', link: '/zh/apps/cardhop' },
+          { text: 'Charty', link: '/zh/apps/charty' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
           { text: 'Chute', link: '/zh/apps/chute' },
           { text: 'Citymapper', link: '/zh/apps/citymapper' },

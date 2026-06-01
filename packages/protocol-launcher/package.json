@@ -178,6 +178,10 @@
       "types": "./dist/types/cardhop/index.d.ts",
       "import": "./dist/cardhop/index.js"
     },
+    "./charty": {
+      "types": "./dist/types/charty/index.d.ts",
+      "import": "./dist/charty/index.js"
+    },
     "./craft": {
       "types": "./dist/types/craft/index.d.ts",
       "import": "./dist/craft/index.js"

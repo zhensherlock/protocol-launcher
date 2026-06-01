@@ -29,6 +29,7 @@ export const appLogoFiles = {
   'calendars-readdle': 'calendars-readdle.webp',
   capacities: 'capacities.webp',
   cardhop: 'cardhop.webp',
+  charty: 'charty-for-shortcuts.webp',
   'cherry-studio': 'cherry-studio.svg',
   chute: 'chute.webp',
   citymapper: 'citymapper.webp',
