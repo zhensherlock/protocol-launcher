@@ -414,6 +414,10 @@
       "types": "./dist/types/kiro/index.d.ts",
       "import": "./dist/kiro/index.js"
     },
+    "./launch-center-pro": {
+      "types": "./dist/types/launch-center-pro/index.d.ts",
+      "import": "./dist/launch-center-pro/index.js"
+    },
     "./launchbar": {
       "types": "./dist/types/launchbar/index.d.ts",
       "import": "./dist/launchbar/index.js"
@@ -469,6 +473,10 @@
     "./microsoft-teams": {
       "types": "./dist/types/microsoft-teams/index.d.ts",
       "import": "./dist/microsoft-teams/index.js"
+    },
+    "./mindnode": {
+      "types": "./dist/types/mindnode/index.d.ts",
+      "import": "./dist/mindnode/index.js"
     },
     "./momento": {
       "types": "./dist/types/momento/index.d.ts",
