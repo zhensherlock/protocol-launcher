@@ -185,6 +185,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [GitHub Desktop](../apps/github-desktop.md)
 - [Gladys](../apps/gladys.md)
 - [GoodLinks](../apps/goodlinks.md)
+- [GoodReader](../apps/goodreader.md)
 - [GoodTask](../apps/goodtask.md)
 - [GoLand](../apps/goland.md)
 - [Google Chrome iOS](../apps/google-chrome-ios.md)

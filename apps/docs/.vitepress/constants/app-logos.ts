@@ -67,6 +67,7 @@ export const appLogoFiles = {
   gladys: 'gladys.webp',
   goland: 'goland.png',
   goodlinks: 'goodlinks.webp',
+  goodreader: 'goodreader.webp',
   goodtask: 'goodtask.webp',
   'google-chrome-ios': 'google-chrome.webp',
   'google-maps': 'google-maps.webp',

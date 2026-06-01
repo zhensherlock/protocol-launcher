@@ -322,6 +322,10 @@
       "types": "./dist/types/goodlinks/index.d.ts",
       "import": "./dist/goodlinks/index.js"
     },
+    "./goodreader": {
+      "types": "./dist/types/goodreader/index.d.ts",
+      "import": "./dist/goodreader/index.js"
+    },
     "./goodtask": {
       "types": "./dist/types/goodtask/index.d.ts",
       "import": "./dist/goodtask/index.js"

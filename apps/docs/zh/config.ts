@@ -97,6 +97,7 @@ export default defineAdditionalConfig({
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'Gladys', link: '/zh/apps/gladys' },
           { text: 'GoodLinks', link: '/zh/apps/goodlinks' },
+          { text: 'GoodReader', link: '/zh/apps/goodreader' },
           { text: 'GoodTask', link: '/zh/apps/goodtask' },
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'Google Chrome iOS', link: '/zh/apps/google-chrome-ios' },
