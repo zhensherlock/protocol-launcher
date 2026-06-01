@@ -50,6 +50,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Calendars by Readdle](../apps/calendars-readdle.md)
 * [Capacities](../apps/capacities.md)
 * [Cardhop](../apps/cardhop.md)
+* [Charty](../apps/charty.md)
 * [Cherry Studio](../apps/cherry-studio.md)
 * [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)

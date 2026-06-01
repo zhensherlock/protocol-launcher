@@ -1,0 +1,1 @@
+import{i as n}from"./index.CWwLnpeZ.js";function t(e){return n(e).replace(/%2C/gi,",")}function s(e,r){return`charty://${e}${t(r)}`}function f(e){let{name:r,baseColors:o,colors:a}=e;return s("add-theme",{name:r,baseColors:o,colors:a})}const l={name:"BlGrYeOrRe",baseColors:0,colors:"1a76e8,28d475,ffd416,ff6f1d,eb2d40"};export{l as a,f as t};
