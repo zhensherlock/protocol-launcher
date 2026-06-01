@@ -111,6 +111,7 @@ Currently, we support the following applications:
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
+* [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
@@ -125,6 +126,7 @@ Currently, we support the following applications:
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
@@ -430,6 +432,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
+* [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
@@ -444,6 +447,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
@@ -9377,6 +9381,246 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/launch-center-pro.md
+---
+
+# Launch Center Pro
+
+[Launch Center Pro](https://contrast.co/launch-center-pro/) is an iOS launcher for running actions and shortcuts. **Protocol Launcher** allows you to generate deep links for Launch Center Pro actions documented by Contrast.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+These helpers follow Contrast's official [x-callback-url Support](https://help.contrast.co/hc/en-us/articles/200611883-x-callback-url-Support), [Dropbox Actions](https://help.contrast.co/hc/en-us/articles/200612283-Dropbox-Actions), [Scheduling Action Notifications](https://help.contrast.co/hc/en-us/articles/360024275852-Scheduling-Action-Notifications), and release note examples. Undocumented or discontinued Launch Center Pro actions are not wrapped.
+
+### Open App
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}open()
+```
+
+### Brightness
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'brightness' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}brightness()
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}brightness({
+  xSuccess: 'tweetbot://',
+})
+```
+
+### Clipboard
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clipboard' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const textUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}clipboard({
+  text: 'mytext',
+})
+
+const photoUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}clipboard({
+  attach: 'photo:last',
+})
+```
+
+### Define
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'define' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}define()
+```
+
+### Speak
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'speak' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}speak({
+  text: 'Hello master!',
+})
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}speak({
+  text: 'Hello master!',
+  xSuccess: '[action:15]',
+})
+```
+
+### Email
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'email' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}email({
+  to: 'sample@contrast.co',
+  subject: 'Last Photo',
+  body: '',
+  cc: '',
+  bcc: '',
+  attach: 'photo:last',
+})
+```
+
+### Messaging
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messaging' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const photoUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}messaging({
+  to: '555-555-5555',
+  attach: 'photo:last',
+})
+
+const dropboxPhotoUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}messaging({
+  to: '555-555-5555',
+  body: '[prompt:Body]',
+  attach: 'photo:dropbox',
+  path: 'reactions',
+})
+
+const gifUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}messaging({
+  attach: 'photo:gif',
+  'gif-search': 'excited',
+})
+```
+
+### Dropbox
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropbox' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropbox()
+```
+
+### Dropbox Add Photo
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxAddPhoto' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxAddPhoto({
+  attach: 'photo:frontcamera',
+  path: '/selfies/',
+})
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxAddPhoto({
+  attach: 'photo:last',
+  path: '/snaps/',
+  getlink: 'yes',
+  xSuccess: 'launch://tweet?text=[clipboard]',
+})
+```
+
+### Dropbox Copy Direct Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxCopyDirectLink' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxCopyDirectLink()
+```
+
+### Schedule Action Notification
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'schedule' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const actionUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}schedule({
+  action: 179,
+  in: '1h',
+  repeat: 'specificdays',
+  days: 'm,tu,w,th,f',
+})
+
+const urlNotification = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}schedule({
+  url: '[url:https://apple.com]',
+  in: '10min',
+})
+```
+
+### Share Sheet
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'shareSheet' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}shareSheet({
+  attach: 'photo:last',
+  text: '[prompt-fleksy:Notes]',
+  url: '[clipboard]',
+})
+```
+
+### QR Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'qr' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}qr()
+```
+
+### Dropbox New Text File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxNew' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxNew({
+  text: '[prompt-return:My Note]',
+  path: '/Notes/',
+  name: 'MyFile.markdown',
+  overwrite: 'NO',
+})
+```
+
+### Dropbox Append Text
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxAppend' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxAppend({
+  text: 'Next line',
+  name: 'MyFile.markdown',
+  linebreak: 'NO',
+})
+```
+
+### Dropbox Prepend Text
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxPrepend' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxPrepend({
+  text: 'First line\nBody',
+  name: 'note_[firstline].text',
+  leavefirstline: 'NO',
+})
+```
+
+### Dropbox Clipboard
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxClipboard' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const browserUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxClipboard()
+
+const linkUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxClipboard({
+  path: '/photos/',
+  linkonly: 'yes',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/apps/launchbar.md
 ---
 
@@ -11148,6 +11392,52 @@ const nativeUrl = {{currentMethod === 'On-Demand' ? '' : 'microsoftTeams.'}}shar
 * [Deep link to an application](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-application)
 * [Deep link to Teams chat](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-teams)
 * [Deep link to a workflow in Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow)
+
+---
+
+---
+url: /protocol-launcher/apps/mindnode.md
+---
+
+# MindNode
+
+[MindNode](https://www.mindnode.com/) is a mind-mapping app. **Protocol Launcher** allows you to generate MindNode URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+MindNode's official URL scheme documentation lists `mindnode://open?name=YourDocument` for opening files in the MindNode iCloud container. This module only implements that documented URL format.
+
+### Open Document
+
+Open a document by name from the MindNode iCloud container.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'mindnode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mindnode.'}}openDocument({
+  name: 'YourDocument',
+})
+```
+
+## Generated URLs
+
+```ts
+openDocument({ name: 'YourDocument' })
+// => 'mindnode://open?name=YourDocument'
+```
+
+## Official Documentation
+
+* [Improving Integrations with Things and Sharing Providers](https://www.mindnode.com/blog/improving-integrations)
 
 ---
 
@@ -20025,6 +20315,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
+* [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
@@ -20039,6 +20330,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
@@ -20344,6 +20636,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
+* [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
@@ -20358,6 +20651,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
+* [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
 * [Motrix](../apps/motrix.md)
@@ -29292,6 +29586,246 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kiro.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/launch-center-pro.md
+---
+
+# Launch Center Pro
+
+[Launch Center Pro](https://contrast.co/launch-center-pro/) 是一款用于运行动作和快捷操作的 iOS 启动器。**Protocol Launcher** 允许您为 Contrast 官方文档中记录的 Launch Center Pro 动作生成深度链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## URL 方法
+
+这些 helper 按照 Contrast 官方的 [x-callback-url Support](https://help.contrast.co/hc/en-us/articles/200611883-x-callback-url-Support)、[Dropbox Actions](https://help.contrast.co/hc/en-us/articles/200612283-Dropbox-Actions)、[Scheduling Action Notifications](https://help.contrast.co/hc/en-us/articles/360024275852-Scheduling-Action-Notifications) 和发布说明示例实现。未在官方文档中给出语法或已经停止支持的 Launch Center Pro 动作不会包装。
+
+### 打开应用
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}open()
+```
+
+### 亮度
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'brightness' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}brightness()
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}brightness({
+  xSuccess: 'tweetbot://',
+})
+```
+
+### 剪贴板
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clipboard' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const textUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}clipboard({
+  text: 'mytext',
+})
+
+const photoUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}clipboard({
+  attach: 'photo:last',
+})
+```
+
+### 定义
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'define' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}define()
+```
+
+### 朗读
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'speak' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}speak({
+  text: 'Hello master!',
+})
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}speak({
+  text: 'Hello master!',
+  xSuccess: '[action:15]',
+})
+```
+
+### 邮件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'email' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}email({
+  to: 'sample@contrast.co',
+  subject: 'Last Photo',
+  body: '',
+  cc: '',
+  bcc: '',
+  attach: 'photo:last',
+})
+```
+
+### 短信
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messaging' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const photoUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}messaging({
+  to: '555-555-5555',
+  attach: 'photo:last',
+})
+
+const dropboxPhotoUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}messaging({
+  to: '555-555-5555',
+  body: '[prompt:Body]',
+  attach: 'photo:dropbox',
+  path: 'reactions',
+})
+
+const gifUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}messaging({
+  attach: 'photo:gif',
+  'gif-search': 'excited',
+})
+```
+
+### Dropbox
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropbox' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropbox()
+```
+
+### Dropbox 添加照片
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxAddPhoto' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxAddPhoto({
+  attach: 'photo:frontcamera',
+  path: '/selfies/',
+})
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxAddPhoto({
+  attach: 'photo:last',
+  path: '/snaps/',
+  getlink: 'yes',
+  xSuccess: 'launch://tweet?text=[clipboard]',
+})
+```
+
+### Dropbox 复制直接链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxCopyDirectLink' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxCopyDirectLink()
+```
+
+### 计划动作通知
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'schedule' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const actionUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}schedule({
+  action: 179,
+  in: '1h',
+  repeat: 'specificdays',
+  days: 'm,tu,w,th,f',
+})
+
+const urlNotification = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}schedule({
+  url: '[url:https://apple.com]',
+  in: '10min',
+})
+```
+
+### 分享表单
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'shareSheet' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}shareSheet({
+  attach: 'photo:last',
+  text: '[prompt-fleksy:Notes]',
+  url: '[clipboard]',
+})
+```
+
+### QR 动作
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'qr' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}qr()
+```
+
+### Dropbox 新建文本文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxNew' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxNew({
+  text: '[prompt-return:My Note]',
+  path: '/Notes/',
+  name: 'MyFile.markdown',
+  overwrite: 'NO',
+})
+```
+
+### Dropbox 追加文本
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxAppend' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxAppend({
+  text: 'Next line',
+  name: 'MyFile.markdown',
+  linebreak: 'NO',
+})
+```
+
+### Dropbox 前置文本
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxPrepend' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxPrepend({
+  text: 'First line\nBody',
+  name: 'note_[firstline].text',
+  leavefirstline: 'NO',
+})
+```
+
+### Dropbox 剪贴板
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dropboxClipboard' : 'launchCenterPro' }} } from '{{ importPath }}'
+
+const browserUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxClipboard()
+
+const linkUrl = {{currentMethod === 'On-Demand' ? '' : 'launchCenterPro.'}}dropboxClipboard({
+  path: '/photos/',
+  linkonly: 'yes',
+})
+```
+
+---
+
+---
 url: /protocol-launcher/zh/apps/launchbar.md
 ---
 
@@ -31063,6 +31597,52 @@ const nativeUrl = {{currentMethod === 'On-Demand' ? '' : 'microsoftTeams.'}}shar
 * [Deep link to an application](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-application)
 * [Deep link to Teams chat](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-teams)
 * [Deep link to a workflow in Teams](https://learn.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/deep-link-workflow)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/mindnode.md
+---
+
+# MindNode
+
+[MindNode](https://www.mindnode.com/) 是一款思维导图应用。**Protocol Launcher** 允许你生成 MindNode URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## 说明
+
+MindNode 官方 URL scheme 文档列出了 `mindnode://open?name=YourDocument`，用于打开 MindNode iCloud container 中的文件。本模块只实现这个已文档化的 URL 格式。
+
+### 打开文档
+
+按名称打开 MindNode iCloud container 中的文档。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDocument' : 'mindnode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'mindnode.'}}openDocument({
+  name: 'YourDocument',
+})
+```
+
+## 生成的 URL
+
+```ts
+openDocument({ name: 'YourDocument' })
+// => 'mindnode://open?name=YourDocument'
+```
+
+## 官方文档
+
+* [Improving Integrations with Things and Sharing Providers](https://www.mindnode.com/blog/improving-integrations)
 
 ---
 
