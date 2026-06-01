@@ -87,6 +87,7 @@ export const appLogoFiles = {
   joplin: 'joplin.webp',
   'jump-desktop': 'jump-desktop.png',
   'just-timers': 'just-timers.webp',
+  'kakao-map': 'kakao-map.webp',
   kaleidoscope: 'kaleidoscope.png',
   'keyboard-maestro': 'keyboard-maestro.png',
   kiro: 'kiro.png',

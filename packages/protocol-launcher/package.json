@@ -406,6 +406,10 @@
       "types": "./dist/types/just-timers/index.d.ts",
       "import": "./dist/just-timers/index.js"
     },
+    "./kakao-map": {
+      "types": "./dist/types/kakao-map/index.d.ts",
+      "import": "./dist/kakao-map/index.js"
+    },
     "./keyboard-maestro": {
       "types": "./dist/types/keyboard-maestro/index.d.ts",
       "import": "./dist/keyboard-maestro/index.js"

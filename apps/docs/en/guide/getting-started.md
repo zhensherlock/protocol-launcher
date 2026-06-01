@@ -206,6 +206,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Joplin](../apps/joplin.md)
 - [Jump Desktop](../apps/jump-desktop.md)
 - [Just Timers](../apps/just-timers.md)
+- [Kakao Map](../apps/kakao-map.md)
 - [Keyboard Maestro](../apps/keyboard-maestro.md)
 - [Kaleidoscope](../apps/kaleidoscope.md)
 - [Kiro](../apps/kiro.md)
