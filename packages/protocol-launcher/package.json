@@ -110,6 +110,10 @@
       "types": "./dist/types/apple-script/index.d.ts",
       "import": "./dist/apple-script/index.js"
     },
+    "./arcgis-survey123": {
+      "types": "./dist/types/arcgis-survey123/index.d.ts",
+      "import": "./dist/arcgis-survey123/index.js"
+    },
     "./atom": {
       "types": "./dist/types/atom/index.d.ts",
       "import": "./dist/atom/index.js"

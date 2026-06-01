@@ -42,6 +42,7 @@ export default defineAdditionalConfig({
           { text: 'Appigo Todo', link: '/zh/apps/appigo-todo' },
           { text: 'Apple 地图', link: '/zh/apps/apple-map' },
           { text: 'Apple Script Editor', link: '/zh/apps/apple-script' },
+          { text: 'ArcGIS Survey123', link: '/zh/apps/arcgis-survey123' },
           { text: 'Atom', link: '/zh/apps/atom' },
           { text: '1Writer', link: '/zh/apps/1writer' },
           { text: 'BBEdit', link: '/zh/apps/bbedit' },
