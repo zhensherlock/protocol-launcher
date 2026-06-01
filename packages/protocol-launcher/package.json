@@ -738,6 +738,10 @@
       "types": "./dist/types/textastic/index.d.ts",
       "import": "./dist/textastic/index.js"
     },
+    "./textwell": {
+      "types": "./dist/types/textwell/index.d.ts",
+      "import": "./dist/textwell/index.js"
+    },
     "./trello": {
       "types": "./dist/types/trello/index.d.ts",
       "import": "./dist/trello/index.js"

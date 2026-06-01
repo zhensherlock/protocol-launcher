@@ -197,6 +197,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Terminology](../apps/terminology.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)
+- [Textwell](../apps/textwell.md)
 - [TextMate](../apps/textmate.md)
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)

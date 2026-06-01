@@ -170,6 +170,7 @@ export const appLogoFiles = {
   termius: 'termius.png',
   textastic: 'textastic.png',
   textmate: 'textmate.png',
+  textwell: 'textwell.webp',
   theia: 'theiaide.png',
   things: 'things.png',
   thunder: 'thunder.svg',

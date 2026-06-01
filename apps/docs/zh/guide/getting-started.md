@@ -288,6 +288,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Terminology](../apps/terminology.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)
+- [Textwell](../apps/textwell.md)
 - [TextMate](../apps/textmate.md)
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)

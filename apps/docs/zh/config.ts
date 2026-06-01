@@ -200,6 +200,7 @@ export default defineAdditionalConfig({
           { text: 'Terminology', link: '/zh/apps/terminology' },
           { text: 'Termius', link: '/zh/apps/termius' },
           { text: 'Textastic', link: '/zh/apps/textastic' },
+          { text: 'Textwell', link: '/zh/apps/textwell' },
           { text: 'TextMate', link: '/zh/apps/textmate' },
           { text: 'Theia', link: '/zh/apps/theia' },
           { text: 'Things', link: '/zh/apps/things' },

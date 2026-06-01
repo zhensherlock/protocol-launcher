@@ -288,6 +288,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Terminology](../apps/terminology.md)
 - [Termius](../apps/termius.md)
 - [Textastic](../apps/textastic.md)
+- [Textwell](../apps/textwell.md)
 - [TextMate](../apps/textmate.md)
 - [Theia](../apps/theia.md)
 - [Things](../apps/things.md)
