@@ -172,6 +172,7 @@ Currently, we support the following applications:
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
 - [Reeder](../apps/reeder.md)
+- [Royal TS](../apps/royal-ts.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)

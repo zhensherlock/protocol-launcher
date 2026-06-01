@@ -175,6 +175,7 @@ export default defineAdditionalConfig({
           { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'Raycast', link: '/zh/apps/raycast' },
           { text: 'Reeder', link: '/zh/apps/reeder' },
+          { text: 'Royal TS', link: '/zh/apps/royal-ts' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
           { text: 'Scannr', link: '/zh/apps/scannr' },
           { text: 'Screens', link: '/zh/apps/screens' },

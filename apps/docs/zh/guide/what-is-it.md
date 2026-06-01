@@ -172,6 +172,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
 - [Reeder](../apps/reeder.md)
+- [Royal TS](../apps/royal-ts.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)

@@ -263,6 +263,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
 - [Reeder](../apps/reeder.md)
+- [Royal TS](../apps/royal-ts.md)
 - [RustRover](../apps/rustrover.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)

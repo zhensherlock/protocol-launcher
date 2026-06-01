@@ -144,6 +144,7 @@ export const appLogoFiles = {
   quark: 'quark.png',
   raycast: 'raycast.webp',
   reeder: 'reeder.webp',
+  'royal-ts': 'royal-ts.webp',
   rustrover: 'rustrover.webp',
   scannr: 'scannr.webp',
   screens: 'screens.webp',

@@ -634,6 +634,10 @@
       "types": "./dist/types/reeder/index.d.ts",
       "import": "./dist/reeder/index.js"
     },
+    "./royal-ts": {
+      "types": "./dist/types/royal-ts/index.d.ts",
+      "import": "./dist/royal-ts/index.js"
+    },
     "./rustrover": {
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"
