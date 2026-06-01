@@ -82,6 +82,10 @@
       "types": "./dist/types/anybox/index.d.ts",
       "import": "./dist/anybox/index.js"
     },
+    "./anydesk": {
+      "types": "./dist/types/anydesk/index.d.ts",
+      "import": "./dist/anydesk/index.js"
+    },
     "./app-store": {
       "types": "./dist/types/app-store/index.d.ts",
       "import": "./dist/app-store/index.js"

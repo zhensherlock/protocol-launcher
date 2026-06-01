@@ -33,6 +33,7 @@ Currently, we support the following applications:
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
 - [Anybox](../apps/anybox.md)
+- [AnyDesk](../apps/anydesk.md)
 - [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Maps](../apps/apple-map.md)

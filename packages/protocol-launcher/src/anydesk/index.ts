@@ -1,0 +1,6 @@
+export { connect } from './connect'
+export { connectCustomClient } from './connect-custom-client'
+export { connectCustomClientMsi } from './connect-custom-client-msi'
+export { registerLicense } from './register-license'
+export { registerLicenseCustomClient } from './register-license-custom-client'
+export { registerLicenseCustomClientMsi } from './register-license-custom-client-msi'

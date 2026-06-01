@@ -7,6 +7,7 @@ export const appLogoFiles = {
   alfred: 'alfred.png',
   antigravity: 'antigravity.svg',
   anybox: 'anybox.webp',
+  anydesk: 'anydesk.webp',
   'app-store': 'app-store.png',
   appflowy: 'appflowy.svg',
   'appigo-todo': 'appigo-todo.webp',

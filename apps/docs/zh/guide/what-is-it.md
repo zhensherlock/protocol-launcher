@@ -33,6 +33,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Alfred](../apps/alfred.md)
 - [Antigravity](../apps/antigravity.md)
 - [Anybox](../apps/anybox.md)
+- [AnyDesk](../apps/anydesk.md)
 - [App Store](../apps/app-store.md)
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Map](../apps/apple-map.md)

@@ -36,6 +36,7 @@ export default defineAdditionalConfig({
           { text: 'Alfred', link: '/zh/apps/alfred' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
           { text: 'Anybox', link: '/zh/apps/anybox' },
+          { text: 'AnyDesk', link: '/zh/apps/anydesk' },
           { text: 'App Store', link: '/zh/apps/app-store' },
           { text: 'AppFlowy', link: '/zh/apps/appflowy' },
           { text: 'Appigo Todo', link: '/zh/apps/appigo-todo' },
