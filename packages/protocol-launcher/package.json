@@ -494,6 +494,10 @@
       "types": "./dist/types/moneywiz/index.d.ts",
       "import": "./dist/moneywiz/index.js"
     },
+    "./moovit": {
+      "types": "./dist/types/moovit/index.d.ts",
+      "import": "./dist/moovit/index.js"
+    },
     "./multi-timer": {
       "types": "./dist/types/multi-timer/index.d.ts",
       "import": "./dist/multi-timer/index.js"
@@ -501,6 +505,10 @@
     "./motrix": {
       "types": "./dist/types/motrix/index.d.ts",
       "import": "./dist/motrix/index.js"
+    },
+    "./naver-map": {
+      "types": "./dist/types/naver-map/index.d.ts",
+      "import": "./dist/naver-map/index.js"
     },
     "./navicat": {
       "types": "./dist/types/navicat/index.d.ts",
