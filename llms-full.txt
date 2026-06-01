@@ -27,6 +27,7 @@ Currently, we support the following applications:
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
+* [AnyDesk](../apps/anydesk.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Maps](../apps/apple-map.md)
@@ -95,6 +96,7 @@ Currently, we support the following applications:
 * [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
+* [Hot Tub](../apps/hot-tub.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)
@@ -108,6 +110,7 @@ Currently, we support the following applications:
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Just Timers](../apps/just-timers.md)
+* [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -129,8 +132,10 @@ Currently, we support the following applications:
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
+* [Moovit](../apps/moovit.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
+* [NAVER Map](../apps/naver-map.md)
 * [Navicat](../apps/navicat.md)
 * [NotePlan](../apps/noteplan.md)
 * [Notebooks](../apps/notebooks.md)
@@ -161,6 +166,7 @@ Currently, we support the following applications:
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [Reeder](../apps/reeder.md)
+* [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -179,11 +185,14 @@ Currently, we support the following applications:
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
+* [Tadam](../apps/tadam.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Tembo](../apps/tembo.md)
 * [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
+* [Textwell](../apps/textwell.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -214,6 +223,7 @@ Currently, we support the following applications:
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
+* [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
@@ -348,6 +358,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
+* [AnyDesk](../apps/anydesk.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Appigo Todo](../apps/appigo-todo.md)
@@ -416,6 +427,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
+* [Hot Tub](../apps/hot-tub.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -429,6 +441,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Just Timers](../apps/just-timers.md)
+* [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -450,8 +463,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
+* [Moovit](../apps/moovit.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
+* [NAVER Map](../apps/naver-map.md)
 * [Navicat](../apps/navicat.md)
 * [NotePlan](../apps/noteplan.md)
 * [Notebooks](../apps/notebooks.md)
@@ -482,6 +497,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [Reeder](../apps/reeder.md)
+* [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -500,11 +516,14 @@ For detailed usage instructions for each application, please refer to their resp
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
+* [Tadam](../apps/tadam.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Tembo](../apps/tembo.md)
 * [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
+* [Textwell](../apps/textwell.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -535,6 +554,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
+* [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
@@ -1213,6 +1233,108 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'anybox.'}}xCallbackPaste({
   xError: 'errorURL',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/anydesk.md
+---
+
+# AnyDesk
+
+[AnyDesk](https://anydesk.com) is a remote desktop app for connecting to remote devices. **Protocol Launcher** allows you to generate AnyDesk URL handlers for remote sessions and license registration.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Connect
+
+AnyDesk documents the standard remote-session URL as `anydesk:<anydesk-id-or-alias>`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connect' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}connect({
+  idOrAlias: '{{ connectParams.idOrAlias }}',
+})
+```
+
+### Connect Custom Client
+
+AnyDesk documents `anydesk-<prefix>:<anydesk-id-or-alias>` for non-MSI custom clients.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectCustomClient' : 'anydesk' }} } from '{{ importPath }}'
+
+const nonMsiUrl = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}connectCustomClient({
+  prefix: '{{ customClientParams.prefix }}',
+  idOrAlias: '{{ customClientParams.idOrAlias }}',
+})
+```
+
+### Connect Custom Client MSI
+
+AnyDesk documents `anydesk:AnyDesk-<prefix>_msi:<anydesk-id-or-alias>` for MSI custom clients.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectCustomClientMsi' : 'anydesk' }} } from '{{ importPath }}'
+
+const msiUrl = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}connectCustomClientMsi({
+  prefix: '{{ customClientMsiParams.prefix }}',
+  idOrAlias: '{{ customClientMsiParams.idOrAlias }}',
+})
+```
+
+### Register License
+
+AnyDesk documents license registration as `anydesk://register-license?key=LICENSE-KEY`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'registerLicense' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicense({
+  key: '{{ registerLicenseParams.key }}',
+})
+
+const silentUrl = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicense({
+  key: '{{ registerLicenseSilentParams.key }}',
+  silent: {{ registerLicenseSilentParams.silent }},
+})
+```
+
+### Register License Custom Client
+
+AnyDesk documents `anydesk-<prefix>://register-license?key=LICENSE-KEY` for non-MSI custom clients.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'registerLicenseCustomClient' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicenseCustomClient({
+  prefix: '{{ registerLicenseCustomClientParams.prefix }}',
+  key: '{{ registerLicenseCustomClientParams.key }}',
+})
+```
+
+### Register License Custom Client MSI
+
+AnyDesk documents `anydesk:AnyDesk-<prefix>_msi://register-license?key=LICENSE-KEY` for MSI custom clients.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'registerLicenseCustomClientMsi' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicenseCustomClientMsi({
+  prefix: '{{ registerLicenseCustomClientMsiParams.prefix }}',
+  key: '{{ registerLicenseCustomClientMsiParams.key }}',
+})
+```
+
+Appending `&silent` is supported on license registration URLs by passing `silent: true`. These examples intentionally do not render live launch buttons because the official handlers can start a remote session or submit a license key. See the [official AnyDesk URL Handler documentation](https://support.anydesk.com/docs/url-handler).
 
 ---
 
@@ -8057,6 +8179,173 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
 ---
 
 ---
+url: /protocol-launcher/apps/hot-tub.md
+---
+
+# Hot Tub
+
+[Hot Tub](https://hottubapp.io/) is a video app for adding sources and opening videos. **Protocol Launcher** allows you to generate Hot Tub URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only exposes the custom URL scheme actions listed in Hot Tub's official URL Schemes documentation: `source`, `webview`, `search`, `profile`, `play`, `notification`, and `message`.
+
+The `play` helper accepts either `video` for API-based videos or `url` for web-based video players. For profiles, Hot Tub documents `uploader` and accepts `creator` as an alias on the custom scheme.
+
+The same official page also documents `https://hottubapp.io/add/{domain}` for source redirects and `https://<host>/app?...` for universal-link handoff. Handoff helpers require `baseUrl` because Hot Tub says the host must serve `/app` and have the associated domain configured.
+
+### Add Source
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addSource' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}addSource({
+  url: 'https://api.myvideosite.com',
+})
+```
+
+### Add Source Redirect
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addSourceRedirect' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}addSourceRedirect({
+  domain: 'api.myvideosite.com',
+})
+```
+
+### Open Web Page
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebView' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}openWebView({
+  url: 'https://help.example.com',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}search({
+  q: 'funny cats',
+})
+```
+
+### Open Uploader Profile
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProfile' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}openProfile({
+  uploader: 'yanks',
+})
+```
+
+### Handoff Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffSearch' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffSearch({
+  baseUrl: 'https://hottubapp.io',
+  q: 'nature documentaries',
+})
+```
+
+### Handoff Profile
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffProfile' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffProfile({
+  baseUrl: 'https://hottubapp.io',
+  uploader: 'yanks',
+})
+```
+
+### Handoff Generic Page
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffOpen' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffOpen({
+  baseUrl: 'https://hottubapp.io',
+  url: 'https://example.com/watch/12345',
+})
+```
+
+### Handoff Favorite
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffFavorite' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffFavorite({
+  baseUrl: 'https://hottubapp.io',
+  url: 'https://example.com/watch/12345',
+})
+```
+
+### Play Video
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'play' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}play({
+  video: 'https://www.youtube.com/watch?v=y0sF5xhGreA',
+})
+```
+
+### Play Web Video
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'play' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}play({
+  url: 'https://www.youtube.com/watch?v=y0sF5xhGreA',
+})
+```
+
+### Notification
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'notification' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}notification({
+  type: 'success',
+  title: 'Success',
+  message: 'Video added to playlist!',
+})
+```
+
+### Debug Message
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'message' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}message({
+  content: 'Configuration loaded: API v2.1, 15 channels active',
+})
+```
+
+## Official Documentation
+
+* [Hot Tub URL Schemes](https://docs.hottubapp.io/developers/url-schemes/)
+
+---
+
+---
 url: /protocol-launcher/apps/ia-writer.md
 ---
 
@@ -9070,6 +9359,150 @@ resumeTimer({ all: true })
 ## Official Documentation
 
 * [Just Timers Shortcuts API](https://justtimers.app/help/shortcuts/)
+
+---
+
+---
+url: /protocol-launcher/apps/kakao-map.md
+---
+
+# Kakao Map
+
+[Kakao Map](https://map.kakao.com/) is a map and navigation app from Kakao. **Protocol Launcher** allows you to generate Kakao Map URL Scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only exposes the Kakao Map actions listed by Kakao's official URL Scheme documentation: `open`, `look`, `place`, `search`, `route`, and `roadView`, plus the documented trend-ranking `open` URL.
+
+Pass `scheme: 'mobileWeb'` to generate Kakao's documented MobileWeb equivalent. Kakao documents the trend-ranking MobileWeb URL with HTTPS; the other MobileWeb examples use HTTP.
+
+### Open Kakao Map
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}open()
+```
+
+### Open a Page
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}open({
+  page: 'placeSearch',
+})
+```
+
+### Open a Layer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}open({
+  layer: 'skyview',
+})
+```
+
+### Trend Ranking
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'trendRanking' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}trendRanking()
+```
+
+### Look
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'look' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}look({
+  p: '37.3952969470752,127.110449292622',
+})
+```
+
+### Place
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'place' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}place({
+  id: '18577297',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}search({
+  q: '맛집',
+  p: '37.3952,127.11044',
+})
+```
+
+### Route
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'route' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}route({
+  sp: '37.39529,127.11044',
+  ep: '37.49795,127.02763',
+  by: 'car',
+})
+```
+
+### Route with Waypoint
+
+Kakao documents waypoints as `vp`, `vp2`, `vp3`, `vp4`, and `vp5`. Public transit routes do not support waypoints.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'route' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}route({
+  sp: '37.40205,127.10821',
+  vp: '37.39424,127.11030',
+  ep: '37.39529,127.11044',
+  by: 'foot',
+})
+```
+
+### Road View
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'roadView' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}roadView({
+  p: '37.39529,127.11044',
+})
+```
+
+### MobileWeb URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'look' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}look({
+  p: '37.3952969470752,127.110449292622',
+  scheme: 'mobileWeb',
+})
+```
+
+## Official Documentation
+
+* [Kakao Map URL Scheme](https://apis.map.kakao.com/ios_v2/docs/getting-started/urlscheme/)
 
 ---
 
@@ -11666,6 +12099,110 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
 ---
 
 ---
+url: /protocol-launcher/apps/moovit.md
+---
+
+# Moovit
+
+[Moovit](https://moovitapp.com/) is a public transit app. **Protocol Launcher** allows you to generate Moovit URL Scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only exposes the actions listed by Moovit's official deeplinking documentation: `nearby`, `directions`, the iOS/Android fallback links, and the documented download link.
+
+The payloads use Moovit's documented parameter names, including `partner_id`, `dest_lat`, `dest_lon`, `orig_lat`, `orig_lon`, and `auto_run`. `date` should be an ISO-8601 date/time string.
+
+### Nearby Transit
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'nearby' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}nearby({
+  lat: 40.758896,
+  lon: -73.98513,
+  partner_id: 'YOUR_APP_NAME',
+})
+```
+
+### Directions
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}directions({
+  dest_lat: 40.758896,
+  dest_lon: -73.98513,
+  dest_name: 'Times Square',
+  partner_id: 'YOUR_APP_NAME',
+})
+```
+
+### Directions With Origin and Date
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}directions({
+  dest_lat: 40.758896,
+  dest_lon: -73.98513,
+  dest_name: 'Times Square',
+  orig_lat: 40.735845,
+  orig_lon: -73.990512,
+  orig_name: 'Union Square',
+  auto_run: true,
+  date: '2019-04-01T18:30:00+02:00',
+  partner_id: 'YOUR_APP_NAME',
+})
+```
+
+### iOS Fallback Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'iosFallbackLink' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}iosFallbackLink({
+  c: 'YOUR_APP_NAME',
+  af_dp: 'moovit://nearby?lat=40.758896&lon=-73.98513&partner_id=YOUR_APP_NAME',
+})
+```
+
+### Android Fallback Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'androidFallbackLink' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}androidFallbackLink({
+  c: 'YOUR_APP_NAME',
+  af_dp: 'moovit://nearby?lat=40.758896&lon=-73.98513&partner_id=YOUR_APP_NAME',
+})
+```
+
+### Download Link
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadLink' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}downloadLink({
+  c: 'YOUR_APP_NAME',
+})
+```
+
+## Official Documentation
+
+* [Moovit Deeplinking](https://moovit.com/developers/deeplinking/)
+
+---
+
+---
 url: /protocol-launcher/apps/motrix.md
 ---
 
@@ -11818,6 +12355,105 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
   name: 'Lunch',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/naver-map.md
+---
+
+# NAVER Map
+
+[NAVER Map](https://map.naver.com/) is NAVER's map and navigation app. **Protocol Launcher** allows you to generate NAVER Map URL Scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+NAVER's URL Scheme requires an `appname` parameter that identifies the calling app or web page. This module only exposes helpers for the documented `nmap://` action paths: `map`, `place`, `search`, `search/bus`, `route/public`, `route/car`, `route/walk`, `route/bicycle`, and `navigation`.
+
+### Open NAVER Map
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMap' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}openMap({
+  lat: 37.56661,
+  lng: 126.978388,
+  zoom: 13,
+  appname: 'com.example.myapp',
+})
+```
+
+### Show a Point
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPoint' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}showPoint({
+  lat: 37.56661,
+  lng: 126.978388,
+  name: '서울역',
+  appname: 'com.example.myapp',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}search({
+  query: '카페',
+  appname: 'com.example.myapp',
+})
+```
+
+### Search Bus
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchBus' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}searchBus({
+  query: 'M4101',
+  appname: 'com.example.myapp',
+})
+```
+
+### Route
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'route' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}route({
+  mode: 'car',
+  dlat: 37.5209436,
+  dlng: 127.1230074,
+  dname: '올림픽공원',
+  appname: 'com.example.myapp',
+})
+```
+
+### Navigation
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigation' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}navigation({
+  appname: 'com.example.myapp',
+})
+```
+
+## Official Documentation
+
+* [NAVER Map URL Scheme](https://guide.ncloud-docs.com/docs/maps-url-scheme)
 
 ---
 
@@ -14660,6 +15296,156 @@ openFeed({
 ---
 
 ---
+url: /protocol-launcher/apps/royal-ts.md
+---
+
+# Royal TS
+
+[Royal TS](https://www.royalapps.com/ts/win/features) is a remote desktop and server management app. **Protocol Launcher** allows you to generate official Royal TS URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Royal Apps documents `rtscli://local/<scope>/<command>?...` for executing Royal TS CLI commands. The `connect` helper is limited to the documented `rtscli.exe action connect` value options. Use `cliCommand` only for the documented `action connect`, `document open`, and `document close` command shapes. Flag-only CLI options are intentionally not exposed because the URI page does not document their URI serialization.
+
+Royal TS V6 also documents the legacy `rtsx://` scheme for connection actions. These examples do not render live launch buttons because the generated links can start or disconnect remote sessions.
+
+### CLI Command
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cliCommand' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}cliCommand({
+  scope: '{{ cliCommandParams.scope }}',
+  command: '{{ cliCommandParams.command }}',
+  options: {
+    '-n': '{{ cliCommandParams.name }}',
+  },
+})
+```
+
+### Connect
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}connect({
+  name: '{{ connectParams.name }}',
+})
+```
+
+### Legacy Connect By URI
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyConnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyConnect({
+  protocolIdentifier: '{{ legacyConnectParams.protocolIdentifier }}',
+  uri: '{{ legacyConnectParams.uri }}',
+  using: '{{ legacyConnectParams.using }}',
+})
+```
+
+### Legacy Connect By Name
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyConnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyConnect({
+  protocolIdentifier: '{{ legacyCredentialParams.protocolIdentifier }}',
+  auth: {
+    username: '{{ legacyCredentialParams.auth.username }}',
+  },
+  uri: '{{ legacyCredentialParams.uri }}',
+  using: '{{ legacyCredentialParams.using }}',
+})
+```
+
+### Legacy Disconnect
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyDisconnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyDisconnect({
+  protocolIdentifier: '{{ legacyDisconnectParams.protocolIdentifier }}',
+  uri: '{{ legacyDisconnectParams.uri }}',
+  using: '{{ legacyDisconnectParams.using }}',
+})
+```
+
+### Legacy Ad Hoc Properties
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyConnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyConnect({
+  protocolIdentifier: '{{ legacyAdHocParams.protocolIdentifier }}',
+  uri: '{{ legacyAdHocParams.uri }}',
+  using: '{{ legacyAdHocParams.using }}',
+  action: '{{ legacyAdHocParams.action }}',
+  properties: {
+    Description: '{{ legacyAdHocParams.properties.Description }}',
+    ColorDepth: {{ legacyAdHocParams.properties.ColorDepth }},
+  },
+})
+```
+
+## Generated URLs
+
+```ts
+cliCommand({
+  scope: 'action',
+  command: 'connect',
+  options: { '-n': 'QNAP (SSH)' },
+})
+// => 'rtscli://local/action/connect?-n=QNAP+(SSH)'
+
+connect({ name: 'QNAP (SSH)' })
+// => 'rtscli://local/action/connect?-n=QNAP+(SSH)'
+
+legacyConnect({ protocolIdentifier: 'rdp', uri: '192.168.5.16', using: 'uri' })
+// => 'rtsx://rdp%3a%2f%2f192.168.5.16?using=uri'
+
+legacyConnect({
+  protocolIdentifier: 'rdp',
+  auth: { username: 'admin' },
+  uri: 'Web Server 1',
+  using: 'name',
+})
+// => 'rtsx://rdp%3a%2f%2fadmin@Web%20Server%201?using=name'
+
+legacyDisconnect({ protocolIdentifier: 'rdp', uri: 'Web Server 1', using: 'name' })
+// => 'rtsx://rdp%3a%2f%2fWeb%20Server%201?using=name&action=disconnect'
+
+legacyConnect({
+  protocolIdentifier: 'rdp',
+  uri: '192.168.5.16',
+  using: 'adhoc',
+  action: 'connect',
+  properties: {
+    Description: 'Connected using URI',
+    ColorDepth: 8,
+  },
+})
+// => 'rtsx://rdp%3a%2f%2f192.168.5.16?using=adhoc&action=connect&property_Description=Connected%20using%20URI&property_ColorDepth=8'
+```
+
+## Official Documentation
+
+* [Royal TS URI Scheme](https://docs.royalapps.com/r2023/royalts/advanced/uri.html)
+* [Royal TS Command Line](https://docs.royalapps.com/r2023/royalts/advanced/cli.html)
+
+---
+
+---
 url: /protocol-launcher/apps/rustrover.md
 ---
 
@@ -16461,6 +17247,149 @@ Plugin-specific fields use the official `af_` prefix. For example, `af_replicaSe
 ---
 
 ---
+url: /protocol-launcher/apps/tadam.md
+---
+
+# Tadam
+
+[Tadam](https://tadamapp.com/) is a macOS Pomodoro timer app. **Protocol Launcher** allows you to generate official URL scheme links for Tadam.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Tadam documents `time` using the same format as the app, with examples such as `10`, `10:30`, `1h`, and `2h5min20sec`. The official page also says `open` and `mini` are enabled when set to `true` or `1`.
+
+Tadam partially supports x-callback-url. Use the `xCallback...` helpers for the documented `tadam://x-callback-url/` prefix, or pass `xSuccess` to the regular helpers when you need the documented `x-success` parameter. `x-error` and other x-callback-url parameters are not supported.
+
+### Start Work Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startWork' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startWork({
+  time: '10min',
+})
+```
+
+### Start Work Timer and Open UI
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startWork' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startWork({
+  time: '5:30',
+  open: true,
+})
+```
+
+### Start Break Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startBreak' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startBreak({
+  time: '5',
+})
+```
+
+### Start Break Timer in Mini UI
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startBreak' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startBreak({
+  time: '10min',
+  mini: true,
+})
+```
+
+### Control Timer
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pause, resume, stop' : 'tadam' }} } from '{{ importPath }}'
+
+const pauseUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}pause()
+const resumeUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}resume()
+const stopUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}stop()
+```
+
+### Open Timer UI and Help
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'help, startBreak, startWork' : 'tadam' }} } from '{{ importPath }}'
+
+const startWorkUiUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startWork()
+const breakUiUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startBreak()
+const helpUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}help()
+```
+
+### x-callback-url
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStartWork' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}xCallbackStartWork({
+  time: '10min',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackPause' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}xCallbackPause({
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+## Generated URLs
+
+```ts
+startWork({ time: '10min' })
+// => 'tadam://start?time=10min'
+
+startWork({ time: '5:30', open: true })
+// => 'tadam://start?time=5:30&open=true'
+
+startBreak({ time: '5' })
+// => 'tadam://break?time=5'
+
+startBreak({ time: '10min', mini: true })
+// => 'tadam://break?time=10min&mini=true'
+
+pause()
+// => 'tadam://pause'
+
+resume()
+// => 'tadam://resume'
+
+stop()
+// => 'tadam://stop'
+
+help()
+// => 'tadam://help'
+
+xCallbackStartWork({ time: '10min' })
+// => 'tadam://x-callback-url/start?time=10min'
+
+xCallbackPause({ xSuccess: 'shortcuts://callback' })
+// => 'tadam://x-callback-url/pause?x-success=shortcuts%3A%2F%2Fcallback'
+```
+
+## Official Documentation
+
+* [Tadam URL Schemes](https://tadamapp.com/url-schemes/)
+
+---
+
+---
 url: /protocol-launcher/apps/tally.md
 ---
 
@@ -16574,6 +17503,137 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}openDomain({
   domain: 'zhensherlock',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/tembo.md
+---
+
+# Tembo
+
+[Tembo](https://houdah.com/tembo/) is a macOS file search app. **Protocol Launcher** allows you to generate Tembo URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Houdah's official Tembo article documents the URL format as `tembo2://search?query=[QUERY]&location=[LOCATION]&group=[GROUP]`. The `location` and `group` parameters are optional additions to the search query, and `location` can be repeated to show multiple paths in Tembo's locations menu.
+
+The `group` value is limited to Tembo's official values: `APPLICATIONS`, `BOOKMARKS`, `CONTACTS`, `DIRECTORIES`, `CALENDAR`, `EVERNOTE`, `FONTS`, `IMAGES`, `MESSAGES`, `MOVIES`, `MUSIC`, `PDF`, `SOURCE`, `SYSTEM_PREFS`, and `XML`.
+
+The same official article also shows Alfred's custom search URL as `tembo2://search?q={query}`. Pass `q` instead of `query` only when you need that documented short parameter.
+
+### Search
+
+Start a Tembo search with query text.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}search({
+  query: 'Houdah Software',
+})
+```
+
+### Search In Location
+
+Start a Tembo search with a specific location.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchInLocation' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}searchInLocation({
+  query: 'Houdah Software',
+  location: '~/Documents',
+})
+```
+
+### Search Multiple Locations
+
+Pass an array to repeat Tembo's documented `location` parameter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchInLocation' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}searchInLocation({
+  query: 'Houdah Software',
+  location: ['~/Documents', '~/Desktop'],
+  group: 'PDF',
+})
+```
+
+### Search Group
+
+Start a Tembo search in one of the official groups.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchGroup' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}searchGroup({
+  query: 'Houdah Software',
+  group: 'PDF',
+})
+```
+
+### Alfred Short Query Parameter
+
+Generate the official Alfred custom search form with `q`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}search({
+  q: 'Houdah Software',
+})
+```
+
+## Generated URLs
+
+```ts
+search({ query: 'Houdah Software' })
+// => 'tembo2://search?query=Houdah%20Software'
+
+search({
+  query: 'Houdah Software',
+  location: '~/Documents',
+  group: 'PDF',
+})
+// => 'tembo2://search?query=Houdah%20Software&location=~/Documents&group=PDF'
+
+searchInLocation({
+  query: 'Houdah Software',
+  location: '~/Documents',
+})
+// => 'tembo2://search?query=Houdah%20Software&location=~/Documents'
+
+searchInLocation({
+  query: 'Houdah Software',
+  location: ['~/Documents', '~/Desktop'],
+  group: 'PDF',
+})
+// => 'tembo2://search?query=Houdah%20Software&location=~/Documents&location=~/Desktop&group=PDF'
+
+searchGroup({
+  query: 'Houdah Software',
+  group: 'PDF',
+})
+// => 'tembo2://search?query=Houdah%20Software&group=PDF'
+
+search({ q: 'Houdah Software' })
+// => 'tembo2://search?q=Houdah%20Software'
+```
+
+## Official Documentation
+
+* [Start a Tembo File Search from Alfred, Butler or LaunchBar](https://blog.houdah.com/2015/10/start-a-tembo-file-search-from-alfred-butler-or-launchbar/)
 
 ---
 
@@ -16746,6 +17806,212 @@ import { {{ currentMethod === 'On-Demand' ? 'reloadCustomizations' : 'textastic'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}reloadCustomizations()
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/textwell.md
+---
+
+# Textwell
+
+[Textwell](https://sociomedia.com/textwell/) is a text editor for iOS and macOS. **Protocol Launcher** allows you to generate official URL scheme links for Textwell.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Textwell's official URL scheme documentation says every query parameter value must be URL-encoded. Textwell URL schemes support the documented `x-success` callback option, and `extendXSuccess` can ask Textwell to append `textwell-text`, `textwell-loc`, and `textwell-len` to the callback URL.
+
+The `prefix` and `suffix` options are documented only for the four paste methods: `pasteReplace`, `pasteInsert`, `pasteAdd`, and `pasteReplaceRange`.
+
+### Open
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}open()
+```
+
+### Replace
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}replace({
+  text: 'Hello, Textwell.',
+})
+```
+
+### Insert
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'insert' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}insert({
+  text: 'Inserted text',
+})
+```
+
+### Add
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}add({
+  text: 'New ending',
+})
+```
+
+### Replace Range
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replaceRange' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}replaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  text: 'Textwell',
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+```
+
+### Paste Methods
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteReplace, pasteInsert, pasteAdd' : 'textwell' }} } from '{{ importPath }}'
+
+const replaceUrl = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteReplace()
+const insertUrl = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteInsert({
+  prefix: '> ',
+  suffix: '\n',
+})
+const addUrl = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteAdd()
+```
+
+### Paste Replace Range
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteReplaceRange' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteReplaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+```
+
+### Execute Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'executeAction' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}executeAction({
+  title: 'Format Markdown',
+})
+```
+
+### Import Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importAction' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}importAction({
+  title: 'Hello',
+  source: 'editor.setText("Hello")',
+  iconTitle: 'star',
+  desc: 'Create hello text',
+  platform: 0,
+  confirming: 1,
+})
+```
+
+### x-success
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}replace({
+  text: 'Hello',
+  xSuccess: 'shortcuts://callback',
+  extendXSuccess: true,
+})
+```
+
+## Generated URLs
+
+```ts
+open()
+// => 'textwell://'
+
+replace({ text: 'Hello, Textwell.' })
+// => 'textwell:///replace?text=Hello%2C%20Textwell.'
+
+insert({ text: 'Inserted text' })
+// => 'textwell:///insert?text=Inserted%20text'
+
+add({ text: 'New ending' })
+// => 'textwell:///add?text=New%20ending'
+
+replaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  text: 'Textwell',
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+// => 'textwell:///replaceRange?replacingLoc=7&replacingLen=5&text=Textwell&selectingLoc=0&selectingLen=16'
+
+pasteReplace()
+// => 'textwell:///pasteReplace?'
+
+pasteInsert({ prefix: '> ', suffix: '\n' })
+// => 'textwell:///pasteInsert?prefix=%3E%20&suffix=%0A'
+
+pasteAdd()
+// => 'textwell:///pasteAdd?'
+
+pasteReplaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+// => 'textwell:///pasteReplaceRange?replacingLoc=7&replacingLen=5&selectingLoc=0&selectingLen=16'
+
+executeAction({ title: 'Format Markdown' })
+// => 'textwell:///executeAction?title=Format%20Markdown'
+
+importAction({
+  title: 'Hello',
+  source: 'editor.setText("Hello")',
+  iconTitle: 'star',
+  desc: 'Create hello text',
+  platform: 0,
+  confirming: 1,
+})
+// => 'textwell:///importAction?title=Hello&source=editor.setText(%22Hello%22)&iconTitle=star&desc=Create%20hello%20text&platform=0&confirming=1'
+
+replace({
+  text: 'Hello',
+  xSuccess: 'shortcuts://callback',
+  extendXSuccess: true,
+})
+// => 'textwell:///replace?text=Hello&x-success=shortcuts%3A%2F%2Fcallback&extendXSuccess=true'
+```
+
+## Official Documentation
+
+* [Textwell URL Schemes](https://sociomedia.com/textwell/urlschemes/)
 
 ---
 
@@ -19970,6 +21236,123 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'workingCopy.'}}chain({
 ---
 
 ---
+url: /protocol-launcher/apps/written-down.md
+---
+
+# Written Down
+
+[Written Down](https://tinkerbuilt.com/written-down/) is a journal app for writing personal entries. **Protocol Launcher** allows you to generate links for creating and editing entries, opening entries, and opening journals in Written Down.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Written Down documents `writtendown://x-callback-url/[action]?[action parameters]` for `create`, `open-entry`, `edit-entry`, and `open-journal`. Optional values are omitted when not provided.
+
+### Create
+
+Create a new entry. All action parameters are optional; when `journalID` is omitted, Written Down uses the first journal.
+
+Official action parameters:
+
+* `text`: body text for the new entry.
+* `journalID`: unique identifier for the journal to create an entry in; defaults to the first journal if omitted.
+* `tags`: comma-separated list of tags to add to the entry.
+* `latlng`: comma-separated latitude and longitude values for entry location; defaults to the current location if omitted.
+* `date`: date and time for the entry in ISO 8601 format; defaults to the current date and time if omitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}create({
+  text: "It's beautiful today",
+  journalID: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+  tags: 'thoughts,weather',
+  latlng: '37.331686,-122.030656',
+  date: '2017-12-19T16:39:57-08:00',
+})
+```
+
+Official `x-success` return parameters: `id`, `text`, and `journalID`.
+
+### Open Entry
+
+Open and display an entry by its required `id`.
+
+Official action parameters:
+
+* `id`: required unique identifier for the entry to be opened.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntry' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}openEntry({
+  id: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+})
+```
+
+Official `x-success` return parameters: `id`, `text`, and `journalID`.
+
+### Edit Entry
+
+Edit an existing entry by its required `id`. Written Down documents `mode` values of `append`, `replace`, and `prepend`, and `tagMode` values of `append`, `replace`, and `delete`.
+
+Official action parameters:
+
+* `id`: required unique identifier of the entry to edit.
+* `text`: text to be added to the entry.
+* `mode`: whether to `append`, `replace`, or `prepend` the text to the entry; defaults to `append` if omitted.
+* `tags`: comma-separated list of tags to apply to the entry.
+* `tagMode`: whether to `append`, `replace`, or `delete` the provided tags; defaults to `append` if omitted.
+* `latlng`: comma-separated latitude and longitude values for entry location; omitted leaves location unchanged, and `delete` removes the location.
+* `date`: date and time for the entry in ISO 8601 format; omitted leaves the date unchanged.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editEntry' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}editEntry({
+  id: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+  text: 'Another thought',
+  mode: 'replace',
+  tags: 'thoughts,feelings',
+  tagMode: 'delete',
+  latlng: 'delete',
+  date: '2017-12-19T16:39:57-08:00',
+})
+```
+
+Official `x-success` return parameters: `id`, `text`, and `journalID`.
+
+### Open Journal
+
+Open and display a journal by its required `journalID`.
+
+Official action parameters:
+
+* `journalID`: required unique identifier for the journal to be opened.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openJournal' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}openJournal({
+  journalID: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+})
+```
+
+Official `x-success` return parameters: `journalID`.
+
+## Official Documentation
+
+* [Written Down X-Callback-URL Scheme](https://tinkerbuilt.com/faq/x-callback-url/)
+
+---
+
+---
 url: /protocol-launcher/apps/xcode.md
 ---
 
@@ -20231,6 +21614,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
+* [AnyDesk](../apps/anydesk.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Map](../apps/apple-map.md)
@@ -20299,6 +21683,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
+* [Hot Tub](../apps/hot-tub.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [Instapaper](../apps/instapaper.md)
@@ -20312,6 +21697,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Just Timers](../apps/just-timers.md)
+* [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -20333,8 +21719,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
+* [Moovit](../apps/moovit.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
+* [NAVER Map](../apps/naver-map.md)
 * [Navicat](../apps/navicat.md)
 * [NotePlan](../apps/noteplan.md)
 * [Notebooks](../apps/notebooks.md)
@@ -20365,6 +21753,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [Reeder](../apps/reeder.md)
+* [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -20383,11 +21772,14 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
+* [Tadam](../apps/tadam.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Tembo](../apps/tembo.md)
 * [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
+* [Textwell](../apps/textwell.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -20418,6 +21810,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
+* [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
@@ -20552,6 +21945,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Alfred](../apps/alfred.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
+* [AnyDesk](../apps/anydesk.md)
 * [App Store](../apps/app-store.md)
 * [AppFlowy](../apps/appflowy.md)
 * [Appigo Todo](../apps/appigo-todo.md)
@@ -20620,6 +22014,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Hiddify](../apps/hiddify.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
+* [Hot Tub](../apps/hot-tub.md)
 * [iA Writer](../apps/ia-writer.md)
 * [iCab Mobile](../apps/icab-mobile.md)
 * [IntelliJ IDEA](../apps/idea.md)
@@ -20633,6 +22028,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
 * [Just Timers](../apps/just-timers.md)
+* [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
 * [Kiro](../apps/kiro.md)
@@ -20654,8 +22050,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
 * [MoneyWiz](../apps/moneywiz.md)
+* [Moovit](../apps/moovit.md)
 * [Motrix](../apps/motrix.md)
 * [MultiTimer](../apps/multi-timer.md)
+* [NAVER Map](../apps/naver-map.md)
 * [Navicat](../apps/navicat.md)
 * [NotePlan](../apps/noteplan.md)
 * [Notebooks](../apps/notebooks.md)
@@ -20686,6 +22084,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
 * [Reeder](../apps/reeder.md)
+* [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
@@ -20704,11 +22103,14 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
+* [Tadam](../apps/tadam.md)
 * [Tally](../apps/tally.md)
 * [Telegram](../apps/telegram.md)
+* [Tembo](../apps/tembo.md)
 * [Terminology](../apps/terminology.md)
 * [Termius](../apps/termius.md)
 * [Textastic](../apps/textastic.md)
+* [Textwell](../apps/textwell.md)
 * [TextMate](../apps/textmate.md)
 * [Theia](../apps/theia.md)
 * [Things](../apps/things.md)
@@ -20739,6 +22141,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
+* [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
@@ -21417,6 +22820,108 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'anybox.'}}xCallbackPaste({
   xError: 'errorURL',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/anydesk.md
+---
+
+# AnyDesk
+
+[AnyDesk](https://anydesk.com) 是一款用于连接远程设备的远程桌面应用。**Protocol Launcher** 允许你生成 AnyDesk 的远程会话和许可证注册 URL Handler。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+### 连接
+
+AnyDesk 官方文档给出的标准远程会话 URL 是 `anydesk:<anydesk-id-or-alias>`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connect' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}connect({
+  idOrAlias: '{{ connectParams.idOrAlias }}',
+})
+```
+
+### 连接自定义客户端
+
+AnyDesk 官方文档给出的非 MSI 自定义客户端格式是 `anydesk-<prefix>:<anydesk-id-or-alias>`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectCustomClient' : 'anydesk' }} } from '{{ importPath }}'
+
+const nonMsiUrl = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}connectCustomClient({
+  prefix: '{{ customClientParams.prefix }}',
+  idOrAlias: '{{ customClientParams.idOrAlias }}',
+})
+```
+
+### 连接 MSI 自定义客户端
+
+AnyDesk 官方文档给出的 MSI 自定义客户端格式是 `anydesk:AnyDesk-<prefix>_msi:<anydesk-id-or-alias>`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectCustomClientMsi' : 'anydesk' }} } from '{{ importPath }}'
+
+const msiUrl = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}connectCustomClientMsi({
+  prefix: '{{ customClientMsiParams.prefix }}',
+  idOrAlias: '{{ customClientMsiParams.idOrAlias }}',
+})
+```
+
+### 注册许可证
+
+AnyDesk 官方文档给出的许可证注册网址是 `anydesk://register-license?key=LICENSE-KEY`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'registerLicense' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicense({
+  key: '{{ registerLicenseParams.key }}',
+})
+
+const silentUrl = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicense({
+  key: '{{ registerLicenseSilentParams.key }}',
+  silent: {{ registerLicenseSilentParams.silent }},
+})
+```
+
+### 注册自定义客户端许可证
+
+AnyDesk 官方文档给出的非 MSI 自定义客户端许可证注册网址是 `anydesk-<prefix>://register-license?key=LICENSE-KEY`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'registerLicenseCustomClient' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicenseCustomClient({
+  prefix: '{{ registerLicenseCustomClientParams.prefix }}',
+  key: '{{ registerLicenseCustomClientParams.key }}',
+})
+```
+
+### 注册 MSI 自定义客户端许可证
+
+AnyDesk 官方文档给出的 MSI 自定义客户端许可证注册网址是 `anydesk:AnyDesk-<prefix>_msi://register-license?key=LICENSE-KEY`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'registerLicenseCustomClientMsi' : 'anydesk' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'anydesk.'}}registerLicenseCustomClientMsi({
+  prefix: '{{ registerLicenseCustomClientMsiParams.prefix }}',
+  key: '{{ registerLicenseCustomClientMsiParams.key }}',
+})
+```
+
+许可证注册网址可以通过传入 `silent: true` 追加 `&silent`。这些示例不会渲染可直接点击的启动按钮，因为官方 Handler 会发起远程会话或提交许可证密钥。详见 [AnyDesk 官方 URL Handler 文档](https://support.anydesk.com/docs/url-handler)。
 
 ---
 
@@ -28262,6 +29767,173 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'hookmark.'}}openSpotify()
 ---
 
 ---
+url: /protocol-launcher/zh/apps/hot-tub.md
+---
+
+# Hot Tub
+
+[Hot Tub](https://hottubapp.io/) 是一款用于添加来源和打开视频的视频应用。**Protocol Launcher** 允许你生成 Hot Tub URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+此模块只暴露 Hot Tub 官方 URL Schemes 文档列出的 custom URL scheme 动作：`source`、`webview`、`search`、`profile`、`play`、`notification` 和 `message`。
+
+`play` helper 接收 `video` 或 `url` 二选一：`video` 用于基于 API 的视频，`url` 用于网页播放器。对于 profile，Hot Tub 文档使用 `uploader`，同时说明 custom scheme 接受 `creator` 作为别名。
+
+同一篇官方文档还记录了 `https://hottubapp.io/add/{domain}` source redirect 和 `https://<host>/app?...` universal-link handoff。Handoff helpers 要求传入 `baseUrl`，因为 Hot Tub 文档说明这个 host 必须提供 `/app` 并配置 associated domain。
+
+### 添加 Source
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addSource' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}addSource({
+  url: 'https://api.myvideosite.com',
+})
+```
+
+### 添加 Source Redirect
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addSourceRedirect' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}addSourceRedirect({
+  domain: 'api.myvideosite.com',
+})
+```
+
+### 打开网页
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebView' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}openWebView({
+  url: 'https://help.example.com',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}search({
+  q: 'funny cats',
+})
+```
+
+### 打开 Uploader Profile
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProfile' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}openProfile({
+  uploader: 'yanks',
+})
+```
+
+### Handoff 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffSearch' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffSearch({
+  baseUrl: 'https://hottubapp.io',
+  q: 'nature documentaries',
+})
+```
+
+### Handoff Profile
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffProfile' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffProfile({
+  baseUrl: 'https://hottubapp.io',
+  uploader: 'yanks',
+})
+```
+
+### Handoff 通用页面
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffOpen' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffOpen({
+  baseUrl: 'https://hottubapp.io',
+  url: 'https://example.com/watch/12345',
+})
+```
+
+### Handoff Favorite
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'handoffFavorite' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}handoffFavorite({
+  baseUrl: 'https://hottubapp.io',
+  url: 'https://example.com/watch/12345',
+})
+```
+
+### 播放视频
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'play' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}play({
+  video: 'https://www.youtube.com/watch?v=y0sF5xhGreA',
+})
+```
+
+### 播放网页视频
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'play' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}play({
+  url: 'https://www.youtube.com/watch?v=y0sF5xhGreA',
+})
+```
+
+### 通知
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'notification' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}notification({
+  type: 'success',
+  title: 'Success',
+  message: 'Video added to playlist!',
+})
+```
+
+### Debug Message
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'message' : 'hotTub' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'hotTub.'}}message({
+  content: 'Configuration loaded: API v2.1, 15 channels active',
+})
+```
+
+## 官方文档
+
+* [Hot Tub URL Schemes](https://docs.hottubapp.io/developers/url-schemes/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/ia-writer.md
 ---
 
@@ -29275,6 +30947,150 @@ resumeTimer({ all: true })
 ## 官方文档
 
 * [Just Timers Shortcuts API](https://justtimers.app/help/shortcuts/)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/kakao-map.md
+---
+
+# Kakao Map
+
+[Kakao Map](https://map.kakao.com/) 是 Kakao 的地图和导航应用。**Protocol Launcher** 允许你生成 Kakao Map URL Scheme 链接。
+
+## 用法
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，打包体积更小。
+* Full Import 从根包导入，适合快速脚本或 demo，但会包含所有应用模块。
+
+生产构建推荐使用 On-Demand；快速试用可以使用 Full Import。
+
+## 说明
+
+此模块只暴露 Kakao Map 官方 URL Scheme 文档列出的动作：`open`、`look`、`place`、`search`、`route`、`roadView`，以及文档中的趋势排行 `open` URL。
+
+传入 `scheme: 'mobileWeb'` 可以生成 Kakao 文档中的 MobileWeb 等价 URL。Kakao 文档中趋势排行的 MobileWeb URL 使用 HTTPS，其他 MobileWeb 示例使用 HTTP。
+
+### 打开 Kakao Map
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}open()
+```
+
+### 打开页面
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}open({
+  page: 'placeSearch',
+})
+```
+
+### 打开图层
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}open({
+  layer: 'skyview',
+})
+```
+
+### 趋势排行
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'trendRanking' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}trendRanking()
+```
+
+### 查看坐标
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'look' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}look({
+  p: '37.3952969470752,127.110449292622',
+})
+```
+
+### 打开地点
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'place' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}place({
+  id: '18577297',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}search({
+  q: '맛집',
+  p: '37.3952,127.11044',
+})
+```
+
+### 路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'route' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}route({
+  sp: '37.39529,127.11044',
+  ep: '37.49795,127.02763',
+  by: 'car',
+})
+```
+
+### 带途经点的路线
+
+Kakao 文档中的途经点参数是 `vp`、`vp2`、`vp3`、`vp4` 和 `vp5`。公共交通路线不支持途经点。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'route' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}route({
+  sp: '37.40205,127.10821',
+  vp: '37.39424,127.11030',
+  ep: '37.39529,127.11044',
+  by: 'foot',
+})
+```
+
+### Road View
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'roadView' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}roadView({
+  p: '37.39529,127.11044',
+})
+```
+
+### MobileWeb URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'look' : 'kakaoMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'kakaoMap.'}}look({
+  p: '37.3952969470752,127.110449292622',
+  scheme: 'mobileWeb',
+})
+```
+
+## 官方文档
+
+* [Kakao Map URL Scheme](https://apis.map.kakao.com/ios_v2/docs/getting-started/urlscheme/)
 
 ---
 
@@ -31871,6 +33687,110 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'moneywiz.'}}updateHolding({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/moovit.md
+---
+
+# Moovit
+
+[Moovit](https://moovitapp.com/) 是一款公共交通应用。**Protocol Launcher** 允许你生成 Moovit URL Scheme 链接。
+
+## 用法
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，打包体积更小。
+* Full Import 从根包导入，适合快速脚本或 demo，但会包含所有应用模块。
+
+生产构建推荐使用 On-Demand；快速试用可以使用 Full Import。
+
+## 说明
+
+此模块只暴露 Moovit 官方 deeplinking 文档列出的动作：`nearby`、`directions`、iOS/Android fallback 链接，以及文档中的下载链接。
+
+payload 使用 Moovit 文档中的参数名，包括 `partner_id`、`dest_lat`、`dest_lon`、`orig_lat`、`orig_lon` 和 `auto_run`。`date` 应使用 ISO-8601 日期时间字符串。
+
+### 附近公交
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'nearby' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}nearby({
+  lat: 40.758896,
+  lon: -73.98513,
+  partner_id: 'YOUR_APP_NAME',
+})
+```
+
+### 路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}directions({
+  dest_lat: 40.758896,
+  dest_lon: -73.98513,
+  dest_name: 'Times Square',
+  partner_id: 'YOUR_APP_NAME',
+})
+```
+
+### 带起点和时间的路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'directions' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}directions({
+  dest_lat: 40.758896,
+  dest_lon: -73.98513,
+  dest_name: 'Times Square',
+  orig_lat: 40.735845,
+  orig_lon: -73.990512,
+  orig_name: 'Union Square',
+  auto_run: true,
+  date: '2019-04-01T18:30:00+02:00',
+  partner_id: 'YOUR_APP_NAME',
+})
+```
+
+### iOS Fallback 链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'iosFallbackLink' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}iosFallbackLink({
+  c: 'YOUR_APP_NAME',
+  af_dp: 'moovit://nearby?lat=40.758896&lon=-73.98513&partner_id=YOUR_APP_NAME',
+})
+```
+
+### Android Fallback 链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'androidFallbackLink' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}androidFallbackLink({
+  c: 'YOUR_APP_NAME',
+  af_dp: 'moovit://nearby?lat=40.758896&lon=-73.98513&partner_id=YOUR_APP_NAME',
+})
+```
+
+### 下载链接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadLink' : 'moovit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'moovit.'}}downloadLink({
+  c: 'YOUR_APP_NAME',
+})
+```
+
+## 官方文档
+
+* [Moovit Deeplinking](https://moovit.com/developers/deeplinking/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/motrix.md
 ---
 
@@ -32023,6 +33943,105 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
   name: 'Lunch',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/naver-map.md
+---
+
+# NAVER Map
+
+[NAVER Map](https://map.naver.com/) 是 NAVER 推出的地图和导航应用。**Protocol Launcher** 允许你生成 NAVER Map URL Scheme 链接。
+
+## 用法
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，打包体积更小。
+* Full Import 从根包导入，适合快速脚本或 demo，但会包含所有应用模块。
+
+生产构建推荐使用 On-Demand；快速试用可以使用 Full Import。
+
+## 说明
+
+NAVER 的 URL Scheme 要求传入 `appname` 参数，用来标识发起调用的应用或网页。此模块只为官方文档列出的 `nmap://` action path 暴露 helper：`map`、`place`、`search`、`search/bus`、`route/public`、`route/car`、`route/walk`、`route/bicycle` 和 `navigation`。
+
+### 打开 NAVER Map
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMap' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}openMap({
+  lat: 37.56661,
+  lng: 126.978388,
+  zoom: 13,
+  appname: 'com.example.myapp',
+})
+```
+
+### 标记坐标
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPoint' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}showPoint({
+  lat: 37.56661,
+  lng: 126.978388,
+  name: '서울역',
+  appname: 'com.example.myapp',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}search({
+  query: '카페',
+  appname: 'com.example.myapp',
+})
+```
+
+### 公交搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchBus' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}searchBus({
+  query: 'M4101',
+  appname: 'com.example.myapp',
+})
+```
+
+### 路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'route' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}route({
+  mode: 'car',
+  dlat: 37.5209436,
+  dlng: 127.1230074,
+  dname: '올림픽공원',
+  appname: 'com.example.myapp',
+})
+```
+
+### 导航
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigation' : 'naverMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'naverMap.'}}navigation({
+  appname: 'com.example.myapp',
+})
+```
+
+## 官方文档
+
+* [NAVER Map URL Scheme](https://guide.ncloud-docs.com/docs/maps-url-scheme)
 
 ---
 
@@ -34865,6 +36884,156 @@ openFeed({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/royal-ts.md
+---
+
+# Royal TS
+
+[Royal TS](https://www.royalapps.com/ts/win/features) 是一款远程桌面和服务器管理应用。**Protocol Launcher** 允许你生成 Royal TS 官方 URL Scheme 链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+## 说明
+
+Royal Apps 官方文档公开了 `rtscli://local/<scope>/<command>?...`，用于执行 Royal TS CLI 命令。`connect` helper 仅覆盖已公开的 `rtscli.exe action connect` 带值参数。`cliCommand` 也只覆盖文档中出现的 `action connect`、`document open` 和 `document close` 命令形态。由于 URI 页面没有公开纯 flag 选项在 URI 中的序列化方式，这里不会暴露这类参数。
+
+Royal TS V6 也公开了 legacy `rtsx://` scheme，用于连接动作。这些示例不会渲染可点击的启动按钮，因为生成的链接可能会发起或断开远程会话。
+
+### CLI 命令
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'cliCommand' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}cliCommand({
+  scope: '{{ cliCommandParams.scope }}',
+  command: '{{ cliCommandParams.command }}',
+  options: {
+    '-n': '{{ cliCommandParams.name }}',
+  },
+})
+```
+
+### 连接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}connect({
+  name: '{{ connectParams.name }}',
+})
+```
+
+### Legacy 按 URI 连接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyConnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyConnect({
+  protocolIdentifier: '{{ legacyConnectParams.protocolIdentifier }}',
+  uri: '{{ legacyConnectParams.uri }}',
+  using: '{{ legacyConnectParams.using }}',
+})
+```
+
+### Legacy 按名称连接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyConnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyConnect({
+  protocolIdentifier: '{{ legacyCredentialParams.protocolIdentifier }}',
+  auth: {
+    username: '{{ legacyCredentialParams.auth.username }}',
+  },
+  uri: '{{ legacyCredentialParams.uri }}',
+  using: '{{ legacyCredentialParams.using }}',
+})
+```
+
+### Legacy 断开连接
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyDisconnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyDisconnect({
+  protocolIdentifier: '{{ legacyDisconnectParams.protocolIdentifier }}',
+  uri: '{{ legacyDisconnectParams.uri }}',
+  using: '{{ legacyDisconnectParams.using }}',
+})
+```
+
+### Legacy Ad Hoc 属性
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyConnect' : 'royalTs' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'royalTs.'}}legacyConnect({
+  protocolIdentifier: '{{ legacyAdHocParams.protocolIdentifier }}',
+  uri: '{{ legacyAdHocParams.uri }}',
+  using: '{{ legacyAdHocParams.using }}',
+  action: '{{ legacyAdHocParams.action }}',
+  properties: {
+    Description: '{{ legacyAdHocParams.properties.Description }}',
+    ColorDepth: {{ legacyAdHocParams.properties.ColorDepth }},
+  },
+})
+```
+
+## 生成的 URL
+
+```ts
+cliCommand({
+  scope: 'action',
+  command: 'connect',
+  options: { '-n': 'QNAP (SSH)' },
+})
+// => 'rtscli://local/action/connect?-n=QNAP+(SSH)'
+
+connect({ name: 'QNAP (SSH)' })
+// => 'rtscli://local/action/connect?-n=QNAP+(SSH)'
+
+legacyConnect({ protocolIdentifier: 'rdp', uri: '192.168.5.16', using: 'uri' })
+// => 'rtsx://rdp%3a%2f%2f192.168.5.16?using=uri'
+
+legacyConnect({
+  protocolIdentifier: 'rdp',
+  auth: { username: 'admin' },
+  uri: 'Web Server 1',
+  using: 'name',
+})
+// => 'rtsx://rdp%3a%2f%2fadmin@Web%20Server%201?using=name'
+
+legacyDisconnect({ protocolIdentifier: 'rdp', uri: 'Web Server 1', using: 'name' })
+// => 'rtsx://rdp%3a%2f%2fWeb%20Server%201?using=name&action=disconnect'
+
+legacyConnect({
+  protocolIdentifier: 'rdp',
+  uri: '192.168.5.16',
+  using: 'adhoc',
+  action: 'connect',
+  properties: {
+    Description: 'Connected using URI',
+    ColorDepth: 8,
+  },
+})
+// => 'rtsx://rdp%3a%2f%2f192.168.5.16?using=adhoc&action=connect&property_Description=Connected%20using%20URI&property_ColorDepth=8'
+```
+
+## 官方文档
+
+* [Royal TS URI Scheme](https://docs.royalapps.com/r2023/royalts/advanced/uri.html)
+* [Royal TS Command Line](https://docs.royalapps.com/r2023/royalts/advanced/cli.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/rustrover.md
 ---
 
@@ -36666,6 +38835,149 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'tablepro.'}}importConnection
 ---
 
 ---
+url: /protocol-launcher/zh/apps/tadam.md
+---
+
+# Tadam
+
+[Tadam](https://tadamapp.com/) 是一款 macOS Pomodoro 计时器应用。**Protocol Launcher** 允许您生成 Tadam 的官方 URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 说明
+
+Tadam 文档说明 `time` 使用与应用内相同的时间格式，例如 `10`、`10:30`、`1h` 和 `2h5min20sec`。官方页面还说明 `open` 和 `mini` 设置为 `true` 或 `1` 时启用。
+
+Tadam 部分支持 x-callback-url。使用 `xCallback...` helpers 可以生成文档中的 `tadam://x-callback-url/` 前缀；如果需要文档中的 `x-success` 参数，也可以传给常规 helper。`x-error` 以及其他 x-callback-url 参数不受支持。
+
+### 启动工作计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startWork' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startWork({
+  time: '10min',
+})
+```
+
+### 启动工作计时器并打开界面
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startWork' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startWork({
+  time: '5:30',
+  open: true,
+})
+```
+
+### 启动休息计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startBreak' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startBreak({
+  time: '5',
+})
+```
+
+### 以 Mini UI 启动休息计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startBreak' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startBreak({
+  time: '10min',
+  mini: true,
+})
+```
+
+### 控制计时器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pause, resume, stop' : 'tadam' }} } from '{{ importPath }}'
+
+const pauseUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}pause()
+const resumeUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}resume()
+const stopUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}stop()
+```
+
+### 打开计时器界面和帮助
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'help, startBreak, startWork' : 'tadam' }} } from '{{ importPath }}'
+
+const startWorkUiUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startWork()
+const breakUiUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}startBreak()
+const helpUrl = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}help()
+```
+
+### x-callback-url
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackStartWork' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}xCallbackStartWork({
+  time: '10min',
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackPause' : 'tadam' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tadam.'}}xCallbackPause({
+  xSuccess: 'shortcuts://callback',
+})
+```
+
+## 生成的 URL
+
+```ts
+startWork({ time: '10min' })
+// => 'tadam://start?time=10min'
+
+startWork({ time: '5:30', open: true })
+// => 'tadam://start?time=5:30&open=true'
+
+startBreak({ time: '5' })
+// => 'tadam://break?time=5'
+
+startBreak({ time: '10min', mini: true })
+// => 'tadam://break?time=10min&mini=true'
+
+pause()
+// => 'tadam://pause'
+
+resume()
+// => 'tadam://resume'
+
+stop()
+// => 'tadam://stop'
+
+help()
+// => 'tadam://help'
+
+xCallbackStartWork({ time: '10min' })
+// => 'tadam://x-callback-url/start?time=10min'
+
+xCallbackPause({ xSuccess: 'shortcuts://callback' })
+// => 'tadam://x-callback-url/pause?x-success=shortcuts%3A%2F%2Fcallback'
+```
+
+## 官方文档
+
+* [Tadam URL Schemes](https://tadamapp.com/url-schemes/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/tally.md
 ---
 
@@ -36779,6 +39091,137 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'telegram.'}}openDomain({
   domain: 'zhensherlock',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/tembo.md
+---
+
+# Tembo
+
+[Tembo](https://houdah.com/tembo/) 是一款 macOS 文件搜索应用。**Protocol Launcher** 允许您生成 Tembo URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 说明
+
+Houdah 的 Tembo 官方文章记录的 URL 格式是 `tembo2://search?query=[QUERY]&location=[LOCATION]&group=[GROUP]`。`location` 和 `group` 是附加到搜索查询上的可选参数，`location` 参数可以重复，用于在 Tembo 的位置菜单中显示多个路径。
+
+`group` 只能使用 Tembo 官方值：`APPLICATIONS`、`BOOKMARKS`、`CONTACTS`、`DIRECTORIES`、`CALENDAR`、`EVERNOTE`、`FONTS`、`IMAGES`、`MESSAGES`、`MOVIES`、`MUSIC`、`PDF`、`SOURCE`、`SYSTEM_PREFS` 和 `XML`。
+
+同一篇官方文章也把 Alfred 自定义搜索 URL 写为 `tembo2://search?q={query}`。只有在需要这个文档中的短参数时，才传入 `q` 而不是 `query`。
+
+### 搜索
+
+使用查询文本启动 Tembo 搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}search({
+  query: 'Houdah Software',
+})
+```
+
+### 在指定位置搜索
+
+使用指定位置启动 Tembo 搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchInLocation' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}searchInLocation({
+  query: 'Houdah Software',
+  location: '~/Documents',
+})
+```
+
+### 在多个位置搜索
+
+传入数组即可重复 Tembo 文档中的 `location` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchInLocation' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}searchInLocation({
+  query: 'Houdah Software',
+  location: ['~/Documents', '~/Desktop'],
+  group: 'PDF',
+})
+```
+
+### 按分组搜索
+
+在官方分组中启动 Tembo 搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchGroup' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}searchGroup({
+  query: 'Houdah Software',
+  group: 'PDF',
+})
+```
+
+### Alfred 短查询参数
+
+生成官方 Alfred 自定义搜索形式中的 `q` 参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'tembo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tembo.'}}search({
+  q: 'Houdah Software',
+})
+```
+
+## 生成的 URL
+
+```ts
+search({ query: 'Houdah Software' })
+// => 'tembo2://search?query=Houdah%20Software'
+
+search({
+  query: 'Houdah Software',
+  location: '~/Documents',
+  group: 'PDF',
+})
+// => 'tembo2://search?query=Houdah%20Software&location=~/Documents&group=PDF'
+
+searchInLocation({
+  query: 'Houdah Software',
+  location: '~/Documents',
+})
+// => 'tembo2://search?query=Houdah%20Software&location=~/Documents'
+
+searchInLocation({
+  query: 'Houdah Software',
+  location: ['~/Documents', '~/Desktop'],
+  group: 'PDF',
+})
+// => 'tembo2://search?query=Houdah%20Software&location=~/Documents&location=~/Desktop&group=PDF'
+
+searchGroup({
+  query: 'Houdah Software',
+  group: 'PDF',
+})
+// => 'tembo2://search?query=Houdah%20Software&group=PDF'
+
+search({ q: 'Houdah Software' })
+// => 'tembo2://search?q=Houdah%20Software'
+```
+
+## 官方文档
+
+* [Start a Tembo File Search from Alfred, Butler or LaunchBar](https://blog.houdah.com/2015/10/start-a-tembo-file-search-from-alfred-butler-or-launchbar/)
 
 ---
 
@@ -36951,6 +39394,212 @@ import { {{ currentMethod === 'On-Demand' ? 'reloadCustomizations' : 'textastic'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}reloadCustomizations()
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/textwell.md
+---
+
+# Textwell
+
+[Textwell](https://sociomedia.com/textwell/) 是一款面向 iOS 和 macOS 的文本编辑器。**Protocol Launcher** 允许您生成 Textwell 的官方 URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 说明
+
+Textwell 官方 URL scheme 文档说明，所有查询参数值都必须经过 URL 编码。Textwell URL scheme 支持文档中的 `x-success` 回调选项，`extendXSuccess` 可以让 Textwell 在回调 URL 上追加 `textwell-text`、`textwell-loc` 和 `textwell-len`。
+
+`prefix` 和 `suffix` 只在官方文档中的四个粘贴方法上使用：`pasteReplace`、`pasteInsert`、`pasteAdd` 和 `pasteReplaceRange`。
+
+### 打开
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}open()
+```
+
+### 替换
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}replace({
+  text: 'Hello, Textwell.',
+})
+```
+
+### 插入
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'insert' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}insert({
+  text: 'Inserted text',
+})
+```
+
+### 追加
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}add({
+  text: 'New ending',
+})
+```
+
+### 替换范围
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replaceRange' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}replaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  text: 'Textwell',
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+```
+
+### 粘贴方法
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteReplace, pasteInsert, pasteAdd' : 'textwell' }} } from '{{ importPath }}'
+
+const replaceUrl = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteReplace()
+const insertUrl = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteInsert({
+  prefix: '> ',
+  suffix: '\n',
+})
+const addUrl = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteAdd()
+```
+
+### 粘贴替换范围
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteReplaceRange' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}pasteReplaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+```
+
+### 执行动作
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'executeAction' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}executeAction({
+  title: 'Format Markdown',
+})
+```
+
+### 导入动作
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importAction' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}importAction({
+  title: 'Hello',
+  source: 'editor.setText("Hello")',
+  iconTitle: 'star',
+  desc: 'Create hello text',
+  platform: 0,
+  confirming: 1,
+})
+```
+
+### x-success
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'replace' : 'textwell' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'textwell.'}}replace({
+  text: 'Hello',
+  xSuccess: 'shortcuts://callback',
+  extendXSuccess: true,
+})
+```
+
+## 生成的 URL
+
+```ts
+open()
+// => 'textwell://'
+
+replace({ text: 'Hello, Textwell.' })
+// => 'textwell:///replace?text=Hello%2C%20Textwell.'
+
+insert({ text: 'Inserted text' })
+// => 'textwell:///insert?text=Inserted%20text'
+
+add({ text: 'New ending' })
+// => 'textwell:///add?text=New%20ending'
+
+replaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  text: 'Textwell',
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+// => 'textwell:///replaceRange?replacingLoc=7&replacingLen=5&text=Textwell&selectingLoc=0&selectingLen=16'
+
+pasteReplace()
+// => 'textwell:///pasteReplace?'
+
+pasteInsert({ prefix: '> ', suffix: '\n' })
+// => 'textwell:///pasteInsert?prefix=%3E%20&suffix=%0A'
+
+pasteAdd()
+// => 'textwell:///pasteAdd?'
+
+pasteReplaceRange({
+  replacingLoc: 7,
+  replacingLen: 5,
+  selectingLoc: 0,
+  selectingLen: 16,
+})
+// => 'textwell:///pasteReplaceRange?replacingLoc=7&replacingLen=5&selectingLoc=0&selectingLen=16'
+
+executeAction({ title: 'Format Markdown' })
+// => 'textwell:///executeAction?title=Format%20Markdown'
+
+importAction({
+  title: 'Hello',
+  source: 'editor.setText("Hello")',
+  iconTitle: 'star',
+  desc: 'Create hello text',
+  platform: 0,
+  confirming: 1,
+})
+// => 'textwell:///importAction?title=Hello&source=editor.setText(%22Hello%22)&iconTitle=star&desc=Create%20hello%20text&platform=0&confirming=1'
+
+replace({
+  text: 'Hello',
+  xSuccess: 'shortcuts://callback',
+  extendXSuccess: true,
+})
+// => 'textwell:///replace?text=Hello&x-success=shortcuts%3A%2F%2Fcallback&extendXSuccess=true'
+```
+
+## 官方文档
+
+* [Textwell URL Schemes](https://sociomedia.com/textwell/urlschemes/)
 
 ---
 
@@ -40171,6 +42820,123 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'workingCopy.'}}chain({
   ],
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/written-down.md
+---
+
+# Written Down
+
+[Written Down](https://tinkerbuilt.com/written-down/) 是一款用于记录个人条目的日记应用。**Protocol Launcher** 可以生成用于在 Written Down 中创建和编辑条目、打开条目以及打开日记本的链接。
+
+## 使用
+
+提供两种使用方式：
+
+* 按需加载（通过子路径导入），支持 Tree Shaking，体积更小。
+* 全量导入（从根包导入），使用简单，但会包含所有应用模块。
+
+生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+Written Down 官方文档列出了 `writtendown://x-callback-url/[action]?[action parameters]`，支持 `create`、`open-entry`、`edit-entry` 和 `open-journal`。未传入的可选值会被省略。
+
+### Create
+
+创建新条目。所有 action 参数都是可选的；省略 `journalID` 时，Written Down 会使用第一个日记本。
+
+官方 action 参数：
+
+* `text`：新条目的正文。
+* `journalID`：要在其中创建条目的日记本唯一标识符；省略时默认使用第一个日记本。
+* `tags`：要添加到条目的标签，使用逗号分隔。
+* `latlng`：条目位置的纬度和经度，使用逗号分隔；省略时默认使用当前位置。
+* `date`：条目的日期和时间，使用 ISO 8601 格式；省略时默认使用当前日期和时间。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}create({
+  text: "It's beautiful today",
+  journalID: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+  tags: 'thoughts,weather',
+  latlng: '37.331686,-122.030656',
+  date: '2017-12-19T16:39:57-08:00',
+})
+```
+
+官方 `x-success` 返回参数：`id`、`text` 和 `journalID`。
+
+### Open Entry
+
+通过必填的 `id` 打开并显示一个条目。
+
+官方 action 参数：
+
+* `id`：必填，要打开的条目唯一标识符。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntry' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}openEntry({
+  id: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+})
+```
+
+官方 `x-success` 返回参数：`id`、`text` 和 `journalID`。
+
+### Edit Entry
+
+通过必填的 `id` 编辑已有条目。Written Down 官方文档列出的 `mode` 值是 `append`、`replace` 和 `prepend`，`tagMode` 值是 `append`、`replace` 和 `delete`。
+
+官方 action 参数：
+
+* `id`：必填，要编辑的条目唯一标识符。
+* `text`：要添加到条目的文本。
+* `mode`：将文本 `append`、`replace` 或 `prepend` 到条目；省略时默认为 `append`。
+* `tags`：要应用到条目的标签，使用逗号分隔。
+* `tagMode`：将提供的标签 `append`、`replace` 或 `delete`；省略时默认为 `append`。
+* `latlng`：条目位置的纬度和经度，使用逗号分隔；省略时不更改位置，传入 `delete` 会移除位置。
+* `date`：条目的日期和时间，使用 ISO 8601 格式；省略时不更改日期。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editEntry' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}editEntry({
+  id: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+  text: 'Another thought',
+  mode: 'replace',
+  tags: 'thoughts,feelings',
+  tagMode: 'delete',
+  latlng: 'delete',
+  date: '2017-12-19T16:39:57-08:00',
+})
+```
+
+官方 `x-success` 返回参数：`id`、`text` 和 `journalID`。
+
+### Open Journal
+
+通过必填的 `journalID` 打开并显示一个日记本。
+
+官方 action 参数：
+
+* `journalID`：必填，要打开的日记本唯一标识符。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openJournal' : 'writtenDown' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'writtenDown.'}}openJournal({
+  journalID: '4739C5F8-AF19-49A3-B6BD-2561962C75CC',
+})
+```
+
+官方 `x-success` 返回参数：`journalID`。
+
+## 官方文档
+
+* [Written Down X-Callback-URL Scheme](https://tinkerbuilt.com/faq/x-callback-url/)
 
 ---
 
