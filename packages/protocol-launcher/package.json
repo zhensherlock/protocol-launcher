@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
@@ -121,6 +117,10 @@
     "./1writer": {
       "types": "./dist/types/1writer/index.d.ts",
       "import": "./dist/1writer/index.js"
+    },
+    "./barcuts": {
+      "types": "./dist/types/barcuts/index.d.ts",
+      "import": "./dist/barcuts/index.js"
     },
     "./bbedit": {
       "types": "./dist/types/bbedit/index.d.ts",
@@ -361,6 +361,10 @@
     "./hiddify": {
       "types": "./dist/types/hiddify/index.d.ts",
       "import": "./dist/hiddify/index.js"
+    },
+    "./highlights": {
+      "types": "./dist/types/highlights/index.d.ts",
+      "import": "./dist/highlights/index.js"
     },
     "./home-assistant": {
       "types": "./dist/types/home-assistant/index.d.ts",
