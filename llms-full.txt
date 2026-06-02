@@ -32,8 +32,10 @@ Currently, we support the following applications:
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Maps](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [BarCuts](../apps/barcuts.md)
 * [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
@@ -87,6 +89,7 @@ Currently, we support the following applications:
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
+* [GoodReader](../apps/goodreader.md)
 * [GoodTask](../apps/goodtask.md)
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
@@ -95,6 +98,7 @@ Currently, we support the following applications:
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
+* [Highlights](../apps/highlights.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
@@ -184,6 +188,7 @@ Currently, we support the following applications:
 * [SourceTree](../apps/sourcetree.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
+* [Stream Deck](../apps/stream-deck.md)
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
@@ -366,8 +371,10 @@ For detailed usage instructions for each application, please refer to their resp
 * [Appigo Todo](../apps/appigo-todo.md)
 * [Apple Maps](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [BarCuts](../apps/barcuts.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
@@ -420,6 +427,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
+* [GoodReader](../apps/goodreader.md)
 * [GoodTask](../apps/goodtask.md)
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
@@ -428,6 +436,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
+* [Highlights](../apps/highlights.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
@@ -517,6 +526,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [SourceTree](../apps/sourcetree.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
+* [Stream Deck](../apps/stream-deck.md)
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
@@ -1843,6 +1853,122 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({ s
 ---
 
 ---
+url: /protocol-launcher/apps/arcgis-survey123.md
+---
+
+# ArcGIS Survey123
+
+[ArcGIS Survey123](https://www.esri.com/en-us/arcgis/products/arcgis-survey123/overview) is Esri's form-centric field data collection app. **Protocol Launcher** allows you to generate ArcGIS Survey123 URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Scheme
+
+Esri documents four Survey123 launch patterns: the web app share URL `https://survey123.arcgis.com/share/ID`, the field app app link `https://survey123.arcgis.app`, the field app custom scheme `arcgis-survey123://`, and the Survey123 Connect scheme `arcgis-survey123connect://`.
+
+The field app accepts the documented URL parameters `center`, `field:<question name>`, `portalUrl`, `itemID`, `download`, `action`, `folder`, `callback`, `callback:<status>`, `filter`, `update`, and `q:<query parameter>`. The web app uses the survey item ID as the path segment and accepts the documented web app parameters `signIn`, `isOrgSignIn`, `center`, `field:<question name>`, `portalUrl`, `open`, `hide`, `locale`, `mode`, `globalId`, `recalculate`, `version`, `token`, `autoReload`, `autoRefresh`, `encodeUrlParams`, and `width`. Survey123 Connect accepts only `portalUrl` and `itemID`.
+
+### Launch Field App
+
+Launch the Survey123 field app with the custom URL scheme.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchFieldApp' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchFieldApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783,20',
+})
+```
+
+### Launch Field App Link
+
+Launch the Survey123 field app with the app link recommended for iOS and Android app-to-app links.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchFieldAppLink' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchFieldAppLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+})
+```
+
+### Launch Web App
+
+Open a survey in the Survey123 web app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchWebApp' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchWebApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783',
+})
+```
+
+### Launch Connect
+
+Open a survey in Survey123 Connect. Esri documents that both `portalUrl` and `itemID` are required.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchConnect' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchConnect({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+})
+```
+
+## Generated URLs
+
+```ts
+launchFieldApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783,20',
+})
+// => 'arcgis-survey123://?itemID=36ff9e8c13e042a58cfce4ad87f55d19&field:surname=Klauser&center=37.8199%2C-122.4783%2C20'
+
+launchFieldAppLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+})
+// => 'https://survey123.arcgis.app?itemID=36ff9e8c13e042a58cfce4ad87f55d19&field:surname=Klauser'
+
+launchWebApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783',
+})
+// => 'https://survey123.arcgis.com/share/36ff9e8c13e042a58cfce4ad87f55d19?field:surname=Klauser&center=37.8199%2C-122.4783'
+
+launchConnect({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+})
+// => 'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19'
+```
+
+## Official Documentation
+
+* [Integrate with other apps](https://doc.arcgis.com/en/survey123/get-started/integratewithotherapps.htm)
+* [Launch the field app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchfieldapp.htm)
+* [Launch the web app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchwebapp.htm)
+* [Launch Survey123 Connect](https://doc.arcgis.com/en/survey123/get-started/integrate-launchconnect.htm)
+
+---
+
+---
 url: /protocol-launcher/apps/atom.md
 ---
 
@@ -1990,6 +2116,98 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
   text: 'Hello world',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/barcuts.md
+---
+
+# BarCuts
+
+[BarCuts](https://docs.actions.work/barcuts/) is a macOS menu bar app for running Shortcuts workflows. **Protocol Launcher** allows you to generate BarCuts URL scheme links for querying available workflows and running local workflows.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+BarCuts documents `barcuts://workflows` for querying active and global workflows. The request can include `x-success` and `x-error`; on success, BarCuts calls the success URL with a `data` parameter containing the workflow list.
+
+BarCuts also documents `barcuts://run-workflow` with either an `id` parameter or a `title` parameter. The optional `input` parameter passes text to the workflow. Protocol Launcher exposes only those documented URL shapes and parameters.
+
+### Workflows
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'workflows' : 'barcuts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'barcuts.'}}workflows({
+  xSuccess: 'my-app://success',
+  xError: 'my-app://failure',
+})
+```
+
+### Run Workflow By ID
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runWorkflowById' : 'barcuts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'barcuts.'}}runWorkflowById({
+  id: '17620440-E9E8-4B5C-9C7A-9B60C24DD428',
+})
+```
+
+### Run Workflow By Title
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runWorkflowByTitle' : 'barcuts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'barcuts.'}}runWorkflowByTitle({
+  title: 'Workflow 1',
+  input: 'My input text!',
+})
+```
+
+## Generated URLs
+
+```ts
+workflows()
+// => 'barcuts://workflows'
+
+workflows({
+  xSuccess: 'my-app://success',
+  xError: 'my-app://failure',
+})
+// => 'barcuts://workflows?x-success=my-app%3A%2F%2Fsuccess&x-error=my-app%3A%2F%2Ffailure'
+
+runWorkflowById({
+  id: '17620440-E9E8-4B5C-9C7A-9B60C24DD428',
+})
+// => 'barcuts://run-workflow?id=17620440-E9E8-4B5C-9C7A-9B60C24DD428'
+
+runWorkflowById({
+  id: '17620440-E9E8-4B5C-9C7A-9B60C24DD428',
+  input: 'My input text!',
+})
+// => 'barcuts://run-workflow?id=17620440-E9E8-4B5C-9C7A-9B60C24DD428&input=My%20input%20text%21'
+
+runWorkflowByTitle({
+  title: 'Workflow 1',
+  input: 'My input text!',
+})
+// => 'barcuts://run-workflow?title=Workflow%201&input=My%20input%20text%21'
+```
+
+## Official Documentation
+
+* [BarCuts URL Scheme: Active Workflows](https://docs.actions.work/barcuts/url-scheme/)
+* [BarCuts URL Scheme: Run Workflow](https://docs.actions.work/barcuts/url-scheme-run-workflow/)
 
 ---
 
@@ -7454,6 +7672,54 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}tag({
 ---
 
 ---
+url: /protocol-launcher/apps/goodreader.md
+---
+
+# GoodReader
+
+[GoodReader](https://www.goodreader.com/) is a file viewer and file manager for iPad and iPhone. **Protocol Launcher** allows you to generate GoodReader URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Internal File
+
+Open a file from GoodReader's internal file storage using the documented `gropen://` prefix and the file's internal path. The path is appended exactly as provided.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openInternalFile' : 'goodreader' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodreader.'}}openInternalFile({
+  path: 'Manuals/Guide.pdf',
+})
+```
+
+### Download URL
+
+Send an HTTP or HTTPS URL to GoodReader by adding the documented `g` prefix to the original URL scheme.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'goodreader' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodreader.'}}downloadUrl({
+  url: 'https://example.com/Guide.pdf',
+})
+```
+
+## References
+
+* [GoodReader file management](https://www.goodreader.com/how-to-manage-files-in-goodreader)
+* [GoodReader built-in web browser](https://www.goodreader.com/goodreader-networking-built-in-web-browser)
+
+---
+
+---
 url: /protocol-launcher/apps/goodtask.md
 ---
 
@@ -8025,6 +8291,54 @@ importProxyUrl({
 ## References
 
 * [Hiddify URL Scheme](https://hiddify.com/app/URL-Scheme/)
+
+---
+
+---
+url: /protocol-launcher/apps/highlights.md
+---
+
+# Highlights
+
+[Highlights](https://highlightsapp.net/) is a PDF reader for reading and annotating PDF documents. **Protocol Launcher** allows you to generate Highlights URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open File
+
+Open a PDF file using the documented `highlights://Users/test.pdf` URL shape.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'highlights' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'highlights.'}}openFile({
+  path: '/Users/test.pdf',
+})
+```
+
+### Open File At Page
+
+Open the same PDF file and scroll to a documented page fragment.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFileAtPage' : 'highlights' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'highlights.'}}openFileAtPage({
+  path: '/Users/test.pdf',
+  page: 3,
+})
+```
+
+## References
+
+* [Highlights Version 1.2 URL-scheme notes](https://highlightsapp.net/changelog/2015/01/03/Version-1.2/)
 
 ---
 
@@ -17094,6 +17408,123 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'steam.'}}url({
 ---
 
 ---
+url: /protocol-launcher/apps/stream-deck.md
+---
+
+# Stream Deck
+
+[Stream Deck](https://www.elgato.com/stream-deck) is Elgato's shortcut controller app. **Protocol Launcher** allows you to generate Stream Deck URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Scheme
+
+Elgato's official Stream Deck SDK documentation defines plugin deep-link messages with this format: `streamdeck://plugins/message/<PLUGIN_UUID>[path]["?" query]["#" fragment]`.
+
+Stream Deck 7.0 and later also supports passive deep-links by adding the documented `streamdeck=hidden` query string parameter.
+
+The same official page also documents the OAuth2 redirect proxy URL format: `https://oauth2-redirect.elgato.com/streamdeck/plugins/message/<PLUGIN_UUID>`. Use the plugin deep-link URL as the callback URL unless the authorization provider does not accept custom URL schemes.
+
+### Plugin Message
+
+Send a deep-link message to a Stream Deck plugin.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pluginMessage' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { name: 'Elgato' },
+  fragment: 'waving',
+})
+```
+
+### Passive Plugin Message
+
+Send a passive deep-link message by setting the documented `streamdeck=hidden` query parameter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pluginMessage' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { streamdeck: 'hidden' },
+})
+```
+
+### OAuth2 Redirect Proxy
+
+Create the documented OAuth2 redirect proxy URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'oauth2RedirectProxy' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}oauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+```
+
+### Encoded OAuth2 Redirect Proxy
+
+Create the encoded OAuth2 redirect proxy URL shown by the official URL Builder.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'encodedOauth2RedirectProxy' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}encodedOauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+```
+
+## Generated URLs
+
+```ts
+pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { name: 'Elgato' },
+  fragment: 'waving',
+})
+// => 'streamdeck://plugins/message/com.elgato.hello-world/hello?name=Elgato#waving'
+
+pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { streamdeck: 'hidden' },
+})
+// => 'streamdeck://plugins/message/com.elgato.hello-world/hello?streamdeck=hidden'
+
+oauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+// => 'https://oauth2-redirect.elgato.com/streamdeck/plugins/message/com.elgato.hello-world/auth'
+
+encodedOauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+// => 'https%3A%2F%2Foauth2-redirect.elgato.com%2Fstreamdeck%2Fplugins%2Fmessage%2Fcom.elgato.hello-world%2Fauth'
+```
+
+## Official Documentation
+
+* [Stream Deck SDK Deep-Linking](https://docs.elgato.com/streamdeck/sdk/guides/deep-linking/)
+
+---
+
+---
 url: /protocol-launcher/apps/story-planner.md
 ---
 
@@ -21787,8 +22218,10 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [BarCuts](../apps/barcuts.md)
 * [Appigo Todo](../apps/appigo-todo.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
@@ -21842,6 +22275,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
+* [GoodReader](../apps/goodreader.md)
 * [GoodTask](../apps/goodtask.md)
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
@@ -21850,6 +22284,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
+* [Highlights](../apps/highlights.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
@@ -21939,6 +22374,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [SourceTree](../apps/sourcetree.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
+* [Stream Deck](../apps/stream-deck.md)
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
@@ -22121,8 +22557,10 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Appigo Todo](../apps/appigo-todo.md)
 * [Apple 地图](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
+* [BarCuts](../apps/barcuts.md)
 * [BBEdit](../apps/bbedit.md)
 * [Bear](../apps/bear.md)
 * [Beorg](../apps/beorg.md)
@@ -22175,6 +22613,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
+* [GoodReader](../apps/goodreader.md)
 * [GoodTask](../apps/goodtask.md)
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
@@ -22183,6 +22622,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
 * [Hiddify](../apps/hiddify.md)
+* [Highlights](../apps/highlights.md)
 * [Home Assistant](../apps/home-assistant.md)
 * [Hookmark](../apps/hookmark.md)
 * [Hot Tub](../apps/hot-tub.md)
@@ -22272,6 +22712,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [SourceTree](../apps/sourcetree.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
+* [Stream Deck](../apps/stream-deck.md)
 * [Story Planner](../apps/story-planner.md)
 * [Surge](../apps/surge.md)
 * [TablePro](../apps/tablepro.md)
@@ -23598,6 +24039,122 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({ s
 ---
 
 ---
+url: /protocol-launcher/zh/apps/arcgis-survey123.md
+---
+
+# ArcGIS Survey123
+
+[ArcGIS Survey123](https://www.esri.com/en-us/arcgis/products/arcgis-survey123/overview) 是 Esri 面向表单式现场数据采集的应用。**Protocol Launcher** 可以生成 ArcGIS Survey123 URL scheme 链接。
+
+## 使用方式
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，能让产物更小。
+* Full Import 从根包导入，适合快速脚本或演示，但会包含全部 app 模块。
+
+生产构建建议选择 On-Demand；快速脚本或 demo 可以选择 Full Import。
+
+## URL Scheme
+
+Esri 官方文档列出了四种 Survey123 启动模式：Web app share URL `https://survey123.arcgis.com/share/ID`、field app app link `https://survey123.arcgis.app`、field app custom scheme `arcgis-survey123://`，以及 Survey123 Connect scheme `arcgis-survey123connect://`。
+
+Field app 支持官方文档中的 URL 参数 `center`、`field:<question name>`、`portalUrl`、`itemID`、`download`、`action`、`folder`、`callback`、`callback:<status>`、`filter`、`update` 和 `q:<query parameter>`。Web app 将 survey item ID 放在路径中，并支持官方文档列出的 web app 参数 `signIn`、`isOrgSignIn`、`center`、`field:<question name>`、`portalUrl`、`open`、`hide`、`locale`、`mode`、`globalId`、`recalculate`、`version`、`token`、`autoReload`、`autoRefresh`、`encodeUrlParams` 和 `width`。Survey123 Connect 只接受 `portalUrl` 和 `itemID`。
+
+### Launch Field App
+
+使用 custom URL scheme 启动 Survey123 field app。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchFieldApp' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchFieldApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783,20',
+})
+```
+
+### Launch Field App Link
+
+使用官方建议用于 iOS 和 Android app-to-app 链接的 app link 启动 Survey123 field app。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchFieldAppLink' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchFieldAppLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+})
+```
+
+### Launch Web App
+
+在 Survey123 web app 中打开 survey。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchWebApp' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchWebApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783',
+})
+```
+
+### Launch Connect
+
+在 Survey123 Connect 中打开 survey。Esri 官方文档说明 `portalUrl` 和 `itemID` 都是必需参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchConnect' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchConnect({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+})
+```
+
+## 生成的 URL
+
+```ts
+launchFieldApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783,20',
+})
+// => 'arcgis-survey123://?itemID=36ff9e8c13e042a58cfce4ad87f55d19&field:surname=Klauser&center=37.8199%2C-122.4783%2C20'
+
+launchFieldAppLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+})
+// => 'https://survey123.arcgis.app?itemID=36ff9e8c13e042a58cfce4ad87f55d19&field:surname=Klauser'
+
+launchWebApp({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: { surname: 'Klauser' },
+  center: '37.8199,-122.4783',
+})
+// => 'https://survey123.arcgis.com/share/36ff9e8c13e042a58cfce4ad87f55d19?field:surname=Klauser&center=37.8199%2C-122.4783'
+
+launchConnect({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+})
+// => 'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19'
+```
+
+## 官方文档
+
+* [Integrate with other apps](https://doc.arcgis.com/en/survey123/get-started/integratewithotherapps.htm)
+* [Launch the field app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchfieldapp.htm)
+* [Launch the web app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchwebapp.htm)
+* [Launch Survey123 Connect](https://doc.arcgis.com/en/survey123/get-started/integrate-launchconnect.htm)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/atom.md
 ---
 
@@ -23745,6 +24302,98 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
   text: 'Hello world',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/barcuts.md
+---
+
+# BarCuts
+
+[BarCuts](https://docs.actions.work/barcuts/) 是一款用于运行 Shortcuts workflows 的 macOS 菜单栏应用。**Protocol Launcher** 允许你生成 BarCuts URL scheme 链接，用于查询可用 workflows 或运行本机 workflows。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+BarCuts 官方文档记录了用于查询 active 和 global workflows 的 `barcuts://workflows`。这个请求可以包含 `x-success` 和 `x-error`；成功时，BarCuts 会调用 success URL，并附带包含 workflow 列表的 `data` 参数。
+
+BarCuts 还记录了 `barcuts://run-workflow`，可使用 `id` 参数或 `title` 参数运行 workflow。可选的 `input` 参数会作为文本传给 workflow。Protocol Launcher 只暴露这些官方文档中明确写出的 URL 形态和参数。
+
+### Workflows
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'workflows' : 'barcuts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'barcuts.'}}workflows({
+  xSuccess: 'my-app://success',
+  xError: 'my-app://failure',
+})
+```
+
+### 通过 ID 运行 Workflow
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runWorkflowById' : 'barcuts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'barcuts.'}}runWorkflowById({
+  id: '17620440-E9E8-4B5C-9C7A-9B60C24DD428',
+})
+```
+
+### 通过标题运行 Workflow
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runWorkflowByTitle' : 'barcuts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'barcuts.'}}runWorkflowByTitle({
+  title: 'Workflow 1',
+  input: 'My input text!',
+})
+```
+
+## 生成的 URL
+
+```ts
+workflows()
+// => 'barcuts://workflows'
+
+workflows({
+  xSuccess: 'my-app://success',
+  xError: 'my-app://failure',
+})
+// => 'barcuts://workflows?x-success=my-app%3A%2F%2Fsuccess&x-error=my-app%3A%2F%2Ffailure'
+
+runWorkflowById({
+  id: '17620440-E9E8-4B5C-9C7A-9B60C24DD428',
+})
+// => 'barcuts://run-workflow?id=17620440-E9E8-4B5C-9C7A-9B60C24DD428'
+
+runWorkflowById({
+  id: '17620440-E9E8-4B5C-9C7A-9B60C24DD428',
+  input: 'My input text!',
+})
+// => 'barcuts://run-workflow?id=17620440-E9E8-4B5C-9C7A-9B60C24DD428&input=My%20input%20text%21'
+
+runWorkflowByTitle({
+  title: 'Workflow 1',
+  input: 'My input text!',
+})
+// => 'barcuts://run-workflow?title=Workflow%201&input=My%20input%20text%21'
+```
+
+## 官方文档
+
+* [BarCuts URL Scheme: Active Workflows](https://docs.actions.work/barcuts/url-scheme/)
+* [BarCuts URL Scheme: Run Workflow](https://docs.actions.work/barcuts/url-scheme-run-workflow/)
 
 ---
 
@@ -29210,6 +29859,54 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'goodlinks.'}}tag({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/goodreader.md
+---
+
+# GoodReader
+
+[GoodReader](https://www.goodreader.com/) 是一款适用于 iPad 和 iPhone 的文件查看与文件管理应用。**Protocol Launcher** 允许您生成 GoodReader URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开内部文件
+
+使用官方文档中的 `gropen://` 前缀和文件内部路径，从 GoodReader 的内部文件存储打开文件。传入的路径会被原样拼接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openInternalFile' : 'goodreader' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodreader.'}}openInternalFile({
+  path: 'Manuals/Guide.pdf',
+})
+```
+
+### 下载 URL
+
+通过给原始 HTTP 或 HTTPS URL scheme 添加官方文档中的 `g` 前缀，将下载发送到 GoodReader。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'goodreader' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'goodreader.'}}downloadUrl({
+  url: 'https://example.com/Guide.pdf',
+})
+```
+
+## 参考
+
+* [GoodReader 文件管理](https://www.goodreader.com/how-to-manage-files-in-goodreader)
+* [GoodReader 内置网页浏览器](https://www.goodreader.com/goodreader-networking-built-in-web-browser)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/goodtask.md
 ---
 
@@ -29781,6 +30478,54 @@ importProxyUrl({
 ## 参考资料
 
 * [Hiddify URL Scheme](https://hiddify.com/app/URL-Scheme/)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/highlights.md
+---
+
+# Highlights
+
+[Highlights](https://highlightsapp.net/) 是一款用于阅读和批注 PDF 文档的 PDF 阅读器。**Protocol Launcher** 可以生成 Highlights URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开文件
+
+使用官方文档中的 `highlights://Users/test.pdf` URL 形式打开 PDF 文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'highlights' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'highlights.'}}openFile({
+  path: '/Users/test.pdf',
+})
+```
+
+### 在指定页打开文件
+
+打开同一个 PDF 文件，并跳转到官方文档中的页码 fragment。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFileAtPage' : 'highlights' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'highlights.'}}openFileAtPage({
+  path: '/Users/test.pdf',
+  page: 3,
+})
+```
+
+## 参考资料
+
+* [Highlights Version 1.2 URL-scheme notes](https://highlightsapp.net/changelog/2015/01/03/Version-1.2/)
 
 ---
 
@@ -38846,6 +39591,123 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'steam.'}}url({
   param: '730',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/stream-deck.md
+---
+
+# Stream Deck
+
+[Stream Deck](https://www.elgato.com/stream-deck) 是 Elgato 的快捷控制器应用。**Protocol Launcher** 可以生成 Stream Deck URL scheme 链接。
+
+## 使用方式
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，能让产物更小。
+* Full Import 从根包导入，适合快速脚本或演示，但会包含全部 app 模块。
+
+生产构建建议选择 On-Demand；快速脚本或 demo 可以选择 Full Import。
+
+## URL Scheme
+
+Elgato 官方 Stream Deck SDK 文档定义的插件 deep-link message 格式为：`streamdeck://plugins/message/<PLUGIN_UUID>[path]["?" query]["#" fragment]`。
+
+Stream Deck 7.0 及之后版本也支持 passive deep-link，方式是添加官方文档中的 `streamdeck=hidden` query string 参数。
+
+同一篇官方文档还记录了 OAuth2 redirect proxy URL 格式：`https://oauth2-redirect.elgato.com/streamdeck/plugins/message/<PLUGIN_UUID>`。除非授权服务商不接受 custom URL scheme，否则应优先使用插件 deep-link URL 作为 callback URL。
+
+### Plugin Message
+
+向 Stream Deck 插件发送 deep-link message。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pluginMessage' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { name: 'Elgato' },
+  fragment: 'waving',
+})
+```
+
+### Passive Plugin Message
+
+通过设置官方文档中的 `streamdeck=hidden` query 参数发送 passive deep-link message。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pluginMessage' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { streamdeck: 'hidden' },
+})
+```
+
+### OAuth2 Redirect Proxy
+
+生成官方文档中的 OAuth2 redirect proxy URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'oauth2RedirectProxy' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}oauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+```
+
+### Encoded OAuth2 Redirect Proxy
+
+生成官方 URL Builder 展示的 encoded OAuth2 redirect proxy URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'encodedOauth2RedirectProxy' : 'streamDeck' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'streamDeck.'}}encodedOauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+```
+
+## 生成的 URL
+
+```ts
+pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { name: 'Elgato' },
+  fragment: 'waving',
+})
+// => 'streamdeck://plugins/message/com.elgato.hello-world/hello?name=Elgato#waving'
+
+pluginMessage({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/hello',
+  query: { streamdeck: 'hidden' },
+})
+// => 'streamdeck://plugins/message/com.elgato.hello-world/hello?streamdeck=hidden'
+
+oauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+// => 'https://oauth2-redirect.elgato.com/streamdeck/plugins/message/com.elgato.hello-world/auth'
+
+encodedOauth2RedirectProxy({
+  pluginUuid: 'com.elgato.hello-world',
+  path: '/auth',
+})
+// => 'https%3A%2F%2Foauth2-redirect.elgato.com%2Fstreamdeck%2Fplugins%2Fmessage%2Fcom.elgato.hello-world%2Fauth'
+```
+
+## 官方文档
+
+* [Stream Deck SDK Deep-Linking](https://docs.elgato.com/streamdeck/sdk/guides/deep-linking/)
 
 ---
 

@@ -1,0 +1,1 @@
+function a(r){let{url:t}=r;if(t.startsWith("http://")||t.startsWith("https://"))return`g${t}`;throw Error("Unsupported GoodReader download URL format.")}function o(r){let{path:t}=r;return`gropen://${t}`}const e={path:"Manuals/Guide.pdf"},n={url:"https://example.com/Guide.pdf"};export{a,n as d,o as e,e as o};

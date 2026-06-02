@@ -1,0 +1,1 @@
+function a(t){return`highlights:/${t}`}function s(t){let{path:e}=t;return a(e)}function p(t){let{path:e,page:n}=t;return`${a(e)}#page=${n}`}const r={path:"/Users/test.pdf"},o={path:"/Users/test.pdf",page:3};export{p as a,o as b,r as o,s as t};
