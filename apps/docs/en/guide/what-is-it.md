@@ -100,6 +100,7 @@ Currently, we support the following applications:
 - [GoLand](../apps/goland.md)
 - [Google Chrome iOS](../apps/google-chrome-ios.md)
 - [Google Maps](../apps/google-maps.md)
+- [GV Connect](../apps/gv-connect.md)
 - [HapiGo](../apps/hapigo.md)
 - [HBuilderX](../apps/hbuilderx.md)
 - [Hammerspoon](../apps/hammerspoon.md)

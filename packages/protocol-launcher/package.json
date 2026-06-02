@@ -346,6 +346,10 @@
       "types": "./dist/types/google-maps/index.d.ts",
       "import": "./dist/google-maps/index.js"
     },
+    "./gv-connect": {
+      "types": "./dist/types/gv-connect/index.d.ts",
+      "import": "./dist/gv-connect/index.js"
+    },
     "./hapigo": {
       "types": "./dist/types/hapigo/index.d.ts",
       "import": "./dist/hapigo/index.js"
