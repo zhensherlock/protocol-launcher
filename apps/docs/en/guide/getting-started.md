@@ -252,6 +252,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [Orchids](../apps/orchids.md)
+- [Orion Browser](../apps/orion-browser.md)
 - [Overcast](../apps/overcast.md)
 - [PearAI](../apps/pearai.md)
 - [PDF Expert](../apps/pdf-expert.md)

@@ -164,6 +164,7 @@ export default defineAdditionalConfig({
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Opener', link: '/zh/apps/opener' },
           { text: 'Orchids', link: '/zh/apps/orchids' },
+          { text: 'Orion Browser', link: '/zh/apps/orion-browser' },
           { text: 'Overcast', link: '/zh/apps/overcast' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PDF Expert', link: '/zh/apps/pdf-expert' },

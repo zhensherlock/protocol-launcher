@@ -133,6 +133,7 @@ export const appLogoFiles = {
   opencode: 'opencode.png',
   opener: 'opener.webp',
   orchids: 'orchids.svg',
+  'orion-browser': 'orion-browser.webp',
   overcast: 'overcast.svg',
   pearai: 'pearai.png',
   'pdf-expert': 'pdf-expert.webp',

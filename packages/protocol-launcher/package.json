@@ -594,6 +594,10 @@
       "types": "./dist/types/orchids/index.d.ts",
       "import": "./dist/orchids/index.js"
     },
+    "./orion-browser": {
+      "types": "./dist/types/orion-browser/index.d.ts",
+      "import": "./dist/orion-browser/index.js"
+    },
     "./pearai": {
       "types": "./dist/types/pearai/index.d.ts",
       "import": "./dist/pearai/index.js"
