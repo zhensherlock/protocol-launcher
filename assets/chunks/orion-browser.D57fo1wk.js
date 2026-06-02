@@ -1,0 +1,1 @@
+import{i as t}from"./index.CWwLnpeZ.js";function s(r){let{url:o}=r;return`orion://open-url${t({url:o})}`}function a(r){let{query:o}=r;return`orion://search${t({q:o})}`}const e={url:"https://browser.kagi.com/"},u={query:"privacy browser"};export{a,e as o,u as s,s as t};

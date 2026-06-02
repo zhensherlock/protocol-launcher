@@ -1,0 +1,1 @@
+import{i as c}from"./index.CWwLnpeZ.js";function o(n){return c(n)}function f(){return"gvconnect://"}function u(n){let{tab:t,account:r}=n;return`gvconnect://${t}${o({account:r})}`}function e(n,t={}){return u({...t,tab:n})}function a(n={}){return e("settings",n)}export{f as e,a as s};

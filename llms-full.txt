@@ -54,6 +54,7 @@ Currently, we support the following applications:
 * [Cardhop](../apps/cardhop.md)
 * [Charty](../apps/charty.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Choosy](../apps/choosy.md)
 * [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
@@ -94,6 +95,7 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
@@ -154,6 +156,7 @@ Currently, we support the following applications:
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -393,6 +396,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Cardhop](../apps/cardhop.md)
 * [Charty](../apps/charty.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Choosy](../apps/choosy.md)
 * [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
@@ -433,6 +437,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
@@ -493,6 +498,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -4349,6 +4355,97 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
 ---
 
 ---
+url: /protocol-launcher/apps/choosy.md
+---
+
+# Choosy
+
+[Choosy](https://choosy.app/) is a browser chooser for macOS. **Protocol Launcher** allows you to generate URLs that open web links with Choosy.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module follows Choosy's official [API documentation](https://choosy.app/api), where a URL is shaped as `x-choosy://api-method/web-url`.
+
+The built-in helpers only cover the official API methods documented by Choosy: `open`, `prompt.all`, `prompt.running`, `best.all`, and `best.running`. Choosy also documents user-defined custom API methods, so `customApiMethod` accepts the method name configured in your Choosy rules.
+
+### Open
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}open({
+  url: 'https://example.com',
+})
+```
+
+### Prompt All
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'promptAll' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}promptAll({
+  url: 'https://www.georgebrock.com',
+})
+```
+
+### Prompt Running
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'promptRunning' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}promptRunning({
+  url: 'https://example.com',
+})
+```
+
+### Best All
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'bestAll' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}bestAll({
+  url: 'https://example.com',
+})
+```
+
+### Best Running
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'bestRunning' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}bestRunning({
+  url: 'https://example.com',
+})
+```
+
+### Custom API Method
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'customApiMethod' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}customApiMethod({
+  method: 'edit',
+  url: 'https://www.example.com',
+})
+```
+
+## Official Documentation
+
+* [Choosy API](https://choosy.app/api)
+* [Choosy custom API methods](https://choosy.app/help/settings/rules/customapi)
+
+---
+
+---
 url: /protocol-launcher/apps/chute.md
 ---
 
@@ -8047,6 +8144,151 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'googleMaps.'}}openUrl({
 ## Official Documentation
 
 * [Google Maps URL Scheme for iOS](https://developers.google.com/maps/documentation/urls/ios-urlscheme)
+
+---
+
+---
+url: /protocol-launcher/apps/gv-connect.md
+---
+
+# GV Connect
+
+[GV Connect](https://gvconnect.com/) is a Google Voice client for iPhone, iPod touch, and iPad. **Protocol Launcher** allows you to generate official GV Connect URL scheme links.
+
+GV Connect documents these handlers as case-sensitive and requiring proper URL encoding. Most handlers also accept an optional `account` parameter for multi-account setups.
+
+For SMS group recipients, GV Connect documents a maximum of five numbers separated by commas.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open GV Connect
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}open()
+```
+
+### Open Tab
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTab, openCallTab, openSmsTab, openVoicemailTab, openHistory, openSettings' : 'gvConnect' }} } from '{{ importPath }}'
+
+const historyUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openTab({
+  tab: 'history',
+})
+
+const callTabUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openCallTab()
+const smsTabUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openSmsTab()
+const voicemailUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openVoicemailTab()
+const recentHistoryUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openHistory()
+
+const settingsUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openSettings({
+  account: 'Work Voice',
+})
+```
+
+### Dial Number
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dial' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}dial({
+  number: '+15551234567',
+})
+
+const favoritesUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}dial({
+  number: 'FAVORITES',
+})
+```
+
+### Start Call
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'call' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}call({
+  number: '+15551234567',
+  callMethod: 'DirectCall',
+})
+```
+
+### Compose SMS
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sms, smsRecipient' : 'gvConnect' }} } from '{{ importPath }}'
+
+const recipientOnlyUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}smsRecipient({
+  number: '+15551234567',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}sms({
+  number: ['+15551234567', '+15557654321'],
+  message: 'On my way',
+})
+```
+
+### Quick Setting
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickSetting' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}quickSetting({
+  name: 'Office',
+  account: 'Work Voice',
+})
+```
+
+## Generated URLs
+
+```ts
+open()
+// => 'gvconnect://'
+
+openTab({ tab: 'history' })
+// => 'gvconnect://history'
+
+openCallTab()
+// => 'gvconnect://call'
+
+openSmsTab()
+// => 'gvconnect://sms'
+
+openVoicemailTab()
+// => 'gvconnect://vm'
+
+openHistory()
+// => 'gvconnect://history'
+
+openSettings({ account: 'Work Voice' })
+// => 'gvconnect://settings?account=Work%20Voice'
+
+dial({ number: '+15551234567' })
+// => 'gvconnect://call?%2B15551234567'
+
+call({ number: '+15551234567', callMethod: 'DirectCall' })
+// => 'gvconnect://call?number=%2B15551234567&callmethod=DirectCall'
+
+smsRecipient({ number: ['+15551234567', '+15557654321'] })
+// => 'gvconnect://sms?%2B15551234567%2C%2B15557654321'
+
+sms({ number: '+15551234567', message: 'On my way' })
+// => 'gvconnect://sms?number=%2B15551234567&message=On%20my%20way'
+
+quickSetting({ name: 'Office' })
+// => 'gvconnect://quicksetting?Office'
+```
+
+## Official Documentation
+
+* [GV Connect URL handlers](https://gvconnect.com/#Push)
 
 ---
 
@@ -14120,6 +14362,49 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'orchids' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'orchids.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/apps/orion-browser.md
+---
+
+# Orion Browser
+
+[Orion Browser](https://browser.kagi.com/) is a WebKit browser from Kagi for Apple devices. **Protocol Launcher** allows you to generate deep links to open URLs and search in Orion Browser for iOS.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module follows Orion Browser's official [FAQ](https://browser.kagi.com/faq.html), which documents the iOS `orion://open-url?url=url` and `orion://search?q=query` schemes.
+
+### Open URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'orionBrowser' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'orionBrowser.'}}openUrl({
+  url: 'https://browser.kagi.com/',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'orionBrowser' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'orionBrowser.'}}search({
+  query: 'privacy browser',
+})
 ```
 
 ---
@@ -22305,6 +22590,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Cardhop](../apps/cardhop.md)
 * [Charty](../apps/charty.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Choosy](../apps/choosy.md)
 * [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
@@ -22345,6 +22631,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
@@ -22405,6 +22692,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -22644,6 +22932,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Cardhop](../apps/cardhop.md)
 * [Charty](../apps/charty.md)
 * [Cherry Studio](../apps/cherry-studio.md)
+* [Choosy](../apps/choosy.md)
 * [Chute](../apps/chute.md)
 * [Citymapper](../apps/citymapper.md)
 * [Cloze](../apps/cloze.md)
@@ -22684,6 +22973,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
 * [Hammerspoon](../apps/hammerspoon.md)
@@ -22744,6 +23034,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [Orchids](../apps/orchids.md)
+* [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -26601,6 +26892,97 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
 ---
 
 ---
+url: /protocol-launcher/zh/apps/choosy.md
+---
+
+# Choosy
+
+[Choosy](https://choosy.app/) 是一款 macOS 浏览器选择工具。**Protocol Launcher** 允许你生成 URL，通过 Choosy 打开网页链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 说明
+
+此模块遵循 Choosy 官方 [API 文档](https://choosy.app/api)，其 URL 形状为 `x-choosy://api-method/web-url`。
+
+内置 helper 只覆盖 Choosy 官方文档列出的 API method：`open`、`prompt.all`、`prompt.running`、`best.all` 和 `best.running`。Choosy 也记录了用户自定义 API method，因此 `customApiMethod` 接收你在 Choosy 规则里配置的 method 名称。
+
+### 打开
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}open({
+  url: 'https://example.com',
+})
+```
+
+### 提示所有浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'promptAll' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}promptAll({
+  url: 'https://www.georgebrock.com',
+})
+```
+
+### 提示正在运行的浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'promptRunning' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}promptRunning({
+  url: 'https://example.com',
+})
+```
+
+### 最喜欢的浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'bestAll' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}bestAll({
+  url: 'https://example.com',
+})
+```
+
+### 最喜欢且正在运行的浏览器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'bestRunning' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}bestRunning({
+  url: 'https://example.com',
+})
+```
+
+### 自定义 API Method
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'customApiMethod' : 'choosy' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'choosy.'}}customApiMethod({
+  method: 'edit',
+  url: 'https://www.example.com',
+})
+```
+
+## 官方文档
+
+* [Choosy API](https://choosy.app/api)
+* [Choosy custom API methods](https://choosy.app/help/settings/rules/customapi)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/chute.md
 ---
 
@@ -30299,6 +30681,151 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'googleMaps.'}}openUrl({
 ## 官方文档
 
 * [Google Maps URL Scheme for iOS](https://developers.google.com/maps/documentation/urls/ios-urlscheme)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/gv-connect.md
+---
+
+# GV Connect
+
+[GV Connect](https://gvconnect.com/) 是一款适用于 iPhone、iPod touch 和 iPad 的 Google Voice 客户端。**Protocol Launcher** 可以生成官方 GV Connect URL scheme 链接。
+
+GV Connect 文档说明这些 handlers 区分大小写，并且都需要正确 URL 编码。多数 handlers 还可以添加可选的 `account` 参数，以便在多账号配置中指定账号。
+
+对于 SMS 群发收件人，GV Connect 文档限定最多五个号码，并用逗号分隔。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开 GV Connect
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}open()
+```
+
+### 打开标签页
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTab, openCallTab, openSmsTab, openVoicemailTab, openHistory, openSettings' : 'gvConnect' }} } from '{{ importPath }}'
+
+const historyUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openTab({
+  tab: 'history',
+})
+
+const callTabUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openCallTab()
+const smsTabUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openSmsTab()
+const voicemailUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openVoicemailTab()
+const recentHistoryUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openHistory()
+
+const settingsUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}openSettings({
+  account: 'Work Voice',
+})
+```
+
+### 填入拨号号码
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dial' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}dial({
+  number: '+15551234567',
+})
+
+const favoritesUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}dial({
+  number: 'FAVORITES',
+})
+```
+
+### 发起呼叫
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'call' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}call({
+  number: '+15551234567',
+  callMethod: 'DirectCall',
+})
+```
+
+### 编写 SMS
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'sms, smsRecipient' : 'gvConnect' }} } from '{{ importPath }}'
+
+const recipientOnlyUrl = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}smsRecipient({
+  number: '+15551234567',
+})
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}sms({
+  number: ['+15551234567', '+15557654321'],
+  message: 'On my way',
+})
+```
+
+### Quick Setting
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'quickSetting' : 'gvConnect' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gvConnect.'}}quickSetting({
+  name: 'Office',
+  account: 'Work Voice',
+})
+```
+
+## 生成的 URL
+
+```ts
+open()
+// => 'gvconnect://'
+
+openTab({ tab: 'history' })
+// => 'gvconnect://history'
+
+openCallTab()
+// => 'gvconnect://call'
+
+openSmsTab()
+// => 'gvconnect://sms'
+
+openVoicemailTab()
+// => 'gvconnect://vm'
+
+openHistory()
+// => 'gvconnect://history'
+
+openSettings({ account: 'Work Voice' })
+// => 'gvconnect://settings?account=Work%20Voice'
+
+dial({ number: '+15551234567' })
+// => 'gvconnect://call?%2B15551234567'
+
+call({ number: '+15551234567', callMethod: 'DirectCall' })
+// => 'gvconnect://call?number=%2B15551234567&callmethod=DirectCall'
+
+smsRecipient({ number: ['+15551234567', '+15557654321'] })
+// => 'gvconnect://sms?%2B15551234567%2C%2B15557654321'
+
+sms({ number: '+15551234567', message: 'On my way' })
+// => 'gvconnect://sms?number=%2B15551234567&message=On%20my%20way'
+
+quickSetting({ name: 'Office' })
+// => 'gvconnect://quicksetting?Office'
+```
+
+## 官方文档
+
+* [GV Connect URL handlers](https://gvconnect.com/#Push)
 
 ---
 
@@ -36372,6 +36899,49 @@ url: /protocol-launcher/zh/apps/orchids.md
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'orchids' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'orchids.'}}open()
+```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/orion-browser.md
+---
+
+# Orion Browser
+
+[Orion Browser](https://browser.kagi.com/) 是 Kagi 为 Apple 设备打造的 WebKit 浏览器。**Protocol Launcher** 允许您生成深度链接，以在 iOS 版 Orion Browser 中打开 URL 和搜索。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 说明
+
+此模块遵循 Orion Browser 官方 [FAQ](https://browser.kagi.com/faq.html)，其中记录了 iOS 的 `orion://open-url?url=url` 和 `orion://search?q=query` schemes。
+
+### 打开 URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUrl' : 'orionBrowser' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'orionBrowser.'}}openUrl({
+  url: 'https://browser.kagi.com/',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'orionBrowser' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'orionBrowser.'}}search({
+  query: 'privacy browser',
+})
 ```
 
 ---
