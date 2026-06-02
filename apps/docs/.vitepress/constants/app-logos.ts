@@ -92,6 +92,7 @@ export const appLogoFiles = {
   ipgmail: 'ipgmail.webp',
   ithoughts: 'ithoughtsx.png',
   itsycal: 'itsycal.png',
+  'ivanti-web-work': 'ivanti-web-work.webp',
   ivory: 'ivory.webp',
   joplin: 'joplin.webp',
   'jump-desktop': 'jump-desktop.png',

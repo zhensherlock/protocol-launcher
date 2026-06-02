@@ -426,6 +426,10 @@
       "types": "./dist/types/itsycal/index.d.ts",
       "import": "./dist/itsycal/index.js"
     },
+    "./ivanti-web-work": {
+      "types": "./dist/types/ivanti-web-work/index.d.ts",
+      "import": "./dist/ivanti-web-work/index.js"
+    },
     "./ivory": {
       "types": "./dist/types/ivory/index.d.ts",
       "import": "./dist/ivory/index.js"

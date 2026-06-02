@@ -123,6 +123,7 @@ export default defineAdditionalConfig({
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },
           { text: 'iThoughts', link: '/zh/apps/ithoughts' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
+          { text: 'Ivanti Web@Work', link: '/zh/apps/ivanti-web-work' },
           { text: 'Ivory', link: '/zh/apps/ivory' },
           { text: 'Joplin', link: '/zh/apps/joplin' },
           { text: 'Jump Desktop', link: '/zh/apps/jump-desktop' },
