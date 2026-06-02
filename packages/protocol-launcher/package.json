@@ -594,6 +594,10 @@
       "types": "./dist/types/pearai/index.d.ts",
       "import": "./dist/pearai/index.js"
     },
+    "./pdf-expert": {
+      "types": "./dist/types/pdf-expert/index.d.ts",
+      "import": "./dist/pdf-expert/index.js"
+    },
     "./pdf-viewer": {
       "types": "./dist/types/pdf-viewer/index.d.ts",
       "import": "./dist/pdf-viewer/index.js"
