@@ -114,6 +114,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivanti Web@Work](../apps/ivanti-web-work.md)
 * [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)

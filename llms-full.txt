@@ -114,6 +114,7 @@ Currently, we support the following applications:
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivanti Web@Work](../apps/ivanti-web-work.md)
 * [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
@@ -456,6 +457,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivanti Web@Work](../apps/ivanti-web-work.md)
 * [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
@@ -9653,6 +9655,99 @@ import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'itsycal' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate()
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/ivanti-web-work.md
+---
+
+# Ivanti Web@Work
+
+[Ivanti Web@Work](https://www.ivanti.com/en-gb/products/productivity-apps/web-work) is a secure mobile browser by Ivanti. **Protocol Launcher** allows you to generate Web@Work URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Ivanti's official Web@Work for iOS guide documents four schemes: `mibrowser://` for HTTP connections, `mibrowsers://` for HTTPS connections, `mibrowserf://` for full-screen web clips using HTTP, and `mibrowsersf://` for full-screen web clips using HTTPS.
+
+This module only replaces the standard URL prefix that matches the selected connection type. It does not add parameters or expose undocumented Web@Work actions.
+
+### Open HTTP URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHttpUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openHttpUrl({
+  url: 'http://www.example.com/intranet',
+})
+```
+
+### Open HTTPS URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHttpsUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openHttpsUrl({
+  url: 'https://www.example.com/secure',
+})
+```
+
+### Open Full-Screen HTTP URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFullScreenHttpUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openFullScreenHttpUrl({
+  url: 'http://www.example.com/app',
+})
+```
+
+### Open Full-Screen HTTPS URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFullScreenHttpsUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openFullScreenHttpsUrl({
+  url: 'https://www.example.com/app',
+})
+```
+
+## Generated URLs
+
+```ts
+openHttpUrl({
+  url: 'http://www.example.com/intranet',
+})
+// => 'mibrowser://www.example.com/intranet'
+
+openHttpsUrl({
+  url: 'https://www.example.com/secure',
+})
+// => 'mibrowsers://www.example.com/secure'
+
+openFullScreenHttpUrl({
+  url: 'http://www.example.com/app',
+})
+// => 'mibrowserf://www.example.com/app'
+
+openFullScreenHttpsUrl({
+  url: 'https://www.example.com/app',
+})
+// => 'mibrowsersf://www.example.com/app'
+```
+
+## References
+
+* [Ivanti Web@Work URL schemes](https://help.ivanti.com/mi/help/en_US/WW/2.x.x/gdi/WebAtWorkForiOS/Website_authentication_u.htm)
 
 ---
 
@@ -22650,6 +22745,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivanti Web@Work](../apps/ivanti-web-work.md)
 * [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
@@ -22992,6 +23088,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [iPGMail](../apps/ipgmail.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
+* [Ivanti Web@Work](../apps/ivanti-web-work.md)
 * [Ivory](../apps/ivory.md)
 * [Joplin](../apps/joplin.md)
 * [Jump Desktop](../apps/jump-desktop.md)
@@ -32190,6 +32287,99 @@ import { {{ currentMethod === 'On-Demand' ? 'openDate' : 'itsycal' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'itsycal.'}}openDate()
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/ivanti-web-work.md
+---
+
+# Ivanti Web@Work
+
+[Ivanti Web@Work](https://www.ivanti.com/en-gb/products/productivity-apps/web-work) 是 Ivanti 的安全移动浏览器。**Protocol Launcher** 允许你生成 Web@Work URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Ivanti 的 Web@Work for iOS 官方指南记录了四个 scheme：`mibrowser://` 用于 HTTP 连接，`mibrowsers://` 用于 HTTPS 连接，`mibrowserf://` 用于使用 HTTP 的全屏 web clip，`mibrowsersf://` 用于使用 HTTPS 的全屏 web clip。
+
+本模块只替换与所选连接类型匹配的标准 URL 前缀，不添加参数，也不暴露未在官方文档中记录的 Web@Work 动作。
+
+### 打开 HTTP URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHttpUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openHttpUrl({
+  url: 'http://www.example.com/intranet',
+})
+```
+
+### 打开 HTTPS URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openHttpsUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openHttpsUrl({
+  url: 'https://www.example.com/secure',
+})
+```
+
+### 打开全屏 HTTP URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFullScreenHttpUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openFullScreenHttpUrl({
+  url: 'http://www.example.com/app',
+})
+```
+
+### 打开全屏 HTTPS URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFullScreenHttpsUrl' : 'ivantiWebWork' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ivantiWebWork.'}}openFullScreenHttpsUrl({
+  url: 'https://www.example.com/app',
+})
+```
+
+## 生成的 URL
+
+```ts
+openHttpUrl({
+  url: 'http://www.example.com/intranet',
+})
+// => 'mibrowser://www.example.com/intranet'
+
+openHttpsUrl({
+  url: 'https://www.example.com/secure',
+})
+// => 'mibrowsers://www.example.com/secure'
+
+openFullScreenHttpUrl({
+  url: 'http://www.example.com/app',
+})
+// => 'mibrowserf://www.example.com/app'
+
+openFullScreenHttpsUrl({
+  url: 'https://www.example.com/app',
+})
+// => 'mibrowsersf://www.example.com/app'
+```
+
+## 参考资料
+
+* [Ivanti Web@Work URL schemes](https://help.ivanti.com/mi/help/en_US/WW/2.x.x/gdi/WebAtWorkForiOS/Website_authentication_u.htm)
 
 ---
 
