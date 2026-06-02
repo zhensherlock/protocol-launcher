@@ -33,6 +33,7 @@ export const appLogoFiles = {
   cardhop: 'cardhop.webp',
   charty: 'charty-for-shortcuts.webp',
   'cherry-studio': 'cherry-studio.svg',
+  choosy: 'choosy.webp',
   chute: 'chute.webp',
   citymapper: 'citymapper.webp',
   cloze: 'cloze.webp',

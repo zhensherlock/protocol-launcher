@@ -194,6 +194,10 @@
       "types": "./dist/types/cherry-studio/index.d.ts",
       "import": "./dist/cherry-studio/index.js"
     },
+    "./choosy": {
+      "types": "./dist/types/choosy/index.d.ts",
+      "import": "./dist/choosy/index.js"
+    },
     "./chute": {
       "types": "./dist/types/chute/index.d.ts",
       "import": "./dist/chute/index.js"

@@ -63,6 +63,7 @@ export default defineAdditionalConfig({
           { text: 'Cardhop', link: '/zh/apps/cardhop' },
           { text: 'Charty', link: '/zh/apps/charty' },
           { text: 'Cherry Studio', link: '/zh/apps/cherry-studio' },
+          { text: 'Choosy', link: '/zh/apps/choosy' },
           { text: 'Chute', link: '/zh/apps/chute' },
           { text: 'Citymapper', link: '/zh/apps/citymapper' },
           { text: 'Cloze', link: '/zh/apps/cloze' },

@@ -60,6 +60,7 @@ Currently, we support the following applications:
 - [Cardhop](../apps/cardhop.md)
 - [Charty](../apps/charty.md)
 - [Cherry Studio](../apps/cherry-studio.md)
+- [Choosy](../apps/choosy.md)
 - [Chute](../apps/chute.md)
 - [Citymapper](../apps/citymapper.md)
 - [Cloze](../apps/cloze.md)
