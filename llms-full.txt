@@ -156,6 +156,7 @@ Currently, we support the following applications:
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Picsew](../apps/picsew.md)
@@ -494,6 +495,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Picsew](../apps/picsew.md)
@@ -14268,6 +14270,69 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
 ---
 
 ---
+url: /protocol-launcher/apps/pdf-expert.md
+---
+
+# PDF Expert
+
+[PDF Expert](https://pdfexpert.com/) is Readdle's PDF editor and reader for Mac, iPad, and iPhone. **Protocol Launcher** allows you to generate PDF Expert URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+### Open Remote PDF
+
+Save and open a direct PDF URL by adding the documented `PDFE` prefix.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemotePdf' : 'pdfExpert' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfExpert.'}}openRemotePdf({
+  url: 'https://example.com/Guide.pdf',
+})
+```
+
+### Open File
+
+Open a file stored in PDF Expert's Documents tab with the documented `PDFEFILE:///Folder/Subfolder/File.pdf` form.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'pdfExpert' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfExpert.'}}openFile({
+  path: 'Folder/Subfolder/File.pdf',
+})
+```
+
+If folder names contain spaces, Readdle documents using `%20`; pass those escapes in `path`.
+
+### Open Synced File
+
+Open a file kept in Synced folders with the documented `pdfefile:///SyncedFolders/` static path.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSyncedFile' : 'pdfExpert' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfExpert.'}}openSyncedFile({
+  path: 'folder1/folder2/test.pdf',
+})
+```
+
+Readdle notes that other app languages may require the translated version of the Synced folders part of the URL. This helper generates the documented English static path `pdfefile:///SyncedFolders/`.
+
+## References
+
+* [Readdle PDF Expert URL schemes](https://support.readdle.com/pdfexpert/en_US/for-developers/url-schemes)
+
+---
+
+---
 url: /protocol-launcher/apps/pdf-viewer.md
 ---
 
@@ -22342,6 +22407,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Picsew](../apps/picsew.md)
@@ -22680,6 +22746,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Orchids](../apps/orchids.md)
 * [Overcast](../apps/overcast.md)
 * [PearAI](../apps/pearai.md)
+* [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
 * [Pika](../apps/pika.md)
 * [Picsew](../apps/picsew.md)
@@ -36451,6 +36518,69 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pearai.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/pdf-expert.md
+---
+
+# PDF Expert
+
+[PDF Expert](https://pdfexpert.com/) 是 Readdle 面向 Mac、iPad 和 iPhone 的 PDF 编辑与阅读应用。**Protocol Launcher** 可以生成 PDF Expert URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+### 打开远程 PDF
+
+通过添加官方文档中的 `PDFE` 前缀，保存并打开一个直接 PDF URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRemotePdf' : 'pdfExpert' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfExpert.'}}openRemotePdf({
+  url: 'https://example.com/Guide.pdf',
+})
+```
+
+### 打开文件
+
+使用官方文档中的 `PDFEFILE:///Folder/Subfolder/File.pdf` 形式，打开存储在 PDF Expert “Documents” 标签页中的文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'pdfExpert' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfExpert.'}}openFile({
+  path: 'Folder/Subfolder/File.pdf',
+})
+```
+
+如果文件夹名称中包含空格，Readdle 官方文档说明可以使用 `%20`；请在 `path` 中传入这些转义。
+
+### 打开同步文件
+
+使用官方文档中的 `pdfefile:///SyncedFolders/` 静态路径，打开保存在 Synced folders 中的文件。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSyncedFile' : 'pdfExpert' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pdfExpert.'}}openSyncedFile({
+  path: 'folder1/folder2/test.pdf',
+})
+```
+
+Readdle 提示，其他应用语言可能需要使用 URL 中 Synced folders 部分的翻译版本。此 helper 生成官方文档中的英文静态路径 `pdfefile:///SyncedFolders/`。
+
+## 参考资料
+
+* [Readdle PDF Expert URL schemes](https://support.readdle.com/pdfexpert/en_US/for-developers/url-schemes)
 
 ---
 
