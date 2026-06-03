@@ -170,6 +170,7 @@ export default defineAdditionalConfig({
           { text: 'Orchids', link: '/zh/apps/orchids' },
           { text: 'Orion Browser', link: '/zh/apps/orion-browser' },
           { text: 'Overcast', link: '/zh/apps/overcast' },
+          { text: 'PCalc', link: '/zh/apps/pcalc' },
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PDF Expert', link: '/zh/apps/pdf-expert' },
           { text: 'PDF Viewer', link: '/zh/apps/pdf-viewer' },

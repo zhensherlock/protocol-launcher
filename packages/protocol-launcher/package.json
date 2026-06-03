@@ -614,6 +614,10 @@
       "types": "./dist/types/orion-browser/index.d.ts",
       "import": "./dist/orion-browser/index.js"
     },
+    "./pcalc": {
+      "types": "./dist/types/pcalc/index.d.ts",
+      "import": "./dist/pcalc/index.js"
+    },
     "./pearai": {
       "types": "./dist/types/pearai/index.d.ts",
       "import": "./dist/pearai/index.js"

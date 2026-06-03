@@ -258,6 +258,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Orchids](../apps/orchids.md)
 - [Orion Browser](../apps/orion-browser.md)
 - [Overcast](../apps/overcast.md)
+- [PCalc](../apps/pcalc.md)
 - [PearAI](../apps/pearai.md)
 - [PDF Expert](../apps/pdf-expert.md)
 - [PDF Viewer](../apps/pdf-viewer.md)

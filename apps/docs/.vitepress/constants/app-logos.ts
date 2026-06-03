@@ -139,6 +139,7 @@ export const appLogoFiles = {
   orchids: 'orchids.svg',
   'orion-browser': 'orion-browser.webp',
   overcast: 'overcast.svg',
+  pcalc: 'pcalc.webp',
   pearai: 'pearai.png',
   'pdf-expert': 'pdf-expert.webp',
   'pdf-viewer': 'pdf-viewer.webp',
