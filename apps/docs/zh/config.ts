@@ -97,6 +97,7 @@ export default defineAdditionalConfig({
           { text: 'forScore', link: '/zh/apps/forscore' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'Streets', link: '/zh/apps/ftstreets' },
+          { text: 'Fulcrum', link: '/zh/apps/fulcrum' },
           { text: 'GitHub Desktop', link: '/zh/apps/github-desktop' },
           { text: 'Gladys', link: '/zh/apps/gladys' },
           { text: 'GoodLinks', link: '/zh/apps/goodlinks' },

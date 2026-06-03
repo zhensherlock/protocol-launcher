@@ -66,6 +66,7 @@ export const appLogoFiles = {
   forscore: 'forscore.webp',
   fsnotes: 'fsnotes.webp',
   ftstreets: 'ftstreets.png',
+  fulcrum: 'fulcrum.webp',
   'github-desktop': 'github-desktop.png',
   gladys: 'gladys.webp',
   goland: 'goland.png',
