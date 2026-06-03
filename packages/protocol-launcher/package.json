@@ -206,6 +206,10 @@
       "types": "./dist/types/citymapper/index.d.ts",
       "import": "./dist/citymapper/index.js"
     },
+    "./cleanshot-x": {
+      "types": "./dist/types/cleanshot-x/index.d.ts",
+      "import": "./dist/cleanshot-x/index.js"
+    },
     "./cloze": {
       "types": "./dist/types/cloze/index.d.ts",
       "import": "./dist/cloze/index.js"

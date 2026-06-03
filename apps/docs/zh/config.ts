@@ -66,6 +66,7 @@ export default defineAdditionalConfig({
           { text: 'Choosy', link: '/zh/apps/choosy' },
           { text: 'Chute', link: '/zh/apps/chute' },
           { text: 'Citymapper', link: '/zh/apps/citymapper' },
+          { text: 'CleanShot X', link: '/zh/apps/cleanshot-x' },
           { text: 'Cloze', link: '/zh/apps/cloze' },
           { text: 'Coda', link: '/zh/apps/coda' },
           { text: 'CodeBuddy', link: '/zh/apps/code-buddy' },

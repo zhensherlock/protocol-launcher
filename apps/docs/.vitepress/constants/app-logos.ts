@@ -36,6 +36,7 @@ export const appLogoFiles = {
   choosy: 'choosy.webp',
   chute: 'chute.webp',
   citymapper: 'citymapper.webp',
+  'cleanshot-x': 'cleanshot.png',
   cloze: 'cloze.webp',
   coda: 'coda.svg',
   'code-buddy': 'code-buddy.svg',

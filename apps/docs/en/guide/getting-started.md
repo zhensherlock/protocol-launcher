@@ -154,6 +154,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Choosy](../apps/choosy.md)
 - [Chute](../apps/chute.md)
 - [Citymapper](../apps/citymapper.md)
+- [CleanShot X](../apps/cleanshot-x.md)
 - [Cloze](../apps/cloze.md)
 - [Coda](../apps/coda.md)
 - [CodeBuddy](../apps/code-buddy.md)
