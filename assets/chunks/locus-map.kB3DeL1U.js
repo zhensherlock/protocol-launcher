@@ -1,0 +1,1 @@
+const n=/^https:\/\/(.+)$/;function s(t){let o=t.url.match(n);if(!o)throw Error("Unsupported Locus Map actions URL format.");let[,r]=o;return`locus-actions://https/${r}`}function a(t){return s(t)}const c={url:"https://example.com/path/to/actions.xml"};export{c as a,a as t};

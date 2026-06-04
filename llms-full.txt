@@ -98,6 +98,7 @@ Currently, we support the following applications:
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [Guru Maps](../apps/guru-maps.md)
 * [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
@@ -130,6 +131,7 @@ Currently, we support the following applications:
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
+* [Locus Map](../apps/locus-map.md)
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
@@ -446,6 +448,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [Guru Maps](../apps/guru-maps.md)
 * [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
@@ -478,6 +481,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
+* [Locus Map](../apps/locus-map.md)
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
@@ -8608,6 +8612,130 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'googleMaps.'}}openUrl({
 ---
 
 ---
+url: /protocol-launcher/apps/guru-maps.md
+---
+
+# Guru Maps
+
+[Guru Maps](https://gurumaps.app/) is an offline maps and navigation app. **Protocol Launcher** allows you to generate Guru Maps URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the `guru:` and `guru://` APIs documented in the Guru Maps manual. The `geo:` helper is intentionally narrow: the official page only shows `geo:lat,lon` for displaying a location and notes that it does not support `back_url`.
+
+`backUrl` maps to Guru Maps' documented `back_url` parameter.
+
+### Open Guru Maps
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}open()
+```
+
+### Open with Back URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}open({
+  backUrl: 'https://gurumaps.app',
+})
+```
+
+### Import File
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importFile' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}importFile({
+  url: 'https://gurumaps.app/example/feature_collection.geojson',
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}search({
+  q: 'Wybrzeże Kościuszkowskie 20 Warszawa',
+  coord: '52.2297,21.0122',
+})
+```
+
+### Navigate
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}navigate({
+  start: '52.2297,21.0122',
+  finish: '52.2397,21.0222',
+  via: '52.2347,21.0172',
+  mode: 'bicycle',
+  startNavigation: true,
+})
+```
+
+### Record Track
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'recordTrack' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}recordTrack({
+  action: 'start',
+})
+```
+
+### Save Marker
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'saveMarker' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}saveMarker({
+  name: 'MyMarker',
+  coord: '52.2297,21.0122',
+})
+```
+
+### Show Place
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPlace' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}showPlace({
+  coord: '52.2297,21.0122',
+  zoom: 17,
+})
+```
+
+### Geo
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'geo' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}geo({
+  coord: '52.2297,21.0122',
+})
+```
+
+## Official Documentation
+
+* [API for Integration with Guru Maps](https://gurumaps.app/docs/manual/guru-api)
+
+---
+
+---
 url: /protocol-launcher/apps/gv-connect.md
 ---
 
@@ -11798,6 +11926,110 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/locus-map.md
+---
+
+# Locus Map
+
+[Locus Map](https://www.locusmap.app/) is an outdoor navigation and mapping app. **Protocol Launcher** allows you to generate Locus Map URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+The official Locus Actions documentation defines a `locus-actions://` URL that points Locus Map to a hosted XML file. The XML document describes what Locus Map should do.
+
+This module only exposes the actions documented by Locus Map: `download` and `event`. It does not add map search, navigation, point creation, or other behavior that is not present in the official Locus Actions page.
+
+`actions()` accepts an `https://` XML file URL and converts it to the documented `locus-actions://https/<host>/<path>` form. `downloadAction()` and `eventAction()` return complete XML documents with a single action.
+
+### Actions URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'actions' : 'locusMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'locusMap.'}}actions({
+  url: 'https://example.com/path/to/actions.xml',
+})
+```
+
+### Download Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadAction' : 'locusMap' }} } from '{{ importPath }}'
+
+const xml = {{currentMethod === 'On-Demand' ? '' : 'locusMap.'}}downloadAction({
+  source: {
+    url: 'http://example.com/maps/map.tar',
+    size: 22075830,
+    date: '2012-06-29_19-11-54',
+  },
+  dest: '/maps/map.tar',
+  after: 'refreshMap',
+})
+```
+
+The `after` field is limited to the official values: `refreshMap`, `importData`, `displayData`, `extract`, and `deleteSource`. Pass an array to generate the documented pipe-separated combinations, such as `extract|deleteSource|refreshMap`.
+
+### Event Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'eventAction' : 'locusMap' }} } from '{{ importPath }}'
+
+const xml = {{currentMethod === 'On-Demand' ? '' : 'locusMap.'}}eventAction({
+  key: 'setMapVector',
+  value: '/mapsVector/DownloadedMap.map',
+})
+```
+
+The `key` field is limited to the official values: `setMapVector` and `setMapVectorTheme`.
+
+## Generated URLs and XML
+
+```ts
+actions({
+  url: 'https://example.com/path/to/actions.xml',
+})
+// => 'locus-actions://https/example.com/path/to/actions.xml'
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<locusActions>
+  <download>
+    <source size="22075830" date="2012-06-29_19-11-54">
+      <![CDATA[http://example.com/maps/map.tar]]>
+    </source>
+    <dest><![CDATA[/maps/map.tar]]></dest>
+    <after>refreshMap</after>
+  </download>
+</locusActions>
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<locusActions>
+  <event>
+    <key>setMapVector</key>
+    <value><![CDATA[/mapsVector/DownloadedMap.map]]></value>
+  </event>
+</locusActions>
+```
+
+## Official Documentation
+
+* [Locus Actions](https://docs.locusmap.app/doku.php?id=manual%3Aadvanced%3Acustomization%3Aactions)
 
 ---
 
@@ -23434,6 +23666,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [Guru Maps](../apps/guru-maps.md)
 * [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
@@ -23466,6 +23699,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
+* [Locus Map](../apps/locus-map.md)
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
@@ -23782,6 +24016,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [GoLand](../apps/goland.md)
 * [Google Chrome iOS](../apps/google-chrome-ios.md)
 * [Google Maps](../apps/google-maps.md)
+* [Guru Maps](../apps/guru-maps.md)
 * [GV Connect](../apps/gv-connect.md)
 * [HapiGo](../apps/hapigo.md)
 * [HBuilderX](../apps/hbuilderx.md)
@@ -23814,6 +24049,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [LaunchBar](../apps/launchbar.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
+* [Locus Map](../apps/locus-map.md)
 * [Longshot](../apps/longshot.md)
 * [macOS](../apps/macos.md)
 * [MacVim](../apps/macvim.md)
@@ -31945,6 +32181,130 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'googleMaps.'}}openUrl({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/guru-maps.md
+---
+
+# Guru Maps
+
+[Guru Maps](https://gurumaps.app/) 是一款离线地图与导航应用。**Protocol Launcher** 允许你生成 Guru Maps URL Scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+此模块只封装 Guru Maps 手册中记录的 `guru:` 与 `guru://` API。`geo:` helper 刻意保持很窄：官方页面只展示了用于显示位置的 `geo:lat,lon`，并说明它不支持 `back_url`。
+
+`backUrl` 会映射到 Guru Maps 文档中的 `back_url` 参数。
+
+### 打开 Guru Maps
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}open()
+```
+
+### 使用返回 URL 打开
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}open({
+  backUrl: 'https://gurumaps.app',
+})
+```
+
+### 导入文件
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'importFile' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}importFile({
+  url: 'https://gurumaps.app/example/feature_collection.geojson',
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}search({
+  q: 'Wybrzeże Kościuszkowskie 20 Warszawa',
+  coord: '52.2297,21.0122',
+})
+```
+
+### 导航
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}navigate({
+  start: '52.2297,21.0122',
+  finish: '52.2397,21.0222',
+  via: '52.2347,21.0172',
+  mode: 'bicycle',
+  startNavigation: true,
+})
+```
+
+### 记录轨迹
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'recordTrack' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}recordTrack({
+  action: 'start',
+})
+```
+
+### 保存标记
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'saveMarker' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}saveMarker({
+  name: 'MyMarker',
+  coord: '52.2297,21.0122',
+})
+```
+
+### 显示地点
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPlace' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}showPlace({
+  coord: '52.2297,21.0122',
+  zoom: 17,
+})
+```
+
+### Geo
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'geo' : 'guruMaps' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'guruMaps.'}}geo({
+  coord: '52.2297,21.0122',
+})
+```
+
+## 官方文档
+
+* [API for Integration with Guru Maps](https://gurumaps.app/docs/manual/guru-api)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/gv-connect.md
 ---
 
@@ -35135,6 +35495,110 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'lingma.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/locus-map.md
+---
+
+# Locus Map
+
+[Locus Map](https://www.locusmap.app/) 是一款户外导航与地图应用。**Protocol Launcher** 允许你生成 Locus Map URL scheme 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Locus Actions 官方文档定义了 `locus-actions://` URL，用来让 Locus Map 读取一个托管在服务器上的 XML 文件。这个 XML 文档描述 Locus Map 要执行的操作。
+
+本模块只暴露 Locus Map 官方文档记录的 action：`download` 和 `event`。没有出现在官方 Locus Actions 页面中的地图搜索、导航、创建点位等能力，本模块不会添加。
+
+`actions()` 接收 `https://` XML 文件 URL，并转换为官方记录的 `locus-actions://https/<host>/<path>` 形式。`downloadAction()` 和 `eventAction()` 返回只包含一个 action 的完整 XML 文档。
+
+### Actions URL
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'actions' : 'locusMap' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'locusMap.'}}actions({
+  url: 'https://example.com/path/to/actions.xml',
+})
+```
+
+### Download Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadAction' : 'locusMap' }} } from '{{ importPath }}'
+
+const xml = {{currentMethod === 'On-Demand' ? '' : 'locusMap.'}}downloadAction({
+  source: {
+    url: 'http://example.com/maps/map.tar',
+    size: 22075830,
+    date: '2012-06-29_19-11-54',
+  },
+  dest: '/maps/map.tar',
+  after: 'refreshMap',
+})
+```
+
+`after` 字段只支持官方值：`refreshMap`、`importData`、`displayData`、`extract` 和 `deleteSource`。传入数组时会生成官方示例中的管道分隔组合，例如 `extract|deleteSource|refreshMap`。
+
+### Event Action
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'eventAction' : 'locusMap' }} } from '{{ importPath }}'
+
+const xml = {{currentMethod === 'On-Demand' ? '' : 'locusMap.'}}eventAction({
+  key: 'setMapVector',
+  value: '/mapsVector/DownloadedMap.map',
+})
+```
+
+`key` 字段只支持官方值：`setMapVector` 和 `setMapVectorTheme`。
+
+## 生成的 URL 和 XML
+
+```ts
+actions({
+  url: 'https://example.com/path/to/actions.xml',
+})
+// => 'locus-actions://https/example.com/path/to/actions.xml'
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<locusActions>
+  <download>
+    <source size="22075830" date="2012-06-29_19-11-54">
+      <![CDATA[http://example.com/maps/map.tar]]>
+    </source>
+    <dest><![CDATA[/maps/map.tar]]></dest>
+    <after>refreshMap</after>
+  </download>
+</locusActions>
+```
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<locusActions>
+  <event>
+    <key>setMapVector</key>
+    <value><![CDATA[/mapsVector/DownloadedMap.map]]></value>
+  </event>
+</locusActions>
+```
+
+## 官方文档
+
+* [Locus Actions](https://docs.locusmap.app/doku.php?id=manual%3Aadvanced%3Acustomization%3Aactions)
 
 ---
 
