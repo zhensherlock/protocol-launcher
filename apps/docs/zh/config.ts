@@ -168,6 +168,7 @@ export default defineAdditionalConfig({
           { text: 'OK JSON', link: '/zh/apps/ok-json' },
           { text: 'OmniFocus', link: '/zh/apps/omnifocus' },
           { text: 'OmniOutliner', link: '/zh/apps/omnioutliner' },
+          { text: 'OnSong', link: '/zh/apps/onsong' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Opener', link: '/zh/apps/opener' },
           { text: 'OpenVPN Connect', link: '/zh/apps/openvpn-connect' },

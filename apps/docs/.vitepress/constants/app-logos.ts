@@ -137,6 +137,7 @@ export const appLogoFiles = {
   'ok-json': 'ok-json.webp',
   omnifocus: 'omnifocus.png',
   omnioutliner: 'omnioutliner.webp',
+  onsong: 'onsong.webp',
   opencode: 'opencode.png',
   opener: 'opener.webp',
   'openvpn-connect': 'openvpn-connect.webp',

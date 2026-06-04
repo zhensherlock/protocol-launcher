@@ -614,6 +614,10 @@
       "types": "./dist/types/omnioutliner/index.d.ts",
       "import": "./dist/omnioutliner/index.js"
     },
+    "./onsong": {
+      "types": "./dist/types/onsong/index.d.ts",
+      "import": "./dist/onsong/index.js"
+    },
     "./opener": {
       "types": "./dist/types/opener/index.d.ts",
       "import": "./dist/opener/index.js"

@@ -165,6 +165,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [OK JSON](../apps/ok-json.md)
 - [OmniFocus](../apps/omnifocus.md)
 - [OmniOutliner](../apps/omnioutliner.md)
+- [OnSong](../apps/onsong.md)
 - [OpenCode](../apps/opencode.md)
 - [Opener](../apps/opener.md)
 - [OpenVPN Connect](../apps/openvpn-connect.md)
