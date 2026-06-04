@@ -228,6 +228,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [LaunchBar](../apps/launchbar.md)
 - [LINE](../apps/line.md)
 - [Lingma](../apps/lingma.md)
+- [Locus Map](../apps/locus-map.md)
 - [Longshot](../apps/longshot.md)
 - [macOS](../apps/macos.md)
 - [MacVim](../apps/macvim.md)

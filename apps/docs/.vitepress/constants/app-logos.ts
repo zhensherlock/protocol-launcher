@@ -109,6 +109,7 @@ export const appLogoFiles = {
   launchbar: 'launchbar.png',
   line: 'line.webp',
   lingma: 'lingma.png',
+  'locus-map': 'locus-map.webp',
   longshot: 'longshot.png',
   macos: 'macos.svg',
   macvim: 'macvim.png',

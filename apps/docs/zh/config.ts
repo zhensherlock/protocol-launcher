@@ -140,6 +140,7 @@ export default defineAdditionalConfig({
           { text: 'LaunchBar', link: '/zh/apps/launchbar' },
           { text: 'LINE', link: '/zh/apps/line' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
+          { text: 'Locus Map', link: '/zh/apps/locus-map' },
           { text: 'Longshot', link: '/zh/apps/longshot' },
           { text: 'macOS', link: '/zh/apps/macos' },
           { text: 'MacVim', link: '/zh/apps/macvim' },

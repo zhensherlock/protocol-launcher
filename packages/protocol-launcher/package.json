@@ -498,6 +498,10 @@
       "types": "./dist/types/lingma/index.d.ts",
       "import": "./dist/lingma/index.js"
     },
+    "./locus-map": {
+      "types": "./dist/types/locus-map/index.d.ts",
+      "import": "./dist/locus-map/index.js"
+    },
     "./longshot": {
       "types": "./dist/types/longshot/index.d.ts",
       "import": "./dist/longshot/index.js"
