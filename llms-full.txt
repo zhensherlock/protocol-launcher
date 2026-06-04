@@ -88,6 +88,8 @@ Currently, we support the following applications:
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
+* [Fulcrum](../apps/fulcrum.md)
+* [Gett](../apps/gett.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
@@ -160,6 +162,7 @@ Currently, we support the following applications:
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
@@ -432,6 +435,8 @@ For detailed usage instructions for each application, please refer to their resp
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
+* [Fulcrum](../apps/fulcrum.md)
+* [Gett](../apps/gett.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
@@ -504,6 +509,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
@@ -7717,6 +7723,269 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
 ---
 
 ---
+url: /protocol-launcher/apps/fulcrum.md
+---
+
+# Fulcrum
+
+[Fulcrum](https://www.fulcrumapp.com/) is a field data collection app for mobile forms and records. **Protocol Launcher** allows you to generate Fulcrum URL action links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Scheme
+
+Fulcrum documents the mobile custom scheme `fulcrumapp://` with the actions `open`, `new-record`, and `edit-record`. The documented mobile parameters are `form_id` for opening, `form_id`, `project_id`, `status`, `latitude`, `longitude`, and data-name attributes for new records, and `record_id`, `project_id`, `status`, `latitude`, `longitude`, and data-name attributes for edits.
+
+Fulcrum also documents web links for forms and records: `https://web.fulcrumapp.com/dash/{form_id}`, `https://web.fulcrumapp.com/records/new`, `https://web.fulcrumapp.com/records/{record_id}`, and `https://web.fulcrumapp.com/records/{record_id}?mode=edit`. The documented Android/iOS compatibility redirect examples are `https://web.fulcrumapp.com/action/#new-record?form_id=123-xyz` and `https://web.fulcrumapp.com/action/#edit-record?record_id=xyz-123`.
+
+### Open
+
+Launch Fulcrum mobile and optionally open a form.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}open({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+})
+```
+
+### New Record
+
+Create a new mobile record. Custom field values are passed as Fulcrum data-name attributes.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}newRecord({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+  status: 'incomplete',
+  attributes: {
+    sq_footage: 2300,
+    name: 'My Awesome Building',
+    number_of_floors: 3,
+  },
+  latitude: 28.038046,
+  longitude: -81.952514,
+})
+```
+
+### Edit Record
+
+Edit an existing mobile record by record ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}editRecord({
+  recordId: '11fb2a54-5158-4848-8695-c405c54525e4',
+  status: 'incomplete',
+  attributes: {
+    sq_footage: 2300,
+    name: 'SNI',
+    number_of_floors: 3,
+  },
+  latitude: 28.038046,
+  longitude: -81.952514,
+})
+```
+
+### Open Web Form
+
+Open a form in the Fulcrum web app. The documented `mode` values are `map`, `split`, and `table`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebForm' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}openWebForm({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+  mode: 'split',
+})
+```
+
+### Create Web Record
+
+Open the Fulcrum web app page for creating a record.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createWebRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}createWebRecord()
+```
+
+### Open Web Record
+
+Open an existing record in the Fulcrum web app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}openWebRecord({
+  recordId: '11fb2a54-5158-4848-8695-c405c54525e4',
+})
+```
+
+### Edit Web Record
+
+Open an existing record in web edit mode.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editWebRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}editWebRecord({
+  recordId: '11fb2a54-5158-4848-8695-c405c54525e4',
+})
+```
+
+### New Record Action
+
+Create Fulcrum's documented web action redirect URL for a new mobile record. The official redirect example only specifies `form_id`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newRecordAction' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}newRecordAction({
+  formId: '123-xyz',
+})
+```
+
+### Edit Record Action
+
+Create Fulcrum's documented web action redirect URL for editing a mobile record. The official redirect example only specifies `record_id`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editRecordAction' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}editRecordAction({
+  recordId: 'xyz-123',
+})
+```
+
+## Generated URLs
+
+```ts
+open({ formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24' })
+// => 'fulcrumapp://open?form_id=c55adab9-916d-46e9-98aa-7a2388a77b24'
+
+newRecord({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+  attributes: { number_of_floors: 3, sq_footage: 2300 },
+})
+// => 'fulcrumapp://new-record?form_id=c55adab9-916d-46e9-98aa-7a2388a77b24&number_of_floors=3&sq_footage=2300'
+
+editWebRecord({ recordId: '11fb2a54-5158-4848-8695-c405c54525e4' })
+// => 'https://web.fulcrumapp.com/records/11fb2a54-5158-4848-8695-c405c54525e4?mode=edit'
+
+newRecordAction({ formId: '123-xyz' })
+// => 'https://web.fulcrumapp.com/action/#new-record?form_id=123-xyz'
+```
+
+## Official Documentation
+
+* [Fulcrum URL Actions](https://docs.fulcrumapp.com/docs/url-actions)
+
+---
+
+---
+url: /protocol-launcher/apps/gett.md
+---
+
+# Gett
+
+[Gett](https://www.gett.com/) is a ride-hailing app. **Protocol Launcher** allows you to generate Gett's official deeplinks for opening the app and starting ride requests.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Gett documents the `gett://` scheme for checking whether the app can be opened, and `gett://order?` for ride requests. Gett says deeplinks are supported on Android and iOS clients.
+
+`clientId` and `productId` map to `client_id` and `product_id`. Pickup fields map to `pickup`, `pickup_latitude`, `pickup_longitude`, and `pickup_poi_name`; dropoff fields map to `dropoff`, `dropoff_latitude`, and `dropoff_longitude`. POI names and notes are URL-encoded by the helper.
+
+Only `pickupPoiName` is exposed for POI names because Gett's examples explicitly show `pickup_poi_name`. The dropoff POI row in Gett's table is not published as a copyable exact query parameter, so this module does not guess one.
+
+Use `rideRequestWithCurrentPickup()` or `rideRequestWithCurrentDropoff()` when you want the official `my_location` value for one side of the ride.
+
+### Open Gett
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}open()
+```
+
+### Ride Request
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequest' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequest({
+  pickupLatitude: 10.123456,
+  pickupLongitude: 20.123456,
+  dropoffLatitude: 10.654321,
+  dropoffLongitude: 20.654321,
+  productId: '00000000-0000-4000-8000-000000000000',
+})
+```
+
+### Current Pickup
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequestWithCurrentPickup' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequestWithCurrentPickup({
+  dropoffLatitude: 10.654321,
+  dropoffLongitude: 20.654321,
+  productId: '00000000-0000-4000-8000-000000000000',
+})
+```
+
+### Current Dropoff
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequestWithCurrentDropoff' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequestWithCurrentDropoff({
+  pickupLatitude: 10.123456,
+  pickupLongitude: 20.123456,
+})
+```
+
+### Pickup POI and Note
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequest' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequest({
+  pickupLatitude: 10.123456,
+  pickupLongitude: 20.123456,
+  pickupPoiName: 'Example Pickup',
+  note: 'Meet by entrance B',
+})
+```
+
+## Official Documentation
+
+* [Gett Deeplink Overview](https://developer.gett.com/docs/overview-1)
+* [Gett Ride Request Deeplink](https://developer.gett.com/docs/ride-request)
+
+---
+
+---
 url: /protocol-launcher/apps/github-desktop.md
 ---
 
@@ -14740,6 +15009,186 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
   xSuccess: 'myapp://success',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/pcalc.md
+---
+
+# PCalc
+
+[PCalc](https://www.pcalc.com/iphone/index.html) is a calculator for iPad, iPhone, Apple Vision Pro, Apple Watch, and Mac. **Protocol Launcher** allows you to generate official PCalc URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Because `clearAll()` clears the current PCalc state and the x-callback helpers are callback targets, those functions are shown as code only.
+
+### Open PCalc
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}open()
+```
+
+### Set Value
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'setValue' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}setValue({
+  value: 12345,
+})
+```
+
+### Convert Value
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'convertValue' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}convertValue({
+  value: 12345,
+})
+```
+
+### Open Constants
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openConstants' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openConstants()
+```
+
+### Open Tape
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTape' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openTape()
+```
+
+### Open Registers
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRegisters' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openRegisters()
+```
+
+### Open Stack
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStack' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openStack()
+```
+
+### Open Settings
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openSettings()
+```
+
+### Clear All
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clearAll' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}clearAll()
+```
+
+### Open Layout
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLayout' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openLayout({
+  name: 'Engineering',
+})
+```
+
+### Open Calculator
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCalculator' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openCalculator({
+  name: 'name',
+})
+```
+
+### X-Callback Set
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackSet' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}xCallbackSet()
+```
+
+### X-Callback Error
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackError' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}xCallbackError()
+```
+
+## Generated URLs
+
+```ts
+open()
+// => 'pcalc://'
+
+setValue({ value: 12345 })
+// => 'pcalc://set/12345'
+
+convertValue({ value: 12345 })
+// => 'pcalc://convert/12345'
+
+openConstants()
+// => 'pcalc://constants'
+
+openTape()
+// => 'pcalc://tape'
+
+openRegisters()
+// => 'pcalc://registers'
+
+openStack()
+// => 'pcalc://stack'
+
+openSettings()
+// => 'pcalc://settings'
+
+clearAll()
+// => 'pcalc://ac'
+
+openLayout({ name: 'Engineering' })
+// => 'pcalc://layout/Engineering'
+
+openCalculator({ name: 'name' })
+// => 'pcalc://calculator/name'
+
+xCallbackSet()
+// => 'pcalc://x-callback-url/set'
+
+xCallbackError()
+// => 'pcalc://x-callback-url/error'
+```
+
+## Official Documentation
+
+* [PCalc iOS Version History](https://www.pcalc.com/ios/history.html)
 
 ---
 
@@ -22906,6 +23355,8 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
+* [Fulcrum](../apps/fulcrum.md)
+* [Gett](../apps/gett.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
@@ -22978,6 +23429,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
@@ -23250,6 +23702,8 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
+* [Fulcrum](../apps/fulcrum.md)
+* [Gett](../apps/gett.md)
 * [GitHub Desktop](../apps/github-desktop.md)
 * [Gladys](../apps/gladys.md)
 * [GoodLinks](../apps/goodlinks.md)
@@ -23322,6 +23776,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
 * [PDF Viewer](../apps/pdf-viewer.md)
@@ -30536,6 +30991,269 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/fulcrum.md
+---
+
+# Fulcrum
+
+[Fulcrum](https://www.fulcrumapp.com/) 是一款用于移动表单和记录采集的现场数据应用。**Protocol Launcher** 可以生成 Fulcrum URL action 链接。
+
+## 使用方式
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，能让产物更小。
+* Full Import 从根包导入，适合快速脚本或演示，但会包含全部 app 模块。
+
+生产构建建议选择 On-Demand；快速脚本或 demo 可以选择 Full Import。
+
+## URL Scheme
+
+Fulcrum 官方文档列出了 mobile custom scheme `fulcrumapp://`，支持 `open`、`new-record` 和 `edit-record` 三个 action。官方列出的 mobile 参数包括打开时使用的 `form_id`，新建记录使用的 `form_id`、`project_id`、`status`、`latitude`、`longitude` 和 data-name attributes，以及编辑记录使用的 `record_id`、`project_id`、`status`、`latitude`、`longitude` 和 data-name attributes。
+
+Fulcrum 也记录了 web links：`https://web.fulcrumapp.com/dash/{form_id}`、`https://web.fulcrumapp.com/records/new`、`https://web.fulcrumapp.com/records/{record_id}` 和 `https://web.fulcrumapp.com/records/{record_id}?mode=edit`。官方用于 Android/iOS 兼容跳转的示例是 `https://web.fulcrumapp.com/action/#new-record?form_id=123-xyz` 和 `https://web.fulcrumapp.com/action/#edit-record?record_id=xyz-123`。
+
+### Open
+
+启动 Fulcrum mobile，并可选择打开指定 form。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}open({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+})
+```
+
+### New Record
+
+创建一条 mobile record。自定义字段值会作为 Fulcrum data-name attributes 传入。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}newRecord({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+  status: 'incomplete',
+  attributes: {
+    sq_footage: 2300,
+    name: 'My Awesome Building',
+    number_of_floors: 3,
+  },
+  latitude: 28.038046,
+  longitude: -81.952514,
+})
+```
+
+### Edit Record
+
+通过 record ID 编辑已有 mobile record。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}editRecord({
+  recordId: '11fb2a54-5158-4848-8695-c405c54525e4',
+  status: 'incomplete',
+  attributes: {
+    sq_footage: 2300,
+    name: 'SNI',
+    number_of_floors: 3,
+  },
+  latitude: 28.038046,
+  longitude: -81.952514,
+})
+```
+
+### Open Web Form
+
+在 Fulcrum web app 中打开 form。官方列出的 `mode` 值是 `map`、`split` 和 `table`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebForm' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}openWebForm({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+  mode: 'split',
+})
+```
+
+### Create Web Record
+
+打开 Fulcrum web app 的新建记录页面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createWebRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}createWebRecord()
+```
+
+### Open Web Record
+
+在 Fulcrum web app 中打开已有 record。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}openWebRecord({
+  recordId: '11fb2a54-5158-4848-8695-c405c54525e4',
+})
+```
+
+### Edit Web Record
+
+以 web edit mode 打开已有 record。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editWebRecord' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}editWebRecord({
+  recordId: '11fb2a54-5158-4848-8695-c405c54525e4',
+})
+```
+
+### New Record Action
+
+生成 Fulcrum 官方文档中的新建 mobile record web action redirect URL。官方 redirect 示例只指定了 `form_id`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newRecordAction' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}newRecordAction({
+  formId: '123-xyz',
+})
+```
+
+### Edit Record Action
+
+生成 Fulcrum 官方文档中的编辑 mobile record web action redirect URL。官方 redirect 示例只指定了 `record_id`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editRecordAction' : 'fulcrum' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fulcrum.'}}editRecordAction({
+  recordId: 'xyz-123',
+})
+```
+
+## 生成的 URL
+
+```ts
+open({ formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24' })
+// => 'fulcrumapp://open?form_id=c55adab9-916d-46e9-98aa-7a2388a77b24'
+
+newRecord({
+  formId: 'c55adab9-916d-46e9-98aa-7a2388a77b24',
+  attributes: { number_of_floors: 3, sq_footage: 2300 },
+})
+// => 'fulcrumapp://new-record?form_id=c55adab9-916d-46e9-98aa-7a2388a77b24&number_of_floors=3&sq_footage=2300'
+
+editWebRecord({ recordId: '11fb2a54-5158-4848-8695-c405c54525e4' })
+// => 'https://web.fulcrumapp.com/records/11fb2a54-5158-4848-8695-c405c54525e4?mode=edit'
+
+newRecordAction({ formId: '123-xyz' })
+// => 'https://web.fulcrumapp.com/action/#new-record?form_id=123-xyz'
+```
+
+## 官方文档
+
+* [Fulcrum URL Actions](https://docs.fulcrumapp.com/docs/url-actions)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/gett.md
+---
+
+# Gett
+
+[Gett](https://www.gett.com/) 是一款网约车应用。**Protocol Launcher** 可以生成 Gett 官方 deeplink，用于打开 App 和发起行程请求。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+Gett 文档说明 `gett://` scheme 可用于检测或打开 App，`gett://order?` 用于行程请求。Gett 说明 deeplink 支持 Android 和 iOS 客户端。
+
+`clientId` 和 `productId` 会映射到 `client_id` 与 `product_id`。上车点字段会映射到 `pickup`、`pickup_latitude`、`pickup_longitude` 和 `pickup_poi_name`；下车点字段会映射到 `dropoff`、`dropoff_latitude` 和 `dropoff_longitude`。POI 名称和司机备注会由 helper 进行 URL 编码。
+
+POI 名称只暴露 `pickupPoiName`，因为 Gett 示例明确给出了 `pickup_poi_name`。Gett 表格里的下车点 POI 行没有发布为可直接复制核对的精确查询参数，因此此模块不猜测对应字段。
+
+当需要把行程某一端设置为官方 `my_location` 值时，使用 `rideRequestWithCurrentPickup()` 或 `rideRequestWithCurrentDropoff()`。
+
+### 打开 Gett
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}open()
+```
+
+### 行程请求
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequest' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequest({
+  pickupLatitude: 10.123456,
+  pickupLongitude: 20.123456,
+  dropoffLatitude: 10.654321,
+  dropoffLongitude: 20.654321,
+  productId: '00000000-0000-4000-8000-000000000000',
+})
+```
+
+### 当前上车点
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequestWithCurrentPickup' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequestWithCurrentPickup({
+  dropoffLatitude: 10.654321,
+  dropoffLongitude: 20.654321,
+  productId: '00000000-0000-4000-8000-000000000000',
+})
+```
+
+### 当前下车点
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequestWithCurrentDropoff' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequestWithCurrentDropoff({
+  pickupLatitude: 10.123456,
+  pickupLongitude: 20.123456,
+})
+```
+
+### 上车点 POI 与备注
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'rideRequest' : 'gett' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'gett.'}}rideRequest({
+  pickupLatitude: 10.123456,
+  pickupLongitude: 20.123456,
+  pickupPoiName: 'Example Pickup',
+  note: 'Meet by entrance B',
+})
+```
+
+## 官方文档
+
+* [Gett Deeplink Overview](https://developer.gett.com/docs/overview-1)
+* [Gett Ride Request Deeplink](https://developer.gett.com/docs/ride-request)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/github-desktop.md
 ---
 
@@ -37559,6 +38277,186 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
   xSuccess: 'myapp://success',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/pcalc.md
+---
+
+# PCalc
+
+[PCalc](https://www.pcalc.com/iphone/index.html) 是一款适用于 iPad、iPhone、Apple Vision Pro、Apple Watch 和 Mac 的计算器。**Protocol Launcher** 允许您生成官方 PCalc URL scheme 链接。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+因为 `clearAll()` 会清空当前 PCalc 状态，而 x-callback helpers 是回调目标，这些函数只展示代码示例。
+
+### 打开 PCalc
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}open()
+```
+
+### 设置数值
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'setValue' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}setValue({
+  value: 12345,
+})
+```
+
+### 换算数值
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'convertValue' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}convertValue({
+  value: 12345,
+})
+```
+
+### 打开常数
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openConstants' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openConstants()
+```
+
+### 打开纸带
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTape' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openTape()
+```
+
+### 打开寄存器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRegisters' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openRegisters()
+```
+
+### 打开栈
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openStack' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openStack()
+```
+
+### 打开设置
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openSettings()
+```
+
+### 清空全部
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'clearAll' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}clearAll()
+```
+
+### 打开布局
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLayout' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openLayout({
+  name: 'Engineering',
+})
+```
+
+### 打开计算器
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCalculator' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}openCalculator({
+  name: 'name',
+})
+```
+
+### X-Callback Set
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackSet' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}xCallbackSet()
+```
+
+### X-Callback Error
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'xCallbackError' : 'pcalc' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pcalc.'}}xCallbackError()
+```
+
+## 生成的 URL
+
+```ts
+open()
+// => 'pcalc://'
+
+setValue({ value: 12345 })
+// => 'pcalc://set/12345'
+
+convertValue({ value: 12345 })
+// => 'pcalc://convert/12345'
+
+openConstants()
+// => 'pcalc://constants'
+
+openTape()
+// => 'pcalc://tape'
+
+openRegisters()
+// => 'pcalc://registers'
+
+openStack()
+// => 'pcalc://stack'
+
+openSettings()
+// => 'pcalc://settings'
+
+clearAll()
+// => 'pcalc://ac'
+
+openLayout({ name: 'Engineering' })
+// => 'pcalc://layout/Engineering'
+
+openCalculator({ name: 'name' })
+// => 'pcalc://calculator/name'
+
+xCallbackSet()
+// => 'pcalc://x-callback-url/set'
+
+xCallbackError()
+// => 'pcalc://x-callback-url/error'
+```
+
+## 官方文档
+
+* [PCalc iOS 版本历史](https://www.pcalc.com/ios/history.html)
 
 ---
 
