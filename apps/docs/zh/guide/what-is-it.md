@@ -104,6 +104,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [GoLand](../apps/goland.md)
 - [Google Chrome iOS](../apps/google-chrome-ios.md)
 - [Google Maps](../apps/google-maps.md)
+- [Guru Maps](../apps/guru-maps.md)
 - [GV Connect](../apps/gv-connect.md)
 - [HapiGo](../apps/hapigo.md)
 - [HBuilderX](../apps/hbuilderx.md)

@@ -366,6 +366,10 @@
       "types": "./dist/types/google-maps/index.d.ts",
       "import": "./dist/google-maps/index.js"
     },
+    "./guru-maps": {
+      "types": "./dist/types/guru-maps/index.d.ts",
+      "import": "./dist/guru-maps/index.js"
+    },
     "./gv-connect": {
       "types": "./dist/types/gv-connect/index.d.ts",
       "import": "./dist/gv-connect/index.js"

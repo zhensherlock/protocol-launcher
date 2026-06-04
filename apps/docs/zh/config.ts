@@ -107,6 +107,7 @@ export default defineAdditionalConfig({
           { text: 'GoLand', link: '/zh/apps/goland' },
           { text: 'Google Chrome iOS', link: '/zh/apps/google-chrome-ios' },
           { text: 'Google Maps', link: '/zh/apps/google-maps' },
+          { text: 'Guru Maps', link: '/zh/apps/guru-maps' },
           { text: 'GV Connect', link: '/zh/apps/gv-connect' },
           { text: 'HapiGo', link: '/zh/apps/hapigo' },
           { text: 'HBuilderX', link: '/zh/apps/hbuilderx' },
