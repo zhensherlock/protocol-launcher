@@ -1,5 +1,48 @@
 # protocol-launcher
 
+## 1.25.0
+
+### Minor Changes
+
+- [`7a84c00`](https://github.com/zhensherlock/protocol-launcher/commit/7a84c000bb417fea87282ba23bdbac348e5c56c6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(choosy): add Choosy URL API helpers
+
+- [`e708d3b`](https://github.com/zhensherlock/protocol-launcher/commit/e708d3b402681d2d66b32880b79a5b89eca1adba) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(stream-deck): add Stream Deck URL scheme support
+
+- [`d90d977`](https://github.com/zhensherlock/protocol-launcher/commit/d90d977e29f65b0ce0228f3c001e9fd76e58571a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(highlights): add Highlights URL scheme support
+
+- [`480c5cc`](https://github.com/zhensherlock/protocol-launcher/commit/480c5cc7109642f2adb09910f705c927b941e685) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pcalc): add PCalc URL scheme helpers
+
+- [`51f9607`](https://github.com/zhensherlock/protocol-launcher/commit/51f9607ac13a61e167b24bf9997f025d0aa5e8c4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(gett): add Gett URL scheme support
+
+- [`65e485d`](https://github.com/zhensherlock/protocol-launcher/commit/65e485debd0e5b5692804aca12bc6f7188cc7e30) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(gv-connect): add GV Connect URL scheme support
+
+- [`e7b1d0b`](https://github.com/zhensherlock/protocol-launcher/commit/e7b1d0ba547cca495e4fb51c2325ab5582308e49) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(orion-browser): add Orion Browser iOS URL scheme support
+
+- [`6200b93`](https://github.com/zhensherlock/protocol-launcher/commit/6200b93b1d3273ba4c8fd559637912283b2b95c1) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(pdf-expert): add PDF Expert URL scheme support
+
+- [`c1cecc5`](https://github.com/zhensherlock/protocol-launcher/commit/c1cecc5e5216f0a51b894beb0d3c48d343bd4037) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(charty): add Charty URL scheme support
+
+- [`6e19bc3`](https://github.com/zhensherlock/protocol-launcher/commit/6e19bc3167d1572877562eee243b3d3f92997d71) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(arcgis-survey123): add ArcGIS Survey123 URL scheme support
+
+- [`4528b36`](https://github.com/zhensherlock/protocol-launcher/commit/4528b366850411db7d6a8ae715973e2d12018c21) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(ivanti-web-work): add Ivanti Web@Work URL scheme support
+
+- [`a81c15b`](https://github.com/zhensherlock/protocol-launcher/commit/a81c15bc13b6b64c7c40e96ba4d6990da4a6a1e4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(cleanshot-x): add CleanShot X URL scheme support
+
+- [`2444fd7`](https://github.com/zhensherlock/protocol-launcher/commit/2444fd754c6e8bd4571c85afe92bf24baca068d9) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(goodreader): add GoodReader URL scheme support
+
+- [`581937a`](https://github.com/zhensherlock/protocol-launcher/commit/581937a900c9348f66a7efe1ba5deceab52d3665) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(fulcrum): add Fulcrum URL scheme support
+
+- [`6986e57`](https://github.com/zhensherlock/protocol-launcher/commit/6986e57a1a483664eb7e56418aa080aca713c8ba) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(houdahspot): add HoudahSpot URL scheme support
+
+- [`d90d977`](https://github.com/zhensherlock/protocol-launcher/commit/d90d977e29f65b0ce0228f3c001e9fd76e58571a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(barcuts): add BarCuts URL scheme support
+
+### Patch Changes
+
+- chore: update dependencies
+
+- Updated dependencies []:
+  - @protocol-launcher/shared@1.4.11
+
 ## 1.24.0
 
 ### Minor Changes
