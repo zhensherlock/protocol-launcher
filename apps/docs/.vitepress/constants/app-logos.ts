@@ -137,6 +137,7 @@ export const appLogoFiles = {
   omnioutliner: 'omnioutliner.webp',
   opencode: 'opencode.png',
   opener: 'opener.webp',
+  'openvpn-connect': 'openvpn-connect.webp',
   orchids: 'orchids.svg',
   'orion-browser': 'orion-browser.webp',
   overcast: 'overcast.svg',

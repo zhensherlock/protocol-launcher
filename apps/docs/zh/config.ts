@@ -168,6 +168,7 @@ export default defineAdditionalConfig({
           { text: 'OmniOutliner', link: '/zh/apps/omnioutliner' },
           { text: 'OpenCode', link: '/zh/apps/opencode' },
           { text: 'Opener', link: '/zh/apps/opener' },
+          { text: 'OpenVPN Connect', link: '/zh/apps/openvpn-connect' },
           { text: 'Orchids', link: '/zh/apps/orchids' },
           { text: 'Orion Browser', link: '/zh/apps/orion-browser' },
           { text: 'Overcast', link: '/zh/apps/overcast' },
