@@ -326,6 +326,10 @@
       "types": "./dist/types/fulcrum/index.d.ts",
       "import": "./dist/fulcrum/index.js"
     },
+    "./gett": {
+      "types": "./dist/types/gett/index.d.ts",
+      "import": "./dist/gett/index.js"
+    },
     "./gladys": {
       "types": "./dist/types/gladys/index.d.ts",
       "import": "./dist/gladys/index.js"

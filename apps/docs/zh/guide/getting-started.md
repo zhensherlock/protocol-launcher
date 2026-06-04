@@ -186,6 +186,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [FSNotes](../apps/fsnotes.md)
 - [Streets](../apps/ftstreets.md)
 - [Fulcrum](../apps/fulcrum.md)
+- [Gett](../apps/gett.md)
 - [GitHub Desktop](../apps/github-desktop.md)
 - [Gladys](../apps/gladys.md)
 - [GoodLinks](../apps/goodlinks.md)
