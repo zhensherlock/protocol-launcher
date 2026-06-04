@@ -159,6 +159,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [OmniOutliner](../apps/omnioutliner.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
+* [OpenVPN Connect](../apps/openvpn-connect.md)
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
