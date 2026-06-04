@@ -1,5 +1,11 @@
 # @protocol-launcher/shared
 
+## 1.4.11
+
+### Patch Changes
+
+- chore: update dependencies
+
 ## 1.4.10
 
 ### Patch Changes
