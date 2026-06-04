@@ -256,6 +256,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [OK JSON](../apps/ok-json.md)
 * [OmniFocus](../apps/omnifocus.md)
 * [OmniOutliner](../apps/omnioutliner.md)
+* [OnSong](../apps/onsong.md)
 * [OpenCode](../apps/opencode.md)
 * [Opener](../apps/opener.md)
 * [OpenVPN Connect](../apps/openvpn-connect.md)
