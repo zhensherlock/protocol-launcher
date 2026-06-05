@@ -116,6 +116,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Infuse](../apps/infuse.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
+* [iReal Pro](../apps/ireal-pro.md)
 * [iThoughts](../apps/ithoughts.md)
 * [Itsycal](../apps/itsycal.md)
 * [Ivanti Web@Work](../apps/ivanti-web-work.md)
