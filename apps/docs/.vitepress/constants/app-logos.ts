@@ -94,6 +94,7 @@ export const appLogoFiles = {
   instapaper: 'instapaper.webp',
   interact: 'interact-scratchpad.png',
   ipgmail: 'ipgmail.webp',
+  'ireal-pro': 'ireal-pro.webp',
   ithoughts: 'ithoughtsx.png',
   itsycal: 'itsycal.png',
   'ivanti-web-work': 'ivanti-web-work.webp',

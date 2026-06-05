@@ -122,6 +122,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Infuse](../apps/infuse.md)
 - [Interact Scratchpad](../apps/interact.md)
 - [iPGMail](../apps/ipgmail.md)
+- [iReal Pro](../apps/ireal-pro.md)
 - [iThoughts](../apps/ithoughts.md)
 - [Itsycal](../apps/itsycal.md)
 - [Ivanti Web@Work](../apps/ivanti-web-work.md)

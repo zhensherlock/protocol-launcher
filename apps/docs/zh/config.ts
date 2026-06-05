@@ -125,6 +125,7 @@ export default defineAdditionalConfig({
           { text: 'Instapaper', link: '/zh/apps/instapaper' },
           { text: 'Interact Scratchpad', link: '/zh/apps/interact' },
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },
+          { text: 'iReal Pro', link: '/zh/apps/ireal-pro' },
           { text: 'iThoughts', link: '/zh/apps/ithoughts' },
           { text: 'Itsycal', link: '/zh/apps/itsycal' },
           { text: 'Ivanti Web@Work', link: '/zh/apps/ivanti-web-work' },

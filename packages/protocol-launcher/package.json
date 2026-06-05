@@ -430,6 +430,10 @@
       "types": "./dist/types/ipgmail/index.d.ts",
       "import": "./dist/ipgmail/index.js"
     },
+    "./ireal-pro": {
+      "types": "./dist/types/ireal-pro/index.d.ts",
+      "import": "./dist/ireal-pro/index.js"
+    },
     "./interact": {
       "types": "./dist/types/interact/index.d.ts",
       "import": "./dist/interact/index.js"
