@@ -182,6 +182,7 @@ Currently, we support the following applications:
 - [Pincase](../apps/pincase.md)
 - [Pleco](../apps/pleco.md)
 - [Pocket Casts](../apps/pocket-casts.md)
+- [Power BI Mobile](../apps/power-bi-mobile.md)
 - [Prizmo](../apps/prizmo.md)
 - [Pushcut](../apps/pushcut.md)
 - [PhpStorm](../apps/phpstorm.md)

@@ -682,6 +682,10 @@
       "types": "./dist/types/pocket-casts/index.d.ts",
       "import": "./dist/pocket-casts/index.js"
     },
+    "./power-bi-mobile": {
+      "types": "./dist/types/power-bi-mobile/index.d.ts",
+      "import": "./dist/power-bi-mobile/index.js"
+    },
     "./prizmo": {
       "types": "./dist/types/prizmo/index.d.ts",
       "import": "./dist/prizmo/index.js"
