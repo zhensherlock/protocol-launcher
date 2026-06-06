@@ -343,5 +343,6 @@ For detailed usage instructions for each application, please refer to their resp
 - [Working Copy](../apps/working-copy.md)
 - [Written Down](../apps/written-down.md)
 - [Xcode](../apps/xcode.md)
+- [Yandex Maps](../apps/yandex-maps.md)
 - [Zed](../apps/zed.md)
 - [Zoom](../apps/zoom.md)

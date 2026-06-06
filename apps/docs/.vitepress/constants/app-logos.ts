@@ -224,6 +224,7 @@ export const appLogoFiles = {
   'working-copy': 'working-copy.webp',
   'written-down': 'written-down.png',
   xcode: 'xcode.png',
+  'yandex-maps': 'yandex-maps.webp',
   zed: 'zed.png',
   zoom: 'zoom.webp',
 } as const

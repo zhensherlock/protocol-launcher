@@ -255,6 +255,7 @@ export default defineAdditionalConfig({
           { text: 'Working Copy', link: '/zh/apps/working-copy' },
           { text: 'Written Down', link: '/zh/apps/written-down' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
+          { text: 'Yandex Maps', link: '/zh/apps/yandex-maps' },
           { text: 'Zed', link: '/zh/apps/zed' },
           { text: 'Zoom', link: '/zh/apps/zoom' },
         ],

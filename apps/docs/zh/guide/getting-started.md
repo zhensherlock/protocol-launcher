@@ -343,5 +343,6 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Working Copy](../apps/working-copy.md)
 - [Written Down](../apps/written-down.md)
 - [Xcode](../apps/xcode.md)
+- [Yandex Maps](../apps/yandex-maps.md)
 - [Zed](../apps/zed.md)
 - [Zoom](../apps/zoom.md)
