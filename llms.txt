@@ -175,6 +175,7 @@
 - [Pincase](/protocol-launcher/apps/pincase.md)
 - [Pleco](/protocol-launcher/apps/pleco.md)
 - [Pocket Casts](/protocol-launcher/apps/pocket-casts.md)
+- [Power BI Mobile](/protocol-launcher/apps/power-bi-mobile.md)
 - [Prizmo](/protocol-launcher/apps/prizmo.md)
 - [Pushcut](/protocol-launcher/apps/pushcut.md)
 - [PhpStorm](/protocol-launcher/apps/phpstorm.md)
@@ -245,6 +246,7 @@
 - [Working Copy](/protocol-launcher/apps/working-copy.md)
 - [Written Down](/protocol-launcher/apps/written-down.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
+- [Yandex Maps](/protocol-launcher/apps/yandex-maps.md)
 - [Zed](/protocol-launcher/apps/zed.md)
 - [Zoom](/protocol-launcher/apps/zoom.md)
 
@@ -410,6 +412,7 @@
 - [Pincase](/protocol-launcher/zh/apps/pincase.md)
 - [Pleco](/protocol-launcher/zh/apps/pleco.md)
 - [Pocket Casts](/protocol-launcher/zh/apps/pocket-casts.md)
+- [Power BI Mobile](/protocol-launcher/zh/apps/power-bi-mobile.md)
 - [Prizmo](/protocol-launcher/zh/apps/prizmo.md)
 - [Pushcut](/protocol-launcher/zh/apps/pushcut.md)
 - [PhpStorm](/protocol-launcher/zh/apps/phpstorm.md)
@@ -480,6 +483,7 @@
 - [Working Copy](/protocol-launcher/zh/apps/working-copy.md)
 - [Written Down](/protocol-launcher/zh/apps/written-down.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
+- [Yandex Maps](/protocol-launcher/zh/apps/yandex-maps.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
 - [Zoom](/protocol-launcher/zh/apps/zoom.md)
 

@@ -176,6 +176,7 @@ Currently, we support the following applications:
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
+* [Power BI Mobile](../apps/power-bi-mobile.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -246,6 +247,7 @@ Currently, we support the following applications:
 * [Working Copy](../apps/working-copy.md)
 * [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
+* [Yandex Maps](../apps/yandex-maps.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
