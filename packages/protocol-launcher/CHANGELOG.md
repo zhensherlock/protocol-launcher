@@ -1,5 +1,30 @@
 # protocol-launcher
 
+## 1.26.0
+
+### Minor Changes
+
+- [`5f0deb9`](https://github.com/zhensherlock/protocol-launcher/commit/5f0deb99d0a7ceb5d06d5b1890f8e43a708397e3) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(ireal-pro): add iReal Pro scheme support
+
+- [`8dc1fb9`](https://github.com/zhensherlock/protocol-launcher/commit/8dc1fb99906af0730946fefc51ca746b4bf2ec1b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(onsong): add OnSong scheme support
+
+- [`7c431cd`](https://github.com/zhensherlock/protocol-launcher/commit/7c431cdff6bb7f4c25790f8a9e7ece53a27c6657) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(locus-map): add Locus Map scheme support
+
+- [`29cbabe`](https://github.com/zhensherlock/protocol-launcher/commit/29cbabe1c987f098a72216f3e4e7bea1217265a7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(openvpn-connect): add OpenVPN Connect scheme support
+
+- [`735a2c1`](https://github.com/zhensherlock/protocol-launcher/commit/735a2c139ca35351b6da296322b05fed8288698e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(guru-maps): add Guru Maps scheme support
+
+- [`5464802`](https://github.com/zhensherlock/protocol-launcher/commit/546480293b9e3ddd462a45dc44a9709ca58ef288) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(power-bi-mobile): add Power BI scheme support
+
+- [`5321a7b`](https://github.com/zhensherlock/protocol-launcher/commit/5321a7baf4d3b86fbfbae72967fe620704085203) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(yandex-maps): add Yandex Maps scheme support
+
+### Patch Changes
+
+- [`77c2edf`](https://github.com/zhensherlock/protocol-launcher/commit/77c2edfa8897a3a74dd0e75ba380980523175683) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`77c2edf`](https://github.com/zhensherlock/protocol-launcher/commit/77c2edfa8897a3a74dd0e75ba380980523175683)]:
+  - @protocol-launcher/shared@1.4.12
+
 ## 1.25.0
 
 ### Minor Changes
