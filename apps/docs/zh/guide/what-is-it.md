@@ -189,6 +189,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Pocket Casts](../apps/pocket-casts.md)
 - [Power Apps Mobile](../apps/power-apps-mobile.md)
 - [Power BI Mobile](../apps/power-bi-mobile.md)
+- [Postman](../apps/postman.md)
 - [Prizmo](../apps/prizmo.md)
 - [Pushcut](../apps/pushcut.md)
 - [PhpStorm](../apps/phpstorm.md)

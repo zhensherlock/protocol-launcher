@@ -192,6 +192,7 @@ export default defineAdditionalConfig({
           { text: 'Pocket Casts', link: '/zh/apps/pocket-casts' },
           { text: 'Power Apps Mobile', link: '/zh/apps/power-apps-mobile' },
           { text: 'Power BI Mobile', link: '/zh/apps/power-bi-mobile' },
+          { text: 'Postman', link: '/zh/apps/postman' },
           { text: 'Prizmo', link: '/zh/apps/prizmo' },
           { text: 'Pushcut', link: '/zh/apps/pushcut' },
           { text: 'PhpStorm', link: '/zh/apps/phpstorm' },

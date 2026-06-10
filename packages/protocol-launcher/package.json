@@ -706,6 +706,10 @@
       "types": "./dist/types/power-bi-mobile/index.d.ts",
       "import": "./dist/power-bi-mobile/index.js"
     },
+    "./postman": {
+      "types": "./dist/types/postman/index.d.ts",
+      "import": "./dist/postman/index.js"
+    },
     "./prizmo": {
       "types": "./dist/types/prizmo/index.d.ts",
       "import": "./dist/prizmo/index.js"

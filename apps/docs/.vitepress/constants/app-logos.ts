@@ -162,6 +162,7 @@ export const appLogoFiles = {
   'pocket-casts': 'pocket-casts.webp',
   'power-apps-mobile': 'power-apps.webp',
   'power-bi-mobile': 'power-bi.webp',
+  postman: 'postman.svg',
   prizmo: 'prizmo.webp',
   pushcut: 'pushcut.webp',
   pycharm: 'pycharm.png',
