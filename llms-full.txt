@@ -205,6 +205,7 @@ Currently, we support the following applications:
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Stream Deck](../apps/stream-deck.md)
@@ -254,6 +255,7 @@ Currently, we support the following applications:
 * [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
+* [Yandex Navigator](../apps/yandex-navigator.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -565,6 +567,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Stream Deck](../apps/stream-deck.md)
@@ -614,6 +617,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
+* [Yandex Navigator](../apps/yandex-navigator.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -19205,6 +19209,83 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}cloneProject({
 ---
 
 ---
+url: /protocol-launcher/apps/splashtop-business.md
+---
+
+# Splashtop Business
+
+[Splashtop Business](https://www.splashtop.com/products/business-access) is a remote access and support app from Splashtop. **Protocol Launcher** allows you to generate Splashtop Business URI links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+Splashtop documents the Business app URI as `st-business://com.splashtop.business` with `account` plus either `mac` for a remote/host computer or `sos` for an SOS session code.
+
+Splashtop's desktop shortcut article also mentions Remote Command and File Transfer shortcut types, but it does not publish URI parameters for constructing those sessions. This module does not expose helpers for those shortcut types.
+
+Use placeholders in examples and tests. Do not publish real Splashtop accounts, MAC addresses, session codes, credentials, or license data.
+
+### Connect By Mac
+
+Launch Splashtop Business and connect to a remote computer identified by MAC address.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectByMac' : 'splashtopBusiness' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'splashtopBusiness.'}}connectByMac({
+  account: '{{ connectByMacParams.account }}',
+  mac: '{{ connectByMacParams.mac }}',
+})
+```
+
+### Connect SOS
+
+Launch Splashtop Business with an SOS session code.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectSos' : 'splashtopBusiness' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'splashtopBusiness.'}}connectSos({
+  account: '{{ connectSosParams.account }}',
+  sos: '{{ connectSosParams.sos }}',
+})
+```
+
+## Generated URLs
+
+```ts
+connectByMac({
+  account: 'email@example.com',
+  mac: 'C04A001C72EC',
+})
+// => 'st-business://com.splashtop.business?account=email@example.com&mac=C04A001C72EC'
+
+connectSos({
+  account: 'url.launch@splashtop',
+  sos: '123456789',
+})
+// => 'st-business://com.splashtop.business?account=url.launch@splashtop&sos=123456789'
+```
+
+These examples intentionally do not render live launch buttons because the official handlers can start remote access or attended support sessions.
+
+## References
+
+* [Splashtop desktop shortcuts](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001482866-How-to-create-a-desktop-shortcut-to-always-connect-to-a-specific-computer)
+* [Splashtop RMM URI launch](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001642066-Other-RMMs)
+* [Splashtop SOS UI comparison](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/36936249788955-Comparison-of-Legacy-and-New-UI-in-Splashtop-SOS)
+
+---
+
+---
 url: /protocol-launcher/apps/spotify.md
 ---
 
@@ -24621,6 +24702,123 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'yandexMaps.'}}webPanorama({
 ---
 
 ---
+url: /protocol-launcher/apps/yandex-navigator.md
+---
+
+# Yandex Navigator
+
+[Yandex Navigator](https://yandex.com/dev/yandex-apps-launch/navigator/) is a navigation app from Yandex. **Protocol Launcher** allows you to generate official `yandexnavi://` links to open Yandex Navigator, build routes, search the map, and show a point.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps actions and parameters documented by Yandex Navigator: `build_route_on_map`, `map_search`, and `show_point_on_map`.
+
+Yandex documents route coordinates as separate latitude and longitude parameters. Intermediate route points are serialized as `lat_via_0`, `lon_via_0`, then `lat_via_1`, `lon_via_1`, and so on.
+
+Yandex says sending coordinates, search queries, and other data to Navigator requires an access key. Signed URLs use the documented `client` and `signature` parameters; these helpers accept those optional fields, but the RSA signature must be generated outside Protocol Launcher with your Yandex access key.
+
+### Open Navigator
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}open()
+```
+
+### Build Route
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'buildRoute' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}buildRoute({
+  lat_from: '55.74',
+  lon_from: '37.60',
+  lat_to: '55.76',
+  lon_to: '37.64',
+})
+```
+
+### Build Route From Current Location
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'buildRoute' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}buildRoute({
+  lat_to: '55.70',
+  lon_to: '37.64',
+})
+```
+
+### Build Route With Via Point
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'buildRoute' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}buildRoute({
+  lat_from: '55.75',
+  lon_from: '37.58',
+  lat_to: '55.75',
+  lon_to: '37.64',
+  via: [{ lat: '55.75', lon: '37.62' }],
+})
+```
+
+### Search
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}search({
+  text: 'заправка',
+})
+```
+
+### Show Point
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPoint' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}showPoint({
+  lat: 55.77,
+  lon: 37.44,
+  zoom: 12,
+  'no-balloon': 0,
+  desc: 'кафе с wi-fi',
+})
+```
+
+### Signed URL Parameters
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPoint' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}showPoint({
+  lat: 55.75,
+  lon: 37.64,
+  zoom: 14,
+  client: '007',
+  signature: 'REPLACE_WITH_SIGNATURE',
+})
+```
+
+## Official Documentation
+
+* [Launch Yandex.Navigator](https://yandex.com/dev/yandex-apps-launch/navigator/)
+* [Yandex Navigator URL format](https://yandex.ru/dev/navigator/doc/ru/concepts/navigator-url-params)
+* [Yandex Navigator access-key signature](https://yandex.ru/dev/navigator/doc/ru/concepts/navigator-commercial-use-signature)
+
+---
+
+---
 url: /protocol-launcher/apps/zed.md
 ---
 
@@ -25031,6 +25229,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Stream Deck](../apps/stream-deck.md)
@@ -25080,6 +25279,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
+* [Yandex Navigator](../apps/yandex-navigator.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -25391,6 +25591,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Stream Deck](../apps/stream-deck.md)
@@ -25440,6 +25641,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
+* [Yandex Navigator](../apps/yandex-navigator.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -44032,6 +44234,83 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}cloneProject({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/splashtop-business.md
+---
+
+# Splashtop Business
+
+[Splashtop Business](https://www.splashtop.com/products/business-access) 是 Splashtop 的远程访问和远程支持应用。**Protocol Launcher** 允许你生成 Splashtop Business URI 链接。
+
+## 使用
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+Splashtop 官方文档记录的 Business app URI 是 `st-business://com.splashtop.business`，并搭配 `account` 以及 `mac`（远程/主机电脑）或 `sos`（SOS 会话代码）使用。
+
+Splashtop 的桌面快捷方式文章也提到了 Remote Command 和 File Transfer 快捷方式类型，但没有公开用于构造这些会话的 URI 参数。因此本模块不暴露这两类 helper。
+
+示例与测试使用占位值。不要公开真实 Splashtop 账号、MAC 地址、会话代码、凭据或许可证数据。
+
+### 通过 MAC 地址连接
+
+启动 Splashtop Business，并连接到由 MAC 地址标识的远程电脑。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectByMac' : 'splashtopBusiness' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'splashtopBusiness.'}}connectByMac({
+  account: '{{ connectByMacParams.account }}',
+  mac: '{{ connectByMacParams.mac }}',
+})
+```
+
+### 连接 SOS
+
+使用 SOS 会话代码启动 Splashtop Business。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'connectSos' : 'splashtopBusiness' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'splashtopBusiness.'}}connectSos({
+  account: '{{ connectSosParams.account }}',
+  sos: '{{ connectSosParams.sos }}',
+})
+```
+
+## 生成的 URL
+
+```ts
+connectByMac({
+  account: 'email@example.com',
+  mac: 'C04A001C72EC',
+})
+// => 'st-business://com.splashtop.business?account=email@example.com&mac=C04A001C72EC'
+
+connectSos({
+  account: 'url.launch@splashtop',
+  sos: '123456789',
+})
+// => 'st-business://com.splashtop.business?account=url.launch@splashtop&sos=123456789'
+```
+
+这些示例不会渲染可直接点击的启动按钮，因为官方 Handler 会启动远程访问或有人值守支持会话。
+
+## 参考资料
+
+* [Splashtop 桌面快捷方式](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001482866-How-to-create-a-desktop-shortcut-to-always-connect-to-a-specific-computer)
+* [Splashtop RMM URI 启动](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/115001642066-Other-RMMs)
+* [Splashtop SOS UI 对比](https://support-splashtopbusiness.splashtop.com/hc/en-us/articles/36936249788955-Comparison-of-Legacy-and-New-UI-in-Splashtop-SOS)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/spotify.md
 ---
 
@@ -49444,6 +49723,123 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'yandexMaps.'}}webPanorama({
 * [Launch Yandex Maps Android app](https://yandex.com/dev/yandex-apps-launch-maps/doc/en/concepts/yandexmaps-android-app)
 * [Launch Yandex Maps iOS app](https://yandex.com/dev/yandex-apps-launch-maps/doc/en/concepts/yandexmaps-ios-app)
 * [Launch web version of Yandex Maps](https://yandex.com/dev/yandex-apps-launch-maps/doc/en/concepts/yandexmaps-web)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/yandex-navigator.md
+---
+
+# Yandex Navigator
+
+[Yandex Navigator](https://yandex.com/dev/yandex-apps-launch/navigator/) 是 Yandex 的导航应用。**Protocol Launcher** 允许你生成官方 `yandexnavi://` 链接，用于打开 Yandex Navigator、规划路线、搜索地图以及显示点位。
+
+## 使用方式
+
+有两种使用此库的方式：
+
+* 按需导入（On-Demand）：从子路径导入支持 tree-shaking，保持较小的打包体积。
+* 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
+
+生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+## 注意事项
+
+此模块只封装 Yandex Navigator 官方文档列出的动作和参数：`build_route_on_map`、`map_search` 和 `show_point_on_map`。
+
+Yandex 文档将路线坐标拆成独立的纬度和经度参数。途经点会序列化为 `lat_via_0`、`lon_via_0`，再到 `lat_via_1`、`lon_via_1`，以此类推。
+
+Yandex 说明，向 Navigator 发送坐标、搜索查询和其他数据需要访问密钥。签名 URL 使用官方记录的 `client` 和 `signature` 参数；这些 helper 接受这两个可选字段，但 RSA 签名需要你在 Protocol Launcher 外部用 Yandex 访问密钥生成。
+
+### 打开 Navigator
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}open()
+```
+
+### 规划路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'buildRoute' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}buildRoute({
+  lat_from: '55.74',
+  lon_from: '37.60',
+  lat_to: '55.76',
+  lon_to: '37.64',
+})
+```
+
+### 从当前位置规划路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'buildRoute' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}buildRoute({
+  lat_to: '55.70',
+  lon_to: '37.64',
+})
+```
+
+### 规划带途经点的路线
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'buildRoute' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}buildRoute({
+  lat_from: '55.75',
+  lon_from: '37.58',
+  lat_to: '55.75',
+  lon_to: '37.64',
+  via: [{ lat: '55.75', lon: '37.62' }],
+})
+```
+
+### 搜索
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}search({
+  text: 'заправка',
+})
+```
+
+### 显示点位
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPoint' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}showPoint({
+  lat: 55.77,
+  lon: 37.44,
+  zoom: 12,
+  'no-balloon': 0,
+  desc: 'кафе с wi-fi',
+})
+```
+
+### 签名 URL 参数
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPoint' : 'yandexNavigator' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}showPoint({
+  lat: 55.75,
+  lon: 37.64,
+  zoom: 14,
+  client: '007',
+  signature: 'REPLACE_WITH_SIGNATURE',
+})
+```
+
+## 官方文档
+
+* [Launch Yandex.Navigator](https://yandex.com/dev/yandex-apps-launch/navigator/)
+* [Yandex Navigator URL format](https://yandex.ru/dev/navigator/doc/ru/concepts/navigator-url-params)
+* [Yandex Navigator access-key signature](https://yandex.ru/dev/navigator/doc/ru/concepts/navigator-commercial-use-signature)
 
 ---
 

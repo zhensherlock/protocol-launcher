@@ -205,6 +205,7 @@ Currently, we support the following applications:
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
 * [Stream Deck](../apps/stream-deck.md)
@@ -254,6 +255,7 @@ Currently, we support the following applications:
 * [Written Down](../apps/written-down.md)
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
+* [Yandex Navigator](../apps/yandex-navigator.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 

@@ -204,6 +204,7 @@
 - [Soulver](/protocol-launcher/apps/soulver.md)
 - [Sorted³](/protocol-launcher/apps/sorted.md)
 - [SourceTree](/protocol-launcher/apps/sourcetree.md)
+- [Splashtop Business](/protocol-launcher/apps/splashtop-business.md)
 - [Spotify](/protocol-launcher/apps/spotify.md)
 - [Steam](/protocol-launcher/apps/steam.md)
 - [Stream Deck](/protocol-launcher/apps/stream-deck.md)
@@ -253,6 +254,7 @@
 - [Written Down](/protocol-launcher/apps/written-down.md)
 - [Xcode](/protocol-launcher/apps/xcode.md)
 - [Yandex Maps](/protocol-launcher/apps/yandex-maps.md)
+- [Yandex Navigator](/protocol-launcher/apps/yandex-navigator.md)
 - [Zed](/protocol-launcher/apps/zed.md)
 - [Zoom](/protocol-launcher/apps/zoom.md)
 
@@ -447,6 +449,7 @@
 - [Soulver](/protocol-launcher/zh/apps/soulver.md)
 - [Sorted³](/protocol-launcher/zh/apps/sorted.md)
 - [SourceTree](/protocol-launcher/zh/apps/sourcetree.md)
+- [Splashtop Business](/protocol-launcher/zh/apps/splashtop-business.md)
 - [Spotify](/protocol-launcher/zh/apps/spotify.md)
 - [Steam](/protocol-launcher/zh/apps/steam.md)
 - [Stream Deck](/protocol-launcher/zh/apps/stream-deck.md)
@@ -496,6 +499,7 @@
 - [Written Down](/protocol-launcher/zh/apps/written-down.md)
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 - [Yandex Maps](/protocol-launcher/zh/apps/yandex-maps.md)
+- [Yandex Navigator](/protocol-launcher/zh/apps/yandex-navigator.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
 - [Zoom](/protocol-launcher/zh/apps/zoom.md)
 
