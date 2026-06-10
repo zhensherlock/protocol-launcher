@@ -235,6 +235,7 @@ Currently, we support the following applications:
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
 - [Trello](../apps/trello.md)
+- [TrueContext](../apps/truecontext.md)
 - [Ulysses](../apps/ulysses.md)
 - [uPic](../apps/upic.md)
 - [UpNote](../apps/upnote.md)
