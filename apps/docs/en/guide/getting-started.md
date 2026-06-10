@@ -264,6 +264,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Orchids](../apps/orchids.md)
 - [Orion Browser](../apps/orion-browser.md)
 - [Overcast](../apps/overcast.md)
+- [Panorama X](../apps/panorama-x.md)
 - [PCalc](../apps/pcalc.md)
 - [PearAI](../apps/pearai.md)
 - [PDF Expert](../apps/pdf-expert.md)

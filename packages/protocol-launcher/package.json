@@ -634,6 +634,10 @@
       "types": "./dist/types/overcast/index.d.ts",
       "import": "./dist/overcast/index.js"
     },
+    "./panorama-x": {
+      "types": "./dist/types/panorama-x/index.d.ts",
+      "import": "./dist/panorama-x/index.js"
+    },
     "./orchids": {
       "types": "./dist/types/orchids/index.d.ts",
       "import": "./dist/orchids/index.js"
