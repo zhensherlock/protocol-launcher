@@ -211,6 +211,7 @@ Currently, we support the following applications:
 - [Soulver](../apps/soulver.md)
 - [Sorted³](../apps/sorted.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Splashtop Business](../apps/splashtop-business.md)
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
 - [Stream Deck](../apps/stream-deck.md)

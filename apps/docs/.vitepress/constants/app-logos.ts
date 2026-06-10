@@ -183,6 +183,7 @@ export const appLogoFiles = {
   soulver: 'soulver.png',
   sorted: 'sorted.webp',
   sourcetree: 'sourcetree.png',
+  'splashtop-business': 'splashtop-business.webp',
   spotify: 'spotify.webp',
   steam: 'steam.webp',
   'stream-deck': 'stream-deck.webp',

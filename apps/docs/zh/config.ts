@@ -214,6 +214,7 @@ export default defineAdditionalConfig({
           { text: 'Soulver', link: '/zh/apps/soulver' },
           { text: 'Sorted³', link: '/zh/apps/sorted' },
           { text: 'SourceTree', link: '/zh/apps/sourcetree' },
+          { text: 'Splashtop Business', link: '/zh/apps/splashtop-business' },
           { text: 'Spotify', link: '/zh/apps/spotify' },
           { text: 'Steam', link: '/zh/apps/steam' },
           { text: 'Stream Deck', link: '/zh/apps/stream-deck' },

@@ -790,6 +790,10 @@
       "types": "./dist/types/sourcetree/index.d.ts",
       "import": "./dist/sourcetree/index.js"
     },
+    "./splashtop-business": {
+      "types": "./dist/types/splashtop-business/index.d.ts",
+      "import": "./dist/splashtop-business/index.js"
+    },
     "./spotify": {
       "types": "./dist/types/spotify/index.d.ts",
       "import": "./dist/spotify/index.js"
