@@ -260,6 +260,7 @@ Currently, we support the following applications:
 - [Written Down](../apps/written-down.md)
 - [Xcode](../apps/xcode.md)
 - [Yandex Maps](../apps/yandex-maps.md)
+- [Yandex Navigator](../apps/yandex-navigator.md)
 - [Zed](../apps/zed.md)
 - [Zoom](../apps/zoom.md)
 

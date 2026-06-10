@@ -263,6 +263,7 @@ export default defineAdditionalConfig({
           { text: 'Written Down', link: '/zh/apps/written-down' },
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Yandex Maps', link: '/zh/apps/yandex-maps' },
+          { text: 'Yandex Navigator', link: '/zh/apps/yandex-navigator' },
           { text: 'Zed', link: '/zh/apps/zed' },
           { text: 'Zoom', link: '/zh/apps/zoom' },
         ],
