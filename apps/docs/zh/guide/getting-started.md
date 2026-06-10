@@ -167,6 +167,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Craft](../apps/craft.md)
 - [Cubox](../apps/cubox.md)
 - [Cursor](../apps/cursor.md)
+- [Dash](../apps/dash.md)
 - [2Do](../apps/2do.md)
 - [Day One](../apps/day-one.md)
 - [Downcast](../apps/downcast.md)

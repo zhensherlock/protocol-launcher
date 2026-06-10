@@ -254,6 +254,10 @@
       "types": "./dist/types/cursor/index.d.ts",
       "import": "./dist/cursor/index.js"
     },
+    "./dash": {
+      "types": "./dist/types/dash/index.d.ts",
+      "import": "./dist/dash/index.js"
+    },
     "./day-one": {
       "types": "./dist/types/day-one/index.d.ts",
       "import": "./dist/day-one/index.js"

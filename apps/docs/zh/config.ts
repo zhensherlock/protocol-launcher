@@ -79,6 +79,7 @@ export default defineAdditionalConfig({
           { text: 'Craft', link: '/zh/apps/craft' },
           { text: 'Cubox', link: '/zh/apps/cubox' },
           { text: 'Cursor', link: '/zh/apps/cursor' },
+          { text: 'Dash', link: '/zh/apps/dash' },
           { text: '2Do', link: '/zh/apps/2do' },
           { text: 'Day One', link: '/zh/apps/day-one' },
           { text: 'Downcast', link: '/zh/apps/downcast' },

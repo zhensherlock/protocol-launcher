@@ -49,6 +49,7 @@ export const appLogoFiles = {
   craft: 'craft.webp',
   cubox: 'cubox.webp',
   cursor: 'cursor.svg',
+  dash: 'dash.png',
   'day-one': 'day-one.webp',
   downcast: 'downcast.webp',
   'debit-credit': 'debit-credit.webp',
