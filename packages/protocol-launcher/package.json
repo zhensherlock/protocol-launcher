@@ -814,6 +814,10 @@
       "types": "./dist/types/sourcetree/index.d.ts",
       "import": "./dist/sourcetree/index.js"
     },
+    "./spark": {
+      "types": "./dist/types/spark/index.d.ts",
+      "import": "./dist/spark/index.js"
+    },
     "./splashtop-business": {
       "types": "./dist/types/splashtop-business/index.d.ts",
       "import": "./dist/splashtop-business/index.js"

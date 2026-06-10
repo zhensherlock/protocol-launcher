@@ -308,6 +308,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Soulver](../apps/soulver.md)
 - [Sorted³](../apps/sorted.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Spark Mail](../apps/spark.md)
 - [Splashtop Business](../apps/splashtop-business.md)
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)

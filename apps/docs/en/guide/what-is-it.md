@@ -217,6 +217,7 @@ Currently, we support the following applications:
 - [Soulver](../apps/soulver.md)
 - [Sorted³](../apps/sorted.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Spark Mail](../apps/spark.md)
 - [Splashtop Business](../apps/splashtop-business.md)
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)

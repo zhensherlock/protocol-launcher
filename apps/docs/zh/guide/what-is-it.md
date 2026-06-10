@@ -217,6 +217,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Soulver](../apps/soulver.md)
 - [Sorted³](../apps/sorted.md)
 - [SourceTree](../apps/sourcetree.md)
+- [Spark Mail](../apps/spark.md)
 - [Splashtop Business](../apps/splashtop-business.md)
 - [Spotify](../apps/spotify.md)
 - [Steam](../apps/steam.md)
