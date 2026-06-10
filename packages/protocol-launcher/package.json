@@ -738,6 +738,10 @@
       "types": "./dist/types/reeder/index.d.ts",
       "import": "./dist/reeder/index.js"
     },
+    "./ringcentral": {
+      "types": "./dist/types/ringcentral/index.d.ts",
+      "import": "./dist/ringcentral/index.js"
+    },
     "./royal-ts": {
       "types": "./dist/types/royal-ts/index.d.ts",
       "import": "./dist/royal-ts/index.js"

@@ -170,6 +170,7 @@ export const appLogoFiles = {
   quark: 'quark.png',
   raycast: 'raycast.webp',
   reeder: 'reeder.webp',
+  ringcentral: 'ringcentral.webp',
   'royal-ts': 'royal-ts.webp',
   rustrover: 'rustrover.webp',
   scannr: 'scannr.webp',
