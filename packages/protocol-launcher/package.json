@@ -950,6 +950,10 @@
       "types": "./dist/types/wemeet/index.d.ts",
       "import": "./dist/wemeet/index.js"
     },
+    "./what3words": {
+      "types": "./dist/types/what3words/index.d.ts",
+      "import": "./dist/what3words/index.js"
+    },
     "./whereto": {
       "types": "./dist/types/whereto/index.d.ts",
       "import": "./dist/whereto/index.js"

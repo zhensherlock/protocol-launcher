@@ -340,6 +340,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Webex](../apps/webex.md)
 - [WebStorm](../apps/webstorm.md)
 - [WeMeet](../apps/wemeet.md)
+- [what3words](../apps/what3words.md)
 - [Where To](../apps/whereto.md)
 - [Windsurf](../apps/windsurf.md)
 - [Working Copy](../apps/working-copy.md)

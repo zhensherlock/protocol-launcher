@@ -252,6 +252,7 @@ export default defineAdditionalConfig({
           { text: 'Webex', link: '/zh/apps/webex' },
           { text: 'WebStorm', link: '/zh/apps/webstorm' },
           { text: 'WeMeet', link: '/zh/apps/wemeet' },
+          { text: 'what3words', link: '/zh/apps/what3words' },
           { text: 'Where To', link: '/zh/apps/whereto' },
           { text: 'Windsurf', link: '/zh/apps/windsurf' },
           { text: 'Working Copy', link: '/zh/apps/working-copy' },

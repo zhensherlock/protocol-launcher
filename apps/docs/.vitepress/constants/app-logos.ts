@@ -221,6 +221,7 @@ export const appLogoFiles = {
   webex: 'webex.webp',
   webstorm: 'webstorm.png',
   wemeet: 'wemeet.png',
+  what3words: 'what3words.webp',
   whereto: 'whereto.png',
   windsurf: 'windsurf.png',
   'working-copy': 'working-copy.webp',

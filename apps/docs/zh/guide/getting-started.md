@@ -340,6 +340,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Webex](../apps/webex.md)
 - [WebStorm](../apps/webstorm.md)
 - [WeMeet](../apps/wemeet.md)
+- [what3words](../apps/what3words.md)
 - [Where To](../apps/whereto.md)
 - [Windsurf](../apps/windsurf.md)
 - [Working Copy](../apps/working-copy.md)
