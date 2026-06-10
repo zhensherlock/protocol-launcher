@@ -286,6 +286,10 @@
       "types": "./dist/types/drafts/index.d.ts",
       "import": "./dist/drafts/index.js"
     },
+    "./dynamics-365-field-service-mobile": {
+      "types": "./dist/types/dynamics-365-field-service-mobile/index.d.ts",
+      "import": "./dist/dynamics-365-field-service-mobile/index.js"
+    },
     "./2do": {
       "types": "./dist/types/2do/index.d.ts",
       "import": "./dist/2do/index.js"

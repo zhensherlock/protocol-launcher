@@ -90,6 +90,7 @@ export default defineAdditionalConfig({
           { text: 'Editorial', link: '/zh/apps/editorial' },
           { text: 'Equipd Bible', link: '/zh/apps/equipd-bible' },
           { text: 'Due', link: '/zh/apps/due' },
+          { text: 'Dynamics 365 Field Service Mobile', link: '/zh/apps/dynamics-365-field-service-mobile' },
           { text: 'Evernote', link: '/zh/apps/evernote' },
           { text: 'Fantastical', link: '/zh/apps/fantastical' },
           { text: 'Claris FileMaker', link: '/zh/apps/filemaker' },

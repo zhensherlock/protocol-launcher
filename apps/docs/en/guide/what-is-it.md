@@ -87,6 +87,7 @@ Currently, we support the following applications:
 - [Editorial](../apps/editorial.md)
 - [Equipd Bible](../apps/equipd-bible.md)
 - [Due](../apps/due.md)
+- [Dynamics 365 Field Service Mobile](../apps/dynamics-365-field-service-mobile.md)
 - [Evernote](../apps/evernote.md)
 - [Fantastical](../apps/fantastical.md)
 - [Claris FileMaker](../apps/filemaker.md)

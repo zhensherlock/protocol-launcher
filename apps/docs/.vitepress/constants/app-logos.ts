@@ -57,6 +57,7 @@ export const appLogoFiles = {
   'dict-cc': 'dict-cc.webp',
   drafts: 'drafts.webp',
   due: 'due.webp',
+  'dynamics-365-field-service-mobile': 'dynamics-365-field-service.webp',
   editorial: 'editorial.webp',
   'equipd-bible': 'equipd-bible.webp',
   evernote: 'evernote.png',
