@@ -205,6 +205,7 @@ export default defineAdditionalConfig({
           { text: 'RingCentral', link: '/zh/apps/ringcentral' },
           { text: 'Royal TS', link: '/zh/apps/royal-ts' },
           { text: 'RustRover', link: '/zh/apps/rustrover' },
+          { text: 'Salesforce Mobile', link: '/zh/apps/salesforce-mobile' },
           { text: 'Scannr', link: '/zh/apps/scannr' },
           { text: 'Screens', link: '/zh/apps/screens' },
           { text: 'Scriptable', link: '/zh/apps/scriptable' },

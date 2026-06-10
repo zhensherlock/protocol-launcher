@@ -293,6 +293,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [RingCentral](../apps/ringcentral.md)
 - [Royal TS](../apps/royal-ts.md)
 - [RustRover](../apps/rustrover.md)
+- [Salesforce Mobile](../apps/salesforce-mobile.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)
 - [Scriptable](../apps/scriptable.md)

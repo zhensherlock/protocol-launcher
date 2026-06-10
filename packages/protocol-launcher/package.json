@@ -754,6 +754,10 @@
       "types": "./dist/types/rustrover/index.d.ts",
       "import": "./dist/rustrover/index.js"
     },
+    "./salesforce-mobile": {
+      "types": "./dist/types/salesforce-mobile/index.d.ts",
+      "import": "./dist/salesforce-mobile/index.js"
+    },
     "./scannr": {
       "types": "./dist/types/scannr/index.d.ts",
       "import": "./dist/scannr/index.js"

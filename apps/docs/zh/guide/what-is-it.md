@@ -202,6 +202,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [RingCentral](../apps/ringcentral.md)
 - [Royal TS](../apps/royal-ts.md)
 - [RustRover](../apps/rustrover.md)
+- [Salesforce Mobile](../apps/salesforce-mobile.md)
 - [Scannr](../apps/scannr.md)
 - [Screens](../apps/screens.md)
 - [Scriptable](../apps/scriptable.md)
