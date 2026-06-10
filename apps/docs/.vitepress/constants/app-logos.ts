@@ -169,6 +169,7 @@ export const appLogoFiles = {
   qoder: 'qoder.png',
   quark: 'quark.png',
   raycast: 'raycast.webp',
+  'remote-desktop-manager': 'remote-desktop-manager.svg',
   reeder: 'reeder.webp',
   ringcentral: 'ringcentral.webp',
   'royal-ts': 'royal-ts.webp',

@@ -200,6 +200,7 @@ export default defineAdditionalConfig({
           { text: 'Qoder', link: '/zh/apps/qoder' },
           { text: 'Quark', link: '/zh/apps/quark' },
           { text: 'Raycast', link: '/zh/apps/raycast' },
+          { text: 'Remote Desktop Manager', link: '/zh/apps/remote-desktop-manager' },
           { text: 'Reeder', link: '/zh/apps/reeder' },
           { text: 'RingCentral', link: '/zh/apps/ringcentral' },
           { text: 'Royal TS', link: '/zh/apps/royal-ts' },

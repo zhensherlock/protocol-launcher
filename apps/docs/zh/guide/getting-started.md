@@ -288,6 +288,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Qoder](../apps/qoder.md)
 - [Quark](../apps/quark.md)
 - [Raycast](../apps/raycast.md)
+- [Remote Desktop Manager](../apps/remote-desktop-manager.md)
 - [Reeder](../apps/reeder.md)
 - [RingCentral](../apps/ringcentral.md)
 - [Royal TS](../apps/royal-ts.md)
