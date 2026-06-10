@@ -123,6 +123,7 @@ export const appLogoFiles = {
   'microsoft-edge': 'microsoft-edge.png',
   'microsoft-office': 'microsoft-365.webp',
   'microsoft-onenote': 'microsoft-onenote.webp',
+  'microsoft-remote-desktop': 'windows-app.webp',
   'microsoft-teams': 'microsoft-teams.webp',
   mindnode: 'mindnode.webp',
   momento: 'momento.webp',

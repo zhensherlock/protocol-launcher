@@ -154,6 +154,7 @@ export default defineAdditionalConfig({
           { text: 'Microsoft Edge', link: '/zh/apps/microsoft-edge' },
           { text: 'Microsoft Office', link: '/zh/apps/microsoft-office' },
           { text: 'Microsoft OneNote', link: '/zh/apps/microsoft-onenote' },
+          { text: 'Microsoft Remote Desktop', link: '/zh/apps/microsoft-remote-desktop' },
           { text: 'Microsoft Teams', link: '/zh/apps/microsoft-teams' },
           { text: 'MindNode', link: '/zh/apps/mindnode' },
           { text: 'Momento', link: '/zh/apps/momento' },
