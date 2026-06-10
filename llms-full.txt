@@ -81,6 +81,7 @@ Currently, we support the following applications:
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
+* [Dynamics 365 Field Service Mobile](../apps/dynamics-365-field-service-mobile.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
@@ -178,6 +179,7 @@ Currently, we support the following applications:
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
+* [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
@@ -439,6 +441,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
+* [Dynamics 365 Field Service Mobile](../apps/dynamics-365-field-service-mobile.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
@@ -536,6 +539,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
+* [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
@@ -7227,6 +7231,98 @@ import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ impor
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({})
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/dynamics-365-field-service-mobile.md
+---
+
+# Dynamics 365 Field Service Mobile
+
+[Dynamics 365 Field Service Mobile](https://learn.microsoft.com/en-us/dynamics365/guidance/resources/field-service-mobile-use-deep-links) is Microsoft's mobile app for Dynamics 365 Field Service. **Protocol Launcher** allows you to generate Dynamics 365 Field Service Mobile URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the Field Service mobile deep link format Microsoft documents: `ms-apps-fs://<org-url>_<app-id>?tenantId=<tenant-id>&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true`.
+
+Pass `orgUrl` without `https://`. Entity record links use `pagetype=entityrecord`; create forms use the same page type with a blank `id`. Entity list links use `pagetype=entitylist` and the documented `Viewtype` values: `1039` for system views and `4230` for personal views.
+
+## URL Methods
+
+### Open Entity Record
+
+Open an `entityrecord` form in the Dynamics 365 Field Service mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityRecord' : 'dynamics365FieldServiceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dynamics365FieldServiceMobile.'}}openEntityRecord({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  etn: 'bookableresourcebooking',
+  id: '00000000-1111-2222-3333-444444444444',
+})
+```
+
+### Create Entity Record
+
+Open a create form for an `entityrecord` in the Dynamics 365 Field Service mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createEntityRecord' : 'dynamics365FieldServiceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dynamics365FieldServiceMobile.'}}createEntityRecord({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  etn: 'bookableresourcebooking',
+})
+```
+
+### Open Entity List
+
+Open an `entitylist` view in the Dynamics 365 Field Service mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityList' : 'dynamics365FieldServiceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dynamics365FieldServiceMobile.'}}openEntityList({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  etn: 'bookableresourcebooking',
+  viewid: '11111111-2222-3333-4444-555555555555',
+  viewType: 1039,
+})
+```
+
+## Generated URLs
+
+```ts
+openEntityRecord(entityRecordParams)
+// => 'ms-apps-fs://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=bookableresourcebooking&pagetype=entityrecord&id=00000000-1111-2222-3333-444444444444'
+
+createEntityRecord(createEntityRecordParams)
+// => 'ms-apps-fs://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=bookableresourcebooking&pagetype=entityrecord&id='
+
+openEntityList(entityListParams)
+// => 'ms-apps-fs://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=bookableresourcebooking&pagetype=entitylist&viewid=11111111-2222-3333-4444-555555555555&Viewtype=1039'
+```
+
+## Official Documentation
+
+* [Use deep links to the Field Service mobile app](https://learn.microsoft.com/en-us/dynamics365/guidance/resources/field-service-mobile-use-deep-links)
 
 ---
 
@@ -16856,6 +16952,138 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
 ---
 
 ---
+url: /protocol-launcher/apps/power-apps-mobile.md
+---
+
+# Power Apps Mobile
+
+[Power Apps Mobile](https://powerapps.microsoft.com/) is Microsoft's mobile app for running Power Apps on phones and tablets. **Protocol Launcher** allows you to generate Power Apps Mobile URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the Power Apps mobile URL formats Microsoft documents: `ms-apps://<org-url>_<app-id>` for model-driven apps, `ms-apps:///providers/Microsoft.PowerApps/apps/<appID>` for canvas apps, and `ms-mobile-apps:///providers/Microsoft.PowerApps/apps/<appID>` for wrapped native mobile apps.
+
+For model-driven apps, pass `orgUrl` without `https://`. Microsoft marks `environmentId` and `appLogicalName` as mandatory for new model-driven links, and `environmentId` as mandatory for new canvas app links. Wrapped app links work only when one wrapped app is installed on the mobile device.
+
+## URL Methods
+
+### Open Model-Driven App
+
+Open a model-driven app in Power Apps mobile.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openModelDrivenApp' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openModelDrivenApp({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  appLogicalName: 'cr12_e567',
+  restartApp: true,
+  forceOfflineDataSync: true,
+})
+```
+
+### Open Entity Record
+
+Open an `entityrecord` form in a model-driven app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityRecord' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openEntityRecord({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  appLogicalName: 'cr12_e567',
+  etn: 'account',
+  id: '00000000-1111-2222-3333-444444444444',
+})
+```
+
+### Open Entity List
+
+Open an `entitylist` view in a model-driven app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityList' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openEntityList({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  appLogicalName: 'cr12_e567',
+  etn: 'account',
+  viewid: '11111111-2222-3333-4444-555555555555',
+  viewType: 1039,
+})
+```
+
+### Open Canvas App
+
+Open a canvas app in Power Apps mobile.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCanvasApp' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openCanvasApp({
+  appId: '11111111-2222-3333-4444-555555555555',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  restartApp: true,
+})
+```
+
+### Open Wrapped App
+
+Open a wrapped native mobile app created with Power Apps wrap.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWrappedApp' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openWrappedApp({
+  appId: '11111111-2222-3333-4444-555555555555',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  restartApp: true,
+})
+```
+
+## Generated URLs
+
+```ts
+openModelDrivenApp(modelDrivenAppParams)
+// => 'ms-apps://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&environmentId=g67tfyufhkjfg&appLogicalName=cr12_e567&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true'
+
+openEntityRecord(entityRecordParams)
+// => 'ms-apps://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&environmentId=g67tfyufhkjfg&appLogicalName=cr12_e567&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=account&pagetype=entityrecord&id=00000000-1111-2222-3333-444444444444'
+
+openCanvasApp(canvasAppParams)
+// => 'ms-apps:///providers/Microsoft.PowerApps/apps/11111111-2222-3333-4444-555555555555?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&environmentId=g67tfyufhkjfg&restartApp=true'
+
+openWrappedApp(wrappedAppParams)
+// => 'ms-mobile-apps:///providers/Microsoft.PowerApps/apps/11111111-2222-3333-4444-555555555555?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&restartApp=true'
+```
+
+## Official Documentation
+
+* [Use deep links with the Power Apps mobile app](https://learn.microsoft.com/en-us/power-apps/mobile/mobile-deep-links)
+* [Use deep links with wrapped mobile apps](https://learn.microsoft.com/en-us/power-apps/maker/common/wrap/wrap-deep-links)
+
+---
+
+---
 url: /protocol-launcher/apps/power-bi-mobile.md
 ---
 
@@ -24679,6 +24907,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
+* [Dynamics 365 Field Service Mobile](../apps/dynamics-365-field-service-mobile.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
@@ -24776,6 +25005,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
+* [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
@@ -25037,6 +25267,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
 * [Due](../apps/due.md)
+* [Dynamics 365 Field Service Mobile](../apps/dynamics-365-field-service-mobile.md)
 * [Evernote](../apps/evernote.md)
 * [Fantastical](../apps/fantastical.md)
 * [Claris FileMaker](../apps/filemaker.md)
@@ -25134,6 +25365,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Pincase](../apps/pincase.md)
 * [Pleco](../apps/pleco.md)
 * [Pocket Casts](../apps/pocket-casts.md)
+* [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
@@ -31826,6 +32058,98 @@ import { {{ currentMethod === 'On-Demand' ? 'search' : 'due' }} } from '{{ impor
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'due.'}}search({})
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/dynamics-365-field-service-mobile.md
+---
+
+# Dynamics 365 Field Service Mobile
+
+[Dynamics 365 Field Service Mobile](https://learn.microsoft.com/en-us/dynamics365/guidance/resources/field-service-mobile-use-deep-links) 是 Microsoft 面向 Dynamics 365 Field Service 的移动端应用。**Protocol Launcher** 允许你生成 Dynamics 365 Field Service Mobile URL scheme 链接。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Microsoft 文档记录的 Field Service mobile deep link 格式：`ms-apps-fs://<org-url>_<app-id>?tenantId=<tenant-id>&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true`。
+
+`orgUrl` 需要传入不带 `https://` 的组织 URL。Entity record 链接使用 `pagetype=entityrecord`；创建表单使用同一个 page type，并传入空白 `id`。Entity list 链接使用 `pagetype=entitylist`，并使用文档记录的 `Viewtype` 值：系统视图为 `1039`，个人视图为 `4230`。
+
+## URL 方法
+
+### 打开 Entity Record
+
+在 Dynamics 365 Field Service mobile app 中打开 `entityrecord` 表单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityRecord' : 'dynamics365FieldServiceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dynamics365FieldServiceMobile.'}}openEntityRecord({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  etn: 'bookableresourcebooking',
+  id: '00000000-1111-2222-3333-444444444444',
+})
+```
+
+### 创建 Entity Record
+
+在 Dynamics 365 Field Service mobile app 中打开 `entityrecord` 创建表单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createEntityRecord' : 'dynamics365FieldServiceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dynamics365FieldServiceMobile.'}}createEntityRecord({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  etn: 'bookableresourcebooking',
+})
+```
+
+### 打开 Entity List
+
+在 Dynamics 365 Field Service mobile app 中打开 `entitylist` 视图。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityList' : 'dynamics365FieldServiceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dynamics365FieldServiceMobile.'}}openEntityList({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  etn: 'bookableresourcebooking',
+  viewid: '11111111-2222-3333-4444-555555555555',
+  viewType: 1039,
+})
+```
+
+## 生成的 URL
+
+```ts
+openEntityRecord(entityRecordParams)
+// => 'ms-apps-fs://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=bookableresourcebooking&pagetype=entityrecord&id=00000000-1111-2222-3333-444444444444'
+
+createEntityRecord(createEntityRecordParams)
+// => 'ms-apps-fs://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=bookableresourcebooking&pagetype=entityrecord&id='
+
+openEntityList(entityListParams)
+// => 'ms-apps-fs://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&isShortcut=true&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=bookableresourcebooking&pagetype=entitylist&viewid=11111111-2222-3333-4444-555555555555&Viewtype=1039'
+```
+
+## 官方文档
+
+* [Use deep links to the Field Service mobile app](https://learn.microsoft.com/en-us/dynamics365/guidance/resources/field-service-mobile-use-deep-links)
 
 ---
 
@@ -41451,6 +41775,138 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
   feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/power-apps-mobile.md
+---
+
+# Power Apps Mobile
+
+[Power Apps Mobile](https://powerapps.microsoft.com/) 是 Microsoft 用于在手机和平板上运行 Power Apps 的移动端应用。**Protocol Launcher** 允许你生成 Power Apps Mobile URL scheme 链接。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Microsoft 文档记录的 Power Apps mobile URL 格式：用于 model-driven app 的 `ms-apps://<org-url>_<app-id>`，用于 canvas app 的 `ms-apps:///providers/Microsoft.PowerApps/apps/<appID>`，以及用于 wrapped native mobile app 的 `ms-mobile-apps:///providers/Microsoft.PowerApps/apps/<appID>`。
+
+对于 model-driven app，`orgUrl` 需要传入不带 `https://` 的组织 URL。Microsoft 将 `environmentId` 和 `appLogicalName` 标为新的 model-driven 链接必填项，并将 `environmentId` 标为新的 canvas app 链接必填项。Wrapped app 链接仅在移动设备上只安装了一个 wrapped app 时可用。
+
+## URL 方法
+
+### 打开 Model-Driven App
+
+在 Power Apps mobile 中打开 model-driven app。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openModelDrivenApp' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openModelDrivenApp({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  appLogicalName: 'cr12_e567',
+  restartApp: true,
+  forceOfflineDataSync: true,
+})
+```
+
+### 打开 Entity Record
+
+在 model-driven app 中打开 `entityrecord` 表单。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityRecord' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openEntityRecord({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  appLogicalName: 'cr12_e567',
+  etn: 'account',
+  id: '00000000-1111-2222-3333-444444444444',
+})
+```
+
+### 打开 Entity List
+
+在 model-driven app 中打开 `entitylist` 视图。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEntityList' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openEntityList({
+  orgUrl: 'contoso.onmicrosoft.com',
+  appId: 'e6429eba-2204-40e8-b9dd-fc74791ff2c2',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  appLogicalName: 'cr12_e567',
+  etn: 'account',
+  viewid: '11111111-2222-3333-4444-555555555555',
+  viewType: 1039,
+})
+```
+
+### 打开 Canvas App
+
+在 Power Apps mobile 中打开 canvas app。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openCanvasApp' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openCanvasApp({
+  appId: '11111111-2222-3333-4444-555555555555',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  environmentId: 'g67tfyufhkjfg',
+  restartApp: true,
+})
+```
+
+### 打开 Wrapped App
+
+打开通过 Power Apps wrap 创建的 wrapped native mobile app。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWrappedApp' : 'powerAppsMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'powerAppsMobile.'}}openWrappedApp({
+  appId: '11111111-2222-3333-4444-555555555555',
+  tenantId: 'aaaabbbb-0000-cccc-1111-dddd2222eeee',
+  restartApp: true,
+})
+```
+
+## 生成的 URL
+
+```ts
+openModelDrivenApp(modelDrivenAppParams)
+// => 'ms-apps://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&environmentId=g67tfyufhkjfg&appLogicalName=cr12_e567&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true'
+
+openEntityRecord(entityRecordParams)
+// => 'ms-apps://contoso.onmicrosoft.com_e6429eba-2204-40e8-b9dd-fc74791ff2c2?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&environmentId=g67tfyufhkjfg&appLogicalName=cr12_e567&appType=AppModule&openApp=true&restartApp=true&forceOfflineDataSync=true&etn=account&pagetype=entityrecord&id=00000000-1111-2222-3333-444444444444'
+
+openCanvasApp(canvasAppParams)
+// => 'ms-apps:///providers/Microsoft.PowerApps/apps/11111111-2222-3333-4444-555555555555?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&environmentId=g67tfyufhkjfg&restartApp=true'
+
+openWrappedApp(wrappedAppParams)
+// => 'ms-mobile-apps:///providers/Microsoft.PowerApps/apps/11111111-2222-3333-4444-555555555555?tenantId=aaaabbbb-0000-cccc-1111-dddd2222eeee&restartApp=true'
+```
+
+## 官方文档
+
+* [Use deep links with the Power Apps mobile app](https://learn.microsoft.com/en-us/power-apps/mobile/mobile-deep-links)
+* [Use deep links with wrapped mobile apps](https://learn.microsoft.com/en-us/power-apps/maker/common/wrap/wrap-deep-links)
 
 ---
 
