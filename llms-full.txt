@@ -167,6 +167,7 @@ Currently, we support the following applications:
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [Panorama X](../apps/panorama-x.md)
 * [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -242,6 +243,7 @@ Currently, we support the following applications:
 * [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [what3words](../apps/what3words.md)
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
@@ -521,6 +523,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [Panorama X](../apps/panorama-x.md)
 * [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -596,6 +599,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [what3words](../apps/what3words.md)
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
@@ -15584,6 +15588,105 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
 ---
 
 ---
+url: /protocol-launcher/apps/panorama-x.md
+---
+
+# Panorama X
+
+[Panorama X](https://www.provue.com/panoramax/) is a macOS database app from ProVUE Development. **Protocol Launcher** allows you to generate Panorama X URLs.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+ProVUE documents exactly two `panoramax://x-callback-url` actions: `run/database/procedure/label` and `wizard/wizard+name` (or `wizard%20name`). ProVUE also documents a separate `panoramax://writepreference?name=value` URL in the `writepreference` statement reference. These helpers do not add any other Panorama X actions.
+
+### Run Procedure
+
+Generate the documented x-callback-url `run` action. Panorama X uses the path segments as the database, procedure, and label names. Optional `params` become query-string data passed with the callback URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runProcedure' : 'panoramaX' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}runProcedure({
+  database: 'database',
+  procedure: 'procedure',
+  label: 'xCallbackURLSuccess',
+})
+
+const urlWithData = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}runProcedure({
+  database: 'database',
+  procedure: 'procedure',
+  label: 'xCallbackURLSuccess',
+  params: {
+    buildnumber: 50353,
+    apiVersion: 2,
+  },
+})
+```
+
+### Open Wizard
+
+Generate the documented x-callback-url `wizard` action. ProVUE's release notes show spaces in the wizard name encoded as either `+` or `%20`; Protocol Launcher emits standard `%20` encoding.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWizard' : 'panoramaX' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}openWizard({
+  wizardName: 'wizard name',
+})
+```
+
+### Write Preference
+
+Generate the documented `writepreference` URL. Panorama X receives the preference name as the query key and the preference value as text.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'writePreference' : 'panoramaX' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}writePreference({
+  name: 'newwindowwidth',
+  value: 800,
+})
+```
+
+## Generated URLs
+
+```ts
+runProcedure({ database: 'database', procedure: 'procedure', label: 'xCallbackURLSuccess' })
+// => 'panoramax://x-callback-url/run/database/procedure/xCallbackURLSuccess'
+
+runProcedure({
+  database: 'database',
+  procedure: 'procedure',
+  label: 'xCallbackURLSuccess',
+  params: { buildnumber: 50353, apiVersion: 2 },
+})
+// => 'panoramax://x-callback-url/run/database/procedure/xCallbackURLSuccess?buildnumber=50353&apiVersion=2'
+
+openWizard({ wizardName: 'wizard name' })
+// => 'panoramax://x-callback-url/wizard/wizard%20name'
+
+writePreference({ name: 'newwindowwidth', value: 800 })
+// => 'panoramax://writepreference?newwindowwidth=800'
+```
+
+## Official Documentation
+
+* [Panorama X 10.2 release notes](https://www.provue.com/panoramax/help/Release_10_2.html)
+* [xcallbackurl statement](https://www.provue.com/panoramax/help/statement_xcallbackurl.html)
+* [writepreference statement](https://www.provue.com/panoramax/help/statement_writepreference.html)
+
+---
+
+---
 url: /protocol-launcher/apps/pcalc.md
 ---
 
@@ -23072,6 +23175,65 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'wemeet.'}}joinMeeting({
 ---
 
 ---
+url: /protocol-launcher/apps/what3words.md
+---
+
+# what3words
+
+[what3words](https://what3words.com/) is a location app for finding and sharing precise locations with 3 word addresses. **Protocol Launcher** allows you to generate mobile links to open the what3words app at the user's current location or navigate to a 3 word address.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+The official what3words mobile linking documentation lists two supported `w3w://show` URI forms: `?currentlocation` and `?threewords=[word.word.word]`. This module exposes only those documented forms.
+
+### Show Current Location
+
+Generate the documented URL that opens the what3words app at the user's current location.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCurrentLocation' : 'what3words' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'what3words.'}}showCurrentLocation()
+```
+
+### Show Three Words
+
+Generate the documented URL that navigates to a 3 word address in the what3words app. Pass the address in `word.word.word` form.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showThreeWords' : 'what3words' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'what3words.'}}showThreeWords({
+  threeWords: 'daring.lion.race',
+})
+```
+
+## Generated URLs
+
+```ts
+showCurrentLocation()
+// => 'w3w://show?currentlocation'
+
+showThreeWords({ threeWords: 'daring.lion.race' })
+// => 'w3w://show?threewords=daring.lion.race'
+```
+
+## Official Documentation
+
+* [Mobile linking to the what3words app](https://developer.what3words.com/tutorial/mobile-linking-to-the-what3words-app)
+
+---
+
+---
 url: /protocol-launcher/apps/whereto.md
 ---
 
@@ -24331,6 +24493,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [Panorama X](../apps/panorama-x.md)
 * [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -24406,6 +24569,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [what3words](../apps/what3words.md)
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
@@ -24685,6 +24849,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Orchids](../apps/orchids.md)
 * [Orion Browser](../apps/orion-browser.md)
 * [Overcast](../apps/overcast.md)
+* [Panorama X](../apps/panorama-x.md)
 * [PCalc](../apps/pcalc.md)
 * [PearAI](../apps/pearai.md)
 * [PDF Expert](../apps/pdf-expert.md)
@@ -24760,6 +24925,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Webex](../apps/webex.md)
 * [WebStorm](../apps/webstorm.md)
 * [WeMeet](../apps/wemeet.md)
+* [what3words](../apps/what3words.md)
 * [Where To](../apps/whereto.md)
 * [Windsurf](../apps/windsurf.md)
 * [Working Copy](../apps/working-copy.md)
@@ -39749,6 +39915,105 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'overcast.'}}add({
 ---
 
 ---
+url: /protocol-launcher/zh/apps/panorama-x.md
+---
+
+# Panorama X
+
+[Panorama X](https://www.provue.com/panoramax/) 是 ProVUE Development 的 macOS 数据库应用。**Protocol Launcher** 可以生成 Panorama X URL。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+ProVUE 只记录了两个 `panoramax://x-callback-url` 动作：`run/database/procedure/label` 和 `wizard/wizard+name`（或 `wizard%20name`）。ProVUE 还在 `writepreference` statement 参考页中记录了单独的 `panoramax://writepreference?name=value` URL。下面的 helper 不添加任何其他 Panorama X 动作。
+
+### 运行过程
+
+生成官方记录的 x-callback-url `run` 动作。Panorama X 会把路径段作为数据库、过程和标签名称。可选的 `params` 会变成 query-string 数据，随回调 URL 传给 Panorama X。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'runProcedure' : 'panoramaX' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}runProcedure({
+  database: 'database',
+  procedure: 'procedure',
+  label: 'xCallbackURLSuccess',
+})
+
+const urlWithData = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}runProcedure({
+  database: 'database',
+  procedure: 'procedure',
+  label: 'xCallbackURLSuccess',
+  params: {
+    buildnumber: 50353,
+    apiVersion: 2,
+  },
+})
+```
+
+### 打开 Wizard
+
+生成官方记录的 x-callback-url `wizard` 动作。ProVUE 的发布说明写到 Wizard 名称中的空格可编码为 `+` 或 `%20`；Protocol Launcher 使用标准 `%20` 编码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWizard' : 'panoramaX' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}openWizard({
+  wizardName: 'wizard name',
+})
+```
+
+### 写入偏好设置
+
+生成官方记录的 `writepreference` URL。Panorama X 会把 query key 作为偏好设置名称，把 query value 作为文本形式的偏好设置值。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'writePreference' : 'panoramaX' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'panoramaX.'}}writePreference({
+  name: 'newwindowwidth',
+  value: 800,
+})
+```
+
+## 生成的 URL
+
+```ts
+runProcedure({ database: 'database', procedure: 'procedure', label: 'xCallbackURLSuccess' })
+// => 'panoramax://x-callback-url/run/database/procedure/xCallbackURLSuccess'
+
+runProcedure({
+  database: 'database',
+  procedure: 'procedure',
+  label: 'xCallbackURLSuccess',
+  params: { buildnumber: 50353, apiVersion: 2 },
+})
+// => 'panoramax://x-callback-url/run/database/procedure/xCallbackURLSuccess?buildnumber=50353&apiVersion=2'
+
+openWizard({ wizardName: 'wizard name' })
+// => 'panoramax://x-callback-url/wizard/wizard%20name'
+
+writePreference({ name: 'newwindowwidth', value: 800 })
+// => 'panoramax://writepreference?newwindowwidth=800'
+```
+
+## 官方文档
+
+* [Panorama X 10.2 release notes](https://www.provue.com/panoramax/help/Release_10_2.html)
+* [xcallbackurl statement](https://www.provue.com/panoramax/help/statement_xcallbackurl.html)
+* [writepreference statement](https://www.provue.com/panoramax/help/statement_writepreference.html)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/pcalc.md
 ---
 
@@ -47233,6 +47498,65 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'wemeet.'}}joinMeeting({
   meetingCode: '123456789',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/what3words.md
+---
+
+# what3words
+
+[what3words](https://what3words.com/) 是一款用于通过 3 word address 查找和分享精确位置的定位应用。**Protocol Launcher** 允许你生成移动端链接，用来在 what3words app 中打开用户当前位置，或导航到一个 3 word address。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+what3words 官方 mobile linking 文档只列出两个受支持的 `w3w://show` URI 形式：`?currentlocation` 和 `?threewords=[word.word.word]`。本模块只暴露这些官方记录的形式。
+
+### 显示当前位置
+
+生成官方记录的 URL，在 what3words app 中打开用户当前位置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCurrentLocation' : 'what3words' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'what3words.'}}showCurrentLocation()
+```
+
+### 显示 3 Word Address
+
+生成官方记录的 URL，在 what3words app 中导航到一个 3 word address。请以 `word.word.word` 形式传入地址。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showThreeWords' : 'what3words' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'what3words.'}}showThreeWords({
+  threeWords: 'daring.lion.race',
+})
+```
+
+## 生成的 URL
+
+```ts
+showCurrentLocation()
+// => 'w3w://show?currentlocation'
+
+showThreeWords({ threeWords: 'daring.lion.race' })
+// => 'w3w://show?threewords=daring.lion.race'
+```
+
+## 官方文档
+
+* [Mobile linking to the what3words app](https://developer.what3words.com/tutorial/mobile-linking-to-the-what3words-app)
 
 ---
 
