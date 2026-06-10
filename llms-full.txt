@@ -70,6 +70,7 @@ Currently, we support the following applications:
 * [Craft](../apps/craft.md)
 * [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
+* [Dash](../apps/dash.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
 * [Downcast](../apps/downcast.md)
@@ -132,6 +133,7 @@ Currently, we support the following applications:
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
+* [Letterboxd](../apps/letterboxd.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
 * [Locus Map](../apps/locus-map.md)
@@ -182,6 +184,7 @@ Currently, we support the following applications:
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
+* [Postman](../apps/postman.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -191,9 +194,12 @@ Currently, we support the following applications:
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Remote Desktop Manager](../apps/remote-desktop-manager.md)
 * [Reeder](../apps/reeder.md)
+* [RingCentral](../apps/ringcentral.md)
 * [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
+* [Salesforce Mobile](../apps/salesforce-mobile.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
@@ -206,6 +212,7 @@ Currently, we support the following applications:
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Spark Mail](../apps/spark.md)
 * [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
@@ -433,6 +440,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Craft](../apps/craft.md)
 * [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
+* [Dash](../apps/dash.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
 * [Downcast](../apps/downcast.md)
@@ -495,6 +503,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
+* [Letterboxd](../apps/letterboxd.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
 * [Locus Map](../apps/locus-map.md)
@@ -545,6 +554,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
+* [Postman](../apps/postman.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -554,9 +564,12 @@ For detailed usage instructions for each application, please refer to their resp
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Remote Desktop Manager](../apps/remote-desktop-manager.md)
 * [Reeder](../apps/reeder.md)
+* [RingCentral](../apps/ringcentral.md)
 * [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
+* [Salesforce Mobile](../apps/salesforce-mobile.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
@@ -569,6 +582,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Spark Mail](../apps/spark.md)
 * [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
@@ -5855,6 +5869,125 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: 'Hello, Cursor!' })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/dash.md
+---
+
+# Dash
+
+[Dash](https://kapeli.com/dash) is a macOS documentation browser and code snippet manager. **Protocol Launcher** allows you to generate URLs for searching Dash and working with Dash docsets.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+Dash's official documentation lists `dash://?query=...` search URLs, `dash-plugin://...` plugin URLs, `dash-feed://...` feed subscription URLs, and `dash-install://...` docset install URLs. This module exposes only those documented forms.
+
+### Search
+
+Generate the documented URL that initiates a Dash search.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}search({
+  query: 'string',
+})
+```
+
+### Search Docsets
+
+Generate the documented `dash://` URL with a Dash docset keyword or Search Profile keyword trigger.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchDocsets' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}searchDocsets({
+  keyword: 'php',
+  query: 'printf',
+})
+```
+
+### Plugin Search
+
+Generate the documented plugin URL for sending comma-separated docset keywords and an optional query to Dash.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pluginSearch' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}pluginSearch({
+  keys: 'python,django',
+  query: 'string',
+})
+```
+
+### Subscribe Feed
+
+Generate the documented `dash-feed://` URL for subscribing Dash to a docset feed. The feed URL is percent-encoded as required by the Dash docset guide.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'subscribeFeed' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}subscribeFeed({
+  url: 'http://kapeli.com/feeds/NodeJS.xml',
+})
+```
+
+### Install Docset
+
+Generate the documented `dash-install://` URL for installing a docset from a Dash downloads repo entry.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installDocset' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}installDocset({
+  repoName: 'Ruby Docsets',
+  entryName: 'cheatset',
+  version: '1.3.3',
+})
+```
+
+## Generated URLs
+
+```ts
+search({ query: 'string' })
+// => 'dash://?query=string'
+
+searchDocsets({ keyword: 'php', query: 'printf' })
+// => 'dash://?query=php:printf'
+
+pluginSearch({ keys: 'python,django', query: 'string' })
+// => 'dash-plugin://keys=python,django&query=string'
+
+pluginSearch({ keys: 'python,django' })
+// => 'dash-plugin://keys=python,django'
+
+pluginSearch({ query: 'string' })
+// => 'dash-plugin://query=string'
+
+subscribeFeed({ url: 'http://kapeli.com/feeds/NodeJS.xml' })
+// => 'dash-feed://http%3A%2F%2Fkapeli.com%2Ffeeds%2FNodeJS.xml'
+
+installDocset({ repoName: 'Ruby Docsets', entryName: 'cheatset', version: '1.3.3' })
+// => 'dash-install://repo_name=Ruby Docsets&entry_name=cheatset&version=1.3.3'
+```
+
+## Official Documentation
+
+* [Dash User Guide](https://kapeli.com/dash_guide)
+* [Dash Plugin Development](https://kapeli.com/dash_plugins)
+* [dash-install:// URL Format](https://kapeli.com/dash_install)
+* [Docset Generation Guide](https://kapeli.com/docsets)
 
 ---
 
@@ -11933,6 +12066,101 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'launchbar.'}}hide()
 ---
 
 ---
+url: /protocol-launcher/apps/letterboxd.md
+---
+
+# Letterboxd
+
+[Letterboxd](https://letterboxd.com/) is an app for logging, reviewing, and sharing films. **Protocol Launcher** allows you to generate Letterboxd URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+Letterboxd's official iOS x-callback-url documentation lists exactly three actions: `search`, `addToWatchlist`, and `log`. This module exposes only those documented actions and the optional `x-success`, `x-cancel`, and `x-error` callback parameters.
+
+### Search
+
+Search Letterboxd for films, members, lists, reviews, contributors, or all result types. The documented `type` values are `film`, `member`, `list`, `review`, `contributor`, and `all`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'letterboxd' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'letterboxd.'}}search({
+  query: 'Blade Runner',
+  type: 'film',
+})
+```
+
+### Add To Watchlist
+
+Open Letterboxd and use a film name as the search query for adding a film to the user's watchlist. Letterboxd asks the user to manually confirm the correct result.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addToWatchlist' : 'letterboxd' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'letterboxd.'}}addToWatchlist({
+  name: 'Heat',
+})
+```
+
+### Log
+
+Add a new log entry, diary entry, or review for a film. Letterboxd uses `name` as a search query and asks the user to manually confirm the correct result. Boolean values are serialized as `true` or `false` as documented.
+
+The documented fields are `name`, `date`, `rewatch`, `tags`, `review`, `containsSpoilers`, `rating`, `like`, and deprecated `shareOnFacebook`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'log' : 'letterboxd' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'letterboxd.'}}log({
+  name: 'Heat',
+  date: '2026-06-10',
+  rewatch: true,
+  tags: 'crime,friendship',
+  review: '<strong>Great</strong>',
+  containsSpoilers: false,
+  rating: 4.5,
+  like: true,
+})
+```
+
+## Generated URLs
+
+```ts
+search({ query: 'Blade Runner', type: 'film' })
+// => 'letterboxd://x-callback-url/search?query=Blade%20Runner&type=film'
+
+addToWatchlist({ name: 'Heat' })
+// => 'letterboxd://x-callback-url/addToWatchlist?name=Heat'
+
+log({
+  name: 'Heat',
+  date: '2026-06-10',
+  rewatch: true,
+  tags: 'crime,friendship',
+  review: '<strong>Great</strong>',
+  containsSpoilers: false,
+  rating: 4.5,
+  like: true,
+})
+// => 'letterboxd://x-callback-url/log?name=Heat&date=2026-06-10&rewatch=true&tags=crime%2Cfriendship&review=%3Cstrong%3EGreat%3C%2Fstrong%3E&containsSpoilers=false&rating=4.5&like=true'
+```
+
+## Official Documentation
+
+* [Letterboxd iOS X-Callback-URL Support](https://github.com/Letterboxd/letterboxd-ios-x-callback-url)
+
+---
+
+---
 url: /protocol-launcher/apps/line.md
 ---
 
@@ -17301,6 +17529,52 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'powerBiMobile.'}}openReport(
 ---
 
 ---
+url: /protocol-launcher/apps/postman.md
+---
+
+# Postman
+
+[Postman](https://www.postman.com/) is an API platform for building, testing, and collaborating on APIs. **Protocol Launcher** allows you to generate URLs for opening local Flow files in Postman.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+Postman's official Native Git / Flows documentation lists a `postman://app/flows/open?filePath=...` custom protocol link for opening local flows. The generated `filePath` value is a URL-encoded absolute path to the flow file. This module exposes only that documented form.
+
+### Open Local Flow
+
+Generate the documented deep link that opens a local Postman Flow file. Pass the raw absolute path; Protocol Launcher encodes it in the generated URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLocalFlow' : 'postman' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'postman.'}}openLocalFlow({
+  filePath: '/Users/username/GitHub/postman/flows/New flow.flow',
+})
+```
+
+## Generated URLs
+
+```ts
+openLocalFlow({ filePath: '/Users/username/GitHub/postman/flows/New flow.flow' })
+// => 'postman://app/flows/open?filePath=%2FUsers%2Fusername%2FGitHub%2Fpostman%2Fflows%2FNew%20flow.flow'
+```
+
+## Official Documentation
+
+* [Manage flows with Native Git](https://learning.postman.com/docs/postman-flows/get-started/flows-native-git)
+
+---
+
+---
 url: /protocol-launcher/apps/prizmo.md
 ---
 
@@ -18044,6 +18318,169 @@ const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWi
 ---
 
 ---
+url: /protocol-launcher/apps/remote-desktop-manager.md
+---
+
+# Remote Desktop Manager
+
+[Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/) is a remote desktop and connection management app. **Protocol Launcher** allows you to generate official Remote Desktop Manager `rdm://` protocol handler URLs.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the actions and parameters documented by Devolutions for the Remote Desktop Manager protocol handler: `open`, `find`, `edit`, `view`, `OpenWithMacro`, and `select`, with `DataSource`, `Session`, `Template`, `Host`, `Port`, `Username`, `Password`, `Domain`, `Title`, `Filter`, and `Tabpage` parameters.
+
+Devolutions states that an action and at least one parameter are required. `DataSource` and `Session` are enough to open a connection. `Template` requires `Host`. `Tabpage` is documented as available only with the `Select` action, with the listed values `Overview`, `Documentation`, `Macros/Scripts/Tools`, `Management Tools`, `Information`, `Attachments`, `Logs`, and `Recordings`; this module also keeps Devolutions' exact `rdm://open?Filter=RDP&Tabpage=Dashboard` example.
+
+These examples intentionally use fake IDs, a reserved host, and placeholder credentials. Do not publish real workspace IDs, session IDs, template IDs, hostnames, usernames, passwords, domains, or license-sensitive information.
+
+## URL Methods
+
+### Open
+
+Open Remote Desktop Manager with the Search field populated, matching the official example.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}open({
+  filter: '{{ openSearchParams.filter }}',
+  tabpage: '{{ openSearchParams.tabpage }}',
+})
+```
+
+Open a specific session with `DataSource` and `Session`.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}open({
+  dataSource: '{{ openSessionParams.dataSource }}',
+  session: '{{ openSessionParams.session }}',
+})
+```
+
+Open with a template and host, plus documented connection overrides.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}open({
+  template: '{{ openTemplateParams.template }}',
+  host: '{{ openTemplateParams.host }}',
+  port: {{ openTemplateParams.port }},
+  username: '{{ openTemplateParams.username }}',
+  domain: '{{ openTemplateParams.domain }}',
+  title: '{{ openTemplateParams.title }}',
+})
+```
+
+### Find
+
+Find sessions by host.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'find' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}find({
+  host: '{{ findParams.host }}',
+})
+```
+
+### Edit
+
+Edit the specified connection.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'edit' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}edit({
+  session: '{{ editParams.session }}',
+})
+```
+
+### View
+
+View the password of the specified entry.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}view({
+  session: '{{ viewParams.session }}',
+})
+```
+
+### Open With Macro
+
+Open the specified entry with a macro.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWithMacro' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}openWithMacro({
+  session: '{{ openWithMacroParams.session }}',
+})
+```
+
+### Select
+
+Select a connection in the navigation pane and focus a dashboard tab.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'select' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}select({
+  session: '{{ selectParams.session }}',
+  tabpage: '{{ selectParams.tabpage }}',
+})
+```
+
+## Generated URLs
+
+```ts
+open(openSearchParams)
+// => 'rdm://open?Filter=RDP&Tabpage=Dashboard'
+
+open(openSessionParams)
+// => 'rdm://open?DataSource=d4cb6537-0471-4c07-a91b-43a5e1f1f007&Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+open(openTemplateParams)
+// => 'rdm://open?Template=b32e4f20-7c1e-4872-b5cb-c893cc2fc272&Host=server.example.com&Port=3389&Username=admin&Domain=EXAMPLE&Title=Support%20Session'
+
+find(findParams)
+// => 'rdm://find?Host=server.example.com'
+
+edit(editParams)
+// => 'rdm://edit?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+view(viewParams)
+// => 'rdm://view?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+openWithMacro(openWithMacroParams)
+// => 'rdm://OpenWithMacro?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+select(selectParams)
+// => 'rdm://select?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1&Tabpage=Overview'
+```
+
+These examples do not render live launch buttons because the official handler can open sessions, show passwords, or start macro-driven workflows.
+
+## Official Documentation
+
+* [Remote Desktop Manager protocol handler](https://docs.devolutions.net/rdm/kb/knowledge-base/protocol-handler/)
+
+---
+
+---
 url: /protocol-launcher/apps/reeder.md
 ---
 
@@ -18099,6 +18536,213 @@ openFeed({
 ## Official Documentation
 
 * [Reeder Help - URL Scheme](https://reederapp.com/help/)
+
+---
+
+---
+url: /protocol-launcher/apps/ringcentral.md
+---
+
+# RingCentral
+
+[RingCentral](https://www.ringcentral.com/) is a communications app for calling, messaging, meetings, and team collaboration. **Protocol Launcher** allows you to generate RingCentral URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module follows RingCentral's official URI Scheme Reference. It exposes the documented `rcmobile://` mobile links, `rcapp://r/signin`, `tel:` and `sms:` system URI forms, RingCentral web app links under `https://app.ringcentral.com`, the documented desktop `/r/...` paths, and RingCentral Video join links under `https://v.ringcentral.com`.
+
+The `desktopSms()` helper only serializes `content` for the official `number + content` form. It does not create an undocumented `content`-only URL.
+
+### Mobile Call and SMS
+
+Generate the documented RingCentral mobile call and SMS draft URIs. These can start communication flows, so the docs show generated examples without live preview links.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'call, sms' : 'ringcentral' }} } from '{{ importPath }}'
+
+const callUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}call({
+  phoneNumber: '15551234567',
+})
+
+const smsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}sms({
+  phoneNumber: '15551234567',
+})
+```
+
+### Mobile Screens
+
+Open RingCentral mobile screens documented by the `rcmobile://` catalog.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'conference, meeting, contacts, voicemail, history' : 'ringcentral' }} } from '{{ importPath }}'
+
+const conferenceUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}conference()
+const meetingUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}meeting()
+const contactsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}contacts()
+const voicemailUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}voicemail()
+const historyUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}history()
+```
+
+### Mobile Team Messaging
+
+Open RingCentral mobile Team Messaging resources using the documented `rcmobile://glip/...` URIs.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTeam, openChat, openPost, openFile, openTask, openEvent' : 'ringcentral' }} } from '{{ importPath }}'
+
+const teamUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openTeam({
+  teamId: 'team-123',
+})
+
+const directMessageUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openChat({
+  userId: 'user-123',
+})
+
+const postUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openPost({
+  postId: 'post-123',
+})
+
+const fileUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openFile({
+  fileId: 'file-123',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openTask({
+  taskId: 'task-123',
+})
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openEvent({
+  eventId: 'event-123',
+})
+```
+
+### Sign In
+
+Launch the RingCentral app sign-in screen.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'signIn' : 'ringcentral' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}signIn()
+```
+
+### System URI Forms
+
+Generate the `tel:` and `sms:` URI forms listed in RingCentral's reference. These use the default phone or SMS app rather than the `rcmobile://` scheme.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'tel, systemSms' : 'ringcentral' }} } from '{{ importPath }}'
+
+const telUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}tel({
+  phoneNumber: '15551234567',
+})
+
+const defaultSmsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}systemSms({
+  phoneNumber: '15551234567',
+})
+```
+
+### Web App Links
+
+Generate RingCentral web app deep links under the documented production base URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebTeamChat, openWebInvitation, openWebGroup, openWebMessageThread, openWebChat, openWebTeamMessage, openWebTask, openWebFile, openWebEvent' : 'ringcentral' }} } from '{{ importPath }}'
+
+const teamChatUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebTeamChat({
+  groupId: 'group-123',
+})
+
+const invitationUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebInvitation({
+  groupId: 'group-123',
+  email: 'member@example.com',
+})
+
+const groupUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebGroup({
+  groupId: 'group-123',
+})
+
+const messageThreadUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebMessageThread({
+  messageId: 'message-123',
+})
+
+const chatUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebChat({
+  chatId: 'chat-123',
+})
+
+const teamMessageUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebTeamMessage({
+  teamId: 'team-123',
+  messageId: 'message-123',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebTask({
+  taskId: 'task-123',
+})
+
+const fileUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebFile({
+  fileId: 'file-123',
+})
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebEvent({
+  eventId: 'event-123',
+})
+```
+
+### Desktop Paths
+
+Generate the documented `/r/...` RingCentral desktop paths. RingCentral documents the production base URL separately as `https://app.ringcentral.com/`, but these helpers return the exact path forms shown in the catalog.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'desktopCall, desktopDialer, desktopSms, desktopFax' : 'ringcentral' }} } from '{{ importPath }}'
+
+const desktopCallUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopCall({
+  phoneNumber: '15551234567',
+})
+
+const dialerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopDialer()
+
+const prefilledDialerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopDialer({
+  phoneNumber: '15551234567',
+})
+
+const smsComposerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopSms()
+
+const prefilledSmsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopSms({
+  phoneNumber: '15551234567',
+  content: 'Hello from Protocol Launcher',
+})
+
+const faxComposerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopFax()
+```
+
+### RingCentral Video
+
+Open a RingCentral Video meeting, optionally with a prefilled password.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'joinVideo' : 'ringcentral' }} } from '{{ importPath }}'
+
+const meetingUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}joinVideo({
+  meetingId: '123456789',
+})
+
+const meetingWithPasswordUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}joinVideo({
+  meetingId: '123456789',
+  password: 'passcode',
+})
+```
+
+## Official Documentation
+
+* [RingCentral URI Scheme Reference](https://developers.ringcentral.com/guide/basics/uri-schemes)
 
 ---
 
@@ -18290,6 +18934,135 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'rustrover.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/salesforce-mobile.md
+---
+
+# Salesforce Mobile
+
+[Salesforce Mobile](https://www.salesforce.com/mobile/) is Salesforce's mobile CRM app. **Protocol Launcher** allows you to generate Salesforce Mobile URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the Salesforce Mobile app URL scheme formats documented by Salesforce Help: `salesforce1://sObject/<id>/<action>` for record, file, and user actions, and `salesforce1://sObject/<ObjectName>/home` for object home pages.
+
+It does not generate generic Salesforce HTTPS record URLs or older `com.salesforce.salesforce1://entity/...` variants. Salesforce documents 15- and 18-character record IDs, `download` for ContentDocument and ContentDocumentVersion objects, `follow` for User records, and optional query parameters named `s1oid`, `s1nid`, `s1uid`, and `iosoru`.
+
+## URL Methods
+
+### View Record
+
+Open a Salesforce record detail page in the Salesforce mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewRecord' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}viewRecord({
+  id: '001D000000Jwj9v',
+})
+```
+
+### Edit Record
+
+Open a Salesforce record edit page in the Salesforce mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editRecord' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}editRecord({
+  id: '006R0000001r7Rq',
+})
+```
+
+### Object Home
+
+Open a Salesforce object home page in the Salesforce mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'objectHome' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}objectHome({
+  objectName: 'Account',
+})
+```
+
+### Download File
+
+Use the documented file download URL scheme. Salesforce documents this action for ContentDocument and ContentDocumentVersion objects, and notes that on Android it opens the file but doesn't save it offline.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadFile' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}downloadFile({
+  id: '069R00000000mr3',
+})
+```
+
+### Follow User
+
+Follow a user and navigate to the user's profile page in the Salesforce mobile app. The `userid` field is serialized as Salesforce's documented `userid` query parameter.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'followUser' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}followUser({
+  id: '005R0000000Df5W',
+  userid: '005R0000000HfcF',
+})
+```
+
+### Additional Query Parameters
+
+Add the optional Salesforce redirect context when users can belong to multiple orgs or Experience Cloud sites.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewRecord' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}viewRecord({
+  id: '001D000000Jwj9v',
+  s1oid: '00DT00000000ABC',
+})
+```
+
+## Generated URLs
+
+```ts
+viewRecord(recordParams)
+// => 'salesforce1://sObject/001D000000Jwj9v/view'
+
+editRecord(editRecordParams)
+// => 'salesforce1://sObject/006R0000001r7Rq/edit'
+
+objectHome(objectHomeParams)
+// => 'salesforce1://sObject/Account/home'
+
+downloadFile(fileParams)
+// => 'salesforce1://sObject/069R00000000mr3/download'
+
+followUser(followUserParams)
+// => 'salesforce1://sObject/005R0000000Df5W/follow?userid=005R0000000HfcF'
+
+viewRecord(recordWithContextParams)
+// => 'salesforce1://sObject/001D000000Jwj9v/view?s1oid=00DT00000000ABC'
+```
+
+## Official Documentation
+
+* [Configure Deep Linking for the Salesforce Mobile App](https://help.salesforce.com/s/articleView?id=xcloud.sapp_url_schemes.htm\&language=en_US\&type=5)
+* [Salesforce App URL Scheme Format](https://help.salesforce.com/s/articleView?id=xcloud.sapp_url_schemes_format.htm\&language=en_US\&type=5)
+* [Additional Query Parameters](https://help.salesforce.com/s/articleView?id=xcloud.sapp_url_schemes_query_additional.htm\&language=en_US\&type=5)
 
 ---
 
@@ -19312,6 +20085,54 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}cloneProject({
   repo: 'https://github.com/zhensherlock/protocol-launcher',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/spark.md
+---
+
+# Spark Mail
+
+[Spark Mail](https://sparkmailapp.com/) is an email client. **Protocol Launcher** allows you to open official Spark Desktop Deep Links copied from Spark.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+Spark's official Deep Links documentation only publishes creator-only copied email links in the `readdle-spark://bl=` format. This module exposes only that documented format, and it accepts the full copied Deep Link without trying to rebuild or reinterpret Spark's private link payload.
+
+### Open Deep Link
+
+Open a Spark Desktop Deep Link copied from Spark with **Copy Deep Link**.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDeepLink' : 'spark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'spark.'}}openDeepLink({
+  url: 'readdle-spark://bl=REPLACE_WITH_COPIED_DEEP_LINK_VALUE',
+})
+```
+
+## Generated URLs
+
+```ts
+openDeepLink({
+  url: 'readdle-spark://bl=REPLACE_WITH_COPIED_DEEP_LINK_VALUE',
+})
+// => 'readdle-spark://bl=REPLACE_WITH_COPIED_DEEP_LINK_VALUE'
+```
+
+## Official Documentation
+
+* [Streamline your workflow with Deep Links on desktop](https://sparkmailapp.com/help/tips-tricks/streamline-your-workflow-with-deep-links)
 
 ---
 
@@ -25201,6 +26022,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Craft](../apps/craft.md)
 * [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
+* [Dash](../apps/dash.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
 * [Downcast](../apps/downcast.md)
@@ -25263,6 +26085,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
+* [Letterboxd](../apps/letterboxd.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
 * [Locus Map](../apps/locus-map.md)
@@ -25313,6 +26136,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
+* [Postman](../apps/postman.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -25322,9 +26146,12 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Remote Desktop Manager](../apps/remote-desktop-manager.md)
 * [Reeder](../apps/reeder.md)
+* [RingCentral](../apps/ringcentral.md)
 * [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
+* [Salesforce Mobile](../apps/salesforce-mobile.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
@@ -25337,6 +26164,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Spark Mail](../apps/spark.md)
 * [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
@@ -25564,6 +26392,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Craft](../apps/craft.md)
 * [Cubox](../apps/cubox.md)
 * [Cursor](../apps/cursor.md)
+* [Dash](../apps/dash.md)
 * [2Do](../apps/2do.md)
 * [Day One](../apps/day-one.md)
 * [Downcast](../apps/downcast.md)
@@ -25626,6 +26455,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
+* [Letterboxd](../apps/letterboxd.md)
 * [LINE](../apps/line.md)
 * [Lingma](../apps/lingma.md)
 * [Locus Map](../apps/locus-map.md)
@@ -25676,6 +26506,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Pocket Casts](../apps/pocket-casts.md)
 * [Power Apps Mobile](../apps/power-apps-mobile.md)
 * [Power BI Mobile](../apps/power-bi-mobile.md)
+* [Postman](../apps/postman.md)
 * [Prizmo](../apps/prizmo.md)
 * [Pushcut](../apps/pushcut.md)
 * [PhpStorm](../apps/phpstorm.md)
@@ -25685,9 +26516,12 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Qoder](../apps/qoder.md)
 * [Quark](../apps/quark.md)
 * [Raycast](../apps/raycast.md)
+* [Remote Desktop Manager](../apps/remote-desktop-manager.md)
 * [Reeder](../apps/reeder.md)
+* [RingCentral](../apps/ringcentral.md)
 * [Royal TS](../apps/royal-ts.md)
 * [RustRover](../apps/rustrover.md)
+* [Salesforce Mobile](../apps/salesforce-mobile.md)
 * [Scannr](../apps/scannr.md)
 * [Screens](../apps/screens.md)
 * [Scriptable](../apps/scriptable.md)
@@ -25700,6 +26534,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Soulver](../apps/soulver.md)
 * [Sorted³](../apps/sorted.md)
 * [SourceTree](../apps/sourcetree.md)
+* [Spark Mail](../apps/spark.md)
 * [Splashtop Business](../apps/splashtop-business.md)
 * [Spotify](../apps/spotify.md)
 * [Steam](../apps/steam.md)
@@ -30987,6 +31822,125 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: '你好, Cursor!' })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/dash.md
+---
+
+# Dash
+
+[Dash](https://kapeli.com/dash) 是一款 macOS 文档浏览器和代码片段管理工具。**Protocol Launcher** 允许你生成用于搜索 Dash 和处理 Dash docset 的 URL。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+Dash 官方文档列出了 `dash://?query=...` 搜索 URL、`dash-plugin://...` 插件 URL、`dash-feed://...` feed 订阅 URL，以及 `dash-install://...` docset 安装 URL。本模块只暴露这些官方记录的形式。
+
+### 搜索
+
+生成官方记录的 URL，用来发起一次 Dash 搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}search({
+  query: 'string',
+})
+```
+
+### 搜索 Docsets
+
+生成带 Dash docset keyword 或 Search Profile keyword trigger 的官方 `dash://` URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'searchDocsets' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}searchDocsets({
+  keyword: 'php',
+  query: 'printf',
+})
+```
+
+### 插件搜索
+
+生成官方记录的插件 URL，用来向 Dash 传入逗号分隔的 docset keywords 和可选搜索词。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pluginSearch' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}pluginSearch({
+  keys: 'python,django',
+  query: 'string',
+})
+```
+
+### 订阅 Feed
+
+生成官方记录的 `dash-feed://` URL，用来让 Dash 订阅一个 docset feed。根据 Dash docset guide 的要求，feed URL 会进行 percent-encoding。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'subscribeFeed' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}subscribeFeed({
+  url: 'http://kapeli.com/feeds/NodeJS.xml',
+})
+```
+
+### 安装 Docset
+
+生成官方记录的 `dash-install://` URL，用来从 Dash downloads repo 条目安装 docset。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installDocset' : 'dash' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dash.'}}installDocset({
+  repoName: 'Ruby Docsets',
+  entryName: 'cheatset',
+  version: '1.3.3',
+})
+```
+
+## 生成的 URL
+
+```ts
+search({ query: 'string' })
+// => 'dash://?query=string'
+
+searchDocsets({ keyword: 'php', query: 'printf' })
+// => 'dash://?query=php:printf'
+
+pluginSearch({ keys: 'python,django', query: 'string' })
+// => 'dash-plugin://keys=python,django&query=string'
+
+pluginSearch({ keys: 'python,django' })
+// => 'dash-plugin://keys=python,django'
+
+pluginSearch({ query: 'string' })
+// => 'dash-plugin://query=string'
+
+subscribeFeed({ url: 'http://kapeli.com/feeds/NodeJS.xml' })
+// => 'dash-feed://http%3A%2F%2Fkapeli.com%2Ffeeds%2FNodeJS.xml'
+
+installDocset({ repoName: 'Ruby Docsets', entryName: 'cheatset', version: '1.3.3' })
+// => 'dash-install://repo_name=Ruby Docsets&entry_name=cheatset&version=1.3.3'
+```
+
+## 官方文档
+
+* [Dash User Guide](https://kapeli.com/dash_guide)
+* [Dash Plugin Development](https://kapeli.com/dash_plugins)
+* [dash-install:// URL Format](https://kapeli.com/dash_install)
+* [Docset Generation Guide](https://kapeli.com/docsets)
 
 ---
 
@@ -37065,6 +38019,101 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'launchbar.'}}hide()
 ---
 
 ---
+url: /protocol-launcher/zh/apps/letterboxd.md
+---
+
+# Letterboxd
+
+[Letterboxd](https://letterboxd.com/) 是一款用于记录、评价和分享电影的应用。**Protocol Launcher** 可以生成 Letterboxd URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+Letterboxd 官方 iOS x-callback-url 文档只列出了三个动作：`search`、`addToWatchlist` 和 `log`。本模块只暴露这些官方记录的动作，以及可选的 `x-success`、`x-cancel`、`x-error` 回调参数。
+
+### 搜索
+
+在 Letterboxd 中搜索 film、member、list、review、contributor，或所有结果类型。官方记录的 `type` 值为 `film`、`member`、`list`、`review`、`contributor` 和 `all`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'search' : 'letterboxd' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'letterboxd.'}}search({
+  query: 'Blade Runner',
+  type: 'film',
+})
+```
+
+### 添加到 Watchlist
+
+打开 Letterboxd，并使用电影名称作为搜索词来添加到用户的 watchlist。Letterboxd 会要求用户手动确认正确的结果。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addToWatchlist' : 'letterboxd' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'letterboxd.'}}addToWatchlist({
+  name: 'Heat',
+})
+```
+
+### 记录
+
+为电影添加新的 log entry、diary entry 或 review。Letterboxd 会把 `name` 用作搜索词，并要求用户手动确认正确的结果。Boolean 值会按官方文档序列化为 `true` 或 `false`。
+
+官方记录的字段为 `name`、`date`、`rewatch`、`tags`、`review`、`containsSpoilers`、`rating`、`like`，以及已废弃的 `shareOnFacebook`。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'log' : 'letterboxd' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'letterboxd.'}}log({
+  name: 'Heat',
+  date: '2026-06-10',
+  rewatch: true,
+  tags: 'crime,friendship',
+  review: '<strong>Great</strong>',
+  containsSpoilers: false,
+  rating: 4.5,
+  like: true,
+})
+```
+
+## 生成的 URL
+
+```ts
+search({ query: 'Blade Runner', type: 'film' })
+// => 'letterboxd://x-callback-url/search?query=Blade%20Runner&type=film'
+
+addToWatchlist({ name: 'Heat' })
+// => 'letterboxd://x-callback-url/addToWatchlist?name=Heat'
+
+log({
+  name: 'Heat',
+  date: '2026-06-10',
+  rewatch: true,
+  tags: 'crime,friendship',
+  review: '<strong>Great</strong>',
+  containsSpoilers: false,
+  rating: 4.5,
+  like: true,
+})
+// => 'letterboxd://x-callback-url/log?name=Heat&date=2026-06-10&rewatch=true&tags=crime%2Cfriendship&review=%3Cstrong%3EGreat%3C%2Fstrong%3E&containsSpoilers=false&rating=4.5&like=true'
+```
+
+## 官方文档
+
+* [Letterboxd iOS X-Callback-URL Support](https://github.com/Letterboxd/letterboxd-ios-x-callback-url)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/line.md
 ---
 
@@ -42433,6 +43482,52 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'powerBiMobile.'}}openReport(
 ---
 
 ---
+url: /protocol-launcher/zh/apps/postman.md
+---
+
+# Postman
+
+[Postman](https://www.postman.com/) 是一款用于构建、测试和协作 API 的平台。**Protocol Launcher** 允许你生成用于在 Postman 中打开本地 Flow 文件的 URL。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+Postman 官方 Native Git / Flows 文档列出了 `postman://app/flows/open?filePath=...` custom protocol 链接，用来打开本地 flows。生成后的 `filePath` 是 flow 文件的 URL 编码后绝对路径。本模块只暴露这个官方记录的形式。
+
+### 打开本地 Flow
+
+生成官方记录的深度链接，用来打开本地 Postman Flow 文件。传入未编码的绝对路径即可，Protocol Launcher 会在生成 URL 时负责编码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openLocalFlow' : 'postman' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'postman.'}}openLocalFlow({
+  filePath: '/Users/username/GitHub/postman/flows/New flow.flow',
+})
+```
+
+## 生成的 URL
+
+```ts
+openLocalFlow({ filePath: '/Users/username/GitHub/postman/flows/New flow.flow' })
+// => 'postman://app/flows/open?filePath=%2FUsers%2Fusername%2FGitHub%2Fpostman%2Fflows%2FNew%20flow.flow'
+```
+
+## 官方文档
+
+* [Manage flows with Native Git](https://learning.postman.com/docs/postman-flows/get-started/flows-native-git)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/prizmo.md
 ---
 
@@ -43176,6 +44271,169 @@ const temporaryUrl = {{currentMethod === 'On-Demand' ? '' : 'raycast.'}}customWi
 ---
 
 ---
+url: /protocol-launcher/zh/apps/remote-desktop-manager.md
+---
+
+# Remote Desktop Manager
+
+[Remote Desktop Manager](https://devolutions.net/remote-desktop-manager/) 是一款远程桌面和连接管理应用。**Protocol Launcher** 允许你生成官方 Remote Desktop Manager `rdm://` protocol handler URL。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Devolutions 为 Remote Desktop Manager protocol handler 记录的 action 和参数：`open`、`find`、`edit`、`view`、`OpenWithMacro`、`select`，以及 `DataSource`、`Session`、`Template`、`Host`、`Port`、`Username`、`Password`、`Domain`、`Title`、`Filter`、`Tabpage` 参数。
+
+Devolutions 文档说明 URL 需要 action 和至少一个参数。`DataSource` 与 `Session` 足以打开连接。使用 `Template` 时需要 `Host`。`Tabpage` 在文档中标注为仅适用于 `Select` action，列出的取值是 `Overview`、`Documentation`、`Macros/Scripts/Tools`、`Management Tools`、`Information`、`Attachments`、`Logs` 和 `Recordings`；本模块同时保留 Devolutions 精确给出的 `rdm://open?Filter=RDP&Tabpage=Dashboard` 示例。
+
+示例使用假 ID、保留主机和占位凭据。不要公开真实 workspace ID、session ID、template ID、主机名、用户名、密码、域名或涉及许可证的敏感信息。
+
+## URL 方法
+
+### 打开
+
+打开 Remote Desktop Manager 并填充 Search 字段，与官方示例一致。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}open({
+  filter: '{{ openSearchParams.filter }}',
+  tabpage: '{{ openSearchParams.tabpage }}',
+})
+```
+
+使用 `DataSource` 与 `Session` 打开指定 session。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}open({
+  dataSource: '{{ openSessionParams.dataSource }}',
+  session: '{{ openSessionParams.session }}',
+})
+```
+
+使用 template 和 host 打开，并附带官方记录的连接覆盖参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}open({
+  template: '{{ openTemplateParams.template }}',
+  host: '{{ openTemplateParams.host }}',
+  port: {{ openTemplateParams.port }},
+  username: '{{ openTemplateParams.username }}',
+  domain: '{{ openTemplateParams.domain }}',
+  title: '{{ openTemplateParams.title }}',
+})
+```
+
+### 查找
+
+按 host 查找 sessions。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'find' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}find({
+  host: '{{ findParams.host }}',
+})
+```
+
+### 编辑
+
+编辑指定连接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'edit' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}edit({
+  session: '{{ editParams.session }}',
+})
+```
+
+### 查看
+
+查看指定 entry 的密码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}view({
+  session: '{{ viewParams.session }}',
+})
+```
+
+### Open With Macro
+
+使用 macro 打开指定 entry。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWithMacro' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}openWithMacro({
+  session: '{{ openWithMacroParams.session }}',
+})
+```
+
+### 选择
+
+在 navigation pane 中选择连接，并聚焦 dashboard tab。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'select' : 'remoteDesktopManager' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'remoteDesktopManager.'}}select({
+  session: '{{ selectParams.session }}',
+  tabpage: '{{ selectParams.tabpage }}',
+})
+```
+
+## 生成的 URL
+
+```ts
+open(openSearchParams)
+// => 'rdm://open?Filter=RDP&Tabpage=Dashboard'
+
+open(openSessionParams)
+// => 'rdm://open?DataSource=d4cb6537-0471-4c07-a91b-43a5e1f1f007&Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+open(openTemplateParams)
+// => 'rdm://open?Template=b32e4f20-7c1e-4872-b5cb-c893cc2fc272&Host=server.example.com&Port=3389&Username=admin&Domain=EXAMPLE&Title=Support%20Session'
+
+find(findParams)
+// => 'rdm://find?Host=server.example.com'
+
+edit(editParams)
+// => 'rdm://edit?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+view(viewParams)
+// => 'rdm://view?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+openWithMacro(openWithMacroParams)
+// => 'rdm://OpenWithMacro?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1'
+
+select(selectParams)
+// => 'rdm://select?Session=f368d57a-d6ac-4b84-a79e-6e4f6cb3d2e1&Tabpage=Overview'
+```
+
+这些示例不会渲染可直接点击的启动按钮，因为官方 handler 可能打开 sessions、显示密码或启动 macro 驱动的工作流。
+
+## 官方文档
+
+* [Remote Desktop Manager protocol handler](https://docs.devolutions.net/rdm/kb/knowledge-base/protocol-handler/)
+
+---
+
+---
 url: /protocol-launcher/zh/apps/reeder.md
 ---
 
@@ -43231,6 +44489,213 @@ openFeed({
 ## 官方文档
 
 * [Reeder Help - URL Scheme](https://reederapp.com/help/)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/ringcentral.md
+---
+
+# RingCentral
+
+[RingCentral](https://www.ringcentral.com/) 是一款用于通话、消息、会议和团队协作的通信应用。**Protocol Launcher** 可以生成 RingCentral URL scheme 链接。
+
+## 用法
+
+有两种方式使用此库：
+
+* On-Demand 从子路径导入，有利于 tree-shaking 并保持包体积较小。
+* Full Import 从根包导入，写起来更方便，但会包含所有应用模块。
+
+生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
+
+## 说明
+
+本模块遵循 RingCentral 官方 URI Scheme Reference。它只暴露文档中列出的 `rcmobile://` 移动端链接、`rcapp://r/signin`、`tel:` 与 `sms:` 系统 URI 形式、`https://app.ringcentral.com` 下的 RingCentral web app 链接、desktop `/r/...` 路径，以及 `https://v.ringcentral.com` 下的 RingCentral Video 加入链接。
+
+`desktopSms()` 只会在官方文档列出的 `number + content` 形式中序列化 `content`，不会生成未文档化的 content-only URL。
+
+### 移动端通话和短信
+
+生成官方文档中的 RingCentral mobile call 和 SMS draft URI。这些链接可能会启动通信流程，因此本页只展示生成示例，不提供实时预览链接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'call, sms' : 'ringcentral' }} } from '{{ importPath }}'
+
+const callUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}call({
+  phoneNumber: '15551234567',
+})
+
+const smsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}sms({
+  phoneNumber: '15551234567',
+})
+```
+
+### 移动端页面
+
+打开 `rcmobile://` 目录中记录的 RingCentral mobile 页面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'conference, meeting, contacts, voicemail, history' : 'ringcentral' }} } from '{{ importPath }}'
+
+const conferenceUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}conference()
+const meetingUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}meeting()
+const contactsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}contacts()
+const voicemailUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}voicemail()
+const historyUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}history()
+```
+
+### 移动端 Team Messaging
+
+使用文档化的 `rcmobile://glip/...` URI 打开 RingCentral mobile Team Messaging 资源。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTeam, openChat, openPost, openFile, openTask, openEvent' : 'ringcentral' }} } from '{{ importPath }}'
+
+const teamUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openTeam({
+  teamId: 'team-123',
+})
+
+const directMessageUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openChat({
+  userId: 'user-123',
+})
+
+const postUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openPost({
+  postId: 'post-123',
+})
+
+const fileUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openFile({
+  fileId: 'file-123',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openTask({
+  taskId: 'task-123',
+})
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openEvent({
+  eventId: 'event-123',
+})
+```
+
+### 登录
+
+启动 RingCentral app 登录页面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'signIn' : 'ringcentral' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}signIn()
+```
+
+### 系统 URI 形式
+
+生成 RingCentral 参考文档中列出的 `tel:` 和 `sms:` URI 形式。它们会使用默认电话或短信应用，而不是 `rcmobile://` scheme。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'tel, systemSms' : 'ringcentral' }} } from '{{ importPath }}'
+
+const telUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}tel({
+  phoneNumber: '15551234567',
+})
+
+const defaultSmsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}systemSms({
+  phoneNumber: '15551234567',
+})
+```
+
+### Web App 链接
+
+生成文档化 production base URL 下的 RingCentral web app deep links。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWebTeamChat, openWebInvitation, openWebGroup, openWebMessageThread, openWebChat, openWebTeamMessage, openWebTask, openWebFile, openWebEvent' : 'ringcentral' }} } from '{{ importPath }}'
+
+const teamChatUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebTeamChat({
+  groupId: 'group-123',
+})
+
+const invitationUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebInvitation({
+  groupId: 'group-123',
+  email: 'member@example.com',
+})
+
+const groupUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebGroup({
+  groupId: 'group-123',
+})
+
+const messageThreadUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebMessageThread({
+  messageId: 'message-123',
+})
+
+const chatUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebChat({
+  chatId: 'chat-123',
+})
+
+const teamMessageUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebTeamMessage({
+  teamId: 'team-123',
+  messageId: 'message-123',
+})
+
+const taskUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebTask({
+  taskId: 'task-123',
+})
+
+const fileUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebFile({
+  fileId: 'file-123',
+})
+
+const eventUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}openWebEvent({
+  eventId: 'event-123',
+})
+```
+
+### Desktop 路径
+
+生成官方文档中的 `/r/...` RingCentral desktop 路径。RingCentral 将 production base URL `https://app.ringcentral.com/` 单独列在 Environment Base URLs 中，但这些 helper 返回 catalog 中展示的精确 path 形式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'desktopCall, desktopDialer, desktopSms, desktopFax' : 'ringcentral' }} } from '{{ importPath }}'
+
+const desktopCallUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopCall({
+  phoneNumber: '15551234567',
+})
+
+const dialerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopDialer()
+
+const prefilledDialerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopDialer({
+  phoneNumber: '15551234567',
+})
+
+const smsComposerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopSms()
+
+const prefilledSmsUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopSms({
+  phoneNumber: '15551234567',
+  content: 'Hello from Protocol Launcher',
+})
+
+const faxComposerUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}desktopFax()
+```
+
+### RingCentral Video
+
+打开 RingCentral Video 会议，可选预填会议密码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'joinVideo' : 'ringcentral' }} } from '{{ importPath }}'
+
+const meetingUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}joinVideo({
+  meetingId: '123456789',
+})
+
+const meetingWithPasswordUrl = {{currentMethod === 'On-Demand' ? '' : 'ringcentral.'}}joinVideo({
+  meetingId: '123456789',
+  password: 'passcode',
+})
+```
+
+## 官方文档
+
+* [RingCentral URI Scheme Reference](https://developers.ringcentral.com/guide/basics/uri-schemes)
 
 ---
 
@@ -43422,6 +44887,135 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'rustrover.'}}openFolder({
   path: '{{ appStore.isWindows ? 'C:\Windows\System32\drivers\etc' : '/etc' }}',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/salesforce-mobile.md
+---
+
+# Salesforce Mobile
+
+[Salesforce Mobile](https://www.salesforce.com/mobile/) 是 Salesforce 的移动端 CRM 应用。**Protocol Launcher** 允许你生成 Salesforce Mobile URL scheme 链接。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Salesforce Help 官方文档记录的 Salesforce Mobile app URL scheme 格式：用于记录、文件和用户操作的 `salesforce1://sObject/<id>/<action>`，以及用于对象首页的 `salesforce1://sObject/<ObjectName>/home`。
+
+本模块不会生成通用 Salesforce HTTPS 记录 URL，也不会生成旧的 `com.salesforce.salesforce1://entity/...` 变体。Salesforce 文档记录了 15 或 18 位记录 ID、用于 ContentDocument 和 ContentDocumentVersion 对象的 `download`、用于 User 记录的 `follow`，以及名为 `s1oid`、`s1nid`、`s1uid` 和 `iosoru` 的可选查询参数。
+
+## URL 方法
+
+### 查看记录
+
+在 Salesforce mobile app 中打开 Salesforce 记录详情页。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewRecord' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}viewRecord({
+  id: '001D000000Jwj9v',
+})
+```
+
+### 编辑记录
+
+在 Salesforce mobile app 中打开 Salesforce 记录编辑页。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'editRecord' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}editRecord({
+  id: '006R0000001r7Rq',
+})
+```
+
+### 对象首页
+
+在 Salesforce mobile app 中打开 Salesforce 对象首页。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'objectHome' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}objectHome({
+  objectName: 'Account',
+})
+```
+
+### 下载文件
+
+生成官方记录的文件下载 URL scheme。Salesforce 文档将此动作限定在 ContentDocument 和 ContentDocumentVersion 对象上，并说明 Android 只会打开文件，不会离线保存。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadFile' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}downloadFile({
+  id: '069R00000000mr3',
+})
+```
+
+### 关注用户
+
+关注用户并导航到该用户的个人资料页。`userid` 字段会序列化为 Salesforce 官方记录的 `userid` 查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'followUser' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}followUser({
+  id: '005R0000000Df5W',
+  userid: '005R0000000HfcF',
+})
+```
+
+### 附加查询参数
+
+当用户可能属于多个组织或 Experience Cloud 站点时，可以添加 Salesforce 官方记录的可选跳转上下文。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'viewRecord' : 'salesforceMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'salesforceMobile.'}}viewRecord({
+  id: '001D000000Jwj9v',
+  s1oid: '00DT00000000ABC',
+})
+```
+
+## 生成的 URL
+
+```ts
+viewRecord(recordParams)
+// => 'salesforce1://sObject/001D000000Jwj9v/view'
+
+editRecord(editRecordParams)
+// => 'salesforce1://sObject/006R0000001r7Rq/edit'
+
+objectHome(objectHomeParams)
+// => 'salesforce1://sObject/Account/home'
+
+downloadFile(fileParams)
+// => 'salesforce1://sObject/069R00000000mr3/download'
+
+followUser(followUserParams)
+// => 'salesforce1://sObject/005R0000000Df5W/follow?userid=005R0000000HfcF'
+
+viewRecord(recordWithContextParams)
+// => 'salesforce1://sObject/001D000000Jwj9v/view?s1oid=00DT00000000ABC'
+```
+
+## 官方文档
+
+* [Configure Deep Linking for the Salesforce Mobile App](https://help.salesforce.com/s/articleView?id=xcloud.sapp_url_schemes.htm\&language=en_US\&type=5)
+* [Salesforce App URL Scheme Format](https://help.salesforce.com/s/articleView?id=xcloud.sapp_url_schemes_format.htm\&language=en_US\&type=5)
+* [Additional Query Parameters](https://help.salesforce.com/s/articleView?id=xcloud.sapp_url_schemes_query_additional.htm\&language=en_US\&type=5)
 
 ---
 
@@ -44444,6 +46038,54 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'sourcetree.'}}cloneProject({
   repo: 'https://github.com/zhensherlock/protocol-launcher',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/spark.md
+---
+
+# Spark Mail
+
+[Spark Mail](https://sparkmailapp.com/) 是一款邮件客户端。**Protocol Launcher** 允许你打开从 Spark 复制出来的官方 Spark Desktop Deep Link。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+Spark 官方 Deep Links 文档只公开了 `readdle-spark://bl=` 格式的、仅创建者可访问的已复制邮件链接。本模块只暴露这个官方记录的格式，并接收完整的已复制 Deep Link，不尝试重建或解释 Spark 的私有链接载荷。
+
+### 打开 Deep Link
+
+打开从 Spark 中通过 **Copy Deep Link** 复制出来的 Spark Desktop Deep Link。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openDeepLink' : 'spark' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'spark.'}}openDeepLink({
+  url: 'readdle-spark://bl=REPLACE_WITH_COPIED_DEEP_LINK_VALUE',
+})
+```
+
+## 生成的 URL
+
+```ts
+openDeepLink({
+  url: 'readdle-spark://bl=REPLACE_WITH_COPIED_DEEP_LINK_VALUE',
+})
+// => 'readdle-spark://bl=REPLACE_WITH_COPIED_DEEP_LINK_VALUE'
+```
+
+## 官方文档
+
+* [Streamline your workflow with Deep Links on desktop](https://sparkmailapp.com/help/tips-tricks/streamline-your-workflow-with-deep-links)
 
 ---
 

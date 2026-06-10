@@ -1,0 +1,1 @@
+import{i as r}from"./index.CWwLnpeZ.js";function o(t,n={}){return`rcmobile://${t}${r(n)}`}function c(t,n={}){return`https://app.ringcentral.com/${t}${r(n)}`}function u(){return o("contacts")}function e(t){return c("chat/r",{groupid:t.groupId})}function p(){return"rcapp://r/signin"}export{e as a,p as e,u as t};
