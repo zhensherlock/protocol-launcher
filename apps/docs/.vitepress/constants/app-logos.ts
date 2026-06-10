@@ -157,6 +157,7 @@ export const appLogoFiles = {
   pincase: 'pincase.webp',
   pleco: 'pleco.webp',
   'pocket-casts': 'pocket-casts.webp',
+  'power-apps-mobile': 'power-apps.webp',
   'power-bi-mobile': 'power-bi.webp',
   prizmo: 'prizmo.webp',
   pushcut: 'pushcut.webp',

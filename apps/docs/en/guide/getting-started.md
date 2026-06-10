@@ -275,6 +275,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Pincase](../apps/pincase.md)
 - [Pleco](../apps/pleco.md)
 - [Pocket Casts](../apps/pocket-casts.md)
+- [Power Apps Mobile](../apps/power-apps-mobile.md)
 - [Power BI Mobile](../apps/power-bi-mobile.md)
 - [Prizmo](../apps/prizmo.md)
 - [Pushcut](../apps/pushcut.md)

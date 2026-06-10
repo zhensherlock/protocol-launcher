@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
@@ -689,6 +685,10 @@
     "./pocket-casts": {
       "types": "./dist/types/pocket-casts/index.d.ts",
       "import": "./dist/pocket-casts/index.js"
+    },
+    "./power-apps-mobile": {
+      "types": "./dist/types/power-apps-mobile/index.d.ts",
+      "import": "./dist/power-apps-mobile/index.js"
     },
     "./power-bi-mobile": {
       "types": "./dist/types/power-bi-mobile/index.d.ts",
