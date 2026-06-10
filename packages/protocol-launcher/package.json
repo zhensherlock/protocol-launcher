@@ -106,6 +106,10 @@
       "types": "./dist/types/apple-script/index.d.ts",
       "import": "./dist/apple-script/index.js"
     },
+    "./arcgis-quickcapture": {
+      "types": "./dist/types/arcgis-quickcapture/index.d.ts",
+      "import": "./dist/arcgis-quickcapture/index.js"
+    },
     "./arcgis-survey123": {
       "types": "./dist/types/arcgis-survey123/index.d.ts",
       "import": "./dist/arcgis-survey123/index.js"

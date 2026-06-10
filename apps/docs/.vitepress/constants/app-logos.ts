@@ -13,6 +13,7 @@ export const appLogoFiles = {
   'appigo-todo': 'appigo-todo.webp',
   'apple-map': 'apple.svg',
   'apple-script': 'apple.svg',
+  'arcgis-quickcapture': 'arcgis-quickcapture.webp',
   'arcgis-survey123': 'arcgis-survey123.webp',
   atom: 'atom.png',
   barcuts: 'barcuts.webp',

@@ -130,6 +130,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 - [Appigo Todo](../apps/appigo-todo.md)
 - [Apple 地图](../apps/apple-map.md)
 - [Apple Script Editor](../apps/apple-script.md)
+- [ArcGIS QuickCapture](../apps/arcgis-quickcapture.md)
 - [ArcGIS Survey123](../apps/arcgis-survey123.md)
 - [Atom](../apps/atom.md)
 - [1Writer](../apps/1writer.md)

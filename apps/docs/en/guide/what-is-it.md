@@ -38,6 +38,7 @@ Currently, we support the following applications:
 - [AppFlowy](../apps/appflowy.md)
 - [Apple Maps](../apps/apple-map.md)
 - [Apple Script Editor](../apps/apple-script.md)
+- [ArcGIS QuickCapture](../apps/arcgis-quickcapture.md)
 - [ArcGIS Survey123](../apps/arcgis-survey123.md)
 - [Atom](../apps/atom.md)
 - [1Writer](../apps/1writer.md)
