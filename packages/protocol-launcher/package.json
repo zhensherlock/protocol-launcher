@@ -502,6 +502,10 @@
       "types": "./dist/types/launchbar/index.d.ts",
       "import": "./dist/launchbar/index.js"
     },
+    "./letterboxd": {
+      "types": "./dist/types/letterboxd/index.d.ts",
+      "import": "./dist/letterboxd/index.js"
+    },
     "./line": {
       "types": "./dist/types/line/index.d.ts",
       "import": "./dist/line/index.js"

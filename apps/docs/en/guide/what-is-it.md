@@ -139,6 +139,7 @@ Currently, we support the following applications:
 - [Kiro](../apps/kiro.md)
 - [Launch Center Pro](../apps/launch-center-pro.md)
 - [LaunchBar](../apps/launchbar.md)
+- [Letterboxd](../apps/letterboxd.md)
 - [LINE](../apps/line.md)
 - [Lingma](../apps/lingma.md)
 - [Locus Map](../apps/locus-map.md)

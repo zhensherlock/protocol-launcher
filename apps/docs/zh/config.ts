@@ -142,6 +142,7 @@ export default defineAdditionalConfig({
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Launch Center Pro', link: '/zh/apps/launch-center-pro' },
           { text: 'LaunchBar', link: '/zh/apps/launchbar' },
+          { text: 'Letterboxd', link: '/zh/apps/letterboxd' },
           { text: 'LINE', link: '/zh/apps/line' },
           { text: 'Lingma', link: '/zh/apps/lingma' },
           { text: 'Locus Map', link: '/zh/apps/locus-map' },

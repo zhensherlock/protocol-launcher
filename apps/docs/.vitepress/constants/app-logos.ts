@@ -111,6 +111,7 @@ export const appLogoFiles = {
   kiro: 'kiro.png',
   'launch-center-pro': 'launch-center-pro.png',
   launchbar: 'launchbar.png',
+  letterboxd: 'letterboxd.webp',
   line: 'line.webp',
   lingma: 'lingma.png',
   'locus-map': 'locus-map.webp',
