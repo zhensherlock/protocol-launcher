@@ -42,6 +42,7 @@ Currently, we support the following applications:
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Bike Outliner](../apps/bike-outliner.md)
+* [Box](../apps/box.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -399,6 +400,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Bike Outliner](../apps/bike-outliner.md)
+* [Box](../apps/box.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -3017,6 +3019,127 @@ openRowLink({ url: 'bike://KOcw9x9N/ch#zf' })
 ## Official Documentation
 
 * [Bike Outliner Using Links](https://bikeguide.hogbaysoftware.com/using-bike/using-links)
+
+---
+
+---
+url: /protocol-launcher/apps/box.md
+---
+
+# Box
+
+[Box](https://www.box.com/) is a cloud file sharing and content management app. **Protocol Launcher** allows you to generate mobile links to open Box folders, files, and shared links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+Box's official mobile deep linking documentation lists deep links for folder, file, and shared-link objects in Box and Box for EMM. This module exposes only those documented forms.
+
+### Open Folder
+
+Generate the documented URL that opens a folder object in the Box mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openFolder({
+  id: '123456789',
+})
+```
+
+### Open File
+
+Generate the documented URL that opens a file object in the Box mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openFile({
+  id: '987654321',
+})
+```
+
+### Open Shared Link
+
+Generate the documented URL that opens a shared link in the Box mobile app.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSharedLink' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openSharedLink({
+  url: 'https://app.box.com/s/shared-link-id',
+})
+```
+
+### Open EMM Folder
+
+Generate the documented URL that opens a folder object in Box for EMM.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmmFolder' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openEmmFolder({
+  id: '123456789',
+})
+```
+
+### Open EMM File
+
+Generate the documented URL that opens a file object in Box for EMM.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmmFile' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openEmmFile({
+  id: '987654321',
+})
+```
+
+### Open EMM Shared Link
+
+Generate the documented URL that opens a shared link in Box for EMM.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmmSharedLink' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openEmmSharedLink({
+  url: 'https://app.box.com/s/shared-link-id',
+})
+```
+
+## Generated URLs
+
+```ts
+openFolder({ id: '123456789' })
+// => 'boxapp://folder?id=123456789'
+
+openFile({ id: '987654321' })
+// => 'boxapp://file?id=987654321'
+
+openSharedLink({ url: 'https://app.box.com/s/shared-link-id' })
+// => 'boxapp://sharedlink?url=https%3A%2F%2Fapp.box.com%2Fs%2Fshared-link-id'
+
+openEmmFolder({ id: '123456789' })
+// => 'boxemm://folder?id=123456789'
+
+openEmmFile({ id: '987654321' })
+// => 'boxemm://file?id=987654321'
+
+openEmmSharedLink({ url: 'https://app.box.com/s/shared-link-id' })
+// => 'boxemm://sharedlink?url=https%3A%2F%2Fapp.box.com%2Fs%2Fshared-link-id'
+```
+
+## Official Documentation
+
+* [Box mobile deep linking](https://developer.box.com/guides/mobile/mobile-deep-linking/)
 
 ---
 
@@ -24517,6 +24640,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Bike Outliner](../apps/bike-outliner.md)
+* [Box](../apps/box.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -24874,6 +24998,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Bike Outliner](../apps/bike-outliner.md)
+* [Box](../apps/box.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
@@ -27493,6 +27618,127 @@ openRowLink({ url: 'bike://KOcw9x9N/ch#zf' })
 ## 官方文档
 
 * [Bike Outliner Using Links](https://bikeguide.hogbaysoftware.com/using-bike/using-links)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/box.md
+---
+
+# Box
+
+[Box](https://www.box.com/) 是一款云端文件共享和内容管理应用。**Protocol Launcher** 允许你生成移动端链接，用来打开 Box folder、file 和 shared link。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+Box 官方移动端 deep linking 文档列出了 Box 和 Box for EMM 中打开 folder、file、shared link 对象的链接。本模块只暴露这些官方记录的形式。
+
+### 打开 Folder
+
+生成官方记录的 URL，在 Box 移动端 app 中打开一个 folder 对象。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFolder' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openFolder({
+  id: '123456789',
+})
+```
+
+### 打开 File
+
+生成官方记录的 URL，在 Box 移动端 app 中打开一个 file 对象。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFile' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openFile({
+  id: '987654321',
+})
+```
+
+### 打开 Shared Link
+
+生成官方记录的 URL，在 Box 移动端 app 中打开一个 shared link。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSharedLink' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openSharedLink({
+  url: 'https://app.box.com/s/shared-link-id',
+})
+```
+
+### 打开 EMM Folder
+
+生成官方记录的 URL，在 Box for EMM 中打开一个 folder 对象。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmmFolder' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openEmmFolder({
+  id: '123456789',
+})
+```
+
+### 打开 EMM File
+
+生成官方记录的 URL，在 Box for EMM 中打开一个 file 对象。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmmFile' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openEmmFile({
+  id: '987654321',
+})
+```
+
+### 打开 EMM Shared Link
+
+生成官方记录的 URL，在 Box for EMM 中打开一个 shared link。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEmmSharedLink' : 'box' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'box.'}}openEmmSharedLink({
+  url: 'https://app.box.com/s/shared-link-id',
+})
+```
+
+## 生成的 URL
+
+```ts
+openFolder({ id: '123456789' })
+// => 'boxapp://folder?id=123456789'
+
+openFile({ id: '987654321' })
+// => 'boxapp://file?id=987654321'
+
+openSharedLink({ url: 'https://app.box.com/s/shared-link-id' })
+// => 'boxapp://sharedlink?url=https%3A%2F%2Fapp.box.com%2Fs%2Fshared-link-id'
+
+openEmmFolder({ id: '123456789' })
+// => 'boxemm://folder?id=123456789'
+
+openEmmFile({ id: '987654321' })
+// => 'boxemm://file?id=987654321'
+
+openEmmSharedLink({ url: 'https://app.box.com/s/shared-link-id' })
+// => 'boxemm://sharedlink?url=https%3A%2F%2Fapp.box.com%2Fs%2Fshared-link-id'
+```
+
+## 官方文档
+
+* [Box mobile deep linking](https://developer.box.com/guides/mobile/mobile-deep-linking/)
 
 ---
 

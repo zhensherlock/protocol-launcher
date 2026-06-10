@@ -139,6 +139,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Beorg](../apps/beorg.md)
 * [BetterTouchTool](../apps/bettertouchtool.md)
 * [Bike Outliner](../apps/bike-outliner.md)
+* [Box](../apps/box.md)
 * [Buchen](../apps/buchen.md)
 * [Bunch](../apps/bunch.md)
 * [BusyCal](../apps/busycal.md)
