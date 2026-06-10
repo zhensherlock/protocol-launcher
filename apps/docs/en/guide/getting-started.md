@@ -185,6 +185,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Claris FileMaker](../apps/filemaker.md)
 - [Find Any File](../apps/find-any-file.md)
 - [Focus](../apps/focus.md)
+- [ForeFlight Mobile](../apps/foreflight-mobile.md)
 - [forScore](../apps/forscore.md)
 - [FSNotes](../apps/fsnotes.md)
 - [Streets](../apps/ftstreets.md)

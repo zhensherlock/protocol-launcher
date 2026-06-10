@@ -326,6 +326,10 @@
       "types": "./dist/types/focus/index.d.ts",
       "import": "./dist/focus/index.js"
     },
+    "./foreflight-mobile": {
+      "types": "./dist/types/foreflight-mobile/index.d.ts",
+      "import": "./dist/foreflight-mobile/index.js"
+    },
     "./forscore": {
       "types": "./dist/types/forscore/index.d.ts",
       "import": "./dist/forscore/index.js"

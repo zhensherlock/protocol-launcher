@@ -66,6 +66,7 @@ export const appLogoFiles = {
   filemaker: 'filemaker.png',
   'find-any-file': 'find-any-file.webp',
   focus: 'focus.webp',
+  'foreflight-mobile': 'foreflight-mobile.webp',
   forscore: 'forscore.webp',
   fsnotes: 'fsnotes.webp',
   ftstreets: 'ftstreets.png',

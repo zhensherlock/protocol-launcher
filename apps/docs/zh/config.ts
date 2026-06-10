@@ -97,6 +97,7 @@ export default defineAdditionalConfig({
           { text: 'Claris FileMaker', link: '/zh/apps/filemaker' },
           { text: 'Find Any File', link: '/zh/apps/find-any-file' },
           { text: 'Focus', link: '/zh/apps/focus' },
+          { text: 'ForeFlight Mobile', link: '/zh/apps/foreflight-mobile' },
           { text: 'forScore', link: '/zh/apps/forscore' },
           { text: 'FSNotes', link: '/zh/apps/fsnotes' },
           { text: 'Streets', link: '/zh/apps/ftstreets' },
