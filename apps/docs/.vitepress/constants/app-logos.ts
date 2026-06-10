@@ -21,6 +21,7 @@ export const appLogoFiles = {
   beorg: 'beorg.webp',
   bettertouchtool: 'bettertouchtool.png',
   'bike-outliner': 'bike-outliner.webp',
+  box: 'box.webp',
   buchen: 'buchen.webp',
   bunch: 'bunch.png',
   busycal: 'busycal.png',

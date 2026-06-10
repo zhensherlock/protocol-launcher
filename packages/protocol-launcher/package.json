@@ -146,6 +146,10 @@
       "types": "./dist/types/bike-outliner/index.d.ts",
       "import": "./dist/bike-outliner/index.js"
     },
+    "./box": {
+      "types": "./dist/types/box/index.d.ts",
+      "import": "./dist/box/index.js"
+    },
     "./buchen": {
       "types": "./dist/types/buchen/index.d.ts",
       "import": "./dist/buchen/index.js"

@@ -51,6 +51,7 @@ export default defineAdditionalConfig({
           { text: 'Beorg', link: '/zh/apps/beorg' },
           { text: 'BetterTouchTool', link: '/zh/apps/bettertouchtool' },
           { text: 'Bike Outliner', link: '/zh/apps/bike-outliner' },
+          { text: 'Box', link: '/zh/apps/box' },
           { text: 'Buchen', link: '/zh/apps/buchen' },
           { text: 'Bunch', link: '/zh/apps/bunch' },
           { text: 'BusyCal', link: '/zh/apps/busycal' },
