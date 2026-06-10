@@ -145,6 +145,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
+* [Microsoft Remote Desktop](../apps/microsoft-remote-desktop.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)

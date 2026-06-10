@@ -145,6 +145,7 @@ Currently, we support the following applications:
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
+* [Microsoft Remote Desktop](../apps/microsoft-remote-desktop.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
@@ -507,6 +508,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
+* [Microsoft Remote Desktop](../apps/microsoft-remote-desktop.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
@@ -13414,6 +13416,111 @@ openClientUrl(clientUrlParams)
 ---
 
 ---
+url: /protocol-launcher/apps/microsoft-remote-desktop.md
+---
+
+# Microsoft Remote Desktop
+
+[Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients) is Microsoft's remote desktop client. **Protocol Launcher** allows you to generate Microsoft Remote Desktop URI scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps Microsoft-documented URI formats: `ms-rd:` for launching the Remote Desktop client, `ms-rd:subscribe` for workspace subscription, legacy `rdp://` attribute URLs for macOS, iOS, and Android clients, and `ms-avd:connect` for Azure Virtual Desktop resources.
+
+For `ms-avd:connect`, Microsoft marks the published resource ID and user UPN as required in both Remote Desktop client and Windows App. The official example serializes those as `resourceid` and `username`, so this module follows that URI shape. `workspaceId` and `version` are required in Remote Desktop client but not supported in Windows App. Optional `env`, `launchpartnerid`, `peeractivityid`, and `usemultimon` are exposed exactly as documented.
+
+These examples intentionally use reserved hosts, fake GUIDs, and placeholder users. Do not publish real hosts, user names, resource IDs, workspace IDs, credentials, or tenant details.
+
+## URL Methods
+
+### Open
+
+Open the Remote Desktop client with the documented `ms-rd:` URI.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}open()
+```
+
+### Subscribe
+
+Launch Remote Desktop and start the workspace subscription process.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'subscribe' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}subscribe({
+  url: '{{ subscribeParams.url }}',
+})
+```
+
+### Legacy RDP
+
+Build a legacy `rdp://` URI with the RDP attributes Microsoft lists for macOS, iOS, and Android clients.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyRdp' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}legacyRdp({
+  attributes: [
+    { name: 'full address', value: '192.0.2.10:3389' },
+    { name: 'audiomode', value: 2 },
+    { name: 'disable themes', value: 1 },
+  ],
+})
+```
+
+### AVD Connect
+
+Connect to an Azure Virtual Desktop desktop or RemoteApp resource.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'avdConnect' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}avdConnect({
+  workspaceId: '{{ avdConnectParams.workspaceId }}',
+  resourceid: '{{ avdConnectParams.resourceid }}',
+  username: '{{ avdConnectParams.username }}',
+  version: {{ avdConnectParams.version }},
+})
+```
+
+## Generated URLs
+
+```ts
+open()
+// => 'ms-rd:'
+
+subscribe(subscribeParams)
+// => 'ms-rd:subscribe?url=https://rdweb.wvd.microsoft.com'
+
+legacyRdp(legacyRdpParams)
+// => 'rdp://full%20address=s:192.0.2.10:3389&audiomode=i:2&disable%20themes=i:1'
+
+avdConnect(avdConnectParams)
+// => 'ms-avd:connect?workspaceId=1638e073-63b2-46d8-bd84-ea02ea905467&resourceid=a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1&username=user@contoso.com&version=0'
+```
+
+These examples do not render live launch buttons because the official handlers can start a Remote Desktop subscription or connection flow.
+
+## Official Documentation
+
+* [Remote Desktop URI scheme](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remote-desktop-uri)
+* [URI schemes with the Remote Desktop client for Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/uri-scheme)
+
+---
+
+---
 url: /protocol-launcher/apps/microsoft-teams.md
 ---
 
@@ -25169,6 +25276,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
+* [Microsoft Remote Desktop](../apps/microsoft-remote-desktop.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
@@ -25531,6 +25639,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Microsoft Edge](../apps/microsoft-edge.md)
 * [Microsoft Office](../apps/microsoft-office.md)
 * [Microsoft OneNote](../apps/microsoft-onenote.md)
+* [Microsoft Remote Desktop](../apps/microsoft-remote-desktop.md)
 * [Microsoft Teams](../apps/microsoft-teams.md)
 * [MindNode](../apps/mindnode.md)
 * [Momento](../apps/momento.md)
@@ -38435,6 +38544,111 @@ openClientUrl(clientUrlParams)
 ## 参考资料
 
 * [Open the OneNote client](https://learn.microsoft.com/en-us/graph/open-onenote-client)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/microsoft-remote-desktop.md
+---
+
+# Microsoft Remote Desktop
+
+[Microsoft Remote Desktop](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/remote-desktop-clients) 是 Microsoft 的远程桌面客户端。**Protocol Launcher** 允许你生成 Microsoft Remote Desktop URI scheme 链接。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Microsoft 文档记录的 URI 格式：用于启动 Remote Desktop 客户端的 `ms-rd:`，用于工作区订阅的 `ms-rd:subscribe`，用于 macOS、iOS 和 Android 客户端的 legacy `rdp://` 属性 URL，以及用于 Azure Virtual Desktop 资源的 `ms-avd:connect`。
+
+对于 `ms-avd:connect`，Microsoft 文档说明已发布资源 ID 与用户 UPN 在 Remote Desktop client 和 Windows App 中都是必填。官方示例将它们序列化为 `resourceid` 和 `username`，因此本模块跟随该 URI 形状。`workspaceId` 和 `version` 在 Remote Desktop client 中必填，但 Windows App 不支持。可选的 `env`、`launchpartnerid`、`peeractivityid` 和 `usemultimon` 按官方文档原样暴露。
+
+示例使用保留主机、假 GUID 和占位用户。不要公开真实主机、用户名、资源 ID、工作区 ID、凭据或租户信息。
+
+## URL 方法
+
+### 打开
+
+使用官方记录的 `ms-rd:` URI 打开 Remote Desktop 客户端。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'open' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}open()
+```
+
+### 订阅
+
+启动 Remote Desktop，并开始工作区订阅流程。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'subscribe' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}subscribe({
+  url: '{{ subscribeParams.url }}',
+})
+```
+
+### Legacy RDP
+
+使用 Microsoft 为 macOS、iOS 和 Android 客户端列出的 RDP 属性构造 legacy `rdp://` URI。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'legacyRdp' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}legacyRdp({
+  attributes: [
+    { name: 'full address', value: '192.0.2.10:3389' },
+    { name: 'audiomode', value: 2 },
+    { name: 'disable themes', value: 1 },
+  ],
+})
+```
+
+### AVD Connect
+
+连接到 Azure Virtual Desktop 桌面或 RemoteApp 资源。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'avdConnect' : 'microsoftRemoteDesktop' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'microsoftRemoteDesktop.'}}avdConnect({
+  workspaceId: '{{ avdConnectParams.workspaceId }}',
+  resourceid: '{{ avdConnectParams.resourceid }}',
+  username: '{{ avdConnectParams.username }}',
+  version: {{ avdConnectParams.version }},
+})
+```
+
+## 生成的 URL
+
+```ts
+open()
+// => 'ms-rd:'
+
+subscribe(subscribeParams)
+// => 'ms-rd:subscribe?url=https://rdweb.wvd.microsoft.com'
+
+legacyRdp(legacyRdpParams)
+// => 'rdp://full%20address=s:192.0.2.10:3389&audiomode=i:2&disable%20themes=i:1'
+
+avdConnect(avdConnectParams)
+// => 'ms-avd:connect?workspaceId=1638e073-63b2-46d8-bd84-ea02ea905467&resourceid=a0a0a0a0-bbbb-cccc-dddd-e1e1e1e1e1e1&username=user@contoso.com&version=0'
+```
+
+这些示例不会渲染可直接点击的启动按钮，因为官方 handler 可能会启动 Remote Desktop 订阅或连接流程。
+
+## 官方文档
+
+* [Remote Desktop URI scheme](https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/remote-desktop-uri)
+* [URI schemes with the Remote Desktop client for Azure Virtual Desktop](https://learn.microsoft.com/en-us/azure/virtual-desktop/uri-scheme)
 
 ---
 
