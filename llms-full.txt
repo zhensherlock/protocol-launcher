@@ -32,6 +32,7 @@ Currently, we support the following applications:
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Maps](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS QuickCapture](../apps/arcgis-quickcapture.md)
 * [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
@@ -88,6 +89,7 @@ Currently, we support the following applications:
 * [Claris FileMaker](../apps/filemaker.md)
 * [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
+* [ForeFlight Mobile](../apps/foreflight-mobile.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
@@ -403,6 +405,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Appigo Todo](../apps/appigo-todo.md)
 * [Apple Maps](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS QuickCapture](../apps/arcgis-quickcapture.md)
 * [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
@@ -458,6 +461,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Claris FileMaker](../apps/filemaker.md)
 * [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
+* [ForeFlight Mobile](../apps/foreflight-mobile.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
@@ -1913,6 +1917,160 @@ display notification "Note saved to Desktop" with title "Smart Capture"
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({ script })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/arcgis-quickcapture.md
+---
+
+# ArcGIS QuickCapture
+
+[ArcGIS QuickCapture](https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview) is Esri's rapid field data collection app. **Protocol Launcher** allows you to generate ArcGIS QuickCapture launch links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+Esri documents two QuickCapture launch methods: QuickCapture links that begin with `https://quickcapture.arcgis.app` and custom URL scheme links that begin with `arcgis-quickcapture://`. Both methods support the same mobile app parameters.
+
+This module exposes only the documented parameters: `itemID`, `portalUrl`, `externalBrowserSignIn`, `center`, `callback`, `action=press:<button GUID>`, `field:<field name>`, and `userInput:<input id>`.
+
+### Launch URL Scheme
+
+Launch QuickCapture with the documented custom URL scheme.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchUrlScheme' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}launchUrlScheme({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+```
+
+### Launch App Link
+
+Launch QuickCapture with the documented app link for iOS and Android.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchAppLink' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}launchAppLink({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+```
+
+### Open Project
+
+Open a QuickCapture project by project item ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProject' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}openProject({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  center: '37.8199,-122.4783,20',
+})
+```
+
+### Open Portal
+
+Open QuickCapture for a specific ArcGIS portal and optionally request external-browser sign-in.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPortal' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}openPortal({
+  portalUrl: 'https://myorg.arcgis.com',
+  externalBrowserSignIn: true,
+})
+```
+
+### Press Button
+
+Press a QuickCapture button by its documented button GUID and optionally populate field values.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pressButton' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}pressButton({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  buttonID: '0c59c9d9-9b51-46b3-bb81-21149e6fddb4',
+  fields: { diameter: '20' },
+  callback: 'https://survey123.arcgis.app',
+})
+```
+
+### Populate User Input
+
+Open a QuickCapture project with documented project user input values.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'populateUserInput' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}populateUserInput({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: {
+    '001': 'Alice',
+    '002': 'Zone5',
+  },
+})
+```
+
+## Generated URLs
+
+```ts
+launchUrlScheme({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&userInput:001=Alice'
+
+launchAppLink({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+// => 'https://quickcapture.arcgis.app/?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&userInput:001=Alice'
+
+openProject({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  center: '37.8199,-122.4783,20',
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&center=37.8199%2C-122.4783%2C20'
+
+openPortal({
+  portalUrl: 'https://myorg.arcgis.com',
+  externalBrowserSignIn: true,
+})
+// => 'arcgis-quickcapture://?portalUrl=https%3A%2F%2Fmyorg.arcgis.com&externalBrowserSignIn=true'
+
+pressButton({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  buttonID: '0c59c9d9-9b51-46b3-bb81-21149e6fddb4',
+  fields: { diameter: '20' },
+  callback: 'https://survey123.arcgis.app',
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&action=press%3A0c59c9d9-9b51-46b3-bb81-21149e6fddb4&field:diameter=20&callback=https%3A%2F%2Fsurvey123.arcgis.app'
+
+populateUserInput({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice', '002': 'Zone5' },
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&userInput:001=Alice&userInput:002=Zone5'
+```
+
+## Official Documentation
+
+* [Integrate with other apps](https://doc.arcgis.com/en/quickcapture/help/integratewithotherapps.htm)
 
 ---
 
@@ -7900,6 +8058,70 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
   xError: 'shortcuts://x-callback-url/run-shortcut?name=Focus Error',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/foreflight-mobile.md
+---
+
+# ForeFlight Mobile
+
+[ForeFlight Mobile](https://www.foreflight.com/products/foreflight-mobile/) is an aviation planning and electronic flight bag app. **Protocol Launcher** allows you to generate ForeFlight Mobile URL scheme links.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## URL Methods
+
+ForeFlight's official URL Schemes page lists `foreflightmobile://maps/search?q=...` for Maps searches. This module exposes only that documented form.
+
+### Map Search
+
+Generate the documented URL that launches ForeFlight Mobile and searches on the Maps view.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'mapSearch' : 'foreflightMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'foreflightMobile.'}}mapSearch({
+  q: 'KISM OCF NITTS KSRQ 165 16 8000',
+})
+```
+
+## Generated URLs
+
+```ts
+mapSearch({ q: 'KISM OCF NITTS KSRQ 165 16 8000' })
+// => 'foreflightmobile://maps/search?q=KISM+OCF+NITTS+KSRQ+165+16+8000'
+
+mapSearch({ q: 'KISM OCF NITTS KSRQ 125mph 12gph 8000' })
+// => 'foreflightmobile://maps/search?q=KISM+OCF+NITTS+KSRQ+125mph+12gph+8000'
+
+mapSearch({ q: 'KOSH GEP KFCM 130kts 410kgph 4000ft' })
+// => 'foreflightmobile://maps/search?q=KOSH+GEP+KFCM+130kts+410kgph+4000ft'
+
+mapSearch({ q: 'KOSH GEP USER@MYHOUSE KFCM 130kts' })
+// => 'foreflightmobile://maps/search?q=KOSH+GEP+USER@MYHOUSE+KFCM+130kts'
+
+mapSearch({ q: 'KOSH GEP CONTPACK@THECABIN KFCM 130kts' })
+// => 'foreflightmobile://maps/search?q=KOSH+GEP+CONTPACK@THECABIN+KFCM+130kts'
+
+mapSearch({ q: 'KAUS ELA KSGR 165kts 20.5gph 14000ft N12345' })
+// => 'foreflightmobile://maps/search?q=KAUS+ELA+KSGR+165kts+20.5gph+14000ft+N12345'
+
+mapSearch({ q: 'KISM OCF/F060 NITTS/N0100F040 KSRQ 8000' })
+// => 'foreflightmobile://maps/search?q=KISM+OCF/F060+NITTS/N0100F040+KSRQ+8000'
+```
+
+## Official Documentation
+
+* [ForeFlight Mobile URL Schemes](https://foreflight.com/support/app-urls/)
 
 ---
 
@@ -25984,6 +26206,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [AppFlowy](../apps/appflowy.md)
 * [Apple Map](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS QuickCapture](../apps/arcgis-quickcapture.md)
 * [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
@@ -26040,6 +26263,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Claris FileMaker](../apps/filemaker.md)
 * [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
+* [ForeFlight Mobile](../apps/foreflight-mobile.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
@@ -26355,6 +26579,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Appigo Todo](../apps/appigo-todo.md)
 * [Apple 地图](../apps/apple-map.md)
 * [Apple Script Editor](../apps/apple-script.md)
+* [ArcGIS QuickCapture](../apps/arcgis-quickcapture.md)
 * [ArcGIS Survey123](../apps/arcgis-survey123.md)
 * [Atom](../apps/atom.md)
 * [1Writer](../apps/1writer.md)
@@ -26410,6 +26635,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Claris FileMaker](../apps/filemaker.md)
 * [Find Any File](../apps/find-any-file.md)
 * [Focus](../apps/focus.md)
+* [ForeFlight Mobile](../apps/foreflight-mobile.md)
 * [forScore](../apps/forscore.md)
 * [FSNotes](../apps/fsnotes.md)
 * [Streets](../apps/ftstreets.md)
@@ -27865,6 +28091,160 @@ display notification "Note saved to Desktop" with title "Smart Capture"
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'appleScript.'}}addScript({ script })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/arcgis-quickcapture.md
+---
+
+# ArcGIS QuickCapture
+
+[ArcGIS QuickCapture](https://www.esri.com/en-us/arcgis/products/arcgis-quickcapture/overview) 是 Esri 的快速现场数据采集应用。**Protocol Launcher** 可以生成 ArcGIS QuickCapture 启动链接。
+
+## 使用方式
+
+这个库有两种使用方式：
+
+* On-Demand 从子路径导入，支持 tree-shaking，能让产物更小。
+* Full Import 从根包导入，适合快速脚本或演示，但会包含全部 app 模块。
+
+生产构建建议选择 On-Demand；快速脚本或 demo 可以选择 Full Import。
+
+## URL Methods
+
+Esri 官方文档列出了两种 QuickCapture 启动方式：以 `https://quickcapture.arcgis.app` 开头的 QuickCapture link，以及以 `arcgis-quickcapture://` 开头的 custom URL scheme。两种方式支持相同的 mobile app 参数。
+
+本模块只暴露官方文档列出的参数：`itemID`、`portalUrl`、`externalBrowserSignIn`、`center`、`callback`、`action=press:<button GUID>`、`field:<field name>` 和 `userInput:<input id>`。
+
+### Launch URL Scheme
+
+使用官方 custom URL scheme 启动 QuickCapture。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchUrlScheme' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}launchUrlScheme({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+```
+
+### Launch App Link
+
+使用官方用于 iOS 和 Android 的 app link 启动 QuickCapture。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchAppLink' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}launchAppLink({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+```
+
+### Open Project
+
+通过项目 item ID 打开 QuickCapture 项目。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openProject' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}openProject({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  center: '37.8199,-122.4783,20',
+})
+```
+
+### Open Portal
+
+为指定 ArcGIS portal 打开 QuickCapture，并可请求使用外部浏览器登录。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openPortal' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}openPortal({
+  portalUrl: 'https://myorg.arcgis.com',
+  externalBrowserSignIn: true,
+})
+```
+
+### Press Button
+
+通过官方文档中的 button GUID 按下 QuickCapture 按钮，并可填充字段值。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pressButton' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}pressButton({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  buttonID: '0c59c9d9-9b51-46b3-bb81-21149e6fddb4',
+  fields: { diameter: '20' },
+  callback: 'https://survey123.arcgis.app',
+})
+```
+
+### Populate User Input
+
+打开 QuickCapture 项目并填充官方文档中的 project user input 值。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'populateUserInput' : 'arcgisQuickCapture' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisQuickCapture.'}}populateUserInput({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: {
+    '001': 'Alice',
+    '002': 'Zone5',
+  },
+})
+```
+
+## 生成的 URL
+
+```ts
+launchUrlScheme({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&userInput:001=Alice'
+
+launchAppLink({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice' },
+})
+// => 'https://quickcapture.arcgis.app/?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&userInput:001=Alice'
+
+openProject({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  center: '37.8199,-122.4783,20',
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&center=37.8199%2C-122.4783%2C20'
+
+openPortal({
+  portalUrl: 'https://myorg.arcgis.com',
+  externalBrowserSignIn: true,
+})
+// => 'arcgis-quickcapture://?portalUrl=https%3A%2F%2Fmyorg.arcgis.com&externalBrowserSignIn=true'
+
+pressButton({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  buttonID: '0c59c9d9-9b51-46b3-bb81-21149e6fddb4',
+  fields: { diameter: '20' },
+  callback: 'https://survey123.arcgis.app',
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&action=press%3A0c59c9d9-9b51-46b3-bb81-21149e6fddb4&field:diameter=20&callback=https%3A%2F%2Fsurvey123.arcgis.app'
+
+populateUserInput({
+  itemID: 'aabda4a5e36d42c2bcf1c479fe01e5e3',
+  userInputs: { '001': 'Alice', '002': 'Zone5' },
+})
+// => 'arcgis-quickcapture://?itemID=aabda4a5e36d42c2bcf1c479fe01e5e3&userInput:001=Alice&userInput:002=Zone5'
+```
+
+## 官方文档
+
+* [Integrate with other apps](https://doc.arcgis.com/en/quickcapture/help/integratewithotherapps.htm)
 
 ---
 
@@ -33853,6 +34233,70 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'focus.'}}addTask({
   xError: 'shortcuts://x-callback-url/run-shortcut?name=Focus Error',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/foreflight-mobile.md
+---
+
+# ForeFlight Mobile
+
+[ForeFlight Mobile](https://www.foreflight.com/products/foreflight-mobile/) 是一款航空飞行规划和电子飞行包应用。**Protocol Launcher** 允许你生成 ForeFlight Mobile URL scheme 链接。
+
+## 使用
+
+有两种方式可以使用此库：
+
+* 按需从子路径导入，支持 Tree Shaking 并保持包体积较小。
+* 从根包完整导入更适合快速脚本或示例，但会包含全部应用模块。
+
+生产构建建议使用按需导入；快速演示可以使用完整导入。
+
+## URL 方法
+
+ForeFlight 官方 URL Schemes 页面列出了用于 Maps search 的 `foreflightmobile://maps/search?q=...`。本模块只暴露这个官方记录的形式。
+
+### Map Search
+
+生成官方记录的 URL，启动 ForeFlight Mobile 并在 Maps 视图中搜索。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'mapSearch' : 'foreflightMobile' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'foreflightMobile.'}}mapSearch({
+  q: 'KISM OCF NITTS KSRQ 165 16 8000',
+})
+```
+
+## 生成的 URL
+
+```ts
+mapSearch({ q: 'KISM OCF NITTS KSRQ 165 16 8000' })
+// => 'foreflightmobile://maps/search?q=KISM+OCF+NITTS+KSRQ+165+16+8000'
+
+mapSearch({ q: 'KISM OCF NITTS KSRQ 125mph 12gph 8000' })
+// => 'foreflightmobile://maps/search?q=KISM+OCF+NITTS+KSRQ+125mph+12gph+8000'
+
+mapSearch({ q: 'KOSH GEP KFCM 130kts 410kgph 4000ft' })
+// => 'foreflightmobile://maps/search?q=KOSH+GEP+KFCM+130kts+410kgph+4000ft'
+
+mapSearch({ q: 'KOSH GEP USER@MYHOUSE KFCM 130kts' })
+// => 'foreflightmobile://maps/search?q=KOSH+GEP+USER@MYHOUSE+KFCM+130kts'
+
+mapSearch({ q: 'KOSH GEP CONTPACK@THECABIN KFCM 130kts' })
+// => 'foreflightmobile://maps/search?q=KOSH+GEP+CONTPACK@THECABIN+KFCM+130kts'
+
+mapSearch({ q: 'KAUS ELA KSGR 165kts 20.5gph 14000ft N12345' })
+// => 'foreflightmobile://maps/search?q=KAUS+ELA+KSGR+165kts+20.5gph+14000ft+N12345'
+
+mapSearch({ q: 'KISM OCF/F060 NITTS/N0100F040 KSRQ 8000' })
+// => 'foreflightmobile://maps/search?q=KISM+OCF/F060+NITTS/N0100F040+KSRQ+8000'
+```
+
+## 官方文档
+
+* [ForeFlight Mobile URL Schemes](https://foreflight.com/support/app-urls/)
 
 ---
 
