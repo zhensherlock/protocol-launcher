@@ -1,5 +1,52 @@
 # protocol-launcher
 
+## 1.27.0
+
+### Minor Changes
+
+- [`7d8d0e0`](https://github.com/zhensherlock/protocol-launcher/commit/7d8d0e0ed6751e79fc3d8e6b3ade06859757a15e) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(salesforce-mobile): add Salesforce Mobile scheme support
+
+- [`06d9e05`](https://github.com/zhensherlock/protocol-launcher/commit/06d9e0574bf48348594f0567185c88dfd126c250) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(box): add Box scheme support
+
+- [`1664d08`](https://github.com/zhensherlock/protocol-launcher/commit/1664d08f271cf75170c11256cbb74e53ce7497c2) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(dynamics-365-field-service-mobile): add Dynamics 365 Field Service Mobile scheme support
+
+- [`09c7f2e`](https://github.com/zhensherlock/protocol-launcher/commit/09c7f2e5c1f9f524ed4627343a783df105b76346) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(panorama-x): add Panorama X scheme support
+
+- [`d35cd93`](https://github.com/zhensherlock/protocol-launcher/commit/d35cd93c5d860fa6b45ed673acb80b7b78d328be) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(what3words): add what3words scheme support
+
+- [`01cb6d6`](https://github.com/zhensherlock/protocol-launcher/commit/01cb6d6bd71b92f6beea441d68e5d8f44bf38b7f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(foreflight-mobile): add ForeFlight Mobile URL scheme support
+
+- [`d0af376`](https://github.com/zhensherlock/protocol-launcher/commit/d0af3767c1be86edb85303738706e8c392daa482) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(arcgis-quickcapture): add ArcGIS QuickCapture URL scheme support
+
+- [`26d9a01`](https://github.com/zhensherlock/protocol-launcher/commit/26d9a010f3611258a3a98eb94f9163fc26383709) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(truecontext): add TrueContext scheme support
+
+- [`b53b49f`](https://github.com/zhensherlock/protocol-launcher/commit/b53b49f6ebe2b1e5b178b063927e6014c7ee3b50) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(ringcentral): add RingCentral URI scheme support
+
+- [`3761358`](https://github.com/zhensherlock/protocol-launcher/commit/3761358abfacfa3963287913d6e70b8b851abba1) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(splashtop-business): add Splashtop Business scheme support
+
+- [`5edb822`](https://github.com/zhensherlock/protocol-launcher/commit/5edb822a816b866f353e1d8fbeba0621136c1456) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(dash): add Dash URL scheme support
+
+- [`f2e283a`](https://github.com/zhensherlock/protocol-launcher/commit/f2e283af99861d3df9c913bd3d6803d4f6701ebf) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(letterboxd): add Letterboxd iOS x-callback-url support
+
+- [`01ed07f`](https://github.com/zhensherlock/protocol-launcher/commit/01ed07ff7a12d7562a5ac19a096880dd5db76900) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(microsoft-remote-desktop): add Microsoft Remote Desktop scheme support
+
+- [`3cb1915`](https://github.com/zhensherlock/protocol-launcher/commit/3cb1915eb6f0dfe27ae973bfa2ea1c321de521cd) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(remote-desktop-manager): add Remote Desktop Manager protocol handler support
+
+- [`c1378f3`](https://github.com/zhensherlock/protocol-launcher/commit/c1378f3bf66a5afff305ff4b3eeed4e7e4d9cd76) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(spark): add Spark Mail Deep Link support
+
+- [`cffcb4a`](https://github.com/zhensherlock/protocol-launcher/commit/cffcb4aed5fd9de0ae3d91a4536a222097d223ab) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(postman): add Postman local Flow deep link support
+
+- [`38b8727`](https://github.com/zhensherlock/protocol-launcher/commit/38b872762c58729952c14883c96709cdf959ffb6) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(yandex-navigator): add Yandex Navigator scheme support
+
+- [`325aae1`](https://github.com/zhensherlock/protocol-launcher/commit/325aae17707adb3292d7eac5e23bb4a9bd631065) Thanks [@zhensherlock](https://github.com/zhensherlock)! - feat(power-apps-mobile): add Power Apps Mobile scheme support
+
+### Patch Changes
+
+- [`a94fc66`](https://github.com/zhensherlock/protocol-launcher/commit/a94fc669cd6eeb85b78b3680fb8b086917b568b7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - chore: update dependencies
+
+- Updated dependencies [[`a94fc66`](https://github.com/zhensherlock/protocol-launcher/commit/a94fc669cd6eeb85b78b3680fb8b086917b568b7)]:
+  - @protocol-launcher/shared@1.4.13
+
 ## 1.26.0
 
 ### Minor Changes
