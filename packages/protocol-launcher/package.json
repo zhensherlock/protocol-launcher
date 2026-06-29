@@ -502,6 +502,10 @@
       "types": "./dist/types/kaleidoscope/index.d.ts",
       "import": "./dist/kaleidoscope/index.js"
     },
+    "./keepit": {
+      "types": "./dist/types/keepit/index.d.ts",
+      "import": "./dist/keepit/index.js"
+    },
     "./kiro": {
       "types": "./dist/types/kiro/index.d.ts",
       "import": "./dist/kiro/index.js"

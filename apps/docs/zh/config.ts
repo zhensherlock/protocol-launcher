@@ -141,6 +141,7 @@ export default defineAdditionalConfig({
           { text: 'Kakao Map', link: '/zh/apps/kakao-map' },
           { text: 'Keyboard Maestro', link: '/zh/apps/keyboard-maestro' },
           { text: 'Kaleidoscope', link: '/zh/apps/kaleidoscope' },
+          { text: 'Keep It', link: '/zh/apps/keepit' },
           { text: 'Kiro', link: '/zh/apps/kiro' },
           { text: 'Launch Center Pro', link: '/zh/apps/launch-center-pro' },
           { text: 'LaunchBar', link: '/zh/apps/launchbar' },

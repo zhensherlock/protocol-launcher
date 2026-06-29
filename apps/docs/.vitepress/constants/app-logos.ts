@@ -109,6 +109,7 @@ export const appLogoFiles = {
   'just-timers': 'just-timers.webp',
   'kakao-map': 'kakao-map.webp',
   kaleidoscope: 'kaleidoscope.png',
+  keepit: 'keepit.webp',
   'keyboard-maestro': 'keyboard-maestro.png',
   kiro: 'kiro.png',
   'launch-center-pro': 'launch-center-pro.png',

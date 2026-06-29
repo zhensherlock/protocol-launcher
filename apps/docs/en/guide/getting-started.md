@@ -229,6 +229,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Kakao Map](../apps/kakao-map.md)
 - [Keyboard Maestro](../apps/keyboard-maestro.md)
 - [Kaleidoscope](../apps/kaleidoscope.md)
+- [Keep It](../apps/keepit.md)
 - [Kiro](../apps/kiro.md)
 - [Launch Center Pro](../apps/launch-center-pro.md)
 - [LaunchBar](../apps/launchbar.md)
