@@ -245,6 +245,7 @@ export const appLogoFiles = {
   xcode: 'xcode.png',
   'yandex-maps': 'yandex-maps.webp',
   'yandex-navigator': 'yandex-navi-navigation-maps.webp',
+  'yoink-ios': 'yoink.webp',
   zed: 'zed.png',
   zoom: 'zoom.webp',
 } as const

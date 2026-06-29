@@ -273,6 +273,7 @@ Currently, we support the following applications:
 - [Xcode](../apps/xcode.md)
 - [Yandex Maps](../apps/yandex-maps.md)
 - [Yandex Navigator](../apps/yandex-navigator.md)
+- [Yoink for iOS](../apps/yoink-ios.md)
 - [Zed](../apps/zed.md)
 - [Zoom](../apps/zoom.md)
 

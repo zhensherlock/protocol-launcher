@@ -1046,6 +1046,10 @@
       "types": "./dist/types/yandex-navigator/index.d.ts",
       "import": "./dist/yandex-navigator/index.js"
     },
+    "./yoink-ios": {
+      "types": "./dist/types/yoink-ios/index.d.ts",
+      "import": "./dist/yoink-ios/index.js"
+    },
     "./zed": {
       "types": "./dist/types/zed/index.d.ts",
       "import": "./dist/zed/index.js"

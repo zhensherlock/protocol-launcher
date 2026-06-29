@@ -276,6 +276,7 @@ export default defineAdditionalConfig({
           { text: 'Xcode', link: '/zh/apps/xcode' },
           { text: 'Yandex Maps', link: '/zh/apps/yandex-maps' },
           { text: 'Yandex Navigator', link: '/zh/apps/yandex-navigator' },
+          { text: 'Yoink for iOS', link: '/zh/apps/yoink-ios' },
           { text: 'Zed', link: '/zh/apps/zed' },
           { text: 'Zoom', link: '/zh/apps/zoom' },
         ],
