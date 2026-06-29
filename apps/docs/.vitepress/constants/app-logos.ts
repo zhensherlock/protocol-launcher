@@ -158,6 +158,7 @@ export const appLogoFiles = {
   pearai: 'pearai.png',
   'pdf-expert': 'pdf-expert.webp',
   'pdf-viewer': 'pdf-viewer.webp',
+  permute: 'permute.webp',
   phpstorm: 'phpstorm.png',
   pika: 'pika.png',
   picsew: 'picsew.webp',

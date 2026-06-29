@@ -277,6 +277,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [PearAI](../apps/pearai.md)
 - [PDF Expert](../apps/pdf-expert.md)
 - [PDF Viewer](../apps/pdf-viewer.md)
+- [Permute](../apps/permute.md)
 - [Pika](../apps/pika.md)
 - [Picsew](../apps/picsew.md)
 - [Pincase](../apps/pincase.md)

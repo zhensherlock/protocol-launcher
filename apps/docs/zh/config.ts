@@ -189,6 +189,7 @@ export default defineAdditionalConfig({
           { text: 'PearAI', link: '/zh/apps/pearai' },
           { text: 'PDF Expert', link: '/zh/apps/pdf-expert' },
           { text: 'PDF Viewer', link: '/zh/apps/pdf-viewer' },
+          { text: 'Permute', link: '/zh/apps/permute' },
           { text: 'Pika', link: '/zh/apps/pika' },
           { text: 'Picsew', link: '/zh/apps/picsew' },
           { text: 'Pincase', link: '/zh/apps/pincase' },
