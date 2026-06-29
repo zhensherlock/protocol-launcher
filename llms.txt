@@ -131,6 +131,7 @@
 - [Kakao Map](/protocol-launcher/apps/kakao-map.md)
 - [Keyboard Maestro](/protocol-launcher/apps/keyboard-maestro.md)
 - [Kaleidoscope](/protocol-launcher/apps/kaleidoscope.md)
+- [Keep It](/protocol-launcher/apps/keepit.md)
 - [Kiro](/protocol-launcher/apps/kiro.md)
 - [Launch Center Pro](/protocol-launcher/apps/launch-center-pro.md)
 - [LaunchBar](/protocol-launcher/apps/launchbar.md)
@@ -265,6 +266,7 @@
 - [Xcode](/protocol-launcher/apps/xcode.md)
 - [Yandex Maps](/protocol-launcher/apps/yandex-maps.md)
 - [Yandex Navigator](/protocol-launcher/apps/yandex-navigator.md)
+- [Yoink for iOS](/protocol-launcher/apps/yoink-ios.md)
 - [Zed](/protocol-launcher/apps/zed.md)
 - [Zoom](/protocol-launcher/apps/zoom.md)
 
@@ -386,6 +388,7 @@
 - [Kakao Map](/protocol-launcher/zh/apps/kakao-map.md)
 - [Keyboard Maestro](/protocol-launcher/zh/apps/keyboard-maestro.md)
 - [Kaleidoscope](/protocol-launcher/zh/apps/kaleidoscope.md)
+- [Keep It](/protocol-launcher/zh/apps/keepit.md)
 - [Kiro](/protocol-launcher/zh/apps/kiro.md)
 - [Launch Center Pro](/protocol-launcher/zh/apps/launch-center-pro.md)
 - [LaunchBar](/protocol-launcher/zh/apps/launchbar.md)
@@ -520,6 +523,7 @@
 - [Xcode](/protocol-launcher/zh/apps/xcode.md)
 - [Yandex Maps](/protocol-launcher/zh/apps/yandex-maps.md)
 - [Yandex Navigator](/protocol-launcher/zh/apps/yandex-navigator.md)
+- [Yoink for iOS](/protocol-launcher/zh/apps/yoink-ios.md)
 - [Zed](/protocol-launcher/zh/apps/zed.md)
 - [Zoom](/protocol-launcher/zh/apps/zoom.md)
 

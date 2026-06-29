@@ -132,6 +132,7 @@ Currently, we support the following applications:
 * [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
+* [Keep It](../apps/keepit.md)
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
@@ -266,6 +267,7 @@ Currently, we support the following applications:
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
 * [Yandex Navigator](../apps/yandex-navigator.md)
+* [Yoink for iOS](../apps/yoink-ios.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -504,6 +506,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
+* [Keep It](../apps/keepit.md)
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
@@ -638,6 +641,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
 * [Yandex Navigator](../apps/yandex-navigator.md)
+* [Yoink for iOS](../apps/yoink-ios.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -11779,6 +11783,119 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}history({
   filePath: '/Users/dev/protocol-launcher/packages/protocol-launcher/src/kaleidoscope/history.ts',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/apps/keepit.md
+---
+
+# Keep It
+
+[Keep It](https://reinventedsoftware.com/keepit/) is an app for organizing notes, files, web links, and lists. **Protocol Launcher** allows you to generate URLs to open Keep It items and lists, add content, and append text or attachments.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the official Keep It URL Support surface: `keepit://link?item=...`, `keepit://link?list=...`, `keepit://x-callback-url/add?...`, and `keepit://x-callback-url/append?...`.
+
+The `add` and `append` helpers URL-encode parameters and support the standard x-callback parameters mentioned by Keep It's documentation. For `tags`, Keep It's official examples keep the comma separator unescaped, so the generated URL does the same.
+
+## URL Methods
+
+### Open Item
+
+Open a Keep It item by identifier.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openItem' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}openItem({
+  item: 'C96F26E6-A566-457E-A448-5B0F527714DE',
+})
+```
+
+### Open List
+
+Open a Keep It list by identifier.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openList' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}openList({
+  list: 'AllItems',
+})
+```
+
+### Add Web Link
+
+Add a web link to Keep It.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}add({
+  name: 'Apple Homepage',
+  source: 'http://apple.com',
+})
+```
+
+### Add Note
+
+Add text as a Keep It note or text file.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}add({
+  text: 'The quick brown fox',
+  list: 'AllItems',
+})
+```
+
+### Append Text
+
+Append text to a Keep It item.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}append({
+  text: 'The quick brown fox',
+  item: 'C96F26E6-A566-457E-A448-5B0F527714DE',
+})
+```
+
+## Generated URLs
+
+```ts
+openItem(itemLinkParams)
+// => 'keepit://link?item=C96F26E6-A566-457E-A448-5B0F527714DE'
+
+openList(listLinkParams)
+// => 'keepit://link?list=AllItems'
+
+add(addWebLinkParams)
+// => 'keepit://x-callback-url/add?name=Apple%20Homepage&source=http%3A%2F%2Fapple.com'
+
+add(addNoteParams)
+// => 'keepit://x-callback-url/add?text=The%20quick%20brown%20fox&list=AllItems'
+
+append(appendTextParams)
+// => 'keepit://x-callback-url/append?text=The%20quick%20brown%20fox&item=C96F26E6-A566-457E-A448-5B0F527714DE'
+```
+
+## Official Documentation
+
+* [Keep It URL Support](https://reinventedsoftware.com/keepit/urlsupport.html)
 
 ---
 
@@ -25969,6 +26086,118 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}showPoint
 ---
 
 ---
+url: /protocol-launcher/apps/yoink-ios.md
+---
+
+# Yoink for iOS
+
+[Yoink for iPad and iPhone](https://eternalstorms.at/yoink/ios/) is a shelf app for collecting files and snippets on iPad and iPhone. **Protocol Launcher** allows you to generate official Yoink for iOS URL scheme actions.
+
+## Usage
+
+There are two ways to use this library:
+
+* On-Demand import from subpaths enables tree-shaking and keeps bundles small.
+* Full Import from the root package is convenient but includes all app modules.
+
+Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+## Notes
+
+This module only wraps the URL scheme actions documented in Yoink for iPad and iPhone Usage Tips: `pastefromclipboard`, `copytoclipboard`, `showdownloadui`, `downloadurl`, and `addstring`.
+
+The official page documents `x-success` and `x-error` callback parameters for the scheme. `showdownloadui` does not accept callbacks because Yoink states that this action does not call back to the calling app.
+
+The official page shows its generic format as `yoink://[action]...`, while every concrete action example uses `yoinkios://...`; this module follows those concrete action examples.
+
+## URL Methods
+
+### Paste From Clipboard
+
+Paste the current clipboard contents into Yoink.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteFromClipboard' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}pasteFromClipboard({
+  title: 'My Title',
+  createStack: 0,
+})
+```
+
+### Copy To Clipboard
+
+Copy an item from Yoink to the clipboard by index. In Yoink, `0` is the topmost item.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'copyToClipboard' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}copyToClipboard({
+  index: 0,
+})
+```
+
+### Show Download UI
+
+Show Yoink's download UI.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showDownloadUi' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}showDownloadUi()
+```
+
+### Download URL
+
+Download a URL in Yoink.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}downloadUrl({
+  url: 'https://eternalstorms.at/yoink/Yoink.zip',
+})
+```
+
+### Add String
+
+Save a string in Yoink.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addString' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}addString({
+  string: 'Yoink is available on\u0002iOS and macOS',
+  title: 'Yoink Availability',
+})
+```
+
+## Generated URLs
+
+```ts
+pasteFromClipboard(pasteFromClipboardParams)
+// => 'yoinkios://pastefromclipboard?title=My%20Title&createStack=0'
+
+copyToClipboard(copyToClipboardParams)
+// => 'yoinkios://copytoclipboard?index=0'
+
+showDownloadUi()
+// => 'yoinkios://showdownloadui'
+
+downloadUrl(downloadUrlParams)
+// => 'yoinkios://downloadurl?url=https%3A%2F%2Feternalstorms.at%2Fyoink%2FYoink.zip'
+
+addString(addStringParams)
+// => 'yoinkios://addstring?string=Yoink%20is%20available%20on%02iOS%20and%20macOS&title=Yoink%20Availability'
+```
+
+## Official Documentation
+
+* [Yoink for iPad and iPhone Usage Tips](https://eternalstorms.at/yoink/ios/tips/)
+
+---
+
+---
 url: /protocol-launcher/apps/zed.md
 ---
 
@@ -26306,6 +26535,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
+* [Keep It](../apps/keepit.md)
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
@@ -26440,6 +26670,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
 * [Yandex Navigator](../apps/yandex-navigator.md)
+* [Yoink for iOS](../apps/yoink-ios.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -26678,6 +26909,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Kakao Map](../apps/kakao-map.md)
 * [Keyboard Maestro](../apps/keyboard-maestro.md)
 * [Kaleidoscope](../apps/kaleidoscope.md)
+* [Keep It](../apps/keepit.md)
 * [Kiro](../apps/kiro.md)
 * [Launch Center Pro](../apps/launch-center-pro.md)
 * [LaunchBar](../apps/launchbar.md)
@@ -26812,6 +27044,7 @@ import { cherryStudio, cursor, githubDesktop } from 'protocol-launcher'
 * [Xcode](../apps/xcode.md)
 * [Yandex Maps](../apps/yandex-maps.md)
 * [Yandex Navigator](../apps/yandex-navigator.md)
+* [Yoink for iOS](../apps/yoink-ios.md)
 * [Zed](../apps/zed.md)
 * [Zoom](../apps/zoom.md)
 
@@ -37954,6 +38187,119 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'kaleidoscope.'}}history({
   filePath: '/Users/dev/protocol-launcher/packages/protocol-launcher/src/kaleidoscope/history.ts',
 })
 ```
+
+---
+
+---
+url: /protocol-launcher/zh/apps/keepit.md
+---
+
+# Keep It
+
+[Keep It](https://reinventedsoftware.com/keepit/) 是一款用于整理笔记、文件、网页链接和列表的应用。**Protocol Launcher** 允许你生成 URL 来打开 Keep It 项目和列表、添加内容以及追加文本或附件。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Keep It URL Support 官方页面记录的能力：`keepit://link?item=...`、`keepit://link?list=...`、`keepit://x-callback-url/add?...` 和 `keepit://x-callback-url/append?...`。
+
+`add` 和 `append` helper 会对参数进行 URL 编码，并支持 Keep It 文档提到的标准 x-callback 参数。对于 `tags`，Keep It 官方示例保留逗号分隔符，因此生成的 URL 也保持一致。
+
+## URL 方法
+
+### 打开项目
+
+通过标识符打开 Keep It 项目。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openItem' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}openItem({
+  item: 'C96F26E6-A566-457E-A448-5B0F527714DE',
+})
+```
+
+### 打开列表
+
+通过标识符打开 Keep It 列表。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openList' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}openList({
+  list: 'AllItems',
+})
+```
+
+### 添加网页链接
+
+向 Keep It 添加网页链接。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}add({
+  name: 'Apple Homepage',
+  source: 'http://apple.com',
+})
+```
+
+### 添加笔记
+
+将文本作为 Keep It 笔记或文本文件添加。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}add({
+  text: 'The quick brown fox',
+  list: 'AllItems',
+})
+```
+
+### 追加文本
+
+向 Keep It 项目追加文本。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'append' : 'keepit' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'keepit.'}}append({
+  text: 'The quick brown fox',
+  item: 'C96F26E6-A566-457E-A448-5B0F527714DE',
+})
+```
+
+## 生成的 URL
+
+```ts
+openItem(itemLinkParams)
+// => 'keepit://link?item=C96F26E6-A566-457E-A448-5B0F527714DE'
+
+openList(listLinkParams)
+// => 'keepit://link?list=AllItems'
+
+add(addWebLinkParams)
+// => 'keepit://x-callback-url/add?name=Apple%20Homepage&source=http%3A%2F%2Fapple.com'
+
+add(addNoteParams)
+// => 'keepit://x-callback-url/add?text=The%20quick%20brown%20fox&list=AllItems'
+
+append(appendTextParams)
+// => 'keepit://x-callback-url/append?text=The%20quick%20brown%20fox&item=C96F26E6-A566-457E-A448-5B0F527714DE'
+```
+
+## 官方文档
+
+* [Keep It URL Support](https://reinventedsoftware.com/keepit/urlsupport.html)
 
 ---
 
@@ -52140,6 +52486,118 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'yandexNavigator.'}}showPoint
 * [Launch Yandex.Navigator](https://yandex.com/dev/yandex-apps-launch/navigator/)
 * [Yandex Navigator URL format](https://yandex.ru/dev/navigator/doc/ru/concepts/navigator-url-params)
 * [Yandex Navigator access-key signature](https://yandex.ru/dev/navigator/doc/ru/concepts/navigator-commercial-use-signature)
+
+---
+
+---
+url: /protocol-launcher/zh/apps/yoink-ios.md
+---
+
+# Yoink for iOS
+
+[Yoink for iPad and iPhone](https://eternalstorms.at/yoink/ios/) 是一款用于在 iPad 和 iPhone 上收集文件与片段的 shelf 应用。**Protocol Launcher** 允许你生成 Yoink for iOS 官方 URL scheme action。
+
+## 使用
+
+有两种方式使用这个库：
+
+* 按需从子路径导入，支持 tree-shaking 并保持 bundle 更小。
+* 从根包完整导入，适合快速脚本或 demo，但会包含所有 app 模块。
+
+生产构建建议使用按需导入；完整导入适合快速脚本或演示。
+
+## 说明
+
+本模块只封装 Yoink for iPad and iPhone Usage Tips 官方页面记录的 URL scheme action：`pastefromclipboard`、`copytoclipboard`、`showdownloadui`、`downloadurl` 和 `addstring`。
+
+官方页面记录了 scheme 可使用 `x-success` 和 `x-error` callback 参数。`showdownloadui` 不接收 callback，因为 Yoink 明确说明这个 action 不会回调调用方 app。
+
+官方页面的通用格式行写作 `yoink://[action]...`，但每个具体 action 示例都使用 `yoinkios://...`；本模块跟随这些具体 action 示例。
+
+## URL 方法
+
+### 从剪贴板粘贴
+
+将当前剪贴板内容粘贴到 Yoink。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pasteFromClipboard' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}pasteFromClipboard({
+  title: 'My Title',
+  createStack: 0,
+})
+```
+
+### 复制到剪贴板
+
+按索引将 Yoink 中的项目复制到剪贴板。在 Yoink 中，`0` 表示最上方的项目。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'copyToClipboard' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}copyToClipboard({
+  index: 0,
+})
+```
+
+### 显示下载界面
+
+显示 Yoink 的下载界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showDownloadUi' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}showDownloadUi()
+```
+
+### 下载 URL
+
+在 Yoink 中下载 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'downloadUrl' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}downloadUrl({
+  url: 'https://eternalstorms.at/yoink/Yoink.zip',
+})
+```
+
+### 添加字符串
+
+在 Yoink 中保存字符串。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addString' : 'yoinkIos' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'yoinkIos.'}}addString({
+  string: 'Yoink is available on\u0002iOS and macOS',
+  title: 'Yoink Availability',
+})
+```
+
+## 生成的 URL
+
+```ts
+pasteFromClipboard(pasteFromClipboardParams)
+// => 'yoinkios://pastefromclipboard?title=My%20Title&createStack=0'
+
+copyToClipboard(copyToClipboardParams)
+// => 'yoinkios://copytoclipboard?index=0'
+
+showDownloadUi()
+// => 'yoinkios://showdownloadui'
+
+downloadUrl(downloadUrlParams)
+// => 'yoinkios://downloadurl?url=https%3A%2F%2Feternalstorms.at%2Fyoink%2FYoink.zip'
+
+addString(addStringParams)
+// => 'yoinkios://addstring?string=Yoink%20is%20available%20on%02iOS%20and%20macOS&title=Yoink%20Availability'
+```
+
+## 官方文档
+
+* [Yoink for iPad and iPhone Usage Tips](https://eternalstorms.at/yoink/ios/tips/)
 
 ---
 
