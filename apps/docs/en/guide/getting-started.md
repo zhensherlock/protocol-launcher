@@ -334,6 +334,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Things](../apps/things.md)
 - [Thunder](../apps/thunder.md)
 - [Tim](../apps/tim.md)
+- [Timing](../apps/timing.md)
 - [Timer+](../apps/timer-plus.md)
 - [Timepage](../apps/timepage.md)
 - [Today Habit Tracker](../apps/today-habit-tracker.md)

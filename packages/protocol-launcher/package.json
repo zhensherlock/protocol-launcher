@@ -934,6 +934,10 @@
       "types": "./dist/types/tim/index.d.ts",
       "import": "./dist/tim/index.js"
     },
+    "./timing": {
+      "types": "./dist/types/timing/index.d.ts",
+      "import": "./dist/timing/index.js"
+    },
     "./timer-plus": {
       "types": "./dist/types/timer-plus/index.d.ts",
       "import": "./dist/timer-plus/index.js"
