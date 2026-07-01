@@ -183,6 +183,7 @@ export default defineAdditionalConfig({
           { text: 'Opener', link: '/zh/apps/opener' },
           { text: 'OpenVPN Connect', link: '/zh/apps/openvpn-connect' },
           { text: 'Orchids', link: '/zh/apps/orchids' },
+          { text: 'Organic Maps', link: '/zh/apps/organic-maps' },
           { text: 'Orion Browser', link: '/zh/apps/orion-browser' },
           { text: 'Overcast', link: '/zh/apps/overcast' },
           { text: 'Panorama X', link: '/zh/apps/panorama-x' },

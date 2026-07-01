@@ -678,6 +678,10 @@
       "types": "./dist/types/orchids/index.d.ts",
       "import": "./dist/orchids/index.js"
     },
+    "./organic-maps": {
+      "types": "./dist/types/organic-maps/index.d.ts",
+      "import": "./dist/organic-maps/index.js"
+    },
     "./orion-browser": {
       "types": "./dist/types/orion-browser/index.d.ts",
       "import": "./dist/orion-browser/index.js"

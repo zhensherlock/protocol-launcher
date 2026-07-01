@@ -271,6 +271,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Opener](../apps/opener.md)
 - [OpenVPN Connect](../apps/openvpn-connect.md)
 - [Orchids](../apps/orchids.md)
+- [Organic Maps](../apps/organic-maps.md)
 - [Orion Browser](../apps/orion-browser.md)
 - [Overcast](../apps/overcast.md)
 - [Panorama X](../apps/panorama-x.md)
