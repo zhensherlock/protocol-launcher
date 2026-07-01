@@ -122,6 +122,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [Agenda](../apps/agenda.md)
 * [Airmail](../apps/airmail.md)
 * [Alfred](../apps/alfred.md)
+* [Alter](../apps/alter.md)
 * [Antigravity](../apps/antigravity.md)
 * [Anybox](../apps/anybox.md)
 * [AnyDesk](../apps/anydesk.md)
