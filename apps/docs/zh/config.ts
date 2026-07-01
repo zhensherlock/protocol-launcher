@@ -34,6 +34,7 @@ export default defineAdditionalConfig({
           { text: 'Agenda', link: '/zh/apps/agenda' },
           { text: 'Airmail', link: '/zh/apps/airmail' },
           { text: 'Alfred', link: '/zh/apps/alfred' },
+          { text: 'Alter', link: '/zh/apps/alter' },
           { text: 'Antigravity', link: '/zh/apps/antigravity' },
           { text: 'Anybox', link: '/zh/apps/anybox' },
           { text: 'AnyDesk', link: '/zh/apps/anydesk' },

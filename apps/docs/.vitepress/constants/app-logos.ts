@@ -5,6 +5,7 @@ export const appLogoFiles = {
   agenda: 'agenda.webp',
   airmail: 'airmail.webp',
   alfred: 'alfred.png',
+  alter: 'alter.svg',
   antigravity: 'antigravity.svg',
   anybox: 'anybox.webp',
   anydesk: 'anydesk.webp',
