@@ -120,6 +120,7 @@ url: /protocol-launcher/zh/guide/what-is-it.md
 * [Instapaper](../apps/instapaper.md)
 * [IntelliJ IDEA](../apps/idea.md)
 * [Infuse](../apps/infuse.md)
+* [inRoute](../apps/inroute.md)
 * [Interact Scratchpad](../apps/interact.md)
 * [iPGMail](../apps/ipgmail.md)
 * [iReal Pro](../apps/ireal-pro.md)
