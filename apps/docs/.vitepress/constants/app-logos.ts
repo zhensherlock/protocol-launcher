@@ -97,6 +97,7 @@ export const appLogoFiles = {
   'icab-mobile': 'icab-mobile.webp',
   idea: 'intellij-idea.png',
   infuse: 'infuse.webp',
+  inroute: 'inroute.webp',
   instapaper: 'instapaper.webp',
   interact: 'interact-scratchpad.png',
   ipgmail: 'ipgmail.webp',

@@ -450,6 +450,10 @@
       "types": "./dist/types/infuse/index.d.ts",
       "import": "./dist/infuse/index.js"
     },
+    "./inroute": {
+      "types": "./dist/types/inroute/index.d.ts",
+      "import": "./dist/inroute/index.js"
+    },
     "./ipgmail": {
       "types": "./dist/types/ipgmail/index.d.ts",
       "import": "./dist/ipgmail/index.js"

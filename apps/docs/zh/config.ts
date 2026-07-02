@@ -128,6 +128,7 @@ export default defineAdditionalConfig({
           { text: 'iCab Mobile', link: '/zh/apps/icab-mobile' },
           { text: 'IntelliJ IDEA', link: '/zh/apps/idea' },
           { text: 'Infuse', link: '/zh/apps/infuse' },
+          { text: 'inRoute', link: '/zh/apps/inroute' },
           { text: 'Instapaper', link: '/zh/apps/instapaper' },
           { text: 'Interact Scratchpad', link: '/zh/apps/interact' },
           { text: 'iPGMail', link: '/zh/apps/ipgmail' },

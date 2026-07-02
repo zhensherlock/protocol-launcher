@@ -126,6 +126,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Instapaper](../apps/instapaper.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Infuse](../apps/infuse.md)
+- [inRoute](../apps/inroute.md)
 - [Interact Scratchpad](../apps/interact.md)
 - [iPGMail](../apps/ipgmail.md)
 - [iReal Pro](../apps/ireal-pro.md)

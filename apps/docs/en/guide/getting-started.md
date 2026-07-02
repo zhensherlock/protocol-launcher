@@ -216,6 +216,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [iCab Mobile](../apps/icab-mobile.md)
 - [IntelliJ IDEA](../apps/idea.md)
 - [Infuse](../apps/infuse.md)
+- [inRoute](../apps/inroute.md)
 - [Instapaper](../apps/instapaper.md)
 - [Interact Scratchpad](../apps/interact.md)
 - [iPGMail](../apps/ipgmail.md)
