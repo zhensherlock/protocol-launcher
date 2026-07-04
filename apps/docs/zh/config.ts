@@ -89,6 +89,7 @@ export default defineAdditionalConfig({
           { text: 'DEVONthink', link: '/zh/apps/devonthink' },
           { text: 'Diarly', link: '/zh/apps/diarly' },
           { text: 'dict.cc', link: '/zh/apps/dict-cc' },
+          { text: 'Documents by Readdle', link: '/zh/apps/documents-readdle' },
           { text: 'Drafts', link: '/zh/apps/drafts' },
           { text: 'Editorial', link: '/zh/apps/editorial' },
           { text: 'Equipd Bible', link: '/zh/apps/equipd-bible' },

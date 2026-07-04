@@ -58,6 +58,7 @@ export const appLogoFiles = {
   devonthink: 'devonthink.png',
   diarly: 'diarly.webp',
   'dict-cc': 'dict-cc.webp',
+  'documents-readdle': 'documents-readdle.webp',
   drafts: 'drafts.webp',
   due: 'due.webp',
   'dynamics-365-field-service-mobile': 'dynamics-365-field-service.webp',

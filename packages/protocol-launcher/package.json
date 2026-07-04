@@ -294,6 +294,10 @@
       "types": "./dist/types/dict-cc/index.d.ts",
       "import": "./dist/dict-cc/index.js"
     },
+    "./documents-readdle": {
+      "types": "./dist/types/documents-readdle/index.d.ts",
+      "import": "./dist/documents-readdle/index.js"
+    },
     "./due": {
       "types": "./dist/types/due/index.d.ts",
       "import": "./dist/due/index.js"

@@ -320,6 +320,15 @@
     "bytes": 570
   },
   {
+    "slug": "documents-readdle",
+    "officialUrl": "https://readdle.com/documents",
+    "status": "saved",
+    "filename": "documents-readdle.webp",
+    "url": "https://readdle.com/documents",
+    "source": "user-provided",
+    "bytes": 10776
+  },
+  {
     "slug": "drafts",
     "officialUrl": "https://getdrafts.com/",
     "status": "saved",
