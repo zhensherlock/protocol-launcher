@@ -922,6 +922,10 @@
       "types": "./dist/types/trello/index.d.ts",
       "import": "./dist/trello/index.js"
     },
+    "./trust-wallet": {
+      "types": "./dist/types/trust-wallet/index.d.ts",
+      "import": "./dist/trust-wallet/index.js"
+    },
     "./truecontext": {
       "types": "./dist/types/truecontext/index.d.ts",
       "import": "./dist/truecontext/index.js"

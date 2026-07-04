@@ -227,6 +227,7 @@ export const appLogoFiles = {
   trae: 'trae.png',
   'trae-cn': 'trae-cn.png',
   trello: 'trello.webp',
+  'trust-wallet': 'trust-wallet.webp',
   truecontext: 'truecontext.webp',
   ulysses: 'ulysses.webp',
   upic: 'upic.png',

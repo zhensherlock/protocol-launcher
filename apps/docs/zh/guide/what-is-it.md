@@ -255,6 +255,7 @@ import HomePromoVideo from '../../.vitepress/theme/components/HomePromoVideo.vue
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
 - [Trello](../apps/trello.md)
+- [Trust Wallet](../apps/trust-wallet.md)
 - [TrueContext](../apps/truecontext.md)
 - [Ulysses](../apps/ulysses.md)
 - [uPic](../apps/upic.md)

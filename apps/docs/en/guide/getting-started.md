@@ -346,6 +346,7 @@ For detailed usage instructions for each application, please refer to their resp
 - [Trae](../apps/trae.md)
 - [Trae China](../apps/trae-cn.md)
 - [Trello](../apps/trello.md)
+- [Trust Wallet](../apps/trust-wallet.md)
 - [TrueContext](../apps/truecontext.md)
 - [Ulysses](../apps/ulysses.md)
 - [uPic](../apps/upic.md)
