@@ -177,6 +177,7 @@ For detailed usage instructions for each application, please refer to their resp
 * [DEVONthink](../apps/devonthink.md)
 * [Diarly](../apps/diarly.md)
 * [dict.cc](../apps/dict-cc.md)
+* [Documents by Readdle](../apps/documents-readdle.md)
 * [Drafts](../apps/drafts.md)
 * [Editorial](../apps/editorial.md)
 * [Equipd Bible](../apps/equipd-bible.md)
