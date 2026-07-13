@@ -1,0 +1,1 @@
+function e(e){let{url:t}=e,n=t.indexOf(`:`),r=n>=0?t.slice(0,n):void 0,i;if(r===`http`&&(i=`googlechrome`),r===`https`&&(i=`googlechromes`),i)return`${i}${t.slice(n)}`;throw Error(`Unsupported Google Chrome iOS URL format.`)}var t={url:`https://www.google.com/`};export{e as n,t};

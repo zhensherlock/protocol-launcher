@@ -1,0 +1,1 @@
+var e={idOrAlias:`user@namespace`},t={prefix:`example`,idOrAlias:`123456789`},n={prefix:`example`,idOrAlias:`123456789`},r={key:`LICENSE-KEY`},i={key:`LICENSE-KEY`,silent:!0},a={prefix:`example`,key:`LICENSE-KEY`},o={prefix:`example`,key:`LICENSE-KEY`};export{a,o as i,n,r as o,t as r,i as s,e as t};

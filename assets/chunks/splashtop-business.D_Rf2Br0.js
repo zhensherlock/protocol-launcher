@@ -1,0 +1,1 @@
+var e={account:`email@example.com`,mac:`C04A001C72EC`},t={account:`url.launch@splashtop`,sos:`123456789`};export{t as n,e as t};

@@ -1,0 +1,1 @@
+function e(){return`opencode://`}function t(e){let{path:t}=e;return`opencode://open-project?directory=${t}`}var n={path:`/Users/dev/project`};export{t as n,e as r,n as t};

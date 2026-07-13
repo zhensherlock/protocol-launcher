@@ -1,0 +1,1 @@
+function e(e){let{workspaceId:t,docId:n}=e;return`affine://app.affine.pro/workspace/${t}/${n}?new-tab=1`}function t(){return`affine://`}var n={workspaceId:`4f5a46cf-5eeb-4130-beda-25b438cd8c60`,docId:`ykchLzhvFXEUMwJu_spHY`};export{t as n,e as r,n as t};

@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t={}){return`scannr://${e(t)}`}function n(e={}){let{callbackScheme:n}=e;return t({...n?{callbackScheme:n}:{}})}var r={callbackScheme:`foo`};export{n,r as t};

@@ -1,1 +1,0 @@
-import{i as n}from"./index.CWwLnpeZ.js";function e(t){let{text:o}=t;return`terminology:///lookup${n({text:o})}`}function a(){return"terminology://"}function s(t){let{q:o}=t;return`terminology:///search${n({q:o})}`}const i={text:"automation"},l={q:"protocol"};export{s as a,a as e,i as l,l as s,e as t};

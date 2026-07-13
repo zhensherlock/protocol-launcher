@@ -1,1 +1,0 @@
-import{i as n}from"./index.CWwLnpeZ.js";function o(e){let{meetingCode:t}=e;return`wemeet://page/inmeeting${n({meeting_code:t})}`}function m(){return"wemeet://"}const r={meetingCode:"123456789"};export{m as e,r as j,o as t};

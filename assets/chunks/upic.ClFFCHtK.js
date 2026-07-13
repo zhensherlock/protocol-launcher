@@ -1,1 +1,0 @@
-function s(){return"uPic://"}function u(e){let{filePath:t}=e;return`uPic://files?${t}`}const i=e=>({filePath:e?"C:\\Users\\Public\\Pictures\\test.png":"/Users/Public/Pictures/test.png"});export{u as a,s as e,i as u};

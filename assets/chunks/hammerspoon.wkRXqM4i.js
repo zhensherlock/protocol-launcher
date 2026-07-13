@@ -1,1 +1,0 @@
-import{i as r}from"./index.CWwLnpeZ.js";function m(a,e={}){return`hammerspoon://${a}${r(e)}`}function o(a){let{eventName:e,params:t}=a;return m(e,t)}const s={eventName:"doThingA",params:{value:"1"}},u={eventName:"someEventToHandle",params:{someParam:"things",otherParam:"stuff"}};export{u as m,o as t,s as u};

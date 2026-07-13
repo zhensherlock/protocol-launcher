@@ -1,1 +1,0 @@
-import{i as a}from"./index.CWwLnpeZ.js";function n(r,t="",e={}){return`homeassistant://${r}${t}${a(e)}`}function s(r){let{path:t,server:e}=r;return n("navigate",t,{...e===void 0?{}:{server:e}})}const i={path:"/dashboard-mobile/my-subview",server:"My home"};export{i as n,s as t};

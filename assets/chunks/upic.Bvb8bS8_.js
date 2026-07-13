@@ -1,0 +1,1 @@
+function e(){return`uPic://`}function t(e){let{filePath:t}=e;return`uPic://files?${t}`}var n=e=>({filePath:e?`C:\\Users\\Public\\Pictures\\test.png`:`/Users/Public/Pictures/test.png`});export{t as n,e as r,n as t};

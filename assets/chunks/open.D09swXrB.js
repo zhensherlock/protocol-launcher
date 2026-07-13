@@ -1,0 +1,1 @@
+function e(){return`appflowy-flutter://`}export{e as t};

@@ -1,1 +1,0 @@
-import{i as s}from"./index.CWwLnpeZ.js";function c(o){let{protocol:n,host:t,port:a,username:r,name:e}=o;return`navicat://conn.${n}${s({"Conn.Host":t,"Conn.Port":a,"Conn.Username":r,"Conn.Name":e})}`}const l={protocol:"mysql",host:"localhost",port:3306,username:"root",name:"My Database"};export{l as c,c as t};

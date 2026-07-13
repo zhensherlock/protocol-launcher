@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(){return`simple-scan://`}function n(t={}){let{destination:n,format:r,quality:i}=t;return`simple-scan://scan${e({...n?{destination:n}:{},...r?{format:r}:{},...i?{quality:i}:{}})}`}var r={destination:`email`,format:`pdf`,quality:`original`};export{n,t as r,r as t};

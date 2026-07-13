@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t,n={}){return`tim://${t}${e(n)}`}function n(){return`tim://`}function r(e){let{id:n}=e;return t(n)}var i={id:`D43FA035-6406-495D-9ADD-46721986040F`};export{r as n,n as r,i as t};

@@ -1,0 +1,1 @@
+function e(){return`itsycal://`}function t(e={}){let{date:t=`now`}=e;return`itsycal://date/${t}`}var n={date:`2024-01-10`};export{t as n,e as r,n as t};

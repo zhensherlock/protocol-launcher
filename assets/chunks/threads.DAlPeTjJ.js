@@ -1,0 +1,1 @@
+function e(){return`codex://`}function t(){return`codex://settings`}function n(e={threadId:`new`}){let{threadId:t=`new`}=e;return`codex://thread/${t}`}export{t as n,e as r,n as t};

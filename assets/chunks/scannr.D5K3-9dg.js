@@ -1,1 +1,0 @@
-import{i as n}from"./index.CWwLnpeZ.js";function t(c={}){return`scannr://${n(c)}`}function l(c={}){let{callbackScheme:a}=c;return t({...a?{callbackScheme:a}:{}})}const r={callbackScheme:"foo"};export{r as s,l as t};

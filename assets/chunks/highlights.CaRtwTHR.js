@@ -1,0 +1,1 @@
+function e(e){return`highlights:/${e}`}function t(t){let{path:n}=t;return e(n)}function n(t){let{path:n,page:r}=t;return`${e(n)}#page=${r}`}var r={path:`/Users/test.pdf`},i={path:`/Users/test.pdf`,page:3};export{t as i,r as n,n as r,i as t};

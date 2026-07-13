@@ -1,0 +1,1 @@
+function e(){return`microsoft-edge:`}function t(e){let{url:t}=e;return`microsoft-edge:?url=${t}`}var n={url:`https://www.google.com/`};export{t as n,e as r,n as t};

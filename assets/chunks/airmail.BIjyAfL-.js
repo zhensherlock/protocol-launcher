@@ -1,1 +1,0 @@
-import{i}from"./index.CWwLnpeZ.js";function n(o={}){let{subject:c,from:e,to:t,cc:s,bcc:a,plainBody:m,htmlBody:r}=o;return`airmail://compose${i({subject:c,from:e,to:t,cc:s,bcc:a,plainBody:m,htmlBody:r})}`}const p={subject:"Message subject",to:"joe@example.com",plainBody:"Message body"};export{p as c,n as t};

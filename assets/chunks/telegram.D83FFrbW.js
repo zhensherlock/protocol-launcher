@@ -1,0 +1,1 @@
+function e(e){return`tg://resolve?domain=${e.domain}`}function t(){return`tg://`}var n={domain:`zhensherlock`};export{t as n,e as r,n as t};

@@ -1,0 +1,1 @@
+function e(e){let{url:t}=e;return`xcode://clone?repo=${t}`}var t={url:`https://github.com/zhensherlock/protocol-launcher`};export{e as n,t};

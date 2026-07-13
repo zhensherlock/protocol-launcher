@@ -1,0 +1,1 @@
+function e(){return`sourcetree://`}function t(e){let{repo:t}=e;return`sourcetree://cloneRepo/${t}`}var n={repo:`https://github.com/zhensherlock/protocol-launcher`};export{t as n,e as r,n as t};

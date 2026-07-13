@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){let{protocol:n,host:r,port:i,username:a,name:o}=t;return`navicat://conn.${n}${e({"Conn.Host":r,"Conn.Port":i,"Conn.Username":a,"Conn.Name":o})}`}var n={protocol:`mysql`,host:`localhost`,port:3306,username:`root`,name:`My Database`};export{t as n,n as t};

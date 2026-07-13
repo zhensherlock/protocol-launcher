@@ -1,0 +1,1 @@
+function e(){return`pktc://open`}function t(){return`pktc://pause`}function n(){return`pktc://play`}function r(e){return`pktc://subscribe/${e.feedUrlWithoutHttp}`}var i={feedUrlWithoutHttp:`example.com/podcast/rss`};export{e as a,t as i,r as n,n as r,i as t};

@@ -1,0 +1,1 @@
+function e(){return`zoomus://`}export{e as t};

@@ -1,1 +1,0 @@
-function n(e){return`foreflightmobile://maps/search?q=${r(e)}`}function r(e){return encodeURIComponent(e).replace(/%20/g,"+").replace(/%40/g,"@").replace(/%2F/g,"/")}function t(e){return n(e.q)}export{t};

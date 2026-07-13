@@ -1,0 +1,1 @@
+function e(){return`orchids://`}export{e as t};

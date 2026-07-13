@@ -1,0 +1,1 @@
+var e=/^https:\/\/(.+)$/;function t(t){let n=t.url.match(e);if(!n)throw Error(`Unsupported Locus Map actions URL format.`);let[,r]=n;return`locus-actions://https/${r}`}function n(e){return t(e)}var r={url:`https://example.com/path/to/actions.xml`};export{n,r as t};

@@ -1,0 +1,1 @@
+function e(){return`evernote://`}function t(e){let{userId:t,shardId:n,noteGuid:r}=e;return`evernote:///view/${t}/${n}/${r}/${r}/`}var n={userId:`123456`,shardId:`s29`,noteGuid:`abcd-efgh-ijkl-mnop`};export{t as n,e as r,n as t};

@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t,n={}){return`hammerspoon://${t}${e(n)}`}function n(e){let{eventName:n,params:r}=e;return t(n,r)}var r={eventName:`doThingA`,params:{value:`1`}},i={eventName:`someEventToHandle`,params:{someParam:`things`,otherParam:`stuff`}};export{r as n,n as r,i as t};

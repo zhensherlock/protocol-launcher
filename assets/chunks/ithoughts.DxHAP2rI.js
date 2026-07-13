@@ -1,0 +1,3 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t,n){return`ithoughts://x-callback-url/${t}${e(n)}`}function n(e={}){let{text:n,note:r,link:i,format:a,path:o,style:s}=e;return t(`makeMap`,{text:n,note:r,link:i,format:a,path:o,style:s})}var r={text:`# Project
+- Collect ideas
+- Draft outline`,note:`Created from Markdown`,link:`https://www.toketaware.com/ithoughts-howto-x-callback-url`,format:`md`};export{n,r as t};

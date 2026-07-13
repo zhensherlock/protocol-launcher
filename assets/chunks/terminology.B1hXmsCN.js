@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){let{text:n}=t;return`terminology:///lookup${e({text:n})}`}function n(){return`terminology://`}function r(t){let{q:n}=t;return`terminology:///search${e({q:n})}`}var i={text:`automation`},a={q:`protocol`};export{t as a,n as i,a as n,r,i as t};

@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){let{meetingCode:n}=t;return`wemeet://page/inmeeting${e({meeting_code:n})}`}function n(){return`wemeet://`}var r={meetingCode:`123456789`};export{n,t as r,r as t};

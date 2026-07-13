@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){let{name:n}=t;return`mindnode://open${e({name:n})}`}var n={name:`YourDocument`};export{t as n,n as t};

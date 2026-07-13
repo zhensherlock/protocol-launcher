@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){return e(t).replace(/%2C/gi,`,`)}function n(e,n){return`charty://${e}${t(n)}`}function r(e){let{name:t,baseColors:r,colors:i}=e;return n(`add-theme`,{name:t,baseColors:r,colors:i})}var i={name:`BlGrYeOrRe`,baseColors:0,colors:`1a76e8,28d475,ffd416,ff6f1d,eb2d40`};export{r as n,i as t};

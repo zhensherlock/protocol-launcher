@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){let{url:n,xSource:r,xSuccess:i,xError:a}=t;return`x-callback-instapaper://x-callback-url/add${e({url:n,...r?{"x-source":r}:{},...i?{"x-success":i}:{},...a?{"x-error":a}:{}})}`}var n={url:`https://example.com/article`,xSource:`MyReader`,xSuccess:`myapp://success`};export{t as n,n as t};

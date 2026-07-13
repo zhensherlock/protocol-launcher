@@ -1,1 +1,0 @@
-import{i as n}from"./index.CWwLnpeZ.js";function e(t,i){return`webexteams://${t}${n(i)}`}function a(t){return e("im",{email:t.email})}function m(t){return e("im",{space:t.space})}export{m as a,a as t};

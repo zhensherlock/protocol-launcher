@@ -1,0 +1,1 @@
+function e(){return`reed://`}function t(e){let{url:t}=e;return`reed://${t}`}var n={url:`feed-url.com`};export{t as n,e as r,n as t};

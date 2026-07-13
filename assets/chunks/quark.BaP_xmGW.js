@@ -1,0 +1,1 @@
+function e(){return`qkclouddrive://save`}function t(e){let{url:t}=e;return`qklink://${t}`}function n(){return`qklink://`}var r={url:`www.baidu.com`};export{e as i,n,t as r,r as t};

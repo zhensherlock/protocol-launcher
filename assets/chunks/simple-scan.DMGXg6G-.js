@@ -1,1 +1,0 @@
-import{i as o}from"./index.CWwLnpeZ.js";function s(){return"simple-scan://"}function e(a={}){let{destination:t,format:i,quality:n}=a;return`simple-scan://scan${o({...t?{destination:t}:{},...i?{format:i}:{},...n?{quality:n}:{}})}`}const m={destination:"email",format:"pdf",quality:"original"};export{s as e,m as s,e as t};

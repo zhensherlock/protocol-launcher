@@ -1,0 +1,1 @@
+function e(){return`downcast://`}function t(e){return e.url}var n={url:`itpc://example.com/podcast/rss`};export{t as n,e as r,n as t};

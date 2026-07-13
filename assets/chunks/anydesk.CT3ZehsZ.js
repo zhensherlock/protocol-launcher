@@ -1,1 +1,0 @@
-const e={idOrAlias:"user@namespace"},s={prefix:"example",idOrAlias:"123456789"},a={prefix:"example",idOrAlias:"123456789"},i={key:"LICENSE-KEY"},r={key:"LICENSE-KEY",silent:!0},t={prefix:"example",key:"LICENSE-KEY"},n={prefix:"example",key:"LICENSE-KEY"};export{s as a,a as b,e as c,r as d,t as e,n as f,i as r};

@@ -1,0 +1,1 @@
+function e(e){let{path:t}=e;return`coderunner://${t}`}function t(e){let{path:t}=e;return`coderunner://${t}`}function n(){return`coderunner://`}var r=e=>({path:e?`C:\\Windows\\System32\\drivers\\etc\\hosts`:`/etc/hosts`}),i=e=>({path:e?`C:\\Windows\\System32\\drivers\\etc`:`/etc`});export{e as a,t as i,i as n,n as r,r as t};

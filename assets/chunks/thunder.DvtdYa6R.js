@@ -1,0 +1,1 @@
+import{r as e}from"./dist.D_eLBqp_.js";function t(t){let{url:n}=t;return`thunder://${e(`AA${n}ZZ`,{encodeForUrl:!1})}`}var n={url:`https://raw.githubusercontent.com/zhensherlock/zhensherlock/main/profile-3d-contrib/profile-night-view.svg`};export{t as n,n as t};

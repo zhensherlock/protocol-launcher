@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(e){return`okjson://${e}`}function n(t){return`okjson://new${e({content:t.content})}`}function r(){return t(`history`)}function i(e){return n(e)}function a(){return t(`paste`)}function o(){return t(`scripts-panel`)}var s={content:`{"hello":"world"}`};export{r as a,i,o as n,a as r,s as t};

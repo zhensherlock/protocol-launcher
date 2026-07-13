@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t){let{url:n,xSuccess:r}=t;return`overcast://x-callback-url/add${e({url:n,...r?{"x-success":r}:{}})}`}function n(){return`overcast://`}var r={url:`https://example.com/podcast/rss`};export{n,t as r,r as t};

@@ -1,1 +1,0 @@
-import{i as u}from"./index.CWwLnpeZ.js";function l(e){let{url:s,xSource:r,xSuccess:c,xError:a}=e;return`x-callback-instapaper://x-callback-url/add${u({url:s,...r?{"x-source":r}:{},...c?{"x-success":c}:{},...a?{"x-error":a}:{}})}`}const o={url:"https://example.com/article",xSource:"MyReader",xSuccess:"myapp://success"};export{o as a,l as t};

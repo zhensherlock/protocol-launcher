@@ -1,0 +1,1 @@
+function e(e){let{remoteRepositoryUrl:t}=e;return`gittower://openRepo/${t}`}var t={remoteRepositoryUrl:`git@example.beanstalkapp.com:/project.git`};export{e as n,t};
