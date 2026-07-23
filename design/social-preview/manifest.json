@@ -1,0 +1,41 @@
+{
+  "asset": "protocol-launcher-social-preview.png",
+  "platform": "GitHub repository Social preview",
+  "width": 1280,
+  "height": 640,
+  "format": "PNG",
+  "safeArea": 40,
+  "exactCopy": [
+    "Protocol Launcher",
+    "One-click launch URLs",
+    "for protocol-based apps",
+    "TYPE-SAFE",
+    "SECURE",
+    "ZERO DEPENDENCIES",
+    "openFile(…) → vscode://…",
+    "npm install protocol-launcher",
+    "Open apps",
+    "Jump to files",
+    "Install MCP servers"
+  ],
+  "sources": {
+    "composition": "protocol-launcher-social-preview.svg",
+    "generatedBackground": "social-preview-background.png",
+    "projectLogo": "assets/protocol-launcher-logo.svg",
+    "appLogos": [
+      "assets/cursor.svg",
+      "assets/visual-studio-code.png",
+      "assets/obsidian.svg",
+      "assets/telegram.svg"
+    ],
+    "uploadCopy": "../../apps/docs/public/social-preview.png",
+    "originalProjectAssets": [
+      "../../apps/docs/public/logo.svg",
+      "../../apps/docs/public/app-logos/cursor.svg",
+      "../../apps/docs/public/app-logos/visual-studio-code.png",
+      "../../apps/docs/public/app-logos/obsidian.svg",
+      "../../apps/docs/public/app-logos/telegram.svg"
+    ]
+  },
+  "provenance": "The text-free neon launch-flow background was generated for this asset. All copy, logo placement, app icons, dimensions, and final export composition are deterministic and editable in the SVG source."
+}

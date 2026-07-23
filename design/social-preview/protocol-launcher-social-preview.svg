@@ -1,0 +1,160 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="1280"
+  height="640"
+  viewBox="0 0 1280 640"
+>
+  <defs>
+    <linearGradient id="leftShade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#020817" stop-opacity="0.6" />
+      <stop offset="1" stop-color="#020817" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="brandText" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#67e8f9" />
+      <stop offset="0.55" stop-color="#60a5fa" />
+      <stop offset="1" stop-color="#f472b6" />
+    </linearGradient>
+  </defs>
+
+  <image
+    x="0"
+    y="0"
+    width="1280"
+    height="640"
+    preserveAspectRatio="none"
+    xlink:href="social-preview-background.png"
+  />
+  <rect x="0" y="0" width="760" height="640" fill="url(#leftShade)" />
+
+  <image
+    x="50"
+    y="58"
+    width="88"
+    height="88"
+    preserveAspectRatio="xMidYMid meet"
+    xlink:href="assets/protocol-launcher-logo.svg"
+  />
+
+  <text
+    x="158"
+    y="125"
+    font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif"
+    font-size="58"
+    font-weight="800"
+    letter-spacing="-1.5"
+  >
+    <tspan fill="#f8fafc">Protocol</tspan>
+    <tspan dx="12" fill="url(#brandText)">Launcher</tspan>
+  </text>
+
+  <text
+    x="52"
+    y="224"
+    fill="#f8fafc"
+    font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif"
+    font-size="34"
+    font-weight="600"
+  >One-click launch URLs</text>
+  <text
+    x="52"
+    y="268"
+    fill="#c8d5ea"
+    font-family="SF Pro Display, Helvetica Neue, Arial, sans-serif"
+    font-size="34"
+    font-weight="600"
+  >for protocol-based apps</text>
+
+  <text
+    x="54"
+    y="350"
+    font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif"
+    font-size="17"
+    font-weight="600"
+    letter-spacing="0.6"
+  >
+    <tspan fill="#67e8f9">TYPE-SAFE</tspan>
+    <tspan dx="18" fill="#5b7ea6">•</tspan>
+    <tspan dx="18" fill="#c4b5fd">SECURE</tspan>
+    <tspan dx="18" fill="#5b7ea6">•</tspan>
+    <tspan dx="18" fill="#f9a8d4">ZERO DEPENDENCIES</tspan>
+  </text>
+
+  <rect
+    x="52"
+    y="420"
+    width="484"
+    height="72"
+    rx="16"
+    fill="#061227"
+    stroke="#28496f"
+    stroke-width="1.5"
+  />
+  <text
+    x="78"
+    y="465"
+    font-family="SF Mono, Menlo, monospace"
+    font-size="21"
+    font-weight="500"
+  >
+    <tspan fill="#67e8f9">$</tspan>
+    <tspan dx="12" fill="#e6f0ff">npm install protocol-launcher</tspan>
+  </text>
+
+  <text
+    x="54"
+    y="550"
+    fill="#91a8c6"
+    font-family="SF Pro Text, Helvetica Neue, Arial, sans-serif"
+    font-size="17"
+    font-weight="500"
+  >
+    Open apps
+    <tspan dx="16" fill="#3d628d">•</tspan>
+    <tspan dx="16">Jump to files</tspan>
+    <tspan dx="16" fill="#3d628d">•</tspan>
+    <tspan dx="16">Install MCP servers</tspan>
+  </text>
+
+  <text
+    x="814"
+    y="331"
+    fill="#ddfbff"
+    font-family="SF Mono, Menlo, monospace"
+    font-size="17"
+    font-weight="500"
+  >openFile(…) → vscode://…</text>
+
+  <image
+    x="699"
+    y="506"
+    width="58"
+    height="58"
+    preserveAspectRatio="xMidYMid meet"
+    xlink:href="assets/cursor.svg"
+  />
+  <image
+    x="840"
+    y="506"
+    width="58"
+    height="58"
+    preserveAspectRatio="xMidYMid meet"
+    xlink:href="assets/visual-studio-code.png"
+  />
+  <image
+    x="980"
+    y="506"
+    width="58"
+    height="58"
+    preserveAspectRatio="xMidYMid meet"
+    xlink:href="assets/obsidian.svg"
+  />
+  <image
+    x="1121"
+    y="506"
+    width="58"
+    height="58"
+    preserveAspectRatio="xMidYMid meet"
+    xlink:href="assets/telegram.svg"
+  />
+</svg>
