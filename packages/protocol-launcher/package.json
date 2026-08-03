@@ -1,6 +1,6 @@
 {
   "name": "protocol-launcher",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "description": "One-click launch URL generator for protocol-based apps.",
   "type": "module",
   "author": "zhensherlock",
@@ -36,7 +36,11 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": ["dist", "LICENSE", "README.md"],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"
