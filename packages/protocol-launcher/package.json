@@ -36,11 +36,7 @@
     "access": "public"
   },
   "license": "MIT",
-  "files": [
-    "dist",
-    "LICENSE",
-    "README.md"
-  ],
+  "files": ["dist", "LICENSE", "README.md"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhensherlock/protocol-launcher.git"

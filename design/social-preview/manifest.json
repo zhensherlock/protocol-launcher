@@ -22,12 +22,7 @@
     "composition": "protocol-launcher-social-preview.svg",
     "generatedBackground": "social-preview-background.png",
     "projectLogo": "assets/protocol-launcher-logo.svg",
-    "appLogos": [
-      "assets/cursor.svg",
-      "assets/visual-studio-code.png",
-      "assets/obsidian.svg",
-      "assets/telegram.svg"
-    ],
+    "appLogos": ["assets/cursor.svg", "assets/visual-studio-code.png", "assets/obsidian.svg", "assets/telegram.svg"],
     "uploadCopy": "../../apps/docs/public/social-preview.png",
     "originalProjectAssets": [
       "../../apps/docs/public/logo.svg",

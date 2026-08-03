@@ -30,7 +30,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 [Trae](https://trae.ai) is an AI-native code editor launched by ByteDance, featuring intelligent programming modes like SOLO Coder and SOLO Builder, with support for MCP Server extensions, custom agents, multitasking, and more. **Protocol Launcher** allows you to generate deep links to open and configure resources in Trae.
 
 ::: tip
-This documentation is for the international version of Trae (trae.ai) which includes international AI models. For users in China, see [Trae China](/en/apps/trae-cn) which includes Chinese AI models.
+This documentation is for the international version of Trae (trae.ai) which includes international AI models. For users in China, see [Trae China](/apps/trae-cn) which includes Chinese AI models.
 :::
 
 ## Usage

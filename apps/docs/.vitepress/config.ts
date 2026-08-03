@@ -601,8 +601,14 @@ export default defineConfig({
     },
   },
   vite: {
+    define: {
+      __VUE_PROD_DEVTOOLS__: false,
+    },
     server: {
       open: true,
+    },
+    ssr: {
+      noExternal: ['pinia'],
     },
     plugins: [
       tailwindcss(),

@@ -14,15 +14,14 @@ describe('kakaoMap', () => {
     expect(url).toBe('kakaomap://open?page=placeSearch')
   })
 
-  test.each([
-    'placeSearch',
-    'routeSearch',
-    'locationsharing',
-  ] as const)('open should return the documented %s page URL', page => {
-    const url = kakaoMap.open({ page })
+  test.each(['placeSearch', 'routeSearch', 'locationsharing'] as const)(
+    'open should return the documented %s page URL',
+    page => {
+      const url = kakaoMap.open({ page })
 
-    expect(url).toBe(`kakaomap://open?page=${page}`)
-  })
+      expect(url).toBe(`kakaomap://open?page=${page}`)
+    },
+  )
 
   test('open should return a documented layer URL', () => {
     const url = kakaoMap.open({ layer: 'skyview' })
@@ -30,18 +29,14 @@ describe('kakaoMap', () => {
     expect(url).toBe('kakaomap://open?layer=skyview')
   })
 
-  test.each([
-    'skyview',
-    'bike',
-    'traffic',
-    'hyperaccuratebus',
-    'airinfo',
-    'cctv',
-  ] as const)('open should return the documented %s layer URL', layer => {
-    const url = kakaoMap.open({ layer })
+  test.each(['skyview', 'bike', 'traffic', 'hyperaccuratebus', 'airinfo', 'cctv'] as const)(
+    'open should return the documented %s layer URL',
+    layer => {
+      const url = kakaoMap.open({ layer })
 
-    expect(url).toBe(`kakaomap://open?layer=${layer}`)
-  })
+      expect(url).toBe(`kakaomap://open?layer=${layer}`)
+    },
+  )
 
   test('open should return the MobileWeb URL when requested', () => {
     const url = kakaoMap.open({ page: 'routeSearch', scheme: 'mobileWeb' })
