@@ -7,7 +7,7 @@ url: /protocol-launcher/apps/trae-cn.md
 [Trae](https://trae.cn) is an AI-native code editor launched by ByteDance, featuring intelligent programming modes like SOLO Coder and SOLO Builder, with support for MCP Server extensions, custom agents, multitasking, and more. **Protocol Launcher** allows you to generate deep links to open and configure resources in Trae.
 
 ::: tip
-This documentation is for the China version of Trae (trae.cn) which includes Chinese AI models. For international users, see [Trae](/en/apps/trae) which includes international AI models.
+This documentation is for the China version of Trae (trae.cn) which includes Chinese AI models. For international users, see [Trae](/apps/trae) which includes international AI models.
 :::
 
 ## Usage
