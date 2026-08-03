@@ -14,15 +14,15 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/lodash-es": "^4.17.12",
     "tailwindcss": "^4.3.3",
-    "vitepress": "^2.0.0-alpha.18",
-    "vitepress-plugin-group-icons": "^1.7.5",
-    "vitepress-plugin-llms": "^1.13.3"
+    "vitepress": "^2.0.0-alpha.19",
+    "vitepress-plugin-group-icons": "^1.7.6",
+    "vitepress-plugin-llms": "^1.13.4"
   },
   "dependencies": {
     "bowser": "^2.14.1",
     "gsap": "^3.15.0",
     "lodash-es": "^4.18.1",
-    "pinia": "^3.0.4",
+    "pinia": "^4.0.2",
     "protocol-launcher": "workspace:*",
     "vue": "^3.5.40"
   }
