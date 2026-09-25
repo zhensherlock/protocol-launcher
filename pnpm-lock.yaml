@@ -16,10 +16,10 @@ importers:
         version: 0.7.0
       '@changesets/cli':
         specifier: ^2.31.1
-        version: 2.31.1(@types/node@22.20.4)
+        version: 2.31.1(@types/node@24.19.0)
       '@commitlint/cli':
         specifier: ^21.2.2
-        version: 21.2.2(@types/node@22.20.4)(conventional-commits-parser@7.1.0)(typescript@5.9.3)
+        version: 21.2.2(@types/node@24.19.0)(conventional-commits-parser@7.1.0)(typescript@5.9.3)
       '@commitlint/config-conventional':
         specifier: ^21.2.2
         version: 21.2.2
@@ -27,8 +27,8 @@ importers:
         specifier: ^12.3.0
         version: 12.3.0(rollup@4.55.1)(tslib@2.8.1)(typescript@5.9.3)
       '@types/node':
-        specifier: ^22.20.4
-        version: 22.20.4
+        specifier: ^24.0.0
+        version: 24.19.0
       '@vitest/coverage-v8':
         specifier: ^5.0.1
         version: 5.0.1(vitest@5.0.1)
@@ -82,7 +82,7 @@ importers:
         version: 8.70.0(eslint@10.11.0(jiti@2.7.0))(typescript@5.9.3)
       vitest:
         specifier: ^5.0.1
-        version: 5.0.1(@opentelemetry/api@1.9.0)(@types/node@22.20.4)(@vitest/coverage-v8@5.0.1)(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
+        version: 5.0.1(@opentelemetry/api@1.9.0)(@types/node@24.19.0)(@vitest/coverage-v8@5.0.1)(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
       vue-eslint-parser:
         specifier: ^10.4.1
         version: 10.4.1(eslint@10.11.0(jiti@2.7.0))
@@ -110,7 +110,7 @@ importers:
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.3.3
-        version: 4.3.3(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
+        version: 4.3.3(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
       '@types/lodash-es':
         specifier: ^4.17.12
         version: 4.17.12
@@ -119,10 +119,10 @@ importers:
         version: 4.3.3
       vitepress:
         specifier: ^2.0.0-alpha.20
-        version: 2.0.0-alpha.20(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(postcss@8.5.28)(terser@5.44.1)(typescript@6.0.2)(yaml@2.9.0)
+        version: 2.0.0-alpha.20(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(postcss@8.5.28)(terser@5.44.1)(typescript@6.0.2)(yaml@2.9.0)
       vitepress-plugin-group-icons:
         specifier: ^1.7.6
-        version: 1.7.6(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
+        version: 1.7.6(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
       vitepress-plugin-llms:
         specifier: ^1.14.0
         version: 1.14.0
@@ -1172,8 +1172,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@22.20.4':
-    resolution: {integrity: sha512-zJRE40jpHtKqE/C4fgHrAKQLJuSpzEnP9ff9Y7YtoR3Wd2pwqzlekDeEuUQXjRd+QCYnVnNwuJYmhdk9XV8gvA==}
+  '@types/node@24.19.0':
+    resolution: {integrity: sha512-zY+5tKxXdhGh1PYI0ac+7juvEu4OI6vWtVVoj5i2m42jxAY1U+zHGt6QCyOFwykdP62sM3MJ9stoYYUw5aCWew==}
 
   '@types/unist@3.0.3':
     resolution: {integrity: sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q==}
@@ -1242,6 +1242,7 @@ packages:
 
   '@ungap/structured-clone@1.3.0':
     resolution: {integrity: sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==}
+    deprecated: Potential CWE-502 - Update to 1.3.1 or higher
 
   '@vitejs/plugin-vue@6.0.8':
     resolution: {integrity: sha512-0ZjgOg7oO6farnNGup7yvoM/YXZV84OZxHAwtflItNa/6zzQyVb5LNxyea3FEKEX2XlagIKzrlH7wwxkKgtiew==}
@@ -3227,8 +3228,8 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  undici-types@7.24.6:
+    resolution: {integrity: sha512-WRNW+sJgj5OBN4/0JpHFqtqzhpbnV0GuB+OozA9gCL7a993SmU+1JBZCzLNxYsbMfIeDL+lTsphD5jN5N+n0zg==}
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
@@ -3597,7 +3598,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@changesets/cli@2.31.1(@types/node@22.20.4)':
+  '@changesets/cli@2.31.1(@types/node@24.19.0)':
     dependencies:
       '@changesets/apply-release-plan': 7.1.1
       '@changesets/assemble-release-plan': 6.0.10
@@ -3613,7 +3614,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.3(@types/node@22.20.4)
+      '@inquirer/external-editor': 1.0.3(@types/node@24.19.0)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       enquirer: 2.4.1
@@ -3718,12 +3719,12 @@ snapshots:
       human-id: 4.1.3
       prettier: 2.8.8
 
-  '@commitlint/cli@21.2.2(@types/node@22.20.4)(conventional-commits-parser@7.1.0)(typescript@5.9.3)':
+  '@commitlint/cli@21.2.2(@types/node@24.19.0)(conventional-commits-parser@7.1.0)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-conventional': 21.2.2
       '@commitlint/format': 21.2.2
       '@commitlint/lint': 21.2.2
-      '@commitlint/load': 21.2.2(@types/node@22.20.4)(typescript@5.9.3)
+      '@commitlint/load': 21.2.2(@types/node@24.19.0)(typescript@5.9.3)
       '@commitlint/read': 21.2.1(conventional-commits-parser@7.1.0)
       '@commitlint/types': 21.2.0
       tinyexec: 1.2.4
@@ -3768,14 +3769,14 @@ snapshots:
       '@commitlint/rules': 21.2.2
       '@commitlint/types': 21.2.0
 
-  '@commitlint/load@21.2.2(@types/node@22.20.4)(typescript@5.9.3)':
+  '@commitlint/load@21.2.2(@types/node@24.19.0)(typescript@5.9.3)':
     dependencies:
       '@commitlint/config-validator': 21.2.0
       '@commitlint/execute-rule': 21.0.1
       '@commitlint/resolve-extends': 21.2.2
       '@commitlint/types': 21.2.0
       cosmiconfig: 9.0.1(typescript@5.9.3)
-      cosmiconfig-typescript-loader: 6.2.0(@types/node@22.20.4)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3)
+      cosmiconfig-typescript-loader: 6.2.0(@types/node@24.19.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3)
       es-toolkit: 1.46.1
       is-plain-obj: 4.1.0
       picocolors: 1.1.1
@@ -3984,12 +3985,12 @@ snapshots:
       '@iconify/types': 2.0.0
       import-meta-resolve: 4.2.0
 
-  '@inquirer/external-editor@1.0.3(@types/node@22.20.4)':
+  '@inquirer/external-editor@1.0.3(@types/node@24.19.0)':
     dependencies:
       chardet: 2.1.1
       iconv-lite: 0.7.1
     optionalDependencies:
-      '@types/node': 22.20.4
+      '@types/node': 24.19.0
 
   '@isaacs/cliui@9.0.0': {}
 
@@ -4316,12 +4317,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.3.3
       '@tailwindcss/oxide-win32-x64-msvc': 4.3.3
 
-  '@tailwindcss/vite@4.3.3(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))':
+  '@tailwindcss/vite@4.3.3(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))':
     dependencies:
       '@tailwindcss/node': 4.3.3
       '@tailwindcss/oxide': 4.3.3
       tailwindcss: 4.3.3
-      vite: 8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
+      vite: 8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
 
   '@turbo/darwin-64@2.11.2':
     optional: true
@@ -4387,9 +4388,9 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@22.20.4':
+  '@types/node@24.19.0':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 7.24.6
 
   '@types/unist@3.0.3': {}
 
@@ -4488,10 +4489,10 @@ snapshots:
 
   '@ungap/structured-clone@1.3.0': {}
 
-  '@vitejs/plugin-vue@6.0.8(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.2))':
+  '@vitejs/plugin-vue@6.0.8(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.2))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
+      vite: 8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
       vue: 3.5.43(typescript@6.0.2)
 
   '@vitest/coverage-v8@5.0.1(vitest@5.0.1)':
@@ -4504,7 +4505,7 @@ snapshots:
       obug: 2.2.1
       std-env: 4.2.0
       tinyrainbow: 3.1.1
-      vitest: 5.0.1(@opentelemetry/api@1.9.0)(@types/node@22.20.4)(@vitest/coverage-v8@5.0.1)(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
+      vitest: 5.0.1(@opentelemetry/api@1.9.0)(@types/node@24.19.0)(@vitest/coverage-v8@5.0.1)(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
 
   '@vitest/istanbul-lib-coverage@1.0.1': {}
 
@@ -4512,14 +4513,14 @@ snapshots:
     dependencies:
       '@vitest/istanbul-lib-coverage': 1.0.1
 
-  '@vitest/mocker@5.0.1(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))':
+  '@vitest/mocker@5.0.1(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@vitest/spy': 5.0.1
       estree-walker: 3.0.3
       magic-string: 1.4.1
     optionalDependencies:
-      vite: 8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
+      vite: 8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
 
   '@vitest/spy@5.0.1': {}
 
@@ -4832,9 +4833,9 @@ snapshots:
       '@simple-libs/stream-utils': 2.0.0
       argue-cli: 3.1.0
 
-  cosmiconfig-typescript-loader@6.2.0(@types/node@22.20.4)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3):
+  cosmiconfig-typescript-loader@6.2.0(@types/node@24.19.0)(cosmiconfig@9.0.1(typescript@5.9.3))(typescript@5.9.3):
     dependencies:
-      '@types/node': 22.20.4
+      '@types/node': 24.19.0
       cosmiconfig: 9.0.1(typescript@5.9.3)
       jiti: 2.7.0
       typescript: 5.9.3
@@ -6702,7 +6703,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  undici-types@6.21.0: {}
+  undici-types@7.24.6: {}
 
   unified@11.0.5:
     dependencies:
@@ -6761,7 +6762,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0):
+  vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0):
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.7
@@ -6769,20 +6770,20 @@ snapshots:
       rolldown: 1.2.9
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 22.20.4
+      '@types/node': 24.19.0
       esbuild: 0.27.2
       fsevents: 2.3.3
       jiti: 2.7.0
       terser: 5.44.1
       yaml: 2.9.0
 
-  vitepress-plugin-group-icons@1.7.6(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)):
+  vitepress-plugin-group-icons@1.7.6(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)):
     dependencies:
       '@iconify-json/logos': 1.2.12
       '@iconify-json/vscode-icons': 1.2.68
       '@iconify/utils': 3.1.4
     optionalDependencies:
-      vite: 8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
+      vite: 8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
 
   vitepress-plugin-llms@1.14.0:
     dependencies:
@@ -6803,7 +6804,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  vitepress@2.0.0-alpha.20(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(postcss@8.5.28)(terser@5.44.1)(typescript@6.0.2)(yaml@2.9.0):
+  vitepress@2.0.0-alpha.20(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(postcss@8.5.28)(terser@5.44.1)(typescript@6.0.2)(yaml@2.9.0):
     dependencies:
       '@docsearch/css': 4.7.0
       '@docsearch/js': 4.7.0
@@ -6811,7 +6812,7 @@ snapshots:
       '@iconify-json/simple-icons': 1.2.93
       '@shikijs/transformers': 4.4.3
       '@types/markdown-it': 14.1.2
-      '@vitejs/plugin-vue': 6.0.8(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.2))
+      '@vitejs/plugin-vue': 6.0.8(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))(vue@3.5.43(typescript@6.0.2))
       '@vue/devtools-api': 8.2.1
       '@vue/shared': 3.5.43
       '@vueuse/core': 14.4.0(vue@3.5.43(typescript@6.0.2))
@@ -6820,7 +6821,7 @@ snapshots:
       mark.js: 8.11.1
       minisearch: 7.2.0
       shiki: 4.4.3
-      vite: 8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
+      vite: 8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
       vue: 3.5.43(typescript@6.0.2)
     optionalDependencies:
       postcss: 8.5.28
@@ -6850,10 +6851,10 @@ snapshots:
       - universal-cookie
       - yaml
 
-  vitest@5.0.1(@opentelemetry/api@1.9.0)(@types/node@22.20.4)(@vitest/coverage-v8@5.0.1)(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)):
+  vitest@5.0.1(@opentelemetry/api@1.9.0)(@types/node@24.19.0)(@vitest/coverage-v8@5.0.1)(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)):
     dependencies:
       '@types/chai': 5.2.3
-      '@vitest/mocker': 5.0.1(vite@8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
+      '@vitest/mocker': 5.0.1(vite@8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0))
       chai: 6.2.2
       es-module-lexer: 2.3.2
       expect-type: 1.4.0
@@ -6864,11 +6865,11 @@ snapshots:
       tinybench: 6.1.4
       tinyexec: 1.3.0
       tinyglobby: 0.2.17
-      vite: 8.3.0(@types/node@22.20.4)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
+      vite: 8.3.0(@types/node@24.19.0)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.44.1)(yaml@2.9.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@opentelemetry/api': 1.9.0
-      '@types/node': 22.20.4
+      '@types/node': 24.19.0
       '@vitest/coverage-v8': 5.0.1(vitest@5.0.1)
     transitivePeerDependencies:
       - msw

@@ -51,7 +51,7 @@
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
     "@rollup/plugin-typescript": "^12.3.0",
-    "@types/node": "^22.20.4",
+    "@types/node": "^24.0.0",
     "@vitest/coverage-v8": "^5.0.1",
     "cross-env": "^10.1.0",
     "eslint": "^10.11.0",
