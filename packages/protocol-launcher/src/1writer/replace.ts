@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Replace document payload definition.
  */
-type Replace = {
+type Replace = Callbacks & {
   /**
    * The path to the document.
    *
@@ -39,6 +41,7 @@ export function replace(payload: Replace = {}) {
   const params = qs({
     ...(path ? { path } : {}),
     ...(text ? { text } : {}),
+    ...callbackParams(payload),
   })
 
   return `onewriter://x-callback-url/replace${params}`

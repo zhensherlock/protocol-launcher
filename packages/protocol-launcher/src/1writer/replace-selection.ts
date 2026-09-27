@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Replace selection payload definition.
  */
-type ReplaceSelection = {
+type ReplaceSelection = Callbacks & {
   /**
    * The replacement text (required).
    *
@@ -24,7 +26,7 @@ type ReplaceSelection = {
  */
 export function replaceSelection(payload: ReplaceSelection) {
   const { text } = payload
-  const params = qs({ text })
+  const params = qs({ text, ...callbackParams(payload) })
 
   return `onewriter://x-callback-url/replace-selection${params}`
 }

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Append document payload definition.
  */
-type Append = {
+type Append = Callbacks & {
   /**
    * The path to the document.
    *
@@ -39,6 +41,7 @@ export function append(payload: Append = {}) {
   const params = qs({
     ...(path ? { path } : {}),
     ...(text ? { text } : {}),
+    ...callbackParams(payload),
   })
 
   return `onewriter://x-callback-url/append${params}`

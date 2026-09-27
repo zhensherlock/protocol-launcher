@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Content payload definition.
  */
-type Content = {
+type Content = Callbacks & {
   /**
    * The path to the document.
    *
@@ -36,6 +38,7 @@ export function content(payload: Content = {}) {
   const params = qs({
     ...(path ? { path } : {}),
     ...(param ? { param } : {}),
+    ...callbackParams(payload),
   })
 
   return `onewriter://x-callback-url/content${params}`

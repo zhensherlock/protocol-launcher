@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open document payload definition.
  */
-type Open = {
+type Open = Callbacks & {
   /**
    * The path to the document.
    *
@@ -29,6 +31,7 @@ export function open(payload: Open = {}) {
   const { path } = payload
   const params = qs({
     ...(path ? { path } : {}),
+    ...callbackParams(payload),
   })
 
   return `onewriter://x-callback-url/open${params}`

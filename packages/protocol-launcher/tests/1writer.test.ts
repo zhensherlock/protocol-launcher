@@ -121,4 +121,40 @@ describe('oneWriter', () => {
     const url = oneWriter.prepend({})
     expect(url).toBe('onewriter://x-callback-url/prepend')
   })
+
+  test('content supports encoded result callbacks', () => {
+    expect(oneWriter.content({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/content?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('create supports encoded result callbacks', () => {
+    expect(oneWriter.create({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/create?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('replace supports encoded result callbacks', () => {
+    expect(oneWriter.replace({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/replace?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('replaceSelection supports encoded result callbacks', () => {
+    expect(oneWriter.replaceSelection({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/replace-selection?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('append supports encoded result callbacks', () => {
+    expect(oneWriter.append({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/append?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('prepend supports encoded result callbacks', () => {
+    expect(oneWriter.prepend({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/prepend?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('open supports encoded result callbacks', () => {
+    expect(oneWriter.open({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'onewriter://x-callback-url/open?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
 })

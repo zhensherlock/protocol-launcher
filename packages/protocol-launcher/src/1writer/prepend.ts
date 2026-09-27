@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Prepend document payload definition.
  */
-type Prepend = {
+type Prepend = Callbacks & {
   /**
    * The path to the document.
    *
@@ -39,6 +41,7 @@ export function prepend(payload: Prepend = {}) {
   const params = qs({
     ...(path ? { path } : {}),
     ...(text ? { text } : {}),
+    ...callbackParams(payload),
   })
 
   return `onewriter://x-callback-url/prepend${params}`

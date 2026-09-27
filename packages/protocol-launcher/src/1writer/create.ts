@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Create document payload definition.
  */
-type Create = {
+type Create = Callbacks & {
   /**
    * The path to the folder in which you want to create the document.
    *
@@ -47,6 +49,7 @@ export function create(payload: Create = {}) {
     ...(path ? { path } : {}),
     ...(name ? { name } : {}),
     ...(text ? { text } : {}),
+    ...callbackParams(payload),
   })
 
   return `onewriter://x-callback-url/create${params}`
