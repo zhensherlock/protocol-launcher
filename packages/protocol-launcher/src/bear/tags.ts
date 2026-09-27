@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Tags command payload definition.
  */
-type Tags = {
+type Tags = Callbacks & {
   /**
    * Application token (required).
    */
@@ -25,6 +27,7 @@ export function tags(payload: Tags) {
 
   const params = qs({
     token,
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/tags${params}`

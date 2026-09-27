@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open tag command payload definition.
  */
-type OpenTag = {
+type OpenTag = Callbacks & {
   /**
    * Tag name or a list of tags divided by comma (required).
    */
@@ -34,6 +36,7 @@ export function openTag(payload: OpenTag) {
   const params = qs({
     name,
     ...(token ? { token } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/open-tag${params}`

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Archive command payload definition.
  */
-type Archive = {
+type Archive = Callbacks & {
   /**
    * Note unique identifier.
    */
@@ -40,6 +42,7 @@ export function archive(payload: Archive = {}) {
     ...(id ? { id } : {}),
     ...(search && !id ? { search } : {}),
     ...(showWindow === false ? { show_window: 'no' } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/archive${params}`

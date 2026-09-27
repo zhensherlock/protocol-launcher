@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Search command payload definition.
  */
-type Search = {
+type Search = Callbacks & {
   /**
    * String to search.
    */
@@ -43,6 +45,7 @@ export function search(payload: Search = {}) {
     ...(tag ? { tag } : {}),
     ...(showWindow === false ? { show_window: 'no' } : {}),
     ...(token ? { token } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/search${params}`

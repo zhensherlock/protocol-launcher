@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Untagged command payload definition.
  */
-type Untagged = {
+type Untagged = Callbacks & {
   /**
    * String to search.
    */
@@ -37,6 +39,7 @@ export function untagged(payload: Untagged = {}) {
     ...(search ? { search } : {}),
     ...(showWindow === false ? { show_window: 'no' } : {}),
     ...(token ? { token } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/untagged${params}`

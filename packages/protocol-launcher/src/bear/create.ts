@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Create note command payload definition.
  */
-type Create = {
+type Create = Callbacks & {
   /**
    * Note title.
    */
@@ -128,6 +130,7 @@ export function create(payload: Create = {}) {
     ...(timestamp ? { timestamp: 'yes' } : {}),
     ...(type ? { type } : {}),
     ...(url ? { url } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/create${params}`

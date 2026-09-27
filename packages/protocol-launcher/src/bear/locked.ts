@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Locked command payload definition.
  */
-type Locked = {
+type Locked = Callbacks & {
   /**
    * String to search.
    */
@@ -31,6 +33,7 @@ export function locked(payload: Locked = {}) {
   const params = qs({
     ...(search ? { search } : {}),
     ...(showWindow === false ? { show_window: 'no' } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/locked${params}`

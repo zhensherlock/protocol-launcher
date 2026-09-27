@@ -805,3 +805,97 @@ describe('bear', () => {
     expect(url).toBe('bear://x-callback-url/locked')
   })
 })
+
+describe('documented URL updates', () => {
+  test('openWorkspace encodes the workspace name', () => {
+    expect(bear.openWorkspace({ name: 'Work & 家' })).toBe(
+      'bear://x-callback-url/open-workspace?name=Work%20%26%20%E5%AE%B6',
+    )
+  })
+
+  test('closeWorkspace closes the active workspace', () => {
+    expect(bear.closeWorkspace()).toBe('bear://x-callback-url/close-workspace')
+  })
+
+  test('openNote supports encoded result callbacks', () => {
+    expect(bear.openNote({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/open-note?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('addText supports encoded result callbacks', () => {
+    expect(bear.addText({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/add-text?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('addFile supports encoded result callbacks', () => {
+    expect(bear.addFile({ file: 'YQ==', filename: 'a.txt', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/add-file?file=YQ%3D%3D&filename=a.txt&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('closeWorkspace supports encoded result callbacks', () => {
+    expect(bear.closeWorkspace({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/close-workspace?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('openWorkspace supports encoded result callbacks', () => {
+    expect(bear.openWorkspace({ name: 'work', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/open-workspace?name=work&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('tags supports encoded result callbacks', () => {
+    expect(bear.tags({ token: 'TOKEN', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/tags?token=TOKEN&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('archive supports encoded result callbacks', () => {
+    expect(bear.archive({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/archive?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('create supports encoded result callbacks', () => {
+    expect(bear.create({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/create?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('locked supports encoded result callbacks', () => {
+    expect(bear.locked({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/locked?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('today supports encoded result callbacks', () => {
+    expect(bear.today({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/today?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('todo supports encoded result callbacks', () => {
+    expect(bear.todo({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/todo?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('trash supports encoded result callbacks', () => {
+    expect(bear.trash({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/trash?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('untagged supports encoded result callbacks', () => {
+    expect(bear.untagged({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/untagged?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('search supports encoded result callbacks', () => {
+    expect(bear.search({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'bear://x-callback-url/search?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('selected-note operations accept the required API token', () => {
+    expect(bear.openNote({ selected: true, token: 'TOKEN' })).toBe(
+      'bear://x-callback-url/open-note?selected=yes&token=TOKEN',
+    )
+    expect(bear.addText({ selected: true, token: 'TOKEN', text: 'N' })).toBe(
+      'bear://x-callback-url/add-text?selected=yes&token=TOKEN&text=N',
+    )
+    expect(bear.addFile({ selected: true, token: 'TOKEN', file: 'YQ==', filename: 'a.txt' })).toBe(
+      'bear://x-callback-url/add-file?selected=yes&token=TOKEN&file=YQ%3D%3D&filename=a.txt',
+    )
+  })
+})

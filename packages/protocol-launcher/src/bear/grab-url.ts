@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Grab URL command payload definition.
  */
-type GrabUrl = {
+type GrabUrl = Callbacks & {
   /**
    * URL to grab (required).
    */
@@ -43,6 +45,7 @@ export function grabUrl(payload: GrabUrl) {
     ...(tags ? { tags } : {}),
     ...(pin ? { pin: 'yes' } : {}),
     ...(wait === false ? { wait: 'no' } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/grab-url${params}`

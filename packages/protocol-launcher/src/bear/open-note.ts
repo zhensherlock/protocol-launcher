@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open note command payload definition.
  */
-type OpenNote = {
+type OpenNote = Callbacks & {
   /**
    * Note unique identifier.
    */
@@ -48,6 +50,8 @@ type OpenNote = {
    * If yes return the note currently selected in Bear (token required).
    */
   selected?: boolean
+  /** App-generated API token, required when selected is true. */
+  token?: string
 
   /**
    * If yes pin the note to the top of the list.
@@ -104,9 +108,11 @@ export function openNote(payload: OpenNote = { showWindow: true, openNote: true 
     ...(!showWindow ? { show_window: 'no' } : {}),
     ...(!openNoteParam ? { open_note: 'no' } : {}),
     ...(selected ? { selected: 'yes' } : {}),
+    token: payload.token,
     ...(pin ? { pin: 'yes' } : {}),
     ...(edit ? { edit: 'yes' } : {}),
     ...(search ? { search } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/open-note${params}`

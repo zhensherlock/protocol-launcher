@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Add file command payload definition.
  */
-type AddFile = {
+type AddFile = Callbacks & {
   /**
    * Note unique identifier.
    */
@@ -18,6 +20,8 @@ type AddFile = {
    * If yes use the note currently selected in Bear (token required).
    */
   selected?: boolean
+  /** App-generated API token, required when selected is true. */
+  token?: string
 
   /**
    * Base64 representation of a file (required).
@@ -67,7 +71,7 @@ type AddFile = {
  * @returns Bear add-file URL.
  * @example
  * addFile({ filename: 'test.gif', id: '4EDAF0D1', mode: 'append', file: 'R0lGODlhAQABAIAAAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==' })
- * // => 'bear://x-callback-url/add-file?filename=test.gif&id=4EDAF0D1&mode=append&file=R0lGODlhAQABAIAAAP%2F%2F%2F%2F%2F%2F%2FwAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw%3D%3D'
+ * // => 'bear://x-callback-url/add-file?id=4EDAF0D1&file=R0lGODlhAQABAIAAAP%2F%2F%2FwAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw%3D%3D&filename=test.gif&mode=append'
  * @link https://bear.app/faq/x-callback-url-scheme-documentation/#add-file
  */
 export function addFile(payload: AddFile) {
@@ -77,6 +81,7 @@ export function addFile(payload: AddFile) {
     ...(id ? { id } : {}),
     ...(title && !id ? { title } : {}),
     ...(selected ? { selected: 'yes' } : {}),
+    token: payload.token,
     file,
     ...(header ? { header } : {}),
     filename,
@@ -85,6 +90,7 @@ export function addFile(payload: AddFile) {
     ...(newWindow ? { new_window: 'yes' } : {}),
     ...(showWindow === false ? { show_window: 'no' } : {}),
     ...(edit ? { edit: 'yes' } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/add-file${params}`

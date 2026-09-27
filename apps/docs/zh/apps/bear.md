@@ -5,7 +5,9 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openNote, create, addText, search, tags, openTag, renameTag, deleteTag, todo, today, locked, untagged, trash, archive, grabUrl } from 'protocol-launcher/bear';
+import { open, openNote, create, addText, search, tags, openTag, renameTag, deleteTag, todo, today, locked, untagged, trash, archive, grabUrl, openWorkspace, closeWorkspace, addFile } from 'protocol-launcher/bear';
+import { openWorkspaceParams } from '../../.vitepress/constants/bear';
+import { addFileParams } from '../../.vitepress/constants/bear';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -298,3 +300,78 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
     在 Bear 中打开
   </VPLink>
 </div>
+
+### 打开工作区
+
+通过名称打开工作区。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openWorkspace({
+  name: 'Work'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openWorkspace(openWorkspaceParams)" target="_self">
+    打开工作区
+  </VPLink>
+</div>
+
+### 关闭工作区
+
+关闭当前工作区。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'closeWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}closeWorkspace()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="closeWorkspace()" target="_self">
+    关闭工作区
+  </VPLink>
+</div>
+
+
+### 回调
+
+可选回调参数为 xSuccess、xError。嵌套回调 URL 会进行百分号编码。
+
+openNote()、addText()、addFile() 接受 token；使用 selected: true 时，需要在目标平台生成的 API token。iOS 和 macOS 的 token 不能混用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  'selected': true,
+  'token': 'REPLACE_WITH_BEAR_API_TOKEN',
+  'xSuccess': 'myapp://note'
+})
+```
+
+
+### 添加文件
+
+通过 id 或 title 向笔记添加 Base64 编码的文件。Bear 必须已解锁，不能访问加密笔记。file 和 filename 均为必填参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addFile({
+  'title': 'Protocol Launcher example',
+  'filename': 'example.txt',
+  'file': 'SGVsbG8K',
+  'mode': 'append'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="addFile(addFileParams)" target="_self">添加文件</VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://bear.app/faq/x-callback-url-scheme-documentation/)

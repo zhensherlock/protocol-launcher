@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Today command payload definition.
  */
-type Today = {
+type Today = Callbacks & {
   /**
    * String to search.
    */
@@ -37,6 +39,7 @@ export function today(payload: Today = {}) {
     ...(search ? { search } : {}),
     ...(!showWindow ? { show_window: 'no' } : {}),
     ...(token ? { token } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/today${params}`

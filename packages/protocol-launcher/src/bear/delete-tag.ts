@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Delete tag command payload definition.
  */
-type DeleteTag = {
+type DeleteTag = Callbacks & {
   /**
    * Tag name (required).
    */
@@ -31,6 +33,7 @@ export function deleteTag(payload: DeleteTag) {
   const params = qs({
     name,
     ...(showWindow === false ? { show_window: 'no' } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/delete-tag${params}`

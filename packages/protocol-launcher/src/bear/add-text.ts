@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Add text command payload definition.
  */
-type AddText = {
+type AddText = Callbacks & {
   /**
    * Note unique identifier.
    */
@@ -18,6 +20,8 @@ type AddText = {
    * If yes use the note currently selected in Bear (token required).
    */
   selected?: boolean
+  /** App-generated API token, required when selected is true. */
+  token?: string
 
   /**
    * Text to add.
@@ -87,7 +91,7 @@ type AddText = {
  * @returns Bear add-text URL.
  * @example
  * addText({ text: 'new line', id: '4EDAF0D1', mode: 'append' })
- * // => 'bear://x-callback-url/add-text?text=new%20line&id=4EDAF0D1&mode=append'
+ * // => 'bear://x-callback-url/add-text?id=4EDAF0D1&text=new%20line&mode=append'
  * @link https://bear.app/faq/x-callback-url-scheme-documentation/#add-text
  */
 export function addText(payload: AddText = {}) {
@@ -113,6 +117,7 @@ export function addText(payload: AddText = {}) {
     ...(id ? { id } : {}),
     ...(title && !id ? { title } : {}),
     ...(selected ? { selected: 'yes' } : {}),
+    token: payload.token,
     ...(text ? { text } : {}),
     ...(clipboard ? { clipboard: 'yes' } : {}),
     ...(header ? { header } : {}),
@@ -125,6 +130,7 @@ export function addText(payload: AddText = {}) {
     ...(showWindow === false ? { show_window: 'no' } : {}),
     ...(edit ? { edit: 'yes' } : {}),
     ...(timestamp ? { timestamp: 'yes' } : {}),
+    ...callbackParams(payload),
   })
 
   return `bear://x-callback-url/add-text${params}`

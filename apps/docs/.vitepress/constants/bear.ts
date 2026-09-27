@@ -60,3 +60,14 @@ export const archiveParams = {}
 export const grabUrlParams = {
   url: 'https://bear.app',
 }
+
+export const openWorkspaceParams = {
+  'name': 'Work'
+} as const
+
+export const addFileParams = {
+  'title': 'Protocol Launcher example',
+  'filename': 'example.txt',
+  'file': 'SGVsbG8K',
+  'mode': 'append'
+} as const

@@ -5,7 +5,9 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openNote, create, addText, search, tags, openTag, renameTag, deleteTag, todo, today, locked, untagged, trash, archive, grabUrl } from 'protocol-launcher/bear';
+import { open, openNote, create, addText, search, tags, openTag, renameTag, deleteTag, todo, today, locked, untagged, trash, archive, grabUrl, openWorkspace, closeWorkspace, addFile } from 'protocol-launcher/bear';
+import { openWorkspaceParams } from '../../.vitepress/constants/bear';
+import { addFileParams } from '../../.vitepress/constants/bear';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -297,3 +299,78 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
     Open in Bear
   </VPLink>
 </div>
+
+### Open Workspace
+
+Open a workspace by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openWorkspace({
+  name: 'Work'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openWorkspace(openWorkspaceParams)" target="_self">
+    Open Workspace
+  </VPLink>
+</div>
+
+### Close Workspace
+
+Close the active workspace.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'closeWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}closeWorkspace()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="closeWorkspace()" target="_self">
+    Close Workspace
+  </VPLink>
+</div>
+
+
+### Callbacks
+
+Pass xSuccess and xError as optional payload fields. Nested callback URLs are percent-encoded.
+
+openNote(), addText() and addFile() accept token; selected: true requires an API token generated on the target platform. iOS tokens cannot be reused on macOS, or vice versa.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  'selected': true,
+  'token': 'REPLACE_WITH_BEAR_API_TOKEN',
+  'xSuccess': 'myapp://note'
+})
+```
+
+
+### Add File
+
+Attach a base64-encoded file to a note identified by id or title. Bear must be unlocked, and encrypted notes cannot be accessed. file and filename are both required.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addFile({
+  'title': 'Protocol Launcher example',
+  'filename': 'example.txt',
+  'file': 'SGVsbG8K',
+  'mode': 'append'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="addFile(addFileParams)" target="_self">Add File</VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://bear.app/faq/x-callback-url-scheme-documentation/)
