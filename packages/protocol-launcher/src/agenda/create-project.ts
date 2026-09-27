@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Create project command payload definition.
  */
-type CreateProject = {
+type CreateProject = Callbacks & {
   /**
    * The title of the project.
    *
@@ -52,6 +54,7 @@ export function createProject(payload: CreateProject) {
     title,
     ...(select !== undefined ? { select } : {}),
     ...(sortOrder ? { 'sort-order': sortOrder } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/create-project${params}`

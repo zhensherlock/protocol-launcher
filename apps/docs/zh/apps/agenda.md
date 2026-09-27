@@ -5,22 +5,22 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { 
-  appendToNote, 
-  createCategory, 
-  createNote, 
-  createProject, 
-  getIdentifier, 
-  getSelectedNote, 
-  getSelectedProject, 
-  getSelection, 
-  onTheAgenda, 
-  openNote, 
-  openOverview, 
-  openProject, 
-  openSearch, 
-  replaceNote, 
-  today 
+import {
+  appendToNote,
+  createCategory,
+  createNote,
+  createProject,
+  getIdentifier,
+  getSelectedNote,
+  getSelectedProject,
+  getSelection,
+  onTheAgenda,
+  openNote,
+  openOverview,
+  openProject,
+  openSearch,
+  replaceNote,
+  today
 } from 'protocol-launcher/agenda';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
@@ -294,3 +294,15 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
     在 Agenda 中打开在议程上
   </VPLink>
 </div>
+
+### 回调
+
+可选参数为 xSuccess、xError。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection({
+  'xSuccess': 'myapp://done?source=agenda'
+})
+```

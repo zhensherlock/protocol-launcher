@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Create category command payload definition.
  */
-type CreateCategory = {
+type CreateCategory = Callbacks & {
   /**
    * The title of the category.
    *
@@ -24,7 +26,7 @@ type CreateCategory = {
  */
 export function createCategory(payload: CreateCategory) {
   const { title } = payload
-  const params = qs({ title })
+  const params = qs({ title, ...callbackParams(payload) })
 
   return `agenda://x-callback-url/create-category${params}`
 }

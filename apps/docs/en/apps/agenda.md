@@ -5,22 +5,22 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { 
-  appendToNote, 
-  createCategory, 
-  createNote, 
-  createProject, 
-  getIdentifier, 
-  getSelectedNote, 
-  getSelectedProject, 
-  getSelection, 
-  onTheAgenda, 
-  openNote, 
-  openOverview, 
-  openProject, 
-  openSearch, 
-  replaceNote, 
-  today 
+import {
+  appendToNote,
+  createCategory,
+  createNote,
+  createProject,
+  getIdentifier,
+  getSelectedNote,
+  getSelectedProject,
+  getSelection,
+  onTheAgenda,
+  openNote,
+  openOverview,
+  openProject,
+  openSearch,
+  replaceNote,
+  today
 } from 'protocol-launcher/agenda';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
@@ -294,3 +294,15 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
     Open On the Agenda in Agenda
   </VPLink>
 </div>
+
+### Callbacks
+
+Pass xSuccess, xError as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection({
+  'xSuccess': 'myapp://done?source=agenda'
+})
+```

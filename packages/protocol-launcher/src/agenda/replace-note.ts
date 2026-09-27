@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Replace note command payload definition.
  */
-type ReplaceNote = {
+type ReplaceNote = Callbacks & {
   /**
    * The title of the note.
    */
@@ -134,6 +136,7 @@ export function replaceNote(payload: ReplaceNote) {
     ...(select !== undefined ? { select } : {}),
     ...(displayStyle ? { 'display-style': displayStyle } : {}),
     ...(displaySize ? { 'display-size': displaySize } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/replace-note${params}`

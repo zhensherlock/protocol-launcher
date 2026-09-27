@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Get identifier command payload definition.
  */
-type GetIdentifier = {
+type GetIdentifier = Callbacks & {
   /**
    * The project title.
    *
@@ -39,6 +41,7 @@ export function getIdentifier(payload: GetIdentifier = {}) {
   const params = qs({
     ...(projectTitle ? { 'project-title': projectTitle } : {}),
     ...(title ? { title } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/get-identifier${params}`

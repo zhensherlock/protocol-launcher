@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open overview command payload definition.
  */
-type OpenOverview = {
+type OpenOverview = Callbacks & {
   /**
    * The title of the overview.
    *
@@ -42,6 +44,7 @@ export function openOverview(payload: OpenOverview = {}) {
     ...(title ? { title } : {}),
     ...(identifier ? { identifier } : {}),
     ...(separateWindow !== undefined ? { 'separate-window': separateWindow } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/open-overview${params}`

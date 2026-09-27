@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open search command payload definition.
  */
-type OpenSearch = {
+type OpenSearch = Callbacks & {
   /**
    * The search query.
    *
@@ -37,6 +39,7 @@ export function openSearch(payload: OpenSearch = {}) {
   const params = qs({
     ...(query ? { query } : {}),
     ...(separateWindow !== undefined ? { 'separate-window': separateWindow } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/open-search${params}`

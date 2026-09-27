@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open project command payload definition.
  */
-type OpenProject = {
+type OpenProject = Callbacks & {
   /**
    * The title of the project.
    *
@@ -47,6 +49,7 @@ export function openProject(payload: OpenProject = {}) {
     ...(projectTitle ? { 'project-title': projectTitle } : {}),
     ...(identifier ? { identifier } : {}),
     ...(separateWindow !== undefined ? { 'separate-window': separateWindow } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/open-project${params}`

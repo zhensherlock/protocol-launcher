@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open note command payload definition.
  */
-type OpenNote = {
+type OpenNote = Callbacks & {
   /**
    * The title of the note.
    *
@@ -47,6 +49,7 @@ export function openNote(payload: OpenNote = {}) {
     ...(identifier ? { identifier } : {}),
     ...(projectTitle ? { 'project-title': projectTitle } : {}),
     ...(separateWindow !== undefined ? { 'separate-window': separateWindow } : {}),
+    ...callbackParams(payload),
   })
 
   return `agenda://x-callback-url/open-note${params}`

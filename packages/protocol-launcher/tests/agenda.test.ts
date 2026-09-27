@@ -539,4 +539,80 @@ describe('agenda', () => {
       'agenda://x-callback-url/replace-note?title=Meeting%20Notes&project-title=Work&text=Replacement%20Text',
     )
   })
+
+  test('onTheAgenda preserves nested callback URLs', () => {
+    expect(agenda.onTheAgenda({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/on-the-agenda?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('today preserves nested callback URLs', () => {
+    expect(agenda.today({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/today?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('getSelection preserves nested callback URLs', () => {
+    expect(agenda.getSelection({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/get-selection?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('getSelectedNote preserves nested callback URLs', () => {
+    expect(agenda.getSelectedNote({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/get-selected-note?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('getSelectedProject preserves nested callback URLs', () => {
+    expect(agenda.getSelectedProject({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/get-selected-project?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('openOverview preserves nested callback URLs', () => {
+    expect(agenda.openOverview({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/open-overview?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('openNote preserves nested callback URLs', () => {
+    expect(agenda.openNote({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/open-note?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('openProject preserves nested callback URLs', () => {
+    expect(agenda.openProject({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/open-project?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('openSearch preserves nested callback URLs', () => {
+    expect(agenda.openSearch({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/open-search?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('getIdentifier preserves nested callback URLs', () => {
+    expect(agenda.getIdentifier({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/get-identifier?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('createNote preserves nested callback URLs', () => {
+    expect(agenda.createNote({ title: 'T', text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/create-note?title=T&text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('createProject preserves nested callback URLs', () => {
+    expect(agenda.createProject({ title: 'T', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/create-project?title=T&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('createCategory preserves nested callback URLs', () => {
+    expect(agenda.createCategory({ title: 'T', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/create-category?title=T&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('appendToNote preserves nested callback URLs', () => {
+    expect(agenda.appendToNote({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/append-to-note?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('replaceNote preserves nested callback URLs', () => {
+    expect(agenda.replaceNote({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'agenda://x-callback-url/replace-note?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
 })
