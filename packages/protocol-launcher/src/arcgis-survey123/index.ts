@@ -4,6 +4,9 @@ export type { LaunchFieldApp } from './launch-field-app'
 export { launchFieldApp } from './launch-field-app'
 export type { LaunchFieldAppLink } from './launch-field-app-link'
 export { launchFieldAppLink } from './launch-field-app-link'
+export { launchMobile } from './launch-mobile'
+export { launchMobileLink } from './launch-mobile-link'
+export { launchStudio } from './launch-studio'
 export type { LaunchWebApp } from './launch-web-app'
 export { launchWebApp } from './launch-web-app'
 export type {
@@ -14,6 +17,7 @@ export type {
   Survey123FieldAppPayload,
   Survey123FieldValues,
   Survey123Folder,
+  Survey123MobilePayload,
   Survey123ParameterValue,
   Survey123QueryParameters,
   Survey123WebAppPayload,

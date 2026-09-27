@@ -21,3 +21,20 @@ export const launchConnectParams = {
   portalUrl: 'https://www.arcgis.com',
   itemID,
 } as const
+
+export const launchMobileParams = {
+  'itemID': '36ff9e8c13e042a58cfce4ad87f55d19',
+  'fields': {
+    'surname': 'Klauser'
+  },
+  'center': '37.8199,-122.4783,20'
+} as const
+
+export const launchMobileLinkParams = {
+  'itemID': '36ff9e8c13e042a58cfce4ad87f55d19'
+} as const
+
+export const launchStudioParams = {
+  'portalUrl': 'https://www.arcgis.com',
+  'itemID': '36ff9e8c13e042a58cfce4ad87f55d19'
+} as const

@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { launchConnect, launchFieldApp, launchFieldAppLink, launchWebApp } from 'protocol-launcher/arcgis-survey123';
+import { launchConnect, launchFieldApp, launchFieldAppLink, launchWebApp, launchMobile, launchMobileLink, launchStudio } from 'protocol-launcher/arcgis-survey123';
+import { launchMobileParams, launchMobileLinkParams, launchStudioParams } from '../../.vitepress/constants/arcgis-survey123';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { launchConnectParams, launchFieldAppLinkParams, launchFieldAppParams, launchWebAppParams } from '../../.vitepress/constants/arcgis-survey123';
 
@@ -30,7 +31,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 ## URL Scheme
 
-Esri 官方文档列出了四种 Survey123 启动模式：Web app share URL `https://survey123.arcgis.com/share/ID`、field app app link `https://survey123.arcgis.app`、field app custom scheme `arcgis-survey123://`，以及 Survey123 Connect scheme `arcgis-survey123connect://`。
+Esri 官方文档新增 Survey123 Mobile（`arcgis-survey123-mobile://`、`https://survey123-mobile.arcgis.app`）和 Studio（`arcgis-survey123-studio://`），并保留以下启动模式：Web app share URL `https://survey123.arcgis.com/share/ID`、field app app link `https://survey123.arcgis.app`、field app custom scheme `arcgis-survey123://`，以及 Survey123 Connect scheme `arcgis-survey123connect://`。
 
 Field app 支持官方文档中的 URL 参数 `center`、`field:<question name>`、`portalUrl`、`itemID`、`download`、`action`、`folder`、`callback`、`callback:<status>`、`filter`、`update` 和 `q:<query parameter>`。Web app 将 survey item ID 放在路径中，并支持官方文档列出的 web app 参数 `signIn`、`isOrgSignIn`、`center`、`field:<question name>`、`portalUrl`、`open`、`hide`、`locale`、`mode`、`globalId`、`recalculate`、`version`、`token`、`autoReload`、`autoRefresh`、`encodeUrlParams` 和 `width`。Survey123 Connect 只接受 `portalUrl` 和 `itemID`。
 
@@ -142,9 +143,70 @@ launchConnect({
 // => 'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19'
 ```
 
+### 启动 Mobile
+
+通过专属 scheme 打开 Survey123 Mobile。支持 itemID、portalUrl、fields、center、download、callback 和 callbacks。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobile' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobile({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: {
+    surname: 'Klauser'
+  },
+  center: '37.8199,-122.4783,20'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launchMobile(launchMobileParams)" target="_self">
+    启动 Mobile
+  </VPLink>
+</div>
+
+### 启动 Mobile 应用链接
+
+在 iOS 或 Android 上使用 Survey123 Mobile 应用链接。参数与 launchMobile 相同。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobileLink' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobileLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launchMobileLink(launchMobileLinkParams)" target="_self">
+    启动 Mobile 应用链接
+  </VPLink>
+</div>
+
+### 启动 Studio
+
+在 Windows 上打开 Survey123 Studio。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchStudio' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchStudio({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launchStudio(launchStudioParams)" target="_self">
+    启动 Studio
+  </VPLink>
+</div>
+
 ## 官方文档
 
 - [Integrate with other apps](https://doc.arcgis.com/en/survey123/get-started/integratewithotherapps.htm)
 - [Launch the field app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchfieldapp.htm)
 - [Launch the web app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchwebapp.htm)
 - [Launch Survey123 Connect](https://doc.arcgis.com/en/survey123/get-started/integrate-launchconnect.htm)
+
+- [URL scheme 官方说明](https://doc.arcgis.com/en/survey123/get-started/integrate-launchmobile.htm)

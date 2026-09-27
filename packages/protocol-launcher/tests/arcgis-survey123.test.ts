@@ -9,6 +9,9 @@ describe('arcgisSurvey123', () => {
       'launchConnect',
       'launchFieldApp',
       'launchFieldAppLink',
+      'launchMobile',
+      'launchMobileLink',
+      'launchStudio',
       'launchWebApp',
     ])
   })
@@ -132,6 +135,43 @@ describe('arcgisSurvey123', () => {
 
     expect(url).toBe(
       'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19',
+    )
+  })
+})
+
+describe('documented URL updates', () => {
+  test('launchMobile opens Mobile without optional parameters', () => {
+    expect(arcgisSurvey123.launchMobile()).toBe('arcgis-survey123-mobile://')
+  })
+
+  test('launchMobileLink opens the app link without optional parameters', () => {
+    expect(arcgisSurvey123.launchMobileLink()).toBe('https://survey123-mobile.arcgis.app')
+  })
+
+  test('launchMobile supports fields, zero coordinates and false download', () => {
+    expect(
+      arcgisSurvey123.launchMobile({
+        itemID: 'survey-id',
+        fields: { surname: 'Klauser & Co' },
+        center: '0,0',
+        download: false,
+        callback: 'https://quickcapture.arcgis.app',
+        callbacks: { draft: 'myapp://draft' },
+      }),
+    ).toBe(
+      'arcgis-survey123-mobile://?itemID=survey-id&field:surname=Klauser%20%26%20Co&center=0%2C0&download=false&callback=https%3A%2F%2Fquickcapture.arcgis.app&callback:draft=myapp%3A%2F%2Fdraft',
+    )
+  })
+
+  test('launchMobileLink uses the new Mobile host', () => {
+    expect(arcgisSurvey123.launchMobileLink({ itemID: 'survey-id', portalUrl: 'https://myorg.arcgis.com' })).toBe(
+      'https://survey123-mobile.arcgis.app?itemID=survey-id&portalUrl=https%3A%2F%2Fmyorg.arcgis.com',
+    )
+  })
+
+  test('launchStudio retains the portal and item ID parameters', () => {
+    expect(arcgisSurvey123.launchStudio({ portalUrl: 'https://www.arcgis.com', itemID: 'survey-id' })).toBe(
+      'arcgis-survey123-studio://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=survey-id',
     )
   })
 })

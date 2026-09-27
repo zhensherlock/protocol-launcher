@@ -4,6 +4,9 @@ export const SURVEY123_FIELD_APP_SCHEME = 'arcgis-survey123://'
 export const SURVEY123_FIELD_APP_LINK = 'https://survey123.arcgis.app'
 export const SURVEY123_WEB_APP_BASE = 'https://survey123.arcgis.com/share'
 export const SURVEY123_CONNECT_SCHEME = 'arcgis-survey123connect://'
+export const SURVEY123_MOBILE_SCHEME = 'arcgis-survey123-mobile://'
+export const SURVEY123_MOBILE_LINK = 'https://survey123-mobile.arcgis.app'
+export const SURVEY123_STUDIO_SCHEME = 'arcgis-survey123-studio://'
 
 export type Survey123ParameterValue = string
 
@@ -99,6 +102,12 @@ export interface Survey123FieldAppPayload {
    */
   query?: Survey123QueryParameters
 }
+
+/** URL parameters documented for Survey123 Mobile. */
+export type Survey123MobilePayload = Pick<
+  Survey123FieldAppPayload,
+  'itemID' | 'portalUrl' | 'fields' | 'center' | 'download' | 'callback' | 'callbacks'
+>
 
 export interface Survey123WebAppPayload {
   /**
@@ -261,5 +270,19 @@ export function survey123WebAppQuery(payload: Omit<Survey123WebAppPayload, 'item
     autoRefresh,
     encodeUrlParams,
     width,
+  })
+}
+
+export function survey123MobileQuery(payload: Survey123MobilePayload = {}) {
+  const { itemID, portalUrl, fields, center, download, callback, callbacks } = payload
+
+  return qs({
+    itemID,
+    portalUrl,
+    ...prefixedParams('field:', fields),
+    center,
+    download,
+    callback,
+    ...prefixedParams('callback:', callbacks),
   })
 }

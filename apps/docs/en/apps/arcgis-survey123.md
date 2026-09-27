@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { launchConnect, launchFieldApp, launchFieldAppLink, launchWebApp } from 'protocol-launcher/arcgis-survey123';
+import { launchConnect, launchFieldApp, launchFieldAppLink, launchWebApp, launchMobile, launchMobileLink, launchStudio } from 'protocol-launcher/arcgis-survey123';
+import { launchMobileParams, launchMobileLinkParams, launchStudioParams } from '../../.vitepress/constants/arcgis-survey123';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { launchConnectParams, launchFieldAppLinkParams, launchFieldAppParams, launchWebAppParams } from '../../.vitepress/constants/arcgis-survey123';
 
@@ -30,7 +31,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## URL Scheme
 
-Esri documents four Survey123 launch patterns: the web app share URL `https://survey123.arcgis.com/share/ID`, the field app app link `https://survey123.arcgis.app`, the field app custom scheme `arcgis-survey123://`, and the Survey123 Connect scheme `arcgis-survey123connect://`.
+Esri documents Survey123 Mobile (`arcgis-survey123-mobile://`, `https://survey123-mobile.arcgis.app`) and Studio (`arcgis-survey123-studio://`), alongside the existing launch patterns: the web app share URL `https://survey123.arcgis.com/share/ID`, the field app app link `https://survey123.arcgis.app`, the field app custom scheme `arcgis-survey123://`, and the Survey123 Connect scheme `arcgis-survey123connect://`.
 
 The field app accepts the documented URL parameters `center`, `field:<question name>`, `portalUrl`, `itemID`, `download`, `action`, `folder`, `callback`, `callback:<status>`, `filter`, `update`, and `q:<query parameter>`. The web app uses the survey item ID as the path segment and accepts the documented web app parameters `signIn`, `isOrgSignIn`, `center`, `field:<question name>`, `portalUrl`, `open`, `hide`, `locale`, `mode`, `globalId`, `recalculate`, `version`, `token`, `autoReload`, `autoRefresh`, `encodeUrlParams`, and `width`. Survey123 Connect accepts only `portalUrl` and `itemID`.
 
@@ -142,9 +143,70 @@ launchConnect({
 // => 'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19'
 ```
 
+### Launch Mobile
+
+Open Survey123 Mobile with its custom scheme. Supported parameters are itemID, portalUrl, fields, center, download, callback, and callbacks.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobile' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobile({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: {
+    surname: 'Klauser'
+  },
+  center: '37.8199,-122.4783,20'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launchMobile(launchMobileParams)" target="_self">
+    Launch Mobile
+  </VPLink>
+</div>
+
+### Launch Mobile App Link
+
+Use the Survey123 Mobile app link on iOS or Android. It accepts the same payload as launchMobile.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobileLink' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobileLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launchMobileLink(launchMobileLinkParams)" target="_self">
+    Launch Mobile App Link
+  </VPLink>
+</div>
+
+### Launch Studio
+
+Open Survey123 Studio on Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchStudio' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchStudio({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launchStudio(launchStudioParams)" target="_self">
+    Launch Studio
+  </VPLink>
+</div>
+
 ## Official Documentation
 
 - [Integrate with other apps](https://doc.arcgis.com/en/survey123/get-started/integratewithotherapps.htm)
 - [Launch the field app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchfieldapp.htm)
 - [Launch the web app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchwebapp.htm)
 - [Launch Survey123 Connect](https://doc.arcgis.com/en/survey123/get-started/integrate-launchconnect.htm)
+
+- [URL scheme documentation](https://doc.arcgis.com/en/survey123/get-started/integrate-launchmobile.htm)
