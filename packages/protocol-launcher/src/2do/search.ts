@@ -1,9 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type TwoDoCallbacks, twoDoXCallbackUrl } from './shared'
 
 /**
  * Search payload definition.
  */
-type Search = {
+type Search = TwoDoCallbacks & {
   /**
    * The search text. Can be a simple text, or advanced search syntax.
    * When the supplied text is '(clipboard)', 2Do will copy the text from the clipboard.
@@ -29,11 +29,11 @@ type Search = {
  * @example
  * search({ text: '(clipboard)' })
  * // => 'twodo://x-callback-url/search?text=(clipboard)'
- * @link https://www.2doapp.com/kb/article/url-schemes.html
+ * @link https://www.2doapp.com/docs/macos/url-schemes/
  */
 export function search(payload: Search) {
   const { text } = payload
-  const params = qs({ text })
+  const params = { text }
 
-  return `twodo://x-callback-url/search${params}`
+  return twoDoXCallbackUrl('search', params, payload)
 }

@@ -1,9 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type TwoDoCallbacks, twoDoXCallbackUrl } from './shared'
 
 /**
  * Add new task payload definition.
  */
-type AddNewTask = {
+type AddNewTask = TwoDoCallbacks & {
   /**
    * Ignore default due date/time settings in app.
    * 0 = apply any default due date / time settings in app
@@ -23,14 +23,14 @@ type AddNewTask = {
  * // => 'twodo://x-callback-url/addNewTask'
  * @example
  * addNewTask({ ignoreDefaults: 1 })
- * // => 'twodo://x-callback-url/addNewTask?ignoreDefaults=1'
- * @link https://www.2doapp.com/kb/article/url-schemes.html
+ * // => 'twodo://x-callback-url/addNewTask?ignoredefaults=1'
+ * @link https://www.2doapp.com/docs/macos/url-schemes/
  */
 export function addNewTask(payload: AddNewTask = {}) {
   const { ignoreDefaults } = payload
-  const params = qs({
+  const params = {
     ...(ignoreDefaults !== undefined ? { ignoreDefaults } : {}),
-  })
+  }
 
-  return `twodo://x-callback-url/addNewTask${params}`
+  return twoDoXCallbackUrl('addNewTask', params, payload)
 }

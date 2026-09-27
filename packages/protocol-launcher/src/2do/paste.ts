@@ -1,9 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type TwoDoCallbacks, twoDoXCallbackUrl } from './shared'
 
 /**
  * Paste payload definition.
  */
-type Paste = {
+type Paste = TwoDoCallbacks & {
   /**
    * The text to paste and convert into tasks.
    * Multiple lines separated by a carriage return will create a task for each line.
@@ -29,16 +29,16 @@ type Paste = {
  * // => 'twodo://x-callback-url/paste?text=Task%201%0ATask%202%0ATask%203'
  * @example
  * paste({ text: 'Buy milk', forList: 'Shopping' })
- * // => 'twodo://x-callback-url/paste?text=Buy%20milk&forList=Shopping'
- * @link https://www.2doapp.com/kb/article/url-schemes.html
+ * // => 'twodo://x-callback-url/paste?text=Buy%20milk&forlist=Shopping'
+ * @link https://www.2doapp.com/docs/macos/url-schemes/
  */
 export function paste(payload: Paste) {
   const { text, inProject, forList } = payload
-  const params = qs({
+  const params = {
     text,
     ...(inProject !== undefined ? { inProject } : {}),
     ...(forList !== undefined ? { forList } : {}),
-  })
+  }
 
-  return `twodo://x-callback-url/paste${params}`
+  return twoDoXCallbackUrl('paste', params, payload)
 }

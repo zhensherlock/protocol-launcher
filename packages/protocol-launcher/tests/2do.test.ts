@@ -64,7 +64,7 @@ describe('twoDo', () => {
     const url = twoDo.addNewTask({
       ignoreDefaults: 1,
     })
-    expect(url).toBe('twodo://x-callback-url/addNewTask?ignoreDefaults=1')
+    expect(url).toBe('twodo://x-callback-url/addNewTask?ignoredefaults=1')
   })
 
   test('add should return a URL with task and due', async () => {
@@ -104,7 +104,7 @@ describe('twoDo', () => {
       due: '0',
       dueTime: '18:00',
     })
-    expect(url).toBe('twodo://x-callback-url/add?task=Title&due=0&dueTime=18%3A00')
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&due=0&duetime=18%3A00')
   })
 
   test('add should return a URL with project and list', async () => {
@@ -114,7 +114,7 @@ describe('twoDo', () => {
       forList: 'Home',
     })
     expect(url).toBe(
-      'twodo://x-callback-url/add?task=Buy%20a%20new%20charger&forList=Home&forParentName=Shopping%20List',
+      'twodo://x-callback-url/add?task=Buy%20a%20new%20charger&forlist=Home&forparentname=Shopping%20List',
     )
   })
 
@@ -187,7 +187,7 @@ describe('twoDo', () => {
       task: 'Title',
       ignoreDefaults: 1,
     })
-    expect(url).toBe('twodo://x-callback-url/add?task=Title&ignoreDefaults=1')
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&ignoredefaults=1')
   })
 
   test('add should return a URL with saveInClipboard', async () => {
@@ -195,7 +195,7 @@ describe('twoDo', () => {
       task: 'Title',
       saveInClipboard: 1,
     })
-    expect(url).toBe('twodo://x-callback-url/add?task=Title&saveInClipboard=1')
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&saveinclipboard=1')
   })
 
   test('add should return a URL with useQuickEntry', async () => {
@@ -203,7 +203,7 @@ describe('twoDo', () => {
       task: 'Title',
       useQuickEntry: 1,
     })
-    expect(url).toBe('twodo://x-callback-url/add?task=Title&useQuickEntry=1')
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&usequickentry=1')
   })
 
   test('add should return a URL with edit', async () => {
@@ -235,7 +235,7 @@ describe('twoDo', () => {
       task: 'Title',
       forParentTask: 'unique-task-id-123',
     })
-    expect(url).toBe('twodo://x-callback-url/add?task=Title&forParentTask=unique-task-id-123')
+    expect(url).toBe('twodo://x-callback-url/add?task=Title&forparenttask=unique-task-id-123')
   })
 
   test('add should return a URL with all parameters', async () => {
@@ -264,7 +264,7 @@ describe('twoDo', () => {
       edit: 1,
     })
     expect(url).toBe(
-      'twodo://x-callback-url/add?task=Complete%20task&type=0&forList=Work&forParentName=Project%20A&forParentTask=parent-id&note=Important%20note&subtasks=Sub%201%0ASub%202&priority=2&starred=1&tags=urgent%2Cwork&locations=Office&due=2024-12-31&dueTime=17%3A00&start=2024-01-01%2009%3A00&repeat=2&action=mail%3Atest%40example.com&picture=lastphoto&audio=base64audio&ignoreDefaults=1&saveInClipboard=1&useQuickEntry=1&edit=1',
+      'twodo://x-callback-url/add?task=Complete%20task&type=0&forlist=Work&forparentname=Project%20A&forparenttask=parent-id&note=Important%20note&subtasks=Sub%201%0ASub%202&priority=2&starred=1&tags=urgent%2Cwork&locations=Office&due=2024-12-31&duetime=17%3A00&start=2024-01-01%2009%3A00&repeat=2&action=mail%3Atest%40example.com&picture=lastphoto&audio=base64audio&ignoredefaults=1&saveinclipboard=1&usequickentry=1&edit=1',
     )
   })
 
@@ -285,7 +285,7 @@ describe('twoDo', () => {
       text: 'Buy milk',
       forList: 'Shopping',
     })
-    expect(url).toBe('twodo://x-callback-url/paste?text=Buy%20milk&forList=Shopping')
+    expect(url).toBe('twodo://x-callback-url/paste?text=Buy%20milk&forlist=Shopping')
   })
 
   test('paste should return a URL with text, inProject and forList', async () => {
@@ -294,7 +294,7 @@ describe('twoDo', () => {
       inProject: 'My Project',
       forList: 'Work',
     })
-    expect(url).toBe('twodo://x-callback-url/paste?text=Task%20item&inProject=My%20Project&forList=Work')
+    expect(url).toBe('twodo://x-callback-url/paste?text=Task%20item&inproject=My%20Project&forlist=Work')
   })
 
   test('getTaskID should return a URL with task and forList', async () => {
@@ -302,7 +302,7 @@ describe('twoDo', () => {
       task: 'My Task',
       forList: 'Work',
     })
-    expect(url).toBe('twodo://x-callback-url/getTaskID?task=My%20Task&forList=Work')
+    expect(url).toBe('twodo://x-callback-url/getTaskID?task=My%20Task&forlist=Work')
   })
 
   test('getTaskID should return a URL with saveInClipboard', async () => {
@@ -311,6 +311,85 @@ describe('twoDo', () => {
       forList: 'Work',
       saveInClipboard: 1,
     })
-    expect(url).toBe('twodo://x-callback-url/getTaskID?task=My%20Task&forList=Work&saveInClipboard=1')
+    expect(url).toBe('twodo://x-callback-url/getTaskID?task=My%20Task&forlist=Work&saveinclipboard=1')
+  })
+})
+
+describe('documented URL updates', () => {
+  test('showTask uses a task UID', () => {
+    expect(twoDo.showTask({ uid: 'task-123' })).toBe('twodo://x-callback-url/showtask?uid=task-123')
+  })
+
+  test('completeTasks accepts comma-separated UIDs', () => {
+    expect(twoDo.completeTasks({ uids: 'one,two' })).toBe('twodo://x-callback-url/completetasks?uids=one%2Ctwo')
+  })
+
+  test('completeTasks joins UID arrays once', () => {
+    expect(twoDo.completeTasks({ uids: ['one', 'two'] })).toBe('twodo://x-callback-url/completetasks?uids=one%2Ctwo')
+  })
+
+  test('launch preserves nested callback URLs', () => {
+    expect(twoDo.launch({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/launch?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('showAll preserves nested callback URLs', () => {
+    expect(twoDo.showAll({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/showAll?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('showToday preserves nested callback URLs', () => {
+    expect(twoDo.showToday({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/showToday?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('showStarred preserves nested callback URLs', () => {
+    expect(twoDo.showStarred({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/showStarred?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('showScheduled preserves nested callback URLs', () => {
+    expect(twoDo.showScheduled({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/showScheduled?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('addNewTask preserves nested callback URLs', () => {
+    expect(twoDo.addNewTask({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/addNewTask?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('showList preserves nested callback URLs', () => {
+    expect(twoDo.showList({ name: 'Work', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/showList?name=Work&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('search preserves nested callback URLs', () => {
+    expect(twoDo.search({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/search?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('getTaskID preserves nested callback URLs', () => {
+    expect(twoDo.getTaskID({ task: 'T', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/getTaskID?task=T&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('showTask preserves nested callback URLs', () => {
+    expect(twoDo.showTask({ uid: 'ID', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/showtask?uid=ID&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('completeTasks preserves nested callback URLs', () => {
+    expect(twoDo.completeTasks({ uids: 'ID', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'twodo://x-callback-url/completetasks?uids=ID&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+
+  test('launch can open with no callback or with all callback fields', () => {
+    expect(twoDo.launch()).toBe('twodo://x-callback-url/launch')
+    expect(
+      twoDo.launch({ xSuccess: 'myapp://done', xError: 'myapp://error', xCancel: 'myapp://cancel', xSource: 'My App' }),
+    ).toBe(
+      'twodo://x-callback-url/launch?x-success=myapp%3A%2F%2Fdone&x-error=myapp%3A%2F%2Ferror&x-cancel=myapp%3A%2F%2Fcancel&x-source=My%20App',
+    )
   })
 })

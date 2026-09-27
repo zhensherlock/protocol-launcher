@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, showAll, showToday, showStarred, showScheduled, showList, search, addNewTask, add, paste, getTaskID } from 'protocol-launcher/2do';
+import { open, showAll, showToday, showStarred, showScheduled, showList, search, addNewTask, add, paste, getTaskID, showTask, completeTasks, launch } from 'protocol-launcher/2do';
+import { showTaskParams, completeTasksParams } from '../../.vitepress/constants/2do';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   showListParams,
@@ -276,3 +277,68 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
     获取任务 ID
   </VPLink>
 </div>
+
+### 显示任务
+
+通过 UID 打开任务。此动作仅支持 macOS。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showTask({
+  uid: 'REPLACE_WITH_TASK_UID'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="showTask(showTaskParams)" target="_self">
+    显示任务
+  </VPLink>
+</div>
+
+### 完成任务
+
+在 macOS 上完成任务。uids 可以是逗号分隔的字符串或非空 UID 数组。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'completeTasks' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}completeTasks({
+  uids: [
+    'TASK_UID_1',
+    'TASK_UID_2'
+  ]
+})
+```
+
+
+### 通过 x-callback-url 启动
+
+启动 2Do，可选传入回调参数。open() 仍生成裸应用 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="launch()" target="_self">通过 x-callback-url 启动</VPLink>
+</div>
+
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。生成 URL 的动作参数名遵循官方小写规范；TypeScript 参数名仍为驼峰形式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch({
+  'xSuccess': 'myapp://done?source=2do'
+})
+```
+
+## 官方文档
+
+- [URL scheme 官方说明](https://www.2doapp.com/docs/macos/url-schemes/)

@@ -1,4 +1,4 @@
-import { qs } from '@protocol-launcher/shared'
+import { type TwoDoCallbacks, twoDoXCallbackUrl } from './shared'
 
 /**
  * Task type enum.
@@ -38,7 +38,7 @@ type ActionType =
 /**
  * Add task payload definition.
  */
-type Add = {
+type Add = TwoDoCallbacks & {
   /**
    * Title of the task.
    * When the supplied text is '(clipboard)', 2Do will copy the text from the clipboard (iOS 3.13+).
@@ -185,7 +185,7 @@ type Add = {
  * @example
  * add({ task: 'Monthly subscription', tags: 'bill,payment' })
  * // => 'twodo://x-callback-url/add?task=Monthly%20subscription&tags=bill%2Cpayment'
- * @link https://www.2doapp.com/kb/article/url-schemes.html
+ * @link https://www.2doapp.com/docs/macos/url-schemes/
  */
 export function add(payload: Add = {}) {
   const {
@@ -213,7 +213,7 @@ export function add(payload: Add = {}) {
     edit,
   } = payload
 
-  const params = qs({
+  const params = {
     ...(task !== undefined ? { task } : {}),
     ...(type !== undefined ? { type } : {}),
     ...(forList !== undefined ? { forList } : {}),
@@ -236,7 +236,7 @@ export function add(payload: Add = {}) {
     ...(saveInClipboard !== undefined ? { saveInClipboard } : {}),
     ...(useQuickEntry !== undefined ? { useQuickEntry } : {}),
     ...(edit !== undefined ? { edit } : {}),
-  })
+  }
 
-  return `twodo://x-callback-url/add${params}`
+  return twoDoXCallbackUrl('add', params, payload)
 }

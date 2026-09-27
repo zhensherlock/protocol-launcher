@@ -45,3 +45,14 @@ export const getTaskIDParams = {
   forList: 'Work',
   saveInClipboard: 1 as 0 | 1,
 }
+
+export const showTaskParams = {
+  'uid': 'REPLACE_WITH_TASK_UID'
+} as const
+
+export const completeTasksParams = {
+  'uids': [
+    'TASK_UID_1',
+    'TASK_UID_2'
+  ]
+} as const

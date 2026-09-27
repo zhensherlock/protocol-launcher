@@ -1,9 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type TwoDoCallbacks, twoDoXCallbackUrl } from './shared'
 
 /**
  * Get task ID payload definition.
  */
-type GetTaskID = {
+type GetTaskID = TwoDoCallbacks & {
   /**
    * Known task's title.
    */
@@ -27,19 +27,19 @@ type GetTaskID = {
  * @returns 2Do get task ID URL.
  * @example
  * getTaskID({ task: 'My Task', forList: 'Work' })
- * // => 'twodo://x-callback-url/getTaskID?task=My%20Task&forList=Work'
+ * // => 'twodo://x-callback-url/getTaskID?task=My%20Task&forlist=Work'
  * @example
  * getTaskID({ task: 'My Task', forList: 'Work', saveInClipboard: 1 })
- * // => 'twodo://x-callback-url/getTaskID?task=My%20Task&forList=Work&saveInClipboard=1'
- * @link https://www.2doapp.com/kb/article/url-schemes.html
+ * // => 'twodo://x-callback-url/getTaskID?task=My%20Task&forlist=Work&saveinclipboard=1'
+ * @link https://www.2doapp.com/docs/macos/url-schemes/
  */
 export function getTaskID(payload: GetTaskID) {
   const { task, forList, saveInClipboard } = payload
-  const params = qs({
+  const params = {
     task,
     forList,
     ...(saveInClipboard !== undefined ? { saveInClipboard } : {}),
-  })
+  }
 
-  return `twodo://x-callback-url/getTaskID${params}`
+  return twoDoXCallbackUrl('getTaskID', params, payload)
 }

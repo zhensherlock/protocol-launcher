@@ -1,9 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type TwoDoCallbacks, twoDoXCallbackUrl } from './shared'
 
 /**
  * Show list payload definition.
  */
-type ShowList = {
+type ShowList = TwoDoCallbacks & {
   /**
    * The name of the list to show.
    */
@@ -18,11 +18,11 @@ type ShowList = {
  * @example
  * showList({ name: 'Work' })
  * // => 'twodo://x-callback-url/showList?name=Work'
- * @link https://www.2doapp.com/kb/article/url-schemes.html
+ * @link https://www.2doapp.com/docs/macos/url-schemes/
  */
 export function showList(payload: ShowList) {
   const { name } = payload
-  const params = qs({ name })
+  const params = { name }
 
-  return `twodo://x-callback-url/showList${params}`
+  return twoDoXCallbackUrl('showList', params, payload)
 }
