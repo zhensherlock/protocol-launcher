@@ -84,7 +84,7 @@ type CustomProviderType = string & {}
 /**
  * Provider definition.
  *
- * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/renderer/src/types/provider.ts#L97
+ * @link https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/providersImport.ts
  */
 export type Provider = {
   /**
@@ -136,7 +136,7 @@ export type Provider = {
  *   apiKey: 'sk-xxxx',
  * })
  * // => 'cherrystudio://providers/api-keys?v=1&data=xxx'
- * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/main/services/urlschema/handle-providers.ts
+ * @link https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/providersImport.ts
  */
 export function installProvider(payload: Provider, options?: EncodeOptions) {
   const encodedPayload = encodeUrlPayload(payload, options)

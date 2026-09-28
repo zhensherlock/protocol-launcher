@@ -7,10 +7,6 @@ export const installMultipleMCPServersParams = {
       type: 'stdio',
       command: 'npx',
       args: ['-y', '@modelcontextprotocol/server-everything'],
-      registryUrl: 'https://registry.npmmirror.com',
-      provider: 'Anthropic',
-      providerUrl: 'https://modelcontextprotocol.io/',
-      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
     },
     'qcc-company-stream': {
       name: '企查查企业信息 MCP',
@@ -21,11 +17,6 @@ export const installMultipleMCPServersParams = {
       headers: {
         Authorization: 'REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-basic', '企业信息'],
-      timeout: 30,
     },
     'qcc-risk-sse': {
       name: '企查查风险信息 MCP',
@@ -36,11 +27,6 @@ export const installMultipleMCPServersParams = {
       headers: {
         Authorization: 'REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-risk', '风险信息'],
-      timeout: 30,
     },
   },
 }
@@ -51,10 +37,6 @@ export const installSTDIOMCPServerParams = {
   type: 'stdio',
   command: 'npx',
   args: ['-y', '@modelcontextprotocol/server-everything'],
-  registryUrl: 'https://registry.npmmirror.com',
-  provider: 'Anthropic',
-  providerUrl: 'https://modelcontextprotocol.io/',
-  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
 }
 
 export const installStreamableHTTPMCPServerParams = {
@@ -66,11 +48,6 @@ export const installStreamableHTTPMCPServerParams = {
   headers: {
     Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://openapi.qcc.com/mcpTools?service=basic',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-basic', '企业信息'],
-  timeout: 30,
 }
 
 export const installSSEMCPServerParams = {
@@ -82,11 +59,6 @@ export const installSSEMCPServerParams = {
   headers: {
     Authorization: 'REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-risk', '风险信息'],
-  timeout: 30,
 }
 
 export const installProviderParams = {
@@ -94,3 +66,7 @@ export const installProviderParams = {
   baseUrl: 'https://open.cherryin.ai',
   apiKey: 'sk-xxxx',
 };
+
+export const navigateParams = {
+  'path': '/settings/provider'
+} as const

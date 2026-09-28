@@ -5,9 +5,11 @@ import { type EncodeOptions, encodeUrlPayload } from '@protocol-launcher/shared'
  *
  * Represents a resolved MCP server configuration used by the client
  * for discovery, display, and runtime communication.
+ * Current protocol imports accept only name, description, type, command, args,
+ * env, baseUrl, and headers; installMCP omits other local metadata.
  *
- * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/renderer/src/types/mcp.ts
- * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/renderer/src/types/index.ts#L693
+ * @link https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpProtocolInstall.ts
+ * @link https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpServer.ts
  */
 export type MCPServer = {
   /**
@@ -41,7 +43,7 @@ export type MCPServer = {
    * - `streamableHttp`: HTTP-based streaming communication
    * - `sse`: Server-Sent Events (SSE) communication
    */
-  type: 'stdio' | 'streamableHttp' | 'sse'
+  type?: 'stdio' | 'streamableHttp' | 'sse'
 
   /**
    * Command used to start the server.
@@ -190,8 +192,10 @@ export type MCPServer = {
  *
  * Represents a resolved MCP server configuration used by the client
  * for discovery, display, and runtime communication.
+ * Current protocol imports accept only name, description, type, command, args,
+ * env, baseUrl, and headers; installMCP omits other local metadata.
  *
- * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/renderer/src/types/mcp.ts
+ * @link https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpProtocolInstall.ts
  */
 export type MCPServerWithName = Omit<MCPServer, 'name'> & {
   /**
@@ -243,14 +247,29 @@ export type MCPServerWithName = Omit<MCPServer, 'name'> & {
  *     tags: ['企业信息'],
  *     timeout: 30,
  *   },
- * })
+ * ])
  * // => 'cherrystudio://mcp/install?servers=xxx'
- * @link https://github.com/CherryHQ/cherry-studio/blob/main/src/main/services/urlschema/mcp-install.ts#L39
+ * @link https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/mcpInstall.ts
  */
 export function installMCP(
-  payload: MCPServerWithName | MCPServerWithName[] | { mcpServers: Record<string, MCPServer> },
+  payload: MCPServerWithName | MCPServerWithName[] | { mcpServers: Record<string, MCPServer> | MCPServerWithName[] },
   options?: EncodeOptions,
 ) {
-  const encodedPayload = encodeUrlPayload(payload, options)
+  // Current Cherry Studio rejects local entity metadata in protocol imports.
+  const protocolKeys = new Set(['name', 'description', 'type', 'command', 'args', 'env', 'baseUrl', 'headers'])
+  const toProtocolServer = (server: MCPServer) =>
+    Object.fromEntries(Object.entries(server).filter(([key]) => protocolKeys.has(key)))
+  const protocolPayload = Array.isArray(payload)
+    ? payload.map(toProtocolServer)
+    : 'mcpServers' in payload
+      ? {
+          mcpServers: Array.isArray(payload.mcpServers)
+            ? payload.mcpServers.map(toProtocolServer)
+            : Object.fromEntries(
+                Object.entries(payload.mcpServers).map(([name, server]) => [name, toProtocolServer(server)]),
+              ),
+        }
+      : toProtocolServer(payload)
+  const encodedPayload = encodeUrlPayload(protocolPayload, options)
   return `cherrystudio://mcp/install?servers=${encodedPayload}`
 }
