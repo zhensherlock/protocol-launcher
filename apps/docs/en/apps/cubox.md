@@ -173,3 +173,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}search({
     Search in Cubox
   </VPLink>
 </div>
+
+### Callbacks
+
+Pass xSuccess, xCancel as optional payload fields. Callback URLs are encoded, including nested query parameters. Callbacks apply to addLink().
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addLink' : 'cubox' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addLink({
+  'url': 'https://example.com/article',
+  'xSuccess': 'myapp://done?source=cubox'
+})
+```

@@ -108,4 +108,10 @@ describe('cubox', () => {
     const url = cubox.search({})
     expect(url).toBe('cubox://search')
   })
+
+  test('addLink selects the callback route only when callback options are present', () => {
+    expect(cubox.addLink({ url: 'https://example.com', xSuccess: 'myapp://done', xCancel: 'myapp://cancel' })).toBe(
+      'cubox://x-callback-url/add?url=https%3A%2F%2Fexample.com&x-success=myapp%3A%2F%2Fdone&x-cancel=myapp%3A%2F%2Fcancel',
+    )
+  })
 })

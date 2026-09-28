@@ -10,6 +10,8 @@ type AddLink = {
    * @example 'https://example.com/article'
    */
   url: string
+  xSuccess?: string
+  xCancel?: string
 }
 
 /**
@@ -23,8 +25,8 @@ type AddLink = {
  * @link https://help.cubox.pro/adv/97a6/
  */
 export function addLink(payload: AddLink) {
-  const { url } = payload
-  const params = qs({ url })
+  const { url, xSuccess, xCancel } = payload
+  const params = qs({ url, 'x-success': xSuccess, 'x-cancel': xCancel })
 
-  return `cubox://add${params}`
+  return `cubox://${xSuccess !== undefined || xCancel !== undefined ? 'x-callback-url/' : ''}add${params}`
 }
