@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, createEntry, editEntry, viewEntry, filterByTag, openCalendar, openDailyPrompt, openDate, openOnThisDay, openSettings, openStarred, openTimeline } from 'protocol-launcher/day-one';
+import { open, createEntry, editEntry, viewEntry, filterByTag, openCalendar, openDailyPrompt, openDate, openOnThisDay, openSettings, openStarred, openTimeline, openRecentPrompts, openTags, openBook, openTemplates, openRedeem, openEncryptionKey, openSiri, openMedia } from 'protocol-launcher/day-one';
+import { openTagsParams } from '../../.vitepress/constants/day-one';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -36,6 +37,8 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+Windows 支持日历、时间线、媒体、设置、模板、兑换码及空白新条目链接。它会忽略条目文本、标签、日记本和提示词参数，不支持按条目 ID 查看或编辑。在 Windows 上使用 `openTimeline({ platform: 'windows' })`；默认调用为其他平台保留 `dayone://entries`。
 
 ### 打开应用
 
@@ -213,7 +216,141 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
 
 <div class="flex justify-center">
-  <VPLink :href="openTimeline()" target="_self">
+  <VPLink :href="openTimeline({ platform: appStore.isWindows ? 'windows' : undefined })" target="_self">
     在 Day One 中打开时间线
   </VPLink>
 </div>
+
+### 最近提示词
+
+在 iOS 上打开最近提示词。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecentPrompts' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRecentPrompts()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openRecentPrompts()" target="_self">
+    最近提示词
+  </VPLink>
+</div>
+
+### 打开标签
+
+在 iOS 或 macOS 上应用标签筛选。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTags' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTags({
+  name: 'work'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openTags(openTagsParams)" target="_self">
+    打开标签
+  </VPLink>
+</div>
+
+### 书籍打印
+
+在 iOS 上打开书籍打印。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openBook' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openBook()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openBook()" target="_self">
+    书籍打印
+  </VPLink>
+</div>
+
+### 模板
+
+在 iOS 或 Windows 上打开模板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTemplates' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTemplates()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openTemplates()" target="_self">
+    模板
+  </VPLink>
+</div>
+
+### 兑换码
+
+在 iOS 或 Windows 上打开兑换码界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRedeem' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRedeem()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openRedeem()" target="_self">
+    兑换码
+  </VPLink>
+</div>
+
+### 加密密钥
+
+在 iOS 或 macOS 上打开加密密钥界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEncryptionKey' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openEncryptionKey()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openEncryptionKey()" target="_self">
+    加密密钥
+  </VPLink>
+</div>
+
+### Siri 快捷指令
+
+在 iOS 上打开 Siri 快捷指令设置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSiri' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSiri()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openSiri()" target="_self">
+    Siri 快捷指令
+  </VPLink>
+</div>
+
+### 媒体
+
+在 Windows 上打开媒体视图。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMedia' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openMedia()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openMedia()" target="_self">
+    媒体
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://dayoneapp.com/guides/tips-and-tutorials/day-one-url-scheme/)

@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, createEntry, editEntry, viewEntry, filterByTag, openCalendar, openDailyPrompt, openDate, openOnThisDay, openSettings, openStarred, openTimeline } from 'protocol-launcher/day-one';
+import { open, createEntry, editEntry, viewEntry, filterByTag, openCalendar, openDailyPrompt, openDate, openOnThisDay, openSettings, openStarred, openTimeline, openRecentPrompts, openTags, openBook, openTemplates, openRedeem, openEncryptionKey, openSiri, openMedia } from 'protocol-launcher/day-one';
+import { openTagsParams } from '../../.vitepress/constants/day-one';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -36,6 +37,8 @@ There are two ways to use this library:
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+Windows supports calendar, timeline, media, settings, templates, redeem, and blank new-entry links. It ignores entry text, tags, journal, and prompt parameters, and does not support view/edit by entry ID. Use `openTimeline({ platform: 'windows' })` on Windows; the default keeps `dayone://entries` for other platforms.
 
 ### Open App
 
@@ -213,7 +216,141 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
 
 <div class="flex justify-center">
-  <VPLink :href="openTimeline()" target="_self">
+  <VPLink :href="openTimeline({ platform: appStore.isWindows ? 'windows' : undefined })" target="_self">
     Open Timeline in Day One
   </VPLink>
 </div>
+
+### Recent Prompts
+
+Open recent prompts on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecentPrompts' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRecentPrompts()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openRecentPrompts()" target="_self">
+    Recent Prompts
+  </VPLink>
+</div>
+
+### Open Tag
+
+Apply a tag filter on iOS or macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTags' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTags({
+  name: 'work'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openTags(openTagsParams)" target="_self">
+    Open Tag
+  </VPLink>
+</div>
+
+### Book Printing
+
+Open book printing on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openBook' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openBook()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openBook()" target="_self">
+    Book Printing
+  </VPLink>
+</div>
+
+### Templates
+
+Open templates on iOS or Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTemplates' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTemplates()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openTemplates()" target="_self">
+    Templates
+  </VPLink>
+</div>
+
+### Redeem Code
+
+Open code redemption on iOS or Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRedeem' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRedeem()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openRedeem()" target="_self">
+    Redeem Code
+  </VPLink>
+</div>
+
+### Encryption Key
+
+Open the encryption key view on iOS or macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEncryptionKey' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openEncryptionKey()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openEncryptionKey()" target="_self">
+    Encryption Key
+  </VPLink>
+</div>
+
+### Siri Shortcuts
+
+Open Siri Shortcuts settings on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSiri' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSiri()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openSiri()" target="_self">
+    Siri Shortcuts
+  </VPLink>
+</div>
+
+### Media
+
+Open the media view on Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMedia' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openMedia()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openMedia()" target="_self">
+    Media
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://dayoneapp.com/guides/tips-and-tutorials/day-one-url-scheme/)

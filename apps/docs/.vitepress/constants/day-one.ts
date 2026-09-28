@@ -22,3 +22,7 @@ export const openDailyPromptParams = {
 export const openDateParams = {
   date: '2020-04-02',
 }
+
+export const openTagsParams = {
+  'name': 'work'
+} as const

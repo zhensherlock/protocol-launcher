@@ -150,3 +150,45 @@ describe('dayOne', () => {
     expect(url).toBe('dayone://filter')
   })
 })
+
+describe('documented URL updates', () => {
+  test('openTimeline supports Windows', () => {
+    expect(dayOne.openTimeline({ platform: 'windows' })).toBe('dayone://timeline')
+  })
+
+  test('openTimeline preserves other platform routes', () => {
+    expect(dayOne.openTimeline({ platform: 'macos' })).toBe('dayone://entries')
+  })
+
+  test('openTags encodes its tag', () => {
+    expect(dayOne.openTags({ name: 'work & home' })).toBe('dayone://tags?name=work%20%26%20home')
+  })
+
+  test('openRecentPrompts uses the documented route', () => {
+    expect(dayOne.openRecentPrompts()).toBe('dayone://recent-prompts')
+  })
+
+  test('openBook uses the documented route', () => {
+    expect(dayOne.openBook()).toBe('dayone://book')
+  })
+
+  test('openTemplates uses the documented route', () => {
+    expect(dayOne.openTemplates()).toBe('dayone://templates')
+  })
+
+  test('openRedeem uses the documented route', () => {
+    expect(dayOne.openRedeem()).toBe('dayone://redeem')
+  })
+
+  test('openEncryptionKey uses the documented route', () => {
+    expect(dayOne.openEncryptionKey()).toBe('dayone://encryption-key')
+  })
+
+  test('openSiri uses the documented route', () => {
+    expect(dayOne.openSiri()).toBe('dayone://siri')
+  })
+
+  test('openMedia uses the documented route', () => {
+    expect(dayOne.openMedia()).toBe('dayone://media')
+  })
+})
