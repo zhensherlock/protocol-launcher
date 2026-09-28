@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject, openExtension } from 'protocol-launcher/cursor';
+import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject, openExtension, createCommand, createRule } from 'protocol-launcher/cursor';
+import { createCommandParams, createRuleParams } from '../../.vitepress/constants/cursor';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -197,3 +198,45 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ promp
   </VPLink>
 </div>
 
+
+### Create Command
+
+Prepare a custom command for the user to review in Cursor. Names may contain letters, numbers, dots, hyphens, and underscores.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createCommand(createCommandParams)" target="_self">
+    Create Command
+  </VPLink>
+</div>
+
+### Create Rule
+
+Prepare a rule for the user to review. Cursor limits encoded deeplinks to 10,000 characters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRule' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createRule({
+  name: 'strict-types',
+  text: 'Always use strict TypeScript types'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createRule(createRuleParams)" target="_self">
+    Create Rule
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://cursor.com/docs/reference/deeplinks)

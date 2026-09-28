@@ -126,3 +126,17 @@ describe('cursor', () => {
     expect(url).toBe('cursor://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fzhensherlock%2Fprotocol-launcher')
   })
 })
+
+describe('documented URL updates', () => {
+  test('createCommand encodes multiline command contents', () => {
+    expect(cursor.createCommand({ name: 'review.ts', text: 'Review & explain\n你好' })).toBe(
+      'cursor://anysphere.cursor-deeplink/command?name=review.ts&text=Review%20%26%20explain%0A%E4%BD%A0%E5%A5%BD',
+    )
+  })
+
+  test('createRule uses the rule endpoint', () => {
+    expect(cursor.createRule({ name: 'strict-types', text: 'Avoid any' })).toBe(
+      'cursor://anysphere.cursor-deeplink/rule?name=strict-types&text=Avoid%20any',
+    )
+  })
+})

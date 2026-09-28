@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject, openExtension } from 'protocol-launcher/cursor';
+import { installMCP, openFile, openFolder, openRemote, openSettings, createChat, cloneProject, openExtension, createCommand, createRule } from 'protocol-launcher/cursor';
+import { createCommandParams, createRuleParams } from '../../.vitepress/constants/cursor';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -197,3 +198,45 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ promp
     在 Cursor 中创建聊天
   </VPLink>
 </div>
+
+### 创建命令
+
+在 Cursor 中准备自定义命令，供用户确认。名称可包含字母、数字、点、连字符和下划线。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createCommand(createCommandParams)" target="_self">
+    创建命令
+  </VPLink>
+</div>
+
+### 创建规则
+
+准备规则供用户确认。Cursor 的 deeplink 在 URL 编码后最多为 10,000 个字符。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRule' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createRule({
+  name: 'strict-types',
+  text: 'Always use strict TypeScript types'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createRule(createRuleParams)" target="_self">
+    创建规则
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://cursor.com/docs/reference/deeplinks)

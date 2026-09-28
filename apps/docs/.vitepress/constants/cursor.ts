@@ -56,3 +56,13 @@ export const openSettingsParams = {
 export const openExtensionParams = {
   id: 'esbenp.prettier-vscode',
 }
+
+export const createCommandParams = {
+  'name': 'review',
+  'text': 'Review the changes'
+} as const
+
+export const createRuleParams = {
+  'name': 'strict-types',
+  'text': 'Always use strict TypeScript types'
+} as const
