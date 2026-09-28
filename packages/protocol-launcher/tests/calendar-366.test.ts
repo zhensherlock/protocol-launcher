@@ -119,4 +119,10 @@ describe('calendar366', () => {
       } as never),
     ).toThrow('Calendar 366 import URL must start with file:// or https://.')
   })
+
+  test('switchCalendarSet encodes the set name', () => {
+    expect(calendar366.switchCalendarSet({ set: 'Work & 家庭' })).toBe(
+      'cal366://switch?set=Work%20%26%20%E5%AE%B6%E5%BA%AD',
+    )
+  })
 })

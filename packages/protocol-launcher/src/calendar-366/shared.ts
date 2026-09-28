@@ -1,7 +1,7 @@
 import { qs } from '@protocol-launcher/shared'
 
 export type Calendar366ItemType = 'event' | 'task'
-export type Calendar366Command = 'add' | 'open' | 'show' | 'summarize' | 'import'
+export type Calendar366Command = 'add' | 'open' | 'show' | 'summarize' | 'import' | 'switch'
 export type Calendar366View = 'year' | 'month' | 'agenda' | 'week' | 'day' | 'tasks'
 export type Calendar366TaskList = 0 | 1 | 2 | 3
 export type Calendar366ImportUrl = `file://${string}` | `https://${string}`

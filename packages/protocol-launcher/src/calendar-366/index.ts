@@ -17,3 +17,4 @@ export type {
 } from './shared'
 export { show } from './show'
 export { summarize } from './summarize'
+export { switchCalendarSet } from './switch-calendar-set'

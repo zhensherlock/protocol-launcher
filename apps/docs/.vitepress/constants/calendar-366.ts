@@ -18,3 +18,7 @@ export const showDayParams = {
   view: 'day',
   date: 1717200000,
 } as const
+
+export const switchCalendarSetParams = {
+  'set': 'work'
+} as const

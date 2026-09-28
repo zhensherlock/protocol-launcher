@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { addEvent, addTask, show, summarize } from 'protocol-launcher/calendar-366';
+import { addEvent, addTask, show, summarize, switchCalendarSet } from 'protocol-launcher/calendar-366';
+import { switchCalendarSetParams } from '../../.vitepress/constants/calendar-366';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   addEventParams,
@@ -132,6 +133,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalenda
 })
 ```
 
+
+### Switch Calendar Set
+
+Select an existing calendar set by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'switchCalendarSet' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}switchCalendarSet({
+  'set': 'work'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="switchCalendarSet(switchCalendarSetParams)" target="_self">Switch Calendar Set</VPLink>
+</div>
+
 ## Generated URLs
 
 ```ts
@@ -165,3 +183,7 @@ summarize()
 importCalendar({ url: 'https://example.com/calendar.ics' })
 // => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
+
+## Official Documentation
+
+- [URL scheme](https://calendar366.com/help/index.html)
