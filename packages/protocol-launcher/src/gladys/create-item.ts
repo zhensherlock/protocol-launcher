@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Create item command payload definition.
  */
-type CreateItem = {
+type CreateItem = Callbacks & {
   /**
    * Create an item with this text.
    */
@@ -60,6 +62,7 @@ export function createItem(payload: CreateItem = {}) {
     ...(title ? { title } : {}),
     ...(labels ? { labels } : {}),
     ...(note ? { note } : {}),
+    ...callbackParams(payload),
   })
 
   return `gladys://x-callback-url/create-item${params}`

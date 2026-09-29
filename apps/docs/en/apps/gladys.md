@@ -139,3 +139,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
     Paste Clipboard with Labels
   </VPLink>
 </div>
+
+### Callbacks
+
+Pass xSuccess, xError as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  'text': 'Hello Gladys',
+  'xSuccess': 'myapp://done?source=gladys'
+})
+```

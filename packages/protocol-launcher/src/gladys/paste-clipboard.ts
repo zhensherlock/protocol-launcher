@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Paste clipboard command payload definition.
  */
-type PasteClipboard = {
+type PasteClipboard = Callbacks & {
   /**
    * A title to use to override the name of the item being pasted.
    */
@@ -42,6 +44,7 @@ export function pasteClipboard(payload: PasteClipboard = {}) {
     ...(title ? { title } : {}),
     ...(labels ? { labels } : {}),
     ...(note ? { note } : {}),
+    ...callbackParams(payload),
   })
 
   return `gladys://x-callback-url/paste-clipboard${params}`

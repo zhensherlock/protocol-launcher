@@ -65,4 +65,15 @@ describe('gladys', () => {
     const url = gladys.createItem({})
     expect(url).toBe('gladys://x-callback-url/create-item')
   })
+
+  test('createItem preserves nested callback URLs', () => {
+    expect(gladys.createItem({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'gladys://x-callback-url/create-item?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('pasteClipboard preserves nested callback URLs', () => {
+    expect(gladys.pasteClipboard({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'gladys://x-callback-url/paste-clipboard?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
 })
