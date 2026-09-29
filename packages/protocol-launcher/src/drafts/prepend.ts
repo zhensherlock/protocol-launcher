@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Prepend action payload definition.
  */
-type Prepend = {
+type Prepend = Callbacks & {
   /**
    * The UUID identifier for a draft.
    */
@@ -49,6 +51,7 @@ export function prepend(payload: Prepend) {
     ...(action ? { action } : {}),
     ...(allowEmpty !== undefined ? { allowEmpty } : {}),
     ...(tags.length > 0 ? { tag: tags } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///prepend${params}`

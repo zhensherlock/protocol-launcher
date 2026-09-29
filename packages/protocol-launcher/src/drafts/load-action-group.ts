@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * LoadActionGroup action payload definition.
  */
-type LoadActionGroup = {
+type LoadActionGroup = Callbacks & {
   /**
    * Name of a valid action group to load.
    */
@@ -25,6 +27,7 @@ export function loadActionGroup(payload: LoadActionGroup) {
 
   const params = qs({
     name,
+    ...callbackParams(payload),
   })
 
   return `drafts:///loadActionGroup${params}`

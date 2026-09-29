@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Append action payload definition.
  */
-type Append = {
+type Append = Callbacks & {
   /**
    * The UUID identifier for a draft.
    */
@@ -49,6 +51,7 @@ export function append(payload: Append) {
     ...(action ? { action } : {}),
     ...(allowEmpty !== undefined ? { allowEmpty } : {}),
     ...(tags.length > 0 ? { tag: tags } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///append${params}`

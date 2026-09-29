@@ -435,3 +435,129 @@ describe('drafts', () => {
     expect(url).toBe('drafts:///dictate?locale=en-US&save=false&retParam=input&x-success=myapp%3A%2F%2Fcallback')
   })
 })
+
+describe('documented URL updates', () => {
+  test('chat opens the Chat Console', () => {
+    expect(drafts.chat()).toBe('drafts:///chat')
+  })
+
+  test('chat encodes its mode and prompt', () => {
+    expect(drafts.chat({ mode: 'claudeSonnet', prompt: 'Review & explain' })).toBe(
+      'drafts:///chat?mode=claudeSonnet&prompt=Review%20%26%20explain',
+    )
+  })
+
+  test('speak omits optional text when not supplied', () => {
+    expect(drafts.speak()).toBe('drafts:///speak')
+  })
+
+  test('speak encodes explicit text', () => {
+    expect(drafts.speak({ text: '你好, Drafts!' })).toBe('drafts:///speak?text=%E4%BD%A0%E5%A5%BD%2C%20Drafts!')
+  })
+
+  test('create preserves nested callback URLs', () => {
+    expect(drafts.create({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///create?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('open preserves nested callback URLs', () => {
+    expect(drafts.open({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///open?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('get preserves nested callback URLs', () => {
+    expect(drafts.get({ uuid: 'ID', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///get?uuid=ID&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('getCurrentDraft preserves nested callback URLs', () => {
+    expect(drafts.getCurrentDraft({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///getCurrentDraft?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('append preserves nested callback URLs', () => {
+    expect(drafts.append({ uuid: 'ID', text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///append?uuid=ID&text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('prepend preserves nested callback URLs', () => {
+    expect(drafts.prepend({ uuid: 'ID', text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///prepend?uuid=ID&text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('replaceRange preserves nested callback URLs', () => {
+    expect(drafts.replaceRange({ uuid: 'ID', text: 'N', start: 0, length: 1, xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///replaceRange?uuid=ID&text=N&start=0&length=1&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('runAction preserves nested callback URLs', () => {
+    expect(drafts.runAction({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///runAction?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('loadActionGroup preserves nested callback URLs', () => {
+    expect(drafts.loadActionGroup({ name: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///loadActionGroup?name=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('loadActionBarGroup preserves nested callback URLs', () => {
+    expect(drafts.loadActionBarGroup({ name: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///loadActionBarGroup?name=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('workspace preserves nested callback URLs', () => {
+    expect(drafts.workspace({ name: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///workspace?name=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('search preserves nested callback URLs', () => {
+    expect(drafts.search({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///search?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('quickSearch preserves nested callback URLs', () => {
+    expect(drafts.quickSearch({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///quickSearch?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('actionSearch preserves nested callback URLs', () => {
+    expect(drafts.actionSearch({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///actionSearch?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('commandPalette preserves nested callback URLs', () => {
+    expect(drafts.commandPalette({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///commandPalette?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('capture preserves nested callback URLs', () => {
+    expect(drafts.capture({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///capture?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('dictate preserves nested callback URLs', () => {
+    expect(drafts.dictate({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///dictate?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('chat preserves nested callback URLs', () => {
+    expect(drafts.chat({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///chat?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('speak preserves nested callback URLs', () => {
+    expect(drafts.speak({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///speak?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('scanDocument preserves nested callback URLs', () => {
+    expect(drafts.scanDocument({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///scandocument?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('arrange preserves nested callback URLs', () => {
+    expect(drafts.arrange({ text: 'N', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'drafts:///arrange?text=N&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+})

@@ -5,8 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import {
-  open,
+import { open,
   create,
   get,
   search,
@@ -24,8 +23,8 @@ import {
   loadActionBarGroup,
   loadActionGroup,
   replaceRange,
-  scanDocument,
-} from 'protocol-launcher/drafts';
+  scanDocument, chat, speak } from 'protocol-launcher/drafts';
+import { chatParams, speakParams } from '../../.vitepress/constants/drafts';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   openParams,
@@ -492,3 +491,58 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}scanDocument({
     扫描文档
   </VPLink>
 </div>
+
+### 聊天控制台
+
+打开聊天控制台，可选传入 prompt 和 mode：onDevice、pcc、claudeSonnet 或 claudeOpus。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chat' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}chat({
+  mode: 'claudeSonnet',
+  prompt: 'Summarize this draft'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="chat(chatParams)" target="_self">
+    聊天控制台
+  </VPLink>
+</div>
+
+### 朗读
+
+朗读传入的文本。text 为可选参数，官方参考没有说明省略时的行为。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'speak' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}speak({
+  text: 'Hello, Drafts!'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="speak(speakParams)" target="_self">
+    朗读
+  </VPLink>
+</div>
+
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel。回调 URL 会进行编码，包含嵌套查询参数。Drafts 的 x-callback-url 主机为可选项。既有 URL 保持原有形式；具体动作是否调用回调由应用决定。保留文档中的 loadActionBarGroup 命令；loadKeyboardActionGroup 仅出现在旧示例中。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'drafts' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}create({
+  'text': 'Hello Drafts',
+  'xSuccess': 'myapp://done?source=drafts'
+})
+```
+
+## 官方文档
+
+- [URL scheme 官方说明](https://docs.getdrafts.com/docs/automation/urlschemes)

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * ActionSearch action payload definition.
  */
-type ActionSearch = {
+type ActionSearch = Callbacks & {
   /**
    * Initial text to use in the search.
    */
@@ -28,6 +30,7 @@ export function actionSearch(payload: ActionSearch = {}) {
 
   const params = qs({
     ...(query ? { query } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///actionSearch${params}`

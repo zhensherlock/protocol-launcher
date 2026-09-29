@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Get action payload definition.
  */
-type Get = {
+type Get = Callbacks & {
   /**
    * The UUID identifier for a draft.
    */
@@ -33,6 +35,7 @@ export function get(payload: Get) {
   const params = qs({
     uuid,
     ...(retParam ? { retParam } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///get${params}`

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * RunAction action payload definition.
  */
-type RunAction = {
+type RunAction = Callbacks & {
   /**
    * Text to add.
    */
@@ -38,6 +40,7 @@ export function runAction(payload: RunAction) {
     text,
     ...(action ? { action } : {}),
     ...(allowEmpty !== undefined ? { allowEmpty } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///runAction${params}`

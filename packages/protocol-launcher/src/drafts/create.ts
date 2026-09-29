@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Create action payload definition.
  */
-type Create = {
+type Create = Callbacks & {
   /**
    * Text to be used as the content of the new draft.
    */
@@ -59,6 +61,7 @@ export function create(payload: Create) {
     ...(action ? { action } : {}),
     ...(allowEmpty !== undefined ? { allowEmpty } : {}),
     ...(retParam ? { retParam } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///create${params}`

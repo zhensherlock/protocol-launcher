@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Search action payload definition.
  */
-type Search = {
+type Search = Callbacks & {
   /**
    * Initial text to use in the search.
    */
@@ -38,6 +40,7 @@ export function search(payload: Search = {}) {
     ...(query ? { query } : {}),
     ...(tag ? { tag } : {}),
     ...(folder ? { folder } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///search${params}`

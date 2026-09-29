@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open action payload definition.
  */
-type Open = {
+type Open = Callbacks & {
   /**
    * The UUID identifier for a draft.
    */
@@ -93,7 +95,10 @@ export function open(payload: Open = {}) {
     showActionList === undefined &&
     !loadWorkspace &&
     !loadActionGroup &&
-    !loadActionBarGroup
+    !loadActionBarGroup &&
+    payload.xSuccess === undefined &&
+    payload.xError === undefined &&
+    payload.xCancel === undefined
   ) {
     return 'drafts://'
   }
@@ -110,6 +115,7 @@ export function open(payload: Open = {}) {
     ...(loadWorkspace ? { loadWorkspace } : {}),
     ...(loadActionGroup ? { loadActionGroup } : {}),
     ...(loadActionBarGroup ? { loadActionBarGroup } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///open${params}`

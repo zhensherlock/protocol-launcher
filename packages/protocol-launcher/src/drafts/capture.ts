@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Capture action payload definition.
  */
-type Capture = {
+type Capture = Callbacks & {
   /**
    * Initial text for the capture window.
    */
@@ -33,6 +35,7 @@ export function capture(payload: Capture = {}) {
   const params = qs({
     ...(text ? { text } : {}),
     ...(tag ? { tag } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///capture${params}`

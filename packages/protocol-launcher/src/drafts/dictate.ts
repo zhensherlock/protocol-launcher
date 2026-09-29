@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Dictate action payload definition.
  */
-type Dictate = {
+type Dictate = Callbacks & {
   /**
    * Locale identifier to use for dictation, in the standard language-country abbreviated format. Examples: en-US, it-IT, es-MX.
    */
@@ -32,17 +34,17 @@ type Dictate = {
  * // => 'drafts:///dictate?x-success=APP-URL'
  * @example
  * dictate({ locale: 'en-US', save: false, xSuccess: 'myapp://callback' })
- * // => 'drafts:///dictate?locale=en-US&save=false&x-success=myapp://callback'
+ * // => 'drafts:///dictate?locale=en-US&save=false&x-success=myapp%3A%2F%2Fcallback'
  * @link https://docs.getdrafts.com/docs/automation/urlschemes
  */
 export function dictate(payload: Dictate = {}) {
-  const { locale, save, retParam, xSuccess } = payload
+  const { locale, save, retParam } = payload
 
   const params = qs({
     ...(locale ? { locale } : {}),
     ...(save !== undefined ? { save } : {}),
     ...(retParam ? { retParam } : {}),
-    ...(xSuccess ? { 'x-success': xSuccess } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///dictate${params}`

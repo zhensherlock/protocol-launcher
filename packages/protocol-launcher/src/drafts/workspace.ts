@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Workspace action payload definition.
  */
-type Workspace = {
+type Workspace = Callbacks & {
   /**
    * Name of a saved workspace to load. Use "Default" as name to clear filters and load the default workspace.
    */
@@ -28,6 +30,7 @@ export function workspace(payload: Workspace) {
 
   const params = qs({
     name,
+    ...callbackParams(payload),
   })
 
   return `drafts:///workspace${params}`

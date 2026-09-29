@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * ScanDocument action payload definition.
  */
-type ScanDocument = {
+type ScanDocument = Callbacks & {
   /**
    * Default to "true". If "false", the results of the scan will be returned to the callback, but not saved as a draft in Drafts.
    */
@@ -28,16 +30,16 @@ type ScanDocument = {
  * // => 'drafts:///scandocument?x-success=APP-URL'
  * @example
  * scanDocument({ save: false, retParam: 'input', xSuccess: 'myapp://callback' })
- * // => 'drafts:///scandocument?save=false&retParam=input&x-success=myapp://callback'
+ * // => 'drafts:///scandocument?save=false&retParam=input&x-success=myapp%3A%2F%2Fcallback'
  * @link https://docs.getdrafts.com/docs/automation/urlschemes
  */
 export function scanDocument(payload: ScanDocument = {}) {
-  const { save, retParam, xSuccess } = payload
+  const { save, retParam } = payload
 
   const params = qs({
     ...(save !== undefined ? { save } : {}),
     ...(retParam ? { retParam } : {}),
-    ...(xSuccess ? { 'x-success': xSuccess } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///scandocument${params}`

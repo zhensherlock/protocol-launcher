@@ -5,8 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import {
-  open,
+import { open,
   create,
   get,
   search,
@@ -24,8 +23,8 @@ import {
   loadActionBarGroup,
   loadActionGroup,
   replaceRange,
-  scanDocument,
-} from 'protocol-launcher/drafts';
+  scanDocument, chat, speak } from 'protocol-launcher/drafts';
+import { chatParams, speakParams } from '../../.vitepress/constants/drafts';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   openParams,
@@ -492,3 +491,58 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}scanDocument({
     Scan Document
   </VPLink>
 </div>
+
+### Chat Console
+
+Open the Chat Console with an optional prompt and mode: onDevice, pcc, claudeSonnet, or claudeOpus.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chat' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}chat({
+  mode: 'claudeSonnet',
+  prompt: 'Summarize this draft'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="chat(chatParams)" target="_self">
+    Chat Console
+  </VPLink>
+</div>
+
+### Speak
+
+Speak the supplied text. The text parameter is optional; the official reference does not specify the behavior when it is omitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'speak' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}speak({
+  text: 'Hello, Drafts!'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="speak(speakParams)" target="_self">
+    Speak
+  </VPLink>
+</div>
+
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel as optional payload fields. Callback URLs are encoded, including nested query parameters. Drafts makes the x-callback-url host optional. Existing URLs keep their original form; the app decides which callbacks apply to each action. The documented loadActionBarGroup command is retained; loadKeyboardActionGroup appears only in a legacy example.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'drafts' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}create({
+  'text': 'Hello Drafts',
+  'xSuccess': 'myapp://done?source=drafts'
+})
+```
+
+## Official Documentation
+
+- [URL scheme documentation](https://docs.getdrafts.com/docs/automation/urlschemes)

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * CommandPalette action payload definition.
  */
-type CommandPalette = {
+type CommandPalette = Callbacks & {
   /**
    * Initial text to use in the search.
    */
@@ -28,6 +30,7 @@ export function commandPalette(payload: CommandPalette = {}) {
 
   const params = qs({
     ...(query ? { query } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///commandPalette${params}`

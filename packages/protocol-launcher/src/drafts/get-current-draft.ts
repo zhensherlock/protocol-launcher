@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Get current draft action payload definition.
  */
-type GetCurrentDraft = {
+type GetCurrentDraft = Callbacks & {
   /**
    * The x-success callback URL to receive the current draft information.
    */
@@ -17,14 +19,12 @@ type GetCurrentDraft = {
  * @returns Drafts getCurrentDraft URL.
  * @example
  * getCurrentDraft({ xSuccess: 'myapp://callback' })
- * // => 'drafts:///getCurrentDraft?x-success=myapp://callback'
+ * // => 'drafts:///getCurrentDraft?x-success=myapp%3A%2F%2Fcallback'
  * @link https://docs.getdrafts.com/docs/automation/urlschemes
  */
 export function getCurrentDraft(payload: GetCurrentDraft = {}) {
-  const { xSuccess } = payload
-
   const params = qs({
-    ...(xSuccess ? { 'x-success': xSuccess } : {}),
+    ...callbackParams(payload),
   })
 
   return `drafts:///getCurrentDraft${params}`

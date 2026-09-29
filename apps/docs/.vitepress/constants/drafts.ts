@@ -115,3 +115,12 @@ export const scanDocumentParams = {
   retParam: 'input',
   xSuccess: 'myapp://callback',
 }
+
+export const chatParams = {
+  'mode': 'claudeSonnet',
+  'prompt': 'Summarize this draft'
+} as const
+
+export const speakParams = {
+  'text': 'Hello, Drafts!'
+} as const

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * ReplaceRange action payload definition.
  */
-type ReplaceRange = {
+type ReplaceRange = Callbacks & {
   /**
    * The UUID identifier for a draft.
    */
@@ -40,6 +42,7 @@ export function replaceRange(payload: ReplaceRange) {
     text,
     start,
     length,
+    ...callbackParams(payload),
   })
 
   return `drafts:///replaceRange${params}`
