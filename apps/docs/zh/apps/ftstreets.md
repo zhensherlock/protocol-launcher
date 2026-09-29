@@ -60,3 +60,28 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
     在 Streets 中查看全景图
   </VPLink>
 </div>
+
+### 复制全景图并回调
+
+region 指定地图中心及跨度，scheme 可选 streets 或 ftstreets。Streets 3.5+ 支持 action: clipboard。应用只在传入 action 时调用 xSuccess，并在同时传入 action 和 xSuccess 时调用 xError。生成 URL 时会保留传入的回调参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
+  'location': {
+    'lat': 48.872112,
+    'lng': 2.332977
+  },
+  'region': {
+    'lat': 48.872112,
+    'lng': 2.332977,
+    'latSpan': 0.01,
+    'lngSpan': 0.01
+  },
+  'action': 'clipboard',
+  'xSuccess': 'myapp://panorama',
+  'xError': 'myapp://error',
+  'scheme': 'streets'
+})
+```
