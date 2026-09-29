@@ -141,3 +141,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
     使用自然语言显示日期
   </VPLink>
 </div>
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  'date': 'today',
+  'xSuccess': 'myapp://done?source=fantastical'
+})
+```

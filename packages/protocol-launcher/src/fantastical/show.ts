@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Show command payload definition for navigating to dates in Fantastical.
  */
-type Show = {
+type Show = Callbacks & {
   /**
    * The date to jump to. Can be a specific date (yyyy-mm-dd) or natural language.
    *
@@ -33,7 +35,7 @@ type Show = {
  */
 export function show(payload: Show) {
   const { date } = payload
-  const params = qs({ date })
+  const params = qs({ date, ...callbackParams(payload) })
 
-  return `x-fantastical3://show${params}`
+  return `x-fantastical3://${hasCallbacks(payload) ? 'x-callback-url/' : ''}show${params}`
 }

@@ -102,4 +102,27 @@ describe('fantastical', () => {
       expect(url).toBe('x-fantastical3://show?date=tomorrow')
     })
   })
+
+  test('parse preserves nested callback URLs', () => {
+    expect(fantastical.parse({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'x-fantastical3://x-callback-url/parse?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('show preserves nested callback URLs', () => {
+    expect(fantastical.show({ date: 'today', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'x-fantastical3://x-callback-url/show?date=today&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+
+  test('callback route supports errors, cancellation and a source without success', () => {
+    expect(fantastical.show({ date: 'today', xError: 'myapp://error' })).toBe(
+      'x-fantastical3://x-callback-url/show?date=today&x-error=myapp%3A%2F%2Ferror',
+    )
+    expect(fantastical.show({ date: 'today', xCancel: 'myapp://cancel' })).toBe(
+      'x-fantastical3://x-callback-url/show?date=today&x-cancel=myapp%3A%2F%2Fcancel',
+    )
+    expect(fantastical.show({ date: 'today', xSource: 'My App' })).toBe(
+      'x-fantastical3://x-callback-url/show?date=today&x-source=My%20App',
+    )
+  })
 })

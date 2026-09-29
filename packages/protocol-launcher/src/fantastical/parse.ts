@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Parse command payload definition for creating events in Fantastical.
  */
-type Parse = {
+type Parse = Callbacks & {
   /**
    * Natural language input for event creation.
    * If specified, other parameters will be ignored.
@@ -113,7 +115,7 @@ type Parse = {
  * // => 'x-fantastical3://parse?title=Team%20Meeting&start=2026-03-30%2010%3A00&end=2026-03-30%2011%3A00'
  * @example
  * parse({ sentence: 'Meeting', notes: 'Discuss project', add: true })
- * // => 'x-fantastical3://parse?sentence=Meeting&notes=Discuss%20project&add=1'
+ * // => 'x-fantastical3://parse?sentence=Meeting&add=1&notes=Discuss%20project'
  * @link https://flexibits.com/support/kb/51
  */
 export function parse(payload: Parse = {}) {
@@ -147,7 +149,8 @@ export function parse(payload: Parse = {}) {
     ...(allDay ? { allDay: '1' } : {}),
     ...(availability && !sentence ? { availability } : {}),
     ...(isPrivate ? { private: '1' } : {}),
+    ...callbackParams(payload),
   })
 
-  return `x-fantastical3://parse${params}`
+  return `x-fantastical3://${hasCallbacks(payload) ? 'x-callback-url/' : ''}parse${params}`
 }
