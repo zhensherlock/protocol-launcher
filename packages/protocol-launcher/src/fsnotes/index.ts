@@ -1,4 +1,5 @@
 export { createNote } from './create'
 export { findNotes } from './find'
+export { newNote } from './new'
 export { openNote } from './note'
 export { open } from './open'

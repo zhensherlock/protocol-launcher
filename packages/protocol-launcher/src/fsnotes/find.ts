@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Open file definition.
  */
@@ -6,6 +8,8 @@ type FindNotes = {
    * Keyword to find.
    */
   keyword: string
+  /** Note title/name to open; falls back to searching this value. */
+  id?: string
 }
 
 /**
@@ -18,9 +22,9 @@ type FindNotes = {
  *   keyword: 'hello',
  * })
  * // => 'fsnotes://find/hello'
- * @link https://github.com/glushchenko/fsnotes/blob/master/FSNotes/AppDelegate%2BURLRoutes.swift
+ * @link https://github.com/glushchenko/fsnotes/blob/v7.3.4/FSNotes/AppDelegate%2BURLRoutes.swift
  */
 export function findNotes(payload: FindNotes) {
-  const { keyword } = payload
-  return `fsnotes://find/${keyword}`
+  const { keyword, id } = payload
+  return `fsnotes://find/${encodeURIComponent(keyword)}${qs({ id })}`
 }

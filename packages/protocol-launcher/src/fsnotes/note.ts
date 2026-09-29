@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Open note definition.
  */
@@ -11,6 +13,8 @@ type OpenNote = {
    * Note tag.
    */
   tag?: string
+  /** Text to append to an existing note, or use when creating a missing title. */
+  txt?: string
 }
 
 /**
@@ -22,17 +26,10 @@ type OpenNote = {
  * openNote({
  *   title: 'hello',
  * })
- * // => 'fsnotes://open?title=hello'
- * @link https://github.com/glushchenko/fsnotes/blob/master/FSNotes/AppDelegate%2BURLRoutes.swift
+ * // => 'fsnotes://open/?title=hello'
+ * @link https://github.com/glushchenko/fsnotes/blob/v7.3.4/FSNotes/AppDelegate%2BURLRoutes.swift
  */
 export function openNote(payload: OpenNote = {}) {
-  const { title, tag } = payload
-  const query = []
-  if (title) {
-    query.push(`title=${title}`)
-  }
-  if (tag) {
-    query.push(`tag=${tag}`)
-  }
-  return `fsnotes://open/${query.length ? `?${query.join('&')}` : ''}`
+  const { title, tag, txt } = payload
+  return `fsnotes://open/${qs({ title, tag, txt })}`
 }

@@ -12,3 +12,10 @@ export const createNoteParams = {
   content: 'hello world',
   tags: '2026',
 }
+
+export const newNoteParams = {
+  'title': 'Meeting',
+  'txt': '# Agenda',
+  'folder': 'Work',
+  'open': true
+} as const
