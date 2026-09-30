@@ -10,6 +10,7 @@ type Add = {
    * @example 'Lunch tomorrow at 12'
    */
   input: string
+  xSuccess?: string
   /**
    * Notes (optional).
    */
@@ -30,11 +31,12 @@ type Add = {
  * @link http://micalapp.com/en/faqs#category_10
  */
 export function add(payload: Add) {
-  const { input, notes } = payload
+  const { input, notes, xSuccess } = payload
   const params = qs({
     input,
+    'x-success': xSuccess,
     ...(notes ? { notes } : {}),
   })
 
-  return `miCal7://add${params}`
+  return `miCal7://${xSuccess !== undefined ? 'x-callback-url/' : ''}add${params}`
 }

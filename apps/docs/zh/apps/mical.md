@@ -99,3 +99,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}addReminder({
     在 miCal 中添加提醒
   </VPLink>
 </div>
+
+### 回调
+
+可选参数为 xSuccess。回调 URL 会进行编码，包含嵌套查询参数。当前 FAQ 记录了创建活动的回调。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'mical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}add({
+  'input': 'Lunch tomorrow at 12',
+  'xSuccess': 'myapp://done?source=mical'
+})
+```

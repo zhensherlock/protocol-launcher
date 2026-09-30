@@ -61,4 +61,10 @@ describe('mical', () => {
     const url = mical.addReminder({ title: 'Buy groceries', notes: 'Milk, eggs, bread' })
     expect(url).toBe('miCal7://addReminder?title=Buy%20groceries&notes=Milk%2C%20eggs%2C%20bread')
   })
+
+  test('add supports the documented event creation callback', () => {
+    expect(mical.add({ input: 'Lunch tomorrow', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'miCal7://x-callback-url/add?input=Lunch%20tomorrow&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
 })
