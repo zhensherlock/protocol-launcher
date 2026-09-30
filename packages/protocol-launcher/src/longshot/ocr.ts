@@ -1,14 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type LongshotCommandPayload, longshotCommandUrl } from './shared'
 
 /**
  * OCR command payload definition.
  */
-type Ocr = {
-  /**
-   * The function to execute.
-   */
-  func: string
-}
+type Ocr = LongshotCommandPayload
 
 /**
  * Start OCR text recognition in Longshot.
@@ -21,7 +16,5 @@ type Ocr = {
  * @link https://longshot.chitaner.com/blog/urlschemeapi/
  */
 export function ocr(payload: Ocr) {
-  const { func } = payload
-  const params = qs({ func })
-  return `longshot://ocr${params}`
+  return longshotCommandUrl('ocr', payload, 'string')
 }

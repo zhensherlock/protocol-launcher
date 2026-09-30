@@ -50,7 +50,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
 import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
-  func: 'startArea',
+  func: 'start_area',
 })
 ```
 
@@ -107,3 +107,41 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}pref({
     Open Preferences
   </VPLink>
 </div>
+
+### Return Capture Results
+
+snip, record and ocr accept xSuccess, xError and xSource. Supplying callback options (or xCallback: true) selects x-callback-url and clipboard results: data for snip, filepath for record, string for ocr. The official area-recording examples use start_area for the plain route and startArea for the callback route. Supply the corresponding func value; it is preserved as provided. errorMessage is returned by Longshot, rather than supplied in the request.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'snip' : 'longshot' }} } from '{{ importPath }}'
+
+const snipUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
+  'func': 'start',
+  'xSuccess': 'myapp://snipped'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
+
+const recordUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
+  'func': 'startArea',
+  'xSuccess': 'myapp://recorded',
+  'xError': 'myapp://error'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'ocr' : 'longshot' }} } from '{{ importPath }}'
+
+const ocrUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}ocr({
+  'func': 'start',
+  'xSuccess': 'myapp://recognized'
+})
+```
+
+
+
+## Official Documentation
+
+- [URL scheme](https://longshot.chitaner.com/blog/urlschemeapi/)

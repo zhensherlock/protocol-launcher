@@ -50,7 +50,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
 import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
-  func: 'startArea',
+  func: 'start_area',
 })
 ```
 
@@ -107,3 +107,41 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}pref({
     打开偏好设置
   </VPLink>
 </div>
+
+### 回调返回捕获结果
+
+snip、record、ocr 接受 xSuccess、xError、xSource。传入回调选项（或 xCallback: true）后，使用 x-callback-url 并返回剪贴板结果：snip 为 data、record 为 filepath、ocr 为 string。官方区域录制示例中，普通入口使用 start_area，回调入口使用 startArea。请传入对应的 func 值，生成时保留原值。errorMessage 由 Longshot 返回，无需作为请求参数传入。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'snip' : 'longshot' }} } from '{{ importPath }}'
+
+const snipUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
+  'func': 'start',
+  'xSuccess': 'myapp://snipped'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
+
+const recordUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
+  'func': 'startArea',
+  'xSuccess': 'myapp://recorded',
+  'xError': 'myapp://error'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'ocr' : 'longshot' }} } from '{{ importPath }}'
+
+const ocrUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}ocr({
+  'func': 'start',
+  'xSuccess': 'myapp://recognized'
+})
+```
+
+
+
+## 官方文档
+
+- [URL scheme](https://longshot.chitaner.com/blog/urlschemeapi/)

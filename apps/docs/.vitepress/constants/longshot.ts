@@ -3,7 +3,7 @@ export const snipParams = {
 }
 
 export const recordParams = {
-  func: 'startArea',
+  func: 'start_area',
 }
 
 export const ocrParams = {
@@ -17,3 +17,9 @@ export const ruleParams = {
 export const prefParams = {
   page: 'shortcuts',
 }
+
+export const callbackRecordParams = {
+  func: 'startArea',
+  xSuccess: 'myapp://recorded',
+  xError: 'myapp://error',
+} as const

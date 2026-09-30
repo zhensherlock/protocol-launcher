@@ -1,14 +1,9 @@
-import { qs } from '@protocol-launcher/shared'
+import { type LongshotCommandPayload, longshotCommandUrl } from './shared'
 
 /**
  * Record command payload definition.
  */
-type Record = {
-  /**
-   * The function to execute.
-   */
-  func: string
-}
+type Record = LongshotCommandPayload
 
 /**
  * Start area recording in Longshot.
@@ -16,12 +11,10 @@ type Record = {
  * @param payload Record command payload.
  * @returns Longshot record URL.
  * @example
- * record({ func: 'startArea' })
- * // => 'longshot://record?func=startArea'
+ * record({ func: 'start_area' })
+ * // => 'longshot://record?func=start_area'
  * @link https://longshot.chitaner.com/blog/urlschemeapi/
  */
 export function record(payload: Record) {
-  const { func } = payload
-  const params = qs({ func })
-  return `longshot://record${params}`
+  return longshotCommandUrl('record', payload, 'filepath')
 }

@@ -43,4 +43,27 @@ describe('longshot', () => {
     })
     expect(url).toBe('longshot://pref?page=general')
   })
+
+  test('snip callback encodes nested URLs and selects data result', () => {
+    expect(
+      longshot.snip({ func: 'start', xSource: 'My App', xSuccess: 'myapp://done?a=1&b=2', xError: 'myapp://error' }),
+    ).toBe(
+      'longshot://x-callback-url/snip?func=start&channel=clipboard&type=data&x-source=My%20App&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2&x-error=myapp%3A%2F%2Ferror',
+    )
+  })
+  test('record serializes the documented plain and callback area commands', () => {
+    expect(longshot.record({ func: 'start_area' })).toBe('longshot://record?func=start_area')
+    expect(longshot.record({ func: 'startArea', xCallback: true })).toBe(
+      'longshot://x-callback-url/record?func=startArea&channel=clipboard&type=filepath',
+    )
+    expect(longshot.record({ func: 'startArea', xSuccess: 'myapp://done' })).toBe(
+      'longshot://x-callback-url/record?func=startArea&channel=clipboard&type=filepath&x-success=myapp%3A%2F%2Fdone',
+    )
+  })
+  test('OCR callbacks select string results, including channel-only selection', () => {
+    expect(longshot.ocr({ func: 'start', channel: 'clipboard' })).toBe(
+      'longshot://x-callback-url/ocr?func=start&channel=clipboard&type=string',
+    )
+    expect(longshot.ocr({ func: 'start', xCallback: false })).toBe('longshot://ocr?func=start')
+  })
 })
