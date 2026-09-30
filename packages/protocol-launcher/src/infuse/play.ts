@@ -1,7 +1,10 @@
 import type { InfuseMediaPayload } from './shared'
 import { infuseXCallbackUrl } from './shared'
 
-export type Play = InfuseMediaPayload
+export type Play = InfuseMediaPayload & {
+  /** Start/resume position in seconds for each video, supported since Infuse 8.4.7. */
+  position?: number | [number, ...number[]]
+}
 
 /**
  * Play one or more videos in Infuse.
@@ -14,5 +17,5 @@ export type Play = InfuseMediaPayload
  * @link https://support.firecore.com/hc/en-us/articles/215090997-API-for-Third-Party-Apps-Services
  */
 export function play(payload: Play) {
-  return infuseXCallbackUrl('play', payload)
+  return infuseXCallbackUrl('play', payload, { position: payload.position })
 }

@@ -5,6 +5,8 @@ export interface OpenMovie {
    * TMDB movie ID number.
    */
   tmdbId: number
+  /** Start playback automatically (Infuse 8.4.7+). */
+  play?: boolean
 }
 
 /**
@@ -18,5 +20,5 @@ export interface OpenMovie {
  * @link https://support.firecore.com/hc/en-us/articles/215090997-API-for-Third-Party-Apps-Services
  */
 export function openMovie(payload: OpenMovie) {
-  return infuseLibraryUrl('movie', [payload.tmdbId])
+  return infuseLibraryUrl('movie', [payload.tmdbId], payload.play)
 }

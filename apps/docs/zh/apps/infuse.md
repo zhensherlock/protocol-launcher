@@ -37,6 +37,8 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 Infuse x-callback URL 使用 `infuse://x-callback-url/<action>`。Firecore 官方文档列出了 `play` 和 `save` 动作，支持重复的 `url` 条目、可选的 `filename` 和 `sub` 条目，以及可选的 `x-success` / `x-error` 回调。这些 helper 使用 `xSuccess` 和 `xError` 选项名，并序列化为官方 query key。媒体库链接使用带 TMDB ID 数字的 `infuse://movie/...` 和 `infuse://series/...`。
 
+Infuse 8.4.7 及以上支持以整数秒传入 `position`。数组中的播放起点与同索引 URL 对应。库条目函数支持 `play: true`，生成不带值的 `?play` 标记并开始播放。
+
 ### 播放
 
 将一个或多个视频作为临时播放列表播放。
@@ -49,6 +51,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}play({
     'https://files.firecore.com/infuse/sample-5s-360p.mp4',
     'https://files.firecore.com/infuse/mov_bbb.mp4',
   ],
+  position: [0, 6],
   filename: ['Inception-2010.mp4', 'Mad-Men-S01-E01.mp4'],
   sub: [
     'https://files.firecore.com/infuse/example.srt',
@@ -101,6 +104,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openMovie' : 'infuse' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openMovie({
   tmdbId: 12345,
+  play: true,
 })
 ```
 <div class="flex justify-center">
@@ -118,6 +122,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeries' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeries({
   tmdbId: 12345,
+  play: true,
 })
 ```
 <div class="flex justify-center">
@@ -135,6 +140,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeason' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeason({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
 })
 ```
@@ -153,6 +159,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openEpisode' : 'infuse' }} } from '
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openEpisode({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
   episodeNumber: 2,
 })

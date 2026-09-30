@@ -5,6 +5,8 @@ export interface OpenSeries {
    * TMDB TV series ID number.
    */
   tmdbId: number
+  /** Start playback automatically (Infuse 8.4.7+). */
+  play?: boolean
 }
 
 /**
@@ -18,5 +20,5 @@ export interface OpenSeries {
  * @link https://support.firecore.com/hc/en-us/articles/215090997-API-for-Third-Party-Apps-Services
  */
 export function openSeries(payload: OpenSeries) {
-  return infuseLibraryUrl('series', [payload.tmdbId])
+  return infuseLibraryUrl('series', [payload.tmdbId], payload.play)
 }

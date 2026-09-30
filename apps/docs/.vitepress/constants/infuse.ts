@@ -1,5 +1,6 @@
 export const playParams = {
   url: ['https://files.firecore.com/infuse/sample-5s-360p.mp4', 'https://files.firecore.com/infuse/mov_bbb.mp4'],
+  position: [0, 6],
   filename: ['Inception-2010.mp4', 'Mad-Men-S01-E01.mp4'],
   sub: ['https://files.firecore.com/infuse/example.srt', 'https://files.firecore.com/infuse/example2.srt'],
 }
@@ -13,19 +14,23 @@ export const saveParams = {
 
 export const openMovieParams = {
   tmdbId: 12345,
+  play: true,
 }
 
 export const openSeriesParams = {
   tmdbId: 12345,
+  play: true,
 }
 
 export const openSeasonParams = {
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
 }
 
 export const openEpisodeParams = {
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
   episodeNumber: 2,
 }

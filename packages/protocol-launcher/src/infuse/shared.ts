@@ -33,9 +33,10 @@ type InfuseLibraryKind = 'movie' | 'series'
 
 interface InfuseMediaOptions {
   download?: 0 | 1
+  position?: OneOrMore<number>
 }
 
-function toArray(value: OneOrMore<string> | undefined) {
+function toArray<T>(value: OneOrMore<T> | undefined) {
   if (value === undefined) return []
   return Array.isArray(value) ? value : [value]
 }
@@ -50,10 +51,12 @@ export function infuseXCallbackUrl(
   options: InfuseMediaOptions = {},
 ) {
   const urls = toArray(payload.url)
+  const positions = toArray(options.position)
   const filenames = toArray(payload.filename)
   const subtitles = toArray(payload.sub)
   const mediaParts = urls.flatMap((url, index) => [
     queryPart({ url }),
+    queryPart({ position: positions[index] }),
     queryPart({ filename: filenames[index] }),
     queryPart({ sub: subtitles[index] }),
   ])
@@ -69,6 +72,6 @@ export function infuseXCallbackUrl(
   return `infuse://x-callback-url/${action}?${actionParts.join('&')}`
 }
 
-export function infuseLibraryUrl(kind: InfuseLibraryKind, segments: number[]) {
-  return `infuse://${kind}/${segments.join('-')}`
+export function infuseLibraryUrl(kind: InfuseLibraryKind, segments: number[], play?: boolean) {
+  return `infuse://${kind}/${segments.join('-')}${play ? '?play' : ''}`
 }

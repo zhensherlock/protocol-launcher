@@ -80,3 +80,47 @@ describe('infuse', () => {
     expect(url).toBe('infuse://series/12345-1-2')
   })
 })
+
+describe('documented URL updates', () => {
+  test('play preserves a zero playback position', () => {
+    expect(infuse.play({ url: 'https://example.com/video.mp4', position: 0 })).toBe(
+      'infuse://x-callback-url/play?url=https%3A%2F%2Fexample.com%2Fvideo.mp4&position=0',
+    )
+  })
+
+  test('play associates positions and metadata with their video', () => {
+    expect(
+      infuse.play({
+        url: ['https://example.com/one.mp4', 'https://example.com/two.mp4'],
+        position: [0, 6],
+        filename: ['One.mp4', 'Two.mp4'],
+        sub: ['https://example.com/one.srt'],
+        xSuccess: 'some-app://success',
+      }),
+    ).toBe(
+      'infuse://x-callback-url/play?url=https%3A%2F%2Fexample.com%2Fone.mp4&position=0&filename=One.mp4&sub=https%3A%2F%2Fexample.com%2Fone.srt&url=https%3A%2F%2Fexample.com%2Ftwo.mp4&position=6&filename=Two.mp4&x-success=some-app%3A%2F%2Fsuccess',
+    )
+  })
+
+  test('openMovie supports the bare play flag', () => {
+    expect(infuse.openMovie({ tmdbId: 1327819, play: true })).toBe('infuse://movie/1327819?play')
+  })
+
+  test('openSeries supports autoplay', () => {
+    expect(infuse.openSeries({ tmdbId: 12345, play: true })).toBe('infuse://series/12345?play')
+  })
+
+  test('openSeason supports autoplay', () => {
+    expect(infuse.openSeason({ tmdbId: 12345, seasonNumber: 1, play: true })).toBe('infuse://series/12345-1?play')
+  })
+
+  test('openEpisode supports autoplay', () => {
+    expect(infuse.openEpisode({ tmdbId: 12345, seasonNumber: 1, episodeNumber: 2, play: true })).toBe(
+      'infuse://series/12345-1-2?play',
+    )
+  })
+
+  test('openMovie omits play when false', () => {
+    expect(infuse.openMovie({ tmdbId: 12345, play: false })).toBe('infuse://movie/12345')
+  })
+})

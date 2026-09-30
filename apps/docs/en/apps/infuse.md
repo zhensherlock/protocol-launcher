@@ -37,6 +37,8 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 Infuse x-callback URLs use `infuse://x-callback-url/<action>`. Firecore documents `play` and `save` actions with repeated `url` entries, optional `filename` and `sub` entries, and optional `x-success` / `x-error` callbacks. These helpers use `xSuccess` and `xError` option names and serialize them to the official query keys. Library links use `infuse://movie/...` and `infuse://series/...` with TMDB ID numbers.
 
+Infuse 8.4.7+ supports `position` in integer seconds. Arrays associate each position with the URL at the same index. Library functions accept `play: true` to append the bare `?play` flag and start playback.
+
 ### Play
 
 Play one or more videos as a temporary playlist.
@@ -49,6 +51,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}play({
     'https://files.firecore.com/infuse/sample-5s-360p.mp4',
     'https://files.firecore.com/infuse/mov_bbb.mp4',
   ],
+  position: [0, 6],
   filename: ['Inception-2010.mp4', 'Mad-Men-S01-E01.mp4'],
   sub: [
     'https://files.firecore.com/infuse/example.srt',
@@ -101,6 +104,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openMovie' : 'infuse' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openMovie({
   tmdbId: 12345,
+  play: true,
 })
 ```
 <div class="flex justify-center">
@@ -118,6 +122,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeries' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeries({
   tmdbId: 12345,
+  play: true,
 })
 ```
 <div class="flex justify-center">
@@ -135,6 +140,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeason' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeason({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
 })
 ```
@@ -153,6 +159,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openEpisode' : 'infuse' }} } from '
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openEpisode({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
   episodeNumber: 2,
 })
