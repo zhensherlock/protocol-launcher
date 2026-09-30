@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openNote, openFolder, openTag } from 'protocol-launcher/joplin';
+import { openNote, openFolder, openTag, getCurrentNote, createNote } from 'protocol-launcher/joplin';
+import { getCurrentNoteParams, createNoteParams } from '../../.vitepress/constants/joplin';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   openNoteParams,
@@ -32,7 +33,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 <SelectInstallationMethod v-model="currentMethod" />
 
-Joplin external links use `joplin://x-callback-url/<action>` with an `id` query parameter. The official documentation lists `openNote`, `openFolder`, and `openTag`.
+Joplin external links use `joplin://x-callback-url/<action>` with an `id` query parameter. The official documentation lists `openNote`, `openFolder`, and `openTag`, plus the desktop callback commands below. Callback URLs must use a known application scheme or the `x-callback-url` host; Joplin rejects HTTP and HTTPS callbacks.
 
 ### Open Note
 
@@ -84,6 +85,39 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}openTag({
     Open Tag in Joplin
   </VPLink>
 </div>
+
+### Get Current Note
+
+Desktop only. Return the selected note to the calling app through an x-callback-url.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}getCurrentNote({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="getCurrentNote(getCurrentNoteParams)" target="_self">
+    Get Current Note
+  </VPLink>
+</div>
+
+### Create Note
+
+Desktop only. Create a note in the current notebook and return its title and URL through the callback.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}createNote({
+  title: 'Meeting notes',
+  body: '# Agenda',
+  xSuccess: 'hook://x-callback-url/setCurrentNode',
+  xError: 'hook://x-callback-url/error'
+})
+```
 
 ## Official Documentation
 

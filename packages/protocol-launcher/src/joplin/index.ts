@@ -1,3 +1,5 @@
+export { createNote } from './create-note'
+export { getCurrentNote } from './get-current-note'
 export { openFolder } from './open-folder'
 export { openNote } from './open-note'
 export { openTag } from './open-tag'
