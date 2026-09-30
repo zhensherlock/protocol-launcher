@@ -114,3 +114,17 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
     恢复计时器
   </VPLink>
 </div>
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  'name': 'Lunch',
+  'board': 'Work',
+  'xSuccess': 'myapp://done?source=multi-timer'
+})
+```

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Resume timer command payload definition.
  */
-type ResumeTimer = {
+type ResumeTimer = Callbacks & {
   /**
    * Timer label.
    */
@@ -32,7 +34,8 @@ export function resumeTimer(payload: ResumeTimer) {
   const params = qs({
     name,
     ...(board ? { board } : {}),
+    ...callbackParams(payload),
   })
 
-  return `multitimer://api/resume-timer${params}`
+  return `multitimer://${hasCallbacks(payload) ? 'x-callback-url' : 'api'}/resume-timer${params}`
 }

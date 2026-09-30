@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Start timer command payload definition.
  */
-type StartTimer = {
+type StartTimer = Callbacks & {
   /**
    * Timer label.
    */
@@ -32,7 +34,8 @@ export function startTimer(payload: StartTimer) {
   const params = qs({
     name,
     ...(board ? { board } : {}),
+    ...callbackParams(payload),
   })
 
-  return `multitimer://api/start-timer${params}`
+  return `multitimer://${hasCallbacks(payload) ? 'x-callback-url' : 'api'}/start-timer${params}`
 }

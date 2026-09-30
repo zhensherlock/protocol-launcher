@@ -114,3 +114,17 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
     Resume Timer
   </VPLink>
 </div>
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  'name': 'Lunch',
+  'board': 'Work',
+  'xSuccess': 'myapp://done?source=multi-timer'
+})
+```

@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Stop timer command payload definition.
  */
-type StopTimer = {
+type StopTimer = Callbacks & {
   /**
    * Timer label.
    */
@@ -32,7 +34,8 @@ export function stopTimer(payload: StopTimer) {
   const params = qs({
     name,
     ...(board ? { board } : {}),
+    ...callbackParams(payload),
   })
 
-  return `multitimer://api/stop-timer${params}`
+  return `multitimer://${hasCallbacks(payload) ? 'x-callback-url' : 'api'}/stop-timer${params}`
 }
