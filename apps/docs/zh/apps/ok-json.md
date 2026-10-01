@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { history, newJson, paste, scriptsPanel } from 'protocol-launcher/ok-json';
+import { history, newJson, paste, scriptsPanel, download } from 'protocol-launcher/ok-json';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { newJsonParams } from '../../.vitepress/constants/ok-json';
 
@@ -30,7 +30,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 ## 注意事项
 
-OK JSON 官方 URL Schemes 页面只记录了五个动作：`okjson://paste`、`okjson://new?content=...`、`okjson://history`、`okjson://scripts-panel` 和 `okjson://script/...`。此模块只暴露这些官方记录的动作。
+官方参考现在列出七个动作，包括 download 和 curl。这两个动作会读取剪贴板，其中 curl 会执行剪贴板中的命令。
 
 `newJson()` 接收原始 JSON 字符串，并将其序列化为官方的 URL 编码 `content` 查询参数。`runScript()` 接收不带 `.js` 扩展名的自定义脚本文件名，与官方脚本 URL 格式保持一致。
 
@@ -100,6 +100,31 @@ import { {{ currentMethod === 'On-Demand' ? 'runScript' : 'okJson' }} } from '{{
 const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}runScript({
   scriptFileNameWithoutJsExtension: 'copy-minified-json',
 })
+```
+
+
+### 下载剪贴板中的 URL
+
+读取剪贴板中的 URL，下载内容并以 JSON 打开。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'download' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}download()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="download()" target="_self">下载剪贴板中的 URL</VPLink>
+</div>
+
+### 执行剪贴板中的 cURL
+
+执行剪贴板中当前的 cURL 命令。打开此 URL 前，请先检查剪贴板中的命令。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'curl' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}curl()
 ```
 
 ## 生成的 URL

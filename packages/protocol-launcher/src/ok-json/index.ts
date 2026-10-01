@@ -1,3 +1,5 @@
+export { curl } from './curl'
+export { download } from './download'
 export { history } from './history'
 export { newJson } from './new-json'
 export { paste } from './paste'

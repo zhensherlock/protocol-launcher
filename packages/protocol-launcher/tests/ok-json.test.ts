@@ -3,7 +3,15 @@ import { okJson } from '../src'
 
 describe('okJson', () => {
   test('should expose only actions documented by OK JSON', () => {
-    expect(Object.keys(okJson).sort()).toEqual(['history', 'newJson', 'paste', 'runScript', 'scriptsPanel'])
+    expect(Object.keys(okJson).sort()).toEqual([
+      'curl',
+      'download',
+      'history',
+      'newJson',
+      'paste',
+      'runScript',
+      'scriptsPanel',
+    ])
   })
 
   test('paste should return the official paste URL', () => {
@@ -38,5 +46,10 @@ describe('okJson', () => {
     })
 
     expect(url).toBe('okjson://script/copy-minified-json')
+  })
+
+  test('clipboard download and curl use the documented bare actions', () => {
+    expect(okJson.download()).toBe('okjson://download')
+    expect(okJson.curl()).toBe('okjson://curl')
   })
 })

@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { history, newJson, paste, scriptsPanel } from 'protocol-launcher/ok-json';
+import { history, newJson, paste, scriptsPanel, download } from 'protocol-launcher/ok-json';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { newJsonParams } from '../../.vitepress/constants/ok-json';
 
@@ -30,7 +30,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## Notes
 
-OK JSON's official URL Schemes page documents five actions: `okjson://paste`, `okjson://new?content=...`, `okjson://history`, `okjson://scripts-panel`, and `okjson://script/...`. This module only exposes helpers for those documented actions.
+The official reference now lists seven actions, including download and curl. These read the clipboard; curl executes the command it contains.
 
 `newJson()` accepts a raw JSON string and serializes it as the official URL-encoded `content` query parameter. `runScript()` accepts the custom script file name without the `.js` extension, matching the official script URL format.
 
@@ -100,6 +100,31 @@ import { {{ currentMethod === 'On-Demand' ? 'runScript' : 'okJson' }} } from '{{
 const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}runScript({
   scriptFileNameWithoutJsExtension: 'copy-minified-json',
 })
+```
+
+
+### Download from Clipboard URL
+
+Read the URL from the clipboard, download its content, and open it as JSON.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'download' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}download()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="download()" target="_self">Download from Clipboard URL</VPLink>
+</div>
+
+### Run Clipboard cURL
+
+Execute the cURL command currently on the clipboard. Review that command before opening this URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'curl' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}curl()
 ```
 
 ## Generated URLs
