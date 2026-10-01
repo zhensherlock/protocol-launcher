@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, play, pause, subscribe } from 'protocol-launcher/pocket-casts';
+import { open, play, pause, subscribe, openFeed } from 'protocol-launcher/pocket-casts';
+import { openFeedParams } from '../../.vitepress/constants/pocket-casts';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { subscribeParams } from '../../.vitepress/constants/pocket-casts';
 
@@ -87,3 +88,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
     在 Pocket Casts 中关注
   </VPLink>
 </div>
+
+### 在 Web 播放器中打开 RSS
+
+通过 RSS 地址在 Pocket Casts Web 中打开播客。完整地址会进行百分号编码，包含查询参数。链接打开播客页面后，由用户点击 Follow 关注。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}openFeed({
+  feedUrl: 'https://example.com/feed.xml?format=rss'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openFeed(openFeedParams)" target="_self">
+    在 Web 播放器中打开 RSS
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://support.pocketcasts.com/knowledge-base/third-party-integration/)

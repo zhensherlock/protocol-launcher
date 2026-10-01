@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, play, pause, subscribe } from 'protocol-launcher/pocket-casts';
+import { open, play, pause, subscribe, openFeed } from 'protocol-launcher/pocket-casts';
+import { openFeedParams } from '../../.vitepress/constants/pocket-casts';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { subscribeParams } from '../../.vitepress/constants/pocket-casts';
 
@@ -87,3 +88,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
     Follow in Pocket Casts
   </VPLink>
 </div>
+
+### Open Feed in Web Player
+
+Open a podcast from its RSS feed URL in Pocket Casts Web. The complete feed URL is percent-encoded, including any query parameters. The link opens the podcast page; the user chooses Follow there.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}openFeed({
+  feedUrl: 'https://example.com/feed.xml?format=rss'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openFeed(openFeedParams)" target="_self">
+    Open Feed in Web Player
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://support.pocketcasts.com/knowledge-base/third-party-integration/)

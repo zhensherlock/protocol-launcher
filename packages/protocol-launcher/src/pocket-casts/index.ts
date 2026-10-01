@@ -1,4 +1,5 @@
 export { open } from './open'
+export { openFeed } from './open-feed'
 export { pause } from './pause'
 export { play } from './play'
 export type { Subscribe } from './subscribe'
