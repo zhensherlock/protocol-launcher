@@ -32,7 +32,7 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 Picsew 官方 x-callback-url 文档定义了三个动作：`/scroll`、`/vert` 和 `/hori`。此模块只暴露这些官方动作，对应为 `scroll()`、`vert()` 和 `hori()`。
 
-Payload 与官方记录的动作参数保持一致：`in`、`in=latest` 时需要的 `count`、`out`、`watermark`、`border`、`mockup2`、`clean_status`、`remove_scrollbar` 和 `delete_source`。Picsew 已将旧的 `mockup` 参数标记为不可用，因此这里不暴露它。
+Picsew 3.18.1 及以上新增 `mockupName`（`mockup-name`）和 `mockupBackgroundWidth`（`mockup-background-width`，0 至 100 的整数）。`mockup2` 仍作为兼容别名保留。Payload 还支持：`in`、`in=latest` 时需要的 `count`、`out`、`watermark`、`border`、`mockup2`、`clean_status`、`remove_scrollbar` 和 `delete_source`。旧的 `mockup` 参数仍会提示升级，不应在新链接中使用。
 
 ### 长截图拼接
 
@@ -45,7 +45,8 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
 ```
@@ -103,10 +104,11 @@ scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
-// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup2=iphone-14-blue&delete_source=yes'
+// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup-name=iphone-air-sky-blue&mockup-background-width=50&delete_source=yes'
 
 vert({
   in: 'latest',

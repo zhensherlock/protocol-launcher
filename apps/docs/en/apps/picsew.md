@@ -32,7 +32,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 Picsew's official x-callback-url documentation defines three actions: `/scroll`, `/vert`, and `/hori`. This module exposes only those documented actions as `scroll()`, `vert()`, and `hori()`.
 
-The payload mirrors the documented action parameters: `in`, `count` when `in=latest`, `out`, `watermark`, `border`, `mockup2`, `clean_status`, `remove_scrollbar`, and `delete_source`. The older `mockup` parameter is marked unavailable by Picsew, so it is not exposed.
+Picsew 3.18.1+ adds `mockupName` (`mockup-name`) and `mockupBackgroundWidth` (`mockup-background-width`, an integer from 0 to 100). `mockup2` remains a compatible alias. The payload also supports: `in`, `count` when `in=latest`, `out`, `watermark`, `border`, `mockup2`, `clean_status`, `remove_scrollbar`, and `delete_source`. The older `mockup` parameter still prompts an upgrade and should be avoided in new URLs.
 
 ### Scrollshot Stitching
 
@@ -45,7 +45,8 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
 ```
@@ -103,10 +104,11 @@ scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
-// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup2=iphone-14-blue&delete_source=yes'
+// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup-name=iphone-air-sky-blue&mockup-background-width=50&delete_source=yes'
 
 vert({
   in: 'latest',

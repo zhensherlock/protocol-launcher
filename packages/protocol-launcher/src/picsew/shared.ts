@@ -155,9 +155,13 @@ export type PicsewStitchPayload = PicsewInput & {
    */
   border?: PicsewBorder
   /**
-   * Add a device mockup. Picsew documents the values separately as "Mockup Parameters".
+   * Legacy alias for mockupName. Prefer mockupName for Picsew 3.18.1 and later.
    */
   mockup2?: string
+  /** Mockup file name (Picsew 3.18.1+). Preferred over the legacy mockup2 alias. */
+  mockupName?: string
+  /** Background width from 0 to 100, used with mockupName or mockup2 (Picsew 3.18.1+). */
+  mockupBackgroundWidth?: PicsewBorderWidth
   /**
    * Clear the status bar.
    */
@@ -175,7 +179,19 @@ export type PicsewStitchPayload = PicsewInput & {
 export type PicsewAction = 'scroll' | 'vert' | 'hori'
 
 export function picsewStitchUrl(action: PicsewAction, payload: PicsewStitchPayload) {
-  const { in: input, count, out, clean_status, mockup2, remove_scrollbar, delete_source, watermark, border } = payload
+  const {
+    in: input,
+    count,
+    out,
+    clean_status,
+    mockup2,
+    mockupName,
+    mockupBackgroundWidth,
+    remove_scrollbar,
+    delete_source,
+    watermark,
+    border,
+  } = payload
 
   return `picsew://x-callback-url/${action}${qs({
     in: input,
@@ -183,6 +199,8 @@ export function picsewStitchUrl(action: PicsewAction, payload: PicsewStitchPaylo
     out,
     clean_status,
     mockup2,
+    'mockup-name': mockupName,
+    'mockup-background-width': mockupBackgroundWidth,
     remove_scrollbar,
     delete_source,
     watermark,

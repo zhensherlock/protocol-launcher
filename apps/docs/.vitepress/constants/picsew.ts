@@ -2,7 +2,8 @@ export const scrollParams = {
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 } as const
 
