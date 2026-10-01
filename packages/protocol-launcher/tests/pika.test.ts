@@ -272,3 +272,25 @@ describe('pika', () => {
     })
   })
 })
+
+describe('current Pika URL triggers', () => {
+  test.each([
+    ['pickContrast', 'pika://pick/contrast'],
+    ['showCompliance', 'pika://compliance/show'],
+    ['hideCompliance', 'pika://compliance/hide'],
+    ['toggleCompliance', 'pika://compliance/toggle'],
+    ['showPreview', 'pika://preview/show'],
+    ['hidePreview', 'pika://preview/hide'],
+    ['togglePreview', 'pika://preview/toggle'],
+    ['splash', 'pika://window/splash'],
+  ] as const)('%s matches the documented trigger', (method, url) => {
+    expect(pika[method]()).toBe(url)
+  })
+
+  test('copy supports an optional output format without changing the current format by default', () => {
+    expect(pika.copyForeground({ type: 'oklch' })).toBe('pika://copy/foreground/oklch')
+    expect(pika.copyBackground({ type: 'rgb' })).toBe('pika://copy/background/rgb')
+    expect(pika.copyForeground({})).toBe('pika://copy/foreground')
+    expect(pika.copyBackground({})).toBe('pika://copy/background')
+  })
+})

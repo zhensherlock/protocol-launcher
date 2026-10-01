@@ -1,3 +1,8 @@
+type CopyColor = {
+  /** Optional output format: hex, rgb, hsb, hsl, lab, opengl, or oklch. */
+  type?: string
+}
+
 /**
  * Copy foreground color in Pika.
  *
@@ -5,10 +10,13 @@
  * @example
  * copyForeground()
  * // => 'pika://copy/foreground'
- * @link https://github.com/superhighfives/pika/blob/main/Pika/Views/HelpView.swift
+ * @example
+ * copyForeground({ type: 'oklch' })
+ * // => 'pika://copy/foreground/oklch'
+ * @link https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift
  */
-export function copyForeground() {
-  return 'pika://copy/foreground'
+export function copyForeground(payload: CopyColor = {}) {
+  return `pika://copy/foreground${payload.type ? `/${payload.type}` : ''}`
 }
 
 /**
@@ -18,10 +26,13 @@ export function copyForeground() {
  * @example
  * copyBackground()
  * // => 'pika://copy/background'
- * @link https://github.com/superhighfives/pika/blob/main/Pika/Views/HelpView.swift
+ * @example
+ * copyBackground({ type: 'oklch' })
+ * // => 'pika://copy/background/oklch'
+ * @link https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift
  */
-export function copyBackground() {
-  return 'pika://copy/background'
+export function copyBackground(payload: CopyColor = {}) {
+  return `pika://copy/background${payload.type ? `/${payload.type}` : ''}`
 }
 
 /**
@@ -31,7 +42,7 @@ export function copyBackground() {
  * @example
  * copyText()
  * // => 'pika://copy/text'
- * @link https://github.com/superhighfives/pika/blob/main/Pika/Views/HelpView.swift
+ * @link https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift
  */
 export function copyText() {
   return 'pika://copy/text'
@@ -44,7 +55,7 @@ export function copyText() {
  * @example
  * copyJson()
  * // => 'pika://copy/json'
- * @link https://github.com/superhighfives/pika/blob/main/Pika/Views/HelpView.swift
+ * @link https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift
  */
 export function copyJson() {
   return 'pika://copy/json'

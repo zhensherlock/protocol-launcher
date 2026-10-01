@@ -36,6 +36,14 @@ import {
   help,
   preferences,
   resize,
+  pickContrast,
+  showCompliance,
+  hideCompliance,
+  toggleCompliance,
+  showPreview,
+  hidePreview,
+  togglePreview,
+  splash,
 } from 'protocol-launcher/pika'
 import { SelectInstallationMethod } from '../../.vitepress/components'
 import {
@@ -66,6 +74,8 @@ const importPath = computed(() =>
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+`copyForeground` 和 `copyBackground` 支持可选的 `type`（hex、rgb、hsb、hsl、lab、opengl、oklch）；省略时保留当前输出格式。
 
 ## 操作（Actions）
 
@@ -515,3 +525,136 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
     在 Pika 中调整窗口大小
   </VPLink>
 </div>
+
+
+### 选择对比颜色
+
+选择对比颜色。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pickContrast' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}pickContrast()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="pickContrast()" target="_self">
+    选择对比颜色
+  </VPLink>
+</div>
+
+### 显示颜色合规信息
+
+显示颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showCompliance()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="showCompliance()" target="_self">
+    显示颜色合规信息
+  </VPLink>
+</div>
+
+### 隐藏颜色合规信息
+
+隐藏颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hideCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hideCompliance()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="hideCompliance()" target="_self">
+    隐藏颜色合规信息
+  </VPLink>
+</div>
+
+### 切换颜色合规信息
+
+切换颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}toggleCompliance()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="toggleCompliance()" target="_self">
+    切换颜色合规信息
+  </VPLink>
+</div>
+
+### 显示颜色预览
+
+显示颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showPreview()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="showPreview()" target="_self">
+    显示颜色预览
+  </VPLink>
+</div>
+
+### 隐藏颜色预览
+
+隐藏颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hidePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hidePreview()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="hidePreview()" target="_self">
+    隐藏颜色预览
+  </VPLink>
+</div>
+
+### 切换颜色预览
+
+切换颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'togglePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}togglePreview()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="togglePreview()" target="_self">
+    切换颜色预览
+  </VPLink>
+</div>
+
+### 打开启动窗口
+
+打开启动窗口。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'splash' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}splash()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="splash()" target="_self">
+    打开启动窗口
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift)

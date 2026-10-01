@@ -36,6 +36,14 @@ import {
   help,
   preferences,
   resize,
+  pickContrast,
+  showCompliance,
+  hideCompliance,
+  toggleCompliance,
+  showPreview,
+  hidePreview,
+  togglePreview,
+  splash,
 } from 'protocol-launcher/pika'
 import { SelectInstallationMethod } from '../../.vitepress/components'
 import {
@@ -66,6 +74,8 @@ There are two ways to use this library:
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+`copyForeground` and `copyBackground` accept an optional `type` (hex, rgb, hsb, hsl, lab, opengl, oklch). Omitting it keeps the current output format.
 
 ## Actions
 
@@ -515,3 +525,136 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
     Resize Window in Pika
   </VPLink>
 </div>
+
+
+### Pick a contrasting color
+
+Pick a contrasting color.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pickContrast' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}pickContrast()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="pickContrast()" target="_self">
+    Pick a contrasting color
+  </VPLink>
+</div>
+
+### Show compliance information
+
+Show compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showCompliance()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="showCompliance()" target="_self">
+    Show compliance information
+  </VPLink>
+</div>
+
+### Hide compliance information
+
+Hide compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hideCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hideCompliance()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="hideCompliance()" target="_self">
+    Hide compliance information
+  </VPLink>
+</div>
+
+### Toggle compliance information
+
+Toggle compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}toggleCompliance()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="toggleCompliance()" target="_self">
+    Toggle compliance information
+  </VPLink>
+</div>
+
+### Show the color preview
+
+Show the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showPreview()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="showPreview()" target="_self">
+    Show the color preview
+  </VPLink>
+</div>
+
+### Hide the color preview
+
+Hide the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hidePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hidePreview()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="hidePreview()" target="_self">
+    Hide the color preview
+  </VPLink>
+</div>
+
+### Toggle the color preview
+
+Toggle the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'togglePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}togglePreview()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="togglePreview()" target="_self">
+    Toggle the color preview
+  </VPLink>
+</div>
+
+### Open the splash window
+
+Open the splash window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'splash' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}splash()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="splash()" target="_self">
+    Open the splash window
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift)

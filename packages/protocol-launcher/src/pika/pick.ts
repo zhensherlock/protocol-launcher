@@ -18,14 +18,14 @@ type PickColor = {
  * @returns Pika pick foreground color URL.
  * @example
  * pickForeground()
- * // => 'pika://pick/foreground'
+ * // => 'pika://pick/foreground/hex'
  * @example
  * pickForeground({ type: 'hex' })
  * // => 'pika://pick/foreground/hex'
  * @example
  * pickForeground({ type: 'rgb' })
  * // => 'pika://pick/foreground/rgb'
- * @link https://github.com/superhighfives/pika/blob/main/Pika/Views/HelpView.swift
+ * @link https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpView.swift
  */
 export function pickForeground(payload: PickColor = {}) {
   const { type = 'hex' } = payload
@@ -39,14 +39,14 @@ export function pickForeground(payload: PickColor = {}) {
  * @returns Pika pick background color URL.
  * @example
  * pickBackground()
- * // => 'pika://pick/background'
+ * // => 'pika://pick/background/hex'
  * @example
  * pickBackground({ type: 'hex' })
  * // => 'pika://pick/background/hex'
  * @example
  * pickBackground({ type: 'rgb' })
  * // => 'pika://pick/background/rgb'
- * @link https://github.com/superhighfives/pika/blob/main/Pika/Views/HelpView.swift
+ * @link https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpView.swift
  */
 export function pickBackground(payload: PickColor = {}) {
   const { type = 'hex' } = payload
