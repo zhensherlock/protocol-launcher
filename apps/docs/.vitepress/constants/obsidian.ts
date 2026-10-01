@@ -32,3 +32,18 @@ export const settingsParams = {
   vault: 'My Vault',
   page: 'editor',
 }
+
+export const dailyNoteParams = {
+  'vault': 'My Vault',
+  'content': 'Daily notes',
+  'append': true
+} as const
+
+export const uniqueNoteParams = {
+  'vault': 'My Vault',
+  'content': 'Hello World'
+} as const
+
+export const hookGetAddressParams = {
+  'xSuccess': 'hook://x-callback-url/setCurrentNode'
+} as const

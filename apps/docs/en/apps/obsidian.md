@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openNote, newNote, search, insert, command, options, settings } from 'protocol-launcher/obsidian';
+import { open, openNote, newNote, search, insert, command, options, settings, dailyNote, uniqueNote, chooseVault, hookGetAddress } from 'protocol-launcher/obsidian';
+import { dailyNoteParams, uniqueNoteParams, hookGetAddressParams } from '../../.vitepress/constants/obsidian';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { openNoteParams, newNoteParams, searchParams, insertParams, commandParams, optionsParams, settingsParams } from '../../.vitepress/constants/obsidian';
 
@@ -29,6 +30,8 @@ There are two ways to use this library:
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
 <SelectInstallationMethod v-model="currentMethod" />
+
+`openNote` and `newNote` support `path` and `paneType` (`tab`, `split`, `window`; window is desktop-only). Obsidian gives `path` precedence over `vault` and `file`. `newNote` accepts `file`, `path`, `paneType`, `clipboard`, `silent`, `overwrite`, and `xSuccess`; use `silent: true` to create without opening. Existing plugin-related helpers remain available, but are outside the core URI documentation.
 
 ### Open Obsidian
 
@@ -176,3 +179,80 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
     Open Settings in Obsidian
   </VPLink>
 </div>
+
+### Daily Note
+
+Create or open the daily note. Requires the Daily notes core plugin. Supports the parameters of the new action.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dailyNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}dailyNote({
+  vault: 'My Vault',
+  content: 'Daily notes',
+  append: true
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="dailyNote(dailyNoteParams)" target="_self">
+    Daily Note
+  </VPLink>
+</div>
+
+### Unique Note
+
+Create a unique note with the Unique note creator core plugin enabled.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'uniqueNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}uniqueNote({
+  vault: 'My Vault',
+  content: 'Hello World'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="uniqueNote(uniqueNoteParams)" target="_self">
+    Unique Note
+  </VPLink>
+</div>
+
+### Vault Manager
+
+Open the vault manager.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chooseVault' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}chooseVault()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="chooseVault()" target="_self">
+    Vault Manager
+  </VPLink>
+</div>
+
+### Get Address for Hook
+
+Return the focused note address to Hook. Without callbacks, copy its Markdown link to the clipboard.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hookGetAddress' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}hookGetAddress({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="hookGetAddress(hookGetAddressParams)" target="_self">
+    Get Address for Hook
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://obsidian.md/help/uri)
