@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Add to-do command payload definition.
  */
-type Add = {
+type Add = Callbacks & {
   /**
    * The title of the to-do to add. Ignored if titles is specified.
    */
@@ -155,7 +157,8 @@ export function add(payload: Add = {}) {
     ...(reveal ? { reveal: 'true' } : {}),
     ...(creationDate ? { 'creation-date': creationDate } : {}),
     ...(completionDate ? { 'completion-date': completionDate } : {}),
+    ...callbackParams(payload),
   })
 
-  return `things:///add${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}add${params}`
 }

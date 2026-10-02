@@ -204,7 +204,7 @@ describe('things', () => {
       authToken: 'xxx',
       deadline: '',
     })
-    expect(url).toBe('things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx')
+    expect(url).toBe('things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&deadline=')
   })
 
   test('updateProject should return a URL with tags', async () => {
@@ -314,7 +314,7 @@ describe('things', () => {
       completionDate: '2024-12-31T23:59:59Z',
     })
     expect(url).toBe(
-      'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&title=Updated%20project&notes=New%20notes&prepend-notes=Prepend%20this&append-notes=Append%20this&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&area-id=area123&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
+      'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&title=Updated%20project&notes=New%20notes&prepend-notes=Prepend%20this&append-notes=Append%20this&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&area-id=area123&completed=false&canceled=false&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
     )
   })
 
@@ -540,7 +540,7 @@ describe('things', () => {
       authToken: 'xxx',
       deadline: '',
     })
-    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx')
+    expect(url).toBe('things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&deadline=')
   })
 
   test('update should return a URL with tags', async () => {
@@ -688,7 +688,7 @@ describe('things', () => {
       completionDate: '2024-12-31T23:59:59Z',
     })
     expect(url).toBe(
-      'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&title=Updated%20task&notes=New%20notes&prepend-notes=Prefix&append-notes=Suffix&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&checklist-items=Item%201%0AItem%202&prepend-checklist-items=First&append-checklist-items=Last&list-id=project123&heading-id=heading456&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
+      'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&title=Updated%20task&notes=New%20notes&prepend-notes=Prefix&append-notes=Suffix&when=today&deadline=2024-12-31&tags=work%2Curgent&add-tags=important&checklist-items=Item%201%0AItem%202&prepend-checklist-items=First&append-checklist-items=Last&list-id=project123&heading-id=heading456&completed=false&canceled=false&reveal=true&duplicate=true&creation-date=2024-01-01T00%3A00%3A00Z&completion-date=2024-12-31T23%3A59%3A59Z',
     )
   })
 
@@ -816,5 +816,102 @@ describe('things', () => {
     expect(url).toBe(
       'things:///json?data=%5B%7B%22type%22%3A%22project%22%2C%22attributes%22%3A%7B%22title%22%3A%22Project%22%2C%22notes%22%3A%22Project%20notes%22%2C%22when%22%3A%22today%22%2C%22tags%22%3A%5B%22work%22%2C%22urgent%22%5D%2C%22items%22%3A%5B%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Task%201%22%2C%22notes%22%3A%22Task%20notes%22%2C%22when%22%3A%22today%22%2C%22deadline%22%3A%222024-12-31%22%2C%22tags%22%3A%5B%22work%22%5D%2C%22completed%22%3Afalse%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Task%202%22%7D%7D%5D%7D%7D%2C%7B%22type%22%3A%22to-do%22%2C%22attributes%22%3A%7B%22title%22%3A%22Standalone%20task%22%7D%7D%5D',
     )
+  })
+
+  test('version uses plain and callback forms', () => {
+    expect(things.version()).toBe('things:///version')
+    expect(
+      things.version({
+        xSuccess: 'myapp://done?a=1&b=2',
+        xError: 'myapp://error',
+        xCancel: 'myapp://cancel',
+        xSource: 'My App',
+      }),
+    ).toBe(
+      'things://x-callback-url/version?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2&x-error=myapp%3A%2F%2Ferror&x-cancel=myapp%3A%2F%2Fcancel&x-source=My%20App',
+    )
+  })
+  test('update preserves empty fields and explicit false states', () => {
+    expect(
+      things.update({
+        id: 'TASK_ID',
+        authToken: 'TOKEN',
+        title: '',
+        notes: '',
+        deadline: '',
+        tags: '',
+        checklistItems: '',
+        completed: false,
+        canceled: false,
+      }),
+    ).toBe(
+      'things:///update?id=TASK_ID&auth-token=TOKEN&title=&notes=&deadline=&tags=&checklist-items=&completed=false&canceled=false',
+    )
+    expect(
+      things.updateProject({
+        id: 'PROJECT_ID',
+        authToken: 'TOKEN',
+        title: '',
+        notes: '',
+        deadline: '',
+        tags: '',
+        completed: false,
+        canceled: false,
+      }),
+    ).toBe(
+      'things:///update-project?id=PROJECT_ID&auth-token=TOKEN&title=&notes=&deadline=&tags=&completed=false&canceled=false',
+    )
+  })
+  test('update omissions leave state and fields unchanged', () => {
+    expect(things.update({ id: 'TASK_ID', authToken: 'TOKEN' })).toBe('things:///update?id=TASK_ID&auth-token=TOKEN')
+    expect(things.updateProject({ id: 'PROJECT_ID', authToken: 'TOKEN' })).toBe(
+      'things:///update-project?id=PROJECT_ID&auth-token=TOKEN',
+    )
+  })
+
+  test('search preserves nested callback URLs', () => {
+    expect(things.search({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/search?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('show preserves nested callback URLs', () => {
+    expect(things.show({ id: 'today', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/show?id=today&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('add preserves nested callback URLs', () => {
+    expect(things.add({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/add?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('addProject preserves nested callback URLs', () => {
+    expect(things.addProject({ title: 'T', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/add-project?title=T&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('update preserves nested callback URLs', () => {
+    expect(things.update({ id: 'ID', authToken: 'TOKEN', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/update?id=ID&auth-token=TOKEN&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('updateProject preserves nested callback URLs', () => {
+    expect(things.updateProject({ id: 'ID', authToken: 'TOKEN', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/update-project?id=ID&auth-token=TOKEN&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('json preserves nested callback URLs', () => {
+    expect(things.json({ data: [], xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'things://x-callback-url/json?data=%5B%5D&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+
+  test('callback route supports errors, cancellation and a source without success', () => {
+    expect(things.search({ xError: 'myapp://error' })).toBe(
+      'things://x-callback-url/search?x-error=myapp%3A%2F%2Ferror',
+    )
+    expect(things.search({ xCancel: 'myapp://cancel' })).toBe(
+      'things://x-callback-url/search?x-cancel=myapp%3A%2F%2Fcancel',
+    )
+    expect(things.search({ xSource: 'My App' })).toBe('things://x-callback-url/search?x-source=My%20App')
   })
 })

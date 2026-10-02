@@ -129,3 +129,7 @@ export const jsonWithAuthTokenParams = {
     },
   ],
 }
+
+export const versionParams = {
+  'xSuccess': 'myapp://versions'
+} as const

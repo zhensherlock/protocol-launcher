@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Update to-do command payload definition.
  */
-type Update = {
+type Update = Callbacks & {
   /**
    * The Things URL scheme authorization token.
    */
@@ -90,12 +92,12 @@ type Update = {
   heading?: string
 
   /**
-   * Complete a to-do or set a to-do to incomplete. Default: false.
+   * Complete a to-do or set a to-do to incomplete. Omit to leave the current state unchanged.
    */
   completed?: boolean
 
   /**
-   * Cancel a to-do or set a to-do to incomplete. Default: false. Takes priority over completed.
+   * Cancel a to-do or set a to-do to incomplete. Omit to leave the current state unchanged. Takes priority over completed.
    */
   canceled?: boolean
 
@@ -136,7 +138,7 @@ type Update = {
  * // => 'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&append-notes=Wholemeal%20bread'
  * @example
  * update({ id: 'SyJEz273ceSkabUbciM73A', authToken: 'xxx', deadline: '' })
- * // => 'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx'
+ * // => 'things:///update?id=SyJEz273ceSkabUbciM73A&auth-token=xxx&deadline='
  * @link https://culturedcode.com/things/support/articles/2803573/#update
  */
 export function update(payload: Update) {
@@ -158,8 +160,8 @@ export function update(payload: Update) {
     list,
     headingId,
     heading,
-    completed = false,
-    canceled = false,
+    completed,
+    canceled,
     reveal = false,
     duplicate = false,
     creationDate,
@@ -169,28 +171,29 @@ export function update(payload: Update) {
   const params = qs({
     id,
     'auth-token': authToken,
-    ...(title ? { title } : {}),
-    ...(notes ? { notes } : {}),
-    ...(prependNotes ? { 'prepend-notes': prependNotes } : {}),
-    ...(appendNotes ? { 'append-notes': appendNotes } : {}),
-    ...(when ? { when } : {}),
-    ...(deadline !== undefined && deadline !== '' ? { deadline } : {}),
-    ...(tags ? { tags } : {}),
-    ...(addTags ? { 'add-tags': addTags } : {}),
-    ...(checklistItems ? { 'checklist-items': checklistItems } : {}),
-    ...(prependChecklistItems ? { 'prepend-checklist-items': prependChecklistItems } : {}),
-    ...(appendChecklistItems ? { 'append-checklist-items': appendChecklistItems } : {}),
-    ...(listId ? { 'list-id': listId } : {}),
-    ...(list && !listId ? { list } : {}),
-    ...(headingId ? { 'heading-id': headingId } : {}),
-    ...(heading && !headingId ? { heading } : {}),
-    ...(completed ? { completed: 'true' } : {}),
-    ...(canceled ? { canceled: 'true' } : {}),
+    title,
+    notes,
+    'prepend-notes': prependNotes,
+    'append-notes': appendNotes,
+    when,
+    deadline,
+    tags,
+    'add-tags': addTags,
+    'checklist-items': checklistItems,
+    'prepend-checklist-items': prependChecklistItems,
+    'append-checklist-items': appendChecklistItems,
+    'list-id': listId,
+    ...(list !== undefined && listId === undefined ? { list } : {}),
+    'heading-id': headingId,
+    ...(heading !== undefined && headingId === undefined ? { heading } : {}),
+    completed,
+    canceled,
     ...(reveal ? { reveal: 'true' } : {}),
     ...(duplicate ? { duplicate: 'true' } : {}),
-    ...(creationDate ? { 'creation-date': creationDate } : {}),
-    ...(completionDate ? { 'completion-date': completionDate } : {}),
+    'creation-date': creationDate,
+    'completion-date': completionDate,
+    ...callbackParams(payload),
   })
 
-  return `things:///update${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}update${params}`
 }

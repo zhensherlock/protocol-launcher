@@ -1,4 +1,6 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * JSON item type definition.
@@ -30,7 +32,7 @@ type JsonItem = {
 /**
  * JSON command payload definition.
  */
-type Json = {
+type Json = Callbacks & {
   /**
    * The Things URL scheme authorization token. Required when JSON data contains update operations.
    */
@@ -67,7 +69,8 @@ export function json(payload: Json) {
     ...(authToken ? { 'auth-token': authToken } : {}),
     data: JSON.stringify(data),
     ...(reveal ? { reveal: 'true' } : {}),
+    ...callbackParams(payload),
   })
 
-  return `things:///json${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}json${params}`
 }

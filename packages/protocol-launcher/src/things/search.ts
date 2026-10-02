@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Search command payload definition.
  */
-type Search = {
+type Search = Callbacks & {
   /**
    * The search query.
    */
@@ -27,7 +29,8 @@ export function search(payload: Search = {}) {
   const { query } = payload
   const params = qs({
     ...(query ? { query } : {}),
+    ...callbackParams(payload),
   })
 
-  return `things:///search${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}search${params}`
 }

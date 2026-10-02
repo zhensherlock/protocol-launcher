@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Show command payload definition.
  */
-type Show = {
+type Show = Callbacks & {
   /**
    * The ID of an area, project, tag or to-do to show; or one of the built-in list IDs.
    * Takes precedence over query.
@@ -55,7 +57,8 @@ export function show(payload: ShowPayload = { id: 'today' }) {
     ...(id ? { id } : {}),
     ...(!id && query ? { query } : {}),
     ...(filter ? { filter } : {}),
+    ...callbackParams(payload),
   })
 
-  return `things:///show${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}show${params}`
 }

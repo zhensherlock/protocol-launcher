@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Add project command payload definition.
  */
-type AddProject = {
+type AddProject = Callbacks & {
   /**
    * The title of the project.
    */
@@ -117,7 +119,8 @@ export function addProject(payload: AddProject) {
     ...(reveal ? { reveal: 'true' } : {}),
     ...(creationDate ? { 'creation-date': creationDate } : {}),
     ...(completionDate ? { 'completion-date': completionDate } : {}),
+    ...callbackParams(payload),
   })
 
-  return `things:///add-project${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}add-project${params}`
 }

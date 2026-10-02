@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams, hasCallbacks } from './callbacks'
 
 /**
  * Update project command payload definition.
  */
-type UpdateProject = {
+type UpdateProject = Callbacks & {
   /**
    * The Things URL scheme authorization token.
    */
@@ -108,7 +110,7 @@ type UpdateProject = {
  * // => 'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&add-tags=Important'
  * @example
  * updateProject({ id: 'Jvj7EW1fLoScPhaw2JomCT', authToken: 'xxx', deadline: '' })
- * // => 'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx'
+ * // => 'things:///update-project?id=Jvj7EW1fLoScPhaw2JomCT&auth-token=xxx&deadline='
  * @link https://culturedcode.com/things/support/articles/2803573/#update-project
  */
 export function updateProject(payload: UpdateProject) {
@@ -125,8 +127,8 @@ export function updateProject(payload: UpdateProject) {
     addTags,
     areaId,
     area,
-    completed = false,
-    canceled = false,
+    completed,
+    canceled,
     reveal = false,
     duplicate = false,
     creationDate,
@@ -136,23 +138,24 @@ export function updateProject(payload: UpdateProject) {
   const params = qs({
     id,
     'auth-token': authToken,
-    ...(title ? { title } : {}),
-    ...(notes ? { notes } : {}),
-    ...(prependNotes ? { 'prepend-notes': prependNotes } : {}),
-    ...(appendNotes ? { 'append-notes': appendNotes } : {}),
-    ...(when ? { when } : {}),
-    ...(deadline !== undefined && deadline !== '' ? { deadline } : {}),
-    ...(tags ? { tags } : {}),
-    ...(addTags ? { 'add-tags': addTags } : {}),
-    ...(areaId ? { 'area-id': areaId } : {}),
-    ...(area && !areaId ? { area } : {}),
-    ...(completed ? { completed: 'true' } : {}),
-    ...(canceled ? { canceled: 'true' } : {}),
+    title,
+    notes,
+    'prepend-notes': prependNotes,
+    'append-notes': appendNotes,
+    when,
+    deadline,
+    tags,
+    'add-tags': addTags,
+    'area-id': areaId,
+    ...(area !== undefined && areaId === undefined ? { area } : {}),
+    completed,
+    canceled,
     ...(reveal ? { reveal: 'true' } : {}),
     ...(duplicate ? { duplicate: 'true' } : {}),
-    ...(creationDate ? { 'creation-date': creationDate } : {}),
-    ...(completionDate ? { 'completion-date': completionDate } : {}),
+    'creation-date': creationDate,
+    'completion-date': completionDate,
+    ...callbackParams(payload),
   })
 
-  return `things:///update-project${params}`
+  return `things://${hasCallbacks(payload) ? 'x-callback-url/' : '/'}update-project${params}`
 }
