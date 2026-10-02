@@ -1,4 +1,7 @@
+export { emailLicense } from './email-license'
+export { enterpriseLicense } from './enterprise-license'
 export { installConfig } from './install-config'
+export { installModule } from './install-module'
 export type { SurgeActionPayload, SurgeInstallConfigPayload } from './shared'
 export { start } from './start'
 export { stop } from './stop'

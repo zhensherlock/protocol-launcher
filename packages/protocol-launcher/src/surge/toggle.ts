@@ -13,7 +13,7 @@ import { surgeActionUrl } from './shared'
  * @example
  * toggle({ autoclose: true })
  * // => 'surge:///toggle?autoclose=true'
- * @link https://manual.nssurge.com/others/url-scheme.html
+ * @link https://manual.nssurge.com/tools/url-scheme.html
  */
 export function toggle(payload: SurgeActionPayload = {}) {
   return surgeActionUrl('toggle', payload)

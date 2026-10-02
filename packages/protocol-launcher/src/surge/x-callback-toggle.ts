@@ -7,7 +7,7 @@ import { surgeXCallbackUrl } from './shared'
  * @example
  * xCallbackToggle()
  * // => 'surge://x-callback-url/toggle'
- * @link https://manual.nssurge.com/others/url-scheme.html
+ * @link https://manual.nssurge.com/tools/url-scheme.html
  */
 export function xCallbackToggle() {
   return surgeXCallbackUrl('toggle')

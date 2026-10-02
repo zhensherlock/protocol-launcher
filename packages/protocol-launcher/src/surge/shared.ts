@@ -22,6 +22,8 @@ export type SurgeInstallConfigPayload = {
    * Remote configuration URL. The helper percent-encodes this value into the official `url` query parameter.
    */
   url: string
+  /** surgeconfig is a compatibility scheme on macOS 6.7.0+. */
+  scheme?: 'surge' | 'surgeconfig'
 }
 
 export function surgeActionUrl(action: SurgeAction, payload: SurgeActionPayload = {}) {

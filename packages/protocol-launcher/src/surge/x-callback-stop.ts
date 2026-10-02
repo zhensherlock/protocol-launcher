@@ -7,7 +7,7 @@ import { surgeXCallbackUrl } from './shared'
  * @example
  * xCallbackStop()
  * // => 'surge://x-callback-url/stop'
- * @link https://manual.nssurge.com/others/url-scheme.html
+ * @link https://manual.nssurge.com/tools/url-scheme.html
  */
 export function xCallbackStop() {
   return surgeXCallbackUrl('stop')

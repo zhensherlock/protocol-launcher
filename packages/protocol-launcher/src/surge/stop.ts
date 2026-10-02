@@ -13,7 +13,7 @@ import { surgeActionUrl } from './shared'
  * @example
  * stop({ autoclose: true })
  * // => 'surge:///stop?autoclose=true'
- * @link https://manual.nssurge.com/others/url-scheme.html
+ * @link https://manual.nssurge.com/tools/url-scheme.html
  */
 export function stop(payload: SurgeActionPayload = {}) {
   return surgeActionUrl('stop', payload)
