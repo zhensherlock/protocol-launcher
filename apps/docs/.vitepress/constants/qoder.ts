@@ -72,3 +72,8 @@ export const openSettingsParams = {
 export const openExtensionParams = {
   id: 'esbenp.prettier-vscode',
 }
+
+export const createCommandParams = {
+  'name': 'review',
+  'text': 'Review the changes'
+} as const

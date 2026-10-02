@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, createChat, createQuest, createRule, openExtension } from 'protocol-launcher/qoder';
+import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, createChat, createQuest, createRule, openExtension, createCommand } from 'protocol-launcher/qoder';
+import { createCommandParams } from '../../.vitepress/constants/qoder';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -42,6 +43,8 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 <SelectInstallationMethod v-model="currentMethod" />
 
+Chat modes are `agent`, `chat`, `ask` (an alias for chat), and `experts` (requires Experts enabled). Set `isNewChat: false` to prefill the current chat. Current Quest documentation lists `LocalAgent` and `LocalWorktree`; `RemoteAgent` is retained for compatibility.
+
 ### Open IDE
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'qoder' }} } from '{{ importPath }}'
@@ -60,7 +63,8 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'qoder' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createChat({
   text: 'Hello, Qoder!',
-  mode: 'agent',
+  mode: 'chat',
+  isNewChat: false,
   openInNewWindow: true,
 })
 ```
@@ -245,3 +249,28 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
     Open in Qoder
   </VPLink>
 </div>
+
+### Create Command
+
+Import a custom command after confirmation in Qoder. Names use lowercase letters, numbers, hyphens, and underscores. Optional description and scope (user or project) are supported.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes',
+  description: 'Review pull request',
+  scope: 'project'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createCommand(createCommandParams)" target="_self">
+    Create Command
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://docs.qoder.com/user-guide/deeplink)

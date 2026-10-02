@@ -8,7 +8,8 @@ type CreateQuest = {
   text: string
 
   /**
-   * Execution mode: LocalAgent, LocalWorktree, or RemoteAgent.
+   * Current execution modes: LocalAgent or LocalWorktree.
+   * RemoteAgent is retained for compatibility but is not listed in the current official documentation.
    *
    * Defaults to `LocalAgent`.
    */

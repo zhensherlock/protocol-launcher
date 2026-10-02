@@ -80,11 +80,11 @@ export type MCPServer = {
  *   args: ['-y', '@modelcontextprotocol/server-everything'],
  *   openInNewWindow: true,
  * })
- * // => 'qoder://aicoding.aicoding-deeplink/mcp/add?name=server-everything&config=%7B...%7D&windowId=_blank'
+ * // => 'qoder://aicoding.aicoding-deeplink/mcp/add?name=server-everything&config=JTdCJTIydHlwZSUyMiUzQSUyMnN0ZGlvJTIyJTJDJTIyY29tbWFuZCUyMiUzQSUyMm5weCUyMiUyQyUyMmFyZ3MlMjIlM0ElNUIlMjIteSUyMiUyQyUyMiU0MG1vZGVsY29udGV4dHByb3RvY29sJTJGc2VydmVyLWV2ZXJ5dGhpbmclMjIlNUQlN0Q%3D&windowId=_blank'
  */
 export function installMCP(payload: MCPServer, options?: EncodeOptions) {
   const { openInNewWindow = false, ...config } = payload
   const { name, ...mcpConfig } = config
   const encodedPayload = encodeUrlPayload(encodeURIComponent(JSON.stringify(mcpConfig)), options)
-  return `qoder://aicoding.aicoding-deeplink/mcp/add?name=${name}&config=${encodedPayload}${openInNewWindow ? '&windowId=_blank' : ''}`
+  return `qoder://aicoding.aicoding-deeplink/mcp/add?name=${encodeURIComponent(name)}&config=${encodedPayload}${openInNewWindow ? '&windowId=_blank' : ''}`
 }

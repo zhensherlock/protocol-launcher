@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Qoder chat definition.
  */
@@ -8,11 +10,14 @@ type CreateChat = {
   text: string
 
   /**
-   * Chat mode: agent or ask.
+   * Chat mode. Qoder treats ask as chat; experts requires Experts to be enabled.
    *
    * Defaults to `agent`.
    */
-  mode?: 'agent' | 'ask'
+  mode?: 'agent' | 'ask' | 'chat' | 'experts'
+
+  /** Whether to create a new chat. Defaults to true in Qoder. */
+  isNewChat?: boolean
 
   /**
    * Whether to open the chat in a new window.
@@ -32,9 +37,15 @@ type CreateChat = {
  *   text: 'Hello, Qoder!',
  *   mode: 'agent',
  * })
- * // => 'qoder://aicoding.aicoding-deeplink/chat?text=Hello%2C%20Qoder&mode=agent'
+ * // => 'qoder://aicoding.aicoding-deeplink/chat?text=Hello%2C%20Qoder!&mode=agent'
+ * @link https://docs.qoder.com/user-guide/deeplink
  */
 export function createChat(payload: CreateChat) {
-  const { text, mode = 'agent', openInNewWindow = false } = payload
-  return `qoder://aicoding.aicoding-deeplink/chat?text=${encodeURIComponent(text)}&mode=${mode}${openInNewWindow ? '&windowId=_blank' : ''}`
+  const { text, mode = 'agent', isNewChat, openInNewWindow = false } = payload
+  return `qoder://aicoding.aicoding-deeplink/chat${qs({
+    text,
+    mode,
+    isNewChat,
+    windowId: openInNewWindow ? '_blank' : undefined,
+  })}`
 }

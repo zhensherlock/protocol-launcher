@@ -1,6 +1,28 @@
 import { describe, expect, test } from 'vitest'
 import { qoder } from '../src'
 
+describe('command metadata', () => {
+  test('supports description and project scope', () => {
+    expect(
+      qoder.createCommand({ name: 'review_pr', text: 'Review', description: 'Review & explain', scope: 'project' }),
+    ).toBe(
+      'qoder://aicoding.aicoding-deeplink/command?name=review_pr&text=Review&description=Review%20%26%20explain&scope=project',
+    )
+  })
+
+  test('rejects a command name outside the documented character set', () => {
+    expect(() => qoder.createCommand({ name: 'Review PR', text: 'Review' })).toThrow(
+      'Command name can only contain lowercase letters, numbers, hyphens, and underscores.',
+    )
+  })
+
+  test('encodes an MCP server name without changing the config format', () => {
+    expect(qoder.installMCP({ name: 'A & 中文', type: 'stdio' })).toBe(
+      'qoder://aicoding.aicoding-deeplink/mcp/add?name=A%20%26%20%E4%B8%AD%E6%96%87&config=JTdCJTIydHlwZSUyMiUzQSUyMnN0ZGlvJTIyJTdE',
+    )
+  })
+})
+
 describe('qoder', () => {
   test('open should return a URL', async () => {
     const url = qoder.open()
@@ -156,5 +178,35 @@ describe('qoder', () => {
         text: 'test',
       }),
     ).toThrow('Rule name can only contain letters, numbers, underscores, and hyphens.')
+  })
+})
+
+describe('documented URL updates', () => {
+  test('createCommand uses the custom command endpoint', () => {
+    expect(qoder.createCommand({ name: 'review', text: 'Review & explain' })).toBe(
+      'qoder://aicoding.aicoding-deeplink/command?name=review&text=Review%20%26%20explain',
+    )
+  })
+
+  test('createChat supports the current chat mode in the existing chat', () => {
+    expect(qoder.createChat({ text: 'Hello', mode: 'chat', isNewChat: false })).toBe(
+      'qoder://aicoding.aicoding-deeplink/chat?text=Hello&mode=chat&isNewChat=false',
+    )
+  })
+
+  test('createChat supports Experts and explicit new chat', () => {
+    expect(qoder.createChat({ text: 'Hello', mode: 'experts', isNewChat: true, openInNewWindow: true })).toBe(
+      'qoder://aicoding.aicoding-deeplink/chat?text=Hello&mode=experts&isNewChat=true&windowId=_blank',
+    )
+  })
+
+  test('createChat retains its default agent mode', () => {
+    expect(qoder.createChat({ text: 'Hello' })).toBe('qoder://aicoding.aicoding-deeplink/chat?text=Hello&mode=agent')
+  })
+
+  test('createQuest retains RemoteAgent compatibility', () => {
+    expect(qoder.createQuest({ text: 'Hello', agentClass: 'RemoteAgent' })).toBe(
+      'qoder://aicoding.aicoding-deeplink/quest?text=Hello&agentClass=RemoteAgent',
+    )
   })
 })

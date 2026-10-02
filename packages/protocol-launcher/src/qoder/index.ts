@@ -1,4 +1,5 @@
 export { createChat } from './chat'
+export { createCommand } from './command'
 export { openExtension } from './extension'
 export { openFile } from './file'
 export { openFolder } from './folder'

@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject, createChat, createQuest, createRule, openExtension } from 'protocol-launcher/qoder';
+import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject, createChat, createQuest, createRule, openExtension, createCommand } from 'protocol-launcher/qoder';
+import { createCommandParams } from '../../.vitepress/constants/qoder';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -42,6 +43,8 @@ const importPath = computed(() => currentMethod.value === 'On-Demand' ? 'protoco
 
 <SelectInstallationMethod v-model="currentMethod" />
 
+聊天模式为 `agent`、`chat`、`ask`（chat 的别名）和 `experts`（需要启用 Experts）。设置 `isNewChat: false` 可填入当前聊天。当前 Quest 文档列出 `LocalAgent` 和 `LocalWorktree`；`RemoteAgent` 为兼容已有调用而保留。
+
 ### 打开编辑器
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'open' : 'qoder' }} } from '{{ importPath }}'
@@ -60,7 +63,8 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'qoder' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createChat({
   text: 'Hello, Qoder!',
-  mode: 'agent',
+  mode: 'chat',
+  isNewChat: false,
   openInNewWindow: true,
 })
 ```
@@ -245,3 +249,28 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
     在 Qoder 中打开
   </VPLink>
 </div>
+
+### 创建命令
+
+在 Qoder 中确认后导入自定义命令。名称只能包含小写字母、数字、连字符和下划线，支持可选的 description 和 scope（user 或 project）。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes',
+  description: 'Review pull request',
+  scope: 'project'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createCommand(createCommandParams)" target="_self">
+    创建命令
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://docs.qoder.com/user-guide/deeplink)
