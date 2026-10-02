@@ -8,6 +8,7 @@ export type CreateGroup = TimCreatePayload
 /**
  * Create a Tim group with optional title and notes.
  *
+ * @deprecated Tim recommends Shortcuts or AppleScript instead of create links.
  * @param payload Optional group fields.
  * @returns Tim create group URL.
  * @example

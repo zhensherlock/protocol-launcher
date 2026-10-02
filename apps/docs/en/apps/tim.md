@@ -5,7 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openTaskOrGroup } from 'protocol-launcher/tim';
+import { open, openTaskOrGroup, openSettings, openExport, openUpgrade } from 'protocol-launcher/tim';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { openTaskOrGroupParams } from '../../.vitepress/constants/tim';
 
@@ -30,9 +30,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## Notes
 
-Tim's official help page documents exactly these URL forms: `tim://`, `tim://[id]`, `tim://[id]?action=start&notes=My%20Notes`, `tim://?action=stop`, `tim://create?type=[task|group]&title=My%20Title&notes=My%20Notes`, and `tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com`.
-
-`createTask()` and `createGroup()` expose only the documented `task`/`group` type plus `title` and `notes`. The official page does not name any other query fields, so this module does not add them.
+The current official help includes app/window navigation, task/group/record IDs, timer control, deprecated create links, and getCurrentUrl callbacks. createRecord() requires a task ID and ISO 8601 start/end dates. All create helpers are deprecated upstream. Nested callback URLs are percent-encoded.
 
 ### Open Tim
 
@@ -115,6 +113,64 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}getCurrentUrl({
 })
 ```
 
+
+### Open Settings
+
+Open the settings window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openSettings()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openSettings()" target="_self">Open Settings</VPLink>
+</div>
+
+### Open Export
+
+Open the export window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExport' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openExport()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openExport()" target="_self">Open Export</VPLink>
+</div>
+
+### Open Upgrade
+
+Open the upgrade window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUpgrade' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openUpgrade()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openUpgrade()" target="_self">Open Upgrade</VPLink>
+</div>
+
+### Create Record (Deprecated)
+
+Create a time record for a task using ISO 8601 start/end dates. Tim marks create links as deprecated.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRecord' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createRecord({
+  'task': 'REPLACE_WITH_TASK_ID',
+  'start': '2026-10-02T01:00:00Z',
+  'end': '2026-10-02T02:00:00Z',
+  'notes': 'Code review'
+})
+```
+
 ## Generated URLs
 
 ```ts
@@ -150,7 +206,7 @@ createGroup({
 getCurrentUrl({
   xSuccess: 'https://www.apple.com',
 })
-// => 'tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com'
+// => 'tim://x-callback-url/getCurrentUrl?x-success=https%3A%2F%2Fwww.apple.com'
 ```
 
 ## Official Documentation

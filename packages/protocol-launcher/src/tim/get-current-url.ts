@@ -1,3 +1,5 @@
+import { qs } from '@protocol-launcher/shared'
+
 /**
  * Get current URL x-callback-url payload definition.
  */
@@ -15,11 +17,11 @@ export type GetCurrentUrl = {
  * @returns Tim getCurrentUrl x-callback-url.
  * @example
  * getCurrentUrl({ xSuccess: 'https://www.apple.com' })
- * // => 'tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com'
+ * // => 'tim://x-callback-url/getCurrentUrl?x-success=https%3A%2F%2Fwww.apple.com'
  * @link https://tim.neat.software/help
  */
 export function getCurrentUrl(payload: GetCurrentUrl) {
   const { xSuccess } = payload
 
-  return `tim://x-callback-url/getCurrentUrl?x-success=${xSuccess}`
+  return `tim://x-callback-url/getCurrentUrl${qs({ 'x-success': xSuccess })}`
 }

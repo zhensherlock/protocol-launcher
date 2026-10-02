@@ -8,6 +8,7 @@ export type CreateTask = TimCreatePayload
 /**
  * Create a Tim task with optional title and notes.
  *
+ * @deprecated Tim recommends Shortcuts or AppleScript instead of create links.
  * @param payload Optional task fields.
  * @returns Tim create task URL.
  * @example

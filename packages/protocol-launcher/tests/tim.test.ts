@@ -5,10 +5,14 @@ describe('tim', () => {
   test('should expose only Tim documented helpers', () => {
     expect(Object.keys(tim).sort()).toEqual([
       'createGroup',
+      'createRecord',
       'createTask',
       'getCurrentUrl',
       'open',
+      'openExport',
+      'openSettings',
       'openTaskOrGroup',
+      'openUpgrade',
       'startTask',
       'stopTimer',
     ])
@@ -80,6 +84,32 @@ describe('tim', () => {
       xSuccess: 'https://www.apple.com',
     })
 
-    expect(url).toBe('tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com')
+    expect(url).toBe('tim://x-callback-url/getCurrentUrl?x-success=https%3A%2F%2Fwww.apple.com')
+  })
+
+  test('open documented windows', () => {
+    expect(tim.openSettings()).toBe('tim://settings')
+    expect(tim.openExport()).toBe('tim://export')
+    expect(tim.openUpgrade()).toBe('tim://upgrade')
+  })
+  test('createRecord encodes ISO dates and notes and omits absent notes', () => {
+    expect(
+      tim.createRecord({
+        task: 'TASK_ID',
+        start: '2026-10-02T09:00:00+08:00',
+        end: '2026-10-02T10:00:00+08:00',
+        notes: 'Work & review',
+      }),
+    ).toBe(
+      'tim://create?type=record&task=TASK_ID&start=2026-10-02T09%3A00%3A00%2B08%3A00&end=2026-10-02T10%3A00%3A00%2B08%3A00&notes=Work%20%26%20review',
+    )
+    expect(tim.createRecord({ task: 'TASK_ID', start: '2026-10-02T01:00:00Z', end: '2026-10-02T02:00:00Z' })).toBe(
+      'tim://create?type=record&task=TASK_ID&start=2026-10-02T01%3A00%3A00Z&end=2026-10-02T02%3A00%3A00Z',
+    )
+  })
+  test('getCurrentUrl preserves a nested callback query', () => {
+    expect(tim.getCurrentUrl({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'tim://x-callback-url/getCurrentUrl?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
   })
 })
