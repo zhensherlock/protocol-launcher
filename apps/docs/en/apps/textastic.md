@@ -126,3 +126,17 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}reloadCustomiza
     Reload Customizations in Textastic
   </VPLink>
 </div>
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters. openFile() may ignore success callbacks after it opens the file, as documented by Textastic.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'textastic' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}newFile({
+  'name': 'example.txt',
+  'text': 'Hello Textastic',
+  'xSuccess': 'myapp://done?source=textastic'
+})
+```

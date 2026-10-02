@@ -176,4 +176,30 @@ describe('textastic', () => {
     const url = textastic.reloadCustomizations()
     expect(url).toBe('textastic://x-callback-url/reloadCustomizations')
   })
+
+  test('newFile preserves nested callback URLs', () => {
+    expect(textastic.newFile({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'textastic://x-callback-url/new?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('reloadCustomizations preserves nested callback URLs', () => {
+    expect(textastic.reloadCustomizations({ xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'textastic://x-callback-url/reloadCustomizations?x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('openFile preserves nested callback URLs', () => {
+    expect(textastic.openFile({ name: 'a.txt', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'textastic://x-callback-url/open?name=a.txt&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('append preserves nested callback URLs', () => {
+    expect(textastic.append({ name: 'a.txt', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'textastic://x-callback-url/append?name=a.txt&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
+  test('replace preserves nested callback URLs', () => {
+    expect(textastic.replace({ name: 'a.txt', xSuccess: 'myapp://done?a=1&b=2' })).toBe(
+      'textastic://x-callback-url/replace?name=a.txt&x-success=myapp%3A%2F%2Fdone%3Fa%3D1%26b%3D2',
+    )
+  })
 })

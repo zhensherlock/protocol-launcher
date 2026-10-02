@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * New file payload definition.
  */
-type New = {
+type New = Callbacks & {
   /**
    * Storage location.
    *
@@ -56,7 +58,7 @@ type New = {
  *   path: 'test',
  *   snippet: 'foo $0 bar',
  * })
- * // => 'textastic://x-callback-url/new?location=iCloud&name=foo.txt&path=test&snippet=foo%20%240%20bar'
+ * // => 'textastic://x-callback-url/new?location=iCloud&path=test&name=foo.txt&snippet=foo%20%240%20bar'
  * @link https://www.textasticapp.com/v10/manual/integration_other_apps/x-callback-url.html#new
  */
 export function newFile(payload: New = {}) {
@@ -68,6 +70,7 @@ export function newFile(payload: New = {}) {
     ...(externalUUID ? { externalUUID } : {}),
     ...(text ? { text } : {}),
     ...(snippet ? { snippet } : {}),
+    ...callbackParams(payload),
   })
 
   return `textastic://x-callback-url/new${params}`

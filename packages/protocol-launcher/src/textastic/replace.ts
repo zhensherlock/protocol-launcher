@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Replace payload definition.
  */
-type Replace = {
+type Replace = Callbacks & {
   /**
    * Storage location.
    *
@@ -67,6 +69,7 @@ export function replace(payload: Replace) {
     ...(externalUUID ? { externalUUID } : {}),
     ...(text ? { text } : {}),
     ...(snippet ? { snippet } : {}),
+    ...callbackParams(payload),
   })
 
   return `textastic://x-callback-url/replace${params}`

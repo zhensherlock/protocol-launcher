@@ -1,9 +1,11 @@
 import { qs } from '@protocol-launcher/shared'
+import type { Callbacks } from './callbacks'
+import { callbackParams } from './callbacks'
 
 /**
  * Open file payload definition.
  */
-type OpenFile = {
+type OpenFile = Callbacks & {
   /**
    * Storage location.
    *
@@ -59,6 +61,7 @@ export function openFile(payload: OpenFile) {
     name,
     ...(externalUUID ? { externalUUID } : {}),
     ...(suggestedExternalFolderPath ? { suggestedExternalFolderPath } : {}),
+    ...callbackParams(payload),
   })
 
   return `textastic://x-callback-url/open${params}`
