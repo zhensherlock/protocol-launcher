@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, openExtension } from 'protocol-launcher/vscode-insiders';
+import { open, openFile, openFolder, installMCP, cloneProject, openRemote, openSettings, openExtension, createAgentSession } from 'protocol-launcher/vscode-insiders';
+import { createAgentSessionParams } from '../../.vitepress/constants/vscode-insiders';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -196,3 +197,26 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openSettin
     Open in VSCode Insiders
   </VPLink>
 </div>
+
+### New Agent Session
+
+Open an agent session draft. Both prompt and workspace are optional. The workspace is a folder URI, and the prompt is prefilled without being submitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscodeInsiders' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createAgentSession(createAgentSessionParams(appStore.isWindows))" target="_self">
+    New Agent Session
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)

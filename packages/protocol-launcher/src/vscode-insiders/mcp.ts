@@ -78,7 +78,7 @@ export type MCPServer = {
  *   args: ['-y', '@modelcontextprotocol/server-everything'],
  *   openInNewWindow: true,
  * })
- * // => 'vscode-insiders:mcp/install?%7B...%7D&windowId=_blank'
+ * // => 'vscode-insiders:mcp/install?%7B%22name%22%3A%22server-everything%22%2C%22type%22%3A%22stdio%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22%40modelcontextprotocol%2Fserver-everything%22%5D%7D&windowId=_blank'
  */
 export function installMCP(payload: MCPServer) {
   const { openInNewWindow = false, ...config } = payload

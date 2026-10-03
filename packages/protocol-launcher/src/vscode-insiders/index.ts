@@ -1,3 +1,4 @@
+export { createAgentSession } from './agent'
 export { openExtension } from './extension'
 export { openFile } from './file'
 export { openFolder } from './folder'
