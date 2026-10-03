@@ -1,6 +1,30 @@
 import { describe, expect, test } from 'vitest'
 import { warp } from '../src'
 
+describe('settings deep links', () => {
+  test('opens the default settings page', () => {
+    expect(warp.openSettings()).toBe('warp://settings')
+  })
+
+  test('encodes settings search and widget IDs', () => {
+    expect(warp.openSettings({ q: 'font & size', widget: 'my widget' })).toBe(
+      'warp://settings?q=font%20%26%20size&widget=my%20widget',
+    )
+  })
+
+  test('supports gallery MCP installation on the MCP page', () => {
+    expect(warp.openSettings({ page: 'mcp', autoinstall: 'my server' })).toBe(
+      'warp://settings/mcp?autoinstall=my%20server',
+    )
+  })
+
+  test('prefills a team invitation in Warp Preview', () => {
+    expect(warp.openSettings({ page: 'teams', invite: 'dev+team@example.com', scheme: 'warppreview' })).toBe(
+      'warppreview://settings/teams?invite=dev%2Bteam%40example.com',
+    )
+  })
+})
+
 describe('warp', () => {
   test('newWindow should return the official new window URL', () => {
     const url = warp.newWindow({

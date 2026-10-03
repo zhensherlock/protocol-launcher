@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { launchConfiguration, newTab, newWindow, tabConfig } from 'protocol-launcher/warp';
+import { launchConfiguration, newTab, newWindow, tabConfig, openSettings } from 'protocol-launcher/warp';
+import { openSettingsParams } from '../../.vitepress/constants/warp';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   launchConfigurationParams,
@@ -112,3 +113,26 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}newTab({
 ```
 
 [Warp URI Scheme 官方文档](https://docs.warp.dev/terminal/more-features/uri-scheme)
+
+### 打开设置
+
+打开设置，可选传入 page、搜索词 q 或设置项 widget ID。autoinstall 用于 mcp 页面；invite 在 teams 页面预填邮箱。scheme 也支持 warppreview。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'warp' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}openSettings({
+  page: 'mcp',
+  autoinstall: 'my-server'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
+    打开设置
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://docs.warp.dev/terminal/more-features/uri-scheme#settings-deep-links)

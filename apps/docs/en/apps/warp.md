@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { launchConfiguration, newTab, newWindow, tabConfig } from 'protocol-launcher/warp';
+import { launchConfiguration, newTab, newWindow, tabConfig, openSettings } from 'protocol-launcher/warp';
+import { openSettingsParams } from '../../.vitepress/constants/warp';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   launchConfigurationParams,
@@ -112,3 +113,26 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}newTab({
 ```
 
 [Official Warp URI Scheme documentation](https://docs.warp.dev/terminal/more-features/uri-scheme)
+
+### Open Settings
+
+Open Settings with an optional page, q search string, or widget ID. autoinstall applies to the mcp page; invite prefills an email on the teams page. The scheme option also supports warppreview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'warp' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}openSettings({
+  page: 'mcp',
+  autoinstall: 'my-server'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openSettings(openSettingsParams)" target="_self">
+    Open Settings
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://docs.warp.dev/terminal/more-features/uri-scheme#settings-deep-links)

@@ -18,3 +18,8 @@ export const tabConfigNewWindowParams = {
   name: 'my_tab',
   newWindow: true,
 }
+
+export const openSettingsParams = {
+  'page': 'mcp',
+  'autoinstall': 'my-server'
+} as const

@@ -1,4 +1,5 @@
 export { launchConfiguration } from './launch-configuration'
 export { newTab } from './new-tab'
 export { newWindow } from './new-window'
+export { openSettings } from './open-settings'
 export { tabConfig } from './tab-config'
