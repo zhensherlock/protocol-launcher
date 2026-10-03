@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject, openExtension } from 'protocol-launcher/vscode';
+import { open, openFile, openFolder, installMCP, openRemote, openSettings, cloneProject, openExtension, createAgentSession } from 'protocol-launcher/vscode';
+import { createAgentSessionParams } from '../../.vitepress/constants/vscode';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -187,7 +188,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
@@ -196,3 +197,26 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
     在 VSCode 中打开
   </VPLink>
 </div>
+
+### 新建 Agent 会话
+
+打开 Agent 会话草稿。prompt 和 workspace 均为可选参数，workspace 为文件夹 URI。提示词会填入输入框，不会自动发送。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="createAgentSession(createAgentSessionParams(appStore.isWindows))" target="_self">
+    新建 Agent 会话
+  </VPLink>
+</div>
+
+## 官方文档
+
+- [URL scheme 官方说明](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)

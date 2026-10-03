@@ -19,7 +19,7 @@ type CloneProject = {
  * cloneProject({
  *   repo: 'https://github.com/zhensherlock/protocol-launcher',
  * })
- * // => 'vscode://vscode.git/clone?url=https://github.com/zhensherlock/protocol-launcher'
+ * // => 'vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fzhensherlock%2Fprotocol-launcher'
  */
 export function cloneProject(payload: CloneProject) {
   const { repo } = payload

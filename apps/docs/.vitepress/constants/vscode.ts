@@ -56,3 +56,8 @@ export const openSettingsParams = {
 export const openExtensionParams = {
   id: 'esbenp.prettier-vscode',
 }
+
+export const createAgentSessionParams = (isWindows: boolean) => ({
+  prompt: 'Explain this project',
+  workspace: isWindows ? 'file:///C:/Windows/System32/drivers/etc' : 'file:///etc',
+})

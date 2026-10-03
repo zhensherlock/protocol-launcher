@@ -116,3 +116,21 @@ describe('vscode', () => {
     expect(url).toBe('vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fzhensherlock%2Fprotocol-launcher')
   })
 })
+
+describe('documented URL updates', () => {
+  test('createAgentSession opens a new session', () => {
+    expect(vscode.createAgentSession()).toBe('vscode://agents/new')
+  })
+
+  test('createAgentSession encodes the prompt and workspace URI', () => {
+    expect(vscode.createAgentSession({ prompt: 'Review & explain', workspace: 'file:///home/user/My Project' })).toBe(
+      'vscode://agents/new?prompt=Review%20%26%20explain&workspace=file%3A%2F%2F%2Fhome%2Fuser%2FMy%20Project',
+    )
+  })
+
+  test('createAgentSession supports only a workspace', () => {
+    expect(vscode.createAgentSession({ workspace: 'vscode-remote://ssh-remote+server/project' })).toBe(
+      'vscode://agents/new?workspace=vscode-remote%3A%2F%2Fssh-remote%2Bserver%2Fproject',
+    )
+  })
+})
