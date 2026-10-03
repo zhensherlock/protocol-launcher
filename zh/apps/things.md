@@ -15,6 +15,8 @@ url: /protocol-launcher/zh/apps/things.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+对于 update()/updateProject()，空字符串用于清空字段，显式 completed: false 或 canceled: false 用于恢复未完成状态。省略这些值则保留相应字段当前状态。
+
 ### 打开 Things
 
 ```ts-vue [{{currentMethod}}]
@@ -41,22 +43,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}search({
 import { {{ currentMethod === 'On-Demand' ? 'show' : 'things' }} } from '{{ importPath }}'
 
 // 显示今日列表
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'today',
 })
 
 // 通过 ID 显示项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'GJJVZHE7SNu7xcVuH2xDDh',
 })
 
 // 通过查询显示
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
 })
 
 // 通过查询和筛选显示
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
   filter: 'errand',
 })
@@ -70,19 +72,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
 import { {{ currentMethod === 'On-Demand' ? 'addProject' : 'things' }} } from '{{ importPath }}'
 
 // 添加带开始日期的项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Build treehouse',
   when: 'today',
 })
 
 // 添加到区域
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Plan Birthday Party',
   area: 'Family',
 })
 
 // 添加带截止日期的项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Submit Tax',
   deadline: 'December 31',
   areaId: 'Lg8UqVPXo2SbJNiBpDBBQ',
@@ -97,21 +99,21 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
 import { {{ currentMethod === 'On-Demand' ? 'updateProject' : 'things' }} } from '{{ importPath }}'
 
 // 更新项目开始日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   when: 'tomorrow',
 })
 
 // 添加标签到项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   addTags: 'Important',
 })
 
 // 清除项目截止日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   deadline: '',
@@ -126,12 +128,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
 import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
 
 // 添加简单待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Book flights',
 })
 
 // 添加带备注和标签的待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Buy milk',
   notes: 'Low fat.',
   when: 'evening',
@@ -139,7 +141,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
 })
 
 // 添加多个待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   titles: 'Milk\nBeer\nCheese',
   list: 'Shopping',
 })
@@ -153,28 +155,28 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
 import { {{ currentMethod === 'On-Demand' ? 'update' : 'things' }} } from '{{ importPath }}'
 
 // 更新待办开始日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   when: 'today',
 })
 
 // 更新待办标题
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   title: 'Buy bread',
 })
 
 // 追加备注到待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   appendNotes: 'Wholemeal bread',
 })
 
 // 清除待办截止日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   deadline: '',
@@ -189,7 +191,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
 import { {{ currentMethod === 'On-Demand' ? 'json' : 'things' }} } from '{{ importPath }}'
 
 // 导入带待办的项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   data: [
     {
       type: 'project',
@@ -215,7 +217,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
 })
 
 // 带 auth-token 导入
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   authToken: 'xxx',
   data: [
     {
@@ -227,3 +229,32 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   ],
 })
 ```
+
+### 获取客户端和 Scheme 版本
+
+通过成功回调返回 x-things-scheme-version 和 x-things-client-version。version() 生成普通命令；传入回调选项后生成 x-callback-url 形式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'version' : 'things' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}version({
+  'xSuccess': 'myapp://versions'
+})
+```
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+  'title': 'Review changes',
+  'xSuccess': 'myapp://done?source=things'
+})
+```
+
+## 官方文档
+
+* [URL scheme](https://culturedcode.com/things/support/articles/2803573/)

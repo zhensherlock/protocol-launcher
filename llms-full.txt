@@ -868,6 +868,18 @@ import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '
 const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
 ```
 
+### Callbacks
+
+Pass xSuccess, xError as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection({
+  'xSuccess': 'myapp://done?source=agenda'
+})
+```
+
 ---
 
 ---
@@ -2191,7 +2203,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## URL Scheme
 
-Esri documents four Survey123 launch patterns: the web app share URL `https://survey123.arcgis.com/share/ID`, the field app app link `https://survey123.arcgis.app`, the field app custom scheme `arcgis-survey123://`, and the Survey123 Connect scheme `arcgis-survey123connect://`.
+Esri documents Survey123 Mobile (`arcgis-survey123-mobile://`, `https://survey123-mobile.arcgis.app`) and Studio (`arcgis-survey123-studio://`), alongside the existing launch patterns: the web app share URL `https://survey123.arcgis.com/share/ID`, the field app app link `https://survey123.arcgis.app`, the field app custom scheme `arcgis-survey123://`, and the Survey123 Connect scheme `arcgis-survey123connect://`.
 
 The field app accepts the documented URL parameters `center`, `field:<question name>`, `portalUrl`, `itemID`, `download`, `action`, `folder`, `callback`, `callback:<status>`, `filter`, `update`, and `q:<query parameter>`. The web app uses the survey item ID as the path segment and accepts the documented web app parameters `signIn`, `isOrgSignIn`, `center`, `field:<question name>`, `portalUrl`, `open`, `hide`, `locale`, `mode`, `globalId`, `recalculate`, `version`, `token`, `autoReload`, `autoRefresh`, `encodeUrlParams`, and `width`. Survey123 Connect accepts only `portalUrl` and `itemID`.
 
@@ -2279,12 +2291,58 @@ launchConnect({
 // => 'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19'
 ```
 
+### Launch Mobile
+
+Open Survey123 Mobile with its custom scheme. Supported parameters are itemID, portalUrl, fields, center, download, callback, and callbacks.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobile' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobile({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: {
+    surname: 'Klauser'
+  },
+  center: '37.8199,-122.4783,20'
+})
+```
+
+### Launch Mobile App Link
+
+Use the Survey123 Mobile app link on iOS or Android. It accepts the same payload as launchMobile.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobileLink' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobileLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
+### Launch Studio
+
+Open Survey123 Studio on Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchStudio' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchStudio({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
 ## Official Documentation
 
 * [Integrate with other apps](https://doc.arcgis.com/en/survey123/get-started/integratewithotherapps.htm)
+
 * [Launch the field app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchfieldapp.htm)
+
 * [Launch the web app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchwebapp.htm)
+
 * [Launch Survey123 Connect](https://doc.arcgis.com/en/survey123/get-started/integrate-launchconnect.htm)
+
+* [URL scheme documentation](https://doc.arcgis.com/en/survey123/get-started/integrate-launchmobile.htm)
 
 ---
 
@@ -2434,6 +2492,19 @@ import { {{ currentMethod === 'On-Demand' ? 'prepend' : 'oneWriter' }} } from '{
 const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
   path: 'Dropbox/Documents/Notes.txt',
   text: 'Hello world',
+})
+```
+
+### Callbacks
+
+Pass xSuccess, xError and xCancel as optional payload fields. Nested callback URLs are percent-encoded.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'content' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}content({
+  'path': 'Notes.txt',
+  'xSuccess': 'myapp://content'
 })
 ```
 
@@ -2742,6 +2813,63 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
   token: '123456-123456-123456',
 })
 ```
+
+### Open Workspace
+
+Open a workspace by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openWorkspace({
+  name: 'Work'
+})
+```
+
+### Close Workspace
+
+Close the active workspace.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'closeWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}closeWorkspace()
+```
+
+### Callbacks
+
+Pass xSuccess and xError as optional payload fields. Nested callback URLs are percent-encoded.
+
+openNote(), addText() and addFile() accept token; selected: true requires an API token generated on the target platform. iOS tokens cannot be reused on macOS, or vice versa.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  'selected': true,
+  'token': 'REPLACE_WITH_BEAR_API_TOKEN',
+  'xSuccess': 'myapp://note'
+})
+```
+
+### Add File
+
+Attach a base64-encoded file to a note identified by id or title. Bear must be unlocked, and encrypted notes cannot be accessed. file and filename are both required.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addFile({
+  'title': 'Protocol Launcher example',
+  'filename': 'example.txt',
+  'file': 'SGVsbG8K',
+  'mode': 'append'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://bear.app/faq/x-callback-url-scheme-documentation/)
 
 ---
 
@@ -4247,6 +4375,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalenda
 })
 ```
 
+### Switch Calendar Set
+
+Select an existing calendar set by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'switchCalendarSet' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}switchCalendarSet({
+  'set': 'work'
+})
+```
+
 ## Generated URLs
 
 ```ts
@@ -4280,6 +4420,10 @@ summarize()
 importCalendar({ url: 'https://example.com/calendar.ics' })
 // => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
+
+## Official Documentation
+
+* [URL scheme](https://calendar366.com/help/index.html)
 
 ---
 
@@ -4648,7 +4792,7 @@ url: /protocol-launcher/apps/cherry-studio.md
 
 # Cherry Studio
 
-[Cherry Studio](https://cherry-ai.com) is a powerful AI client that supports multiple models and providers. **Protocol Launcher** allows you to generate deep links to automatically configure MCP Servers and AI Providers in Cherry Studio.
+[Cherry Studio](https://cherry-ai.com) is a powerful AI client that supports multiple models and providers. **Protocol Launcher** allows you to generate deep links to prepare MCP server and AI provider imports, and open app pages in Cherry Studio.
 
 ## Usage
 
@@ -4658,6 +4802,8 @@ There are two ways to use this library:
 * Full Import from the root package is convenient but includes all app modules.
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Current MCP imports accept only `name`, `description`, `type`, `command`, `args`, `env`, `baseUrl`, and `headers`. `installMCP` omits older local metadata fields so that Cherry Studio’s strict import schema accepts the link. `type` may be omitted: command-based configurations default to stdio, and URL-based configurations default to sse. Importing MCP servers opens a review and confirmation flow.
 
 ### Install Multiple MCP Servers
 
@@ -4672,10 +4818,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       type: 'stdio',
       command: 'npx',
       args: ['-y', '@modelcontextprotocol/server-everything'],
-      registryUrl: 'https://registry.npmmirror.com',
-      provider: 'Anthropic',
-      providerUrl: 'https://modelcontextprotocol.io/',
-      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
     },
     'qcc-company-stream': {
       name: '企查查企业信息 MCP',
@@ -4686,11 +4828,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-basic', '企业信息'],
-      timeout: 30,
     },
     'qcc-risk-stream': {
       name: '企查查风险信息 MCP',
@@ -4701,11 +4838,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-risk', '风险信息'],
-      timeout: 30,
     },
   },
 })
@@ -4722,10 +4854,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'stdio',
   command: 'npx',
   args: ['-y', '@modelcontextprotocol/server-everything'],
-  registryUrl: 'https://registry.npmmirror.com',
-  provider: 'Anthropic',
-  providerUrl: 'https://modelcontextprotocol.io/',
-  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
 })
 ```
 
@@ -4743,11 +4871,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-basic', '企业信息'],
-  timeout: 30,
 })
 ```
 
@@ -4765,11 +4888,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-risk', '风险信息'],
-  timeout: 30,
 })
 ```
 
@@ -4784,6 +4902,26 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+### Navigate to a Page
+
+Open an allowed route in the main window. Prefixes include settings, app, agents, knowledge, paintings, translate, files, notes, apps, code, and launchpad. Internal protocolInstall and protocolInstallRequestId query parameters are rejected by Cherry Studio.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}navigate({
+  'path': '/settings/provider'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/ProtocolService.ts)
+
+* [MCP import schema](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpProtocolInstall.ts)
+
+* [Provider import](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/providersImport.ts)
 
 ---
 
@@ -5990,6 +6128,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}search({
 })
 ```
 
+### Callbacks
+
+Pass xSuccess, xCancel as optional payload fields. Callback URLs are encoded, including nested query parameters. Callbacks apply to addLink().
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addLink' : 'cubox' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addLink({
+  'url': 'https://example.com/article',
+  'xSuccess': 'myapp://done?source=cubox'
+})
+```
+
 ---
 
 ---
@@ -6125,6 +6276,36 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: 'Hello, Cursor!' })
 ```
+
+### Create Command
+
+Prepare a custom command for the user to review in Cursor. Names may contain letters, numbers, dots, hyphens, and underscores.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes'
+})
+```
+
+### Create Rule
+
+Prepare a rule for the user to review. Cursor limits encoded deeplinks to 10,000 characters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRule' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createRule({
+  name: 'strict-types',
+  text: 'Always use strict TypeScript types'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://cursor.com/docs/reference/deeplinks)
 
 ---
 
@@ -6412,6 +6593,59 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
 })
 ```
 
+### Show Task
+
+Open a task by UID. This action is supported only on macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showTask({
+  uid: 'REPLACE_WITH_TASK_UID'
+})
+```
+
+### Complete Tasks
+
+Complete tasks on macOS. Pass a comma-separated string or a nonempty array of UIDs.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'completeTasks' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}completeTasks({
+  uids: [
+    'TASK_UID_1',
+    'TASK_UID_2'
+  ]
+})
+```
+
+### Launch through x-callback-url
+
+Launch 2Do with optional callback parameters. open() continues to generate the bare app URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch()
+```
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters. The generated action query keys follow the lowercase official reference; TypeScript payload names remain camelCase.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch({
+  'xSuccess': 'myapp://done?source=2do'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://www.2doapp.com/docs/macos/url-schemes/)
+
 ---
 
 ---
@@ -6430,6 +6664,8 @@ There are two ways to use this library:
 * Full Import from the root package is convenient but includes all app modules.
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Windows supports calendar, timeline, media, settings, templates, redeem, and blank new-entry links. It ignores entry text, tags, journal, and prompt parameters, and does not support view/edit by entry ID. Use `openTimeline({ platform: 'windows' })` on Windows; the default keeps `dayone://entries` for other platforms.
 
 ### Open App
 
@@ -6539,6 +6775,92 @@ import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
+
+### Recent Prompts
+
+Open recent prompts on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecentPrompts' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRecentPrompts()
+```
+
+### Open Tag
+
+Apply a tag filter on iOS or macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTags' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTags({
+  name: 'work'
+})
+```
+
+### Book Printing
+
+Open book printing on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openBook' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openBook()
+```
+
+### Templates
+
+Open templates on iOS or Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTemplates' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTemplates()
+```
+
+### Redeem Code
+
+Open code redemption on iOS or Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRedeem' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRedeem()
+```
+
+### Encryption Key
+
+Open the encryption key view on iOS or macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEncryptionKey' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openEncryptionKey()
+```
+
+### Siri Shortcuts
+
+Open Siri Shortcuts settings on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSiri' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSiri()
+```
+
+### Media
+
+Open the media view on Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMedia' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openMedia()
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://dayoneapp.com/guides/tips-and-tutorials/day-one-url-scheme/)
 
 ---
 
@@ -7396,6 +7718,48 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}scanDocument({
 })
 ```
 
+### Chat Console
+
+Open the Chat Console with an optional prompt and mode: onDevice, pcc, claudeSonnet, or claudeOpus.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chat' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}chat({
+  mode: 'claudeSonnet',
+  prompt: 'Summarize this draft'
+})
+```
+
+### Speak
+
+Speak the supplied text. The text parameter is optional; the official reference does not specify the behavior when it is omitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'speak' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}speak({
+  text: 'Hello, Drafts!'
+})
+```
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel as optional payload fields. Callback URLs are encoded, including nested query parameters. Drafts makes the x-callback-url host optional. Existing URLs keep their original form; the app decides which callbacks apply to each action. The documented loadActionBarGroup command is retained; loadKeyboardActionGroup appears only in a legacy example.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'drafts' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}create({
+  'text': 'Hello Drafts',
+  'xSuccess': 'myapp://done?source=drafts'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://docs.getdrafts.com/docs/automation/urlschemes)
+
 ---
 
 ---
@@ -7920,6 +8284,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
 })
 ```
 
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  'date': 'today',
+  'xSuccess': 'myapp://done?source=fantastical'
+})
+```
+
 ---
 
 ---
@@ -8409,6 +8786,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+The current macOS URL handler supports new, open and find. openNote() accepts txt to append content (or create the note if absent); tag takes precedence over title. findNotes() accepts an optional id to open a title/name, falling back to search. Query values and search path components are encoded.
+
 ### Open FSNotes
 
 ```ts-vue [{{currentMethod}}]
@@ -8450,6 +8829,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}createNote({
 })
 ```
 
+### Create with the Native Scheme
+
+Use the native fsnotes://new/ route. Plain text (txt) takes precedence over html, folder selects the destination, and open: true opens a new window. The existing createNote() helper retains the compatible nv://make/ route and supports txt/open.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newNote' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}newNote({
+  'title': 'Meeting',
+  'txt': '# Agenda',
+  'folder': 'Work',
+  'open': true
+})
+```
+
+## Official Documentation
+
+* [URL scheme](https://github.com/glushchenko/fsnotes/blob/v7.3.4/FSNotes/AppDelegate%2BURLRoutes.swift)
+
 ---
 
 ---
@@ -8487,6 +8885,31 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
   heading: 60,
   pitch: 7,
   title: 'Apple Store Opéra',
+})
+```
+
+### Copy Panorama with a Callback
+
+region selects the map center and span; scheme may be streets or ftstreets. Streets 3.5+ supports action: clipboard. The app only invokes xSuccess with action, and xError with both action and xSuccess. Supplied callback parameters are preserved in the generated URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
+  'location': {
+    'lat': 48.872112,
+    'lng': 2.332977
+  },
+  'region': {
+    'lat': 48.872112,
+    'lng': 2.332977,
+    'latSpan': 0.01,
+    'lngSpan': 0.01
+  },
+  'action': 'clipboard',
+  'xSuccess': 'myapp://panorama',
+  'xError': 'myapp://error',
+  'scheme': 'streets'
 })
 ```
 
@@ -8882,6 +9305,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
   title: 'Override The Title',
   labels: 'Pasted Items,New Items',
   note: 'Some Notes',
+})
+```
+
+### Callbacks
+
+Pass xSuccess, xError as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  'text': 'Hello Gladys',
+  'xSuccess': 'myapp://done?source=gladys'
 })
 ```
 
@@ -10659,6 +11095,8 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 Infuse x-callback URLs use `infuse://x-callback-url/<action>`. Firecore documents `play` and `save` actions with repeated `url` entries, optional `filename` and `sub` entries, and optional `x-success` / `x-error` callbacks. These helpers use `xSuccess` and `xError` option names and serialize them to the official query keys. Library links use `infuse://movie/...` and `infuse://series/...` with TMDB ID numbers.
 
+Infuse 8.4.7+ supports `position` in integer seconds. Arrays associate each position with the URL at the same index. Library functions accept `play: true` to append the bare `?play` flag and start playback.
+
 ### Play
 
 Play one or more videos as a temporary playlist.
@@ -10671,6 +11109,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}play({
     'https://files.firecore.com/infuse/sample-5s-360p.mp4',
     'https://files.firecore.com/infuse/mov_bbb.mp4',
   ],
+  position: [0, 6],
   filename: ['Inception-2010.mp4', 'Mad-Men-S01-E01.mp4'],
   sub: [
     'https://files.firecore.com/infuse/example.srt',
@@ -10713,6 +11152,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openMovie' : 'infuse' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openMovie({
   tmdbId: 12345,
+  play: true,
 })
 ```
 
@@ -10725,6 +11165,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeries' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeries({
   tmdbId: 12345,
+  play: true,
 })
 ```
 
@@ -10737,6 +11178,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeason' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeason({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
 })
 ```
@@ -10750,6 +11192,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openEpisode' : 'infuse' }} } from '
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openEpisode({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
   episodeNumber: 2,
 })
@@ -11515,7 +11958,7 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
-Joplin external links use `joplin://x-callback-url/<action>` with an `id` query parameter. The official documentation lists `openNote`, `openFolder`, and `openTag`.
+Joplin external links use `joplin://x-callback-url/<action>` with an `id` query parameter. The official documentation lists `openNote`, `openFolder`, and `openTag`, plus the desktop callback commands below. Callback URLs must use a known application scheme or the `x-callback-url` host; Joplin rejects HTTP and HTTPS callbacks.
 
 ### Open Note
 
@@ -11550,6 +11993,33 @@ import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'joplin' }} } from '{{ i
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}openTag({
   id: 'REPLACE_WITH_TAG_ID',
+})
+```
+
+### Get Current Note
+
+Desktop only. Return the selected note to the calling app through an x-callback-url.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}getCurrentNote({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+### Create Note
+
+Desktop only. Create a note in the current notebook and return its title and URL through the callback.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}createNote({
+  title: 'Meeting notes',
+  body: '# Agenda',
+  xSuccess: 'hook://x-callback-url/setCurrentNode',
+  xError: 'hook://x-callback-url/error'
 })
 ```
 
@@ -13271,7 +13741,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
 import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
-  func: 'startArea',
+  func: 'start_area',
 })
 ```
 
@@ -13304,6 +13774,42 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}pref({
   page: 'shortcuts',
 })
 ```
+
+### Return Capture Results
+
+snip, record and ocr accept xSuccess, xError and xSource. Supplying callback options (or xCallback: true) selects x-callback-url and clipboard results: data for snip, filepath for record, string for ocr. The official area-recording examples use start\_area for the plain route and startArea for the callback route. Supply the corresponding func value; it is preserved as provided. errorMessage is returned by Longshot, rather than supplied in the request.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'snip' : 'longshot' }} } from '{{ importPath }}'
+
+const snipUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
+  'func': 'start',
+  'xSuccess': 'myapp://snipped'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
+
+const recordUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
+  'func': 'startArea',
+  'xSuccess': 'myapp://recorded',
+  'xError': 'myapp://error'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'ocr' : 'longshot' }} } from '{{ importPath }}'
+
+const ocrUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}ocr({
+  'func': 'start',
+  'xSuccess': 'myapp://recognized'
+})
+```
+
+## Official Documentation
+
+* [URL scheme](https://longshot.chitaner.com/blog/urlschemeapi/)
 
 ---
 
@@ -14059,6 +14565,19 @@ import { {{ currentMethod === 'On-Demand' ? 'addReminder' : 'mical' }} } from '{
 const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}addReminder({
   title: 'Buy groceries',
   notes: 'Milk, eggs, bread',
+})
+```
+
+### Callbacks
+
+Pass xSuccess as optional payload fields. Callback URLs are encoded, including nested query parameters. The current FAQ documents callbacks for event creation.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'mical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}add({
+  'input': 'Lunch tomorrow at 12',
+  'xSuccess': 'myapp://done?source=mical'
 })
 ```
 
@@ -15177,6 +15696,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
 })
 ```
 
+### Callbacks
+
+Pass xSuccess, xError, xCancel as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  'name': 'Lunch',
+  'board': 'Work',
+  'xSuccess': 'myapp://done?source=multi-timer'
+})
+```
+
 ---
 
 ---
@@ -15934,6 +16467,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+`openNote` and `newNote` support `path` and `paneType` (`tab`, `split`, `window`; window is desktop-only). Obsidian gives `path` precedence over `vault` and `file`. `newNote` accepts `file`, `path`, `paneType`, `clipboard`, `silent`, `overwrite`, and `xSuccess`; use `silent: true` to create without opening. Existing plugin-related helpers remain available, but are outside the core URI documentation.
+
 ### Open Obsidian
 
 ```ts-vue [{{currentMethod}}]
@@ -16033,6 +16568,59 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
 })
 ```
 
+### Daily Note
+
+Create or open the daily note. Requires the Daily notes core plugin. Supports the parameters of the new action.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dailyNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}dailyNote({
+  vault: 'My Vault',
+  content: 'Daily notes',
+  append: true
+})
+```
+
+### Unique Note
+
+Create a unique note with the Unique note creator core plugin enabled.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'uniqueNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}uniqueNote({
+  vault: 'My Vault',
+  content: 'Hello World'
+})
+```
+
+### Vault Manager
+
+Open the vault manager.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chooseVault' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}chooseVault()
+```
+
+### Get Address for Hook
+
+Return the focused note address to Hook. Without callbacks, copy its Markdown link to the clipboard.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hookGetAddress' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}hookGetAddress({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://obsidian.md/help/uri)
+
 ---
 
 ---
@@ -16054,7 +16642,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## Notes
 
-OK JSON's official URL Schemes page documents five actions: `okjson://paste`, `okjson://new?content=...`, `okjson://history`, `okjson://scripts-panel`, and `okjson://script/...`. This module only exposes helpers for those documented actions.
+The official reference now lists seven actions, including download and curl. These read the clipboard; curl executes the command it contains.
 
 `newJson()` accepts a raw JSON string and serializes it as the official URL-encoded `content` query parameter. `runScript()` accepts the custom script file name without the `.js` extension, matching the official script URL format.
 
@@ -16100,6 +16688,26 @@ import { {{ currentMethod === 'On-Demand' ? 'runScript' : 'okJson' }} } from '{{
 const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}runScript({
   scriptFileNameWithoutJsExtension: 'copy-minified-json',
 })
+```
+
+### Download from Clipboard URL
+
+Read the URL from the clipboard, download its content, and open it as JSON.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'download' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}download()
+```
+
+### Run Clipboard cURL
+
+Execute the cURL command currently on the clipboard. Review that command before opening this URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'curl' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}curl()
 ```
 
 ## Generated URLs
@@ -17621,6 +18229,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+`copyForeground` and `copyBackground` accept an optional `type` (hex, rgb, hsb, hsl, lab, opengl, oklch). Omitting it keeps the current output format.
+
 ## Actions
 
 ### Swap
@@ -17890,6 +18500,90 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
 })
 ```
 
+### Pick a contrasting color
+
+Pick a contrasting color.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pickContrast' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}pickContrast()
+```
+
+### Show compliance information
+
+Show compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showCompliance()
+```
+
+### Hide compliance information
+
+Hide compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hideCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hideCompliance()
+```
+
+### Toggle compliance information
+
+Toggle compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}toggleCompliance()
+```
+
+### Show the color preview
+
+Show the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showPreview()
+```
+
+### Hide the color preview
+
+Hide the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hidePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hidePreview()
+```
+
+### Toggle the color preview
+
+Toggle the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'togglePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}togglePreview()
+```
+
+### Open the splash window
+
+Open the splash window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'splash' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}splash()
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift)
+
 ---
 
 ---
@@ -17913,7 +18607,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 Picsew's official x-callback-url documentation defines three actions: `/scroll`, `/vert`, and `/hori`. This module exposes only those documented actions as `scroll()`, `vert()`, and `hori()`.
 
-The payload mirrors the documented action parameters: `in`, `count` when `in=latest`, `out`, `watermark`, `border`, `mockup2`, `clean_status`, `remove_scrollbar`, and `delete_source`. The older `mockup` parameter is marked unavailable by Picsew, so it is not exposed.
+Picsew 3.18.1+ adds `mockupName` (`mockup-name`) and `mockupBackgroundWidth` (`mockup-background-width`, an integer from 0 to 100). `mockup2` remains a compatible alias. The payload also supports: `in`, `count` when `in=latest`, `out`, `watermark`, `border`, `mockup2`, `clean_status`, `remove_scrollbar`, and `delete_source`. The older `mockup` parameter still prompts an upgrade and should be avoided in new URLs.
 
 ### Scrollshot Stitching
 
@@ -17926,7 +18620,8 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
 ```
@@ -17966,10 +18661,11 @@ scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
-// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup2=iphone-14-blue&delete_source=yes'
+// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup-name=iphone-air-sky-blue&mockup-background-width=50&delete_source=yes'
 
 vert({
   in: 'latest',
@@ -18247,6 +18943,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
   feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
+
+### Open Feed in Web Player
+
+Open a podcast from its RSS feed URL in Pocket Casts Web. The complete feed URL is percent-encoded, including any query parameters. The link opens the podcast page; the user chooses Follow there.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}openFeed({
+  feedUrl: 'https://example.com/feed.xml?format=rss'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://support.pocketcasts.com/knowledge-base/third-party-integration/)
 
 ---
 
@@ -19000,6 +19712,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+Chat modes are `agent`, `chat`, `ask` (an alias for chat), and `experts` (requires Experts enabled). Set `isNewChat: false` to prefill the current chat. Current Quest documentation lists `LocalAgent` and `LocalWorktree`; `RemoteAgent` is retained for compatibility.
+
 ### Open IDE
 
 ```ts-vue [{{currentMethod}}]
@@ -19015,7 +19729,8 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'qoder' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createChat({
   text: 'Hello, Qoder!',
-  mode: 'agent',
+  mode: 'chat',
+  isNewChat: false,
   openInNewWindow: true,
 })
 ```
@@ -19150,6 +19865,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### Create Command
+
+Import a custom command after confirmation in Qoder. Names use lowercase letters, numbers, hyphens, and underscores. Optional description and scope (user or project) are supported.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes',
+  description: 'Review pull request',
+  scope: 'project'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://docs.qoder.com/user-guide/deeplink)
 
 ---
 
@@ -21774,11 +22508,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## Notes
 
-Surge's official manual documents four iOS URL scheme actions: `surge:///start`, `surge:///stop`, `surge:///toggle`, and `surge:///install-config?url=x`. The `url` value for `install-config` must be percent-encoded, so `installConfig()` accepts the raw configuration URL and serializes it as the official `url` query parameter.
-
-The only documented option is `autoclose=true`, which can be used with `start`, `stop`, and `toggle`, but cannot be used with `install-config`.
-
-Surge also documents x-callback-url support from v3.4 with the `surge` scheme and only the `start`, `stop`, and `toggle` actions. This module therefore exposes only those three x-callback action URLs and does not add callback query parameters that are not listed on the Surge page.
+start/stop/toggle are iOS-only. Configuration/module installation and license activation use surge on iOS and macOS; surgeconfig is a macOS compatibility scheme (Mac 6.7.0+). autoclose is iOS-only and cannot be used with install-config. On iOS, license activation requires no active non-trial license; on macOS, the activation window must already be open. The current reference lists callbacks for start/stop/toggle.
 
 ### Start
 
@@ -21850,6 +22580,45 @@ import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'surge' }} } fro
 const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackToggle()
 ```
 
+### Install Module
+
+Install a module from its URL. The URL is percent-encoded; scheme also accepts surgeconfig for macOS compatibility.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installModule' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}installModule({
+  'url': 'https://example.com/example.sgmodule'
+})
+```
+
+### Email License Activation
+
+Prefill the email-license activation flow.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'emailLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}emailLicense({
+  'email': 'name@example.com',
+  'key': 'REPLACE_WITH_LICENSE_KEY'
+})
+```
+
+### Team License Activation
+
+Prefill the team-license activation flow. enterprise-license is the canonical route; team-license is an app-side alias.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'enterpriseLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}enterpriseLicense({
+  'companyID': 'REPLACE_WITH_COMPANY_ID',
+  'userID': 'REPLACE_WITH_USER_ID',
+  'passcode': 'REPLACE_WITH_PASSCODE'
+})
+```
+
 ## Generated URLs
 
 ```ts
@@ -21882,7 +22651,11 @@ xCallbackToggle()
 
 ## Official Documentation
 
-* [Surge URL Scheme](https://manual.nssurge.com/others/url-scheme.html)
+* [Surge URL Scheme](https://manual.nssurge.com/tools/url-scheme.html)
+
+## Official Documentation
+
+* [URL scheme](https://manual.nssurge.com/tools/url-scheme.html)
 
 ---
 
@@ -22589,6 +23362,20 @@ import { {{ currentMethod === 'On-Demand' ? 'reloadCustomizations' : 'textastic'
 const url = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}reloadCustomizations()
 ```
 
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters. openFile() may ignore success callbacks after it opens the file, as documented by Textastic.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'textastic' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}newFile({
+  'name': 'example.txt',
+  'text': 'Hello Textastic',
+  'xSuccess': 'myapp://done?source=textastic'
+})
+```
+
 ---
 
 ---
@@ -22882,6 +23669,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+For update()/updateProject(), an empty string clears a field and an explicit completed: false or canceled: false restores the incomplete state. Omitting those values leaves the corresponding fields unchanged.
+
 ### Open Things
 
 ```ts-vue [{{currentMethod}}]
@@ -22908,22 +23697,22 @@ Show a built-in list, project, area, tag, or to-do.
 import { {{ currentMethod === 'On-Demand' ? 'show' : 'things' }} } from '{{ importPath }}'
 
 // Show Today list
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'today',
 })
 
 // Show project by ID
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'GJJVZHE7SNu7xcVuH2xDDh',
 })
 
 // Show by query
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
 })
 
 // Show by query with filter
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
   filter: 'errand',
 })
@@ -22937,19 +23726,19 @@ Add a new project to Things.
 import { {{ currentMethod === 'On-Demand' ? 'addProject' : 'things' }} } from '{{ importPath }}'
 
 // Add project with start date
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Build treehouse',
   when: 'today',
 })
 
 // Add project to area
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Plan Birthday Party',
   area: 'Family',
 })
 
 // Add project with deadline and area
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Submit Tax',
   deadline: 'December 31',
   areaId: 'Lg8UqVPXo2SbJNiBpDBBQ',
@@ -22964,21 +23753,21 @@ Update an existing project (requires auth-token).
 import { {{ currentMethod === 'On-Demand' ? 'updateProject' : 'things' }} } from '{{ importPath }}'
 
 // Update project start date
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   when: 'tomorrow',
 })
 
 // Add tags to project
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   addTags: 'Important',
 })
 
 // Clear project deadline
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   deadline: '',
@@ -22993,12 +23782,12 @@ Add a new to-do to Things.
 import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
 
 // Add simple to-do
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Book flights',
 })
 
 // Add to-do with notes and tags
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Buy milk',
   notes: 'Low fat.',
   when: 'evening',
@@ -23006,7 +23795,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
 })
 
 // Add multiple to-dos
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   titles: 'Milk\nBeer\nCheese',
   list: 'Shopping',
 })
@@ -23020,28 +23809,28 @@ Update an existing to-do (requires auth-token).
 import { {{ currentMethod === 'On-Demand' ? 'update' : 'things' }} } from '{{ importPath }}'
 
 // Update to-do start date
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   when: 'today',
 })
 
 // Update to-do title
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   title: 'Buy bread',
 })
 
 // Append notes to to-do
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   appendNotes: 'Wholemeal bread',
 })
 
 // Clear to-do deadline
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   deadline: '',
@@ -23056,7 +23845,7 @@ Advanced JSON-based import for projects and to-dos.
 import { {{ currentMethod === 'On-Demand' ? 'json' : 'things' }} } from '{{ importPath }}'
 
 // Import project with to-dos
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   data: [
     {
       type: 'project',
@@ -23082,7 +23871,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
 })
 
 // Import with auth-token
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   authToken: 'xxx',
   data: [
     {
@@ -23094,6 +23883,35 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   ],
 })
 ```
+
+### Get Client and Scheme Versions
+
+Return x-things-scheme-version and x-things-client-version through the success callback. version() generates the plain command; callback options select the x-callback-url form.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'version' : 'things' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}version({
+  'xSuccess': 'myapp://versions'
+})
+```
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+  'title': 'Review changes',
+  'xSuccess': 'myapp://done?source=things'
+})
+```
+
+## Official Documentation
+
+* [URL scheme](https://culturedcode.com/things/support/articles/2803573/)
 
 ---
 
@@ -23145,9 +23963,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## Notes
 
-Tim's official help page documents exactly these URL forms: `tim://`, `tim://[id]`, `tim://[id]?action=start&notes=My%20Notes`, `tim://?action=stop`, `tim://create?type=[task|group]&title=My%20Title&notes=My%20Notes`, and `tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com`.
-
-`createTask()` and `createGroup()` expose only the documented `task`/`group` type plus `title` and `notes`. The official page does not name any other query fields, so this module does not add them.
+The current official help includes app/window navigation, task/group/record IDs, timer control, deprecated create links, and getCurrentUrl callbacks. createRecord() requires a task ID and ISO 8601 start/end dates. All create helpers are deprecated upstream. Nested callback URLs are percent-encoded.
 
 ### Open Tim
 
@@ -23218,6 +24034,51 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}getCurrentUrl({
 })
 ```
 
+### Open Settings
+
+Open the settings window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openSettings()
+```
+
+### Open Export
+
+Open the export window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExport' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openExport()
+```
+
+### Open Upgrade
+
+Open the upgrade window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUpgrade' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openUpgrade()
+```
+
+### Create Record (Deprecated)
+
+Create a time record for a task using ISO 8601 start/end dates. Tim marks create links as deprecated.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRecord' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createRecord({
+  'task': 'REPLACE_WITH_TASK_ID',
+  'start': '2026-10-02T01:00:00Z',
+  'end': '2026-10-02T02:00:00Z',
+  'notes': 'Code review'
+})
+```
+
 ## Generated URLs
 
 ```ts
@@ -23253,7 +24114,7 @@ createGroup({
 getCurrentUrl({
   xSuccess: 'https://www.apple.com',
 })
-// => 'tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com'
+// => 'tim://x-callback-url/getCurrentUrl?x-success=https%3A%2F%2Fwww.apple.com'
 ```
 
 ## Official Documentation
@@ -23649,6 +24510,67 @@ Timepage calls the `x-success` callback with `start`, `end`, `title`, and `locat
 ## References
 
 * [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
+
+### Get Directions
+
+Get directions to the next event or an event ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getDirections' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getDirections({
+  event: 'next'
+})
+```
+
+### Message Attendees
+
+Open messaging for event attendees.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messageAttendees' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}messageAttendees({
+  event: 'next'
+})
+```
+
+### Share Countdown
+
+Open the event countdown sharing view.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'countdownShare' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}countdownShare({
+  event: 'next'
+})
+```
+
+### Open Actions
+
+Open the companion Actions app through Timepage.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openActions' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openActions()
+```
+
+### List Calendars
+
+Return calendar names through x-success. writable: true sends writable=1 to request writable calendars only.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'listCalendars' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}listCalendars({
+  xSuccess: 'myapp://x-callback-url/calendars',
+  writable: true
+})
+```
+
+## Official Documentation
 
 ---
 
@@ -25367,6 +26289,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
 })
 ```
 
+### New Agent Session
+
+Open an agent session draft. Both prompt and workspace are optional. The workspace is a folder URI, and the prompt is prefilled without being submitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)
+
 ---
 
 ---
@@ -25502,6 +26441,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openSettin
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### New Agent Session
+
+Open an agent session draft. Both prompt and workspace are optional. The workspace is a folder URI, and the prompt is prefilled without being submitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscodeInsiders' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)
 
 ---
 
@@ -25670,6 +26626,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}newTab({
 ```
 
 [Official Warp URI Scheme documentation](https://docs.warp.dev/terminal/more-features/uri-scheme)
+
+### Open Settings
+
+Open Settings with an optional page, q search string, or widget ID. autoinstall applies to the mcp page; invite prefills an email on the teams page. The scheme option also supports warppreview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'warp' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}openSettings({
+  page: 'mcp',
+  autoinstall: 'my-server'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://docs.warp.dev/terminal/more-features/uri-scheme#settings-deep-links)
 
 ---
 
@@ -27385,6 +28358,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
 })
 ```
 
+### Share Skill
+
+Embed a complete SKILL.md file as UTF-8 base64url without padding. Zed opens the Create Skill form; the recipient reviews the contents and saves the skill.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installSkill' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}installSkill({
+  content: '---\nname: review\ndescription: Review code changes\n---\n\nReview the current changes.'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://zed.dev/docs/ai/skills#sharing-skills)
+
 ---
 
 ---
@@ -28346,6 +29335,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}today()
 import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
+```
+
+### 回调
+
+可选参数为 xSuccess、xError。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection({
+  'xSuccess': 'myapp://done?source=agenda'
+})
 ```
 
 ---
@@ -29671,7 +30672,7 @@ url: /protocol-launcher/zh/apps/arcgis-survey123.md
 
 ## URL Scheme
 
-Esri 官方文档列出了四种 Survey123 启动模式：Web app share URL `https://survey123.arcgis.com/share/ID`、field app app link `https://survey123.arcgis.app`、field app custom scheme `arcgis-survey123://`，以及 Survey123 Connect scheme `arcgis-survey123connect://`。
+Esri 官方文档新增 Survey123 Mobile（`arcgis-survey123-mobile://`、`https://survey123-mobile.arcgis.app`）和 Studio（`arcgis-survey123-studio://`），并保留以下启动模式：Web app share URL `https://survey123.arcgis.com/share/ID`、field app app link `https://survey123.arcgis.app`、field app custom scheme `arcgis-survey123://`，以及 Survey123 Connect scheme `arcgis-survey123connect://`。
 
 Field app 支持官方文档中的 URL 参数 `center`、`field:<question name>`、`portalUrl`、`itemID`、`download`、`action`、`folder`、`callback`、`callback:<status>`、`filter`、`update` 和 `q:<query parameter>`。Web app 将 survey item ID 放在路径中，并支持官方文档列出的 web app 参数 `signIn`、`isOrgSignIn`、`center`、`field:<question name>`、`portalUrl`、`open`、`hide`、`locale`、`mode`、`globalId`、`recalculate`、`version`、`token`、`autoReload`、`autoRefresh`、`encodeUrlParams` 和 `width`。Survey123 Connect 只接受 `portalUrl` 和 `itemID`。
 
@@ -29759,12 +30760,58 @@ launchConnect({
 // => 'arcgis-survey123connect://?portalUrl=https%3A%2F%2Fwww.arcgis.com&itemID=36ff9e8c13e042a58cfce4ad87f55d19'
 ```
 
+### 启动 Mobile
+
+通过专属 scheme 打开 Survey123 Mobile。支持 itemID、portalUrl、fields、center、download、callback 和 callbacks。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobile' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobile({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19',
+  fields: {
+    surname: 'Klauser'
+  },
+  center: '37.8199,-122.4783,20'
+})
+```
+
+### 启动 Mobile 应用链接
+
+在 iOS 或 Android 上使用 Survey123 Mobile 应用链接。参数与 launchMobile 相同。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchMobileLink' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchMobileLink({
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
+### 启动 Studio
+
+在 Windows 上打开 Survey123 Studio。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launchStudio' : 'arcgisSurvey123' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'arcgisSurvey123.'}}launchStudio({
+  portalUrl: 'https://www.arcgis.com',
+  itemID: '36ff9e8c13e042a58cfce4ad87f55d19'
+})
+```
+
 ## 官方文档
 
 * [Integrate with other apps](https://doc.arcgis.com/en/survey123/get-started/integratewithotherapps.htm)
+
 * [Launch the field app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchfieldapp.htm)
+
 * [Launch the web app](https://doc.arcgis.com/en/survey123/get-started/integrate-launchwebapp.htm)
+
 * [Launch Survey123 Connect](https://doc.arcgis.com/en/survey123/get-started/integrate-launchconnect.htm)
+
+* [URL scheme 官方说明](https://doc.arcgis.com/en/survey123/get-started/integrate-launchmobile.htm)
 
 ---
 
@@ -29914,6 +30961,19 @@ import { {{ currentMethod === 'On-Demand' ? 'prepend' : 'oneWriter' }} } from '{
 const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
   path: 'Dropbox/Documents/Notes.txt',
   text: 'Hello world',
+})
+```
+
+### 回调
+
+可选回调参数为 xSuccess、xError、xCancel。嵌套回调 URL 会进行百分号编码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'content' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}content({
+  'path': 'Notes.txt',
+  'xSuccess': 'myapp://content'
 })
 ```
 
@@ -30223,6 +31283,63 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
   token: '123456-123456-123456',
 })
 ```
+
+### 打开工作区
+
+通过名称打开工作区。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openWorkspace({
+  name: 'Work'
+})
+```
+
+### 关闭工作区
+
+关闭当前工作区。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'closeWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}closeWorkspace()
+```
+
+### 回调
+
+可选回调参数为 xSuccess、xError。嵌套回调 URL 会进行百分号编码。
+
+openNote()、addText()、addFile() 接受 token；使用 selected: true 时，需要在目标平台生成的 API token。iOS 和 macOS 的 token 不能混用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  'selected': true,
+  'token': 'REPLACE_WITH_BEAR_API_TOKEN',
+  'xSuccess': 'myapp://note'
+})
+```
+
+### 添加文件
+
+通过 id 或 title 向笔记添加 Base64 编码的文件。Bear 必须已解锁，不能访问加密笔记。file 和 filename 均为必填参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addFile({
+  'title': 'Protocol Launcher example',
+  'filename': 'example.txt',
+  'file': 'SGVsbG8K',
+  'mode': 'append'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://bear.app/faq/x-callback-url-scheme-documentation/)
 
 ---
 
@@ -31728,6 +32845,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalenda
 })
 ```
 
+### 切换日历集合
+
+按名称选择已有日历集合。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'switchCalendarSet' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}switchCalendarSet({
+  'set': 'work'
+})
+```
+
 ## 生成的 URL
 
 ```ts
@@ -31761,6 +32890,10 @@ summarize()
 importCalendar({ url: 'https://example.com/calendar.ics' })
 // => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
+
+## 官方文档
+
+* [URL scheme](https://calendar366.com/help/index.html)
 
 ---
 
@@ -32129,7 +33262,7 @@ url: /protocol-launcher/zh/apps/cherry-studio.md
 
 # Cherry Studio
 
-[Cherry Studio](https://cherry-ai.com) 是一个支持多种模型和提供商的强大 AI 客户端。**Protocol Launcher** 允许您生成深度链接，以便在 Cherry Studio 中自动配置 MCP 服务器和 AI 提供商。
+[Cherry Studio](https://cherry-ai.com) 是一个支持多种模型和提供商的强大 AI 客户端。**Protocol Launcher** 允许您生成深度链接，以便在 Cherry Studio 中准备 MCP 服务器和 AI 提供商导入，并打开应用页面。
 
 ## 使用
 
@@ -32139,6 +33272,8 @@ url: /protocol-launcher/zh/apps/cherry-studio.md
 * 全量导入（从根包导入），使用简单，但会包含所有应用模块。
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+当前 MCP 导入仅接受 `name`、`description`、`type`、`command`、`args`、`env`、`baseUrl` 和 `headers`。`installMCP` 会省略旧版的本地元数据字段，以满足 Cherry Studio 的严格导入结构。`type` 可以省略：命令配置默认为 stdio，URL 配置默认为 sse。导入 MCP 服务器会打开审核和确认界面。
 
 ### 安装多个 MCP 服务器
 
@@ -32153,10 +33288,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       type: 'stdio',
       command: 'npx',
       args: ['-y', '@modelcontextprotocol/server-everything'],
-      registryUrl: 'https://registry.npmmirror.com',
-      provider: 'Anthropic',
-      providerUrl: 'https://modelcontextprotocol.io/',
-      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
     },
     'qcc-company-stream': {
       name: '企查查企业信息 MCP',
@@ -32167,11 +33298,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-basic', '企业信息'],
-      timeout: 30,
     },
     'qcc-risk-stream': {
       name: '企查查风险信息 MCP',
@@ -32182,11 +33308,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-risk', '风险信息'],
-      timeout: 30,
     },
   },
 })
@@ -32203,10 +33324,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'stdio',
   command: 'npx',
   args: ['-y', '@modelcontextprotocol/server-everything'],
-  registryUrl: 'https://registry.npmmirror.com',
-  provider: 'Anthropic',
-  providerUrl: 'https://modelcontextprotocol.io/',
-  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
 })
 ```
 
@@ -32224,11 +33341,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-basic', '企业信息'],
-  timeout: 30,
 })
 ```
 
@@ -32246,11 +33358,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-risk', '风险信息'],
-  timeout: 30,
 })
 ```
 
@@ -32265,6 +33372,26 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+### 跳转页面
+
+打开主窗口中允许的页面。路由前缀包括 settings、app、agents、knowledge、paintings、translate、files、notes、apps、code 和 launchpad。Cherry Studio 会拒绝 protocolInstall 和 protocolInstallRequestId 内部查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}navigate({
+  'path': '/settings/provider'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/ProtocolService.ts)
+
+* [MCP import schema](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpProtocolInstall.ts)
+
+* [Provider import](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/providersImport.ts)
 
 ---
 
@@ -33471,6 +34598,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}search({
 })
 ```
 
+### 回调
+
+可选参数为 xSuccess、xCancel。回调 URL 会进行编码，包含嵌套查询参数。回调适用于 addLink()。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addLink' : 'cubox' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addLink({
+  'url': 'https://example.com/article',
+  'xSuccess': 'myapp://done?source=cubox'
+})
+```
+
 ---
 
 ---
@@ -33606,6 +34746,36 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: '你好, Cursor!' })
 ```
+
+### 创建命令
+
+在 Cursor 中准备自定义命令，供用户确认。名称可包含字母、数字、点、连字符和下划线。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes'
+})
+```
+
+### 创建规则
+
+准备规则供用户确认。Cursor 的 deeplink 在 URL 编码后最多为 10,000 个字符。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRule' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createRule({
+  name: 'strict-types',
+  text: 'Always use strict TypeScript types'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://cursor.com/docs/reference/deeplinks)
 
 ---
 
@@ -33893,6 +35063,59 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
 })
 ```
 
+### 显示任务
+
+通过 UID 打开任务。此动作仅支持 macOS。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showTask({
+  uid: 'REPLACE_WITH_TASK_UID'
+})
+```
+
+### 完成任务
+
+在 macOS 上完成任务。uids 可以是逗号分隔的字符串或非空 UID 数组。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'completeTasks' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}completeTasks({
+  uids: [
+    'TASK_UID_1',
+    'TASK_UID_2'
+  ]
+})
+```
+
+### 通过 x-callback-url 启动
+
+启动 2Do，可选传入回调参数。open() 仍生成裸应用 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch()
+```
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。生成 URL 的动作参数名遵循官方小写规范；TypeScript 参数名仍为驼峰形式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch({
+  'xSuccess': 'myapp://done?source=2do'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://www.2doapp.com/docs/macos/url-schemes/)
+
 ---
 
 ---
@@ -33911,6 +35134,8 @@ url: /protocol-launcher/zh/apps/day-one.md
 * 完整导入（Full Import）：从根包导入更方便，但会包含所有应用模块。
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
+
+Windows 支持日历、时间线、媒体、设置、模板、兑换码及空白新条目链接。它会忽略条目文本、标签、日记本和提示词参数，不支持按条目 ID 查看或编辑。在 Windows 上使用 `openTimeline({ platform: 'windows' })`；默认调用为其他平台保留 `dayone://entries`。
 
 ### 打开应用
 
@@ -34020,6 +35245,92 @@ import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
+
+### 最近提示词
+
+在 iOS 上打开最近提示词。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecentPrompts' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRecentPrompts()
+```
+
+### 打开标签
+
+在 iOS 或 macOS 上应用标签筛选。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTags' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTags({
+  name: 'work'
+})
+```
+
+### 书籍打印
+
+在 iOS 上打开书籍打印。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openBook' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openBook()
+```
+
+### 模板
+
+在 iOS 或 Windows 上打开模板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTemplates' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTemplates()
+```
+
+### 兑换码
+
+在 iOS 或 Windows 上打开兑换码界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRedeem' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRedeem()
+```
+
+### 加密密钥
+
+在 iOS 或 macOS 上打开加密密钥界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEncryptionKey' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openEncryptionKey()
+```
+
+### Siri 快捷指令
+
+在 iOS 上打开 Siri 快捷指令设置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSiri' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSiri()
+```
+
+### 媒体
+
+在 Windows 上打开媒体视图。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMedia' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openMedia()
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://dayoneapp.com/guides/tips-and-tutorials/day-one-url-scheme/)
 
 ---
 
@@ -34877,6 +36188,48 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}scanDocument({
 })
 ```
 
+### 聊天控制台
+
+打开聊天控制台，可选传入 prompt 和 mode：onDevice、pcc、claudeSonnet 或 claudeOpus。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chat' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}chat({
+  mode: 'claudeSonnet',
+  prompt: 'Summarize this draft'
+})
+```
+
+### 朗读
+
+朗读传入的文本。text 为可选参数，官方参考没有说明省略时的行为。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'speak' : 'drafts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}speak({
+  text: 'Hello, Drafts!'
+})
+```
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel。回调 URL 会进行编码，包含嵌套查询参数。Drafts 的 x-callback-url 主机为可选项。既有 URL 保持原有形式；具体动作是否调用回调由应用决定。保留文档中的 loadActionBarGroup 命令；loadKeyboardActionGroup 仅出现在旧示例中。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'create' : 'drafts' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'drafts.'}}create({
+  'text': 'Hello Drafts',
+  'xSuccess': 'myapp://done?source=drafts'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://docs.getdrafts.com/docs/automation/urlschemes)
+
 ---
 
 ---
@@ -35401,6 +36754,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
 })
 ```
 
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  'date': 'today',
+  'xSuccess': 'myapp://done?source=fantastical'
+})
+```
+
 ---
 
 ---
@@ -35890,6 +37256,8 @@ url: /protocol-launcher/zh/apps/fsnotes.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+当前 macOS URL handler 支持 new、open、find。openNote() 接受 txt 追加内容（笔记不存在时创建）；tag 优先于 title。findNotes() 可传入 id 打开对应标题/名称，不存在时回退为搜索。查询值与搜索路径组件均进行编码。
+
 ### 打开 FSNotes
 
 ```ts-vue [{{currentMethod}}]
@@ -35931,6 +37299,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}createNote({
 })
 ```
 
+### 使用原生 Scheme 创建笔记
+
+使用原生 fsnotes://new/ 入口。纯文本 txt 优先于 html，folder 指定目录，open: true 在新窗口打开。既有 createNote() 保留兼容的 nv://make/ 入口，并支持 txt/open。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newNote' : 'fsnotes' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'fsnotes.'}}newNote({
+  'title': 'Meeting',
+  'txt': '# Agenda',
+  'folder': 'Work',
+  'open': true
+})
+```
+
+## 官方文档
+
+* [URL scheme](https://github.com/glushchenko/fsnotes/blob/v7.3.4/FSNotes/AppDelegate%2BURLRoutes.swift)
+
 ---
 
 ---
@@ -35968,6 +37355,31 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
   heading: 60,
   pitch: 7,
   title: 'Apple Store Opéra',
+})
+```
+
+### 复制全景图并回调
+
+region 指定地图中心及跨度，scheme 可选 streets 或 ftstreets。Streets 3.5+ 支持 action: clipboard。应用只在传入 action 时调用 xSuccess，并在同时传入 action 和 xSuccess 时调用 xError。生成 URL 时会保留传入的回调参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
+  'location': {
+    'lat': 48.872112,
+    'lng': 2.332977
+  },
+  'region': {
+    'lat': 48.872112,
+    'lng': 2.332977,
+    'latSpan': 0.01,
+    'lngSpan': 0.01
+  },
+  'action': 'clipboard',
+  'xSuccess': 'myapp://panorama',
+  'xError': 'myapp://error',
+  'scheme': 'streets'
 })
 ```
 
@@ -36363,6 +37775,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
   title: 'Override The Title',
   labels: 'Pasted Items,New Items',
   note: 'Some Notes',
+})
+```
+
+### 回调
+
+可选参数为 xSuccess、xError。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  'text': 'Hello Gladys',
+  'xSuccess': 'myapp://done?source=gladys'
 })
 ```
 
@@ -38140,6 +39565,8 @@ url: /protocol-launcher/zh/apps/infuse.md
 
 Infuse x-callback URL 使用 `infuse://x-callback-url/<action>`。Firecore 官方文档列出了 `play` 和 `save` 动作，支持重复的 `url` 条目、可选的 `filename` 和 `sub` 条目，以及可选的 `x-success` / `x-error` 回调。这些 helper 使用 `xSuccess` 和 `xError` 选项名，并序列化为官方 query key。媒体库链接使用带 TMDB ID 数字的 `infuse://movie/...` 和 `infuse://series/...`。
 
+Infuse 8.4.7 及以上支持以整数秒传入 `position`。数组中的播放起点与同索引 URL 对应。库条目函数支持 `play: true`，生成不带值的 `?play` 标记并开始播放。
+
 ### 播放
 
 将一个或多个视频作为临时播放列表播放。
@@ -38152,6 +39579,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}play({
     'https://files.firecore.com/infuse/sample-5s-360p.mp4',
     'https://files.firecore.com/infuse/mov_bbb.mp4',
   ],
+  position: [0, 6],
   filename: ['Inception-2010.mp4', 'Mad-Men-S01-E01.mp4'],
   sub: [
     'https://files.firecore.com/infuse/example.srt',
@@ -38194,6 +39622,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openMovie' : 'infuse' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openMovie({
   tmdbId: 12345,
+  play: true,
 })
 ```
 
@@ -38206,6 +39635,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeries' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeries({
   tmdbId: 12345,
+  play: true,
 })
 ```
 
@@ -38218,6 +39648,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openSeason' : 'infuse' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openSeason({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
 })
 ```
@@ -38231,6 +39662,7 @@ import { {{ currentMethod === 'On-Demand' ? 'openEpisode' : 'infuse' }} } from '
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'infuse.'}}openEpisode({
   tmdbId: 12345,
+  play: true,
   seasonNumber: 1,
   episodeNumber: 2,
 })
@@ -38996,7 +40428,7 @@ url: /protocol-launcher/zh/apps/joplin.md
 
 生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
 
-Joplin 外部链接使用 `joplin://x-callback-url/<action>`，并通过 `id` query 参数指定目标。官方文档列出了 `openNote`、`openFolder` 和 `openTag`。
+Joplin 外部链接使用 `joplin://x-callback-url/<action>`，并通过 `id` query 参数指定目标。官方文档列出了 `openNote`、`openFolder` 和 `openTag`，以及下方的桌面回调命令。回调 URL 必须使用已知应用 scheme 或 `x-callback-url` 主机；Joplin 不接受 HTTP 和 HTTPS 回调。
 
 ### 打开笔记
 
@@ -39031,6 +40463,33 @@ import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'joplin' }} } from '{{ i
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}openTag({
   id: 'REPLACE_WITH_TAG_ID',
+})
+```
+
+### 获取当前笔记
+
+仅支持桌面端。通过 x-callback-url 将选中的笔记返回调用应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}getCurrentNote({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+### 创建笔记
+
+仅支持桌面端。在当前笔记本创建笔记，通过回调返回标题和 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}createNote({
+  title: 'Meeting notes',
+  body: '# Agenda',
+  xSuccess: 'hook://x-callback-url/setCurrentNode',
+  xError: 'hook://x-callback-url/error'
 })
 ```
 
@@ -40752,7 +42211,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
 import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
-  func: 'startArea',
+  func: 'start_area',
 })
 ```
 
@@ -40785,6 +42244,42 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}pref({
   page: 'shortcuts',
 })
 ```
+
+### 回调返回捕获结果
+
+snip、record、ocr 接受 xSuccess、xError、xSource。传入回调选项（或 xCallback: true）后，使用 x-callback-url 并返回剪贴板结果：snip 为 data、record 为 filepath、ocr 为 string。官方区域录制示例中，普通入口使用 start\_area，回调入口使用 startArea。请传入对应的 func 值，生成时保留原值。errorMessage 由 Longshot 返回，无需作为请求参数传入。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'snip' : 'longshot' }} } from '{{ importPath }}'
+
+const snipUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}snip({
+  'func': 'start',
+  'xSuccess': 'myapp://snipped'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'record' : 'longshot' }} } from '{{ importPath }}'
+
+const recordUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}record({
+  'func': 'startArea',
+  'xSuccess': 'myapp://recorded',
+  'xError': 'myapp://error'
+})
+```
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'ocr' : 'longshot' }} } from '{{ importPath }}'
+
+const ocrUrl = {{currentMethod === 'On-Demand' ? '' : 'longshot.'}}ocr({
+  'func': 'start',
+  'xSuccess': 'myapp://recognized'
+})
+```
+
+## 官方文档
+
+* [URL scheme](https://longshot.chitaner.com/blog/urlschemeapi/)
 
 ---
 
@@ -41540,6 +43035,19 @@ import { {{ currentMethod === 'On-Demand' ? 'addReminder' : 'mical' }} } from '{
 const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}addReminder({
   title: 'Buy groceries',
   notes: 'Milk, eggs, bread',
+})
+```
+
+### 回调
+
+可选参数为 xSuccess。回调 URL 会进行编码，包含嵌套查询参数。当前 FAQ 记录了创建活动的回调。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'mical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}add({
+  'input': 'Lunch tomorrow at 12',
+  'xSuccess': 'myapp://done?source=mical'
 })
 ```
 
@@ -42658,6 +44166,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}resumeTimer({
 })
 ```
 
+### 回调
+
+可选参数为 xSuccess、xError、xCancel。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'startTimer' : 'multiTimer' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'multiTimer.'}}startTimer({
+  'name': 'Lunch',
+  'board': 'Work',
+  'xSuccess': 'myapp://done?source=multi-timer'
+})
+```
+
 ---
 
 ---
@@ -43415,6 +44937,8 @@ url: /protocol-launcher/zh/apps/obsidian.md
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
+`openNote` 和 `newNote` 支持 `path` 和 `paneType`（`tab`、`split`、`window`；window 仅限桌面端）。Obsidian 中 `path` 优先于 `vault` 和 `file`。`newNote` 支持 `file`、`path`、`paneType`、`clipboard`、`silent`、`overwrite` 和 `xSuccess`；用 `silent: true` 创建而不打开。既有插件相关函数继续保留，但不属于核心 URI 官方文档的范围。
+
 ### 打开 Obsidian
 
 ```ts-vue [{{currentMethod}}]
@@ -43514,6 +45038,59 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
 })
 ```
 
+### 每日笔记
+
+创建或打开每日笔记，需要启用核心插件 Daily notes。支持 new 动作的参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dailyNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}dailyNote({
+  vault: 'My Vault',
+  content: 'Daily notes',
+  append: true
+})
+```
+
+### 唯一笔记
+
+启用核心插件 Unique note creator 后创建唯一笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'uniqueNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}uniqueNote({
+  vault: 'My Vault',
+  content: 'Hello World'
+})
+```
+
+### 仓库管理器
+
+打开仓库管理器。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chooseVault' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}chooseVault()
+```
+
+### 为 Hook 获取地址
+
+向 Hook 返回当前笔记地址。未传回调时，将其 Markdown 链接复制到剪贴板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hookGetAddress' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}hookGetAddress({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://obsidian.md/help/uri)
+
 ---
 
 ---
@@ -43535,7 +45112,7 @@ url: /protocol-launcher/zh/apps/ok-json.md
 
 ## 注意事项
 
-OK JSON 官方 URL Schemes 页面只记录了五个动作：`okjson://paste`、`okjson://new?content=...`、`okjson://history`、`okjson://scripts-panel` 和 `okjson://script/...`。此模块只暴露这些官方记录的动作。
+官方参考现在列出七个动作，包括 download 和 curl。这两个动作会读取剪贴板，其中 curl 会执行剪贴板中的命令。
 
 `newJson()` 接收原始 JSON 字符串，并将其序列化为官方的 URL 编码 `content` 查询参数。`runScript()` 接收不带 `.js` 扩展名的自定义脚本文件名，与官方脚本 URL 格式保持一致。
 
@@ -43581,6 +45158,26 @@ import { {{ currentMethod === 'On-Demand' ? 'runScript' : 'okJson' }} } from '{{
 const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}runScript({
   scriptFileNameWithoutJsExtension: 'copy-minified-json',
 })
+```
+
+### 下载剪贴板中的 URL
+
+读取剪贴板中的 URL，下载内容并以 JSON 打开。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'download' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}download()
+```
+
+### 执行剪贴板中的 cURL
+
+执行剪贴板中当前的 cURL 命令。打开此 URL 前，请先检查剪贴板中的命令。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'curl' : 'okJson' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'okJson.'}}curl()
 ```
 
 ## 生成的 URL
@@ -45102,6 +46699,8 @@ url: /protocol-launcher/zh/apps/pika.md
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
+`copyForeground` 和 `copyBackground` 支持可选的 `type`（hex、rgb、hsb、hsl、lab、opengl、oklch）；省略时保留当前输出格式。
+
 ## 操作（Actions）
 
 ### 交换颜色（Swap）
@@ -45371,6 +46970,90 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
 })
 ```
 
+### 选择对比颜色
+
+选择对比颜色。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pickContrast' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}pickContrast()
+```
+
+### 显示颜色合规信息
+
+显示颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showCompliance()
+```
+
+### 隐藏颜色合规信息
+
+隐藏颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hideCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hideCompliance()
+```
+
+### 切换颜色合规信息
+
+切换颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}toggleCompliance()
+```
+
+### 显示颜色预览
+
+显示颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showPreview()
+```
+
+### 隐藏颜色预览
+
+隐藏颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hidePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hidePreview()
+```
+
+### 切换颜色预览
+
+切换颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'togglePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}togglePreview()
+```
+
+### 打开启动窗口
+
+打开启动窗口。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'splash' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}splash()
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift)
+
 ---
 
 ---
@@ -45394,7 +47077,7 @@ url: /protocol-launcher/zh/apps/picsew.md
 
 Picsew 官方 x-callback-url 文档定义了三个动作：`/scroll`、`/vert` 和 `/hori`。此模块只暴露这些官方动作，对应为 `scroll()`、`vert()` 和 `hori()`。
 
-Payload 与官方记录的动作参数保持一致：`in`、`in=latest` 时需要的 `count`、`out`、`watermark`、`border`、`mockup2`、`clean_status`、`remove_scrollbar` 和 `delete_source`。Picsew 已将旧的 `mockup` 参数标记为不可用，因此这里不暴露它。
+Picsew 3.18.1 及以上新增 `mockupName`（`mockup-name`）和 `mockupBackgroundWidth`（`mockup-background-width`，0 至 100 的整数）。`mockup2` 仍作为兼容别名保留。Payload 还支持：`in`、`in=latest` 时需要的 `count`、`out`、`watermark`、`border`、`mockup2`、`clean_status`、`remove_scrollbar` 和 `delete_source`。旧的 `mockup` 参数仍会提示升级，不应在新链接中使用。
 
 ### 长截图拼接
 
@@ -45407,7 +47090,8 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'picsew.'}}scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
 ```
@@ -45447,10 +47131,11 @@ scroll({
   in: 'recent',
   out: 'save',
   clean_status: 'yes',
-  mockup2: 'iphone-14-blue',
+  mockupName: 'iphone-air-sky-blue',
+  mockupBackgroundWidth: 50,
   delete_source: 'yes',
 })
-// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup2=iphone-14-blue&delete_source=yes'
+// => 'picsew://x-callback-url/scroll?in=recent&out=save&clean_status=yes&mockup-name=iphone-air-sky-blue&mockup-background-width=50&delete_source=yes'
 
 vert({
   in: 'latest',
@@ -45728,6 +47413,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
   feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
+
+### 在 Web 播放器中打开 RSS
+
+通过 RSS 地址在 Pocket Casts Web 中打开播客。完整地址会进行百分号编码，包含查询参数。链接打开播客页面后，由用户点击 Follow 关注。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}openFeed({
+  feedUrl: 'https://example.com/feed.xml?format=rss'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://support.pocketcasts.com/knowledge-base/third-party-integration/)
 
 ---
 
@@ -46481,6 +48182,8 @@ url: /protocol-launcher/zh/apps/qoder.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+聊天模式为 `agent`、`chat`、`ask`（chat 的别名）和 `experts`（需要启用 Experts）。设置 `isNewChat: false` 可填入当前聊天。当前 Quest 文档列出 `LocalAgent` 和 `LocalWorktree`；`RemoteAgent` 为兼容已有调用而保留。
+
 ### 打开编辑器
 
 ```ts-vue [{{currentMethod}}]
@@ -46496,7 +48199,8 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'qoder' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createChat({
   text: 'Hello, Qoder!',
-  mode: 'agent',
+  mode: 'chat',
+  isNewChat: false,
   openInNewWindow: true,
 })
 ```
@@ -46631,6 +48335,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### 创建命令
+
+在 Qoder 中确认后导入自定义命令。名称只能包含小写字母、数字、连字符和下划线，支持可选的 description 和 scope（user 或 project）。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes',
+  description: 'Review pull request',
+  scope: 'project'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://docs.qoder.com/user-guide/deeplink)
 
 ---
 
@@ -49255,11 +50978,7 @@ url: /protocol-launcher/zh/apps/surge.md
 
 ## 说明
 
-Surge 官方手册记录了四个 iOS URL scheme action：`surge:///start`、`surge:///stop`、`surge:///toggle` 和 `surge:///install-config?url=x`。`install-config` 的 `url` 值必须进行 percent encoding，因此 `installConfig()` 接收原始配置 URL，并序列化为官方的 `url` query 参数。
-
-官方记录的唯一选项是 `autoclose=true`，可用于 `start`、`stop` 和 `toggle`，但不能用于 `install-config`。
-
-Surge 还记录了 v3.4 起支持 x-callback-url，scheme 为 `surge`，并且只有 `start`、`stop`、`toggle` 三个 action。因此本模块只暴露这三个 x-callback action URL，不添加 Surge 页面未列出的 callback query 参数。
+start/stop/toggle 仅支持 iOS。配置/模块安装和许可证激活在 iOS、macOS 上使用 surge；surgeconfig 为 macOS 兼容 scheme（Mac 6.7.0+）。autoclose 仅支持 iOS，不能用于 install-config。iOS 激活许可证要求没有有效的非试用许可证；macOS 上须先打开激活窗口。当前参考列出 start/stop/toggle 的回调支持。
 
 ### 启动
 
@@ -49331,6 +51050,45 @@ import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'surge' }} } fro
 const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackToggle()
 ```
 
+### 安装模块
+
+通过 URL 安装模块，地址会进行百分号编码；macOS 兼容入口可以指定 scheme: surgeconfig。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installModule' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}installModule({
+  'url': 'https://example.com/example.sgmodule'
+})
+```
+
+### 激活邮箱许可证
+
+预填邮箱许可证激活信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'emailLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}emailLicense({
+  'email': 'name@example.com',
+  'key': 'REPLACE_WITH_LICENSE_KEY'
+})
+```
+
+### 激活团队许可证
+
+预填团队许可证激活信息。enterprise-license 是标准入口；team-license 是应用端接受的别名。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'enterpriseLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}enterpriseLicense({
+  'companyID': 'REPLACE_WITH_COMPANY_ID',
+  'userID': 'REPLACE_WITH_USER_ID',
+  'passcode': 'REPLACE_WITH_PASSCODE'
+})
+```
+
 ## 生成的 URL
 
 ```ts
@@ -49363,7 +51121,11 @@ xCallbackToggle()
 
 ## 官方文档
 
-* [Surge URL Scheme](https://manual.nssurge.com/others/url-scheme.html)
+* [Surge URL Scheme](https://manual.nssurge.com/tools/url-scheme.html)
+
+## 官方文档
+
+* [URL scheme](https://manual.nssurge.com/tools/url-scheme.html)
 
 ---
 
@@ -50070,6 +51832,20 @@ import { {{ currentMethod === 'On-Demand' ? 'reloadCustomizations' : 'textastic'
 const url = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}reloadCustomizations()
 ```
 
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。按 Textastic 的说明，openFile() 在打开文件后可能忽略成功回调。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'textastic' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}newFile({
+  'name': 'example.txt',
+  'text': 'Hello Textastic',
+  'xSuccess': 'myapp://done?source=textastic'
+})
+```
+
 ---
 
 ---
@@ -50363,6 +52139,8 @@ url: /protocol-launcher/zh/apps/things.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+对于 update()/updateProject()，空字符串用于清空字段，显式 completed: false 或 canceled: false 用于恢复未完成状态。省略这些值则保留相应字段当前状态。
+
 ### 打开 Things
 
 ```ts-vue [{{currentMethod}}]
@@ -50389,22 +52167,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}search({
 import { {{ currentMethod === 'On-Demand' ? 'show' : 'things' }} } from '{{ importPath }}'
 
 // 显示今日列表
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'today',
 })
 
 // 通过 ID 显示项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'GJJVZHE7SNu7xcVuH2xDDh',
 })
 
 // 通过查询显示
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
 })
 
 // 通过查询和筛选显示
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
   filter: 'errand',
 })
@@ -50418,19 +52196,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
 import { {{ currentMethod === 'On-Demand' ? 'addProject' : 'things' }} } from '{{ importPath }}'
 
 // 添加带开始日期的项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Build treehouse',
   when: 'today',
 })
 
 // 添加到区域
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Plan Birthday Party',
   area: 'Family',
 })
 
 // 添加带截止日期的项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Submit Tax',
   deadline: 'December 31',
   areaId: 'Lg8UqVPXo2SbJNiBpDBBQ',
@@ -50445,21 +52223,21 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
 import { {{ currentMethod === 'On-Demand' ? 'updateProject' : 'things' }} } from '{{ importPath }}'
 
 // 更新项目开始日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   when: 'tomorrow',
 })
 
 // 添加标签到项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   addTags: 'Important',
 })
 
 // 清除项目截止日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   deadline: '',
@@ -50474,12 +52252,12 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
 import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
 
 // 添加简单待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Book flights',
 })
 
 // 添加带备注和标签的待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Buy milk',
   notes: 'Low fat.',
   when: 'evening',
@@ -50487,7 +52265,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
 })
 
 // 添加多个待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   titles: 'Milk\nBeer\nCheese',
   list: 'Shopping',
 })
@@ -50501,28 +52279,28 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
 import { {{ currentMethod === 'On-Demand' ? 'update' : 'things' }} } from '{{ importPath }}'
 
 // 更新待办开始日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   when: 'today',
 })
 
 // 更新待办标题
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   title: 'Buy bread',
 })
 
 // 追加备注到待办
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   appendNotes: 'Wholemeal bread',
 })
 
 // 清除待办截止日期
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   deadline: '',
@@ -50537,7 +52315,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
 import { {{ currentMethod === 'On-Demand' ? 'json' : 'things' }} } from '{{ importPath }}'
 
 // 导入带待办的项目
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   data: [
     {
       type: 'project',
@@ -50563,7 +52341,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
 })
 
 // 带 auth-token 导入
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   authToken: 'xxx',
   data: [
     {
@@ -50575,6 +52353,35 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   ],
 })
 ```
+
+### 获取客户端和 Scheme 版本
+
+通过成功回调返回 x-things-scheme-version 和 x-things-client-version。version() 生成普通命令；传入回调选项后生成 x-callback-url 形式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'version' : 'things' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}version({
+  'xSuccess': 'myapp://versions'
+})
+```
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+  'title': 'Review changes',
+  'xSuccess': 'myapp://done?source=things'
+})
+```
+
+## 官方文档
+
+* [URL scheme](https://culturedcode.com/things/support/articles/2803573/)
 
 ---
 
@@ -50626,9 +52433,7 @@ url: /protocol-launcher/zh/apps/tim.md
 
 ## 注意事项
 
-Tim 官方帮助页明确列出的 URL 形式只有：`tim://`、`tim://[id]`、`tim://[id]?action=start&notes=My%20Notes`、`tim://?action=stop`、`tim://create?type=[task|group]&title=My%20Title&notes=My%20Notes` 和 `tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com`。
-
-`createTask()` 和 `createGroup()` 只暴露官方明确列出的 `task`/`group` 类型以及 `title` 和 `notes`。官方页面没有列出其他 query 字段名，因此这里不额外添加。
+当前官方帮助涵盖应用/窗口导航、任务/分组/记录 ID、计时器控制、已弃用的 create 链接及 getCurrentUrl 回调。createRecord() 需要任务 ID 和 ISO 8601 起止时间。上游已弃用所有 create 函数对应的链接。嵌套回调 URL 会进行百分号编码。
 
 ### 打开 Tim
 
@@ -50699,6 +52504,51 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}getCurrentUrl({
 })
 ```
 
+### 打开设置
+
+打开设置窗口。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openSettings()
+```
+
+### 打开导出
+
+打开导出窗口。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openExport' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openExport()
+```
+
+### 打开升级
+
+打开升级窗口。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openUpgrade' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}openUpgrade()
+```
+
+### 创建记录（已弃用）
+
+使用 ISO 8601 起止时间为任务创建计时记录。Tim 将 create 链接标记为已弃用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRecord' : 'tim' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'tim.'}}createRecord({
+  'task': 'REPLACE_WITH_TASK_ID',
+  'start': '2026-10-02T01:00:00Z',
+  'end': '2026-10-02T02:00:00Z',
+  'notes': 'Code review'
+})
+```
+
 ## 生成的 URL
 
 ```ts
@@ -50734,7 +52584,7 @@ createGroup({
 getCurrentUrl({
   xSuccess: 'https://www.apple.com',
 })
-// => 'tim://x-callback-url/getCurrentUrl?x-success=https://www.apple.com'
+// => 'tim://x-callback-url/getCurrentUrl?x-success=https%3A%2F%2Fwww.apple.com'
 ```
 
 ## 官方文档
@@ -51130,6 +52980,67 @@ Timepage 会调用 `x-success` 回调，并带上 `start`、`end`、`title` 和 
 ## 参考资料
 
 * [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
+
+### 获取路线
+
+获取下一个活动或指定活动 ID 的路线。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getDirections' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getDirections({
+  event: 'next'
+})
+```
+
+### 联系参与者
+
+打开活动参与者的消息界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messageAttendees' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}messageAttendees({
+  event: 'next'
+})
+```
+
+### 分享倒计时
+
+打开活动倒计时分享界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'countdownShare' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}countdownShare({
+  event: 'next'
+})
+```
+
+### 打开 Actions
+
+通过 Timepage 打开配套的 Actions 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openActions' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openActions()
+```
+
+### 列出日历
+
+通过 x-success 返回日历名称。writable: true 会生成 writable=1，只查询可写日历。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'listCalendars' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}listCalendars({
+  xSuccess: 'myapp://x-callback-url/calendars',
+  writable: true
+})
+```
+
+## 官方文档
 
 ---
 
@@ -52843,10 +54754,27 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openExtension({
 ```ts-vue [{{currentMethod}}]
 import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'vscode' }} } from '{{ importPath }}'
 
-const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({ 
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### 新建 Agent 会话
+
+打开 Agent 会话草稿。prompt 和 workspace 均为可选参数，workspace 为文件夹 URI。提示词会填入输入框，不会自动发送。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)
 
 ---
 
@@ -52983,6 +54911,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}openSettin
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### 新建 Agent 会话
+
+打开 Agent 会话草稿。prompt 和 workspace 均为可选参数，workspace 为文件夹 URI。提示词会填入输入框，不会自动发送。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscodeInsiders' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscodeInsiders.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)
 
 ---
 
@@ -53151,6 +55096,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}newTab({
 ```
 
 [Warp URI Scheme 官方文档](https://docs.warp.dev/terminal/more-features/uri-scheme)
+
+### 打开设置
+
+打开设置，可选传入 page、搜索词 q 或设置项 widget ID。autoinstall 用于 mcp 页面；invite 在 teams 页面预填邮箱。scheme 也支持 warppreview。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'warp' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}openSettings({
+  page: 'mcp',
+  autoinstall: 'my-server'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://docs.warp.dev/terminal/more-features/uri-scheme#settings-deep-links)
 
 ---
 
@@ -54865,6 +56827,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
   path: 'autosave',
 })
 ```
+
+### 分享技能
+
+将完整 SKILL.md 文件按 UTF-8 编码为不带填充的 base64url。Zed 会打开创建技能表单，由接收者检查内容并保存。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installSkill' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}installSkill({
+  content: '---\nname: review\ndescription: Review code changes\n---\n\nReview the current changes.'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://zed.dev/docs/ai/skills#sharing-skills)
 
 ---
 

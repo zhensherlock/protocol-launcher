@@ -168,3 +168,60 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}tags({
   token: '123456-123456-123456',
 })
 ```
+
+### Open Workspace
+
+Open a workspace by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openWorkspace({
+  name: 'Work'
+})
+```
+
+### Close Workspace
+
+Close the active workspace.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'closeWorkspace' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}closeWorkspace()
+```
+
+### Callbacks
+
+Pass xSuccess and xError as optional payload fields. Nested callback URLs are percent-encoded.
+
+openNote(), addText() and addFile() accept token; selected: true requires an API token generated on the target platform. iOS tokens cannot be reused on macOS, or vice versa.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openNote' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}openNote({
+  'selected': true,
+  'token': 'REPLACE_WITH_BEAR_API_TOKEN',
+  'xSuccess': 'myapp://note'
+})
+```
+
+### Add File
+
+Attach a base64-encoded file to a note identified by id or title. Bear must be unlocked, and encrypted notes cannot be accessed. file and filename are both required.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addFile' : 'bear' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'bear.'}}addFile({
+  'title': 'Protocol Launcher example',
+  'filename': 'example.txt',
+  'file': 'SGVsbG8K',
+  'mode': 'append'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://bear.app/faq/x-callback-url-scheme-documentation/)

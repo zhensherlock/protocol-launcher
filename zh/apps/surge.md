@@ -17,11 +17,7 @@ url: /protocol-launcher/zh/apps/surge.md
 
 ## 说明
 
-Surge 官方手册记录了四个 iOS URL scheme action：`surge:///start`、`surge:///stop`、`surge:///toggle` 和 `surge:///install-config?url=x`。`install-config` 的 `url` 值必须进行 percent encoding，因此 `installConfig()` 接收原始配置 URL，并序列化为官方的 `url` query 参数。
-
-官方记录的唯一选项是 `autoclose=true`，可用于 `start`、`stop` 和 `toggle`，但不能用于 `install-config`。
-
-Surge 还记录了 v3.4 起支持 x-callback-url，scheme 为 `surge`，并且只有 `start`、`stop`、`toggle` 三个 action。因此本模块只暴露这三个 x-callback action URL，不添加 Surge 页面未列出的 callback query 参数。
+start/stop/toggle 仅支持 iOS。配置/模块安装和许可证激活在 iOS、macOS 上使用 surge；surgeconfig 为 macOS 兼容 scheme（Mac 6.7.0+）。autoclose 仅支持 iOS，不能用于 install-config。iOS 激活许可证要求没有有效的非试用许可证；macOS 上须先打开激活窗口。当前参考列出 start/stop/toggle 的回调支持。
 
 ### 启动
 
@@ -93,6 +89,45 @@ import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'surge' }} } fro
 const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackToggle()
 ```
 
+### 安装模块
+
+通过 URL 安装模块，地址会进行百分号编码；macOS 兼容入口可以指定 scheme: surgeconfig。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installModule' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}installModule({
+  'url': 'https://example.com/example.sgmodule'
+})
+```
+
+### 激活邮箱许可证
+
+预填邮箱许可证激活信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'emailLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}emailLicense({
+  'email': 'name@example.com',
+  'key': 'REPLACE_WITH_LICENSE_KEY'
+})
+```
+
+### 激活团队许可证
+
+预填团队许可证激活信息。enterprise-license 是标准入口；team-license 是应用端接受的别名。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'enterpriseLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}enterpriseLicense({
+  'companyID': 'REPLACE_WITH_COMPANY_ID',
+  'userID': 'REPLACE_WITH_USER_ID',
+  'passcode': 'REPLACE_WITH_PASSCODE'
+})
+```
+
 ## 生成的 URL
 
 ```ts
@@ -125,4 +160,8 @@ xCallbackToggle()
 
 ## 官方文档
 
-* [Surge URL Scheme](https://manual.nssurge.com/others/url-scheme.html)
+* [Surge URL Scheme](https://manual.nssurge.com/tools/url-scheme.html)
+
+## 官方文档
+
+* [URL scheme](https://manual.nssurge.com/tools/url-scheme.html)

@@ -15,7 +15,7 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
-Joplin external links use `joplin://x-callback-url/<action>` with an `id` query parameter. The official documentation lists `openNote`, `openFolder`, and `openTag`.
+Joplin external links use `joplin://x-callback-url/<action>` with an `id` query parameter. The official documentation lists `openNote`, `openFolder`, and `openTag`, plus the desktop callback commands below. Callback URLs must use a known application scheme or the `x-callback-url` host; Joplin rejects HTTP and HTTPS callbacks.
 
 ### Open Note
 
@@ -50,6 +50,33 @@ import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'joplin' }} } from '{{ i
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}openTag({
   id: 'REPLACE_WITH_TAG_ID',
+})
+```
+
+### Get Current Note
+
+Desktop only. Return the selected note to the calling app through an x-callback-url.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}getCurrentNote({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+### Create Note
+
+Desktop only. Create a note in the current notebook and return its title and URL through the callback.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}createNote({
+  title: 'Meeting notes',
+  body: '# Agenda',
+  xSuccess: 'hook://x-callback-url/setCurrentNode',
+  xError: 'hook://x-callback-url/error'
 })
 ```
 

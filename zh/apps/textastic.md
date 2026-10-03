@@ -75,3 +75,17 @@ import { {{ currentMethod === 'On-Demand' ? 'reloadCustomizations' : 'textastic'
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}reloadCustomizations()
 ```
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。按 Textastic 的说明，openFile() 在打开文件后可能忽略成功回调。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'newFile' : 'textastic' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'textastic.'}}newFile({
+  'name': 'example.txt',
+  'text': 'Hello Textastic',
+  'xSuccess': 'myapp://done?source=textastic'
+})
+```

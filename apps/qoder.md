@@ -15,6 +15,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+Chat modes are `agent`, `chat`, `ask` (an alias for chat), and `experts` (requires Experts enabled). Set `isNewChat: false` to prefill the current chat. Current Quest documentation lists `LocalAgent` and `LocalWorktree`; `RemoteAgent` is retained for compatibility.
+
 ### Open IDE
 
 ```ts-vue [{{currentMethod}}]
@@ -30,7 +32,8 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'qoder' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createChat({
   text: 'Hello, Qoder!',
-  mode: 'agent',
+  mode: 'chat',
+  isNewChat: false,
   openInNewWindow: true,
 })
 ```
@@ -165,3 +168,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### Create Command
+
+Import a custom command after confirmation in Qoder. Names use lowercase letters, numbers, hyphens, and underscores. Optional description and scope (user or project) are supported.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes',
+  description: 'Review pull request',
+  scope: 'project'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://docs.qoder.com/user-guide/deeplink)

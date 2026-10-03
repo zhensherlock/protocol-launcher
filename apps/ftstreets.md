@@ -35,3 +35,28 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
   title: 'Apple Store Opéra',
 })
 ```
+
+### Copy Panorama with a Callback
+
+region selects the map center and span; scheme may be streets or ftstreets. Streets 3.5+ supports action: clipboard. The app only invokes xSuccess with action, and xError with both action and xSuccess. Supplied callback parameters are preserved in the generated URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'view' : 'ftstreets' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'ftstreets.'}}view({
+  'location': {
+    'lat': 48.872112,
+    'lng': 2.332977
+  },
+  'region': {
+    'lat': 48.872112,
+    'lng': 2.332977,
+    'latSpan': 0.01,
+    'lngSpan': 0.01
+  },
+  'action': 'clipboard',
+  'xSuccess': 'myapp://panorama',
+  'xError': 'myapp://error',
+  'scheme': 'streets'
+})
+```

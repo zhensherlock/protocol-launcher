@@ -4,7 +4,7 @@ url: /protocol-launcher/apps/cherry-studio.md
 
 # Cherry Studio
 
-[Cherry Studio](https://cherry-ai.com) is a powerful AI client that supports multiple models and providers. **Protocol Launcher** allows you to generate deep links to automatically configure MCP Servers and AI Providers in Cherry Studio.
+[Cherry Studio](https://cherry-ai.com) is a powerful AI client that supports multiple models and providers. **Protocol Launcher** allows you to generate deep links to prepare MCP server and AI provider imports, and open app pages in Cherry Studio.
 
 ## Usage
 
@@ -14,6 +14,8 @@ There are two ways to use this library:
 * Full Import from the root package is convenient but includes all app modules.
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
+
+Current MCP imports accept only `name`, `description`, `type`, `command`, `args`, `env`, `baseUrl`, and `headers`. `installMCP` omits older local metadata fields so that Cherry Studio’s strict import schema accepts the link. `type` may be omitted: command-based configurations default to stdio, and URL-based configurations default to sse. Importing MCP servers opens a review and confirmation flow.
 
 ### Install Multiple MCP Servers
 
@@ -28,10 +30,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       type: 'stdio',
       command: 'npx',
       args: ['-y', '@modelcontextprotocol/server-everything'],
-      registryUrl: 'https://registry.npmmirror.com',
-      provider: 'Anthropic',
-      providerUrl: 'https://modelcontextprotocol.io/',
-      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
     },
     'qcc-company-stream': {
       name: '企查查企业信息 MCP',
@@ -42,11 +40,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-basic', '企业信息'],
-      timeout: 30,
     },
     'qcc-risk-stream': {
       name: '企查查风险信息 MCP',
@@ -57,11 +50,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-risk', '风险信息'],
-      timeout: 30,
     },
   },
 })
@@ -78,10 +66,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'stdio',
   command: 'npx',
   args: ['-y', '@modelcontextprotocol/server-everything'],
-  registryUrl: 'https://registry.npmmirror.com',
-  provider: 'Anthropic',
-  providerUrl: 'https://modelcontextprotocol.io/',
-  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
 })
 ```
 
@@ -99,11 +83,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-basic', '企业信息'],
-  timeout: 30,
 })
 ```
 
@@ -121,11 +100,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-risk', '风险信息'],
-  timeout: 30,
 })
 ```
 
@@ -140,3 +114,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+### Navigate to a Page
+
+Open an allowed route in the main window. Prefixes include settings, app, agents, knowledge, paintings, translate, files, notes, apps, code, and launchpad. Internal protocolInstall and protocolInstallRequestId query parameters are rejected by Cherry Studio.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}navigate({
+  'path': '/settings/provider'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/ProtocolService.ts)
+
+* [MCP import schema](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpProtocolInstall.ts)
+
+* [Provider import](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/providersImport.ts)

@@ -60,3 +60,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}addReminder({
   notes: 'Milk, eggs, bread',
 })
 ```
+
+### Callbacks
+
+Pass xSuccess as optional payload fields. Callback URLs are encoded, including nested query parameters. The current FAQ documents callbacks for event creation.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'mical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'mical.'}}add({
+  'input': 'Lunch tomorrow at 12',
+  'xSuccess': 'myapp://done?source=mical'
+})
+```

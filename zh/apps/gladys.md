@@ -83,3 +83,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}pasteClipboard({
   note: 'Some Notes',
 })
 ```
+
+### 回调
+
+可选参数为 xSuccess、xError。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createItem' : 'gladys' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'gladys.'}}createItem({
+  'text': 'Hello Gladys',
+  'xSuccess': 'myapp://done?source=gladys'
+})
+```

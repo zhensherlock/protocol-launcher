@@ -50,3 +50,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
   feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
+
+### Open Feed in Web Player
+
+Open a podcast from its RSS feed URL in Pocket Casts Web. The complete feed URL is percent-encoded, including any query parameters. The link opens the podcast page; the user chooses Follow there.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}openFeed({
+  feedUrl: 'https://example.com/feed.xml?format=rss'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://support.pocketcasts.com/knowledge-base/third-party-integration/)

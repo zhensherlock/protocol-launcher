@@ -131,3 +131,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### New Agent Session
+
+Open an agent session draft. Both prompt and workspace are optional. The workspace is a folder URI, and the prompt is prefilled without being submitted.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createAgentSession' : 'vscode' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'vscode.'}}createAgentSession({
+  prompt: 'Explain this project',
+  workspace: 'file:///etc'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://code.visualstudio.com/docs/configure/command-line#_prepare-a-new-agent-session-draft)

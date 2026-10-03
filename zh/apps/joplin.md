@@ -15,7 +15,7 @@ url: /protocol-launcher/zh/apps/joplin.md
 
 生产构建建议使用 On-Demand；快速脚本或演示可以使用 Full Import。
 
-Joplin 外部链接使用 `joplin://x-callback-url/<action>`，并通过 `id` query 参数指定目标。官方文档列出了 `openNote`、`openFolder` 和 `openTag`。
+Joplin 外部链接使用 `joplin://x-callback-url/<action>`，并通过 `id` query 参数指定目标。官方文档列出了 `openNote`、`openFolder` 和 `openTag`，以及下方的桌面回调命令。回调 URL 必须使用已知应用 scheme 或 `x-callback-url` 主机；Joplin 不接受 HTTP 和 HTTPS 回调。
 
 ### 打开笔记
 
@@ -50,6 +50,33 @@ import { {{ currentMethod === 'On-Demand' ? 'openTag' : 'joplin' }} } from '{{ i
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}openTag({
   id: 'REPLACE_WITH_TAG_ID',
+})
+```
+
+### 获取当前笔记
+
+仅支持桌面端。通过 x-callback-url 将选中的笔记返回调用应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getCurrentNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}getCurrentNote({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+### 创建笔记
+
+仅支持桌面端。在当前笔记本创建笔记，通过回调返回标题和 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createNote' : 'joplin' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'joplin.'}}createNote({
+  title: 'Meeting notes',
+  body: '# Agenda',
+  xSuccess: 'hook://x-callback-url/setCurrentNode',
+  xError: 'hook://x-callback-url/error'
 })
 ```
 

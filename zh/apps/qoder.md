@@ -15,6 +15,8 @@ url: /protocol-launcher/zh/apps/qoder.md
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
 
+聊天模式为 `agent`、`chat`、`ask`（chat 的别名）和 `experts`（需要启用 Experts）。设置 `isNewChat: false` 可填入当前聊天。当前 Quest 文档列出 `LocalAgent` 和 `LocalWorktree`；`RemoteAgent` 为兼容已有调用而保留。
+
 ### 打开编辑器
 
 ```ts-vue [{{currentMethod}}]
@@ -30,7 +32,8 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'qoder' }} } from '{{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createChat({
   text: 'Hello, Qoder!',
-  mode: 'agent',
+  mode: 'chat',
+  isNewChat: false,
   openInNewWindow: true,
 })
 ```
@@ -165,3 +168,22 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}openSettings({
   path: 'terminal.integrated.suggest.enabled',
 })
 ```
+
+### 创建命令
+
+在 Qoder 中确认后导入自定义命令。名称只能包含小写字母、数字、连字符和下划线，支持可选的 description 和 scope（user 或 project）。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'qoder' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'qoder.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes',
+  description: 'Review pull request',
+  scope: 'project'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://docs.qoder.com/user-guide/deeplink)

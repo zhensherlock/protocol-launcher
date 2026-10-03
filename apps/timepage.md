@@ -151,3 +151,64 @@ Timepage calls the `x-success` callback with `start`, `end`, `title`, and `locat
 ## References
 
 * [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
+
+### Get Directions
+
+Get directions to the next event or an event ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getDirections' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getDirections({
+  event: 'next'
+})
+```
+
+### Message Attendees
+
+Open messaging for event attendees.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messageAttendees' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}messageAttendees({
+  event: 'next'
+})
+```
+
+### Share Countdown
+
+Open the event countdown sharing view.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'countdownShare' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}countdownShare({
+  event: 'next'
+})
+```
+
+### Open Actions
+
+Open the companion Actions app through Timepage.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openActions' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openActions()
+```
+
+### List Calendars
+
+Return calendar names through x-success. writable: true sends writable=1 to request writable calendars only.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'listCalendars' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}listCalendars({
+  xSuccess: 'myapp://x-callback-url/calendars',
+  writable: true
+})
+```
+
+## Official Documentation

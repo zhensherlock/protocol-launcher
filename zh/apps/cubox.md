@@ -99,3 +99,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}search({
   type: 'card',
 })
 ```
+
+### 回调
+
+可选参数为 xSuccess、xCancel。回调 URL 会进行编码，包含嵌套查询参数。回调适用于 addLink()。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'addLink' : 'cubox' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'cubox.'}}addLink({
+  'url': 'https://example.com/article',
+  'xSuccess': 'myapp://done?source=cubox'
+})
+```

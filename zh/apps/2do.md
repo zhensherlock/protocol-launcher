@@ -162,3 +162,56 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
   saveInClipboard: 1,
 })
 ```
+
+### 显示任务
+
+通过 UID 打开任务。此动作仅支持 macOS。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showTask({
+  uid: 'REPLACE_WITH_TASK_UID'
+})
+```
+
+### 完成任务
+
+在 macOS 上完成任务。uids 可以是逗号分隔的字符串或非空 UID 数组。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'completeTasks' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}completeTasks({
+  uids: [
+    'TASK_UID_1',
+    'TASK_UID_2'
+  ]
+})
+```
+
+### 通过 x-callback-url 启动
+
+启动 2Do，可选传入回调参数。open() 仍生成裸应用 URL。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch()
+```
+
+### 回调
+
+可选参数为 xSuccess、xError、xCancel、xSource。回调 URL 会进行编码，包含嵌套查询参数。生成 URL 的动作参数名遵循官方小写规范；TypeScript 参数名仍为驼峰形式。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch({
+  'xSuccess': 'myapp://done?source=2do'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://www.2doapp.com/docs/macos/url-schemes/)

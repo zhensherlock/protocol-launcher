@@ -108,3 +108,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
   path: 'autosave',
 })
 ```
+
+### 分享技能
+
+将完整 SKILL.md 文件按 UTF-8 编码为不带填充的 base64url。Zed 会打开创建技能表单，由接收者检查内容并保存。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installSkill' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}installSkill({
+  content: '---\nname: review\ndescription: Review code changes\n---\n\nReview the current changes.'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://zed.dev/docs/ai/skills#sharing-skills)

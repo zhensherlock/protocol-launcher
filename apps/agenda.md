@@ -166,3 +166,15 @@ import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
 ```
+
+### Callbacks
+
+Pass xSuccess, xError as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection({
+  'xSuccess': 'myapp://done?source=agenda'
+})
+```

@@ -15,6 +15,8 @@ url: /protocol-launcher/zh/apps/obsidian.md
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
+`openNote` 和 `newNote` 支持 `path` 和 `paneType`（`tab`、`split`、`window`；window 仅限桌面端）。Obsidian 中 `path` 优先于 `vault` 和 `file`。`newNote` 支持 `file`、`path`、`paneType`、`clipboard`、`silent`、`overwrite` 和 `xSuccess`；用 `silent: true` 创建而不打开。既有插件相关函数继续保留，但不属于核心 URI 官方文档的范围。
+
 ### 打开 Obsidian
 
 ```ts-vue [{{currentMethod}}]
@@ -113,3 +115,56 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}settings({
   page: 'editor',
 })
 ```
+
+### 每日笔记
+
+创建或打开每日笔记，需要启用核心插件 Daily notes。支持 new 动作的参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'dailyNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}dailyNote({
+  vault: 'My Vault',
+  content: 'Daily notes',
+  append: true
+})
+```
+
+### 唯一笔记
+
+启用核心插件 Unique note creator 后创建唯一笔记。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'uniqueNote' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}uniqueNote({
+  vault: 'My Vault',
+  content: 'Hello World'
+})
+```
+
+### 仓库管理器
+
+打开仓库管理器。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'chooseVault' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}chooseVault()
+```
+
+### 为 Hook 获取地址
+
+向 Hook 返回当前笔记地址。未传回调时，将其 Markdown 链接复制到剪贴板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hookGetAddress' : 'obsidian' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'obsidian.'}}hookGetAddress({
+  xSuccess: 'hook://x-callback-url/setCurrentNode'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://obsidian.md/help/uri)

@@ -70,3 +70,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}newTab({
 ```
 
 [Official Warp URI Scheme documentation](https://docs.warp.dev/terminal/more-features/uri-scheme)
+
+### Open Settings
+
+Open Settings with an optional page, q search string, or widget ID. autoinstall applies to the mcp page; invite prefills an email on the teams page. The scheme option also supports warppreview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'warp' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}openSettings({
+  page: 'mcp',
+  autoinstall: 'my-server'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://docs.warp.dev/terminal/more-features/uri-scheme#settings-deep-links)

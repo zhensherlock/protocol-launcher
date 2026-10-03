@@ -15,6 +15,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+For update()/updateProject(), an empty string clears a field and an explicit completed: false or canceled: false restores the incomplete state. Omitting those values leaves the corresponding fields unchanged.
+
 ### Open Things
 
 ```ts-vue [{{currentMethod}}]
@@ -41,22 +43,22 @@ Show a built-in list, project, area, tag, or to-do.
 import { {{ currentMethod === 'On-Demand' ? 'show' : 'things' }} } from '{{ importPath }}'
 
 // Show Today list
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'today',
 })
 
 // Show project by ID
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   id: 'GJJVZHE7SNu7xcVuH2xDDh',
 })
 
 // Show by query
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
 })
 
 // Show by query with filter
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}show({
   query: 'vacation',
   filter: 'errand',
 })
@@ -70,19 +72,19 @@ Add a new project to Things.
 import { {{ currentMethod === 'On-Demand' ? 'addProject' : 'things' }} } from '{{ importPath }}'
 
 // Add project with start date
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Build treehouse',
   when: 'today',
 })
 
 // Add project to area
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Plan Birthday Party',
   area: 'Family',
 })
 
 // Add project with deadline and area
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}addProject({
   title: 'Submit Tax',
   deadline: 'December 31',
   areaId: 'Lg8UqVPXo2SbJNiBpDBBQ',
@@ -97,21 +99,21 @@ Update an existing project (requires auth-token).
 import { {{ currentMethod === 'On-Demand' ? 'updateProject' : 'things' }} } from '{{ importPath }}'
 
 // Update project start date
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   when: 'tomorrow',
 })
 
 // Add tags to project
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   addTags: 'Important',
 })
 
 // Clear project deadline
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}updateProject({
   id: 'Jvj7EW1fLoScPhaw2JomCT',
   authToken: 'xxx',
   deadline: '',
@@ -126,12 +128,12 @@ Add a new to-do to Things.
 import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
 
 // Add simple to-do
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Book flights',
 })
 
 // Add to-do with notes and tags
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   title: 'Buy milk',
   notes: 'Low fat.',
   when: 'evening',
@@ -139,7 +141,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
 })
 
 // Add multiple to-dos
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
   titles: 'Milk\nBeer\nCheese',
   list: 'Shopping',
 })
@@ -153,28 +155,28 @@ Update an existing to-do (requires auth-token).
 import { {{ currentMethod === 'On-Demand' ? 'update' : 'things' }} } from '{{ importPath }}'
 
 // Update to-do start date
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   when: 'today',
 })
 
 // Update to-do title
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   title: 'Buy bread',
 })
 
 // Append notes to to-do
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url3 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   appendNotes: 'Wholemeal bread',
 })
 
 // Clear to-do deadline
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
+const url4 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}update({
   id: 'SyJEz273ceSkabUbciM73A',
   authToken: 'xxx',
   deadline: '',
@@ -189,7 +191,7 @@ Advanced JSON-based import for projects and to-dos.
 import { {{ currentMethod === 'On-Demand' ? 'json' : 'things' }} } from '{{ importPath }}'
 
 // Import project with to-dos
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url1 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   data: [
     {
       type: 'project',
@@ -215,7 +217,7 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
 })
 
 // Import with auth-token
-const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
+const url2 = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   authToken: 'xxx',
   data: [
     {
@@ -227,3 +229,32 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}json({
   ],
 })
 ```
+
+### Get Client and Scheme Versions
+
+Return x-things-scheme-version and x-things-client-version through the success callback. version() generates the plain command; callback options select the x-callback-url form.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'version' : 'things' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'things.'}}version({
+  'xSuccess': 'myapp://versions'
+})
+```
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'add' : 'things' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'things.'}}add({
+  'title': 'Review changes',
+  'xSuccess': 'myapp://done?source=things'
+})
+```
+
+## Official Documentation
+
+* [URL scheme](https://culturedcode.com/things/support/articles/2803573/)

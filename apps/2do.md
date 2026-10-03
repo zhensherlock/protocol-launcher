@@ -162,3 +162,56 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}getTaskID({
   saveInClipboard: 1,
 })
 ```
+
+### Show Task
+
+Open a task by UID. This action is supported only on macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showTask' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}showTask({
+  uid: 'REPLACE_WITH_TASK_UID'
+})
+```
+
+### Complete Tasks
+
+Complete tasks on macOS. Pass a comma-separated string or a nonempty array of UIDs.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'completeTasks' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}completeTasks({
+  uids: [
+    'TASK_UID_1',
+    'TASK_UID_2'
+  ]
+})
+```
+
+### Launch through x-callback-url
+
+Launch 2Do with optional callback parameters. open() continues to generate the bare app URL.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch()
+```
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters. The generated action query keys follow the lowercase official reference; TypeScript payload names remain camelCase.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'launch' : 'twoDo' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'twoDo.'}}launch({
+  'xSuccess': 'myapp://done?source=2do'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://www.2doapp.com/docs/macos/url-schemes/)

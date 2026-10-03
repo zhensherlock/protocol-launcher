@@ -108,3 +108,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
   path: 'autosave',
 })
 ```
+
+### Share Skill
+
+Embed a complete SKILL.md file as UTF-8 base64url without padding. Zed opens the Create Skill form; the recipient reviews the contents and saves the skill.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installSkill' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}installSkill({
+  content: '---\nname: review\ndescription: Review code changes\n---\n\nReview the current changes.'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://zed.dev/docs/ai/skills#sharing-skills)

@@ -151,3 +151,64 @@ Timepage 会调用 `x-success` 回调，并带上 `start`、`end`、`title` 和 
 ## 参考资料
 
 * [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
+
+### 获取路线
+
+获取下一个活动或指定活动 ID 的路线。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getDirections' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getDirections({
+  event: 'next'
+})
+```
+
+### 联系参与者
+
+打开活动参与者的消息界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messageAttendees' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}messageAttendees({
+  event: 'next'
+})
+```
+
+### 分享倒计时
+
+打开活动倒计时分享界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'countdownShare' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}countdownShare({
+  event: 'next'
+})
+```
+
+### 打开 Actions
+
+通过 Timepage 打开配套的 Actions 应用。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openActions' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openActions()
+```
+
+### 列出日历
+
+通过 x-success 返回日历名称。writable: true 会生成 writable=1，只查询可写日历。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'listCalendars' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}listCalendars({
+  xSuccess: 'myapp://x-callback-url/calendars',
+  writable: true
+})
+```
+
+## 官方文档

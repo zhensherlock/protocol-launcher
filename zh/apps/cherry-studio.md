@@ -4,7 +4,7 @@ url: /protocol-launcher/zh/apps/cherry-studio.md
 
 # Cherry Studio
 
-[Cherry Studio](https://cherry-ai.com) 是一个支持多种模型和提供商的强大 AI 客户端。**Protocol Launcher** 允许您生成深度链接，以便在 Cherry Studio 中自动配置 MCP 服务器和 AI 提供商。
+[Cherry Studio](https://cherry-ai.com) 是一个支持多种模型和提供商的强大 AI 客户端。**Protocol Launcher** 允许您生成深度链接，以便在 Cherry Studio 中准备 MCP 服务器和 AI 提供商导入，并打开应用页面。
 
 ## 使用
 
@@ -14,6 +14,8 @@ url: /protocol-launcher/zh/apps/cherry-studio.md
 * 全量导入（从根包导入），使用简单，但会包含所有应用模块。
 
 生产环境建议使用按需加载以减小体积；快速脚本或演示可选择全量导入。
+
+当前 MCP 导入仅接受 `name`、`description`、`type`、`command`、`args`、`env`、`baseUrl` 和 `headers`。`installMCP` 会省略旧版的本地元数据字段，以满足 Cherry Studio 的严格导入结构。`type` 可以省略：命令配置默认为 stdio，URL 配置默认为 sse。导入 MCP 服务器会打开审核和确认界面。
 
 ### 安装多个 MCP 服务器
 
@@ -28,10 +30,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       type: 'stdio',
       command: 'npx',
       args: ['-y', '@modelcontextprotocol/server-everything'],
-      registryUrl: 'https://registry.npmmirror.com',
-      provider: 'Anthropic',
-      providerUrl: 'https://modelcontextprotocol.io/',
-      logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
     },
     'qcc-company-stream': {
       name: '企查查企业信息 MCP',
@@ -42,11 +40,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-basic', '企业信息'],
-      timeout: 30,
     },
     'qcc-risk-stream': {
       name: '企查查风险信息 MCP',
@@ -57,11 +50,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
       headers: {
         Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
       },
-      provider: 'QCC',
-      providerUrl: 'https://agent.qcc.com',
-      logoUrl: 'https://openapi.qcc.com/favicon.ico',
-      tags: ['company-risk', '风险信息'],
-      timeout: 30,
     },
   },
 })
@@ -78,10 +66,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   type: 'stdio',
   command: 'npx',
   args: ['-y', '@modelcontextprotocol/server-everything'],
-  registryUrl: 'https://registry.npmmirror.com',
-  provider: 'Anthropic',
-  providerUrl: 'https://modelcontextprotocol.io/',
-  logoUrl: 'https://avatars.githubusercontent.com/u/182288589?s=200&v=4',
 })
 ```
 
@@ -99,11 +83,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-basic', '企业信息'],
-  timeout: 30,
 })
 ```
 
@@ -121,11 +100,6 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installMCP({
   headers: {
     Authorization: 'Bearer REPLACE_WITH_YOUR_TOKEN',
   },
-  provider: 'QCC',
-  providerUrl: 'https://agent.qcc.com',
-  logoUrl: 'https://openapi.qcc.com/favicon.ico',
-  tags: ['company-risk', '风险信息'],
-  timeout: 30,
 })
 ```
 
@@ -140,3 +114,23 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}installProvi
   apiKey: 'sk-xxxx',
 })
 ```
+
+### 跳转页面
+
+打开主窗口中允许的页面。路由前缀包括 settings、app、agents、knowledge、paintings、translate、files、notes、apps、code 和 launchpad。Cherry Studio 会拒绝 protocolInstall 和 protocolInstallRequestId 内部查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'navigate' : 'cherryStudio' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cherryStudio.'}}navigate({
+  'path': '/settings/provider'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/ProtocolService.ts)
+
+* [MCP import schema](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/shared/data/types/mcpProtocolInstall.ts)
+
+* [Provider import](https://github.com/CherryHQ/cherry-studio/blob/v2.1.4/src/main/services/protocol/handlers/providersImport.ts)

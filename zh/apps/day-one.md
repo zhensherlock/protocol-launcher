@@ -15,6 +15,8 @@ url: /protocol-launcher/zh/apps/day-one.md
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
+Windows 支持日历、时间线、媒体、设置、模板、兑换码及空白新条目链接。它会忽略条目文本、标签、日记本和提示词参数，不支持按条目 ID 查看或编辑。在 Windows 上使用 `openTimeline({ platform: 'windows' })`；默认调用为其他平台保留 `dayone://entries`。
+
 ### 打开应用
 
 ```ts-vue [{{currentMethod}}]
@@ -123,3 +125,89 @@ import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
+
+### 最近提示词
+
+在 iOS 上打开最近提示词。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecentPrompts' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRecentPrompts()
+```
+
+### 打开标签
+
+在 iOS 或 macOS 上应用标签筛选。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTags' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTags({
+  name: 'work'
+})
+```
+
+### 书籍打印
+
+在 iOS 上打开书籍打印。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openBook' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openBook()
+```
+
+### 模板
+
+在 iOS 或 Windows 上打开模板。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTemplates' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTemplates()
+```
+
+### 兑换码
+
+在 iOS 或 Windows 上打开兑换码界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRedeem' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRedeem()
+```
+
+### 加密密钥
+
+在 iOS 或 macOS 上打开加密密钥界面。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEncryptionKey' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openEncryptionKey()
+```
+
+### Siri 快捷指令
+
+在 iOS 上打开 Siri 快捷指令设置。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSiri' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSiri()
+```
+
+### 媒体
+
+在 Windows 上打开媒体视图。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMedia' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openMedia()
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://dayoneapp.com/guides/tips-and-tutorials/day-one-url-scheme/)

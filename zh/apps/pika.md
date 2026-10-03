@@ -15,6 +15,8 @@ url: /protocol-launcher/zh/apps/pika.md
 
 生产构建建议选择按需导入；快速脚本或演示可以使用完整导入。
 
+`copyForeground` 和 `copyBackground` 支持可选的 `type`（hex、rgb、hsb、hsl、lab、opengl、oklch）；省略时保留当前输出格式。
+
 ## 操作（Actions）
 
 ### 交换颜色（Swap）
@@ -283,3 +285,87 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
   height: 300,
 })
 ```
+
+### 选择对比颜色
+
+选择对比颜色。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pickContrast' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}pickContrast()
+```
+
+### 显示颜色合规信息
+
+显示颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showCompliance()
+```
+
+### 隐藏颜色合规信息
+
+隐藏颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hideCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hideCompliance()
+```
+
+### 切换颜色合规信息
+
+切换颜色合规信息。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}toggleCompliance()
+```
+
+### 显示颜色预览
+
+显示颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showPreview()
+```
+
+### 隐藏颜色预览
+
+隐藏颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hidePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hidePreview()
+```
+
+### 切换颜色预览
+
+切换颜色预览。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'togglePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}togglePreview()
+```
+
+### 打开启动窗口
+
+打开启动窗口。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'splash' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}splash()
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift)

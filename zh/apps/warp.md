@@ -70,3 +70,20 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}newTab({
 ```
 
 [Warp URI Scheme 官方文档](https://docs.warp.dev/terminal/more-features/uri-scheme)
+
+### 打开设置
+
+打开设置，可选传入 page、搜索词 q 或设置项 widget ID。autoinstall 用于 mcp 页面；invite 在 teams 页面预填邮箱。scheme 也支持 warppreview。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSettings' : 'warp' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'warp.'}}openSettings({
+  page: 'mcp',
+  autoinstall: 'my-server'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://docs.warp.dev/terminal/more-features/uri-scheme#settings-deep-links)

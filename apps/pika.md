@@ -15,6 +15,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+`copyForeground` and `copyBackground` accept an optional `type` (hex, rgb, hsb, hsl, lab, opengl, oklch). Omitting it keeps the current output format.
+
 ## Actions
 
 ### Swap
@@ -283,3 +285,87 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}resize({
   height: 300,
 })
 ```
+
+### Pick a contrasting color
+
+Pick a contrasting color.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'pickContrast' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}pickContrast()
+```
+
+### Show compliance information
+
+Show compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showCompliance()
+```
+
+### Hide compliance information
+
+Hide compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hideCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hideCompliance()
+```
+
+### Toggle compliance information
+
+Toggle compliance information.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'toggleCompliance' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}toggleCompliance()
+```
+
+### Show the color preview
+
+Show the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'showPreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}showPreview()
+```
+
+### Hide the color preview
+
+Hide the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'hidePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}hidePreview()
+```
+
+### Toggle the color preview
+
+Toggle the color preview.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'togglePreview' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}togglePreview()
+```
+
+### Open the splash window
+
+Open the splash window.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'splash' : 'pika' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pika.'}}splash()
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://github.com/superhighfives/pika/blob/1.9.0/Pika/Views/HelpData.swift)

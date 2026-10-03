@@ -50,3 +50,19 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}subscribe({
   feedUrlWithoutHttp: 'example.com/podcast/rss',
 })
 ```
+
+### 在 Web 播放器中打开 RSS
+
+通过 RSS 地址在 Pocket Casts Web 中打开播客。完整地址会进行百分号编码，包含查询参数。链接打开播客页面后，由用户点击 Follow 关注。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openFeed' : 'pocketCasts' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'pocketCasts.'}}openFeed({
+  feedUrl: 'https://example.com/feed.xml?format=rss'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://support.pocketcasts.com/knowledge-base/third-party-integration/)

@@ -1,0 +1,1 @@
+import{n as e}from"./dist.D_eLBqp_.js";function t(t,n={}){return`tim://${t}${e(n)}`}function n(){return`tim://`}function r(){return`tim://export`}function i(){return`tim://settings`}function a(e){let{id:n}=e;return t(n)}function o(){return`tim://upgrade`}var s={id:`D43FA035-6406-495D-9ADD-46721986040F`};export{r as a,i,o as n,n as o,a as r,s as t};

@@ -96,6 +96,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalenda
 })
 ```
 
+### 切换日历集合
+
+按名称选择已有日历集合。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'switchCalendarSet' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}switchCalendarSet({
+  'set': 'work'
+})
+```
+
 ## 生成的 URL
 
 ```ts
@@ -129,3 +141,7 @@ summarize()
 importCalendar({ url: 'https://example.com/calendar.ics' })
 // => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
+
+## 官方文档
+
+* [URL scheme](https://calendar366.com/help/index.html)

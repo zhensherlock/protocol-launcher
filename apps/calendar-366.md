@@ -96,6 +96,18 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}importCalenda
 })
 ```
 
+### Switch Calendar Set
+
+Select an existing calendar set by name.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'switchCalendarSet' : 'calendar366' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'calendar366.'}}switchCalendarSet({
+  'set': 'work'
+})
+```
+
 ## Generated URLs
 
 ```ts
@@ -129,3 +141,7 @@ summarize()
 importCalendar({ url: 'https://example.com/calendar.ics' })
 // => 'cal366://import?url=https%3A%2F%2Fexample.com%2Fcalendar.ics'
 ```
+
+## Official Documentation
+
+* [URL scheme](https://calendar366.com/help/index.html)

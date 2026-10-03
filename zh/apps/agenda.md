@@ -166,3 +166,15 @@ import { {{ currentMethod === 'On-Demand' ? 'onTheAgenda' : 'agenda' }} } from '
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}onTheAgenda()
 ```
+
+### 回调
+
+可选参数为 xSuccess、xError。回调 URL 会进行编码，包含嵌套查询参数。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getSelection' : 'agenda' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'agenda.'}}getSelection({
+  'xSuccess': 'myapp://done?source=agenda'
+})
+```

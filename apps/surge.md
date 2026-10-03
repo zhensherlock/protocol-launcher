@@ -17,11 +17,7 @@ Pick On-Demand for production builds; Full Import is fine for quick scripts or d
 
 ## Notes
 
-Surge's official manual documents four iOS URL scheme actions: `surge:///start`, `surge:///stop`, `surge:///toggle`, and `surge:///install-config?url=x`. The `url` value for `install-config` must be percent-encoded, so `installConfig()` accepts the raw configuration URL and serializes it as the official `url` query parameter.
-
-The only documented option is `autoclose=true`, which can be used with `start`, `stop`, and `toggle`, but cannot be used with `install-config`.
-
-Surge also documents x-callback-url support from v3.4 with the `surge` scheme and only the `start`, `stop`, and `toggle` actions. This module therefore exposes only those three x-callback action URLs and does not add callback query parameters that are not listed on the Surge page.
+start/stop/toggle are iOS-only. Configuration/module installation and license activation use surge on iOS and macOS; surgeconfig is a macOS compatibility scheme (Mac 6.7.0+). autoclose is iOS-only and cannot be used with install-config. On iOS, license activation requires no active non-trial license; on macOS, the activation window must already be open. The current reference lists callbacks for start/stop/toggle.
 
 ### Start
 
@@ -93,6 +89,45 @@ import { {{ currentMethod === 'On-Demand' ? 'xCallbackToggle' : 'surge' }} } fro
 const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}xCallbackToggle()
 ```
 
+### Install Module
+
+Install a module from its URL. The URL is percent-encoded; scheme also accepts surgeconfig for macOS compatibility.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installModule' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}installModule({
+  'url': 'https://example.com/example.sgmodule'
+})
+```
+
+### Email License Activation
+
+Prefill the email-license activation flow.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'emailLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}emailLicense({
+  'email': 'name@example.com',
+  'key': 'REPLACE_WITH_LICENSE_KEY'
+})
+```
+
+### Team License Activation
+
+Prefill the team-license activation flow. enterprise-license is the canonical route; team-license is an app-side alias.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'enterpriseLicense' : 'surge' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'surge.'}}enterpriseLicense({
+  'companyID': 'REPLACE_WITH_COMPANY_ID',
+  'userID': 'REPLACE_WITH_USER_ID',
+  'passcode': 'REPLACE_WITH_PASSCODE'
+})
+```
+
 ## Generated URLs
 
 ```ts
@@ -125,4 +160,8 @@ xCallbackToggle()
 
 ## Official Documentation
 
-* [Surge URL Scheme](https://manual.nssurge.com/others/url-scheme.html)
+* [Surge URL Scheme](https://manual.nssurge.com/tools/url-scheme.html)
+
+## Official Documentation
+
+* [URL scheme](https://manual.nssurge.com/tools/url-scheme.html)

@@ -103,3 +103,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
   text: 'Hello world',
 })
 ```
+
+### Callbacks
+
+Pass xSuccess, xError and xCancel as optional payload fields. Nested callback URLs are percent-encoded.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'content' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}content({
+  'path': 'Notes.txt',
+  'xSuccess': 'myapp://content'
+})
+```

@@ -131,3 +131,33 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: '你好, Cursor!' })
 ```
+
+### 创建命令
+
+在 Cursor 中准备自定义命令，供用户确认。名称可包含字母、数字、点、连字符和下划线。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes'
+})
+```
+
+### 创建规则
+
+准备规则供用户确认。Cursor 的 deeplink 在 URL 编码后最多为 10,000 个字符。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRule' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createRule({
+  name: 'strict-types',
+  text: 'Always use strict TypeScript types'
+})
+```
+
+## 官方文档
+
+* [URL scheme 官方说明](https://cursor.com/docs/reference/deeplinks)

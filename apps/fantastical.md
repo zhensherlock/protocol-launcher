@@ -85,3 +85,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
   date: 'next monday',
 })
 ```
+
+### Callbacks
+
+Pass xSuccess, xError, xCancel, xSource as optional payload fields. Callback URLs are encoded, including nested query parameters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'show' : 'fantastical' }} } from '{{ importPath }}'
+
+const callbackUrl = {{currentMethod === 'On-Demand' ? '' : 'fantastical.'}}show({
+  'date': 'today',
+  'xSuccess': 'myapp://done?source=fantastical'
+})
+```

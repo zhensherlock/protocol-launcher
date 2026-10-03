@@ -131,3 +131,33 @@ import { {{ currentMethod === 'On-Demand' ? 'createChat' : 'cursor' }} } from '{
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createChat({ prompt: 'Hello, Cursor!' })
 ```
+
+### Create Command
+
+Prepare a custom command for the user to review in Cursor. Names may contain letters, numbers, dots, hyphens, and underscores.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createCommand' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createCommand({
+  name: 'review',
+  text: 'Review the changes'
+})
+```
+
+### Create Rule
+
+Prepare a rule for the user to review. Cursor limits encoded deeplinks to 10,000 characters.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'createRule' : 'cursor' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'cursor.'}}createRule({
+  name: 'strict-types',
+  text: 'Always use strict TypeScript types'
+})
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://cursor.com/docs/reference/deeplinks)

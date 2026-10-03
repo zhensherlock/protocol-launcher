@@ -15,6 +15,8 @@ There are two ways to use this library:
 
 Pick On-Demand for production builds; Full Import is fine for quick scripts or demos.
 
+Windows supports calendar, timeline, media, settings, templates, redeem, and blank new-entry links. It ignores entry text, tags, journal, and prompt parameters, and does not support view/edit by entry ID. Use `openTimeline({ platform: 'windows' })` on Windows; the default keeps `dayone://entries` for other platforms.
+
 ### Open App
 
 ```ts-vue [{{currentMethod}}]
@@ -123,3 +125,89 @@ import { {{ currentMethod === 'On-Demand' ? 'openTimeline' : 'dayOne' }} } from 
 
 const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTimeline()
 ```
+
+### Recent Prompts
+
+Open recent prompts on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRecentPrompts' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRecentPrompts()
+```
+
+### Open Tag
+
+Apply a tag filter on iOS or macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTags' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTags({
+  name: 'work'
+})
+```
+
+### Book Printing
+
+Open book printing on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openBook' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openBook()
+```
+
+### Templates
+
+Open templates on iOS or Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openTemplates' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openTemplates()
+```
+
+### Redeem Code
+
+Open code redemption on iOS or Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openRedeem' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openRedeem()
+```
+
+### Encryption Key
+
+Open the encryption key view on iOS or macOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openEncryptionKey' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openEncryptionKey()
+```
+
+### Siri Shortcuts
+
+Open Siri Shortcuts settings on iOS.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openSiri' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openSiri()
+```
+
+### Media
+
+Open the media view on Windows.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openMedia' : 'dayOne' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'dayOne.'}}openMedia()
+```
+
+## Official Documentation
+
+* [URL scheme documentation](https://dayoneapp.com/guides/tips-and-tutorials/day-one-url-scheme/)

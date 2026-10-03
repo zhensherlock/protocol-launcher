@@ -103,3 +103,16 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}prepend({
   text: 'Hello world',
 })
 ```
+
+### 回调
+
+可选回调参数为 xSuccess、xError、xCancel。嵌套回调 URL 会进行百分号编码。
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'content' : 'oneWriter' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'oneWriter.'}}content({
+  'path': 'Notes.txt',
+  'xSuccess': 'myapp://content'
+})
+```
