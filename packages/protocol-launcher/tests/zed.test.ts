@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, test } from 'vitest'
 import { zed } from '../src/'
 
 describe('zed', () => {
@@ -48,5 +48,17 @@ describe('zed', () => {
 
   it('openSettings should return a URL', () => {
     expect(zed.openSettings()).toBe('zed://settings/')
+  })
+})
+
+describe('documented URL updates', () => {
+  test('installSkill uses unpadded UTF-8 base64url', () => {
+    expect(zed.installSkill({ content: '---\nname: review\ndescription: 你好\n---\n\n# Review\nÿ?' })).toBe(
+      'zed://skill?data=LS0tCm5hbWU6IHJldmlldwpkZXNjcmlwdGlvbjog5L2g5aW9Ci0tLQoKIyBSZXZpZXcKw78_',
+    )
+  })
+
+  test('installSkill handles empty contents', () => {
+    expect(zed.installSkill({ content: '' })).toBe('zed://skill?data=')
   })
 })

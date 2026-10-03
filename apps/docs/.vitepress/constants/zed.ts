@@ -41,3 +41,7 @@ export const openAgentParams = {
 export const joinAgentParams = {
   id: '12345',
 }
+
+export const installSkillParams = {
+  'content': '---\nname: review\ndescription: Review code changes\n---\n\nReview the current changes.'
+} as const

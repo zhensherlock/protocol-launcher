@@ -38,8 +38,8 @@ type OpenGitCommit = {
  * cloneProject({
  *   repo: 'https://github.com/zhensherlock/protocol-launcher',
  * })
- * // => 'zed://git/clone?repo=https://github.com/zhensherlock/protocol-launcher'
- * @link https://github.com/zed-industries/zed/blob/main/crates/zed/src/zed/open_listener.rs#L133
+ * // => 'zed://git/clone?repo=https%3A%2F%2Fgithub.com%2Fzhensherlock%2Fprotocol-launcher'
+ * @link https://github.com/zed-industries/zed/blob/v1.22.0/crates/zed/src/zed/open_listener.rs#L133
  */
 export function cloneProject(payload: CloneProject) {
   const { repo } = payload
@@ -57,7 +57,7 @@ export function cloneProject(payload: CloneProject) {
  *   path: '/Users/dev/Documents/protocol-launcher',
  * })
  * // => 'zed://git/commit/739420c?repo=/Users/dev/Documents/protocol-launcher'
- * @link https://github.com/zed-industries/zed/blob/main/crates/zed/src/zed/open_listener.rs#L135
+ * @link https://github.com/zed-industries/zed/blob/v1.22.0/crates/zed/src/zed/open_listener.rs#L135
  */
 export function openGitCommit(payload: OpenGitCommit) {
   const { sha, path } = payload

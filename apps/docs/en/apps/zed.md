@@ -5,7 +5,8 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import { openFile, openFolder, openRemote, openSettings, cloneProject, openGitCommit, openExtension, openAgent, joinAgent } from 'protocol-launcher/zed';
+import { openFile, openFolder, openRemote, openSettings, cloneProject, openGitCommit, openExtension, openAgent, joinAgent, installSkill } from 'protocol-launcher/zed';
+import { installSkillParams } from '../../.vitepress/constants/zed';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import { useAppStore } from '../../.vitepress/stores/app';
 import {
@@ -168,3 +169,25 @@ const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}openSettings({
     Open in Zed
   </VPLink>
 </div>
+
+### Share Skill
+
+Embed a complete SKILL.md file as UTF-8 base64url without padding. Zed opens the Create Skill form; the recipient reviews the contents and saves the skill.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'installSkill' : 'zed' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'zed.'}}installSkill({
+  content: '---\nname: review\ndescription: Review code changes\n---\n\nReview the current changes.'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="installSkill(installSkillParams)" target="_self">
+    Share Skill
+  </VPLink>
+</div>
+
+## Official Documentation
+
+- [URL scheme documentation](https://zed.dev/docs/ai/skills#sharing-skills)
