@@ -5,8 +5,7 @@ layout: doc
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import VPLink from 'vitepress/dist/client/theme-default/components/VPLink.vue';
-import {
-  addEvent,
+import { addEvent,
   getEvent,
   open,
   openDay,
@@ -15,8 +14,8 @@ import {
   openMonth,
   openWeather,
   openWeek,
-  search,
-} from 'protocol-launcher/timepage';
+  search, getDirections, messageAttendees, countdownShare, openActions, listCalendars } from 'protocol-launcher/timepage';
+import { getDirectionsParams, messageAttendeesParams, countdownShareParams, listCalendarsParams } from '../../.vitepress/constants/timepage';
 import { SelectInstallationMethod } from '../../.vitepress/components';
 import {
   addEventParams,
@@ -246,3 +245,94 @@ Timepage calls the `x-success` callback with `start`, `end`, `title`, and `locat
 ## References
 
 - [Timepage URL Schemes](https://bonobolabs.com/support/timepage/introduction/timepages-url-schemes/)
+
+### Get Directions
+
+Get directions to the next event or an event ID.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'getDirections' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}getDirections({
+  event: 'next'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="getDirections(getDirectionsParams)" target="_self">
+    Get Directions
+  </VPLink>
+</div>
+
+### Message Attendees
+
+Open messaging for event attendees.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'messageAttendees' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}messageAttendees({
+  event: 'next'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="messageAttendees(messageAttendeesParams)" target="_self">
+    Message Attendees
+  </VPLink>
+</div>
+
+### Share Countdown
+
+Open the event countdown sharing view.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'countdownShare' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}countdownShare({
+  event: 'next'
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="countdownShare(countdownShareParams)" target="_self">
+    Share Countdown
+  </VPLink>
+</div>
+
+### Open Actions
+
+Open the companion Actions app through Timepage.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'openActions' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}openActions()
+```
+
+<div class="flex justify-center">
+  <VPLink :href="openActions()" target="_self">
+    Open Actions
+  </VPLink>
+</div>
+
+### List Calendars
+
+Return calendar names through x-success. writable: true sends writable=1 to request writable calendars only.
+
+```ts-vue [{{currentMethod}}]
+import { {{ currentMethod === 'On-Demand' ? 'listCalendars' : 'timepage' }} } from '{{ importPath }}'
+
+const url = {{currentMethod === 'On-Demand' ? '' : 'timepage.'}}listCalendars({
+  xSuccess: 'myapp://x-callback-url/calendars',
+  writable: true
+})
+```
+
+<div class="flex justify-center">
+  <VPLink :href="listCalendars(listCalendarsParams)" target="_self">
+    List Calendars
+  </VPLink>
+</div>
+
+## Official Documentation

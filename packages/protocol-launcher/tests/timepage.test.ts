@@ -117,3 +117,41 @@ describe('timepage', () => {
     expect(url).toBe('timepage://x-callback-url/get_event?event=next&x-success=shortcuts%3A%2F%2Fcallback')
   })
 })
+
+describe('documented URL updates', () => {
+  test('getDirections uses the next event', () => {
+    expect(timepage.getDirections({ event: 'next' })).toBe('timepage://get_directions?event=next')
+  })
+
+  test('messageAttendees encodes the event ID', () => {
+    expect(timepage.messageAttendees({ event: 'event & one' })).toBe(
+      'timepage://message_attendees?event=event%20%26%20one',
+    )
+  })
+
+  test('countdownShare uses the documented endpoint', () => {
+    expect(timepage.countdownShare({ event: 'next' })).toBe('timepage://countdown_share?event=next')
+  })
+
+  test('openActions opens Actions', () => {
+    expect(timepage.openActions()).toBe('timepage://open_actions')
+  })
+
+  test('listCalendars encodes its callback', () => {
+    expect(timepage.listCalendars({ xSuccess: 'myapp://x-callback-url/calendars' })).toBe(
+      'timepage://x-callback-url/listcalendars?x-success=myapp%3A%2F%2Fx-callback-url%2Fcalendars',
+    )
+  })
+
+  test('listCalendars supports writable-only filtering', () => {
+    expect(timepage.listCalendars({ xSuccess: 'myapp://x-callback-url/calendars', writable: true })).toBe(
+      'timepage://x-callback-url/listcalendars?x-success=myapp%3A%2F%2Fx-callback-url%2Fcalendars&writable=1',
+    )
+  })
+
+  test('listCalendars omits a false writable filter', () => {
+    expect(timepage.listCalendars({ xSuccess: 'myapp://x-callback-url/calendars', writable: false })).toBe(
+      'timepage://x-callback-url/listcalendars?x-success=myapp%3A%2F%2Fx-callback-url%2Fcalendars',
+    )
+  })
+})

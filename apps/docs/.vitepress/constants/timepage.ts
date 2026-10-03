@@ -30,3 +30,20 @@ export const openWeatherWeekParams = {
 export const searchParams = {
   query: 'project review',
 } as const
+
+export const getDirectionsParams = {
+  'event': 'next'
+} as const
+
+export const messageAttendeesParams = {
+  'event': 'next'
+} as const
+
+export const countdownShareParams = {
+  'event': 'next'
+} as const
+
+export const listCalendarsParams = {
+  'xSuccess': 'myapp://x-callback-url/calendars',
+  'writable': true
+} as const
