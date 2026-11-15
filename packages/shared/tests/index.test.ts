@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { encodeUrlPayload, isUndefined, qs } from '../src'
+import { encodeEditorPath, encodePathSegments, encodeUrlPayload, isUndefined, qs } from '../src'
 
 describe('index.ts', () => {
   test('encodeUrlPayload should return a base64-encoded string', async () => {
@@ -55,5 +55,15 @@ describe('index.ts', () => {
 
   test('qs should handle mixed types', () => {
     expect(qs({ str: 'hello', num: 42, arr: [1, 2], skip: null })).toBe('?str=hello&num=42&arr=1&arr=2')
+  })
+
+  test('encodePathSegments encodes path characters and preserves slash separators', () => {
+    expect(encodePathSegments('/文档//what?# 100%20/')).toBe('/%E6%96%87%E6%A1%A3//what%3F%23%20100%2520/')
+    expect(encodePathSegments('')).toBe('')
+  })
+
+  test('encodeEditorPath encodes raw paths and preserves Windows drive letters', () => {
+    expect(encodeEditorPath('/a#b/notes?.md')).toBe('/a%23b/notes%3F.md')
+    expect(encodeEditorPath('d:\\code samples\\a%20.md')).toBe('/d:/code%20samples/a%2520.md')
   })
 })

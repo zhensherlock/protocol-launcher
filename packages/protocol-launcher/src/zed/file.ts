@@ -1,4 +1,4 @@
-import { isUndefined } from '@protocol-launcher/shared'
+import { encodeEditorPath, isUndefined } from '@protocol-launcher/shared'
 
 /**
  * Open file definition.
@@ -36,5 +36,5 @@ type OpenFile = {
  */
 export function openFile(payload: OpenFile) {
   const { path, line, column } = payload
-  return `zed://file${path}${isUndefined(line) ? '' : `:${line}`}${isUndefined(column) ? '' : `:${column}`}`
+  return `zed://file${encodeEditorPath(path)}${isUndefined(line) ? '' : `:${line}`}${isUndefined(column) ? '' : `:${column}`}`
 }

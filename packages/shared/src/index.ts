@@ -47,3 +47,18 @@ export function qs(params: Record<string, unknown>) {
     .join('&')
   return query ? `?${query}` : ''
 }
+
+export function encodePathSegments(path: string) {
+  return path.split('/').map(encodeURIComponent).join('/')
+}
+
+/**
+ * Encode a raw path for an editor's ://file URL.
+ */
+export function encodeEditorPath(path: string) {
+  const drive = /^\/?([a-z]:)(?=[\\/])/i.exec(path)
+  if (!drive) return encodePathSegments(path)
+
+  const pathname = path.slice(drive[0].length).replace(/\\/g, '/')
+  return `/${drive[1]}${encodePathSegments(pathname)}`
+}

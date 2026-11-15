@@ -1,5 +1,5 @@
+import { encodePathSegments } from '@protocol-launcher/shared'
 import type { NotebooksBookPathPayload } from './shared'
-import { encodeNotebooksPath } from './shared'
 
 /**
  * Start WiFi Sharing in Notebooks for iPhone and iPad.
@@ -14,5 +14,5 @@ import { encodeNotebooksPath } from './shared'
 export function wifiSharing(payload: NotebooksBookPathPayload = {}) {
   const { path } = payload
 
-  return `notebooks://wifi_sharing${path === undefined ? '' : `/${encodeNotebooksPath(path)}`}`
+  return `notebooks://wifi_sharing${path === undefined ? '' : `/${encodePathSegments(path)}`}`
 }

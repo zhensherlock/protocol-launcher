@@ -1,3 +1,5 @@
+import { encodeEditorPath } from '@protocol-launcher/shared'
+
 /**
  * Open folder definition.
  */
@@ -28,5 +30,5 @@ type OpenFolder = {
  */
 export function openFolder(payload: OpenFolder) {
   const { path, openInNewWindow = false } = payload
-  return `vscode://file${path}${openInNewWindow ? '?windowId=_blank' : ''}`
+  return `vscode://file${encodeEditorPath(path)}${openInNewWindow ? '?windowId=_blank' : ''}`
 }

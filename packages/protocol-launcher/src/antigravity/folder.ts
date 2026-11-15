@@ -1,3 +1,5 @@
+import { encodeEditorPath } from '@protocol-launcher/shared'
+
 /**
  * Open folder definition.
  */
@@ -28,5 +30,5 @@ type OpenFolder = {
  */
 export function openFolder(payload: OpenFolder) {
   const { path, openInNewWindow = false } = payload
-  return `antigravity://file${path}${openInNewWindow ? '?windowId=_blank' : ''}`
+  return `antigravity://file${encodeEditorPath(path)}${openInNewWindow ? '?windowId=_blank' : ''}`
 }

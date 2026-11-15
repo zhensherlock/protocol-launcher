@@ -1,5 +1,5 @@
+import { encodePathSegments } from '@protocol-launcher/shared'
 import type { NotebooksDocumentPathPayload } from './shared'
-import { encodeNotebooksPath } from './shared'
 
 /**
  * Open a Notebooks internal document link using the direct path URL format.
@@ -14,5 +14,5 @@ import { encodeNotebooksPath } from './shared'
 export function openInternalLink(payload: NotebooksDocumentPathPayload) {
   const { path } = payload
 
-  return `notebooks://${encodeNotebooksPath(path)}`
+  return `notebooks://${encodePathSegments(path)}`
 }

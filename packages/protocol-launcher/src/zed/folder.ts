@@ -1,3 +1,5 @@
+import { encodeEditorPath } from '@protocol-launcher/shared'
+
 /**
  * Open folder definition.
  */
@@ -22,5 +24,5 @@ type OpenFolder = {
  */
 export function openFolder(payload: OpenFolder) {
   const { path } = payload
-  return `zed://file${path}`
+  return `zed://file${encodeEditorPath(path)}`
 }

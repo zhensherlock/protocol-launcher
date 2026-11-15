@@ -1,5 +1,5 @@
+import { encodePathSegments } from '@protocol-launcher/shared'
 import type { NotebooksBookPathPayload } from './shared'
-import { encodeNotebooksPath } from './shared'
 
 /**
  * Start WebDAV Sync in Notebooks for iPhone and iPad.
@@ -14,5 +14,5 @@ import { encodeNotebooksPath } from './shared'
 export function webdavSync(payload: NotebooksBookPathPayload = {}) {
   const { path } = payload
 
-  return `notebooks://webdav_sync${path === undefined ? '' : `/${encodeNotebooksPath(path)}`}`
+  return `notebooks://webdav_sync${path === undefined ? '' : `/${encodePathSegments(path)}`}`
 }

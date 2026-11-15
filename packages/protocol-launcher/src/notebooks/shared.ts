@@ -1,3 +1,5 @@
+import { encodePathSegments } from '@protocol-launcher/shared'
+
 /**
  * Notebooks document path payload definition.
  */
@@ -100,16 +102,12 @@ export type NotebooksBookPathPayload = {
 
 type NotebooksAmpParams = Record<string, string | undefined>
 
-export function encodeNotebooksPath(path: string) {
-  return path.split('/').map(encodeURIComponent).join('/')
-}
-
 export function notebooksAmpParams(params: NotebooksAmpParams, pathKeys: string[] = []) {
   const query = Object.entries(params)
     .flatMap(([key, value]) => {
       if (value === undefined) return []
 
-      const encodedValue = pathKeys.includes(key) ? encodeNotebooksPath(value) : encodeURIComponent(value)
+      const encodedValue = pathKeys.includes(key) ? encodePathSegments(value) : encodeURIComponent(value)
 
       return `${key}=${encodedValue}`
     })

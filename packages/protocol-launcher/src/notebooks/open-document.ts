@@ -1,5 +1,5 @@
+import { encodePathSegments } from '@protocol-launcher/shared'
 import type { NotebooksDocumentPathPayload } from './shared'
-import { encodeNotebooksPath } from './shared'
 
 /**
  * Open a specific document in Notebooks using the documented `show` URL.
@@ -14,5 +14,5 @@ import { encodeNotebooksPath } from './shared'
 export function openDocument(payload: NotebooksDocumentPathPayload) {
   const { path } = payload
 
-  return `notebooks://show/${encodeNotebooksPath(path)}`
+  return `notebooks://show/${encodePathSegments(path)}`
 }
