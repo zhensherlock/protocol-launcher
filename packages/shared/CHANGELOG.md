@@ -1,5 +1,11 @@
 # @protocol-launcher/shared
 
+## 1.5.0
+
+### Minor Changes
+
+- [`ae700d9`](https://github.com/zhensherlock/protocol-launcher/commit/ae700d9e8752ebf726f5fdee8989d10ab5c9c0c7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Percent-encode raw file and folder paths in editor launch URLs and format Windows drive paths. Export `encodePathSegments()` and `encodeEditorPath()` from `@protocol-launcher/shared`. Callers that pre-encoded paths should pass the original file system paths.
+
 ## 1.4.13
 
 ### Patch Changes
