@@ -1,0 +1,1 @@
+import{r as e}from"./dist.BZBgWJvf.js";function t(t,n){return`webexteams://${t}${e(n)}`}function n(e){return t(`im`,{email:e.email})}function r(e){return t(`im`,{space:e.space})}export{n,r as t};

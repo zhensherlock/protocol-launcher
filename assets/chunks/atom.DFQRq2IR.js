@@ -1,0 +1,1 @@
+import{n as e}from"./dist.BZBgWJvf.js";function t(t){let{path:n,line:r,column:i}=t;return`atom://core/open/file?filename=${n}${e(r)?``:`&line=${r}`}${e(i)?``:`&column=${i}`}`}function n(){return`atom://`}var r=e=>({path:e?`C:\\Windows\\System32\\drivers\\etc\\hosts`:`/etc/hosts`,line:1,column:2});export{n,t as r,r as t};

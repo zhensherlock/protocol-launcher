@@ -1,0 +1,1 @@
+import{r as e}from"./dist.BZBgWJvf.js";function t(t){return`postman://app/flows/open${e({filePath:t.filePath})}`}function n(e){return t(e)}export{n as t};

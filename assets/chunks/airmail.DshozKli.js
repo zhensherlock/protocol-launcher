@@ -1,0 +1,1 @@
+import{r as e}from"./dist.BZBgWJvf.js";function t(t={}){let{subject:n,from:r,to:i,cc:a,bcc:o,plainBody:s,htmlBody:c}=t;return`airmail://compose${e({subject:n,from:r,to:i,cc:a,bcc:o,plainBody:s,htmlBody:c})}`}var n={subject:`Message subject`,to:`joe@example.com`,plainBody:`Message body`};export{t as n,n as t};

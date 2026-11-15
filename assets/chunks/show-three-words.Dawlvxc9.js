@@ -1,0 +1,1 @@
+import{r as e}from"./dist.BZBgWJvf.js";function t(){return`w3w://show?currentlocation`}function n(t){let{threeWords:n}=t;return`w3w://show${e({threewords:n})}`}export{t as n,n as t};

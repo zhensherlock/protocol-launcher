@@ -1,0 +1,1 @@
+import{r as e}from"./dist.BZBgWJvf.js";function t(t,n=``,r={}){return`homeassistant://${t}${n}${e(r)}`}function n(e){let{path:n,server:r}=e;return t(`navigate`,n,{...r===void 0?{}:{server:r}})}var r={path:`/dashboard-mobile/my-subview`,server:`My home`};export{n,r as t};

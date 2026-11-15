@@ -1,0 +1,1 @@
+import{r as e}from"./dist.BZBgWJvf.js";function t(t){return e(t)}function n(){return`gvconnect://`}function r(e){let{tab:n,account:r}=e;return`gvconnect://${n}${t({account:r})}`}function i(e,t={}){return r({...t,tab:e})}function a(e={}){return i(`settings`,e)}export{n,a as t};
