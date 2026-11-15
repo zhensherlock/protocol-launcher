@@ -1,5 +1,85 @@
 # protocol-launcher
 
+## 1.29.0
+
+### Minor Changes
+
+- [`aa6fe01`](https://github.com/zhensherlock/protocol-launcher/commit/aa6fe01f27acb5308fc39e1b6ec972f9591f1c5a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Expose success, error, and cancellation callbacks on 1Writer note operations. Update exact URL tests and English/Chinese documentation.
+
+- [`2e50ea4`](https://github.com/zhensherlock/protocol-launcher/commit/2e50ea4150f4d0a7a4dfc8e60ea170214696c05b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add launch, task lookup, and completion links to 2Do, and support callback options across its task actions. Update exact URL tests and English/Chinese documentation.
+
+- [`ec36196`](https://github.com/zhensherlock/protocol-launcher/commit/ec36196f22a56e76b33f7e99390f0bf6f6ced48f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support success and error callbacks across Agenda note, project, selection, and overview actions. Update exact URL tests and English/Chinese documentation.
+
+- [`1b944a5`](https://github.com/zhensherlock/protocol-launcher/commit/1b944a5d5f9b112f07f7ceed1f08c75cbc952f6b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Survey123 Mobile custom-scheme and HTTPS launch links, plus Survey123 Studio launch links. Update exact URL tests and English/Chinese documentation.
+
+- [`936d72a`](https://github.com/zhensherlock/protocol-launcher/commit/936d72abb033a14a4670173dfd28cc01e538c9c7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Bear workspace open/close links, success and error callbacks, and API tokens for selected-note operations. Document the existing file-attachment helper. Update exact URL tests and English/Chinese documentation.
+
+- [`755b47b`](https://github.com/zhensherlock/protocol-launcher/commit/755b47b58e81ea4391806f4366d917fcd7842d18) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Calendar 366 calendar-set switching links. Update exact URL tests and English/Chinese documentation.
+
+- [`caec2c4`](https://github.com/zhensherlock/protocol-launcher/commit/caec2c465677f1771f9cd0d8d1aa9f42ee7d424d) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Cherry Studio navigation links and normalize MCP imports to the updated protocol schema while retaining compatibility inputs. Update exact URL tests and English/Chinese documentation.
+
+- [`e9ad9af`](https://github.com/zhensherlock/protocol-launcher/commit/e9ad9af4c382368ca20788866748254ee5d1e9ca) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support success and cancellation callbacks for Cubox add-link actions using its x-callback-url route. Update exact URL tests and English/Chinese documentation.
+
+- [`3a50c8c`](https://github.com/zhensherlock/protocol-launcher/commit/3a50c8c06cfb18405364ff6d5667a13887f3eae4) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Cursor command and rule creation links, and correct encoded Git clone examples. Update exact URL tests and English/Chinese documentation.
+
+- [`febdad9`](https://github.com/zhensherlock/protocol-launcher/commit/febdad9501683f069de8ad45f009718363eb5590) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Day One book, encryption-key, media, recent-prompt, redemption, Siri, tag, and template navigation links, and extend timeline options. Update exact URL tests and English/Chinese documentation.
+
+- [`a2aef84`](https://github.com/zhensherlock/protocol-launcher/commit/a2aef8497c132bcd0a2a5c682d79cbd8bb3373dc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Drafts chat and speech links, and callback options across supported draft, action, workspace, and capture operations. Update exact URL tests and English/Chinese documentation.
+
+- [`28bfeec`](https://github.com/zhensherlock/protocol-launcher/commit/28bfeec3aea2f4bb45c693c050ec6326e937d7de) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support success, error, and cancellation callbacks for Fantastical parse and show actions. Update exact URL tests and English/Chinese documentation.
+
+- [`756fcf3`](https://github.com/zhensherlock/protocol-launcher/commit/756fcf37220454ca8e2ed69528a9fa3dc3fc285b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add FSNotes native note creation links and extend note creation, lookup, and search options. Update exact URL tests and English/Chinese documentation.
+
+- [`8408284`](https://github.com/zhensherlock/protocol-launcher/commit/8408284e6ef3735b0151a61228696dd706ca62d8) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support Streets map regions, panorama clipboard actions, callback parameters, and the alternative streets URL scheme. Update exact URL tests and English/Chinese documentation.
+
+- [`783cd30`](https://github.com/zhensherlock/protocol-launcher/commit/783cd304945345ea04a2bbecb0cf05966c5b3779) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support callbacks for Gladys item creation and clipboard-paste actions. Update exact URL tests and English/Chinese documentation.
+
+- [`433dad3`](https://github.com/zhensherlock/protocol-launcher/commit/433dad337d373a0728d17385367d940ddebf140f) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support Infuse playback positions for individual media items and automatic playback for library movie, series, season, and episode links. Update exact URL tests and English/Chinese documentation.
+
+- [`ee3d92e`](https://github.com/zhensherlock/protocol-launcher/commit/ee3d92eed469a4602e2dd0687b5b40d0dcf87629) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Joplin note creation and current-note callback links. Update exact URL tests and English/Chinese documentation.
+
+- [`c0a2ae7`](https://github.com/zhensherlock/protocol-launcher/commit/c0a2ae7de77206b98d4a7d56a9aad94ab49285e1) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support Longshot command callbacks with the appropriate screenshot, OCR, and recording result types. Preserve supplied recording command names. Update exact URL tests and English/Chinese documentation.
+
+- [`a5a2830`](https://github.com/zhensherlock/protocol-launcher/commit/a5a2830e94054473ad3d10ef26434ccfb03c088b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support callback parameters when adding miCal events. Update exact URL tests and English/Chinese documentation.
+
+- [`0cc3005`](https://github.com/zhensherlock/protocol-launcher/commit/0cc3005c872d1f0e0c1353d184348136b73a5527) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support callback parameters across MultiTimer start, stop, pause, and resume actions. Update exact URL tests and English/Chinese documentation.
+
+- [`b4ede64`](https://github.com/zhensherlock/protocol-launcher/commit/b4ede649b15250eab8f1fd5b35a43c1bc22db5e7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Obsidian vault selection, daily-note, unique-note, and address callback links. Extend note URI options for paths, panes, clipboard input, overwrite behavior, and success callbacks. Update exact URL tests and English/Chinese documentation.
+
+- [`670ad0c`](https://github.com/zhensherlock/protocol-launcher/commit/670ad0c6aff4aff05457cbe7661173c30936b8b0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add OK JSON clipboard download and cURL links. Update exact URL tests and English/Chinese documentation.
+
+- [`4c615fe`](https://github.com/zhensherlock/protocol-launcher/commit/4c615fe61baeffa5c99ab01f1fff8bcc555d4f34) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support the updated Picsew mockup parameter types and document the updated mockup examples. Update exact URL tests and English/Chinese documentation.
+
+- [`f43b57d`](https://github.com/zhensherlock/protocol-launcher/commit/f43b57d8f942e0267d1cb5dc36b9fac1f163e83b) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Pika contrast picking, compliance, preview, and splash actions, plus copy-format triggers. Update exact URL tests and English/Chinese documentation.
+
+- [`f7889a3`](https://github.com/zhensherlock/protocol-launcher/commit/f7889a3099acee5ef6230a69fd9b820946b573bc) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Pocket Casts Web feed links alongside existing native app links. Update exact URL tests and English/Chinese documentation.
+
+- [`ec79ec7`](https://github.com/zhensherlock/protocol-launcher/commit/ec79ec7f98d9db27ff5904e03cc61411307244a8) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Qoder command links and chat mode/new-chat options. Encode MCP server names and document compatibility for existing quest execution modes. Update exact URL tests and English/Chinese documentation.
+
+- [`184b24e`](https://github.com/zhensherlock/protocol-launcher/commit/184b24e9dc6be981f752f61fa2edcacb97cb2183) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Surge module installation, email-license, and enterprise-license links, and document macOS compatibility for supported actions. Update exact URL tests and English/Chinese documentation.
+
+- [`9e1ae81`](https://github.com/zhensherlock/protocol-launcher/commit/9e1ae81f6922b64f83e10da207bcf139160166d0) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Support callbacks across Textastic file creation, opening, appending, replacement, and customization reload actions. Update exact URL tests and English/Chinese documentation.
+
+- [`a1ae45f`](https://github.com/zhensherlock/protocol-launcher/commit/a1ae45f09c2b3feaf72eca3c58c6b26f3d8c9dbd) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Things version links and callback options across supported actions. Preserve explicit empty-string and false values in to-do and project updates. Update exact URL tests and English/Chinese documentation.
+
+- [`8ad2dcc`](https://github.com/zhensherlock/protocol-launcher/commit/8ad2dcc5d2dc2fdab7a0e20e0d2edd6ffd11ce5a) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Tim settings, export, and upgrade windows plus deprecated record creation. Encode nested callback URLs for supported task and group actions. Update exact URL tests and English/Chinese documentation.
+
+- [`4a4347e`](https://github.com/zhensherlock/protocol-launcher/commit/4a4347eefaba1f98ad27e0920bac2376c21a1006) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Timepage calendar listing, attendee messaging, directions, countdown sharing, and action navigation links. Update exact URL tests and English/Chinese documentation.
+
+- [`4db7e13`](https://github.com/zhensherlock/protocol-launcher/commit/4db7e13168ae4787478c279f1b2c6d340b99039d) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add VS Code Insiders agent-session links and update encoded MCP and Git clone examples. Update exact URL tests and English/Chinese documentation.
+
+- [`5e94110`](https://github.com/zhensherlock/protocol-launcher/commit/5e941101cdf7f7e242607a8adbc092089029df65) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add VS Code agent-session links and update encoded MCP and Git clone examples. Update exact URL tests and English/Chinese documentation.
+
+- [`feb8ffd`](https://github.com/zhensherlock/protocol-launcher/commit/feb8ffd155d36123dcc4e85aa64e9f2dd3b57b7c) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Warp settings navigation links. Update exact URL tests and English/Chinese documentation.
+
+- [`c3ac302`](https://github.com/zhensherlock/protocol-launcher/commit/c3ac302f5df0e0551380f62f42a42562e4a943b8) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Add Zed skill installation links and update encoded Git clone examples. Update exact URL tests and English/Chinese documentation.
+
+### Patch Changes
+
+- [`ae700d9`](https://github.com/zhensherlock/protocol-launcher/commit/ae700d9e8752ebf726f5fdee8989d10ab5c9c0c7) Thanks [@zhensherlock](https://github.com/zhensherlock)! - Percent-encode raw file and folder paths in editor launch URLs and format Windows drive paths. Export `encodePathSegments()` and `encodeEditorPath()` from `@protocol-launcher/shared`. Callers that pre-encoded paths should pass the original file system paths.
+- Updated dependencies [[`ae700d9`](https://github.com/zhensherlock/protocol-launcher/commit/ae700d9e8752ebf726f5fdee8989d10ab5c9c0c7)]:
+  - @protocol-launcher/shared@1.5.0
+
 ## 1.28.0
 
 ### Minor Changes
